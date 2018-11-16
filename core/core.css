@@ -4,6 +4,7 @@
 	--ts-font-size-default: 14px;
 
 	--ts-unit: 10px;
+	--ts-unit-half: calc(0.5 * var(--ts-unit));
 	--ts-unit-double: calc(2 * var(--ts-unit));
 
 	--ts-color-white: rgb(255, 255, 255);

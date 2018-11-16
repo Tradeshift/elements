@@ -1,19 +1,35 @@
 import { Base } from '/core/component.js';
 
-class Button extends Base(HTMLElement) {
-	constructor() {
-		super();
-		this.styles('/button/button.css');
+const [
+	$template,
+	$type
+] = [
+	Symbol('template'),
+	Symbol('type')
+];
 
-		const template = document.createElement('template');
-		template.innerHTML = `
-			<button onclick="console.log(this);">
-				<span class="ts-title">
+class Button extends Base(HTMLElement) {
+	static get observedAttributes() { return ['type']; }
+	constructor(...args) {
+		const self = super(...args);
+		this.styles('/button/button.css');
+		this.template(`
+			<button>
+				<span>
 					<slot></slot>
 				</span>
 			</button>
-		`;
-		this.shadowRoot.appendChild(template.content.cloneNode(true));
+		`, $template);
+		this.type = this.getAttribute('type');
+		return self;
+	}
+	get type() {
+		return this[$type];
+	}
+	set type(type) {
+		this[$type] = type;
+		this.shadowRoot.querySelector('button > span')
+			.classList.toggle('ts-title', this.type !== 'text');
 	}
 }
 

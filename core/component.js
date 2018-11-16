@@ -1,13 +1,22 @@
 export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 	class extends SuperElement {
-		constructor() {
-			super(...arguments);
+		constructor(...args) {
+			const self = super(...args);
 			this.name = name;
+			return self;
 		}
 		connectedCallback() {
 			if (this.isConnected) {
 				this.classes();
 			}
+		}
+		attributeChangedCallback(name, oldValue, newValue) {
+			this[name] = newValue;
+		}
+		template(html, $template) {
+			this[$template] = document.createElement('template');
+			this[$template].innerHTML = html;
+			this.shadowRoot.appendChild(this[$template].content.cloneNode(true));
 		}
 		classes() {
 			this.classList.add(
