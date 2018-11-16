@@ -1,0 +1,55 @@
+/*
+body - rowflex- :host
+.ts-app - colflex
+.ts-main.ts-panel - hstretch
+.ts-content.ts-layout - vstretch
+.ts-panel - scrollable
+*/
+
+:host {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+:host,
+:host > .colflex,
+:host > .vstretch {
+	position: relative;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+:host,
+:host > .colflex,
+:host > .hstretch,
+:host > .vstretch {
+	position: relative;
+	display: flex;
+}
+:host,
+:host > .colflex,
+:host > .hstretch {
+	flex: 1 0 0px;
+}
+:host,
+:host > .hstretch {
+	flex-direction: row;
+}
+:host,
+:host > .colflex,
+:host > .vstretch {
+	flex-direction: column;
+}
+:host > .colflex {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+:host > .scrollable {
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}

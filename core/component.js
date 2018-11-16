@@ -3,6 +3,7 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 		constructor(...args) {
 			const self = super(...args);
 			this.name = name;
+			this.attachShadow({mode: 'open'});
 			return self;
 		}
 		connectedCallback() {
@@ -36,7 +37,6 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 				<link rel="stylesheet" href="${stylesheet}">
 				<script> </script>
 			`;
-			this.attachShadow({mode: 'open'})
-				.appendChild(template.content.cloneNode(true));
+			this.shadowRoot.appendChild(template.content.cloneNode(true));
 		}
 	};

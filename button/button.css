@@ -51,7 +51,6 @@
 :host([type=text]) > button {
 	background: transparent;
 	border: 0;
-	margin: var(--ts-margin);
 	border-radius: 0;
 	padding: 0;
 }
@@ -68,5 +67,21 @@
 	content: '';
 	border-color: var(--ts-color-blue-darker);
 }
+:host([type=text]) span {
+	color: var(--ts-color-blue);
+	padding: 0;
+}
 
+/* Inside a ButtonGroup ...........................................*/
 
+/* This doesn't work in FF */
+/* :host-context(ts-button-group), */
+:host([grouped]) {
+	display: block;
+	margin-bottom: var(--ts-unit);
+	text-align: center;
+}
+:host([grouped]) > button {
+	width: 100%;
+	display: block;
+}

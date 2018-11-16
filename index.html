@@ -2,13 +2,28 @@
 <html>
 <head>
 <title>WebComponents Experiments</title>
+<script type="module" src="root/root.js"></script>
 <script type="module" src="button/button.js"></script>
+<script type="module" src="button-group/button-group.js"></script>
 <link rel="stylesheet" href="/core/core.css"><script> </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body>
-	<ts-button>Normal Button</ts-button>
-	<ts-button type="primary">Primary Button</ts-button>
-	<ts-button type="text">Text Button</ts-button>
+<body is="ts-root">
+	<article>
+		<h2>ts-button</h2>
+		<ts-button type="text">Text Button</ts-button>
+		<ts-button type="primary">Primary Button</ts-button>
+		<ts-button>Normal Button</ts-button>
+	</article>
+
+
+	<article>
+		<h2>ts-button-group</h2>
+		<ts-button-group>
+			<ts-button type="text">Text Button</ts-button>
+			<ts-button type="primary">Primary Button</ts-button>
+			<ts-button>Normal Button</ts-button>
+		</ts-button-group>
+	</article>
 </body>
 </html>

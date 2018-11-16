@@ -2,14 +2,16 @@ import { Base } from '/core/component.js';
 
 const [
 	$template,
-	$type
+	$type,
+	$grouped
 ] = [
 	Symbol('template'),
-	Symbol('type')
+	Symbol('type'),
+	Symbol('grouped')
 ];
 
-class Button extends Base(HTMLElement) {
-	static get observedAttributes() { return ['type']; }
+class Button extends Base(HTMLElement, 'Button') {
+	static get observedAttributes() { return ['type', 'grouped']; }
 	constructor(...args) {
 		const self = super(...args);
 		this.styles('/button/button.css');
@@ -21,15 +23,32 @@ class Button extends Base(HTMLElement) {
 			</button>
 		`, $template);
 		this.type = this.getAttribute('type');
+		this.grouped = this.getAttribute('grouped');
 		return self;
 	}
 	get type() {
 		return this[$type];
 	}
 	set type(type) {
+		if (type === this[$type]) {
+			return;
+		}
+
 		this[$type] = type;
+		this[type ? 'setAttribute' : 'removeAttribute']('type', type);
 		this.shadowRoot.querySelector('button > span')
-			.classList.toggle('ts-title', this.type !== 'text');
+			.classList.toggle('title', this.type !== 'text');
+	}
+	get grouped() {
+		return this[$grouped];
+	}
+	set grouped(grouped) {
+		if (grouped === this[$grouped]) {
+			return;
+		}
+
+		this[$grouped] = grouped;
+		this[grouped ? 'setAttribute' : 'removeAttribute']('grouped', grouped);
 	}
 }
 

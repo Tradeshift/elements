@@ -16,7 +16,7 @@
 	padding: 0;
 }
 
-:host .ts-title {
+:host .title {
 	font-weight: var(--ts-font-weight-semibold);
 	text-transform: uppercase;
 	letter-spacing: .02em;

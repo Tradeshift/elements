@@ -1,4 +1,17 @@
 html, body {
+	background-color: rgb(230, 236, 238);
+}
+
+article {
 	background: white;
-	padding: 20px;
+	padding: 20px 20px 10px;
+	margin: 0 0 20px;
+	border: 1px solid #cad7dc;
+	border-radius: 3px;
+}
+
+h2 {
+	margin: 0 0 20px;
+	padding: 0;
+	font-family: 'Fira Code Retina';
 }
