@@ -2,10 +2,10 @@
 
 :host > button {
 	position: relative;
-	margin-right: var(--ts-unit-half);
+	margin-right: var(--ts-unit-quarter);
 	border: var(--ts-border);
 	border-radius: var(--ts-unit-double);
-	padding: var(--ts-unit);
+	padding: var(--ts-unit-half);
 }
 :host > button:before {
 	position: absolute;
@@ -37,7 +37,7 @@
 :host([type=primary]) > button {
 	background: var(--ts-color-blue);
 	color: var(--ts-color-white);
-	border: 0;
+	border-color: var(--ts-color-blue);
 }
 :host([type=primary]) > button:hover {
 	background: var(--ts-color-blue-dark);
@@ -78,7 +78,7 @@
 /* :host-context(ts-button-group), */
 :host([grouped]) {
 	display: block;
-	margin-bottom: var(--ts-unit);
+	margin-bottom: var(--ts-unit-half);
 	text-align: center;
 }
 :host([grouped]) > button {

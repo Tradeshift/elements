@@ -9,7 +9,7 @@
 :host * {
 	box-sizing: border-box;
 	font-size: var(--ts-font-size-default);
-	line-height: var(--ts-unit-double);
+	line-height: var(--ts-unit);
 	font-family: var(--ts-font-family);
 	background: transparent;
 	margin: 0;

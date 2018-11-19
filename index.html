@@ -9,13 +9,73 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body is="ts-root">
+	<header slot="header">Header</header>
+	<footer slot="footer">Footer</footer>
+	<section slot="sidebar-left">Left Sidebar</section>
+	<section slot="sidebar-right">Right Sidebar</section>
+	<section slot="sidebar-inner-left">Inner Left Sidebar</section>
+	<section slot="sidebar-inner-right">Inner Right Sidebar</section>
+
+	<article id="ts-root-toggle">
+		<h2>ts-root</h2>
+		<ts-button-group>
+			<ts-button data-toggle="header">Toggle Header</ts-button>
+			<ts-button data-toggle="footer">Toggle Footer</ts-button>
+			<ts-button data-toggle="sidebar-left">Toggle Left Sidebar</ts-button>
+			<ts-button data-toggle="sidebar-right">Toggle Right Sidebar</ts-button>
+			<ts-button data-toggle="sidebar-inner-left">Toggle Inner Left Sidebar</ts-button>
+			<ts-button data-toggle="sidebar-inner-right">Toggle Inner Right Sidebar</ts-button>
+		</ts-button-group>
+		<script>
+			function toggleSlot(name, button) {
+				const enabledSlot = document.querySelector(`[slot=${name}]`);
+				if (enabledSlot) {
+					button.removeAttribute('type');
+					return enabledSlot.setAttribute('slot', `!${name}`);
+				}
+
+				const disabledSlot = document.querySelector(`[slot="!${name}"]`);
+				if (disabledSlot) {
+					button.setAttribute('type', 'primary');
+					return disabledSlot.setAttribute('slot', name);
+				}
+			}
+
+			(function() {
+				setTimeout(() => {
+					const slots = [
+						'header',
+						'footer',
+						'sidebar-left',
+						'sidebar-right',
+						'sidebar-inner-left',
+						'sidebar-inner-right'
+					];
+					slots.forEach(slotName => {
+						const slot = document.querySelector(`[slot=${slotName}]`);
+						if (slot) {
+							slot.setAttribute('slot', `!${slot.getAttribute('slot')}`);
+						}
+					});
+
+					document.getElementById('ts-root-toggle')
+						.addEventListener('click', (e) => {
+							if (e.target && e.target.dataset.toggle) {
+								toggleSlot(e.target.dataset.toggle, e.target);
+							}
+						});
+				});
+			})();
+		</script>
+	</article>
+
+
 	<article>
 		<h2>ts-button</h2>
 		<ts-button type="text">Text Button</ts-button>
 		<ts-button type="primary">Primary Button</ts-button>
 		<ts-button>Normal Button</ts-button>
 	</article>
-
 
 	<article>
 		<h2>ts-button-group</h2>

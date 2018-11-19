@@ -1,9 +1,11 @@
 import { Base } from '/core/component.js';
 
 const [
-	$template
+	$template,
+	$decorateSlots
 ] = [
-	Symbol('template')
+	Symbol('template'),
+	Symbol('decorateSlots')
 ];
 
 class Root extends Base(HTMLBodyElement, 'Root') {
@@ -12,17 +14,30 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 		const self = super(...args);
 		this.styles('/root/root.css');
 		this.template(`
-			<div class="colflex">
-				<div class="hstretch">
-					<div class="vstretch">
-						<div class="scrollable">
-							<slot></slot>
-						</div>
-					</div>
-				</div>
-			</div>
+			<slot name="header" class="hidden"></slot>
+			<article>
+				<slot name="sidebar-left" class="hidden"></slot>
+				<section class="content">
+					<slot name="sidebar-inner-left" class="hidden"></slot>
+					<main>
+						<slot></slot>
+					</main>
+					<slot name="sidebar-inner-right" class="hidden"></slot>
+				</section>
+				<slot name="sidebar-right" class="hidden"></slot>
+			</article>
+			<slot name="footer" class="hidden"></slot>
 		`, $template);
+		this[$decorateSlots] = this[$decorateSlots].bind(this);
+		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
+			slot.classList.add(slot.getAttribute('name'));
+			slot.addEventListener('slotchange', (e) => this[$decorateSlots](slot, e));
+		});
 		return self;
+	}
+	[$decorateSlots](slot, e) {
+		const assignedNodes = slot.assignedNodes();
+		slot.classList.toggle('hidden', !(assignedNodes && assignedNodes.length));
 	}
 }
 
