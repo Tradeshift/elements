@@ -15,15 +15,17 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 		this.styles('/root/root.css');
 		this.template(`
 			<slot name="header" class="hidden"></slot>
-			<slot name="sidebar-left" class="hidden"></slot>
-			<section class="content">
-				<slot name="sidebar-inner-left" class="hidden"></slot>
-				<main>
-					<slot></slot>
-				</main>
-				<slot name="sidebar-inner-right" class="hidden"></slot>
-			</section>
-			<slot name="sidebar-right" class="hidden"></slot>
+			<article>
+				<slot name="sidebar-left" class="hidden"></slot>
+				<section class="content">
+					<slot name="sidebar-inner-left" class="hidden"></slot>
+					<main>
+						<slot></slot>
+					</main>
+					<slot name="sidebar-inner-right" class="hidden"></slot>
+				</section>
+				<slot name="sidebar-right" class="hidden"></slot>
+			</article>
 			<slot name="footer" class="hidden"></slot>
 		`, $template);
 		this[$decorateSlots] = this[$decorateSlots].bind(this);
@@ -35,9 +37,7 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 	}
 	[$decorateSlots](slot, e) {
 		const assignedNodes = slot.assignedNodes();
-		const showSlot = assignedNodes && assignedNodes.length;
-		slot.classList.toggle('hidden', !showSlot);
-		this.classList.toggle(`ts-has-${slot.getAttribute('name')}`, showSlot);
+		slot.classList.toggle('hidden', !(assignedNodes && assignedNodes.length));
 	}
 }
 
