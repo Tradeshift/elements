@@ -1,0 +1,17 @@
+{
+  "name": "@tradeshift/ui.button-group",
+  "version": "0.1.0",
+  "src": "src/button-group.js",
+  "main": "lib/button-group.cjs.js",
+  "module": "lib/button-group.mjs",
+  "browser": "lib/button-group.umd.js",
+  "files": [
+  	"lib/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  	"@tradeshift/ui": "*"
+  }
+}

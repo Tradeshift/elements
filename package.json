@@ -2,6 +2,8 @@
   "name": "webcomponents-experiments",
   "scripts": {
     "start": "npx @commonshost/server start --watch",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -9,6 +11,17 @@
     "url": "git+https://github.com/sampi/webcomponents-experiments.git"
   },
   "devDependencies": {
-    "lerna": "^3.4.3"
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "lerna": "^3.4.3",
+    "rollup": "^0.67.3",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^3.4.0"
   }
 }

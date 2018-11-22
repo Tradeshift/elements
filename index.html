@@ -2,10 +2,18 @@
 <html>
 <head>
 <title>WebComponents Experiments</title>
-<script type="module" src="root/root.js"></script>
-<script type="module" src="button/button.js"></script>
-<script type="module" src="button-group/button-group.js"></script>
-<link rel="stylesheet" href="/core/core.css"><script> </script>
+
+<!-- <script type="module" src="/packages/core/lib/core.mjs"></script>
+<script type="module" src="/packages/root/lib/root.mjs"></script>
+<script type="module" src="/packages/button/lib/button.mjs"></script>
+<script type="module" src="/packages/button-group/lib/button-group.mjs"></script> -->
+
+<script x-nomodule src="/packages/core/lib/core.umd.js"></script>
+<script x-nomodule src="/packages/root/lib/root.umd.js"></script>
+<script x-nomodule src="/packages/button/lib/button.umd.js"></script>
+<script x-nomodule src="/packages/button-group/lib/button-group.umd.js"></script>
+
+<link rel="stylesheet" href="/packages/core/src/core.css"><script> </script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body is="ts-root">

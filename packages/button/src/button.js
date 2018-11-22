@@ -1,4 +1,4 @@
-import { Base } from '/core/component.js';
+import { Base } from '@tradeshift/ui';
 
 const [
 	$template,
@@ -12,9 +12,9 @@ const [
 
 class Button extends Base(HTMLElement, 'Button') {
 	static get observedAttributes() { return ['type', 'grouped']; }
-	constructor(...args) {
-		const self = super(...args);
-		this.styles('/button/button.css');
+	constructor() {
+		super();
+		this.styles('button.css');
 		this.template(`
 			<button>
 				<span>
@@ -24,7 +24,6 @@ class Button extends Base(HTMLElement, 'Button') {
 		`, $template);
 		this.type = this.getAttribute('type');
 		this.grouped = this.getAttribute('grouped');
-		return self;
 	}
 	get type() {
 		return this[$type];

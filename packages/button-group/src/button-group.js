@@ -1,4 +1,4 @@
-import { Base } from '/core/component.js';
+import { Base } from '@tradeshift/ui';
 
 const [
 	$template,
@@ -10,8 +10,8 @@ const [
 
 class ButtonGroup extends Base(HTMLElement, 'ButtonGroup') {
 	static get observedAttributes() { return []; }
-	constructor(...args) {
-		const self = super(...args);
+	constructor() {
+		super();
 		this.styles('/button-group/button-group.css');
 		this.template(`
 			<section>
@@ -21,7 +21,6 @@ class ButtonGroup extends Base(HTMLElement, 'ButtonGroup') {
 		this[$groupButtons] = this[$groupButtons].bind(this);
 		this.shadowRoot.querySelector('slot')
 			.addEventListener('slotchange', this[$groupButtons]);
-		return self;
 	}
 	connectedCallback() {
 		if (this.isConnected) {

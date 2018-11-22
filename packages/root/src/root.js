@@ -1,4 +1,4 @@
-import { Base } from '/core/component.js';
+import { Base } from '@tradeshift/ui';
 
 const [
 	$template,
@@ -10,8 +10,8 @@ const [
 
 class Root extends Base(HTMLBodyElement, 'Root') {
 	static get observedAttributes() { return []; }
-	constructor(...args) {
-		const self = super(...args);
+	constructor() {
+		super();
 		this.styles('/root/root.css');
 		this.template(`
 			<slot name="header" class="hidden"></slot>
@@ -31,7 +31,6 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 			slot.classList.add(slot.getAttribute('name'));
 			slot.addEventListener('slotchange', (e) => this[$decorateSlots](slot, e));
 		});
-		return self;
 	}
 	[$decorateSlots](slot, e) {
 		const assignedNodes = slot.assignedNodes();

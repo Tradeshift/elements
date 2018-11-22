@@ -1,10 +1,9 @@
 export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 	class extends SuperElement {
-		constructor(...args) {
-			const self = super(...args);
+		constructor() {
+			super();
 			this.name = name;
 			this.attachShadow({mode: 'open'});
-			return self;
 		}
 		connectedCallback() {
 			if (this.isConnected) {
@@ -33,7 +32,7 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 						display: none;
 					}
 				</style>
-				<link rel="stylesheet" href="/core/common.css">
+				<link rel="stylesheet" href="common.css">
 				<link rel="stylesheet" href="${stylesheet}">
 				<script> </script>
 			`;
