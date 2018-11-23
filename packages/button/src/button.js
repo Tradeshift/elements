@@ -1,27 +1,28 @@
 import { Base } from '@tradeshift/ui';
 
-const [
-	$template,
-	$type,
-	$grouped
-] = [
+const [$template, $type, $grouped] = [
 	Symbol('template'),
 	Symbol('type'),
 	Symbol('grouped')
 ];
 
 class Button extends Base(HTMLElement, 'Button') {
-	static get observedAttributes() { return ['type', 'grouped']; }
+	static get observedAttributes() {
+		return ['type', 'grouped'];
+	}
 	constructor() {
 		super();
 		this.styles('button.css');
-		this.template(`
+		this.template(
+			`
 			<button>
 				<span>
 					<slot></slot>
 				</span>
 			</button>
-		`, $template);
+		`,
+			$template
+		);
 		this.type = this.getAttribute('type');
 		this.grouped = this.getAttribute('grouped');
 	}
@@ -35,7 +36,8 @@ class Button extends Base(HTMLElement, 'Button') {
 
 		this[$type] = type;
 		this[type ? 'setAttribute' : 'removeAttribute']('type', type);
-		this.shadowRoot.querySelector('button > span')
+		this.shadowRoot
+			.querySelector('button > span')
 			.classList.toggle('title', this.type !== 'text');
 	}
 	get grouped() {

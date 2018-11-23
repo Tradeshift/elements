@@ -38,7 +38,7 @@
 }
 :host(.ts-has-footer) {
 	-ms-grid-rows: 0 1fr max-content;
-	grid-template-rows:0 1fr max-content;
+	grid-template-rows: 0 1fr max-content;
 }
 :host(.ts-has-header.ts-has-footer) {
 	-ms-grid-rows: max-content 1fr max-content;
@@ -55,7 +55,9 @@
 }
 :host(.ts-has-sidebar-left.ts-has-sidebar-right) {
 	-ms-grid-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
-	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
+	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(
+			--ts-aside
+		);
 }
 
 :host > .content {
@@ -73,9 +75,11 @@
 	-ms-grid-columns: 0 minmax(var(--ts-aside), 1fr) var(--ts-aside);
 	grid-template-columns: 0 minmax(var(--ts-aside), 1fr) var(--ts-aside);
 }
-:host(.ts-has-sidebar-inner-left.ts-has-sidebar-inner-right)  > .content{
+:host(.ts-has-sidebar-inner-left.ts-has-sidebar-inner-right) > .content {
 	-ms-grid-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
-	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
+	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(
+			--ts-aside
+		);
 }
 
 /* Filling up the grid */

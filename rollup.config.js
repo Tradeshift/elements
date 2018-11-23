@@ -107,7 +107,7 @@ const build = (name, globalName = `ts.ui.${name}`) => {
 	const src = `${basedir}/${pkg.src}`;
 	return [
 		esm(src, `${basedir}/${pkg.module}`),
-		umd(globalName, src, `${basedir}/${pkg.browser}`)
+		// umd(globalName, src, `${basedir}/${pkg.browser}`)
 	];
 };
 

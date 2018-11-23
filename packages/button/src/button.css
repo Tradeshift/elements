@@ -24,7 +24,7 @@
 /* Hover/Focus.................................................... */
 :host > button:hover {
 	cursor: pointer;
-	background: rgba(var(--ts-color-gray-rgb), .5);
+	background: rgba(var(--ts-color-gray-rgb), 0.5);
 }
 
 :host > button:focus:before {
@@ -34,40 +34,40 @@
 }
 
 /* Primary type................................................... */
-:host([type=primary]) > button {
+:host([type='primary']) > button {
 	background: var(--ts-color-blue);
 	color: var(--ts-color-white);
 	border-color: var(--ts-color-blue);
 }
-:host([type=primary]) > button:hover {
+:host([type='primary']) > button:hover {
 	background: var(--ts-color-blue-dark);
 }
-:host([type=primary]) > button:focus:before {
+:host([type='primary']) > button:focus:before {
 	content: '';
 	border-color: var(--ts-color-blue-darker);
 }
 
 /* Text type...................................................... */
-:host([type=text]) > button {
+:host([type='text']) > button {
 	background: transparent;
 	border: 0;
 	border-radius: 0;
 	padding: 0;
 }
-:host([type=text]) > button:before {
+:host([type='text']) > button:before {
 	border-radius: 0;
 }
-:host([type=text]) > button:hover {
+:host([type='text']) > button:hover {
 	background: transparent;
 }
-:host([type=text]) > button:hover span {
+:host([type='text']) > button:hover span {
 	text-decoration: underline;
 }
-:host([type=text]) > button:focus:before {
+:host([type='text']) > button:focus:before {
 	content: '';
 	border-color: var(--ts-color-blue-darker);
 }
-:host([type=text]) span {
+:host([type='text']) span {
 	color: var(--ts-color-blue);
 	padding: 0;
 }

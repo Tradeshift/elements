@@ -3,7 +3,7 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 		constructor() {
 			super();
 			this.name = name;
-			this.attachShadow({mode: 'open'});
+			this.attachShadow({ mode: 'open' });
 		}
 		connectedCallback() {
 			if (this.isConnected) {
@@ -21,7 +21,7 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 		classes() {
 			this.classList.add(
 				'ts-component',
-				`ts-${this.name.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase()}`
+				`ts-${this.name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`
 			);
 		}
 		styles(stylesheet) {

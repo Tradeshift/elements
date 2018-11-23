@@ -4,7 +4,9 @@
     "start": "npx @commonshost/server start --watch",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prelint": "prettier --version && prettier --write --config .prettierrc \"packages/**/src/**/*.{js,json,css}\"",
+    "lint": "eslint --version &&  eslint --config .eslintrc --color \"packages/**/src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -15,7 +17,10 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
+    "eslint": "5.4.0",
+    "eslint-config-tradeshift": "6.0.1",
     "lerna": "^3.4.3",
+    "prettier": "1.15.2",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",

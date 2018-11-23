@@ -1,19 +1,19 @@
 import { Base } from '@tradeshift/ui';
 
-const [
-	$template,
-	$decorateSlots
-] = [
+const [$template, $decorateSlots] = [
 	Symbol('template'),
 	Symbol('decorateSlots')
 ];
 
 class Root extends Base(HTMLBodyElement, 'Root') {
-	static get observedAttributes() { return []; }
+	static get observedAttributes() {
+		return [];
+	}
 	constructor() {
 		super();
 		this.styles('/root/root.css');
-		this.template(`
+		this.template(
+			`
 			<slot name="header" class="hidden"></slot>
 			<slot name="sidebar-left" class="hidden"></slot>
 			<section class="content">
@@ -25,11 +25,13 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 			</section>
 			<slot name="sidebar-right" class="hidden"></slot>
 			<slot name="footer" class="hidden"></slot>
-		`, $template);
+		`,
+			$template
+		);
 		this[$decorateSlots] = this[$decorateSlots].bind(this);
 		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
 			slot.classList.add(slot.getAttribute('name'));
-			slot.addEventListener('slotchange', (e) => this[$decorateSlots](slot, e));
+			slot.addEventListener('slotchange', e => this[$decorateSlots](slot, e));
 		});
 	}
 	[$decorateSlots](slot, e) {
@@ -40,4 +42,4 @@ class Root extends Base(HTMLBodyElement, 'Root') {
 	}
 }
 
-customElements.define('ts-root', Root, {extends: 'body'});
+customElements.define('ts-root', Root, { extends: 'body' });

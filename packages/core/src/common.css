@@ -19,7 +19,7 @@
 :host .title {
 	font-weight: var(--ts-font-weight-semibold);
 	text-transform: uppercase;
-	letter-spacing: .02em;
+	letter-spacing: 0.02em;
 	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale;
 }
