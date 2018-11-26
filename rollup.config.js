@@ -1,108 +1,116 @@
+import path from 'path';
 import globals from 'rollup-plugin-node-globals';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
+import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
 
-const extend = true;
-const sourcemap = true;
+const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH } = process.env;
+const PACKAGE_ROOT_PATH = process.cwd();
+const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, 'package.json'));
+const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
 
 const outputConfig = {
-	extend,
-	sourcemap,
-	globals: {
-		'@tradeshift/ui': 'ts.ui'
-	}
+	extend: true,
+	sourcemap: true,
+	globals: require(`${LERNA_ROOT_PATH}/rollup.globals.json`)
 };
 
-const esm = (input, output) => ({
-	input,
-	output: [
-		{
-			...outputConfig,
-			external: ['@tradeshift/ui'],
-			file: output,
-			format: 'es'
-		}
-	],
-	external: ['@tradeshift/ui'],
-	plugins: [
-		babel({
-			babelrc: false,
-			exclude: 'node_modules/**',
-			presets: [
-				[
-					'@babel/env',
-					{
-						modules: false,
-						targets: {
-							esmodules: true
-						}
-					}
-				]
-			]
-		})
-	]
+const nodeModules = [
+	path.join(PACKAGE_ROOT_PATH, 'node_modules/**'),
+	path.join(LERNA_ROOT_PATH, 'node_modules/**')
+];
+
+const postcssPlugin = postcss({
+	plugins: [],
+	inject: false,
+	extract: false,
+	minimize: false,
+	sourceMap: 'inline'
 });
 
-const umd = (name, input, output) => ({
-	input,
-	output: [
-		{
-			...outputConfig,
-			name,
-			file: output,
-			format: 'umd'
-		}
-	],
-	external: ['@tradeshift/ui'],
-	plugins: [
-		globals(),
-		builtins(),
-		resolve({
-			module: true,
-			jsnext: true,
-			main: true,
-			browser: true
-		}),
-		commonjs({
-			include: 'node_modules/**'
-		}),
-		json({
-			preferConst: true // Default: false
-		}),
-		babel({
-			babelrc: false,
-			exclude: 'node_modules/**',
-			presets: [
-				[
-					'@babel/env',
-					{
-						modules: false,
-						useBuiltIns: 'usage',
-						targets: {
-							ie: 11
+const config = [
+	// {
+	// 	input: INPUT_FILE,
+	// 	output: [
+	// 		{
+	// 			...outputConfig,
+	// 			file: PKG_JSON.module,
+	// 			format: 'es'
+	// 		}
+	// 	],
+	// 	external: ['@tradeshift/elements'],
+	// 	plugins: [
+	// 		postcssPlugin,
+	// 		babel({
+	// 			babelrc: false,
+	// 			exclude: nodeModules,
+	// 			presets: [
+	// 				[
+	// 					'@babel/env',
+	// 					{
+	// 						modules: false,
+	// 						targets: {
+	// 							esmodules: true
+	// 						}
+	// 					}
+	// 				]
+	// 			]
+	// 		})
+	// 	]
+	// },
+	{
+		input: INPUT_FILE,
+		output: [
+			{
+				...outputConfig,
+				name: LERNA_PACKAGE_NAME.replace('@tradeshift/', 'ts.'),
+				file: PKG_JSON.browser,
+				format: 'iife'
+			}
+		],
+		external: ['@tradeshift/elements'],
+		plugins: [
+			globals(),
+			builtins(),
+			resolve({
+				module: true,
+				jsnext: true,
+				main: true,
+				browser: true
+			}),
+			commonjs({
+				include: nodeModules
+			}),
+			postcssPlugin,
+			babel({
+				babelrc: false,
+				exclude: nodeModules,
+				presets: [
+					[
+						'@babel/env',
+						{
+							modules: false,
+							useBuiltIns: 'usage',
+							targets: {
+								ie: 11
+							}
 						}
-					}
+					]
+				],
+				plugins: [
+					[
+						'@babel/transform-runtime',
+						{
+							helpers: false,
+							regenerator: true
+						}
+					]
 				]
-			],
-			plugins: [
-				'@babel/proposal-class-properties',
-				[
-					'@babel/transform-runtime',
-					{
-						helpers: false,
-						regenerator: true
-					}
-				]
-			]
-		})
-	]
-});
-
-const basedir = process.cwd();
-const pkg = require(`${process.cwd()}/package.json`);
-const config = [esm(`${basedir}/${pkg.src}`, `${basedir}/${pkg.module}`)];
+			})
+		]
+	}
+];
 
 export default config;

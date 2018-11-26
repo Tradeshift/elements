@@ -1,4 +1,5 @@
-import { Base } from '@tradeshift/ui';
+import { TSElement } from '@tradeshift/elements';
+import css from './button.css';
 
 const [$template, $type, $grouped] = [
 	Symbol('template'),
@@ -6,13 +7,13 @@ const [$template, $type, $grouped] = [
 	Symbol('grouped')
 ];
 
-class Button extends Base(HTMLElement, 'Button') {
+class Button extends TSElement('Button') {
 	static get observedAttributes() {
 		return ['type', 'grouped'];
 	}
 	constructor() {
 		super();
-		this.styles('button.css');
+		this.styles(css);
 		this.template(
 			`
 			<button>

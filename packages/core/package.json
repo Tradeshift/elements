@@ -1,15 +1,9 @@
 {
-  "name": "@tradeshift/ui",
+  "name": "@tradeshift/elements",
   "version": "0.1.0",
-  "src": "src/base.js",
+  "src": "src/index.js",
   "main": "lib/core.cjs.js",
   "module": "lib/core.mjs",
-  "browser": "lib/core.umd.js",
-  "files": ["lib/*"],
-  "scripts": {
-    "build": "rollup --config ../../rollup.config.js",
-    "watch": "rollup --config ../../rollup.config.js --watch",
-    "dev": "npm run watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "browser": "lib/core.iife.js",
+  "files": ["lib/*"]
 }

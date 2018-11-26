@@ -1,5 +1,9 @@
-export const Base = (SuperElement = HTMLElement, name = 'Base') =>
-	class extends SuperElement {
+import extenders from './extends';
+import commonStyles from './common.css';
+
+export const TSElement = (name = 'Base', SuperElement = 'HTMLElement') => {
+	const SuperClass = extenders[SuperElement] || extenders.HTMLElement;
+	return class extends SuperClass {
 		constructor() {
 			super();
 			this.name = name;
@@ -26,16 +30,17 @@ export const Base = (SuperElement = HTMLElement, name = 'Base') =>
 		}
 		styles(stylesheet) {
 			const template = document.createElement('template');
+			/**
+			 * @TODO Inject `commonStyles` somewhere, so it's only loaded once for cloning
+			 */
 			template.innerHTML = `
 				<style>
-					:host {
-						display: none;
-					}
+					${commonStyles}
+					${stylesheet}
 				</style>
-				<link rel="stylesheet" href="common.css">
-				<link rel="stylesheet" href="${stylesheet}">
 				<script> </script>
 			`;
 			this.shadowRoot.appendChild(template.content.cloneNode(true));
 		}
 	};
+};

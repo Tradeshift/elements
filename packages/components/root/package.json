@@ -1,0 +1,12 @@
+{
+  "name": "@tradeshift/ui.root",
+  "version": "0.1.0",
+  "src": "src/root.js",
+  "main": "lib/root.cjs.js",
+  "module": "lib/root.mjs",
+  "browser": "lib/root.iife.js",
+  "files": ["lib/*"],
+  "dependencies": {
+    "@tradeshift/elements": "*"
+  }
+}

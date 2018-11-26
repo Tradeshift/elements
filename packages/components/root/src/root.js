@@ -1,17 +1,18 @@
-import { Base } from '@tradeshift/ui';
+import { TSElement } from '@tradeshift/elements';
+import css from './root.css';
 
 const [$template, $decorateSlots] = [
 	Symbol('template'),
 	Symbol('decorateSlots')
 ];
 
-class Root extends Base(HTMLBodyElement, 'Root') {
+class Root extends TSElement('Root', 'HTMLBodyElement') {
 	static get observedAttributes() {
 		return [];
 	}
 	constructor() {
 		super();
-		this.styles('/root/root.css');
+		this.styles(css);
 		this.template(
 			`
 			<slot name="header" class="hidden"></slot>

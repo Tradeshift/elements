@@ -1,0 +1,12 @@
+{
+  "name": "@tradeshift/elements.button",
+  "version": "0.1.0",
+  "src": "src/button.js",
+  "main": "lib/button.cjs.js",
+  "module": "lib/button.mjs",
+  "browser": "lib/button.iife.js",
+  "files": ["lib/*"],
+  "dependencies": {
+    "@tradeshift/elements": "*"
+  }
+}

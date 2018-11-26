@@ -8,10 +8,14 @@
 <script type="module" src="/packages/button/lib/button.mjs"></script>
 <script type="module" src="/packages/button-group/lib/button-group.mjs"></script> -->
 
-<script x-nomodule src="/packages/core/lib/core.umd.js"></script>
-<script x-nomodule src="/packages/root/lib/root.umd.js"></script>
-<script x-nomodule src="/packages/button/lib/button.umd.js"></script>
-<script x-nomodule src="/packages/button-group/lib/button-group.umd.js"></script>
+<script src="/node_modules/@webcomponents/custom-elements/custom-elements.min.js"></script>
+<script src="/node_modules/@webcomponents/custom-elements/src/native-shim.js"></script>
+
+<script src="/packages/core/lib/core.iife.js"></script>
+
+<script src="/packages/components/root/lib/root.iife.js"></script>
+<script src="/packages/components/button/lib/button.iife.js"></script>
+<script src="/packages/components/button-group/lib/button-group.iife.js"></script>
 
 <link rel="stylesheet" href="/packages/core/src/vars.css"><script> </script>
 <link rel="stylesheet" href="/index.css">
@@ -36,13 +40,13 @@
 		</ts-button-group>
 		<script>
 			function toggleSlot(name, button) {
-				const enabledSlot = document.querySelector(`[slot=${name}]`);
+				const enabledSlot = document.querySelector('[slot=' + name + ']');
 				if (enabledSlot) {
 					button.removeAttribute('type');
-					return enabledSlot.setAttribute('slot', `!${name}`);
+					return enabledSlot.setAttribute('slot', '!' + name);
 				}
 
-				const disabledSlot = document.querySelector(`[slot="!${name}"]`);
+				const disabledSlot = document.querySelector('[slot="!' + name + '"]');
 				if (disabledSlot) {
 					button.setAttribute('type', 'primary');
 					return disabledSlot.setAttribute('slot', name);
@@ -50,7 +54,7 @@
 			}
 
 			(function() {
-				setTimeout(() => {
+				setTimeout(function() {
 					const slots = [
 						'header',
 						'footer',
@@ -59,15 +63,15 @@
 						'sidebar-inner-left',
 						'sidebar-inner-right'
 					];
-					slots.forEach(slotName => {
-						const slot = document.querySelector(`[slot=${slotName}]`);
+					slots.forEach(function(slotName) {
+						const slot = document.querySelector('[slot=' + slotName + ']');
 						if (slot) {
-							slot.setAttribute('slot', `!${slot.getAttribute('slot')}`);
+							slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
 						}
 					});
 
 					document.getElementById('ts-root-toggle')
-						.addEventListener('click', (e) => {
+						.addEventListener('click', function(e) {
 							if (e.target && e.target.dataset.toggle) {
 								toggleSlot(e.target.dataset.toggle, e.target);
 							}
