@@ -1,10 +1,6 @@
 {
   "name": "webcomponents-experiments",
   "scripts": {
-    "start": "npx @commonshost/server start --watch",
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prelint": "prettier --version && prettier --write --config .prettierrc \"packages/**/src/**/*.{js,json,css}\"",
     "lint": "eslint --version &&  eslint --config .eslintrc --color \"packages/**/src/**/*.js\""
   },

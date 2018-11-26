@@ -5,10 +5,11 @@
   "main": "lib/core.cjs.js",
   "module": "lib/core.mjs",
   "browser": "lib/core.umd.js",
-  "files": [
-  	"lib/*"
-  ],
+  "files": ["lib/*"],
   "scripts": {
+    "build": "rollup --config ../../rollup.config.js",
+    "watch": "rollup --config ../../rollup.config.js --watch",
+    "dev": "npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

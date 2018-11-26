@@ -101,22 +101,8 @@ const umd = (name, input, output) => ({
 	]
 });
 
-const build = (name, globalName = `ts.ui.${name}`) => {
-	const basedir = `${process.cwd()}/packages/${name}`;
-	const pkg = require(`${basedir}/package.json`);
-	const src = `${basedir}/${pkg.src}`;
-	return [
-		esm(src, `${basedir}/${pkg.module}`),
-		// umd(globalName, src, `${basedir}/${pkg.browser}`)
-	];
-};
-
-const config = [
-	...build('core', 'ts.ui'),
-
-	...build('button'),
-	...build('button-group'),
-	...build('root'),
-];
+const basedir = process.cwd();
+const pkg = require(`${process.cwd()}/package.json`);
+const config = [esm(`${basedir}/${pkg.src}`, `${basedir}/${pkg.module}`)];
 
 export default config;
