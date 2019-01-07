@@ -1,5 +1,8 @@
-html, body {
+html,
+body {
 	background-color: rgb(230, 236, 238);
+	margin: 0;
+	padding: 0;
 }
 
 article {
@@ -21,15 +24,15 @@ footer {
 	display: block;
 	width: 100%;
 	height: 60px;
-	background: rgba(60, 60, 60, .6);
+	background: rgba(60, 60, 60, 0.6);
 }
 .sidebar-left,
 .sidebar-right {
-	background: rgba(60, 0, 60, .6);
+	background: rgba(60, 0, 60, 0.6);
 }
 .sidebar-inner-left,
 .sidebar-inner-right {
-	background: rgba(60, 60, 0, .6);
+	background: rgba(60, 60, 0, 0.6);
 }
 .content {
 	background: white;

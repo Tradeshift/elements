@@ -1,0 +1,10 @@
+{
+	"hosts": [
+		{
+			"domain": "localhost"
+		},
+		{
+			"domain": "c02x8172jgh8-c"
+		}
+	]
+}

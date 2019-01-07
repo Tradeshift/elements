@@ -1,5 +1,5 @@
 {
-  "name": "@tradeshift/ui.root",
+  "name": "@tradeshift/elements.root",
   "version": "0.1.0",
   "src": "src/root.js",
   "main": "lib/root.cjs.js",

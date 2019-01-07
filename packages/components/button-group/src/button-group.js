@@ -1,23 +1,25 @@
 import { TSElement } from '@tradeshift/elements';
 import css from './button-group.css';
 
-const [$template, $groupButtons] = [Symbol('template'), Symbol('groupButtons')];
+const [$groupButtons] = [Symbol('groupButtons')];
 
-class ButtonGroup extends TSElement('ButtonGroup') {
-	static get observedAttributes() {
-		return [];
+const BaseElement = TSElement('ButtonGroup');
+
+class ButtonGroup extends BaseElement {
+	static get tagName() {
+		return 'ts-button-group';
 	}
-	constructor() {
-		super();
-		this.styles(css);
-		this.template(
-			`
+	static get html() {
+		return `
 			<section>
 				<slot></slot>
 			</section>
-		`,
-			$template
-		);
+		`;
+	}
+	static get css() {
+		return css;
+	}
+	createdCallback() {
 		this[$groupButtons] = this[$groupButtons].bind(this);
 		this.shadowRoot
 			.querySelector('slot')
@@ -35,4 +37,4 @@ class ButtonGroup extends TSElement('ButtonGroup') {
 	}
 }
 
-customElements.define('ts-button-group', ButtonGroup);
+BaseElement.init(ButtonGroup);

@@ -3,8 +3,9 @@ import globals from 'rollup-plugin-node-globals';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
+import postcss from 'rollup-plugin-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
 
 const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
@@ -23,7 +24,11 @@ const nodeModules = [
 ];
 
 const postcssPlugin = postcss({
-	plugins: [],
+	plugins: [
+		postcssPresetEnv({
+			importFrom: `${LERNA_ROOT_PATH}/packages/core/src/vars.css`
+		})
+	],
 	inject: false,
 	extract: false,
 	minimize: false,
@@ -31,35 +36,35 @@ const postcssPlugin = postcss({
 });
 
 const config = [
-	// {
-	// 	input: INPUT_FILE,
-	// 	output: [
-	// 		{
-	// 			...outputConfig,
-	// 			file: PKG_JSON.module,
-	// 			format: 'es'
-	// 		}
-	// 	],
-	// 	external: ['@tradeshift/elements'],
-	// 	plugins: [
-	// 		postcssPlugin,
-	// 		babel({
-	// 			babelrc: false,
-	// 			exclude: nodeModules,
-	// 			presets: [
-	// 				[
-	// 					'@babel/env',
-	// 					{
-	// 						modules: false,
-	// 						targets: {
-	// 							esmodules: true
-	// 						}
-	// 					}
-	// 				]
-	// 			]
-	// 		})
-	// 	]
-	// },
+	{
+		input: INPUT_FILE,
+		output: [
+			{
+				...outputConfig,
+				file: PKG_JSON.module,
+				format: 'es'
+			}
+		],
+		external: ['@tradeshift/elements'],
+		plugins: [
+			postcssPlugin,
+			babel({
+				babelrc: false,
+				exclude: nodeModules,
+				presets: [
+					[
+						'@babel/env',
+						{
+							modules: false,
+							targets: {
+								esmodules: true
+							}
+						}
+					]
+				]
+			})
+		]
+	},
 	{
 		input: INPUT_FILE,
 		output: [
@@ -92,7 +97,7 @@ const config = [
 						'@babel/env',
 						{
 							modules: false,
-							useBuiltIns: 'usage',
+							// useBuiltIns: 'usage',
 							targets: {
 								ie: 11
 							}

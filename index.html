@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>WebComponents Experiments</title>
+<title>Tradeshift Elements v0.1.0</title>
 
 <!-- <script type="module" src="/packages/core/lib/core.mjs"></script>
 <script type="module" src="/packages/root/lib/root.mjs"></script>
 <script type="module" src="/packages/button/lib/button.mjs"></script>
 <script type="module" src="/packages/button-group/lib/button-group.mjs"></script> -->
 
-<script src="/node_modules/@webcomponents/custom-elements/custom-elements.min.js"></script>
-<script src="/node_modules/@webcomponents/custom-elements/src/native-shim.js"></script>
+<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+<!-- <script nomodule src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script> -->
+
+<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+<!-- <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script> -->
+<!-- <script src="/node_modules/@webcomponents/custom-elements/src/native-shim.js"></script> -->
 
 <script src="/packages/core/lib/core.iife.js"></script>
 
@@ -20,82 +26,84 @@
 <link rel="stylesheet" href="/packages/core/src/vars.css"><script> </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body is="ts-root">
-	<header slot="header" class="header">Header</header>
-	<footer slot="footer" class="footer">Footer</footer>
-	<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
-	<section slot="sidebar-right" class="sidebar-right">Right Sidebar</section>
-	<section slot="sidebar-inner-left" class="sidebar-inner-left">Inner Left Sidebar</section>
-	<section slot="sidebar-inner-right" class="sidebar-inner-right">Inner Right Sidebar</section>
+<body>
+	<ts-root>
+		<header slot="header" class="header">Header</header>
+		<footer slot="footer" class="footer">Footer</footer>
+		<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
+		<section slot="sidebar-right" class="sidebar-right">Right Sidebar</section>
+		<section slot="sidebar-inner-left" class="sidebar-inner-left">Inner Left Sidebar</section>
+		<section slot="sidebar-inner-right" class="sidebar-inner-right">Inner Right Sidebar</section>
 
-	<article id="ts-root-toggle">
-		<h2>ts-root</h2>
-		<ts-button-group>
-			<ts-button data-toggle="header">Toggle Header</ts-button>
-			<ts-button data-toggle="footer">Toggle Footer</ts-button>
-			<ts-button data-toggle="sidebar-left">Toggle Left Sidebar</ts-button>
-			<ts-button data-toggle="sidebar-right">Toggle Right Sidebar</ts-button>
-			<ts-button data-toggle="sidebar-inner-left">Toggle Inner Left Sidebar</ts-button>
-			<ts-button data-toggle="sidebar-inner-right">Toggle Inner Right Sidebar</ts-button>
-		</ts-button-group>
-		<script>
-			function toggleSlot(name, button) {
-				const enabledSlot = document.querySelector('[slot=' + name + ']');
-				if (enabledSlot) {
-					button.removeAttribute('type');
-					return enabledSlot.setAttribute('slot', '!' + name);
+		<article id="ts-root-toggle">
+			<h2>ts-root</h2>
+			<ts-button-group>
+				<ts-button data-toggle="header">Toggle Header</ts-button>
+				<ts-button data-toggle="footer">Toggle Footer</ts-button>
+				<ts-button data-toggle="sidebar-left">Toggle Left Sidebar</ts-button>
+				<ts-button data-toggle="sidebar-right">Toggle Right Sidebar</ts-button>
+				<ts-button data-toggle="sidebar-inner-left">Toggle Inner Left Sidebar</ts-button>
+				<ts-button data-toggle="sidebar-inner-right">Toggle Inner Right Sidebar</ts-button>
+			</ts-button-group>
+			<script>
+				function toggleSlot(name, button) {
+					const enabledSlot = document.querySelector('[slot=' + name + ']');
+					if (enabledSlot) {
+						button.removeAttribute('type');
+						return enabledSlot.setAttribute('slot', '!' + name);
+					}
+
+					const disabledSlot = document.querySelector('[slot="!' + name + '"]');
+					if (disabledSlot) {
+						button.setAttribute('type', 'primary');
+						return disabledSlot.setAttribute('slot', name);
+					}
 				}
 
-				const disabledSlot = document.querySelector('[slot="!' + name + '"]');
-				if (disabledSlot) {
-					button.setAttribute('type', 'primary');
-					return disabledSlot.setAttribute('slot', name);
-				}
-			}
-
-			(function() {
-				setTimeout(function() {
-					const slots = [
-						'header',
-						'footer',
-						'sidebar-left',
-						'sidebar-right',
-						'sidebar-inner-left',
-						'sidebar-inner-right'
-					];
-					slots.forEach(function(slotName) {
-						const slot = document.querySelector('[slot=' + slotName + ']');
-						if (slot) {
-							slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
-						}
-					});
-
-					document.getElementById('ts-root-toggle')
-						.addEventListener('click', function(e) {
-							if (e.target && e.target.dataset.toggle) {
-								toggleSlot(e.target.dataset.toggle, e.target);
+				(function() {
+					setTimeout(function() {
+						const slots = [
+							'header',
+							'footer',
+							'sidebar-left',
+							'sidebar-right',
+							'sidebar-inner-left',
+							'sidebar-inner-right'
+						];
+						slots.forEach(function(slotName) {
+							const slot = document.querySelector('[slot=' + slotName + ']');
+							if (slot) {
+								slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
 							}
 						});
-				});
-			})();
-		</script>
-	</article>
+
+						document.getElementById('ts-root-toggle')
+							.addEventListener('click', function(e) {
+								if (e.target && e.target.dataset.toggle) {
+									toggleSlot(e.target.dataset.toggle, e.target);
+								}
+							});
+					});
+				})();
+			</script>
+		</article>
 
 
-	<article>
-		<h2>ts-button</h2>
-		<ts-button type="text">Text Button</ts-button>
-		<ts-button type="primary">Primary Button</ts-button>
-		<ts-button>Normal Button</ts-button>
-	</article>
-
-	<article>
-		<h2>ts-button-group</h2>
-		<ts-button-group>
+		<article>
+			<h2>ts-button</h2>
 			<ts-button type="text">Text Button</ts-button>
 			<ts-button type="primary">Primary Button</ts-button>
 			<ts-button>Normal Button</ts-button>
-		</ts-button-group>
-	</article>
+		</article>
+
+		<article>
+			<h2>ts-button-group</h2>
+			<ts-button-group>
+				<ts-button type="text">Text Button</ts-button>
+				<ts-button type="primary">Primary Button</ts-button>
+				<ts-button>Normal Button</ts-button>
+			</ts-button-group>
+		</article>
+	</ts-root>
 </body>
 </html>

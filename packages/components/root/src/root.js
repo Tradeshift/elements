@@ -1,20 +1,19 @@
 import { TSElement } from '@tradeshift/elements';
 import css from './root.css';
 
-const [$template, $decorateSlots] = [
-	Symbol('template'),
-	Symbol('decorateSlots')
-];
+const [$decorateSlots] = [Symbol('decorateSlots')];
 
-class Root extends TSElement('Root', 'HTMLBodyElement') {
+const BaseElement = TSElement('Root');
+
+class Root extends BaseElement {
 	static get observedAttributes() {
 		return [];
 	}
-	constructor() {
-		super();
-		this.styles(css);
-		this.template(
-			`
+	static get tagName() {
+		return 'ts-root';
+	}
+	static get html() {
+		return `
 			<slot name="header" class="hidden"></slot>
 			<slot name="sidebar-left" class="hidden"></slot>
 			<section class="content">
@@ -26,9 +25,12 @@ class Root extends TSElement('Root', 'HTMLBodyElement') {
 			</section>
 			<slot name="sidebar-right" class="hidden"></slot>
 			<slot name="footer" class="hidden"></slot>
-		`,
-			$template
-		);
+		`;
+	}
+	static get css() {
+		return css;
+	}
+	createdCallback() {
 		this[$decorateSlots] = this[$decorateSlots].bind(this);
 		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
 			slot.classList.add(slot.getAttribute('name'));
@@ -43,4 +45,4 @@ class Root extends TSElement('Root', 'HTMLBodyElement') {
 	}
 }
 
-customElements.define('ts-root', Root, { extends: 'body' });
+BaseElement.init(Root);
