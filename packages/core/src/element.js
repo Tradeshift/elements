@@ -32,9 +32,6 @@ export const TSElement = (name = 'Base') => {
 			this[$template] = elementConstructor[$template];
 			this.shadowRoot.appendChild(this[$cssTemplate].content.cloneNode(true));
 			this.shadowRoot.appendChild(this[$template].content.cloneNode(true));
-			if (name === 'Root') {
-				console.log(this.shadowRoot.innerHTML);
-			}
 
 			elementConstructor.observedAttributes.forEach(observedAttribute => {
 				this[observedAttribute] = this.getAttribute(observedAttribute);
