@@ -1,11 +1,9 @@
-import { TSElement } from '@tradeshift/elements';
+import { TSElement, defineElement } from '@tradeshift/elements';
 import css from './button-group.css';
 
 const [$groupButtons] = [Symbol('groupButtons')];
 
-const BaseElement = TSElement('ButtonGroup');
-
-class ButtonGroup extends BaseElement {
+class ButtonGroup extends TSElement('ButtonGroup') {
 	static get tagName() {
 		return 'ts-button-group';
 	}
@@ -37,4 +35,4 @@ class ButtonGroup extends BaseElement {
 	}
 }
 
-BaseElement.init(ButtonGroup);
+defineElement(ButtonGroup);

@@ -16,7 +16,7 @@ article {
 h2 {
 	margin: 0 0 20px;
 	padding: 0;
-	font-family: 'Fira Code';
+	font-family: 'Fira Code', Consolas;
 }
 
 header,

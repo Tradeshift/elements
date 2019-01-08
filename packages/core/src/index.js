@@ -1,2 +1,2 @@
 import './shims';
-export { TSElement } from './element';
+export { TSElement, defineElement } from './element';

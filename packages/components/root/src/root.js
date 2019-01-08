@@ -1,11 +1,9 @@
-import { TSElement } from '@tradeshift/elements';
+import { TSElement, defineElement } from '@tradeshift/elements';
 import css from './root.css';
 
 const [$decorateSlots] = [Symbol('decorateSlots')];
 
-const BaseElement = TSElement('Root');
-
-class Root extends BaseElement {
+class Root extends TSElement('Root') {
 	static get observedAttributes() {
 		return [];
 	}
@@ -45,4 +43,4 @@ class Root extends BaseElement {
 	}
 }
 
-BaseElement.init(Root);
+defineElement(Root);

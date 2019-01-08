@@ -1,8 +1,8 @@
 import commonStyles from './common.css';
 
-const [$template] = [Symbol('template')];
+const [$template, $cssTemplate] = [Symbol('template'), Symbol('cssTemplate')];
 
-const stylesInitialized = {};
+const cssPrepared = {};
 
 export const TSElement = (name = 'Base') => {
 	return class extends HTMLElement {
@@ -18,28 +18,6 @@ export const TSElement = (name = 'Base') => {
 		static get css() {
 			throw new Error('You need to specify some CSS!');
 		}
-		static init(Element) {
-			Element[$template] = document.createElement('template');
-			Element[$template].innerHTML = '';
-			if (Element.css) {
-				Element[$template].innerHTML = `
-					<style>
-						${commonStyles}
-						${Element.css}
-					</style>
-				`;
-			}
-			if (Element.html) {
-				Element[$template].innerHTML += Element.html;
-			}
-
-			if (window.ShadyCSS && !stylesInitialized[Element.tagName]) {
-				window.ShadyCSS.prepareTemplate(Element[$template], Element.tagName);
-				stylesInitialized[Element.tagName] = true;
-			}
-
-			customElements.define(Element.tagName, Element);
-		}
 		constructor() {
 			super();
 			if (name === 'Base') {
@@ -47,12 +25,21 @@ export const TSElement = (name = 'Base') => {
 			}
 			this.name = name;
 
+			const elementConstructor = Object.getPrototypeOf(this).constructor;
 			this.attachShadow({ mode: 'open' });
 
-			// Get the <template /> ref from the Class and not the instance (static!)
-			this[$template] = Object.getPrototypeOf(this).constructor[$template];
-
+			this[$cssTemplate] = elementConstructor[$cssTemplate];
+			this[$template] = elementConstructor[$template];
+			this.shadowRoot.appendChild(this[$cssTemplate].content.cloneNode(true));
 			this.shadowRoot.appendChild(this[$template].content.cloneNode(true));
+			if (name === 'Root') {
+				console.log(this.shadowRoot.innerHTML);
+			}
+
+			elementConstructor.observedAttributes.forEach(observedAttribute => {
+				this[observedAttribute] = this.getAttribute(observedAttribute);
+			});
+
 			this.createdCallback();
 		}
 		createdCallback() {}
@@ -78,4 +65,33 @@ export const TSElement = (name = 'Base') => {
 			);
 		}
 	};
+};
+
+export const defineElement = Element => {
+	// Set up the <template/> to work with ShadyCSS (this needs to be done once, before the template is used)
+	Element[$cssTemplate] = document.createElement('template');
+	Element[$cssTemplate].innerHTML = '';
+	if (Element.css) {
+		Element[$cssTemplate].innerHTML = `
+					<style>
+						${commonStyles}
+					</style>
+					<style>
+						${Element.css}
+					</style>
+				`;
+
+		if (window.ShadyCSS && !cssPrepared[Element.tagName]) {
+			window.ShadyCSS.prepareTemplate(Element[$cssTemplate], Element.tagName);
+			cssPrepared[Element.tagName] = true;
+		}
+	}
+
+	Element[$template] = document.createElement('template');
+	Element[$template].innerHTML = '';
+	if (Element.html) {
+		Element[$template].innerHTML = Element.html;
+	}
+
+	customElements.define(Element.tagName, Element);
 };

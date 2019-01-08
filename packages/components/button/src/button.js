@@ -1,11 +1,9 @@
-import { TSElement } from '@tradeshift/elements';
+import { TSElement, defineElement } from '@tradeshift/elements';
 import css from './button.css';
 
 const [$type, $grouped] = [Symbol('type'), Symbol('grouped')];
 
-const BaseElement = TSElement('Button');
-
-class Button extends BaseElement {
+class Button extends TSElement('Button') {
 	static get observedAttributes() {
 		return ['type', 'grouped'];
 	}
@@ -25,10 +23,7 @@ class Button extends BaseElement {
 		return css;
 	}
 
-	createdCallback() {
-		this.type = this.getAttribute('type');
-		this.grouped = this.getAttribute('grouped');
-	}
+	createdCallback() {}
 
 	get type() {
 		return this[$type];
@@ -57,4 +52,4 @@ class Button extends BaseElement {
 	}
 }
 
-BaseElement.init(Button);
+defineElement(Button);

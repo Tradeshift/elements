@@ -3,22 +3,12 @@
 <head>
 <title>Tradeshift Elements v0.1.0</title>
 
-<!-- <script type="module" src="/packages/core/lib/core.mjs"></script>
-<script type="module" src="/packages/root/lib/root.mjs"></script>
-<script type="module" src="/packages/button/lib/button.mjs"></script>
-<script type="module" src="/packages/button-group/lib/button-group.mjs"></script> -->
-
 <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
-<!-- <script nomodule src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script> -->
 
 <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-<!-- <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script> -->
-<!-- <script src="/node_modules/@webcomponents/custom-elements/src/native-shim.js"></script> -->
-
 <script src="/packages/core/lib/core.iife.js"></script>
-
 <script src="/packages/components/root/lib/root.iife.js"></script>
 <script src="/packages/components/button/lib/button.iife.js"></script>
 <script src="/packages/components/button-group/lib/button-group.iife.js"></script>
@@ -47,13 +37,13 @@
 			</ts-button-group>
 			<script>
 				function toggleSlot(name, button) {
-					const enabledSlot = document.querySelector('[slot=' + name + ']');
+					var enabledSlot = document.querySelector('[slot=' + name + ']');
 					if (enabledSlot) {
 						button.removeAttribute('type');
 						return enabledSlot.setAttribute('slot', '!' + name);
 					}
 
-					const disabledSlot = document.querySelector('[slot="!' + name + '"]');
+					var disabledSlot = document.querySelector('[slot="!' + name + '"]');
 					if (disabledSlot) {
 						button.setAttribute('type', 'primary');
 						return disabledSlot.setAttribute('slot', name);
@@ -71,7 +61,7 @@
 							'sidebar-inner-right'
 						];
 						slots.forEach(function(slotName) {
-							const slot = document.querySelector('[slot=' + slotName + ']');
+							var slot = document.querySelector('[slot=' + slotName + ']');
 							if (slot) {
 								slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
 							}
