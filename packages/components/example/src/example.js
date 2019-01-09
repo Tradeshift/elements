@@ -12,8 +12,9 @@ const [$cool, $hot, $fancyAction] = [
 
 /**
  * Example component
+ * Showing off the API
  *
- * Only Autonomous custom elements are supported.
+ * Note: Only Autonomous custom elements are supported.
  */
 class Example extends TSElement('Example') {
 	// Setup ..........................................................
