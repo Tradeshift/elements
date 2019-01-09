@@ -34,8 +34,7 @@ const postcssPlugin = postcss({
 	minimize: false,
 	sourceMap: 'inline',
 	autoprefixer: { grid: true },
-	browsers:
-		'last 2 Chrome major versions, last 2 ChromeAndroid major versions, last 2 Edge major versions, IE 11, last 2 Firefox major versions, last 2 FirefoxAndroid major versions, last 2 iOs major versions, last 2 Opera major versions, last 2 OperaMobile major versions, last 2 Safari major versions, last 2 Samsung major versions'
+	browsers: 'IE 11'
 });
 
 const config = [
@@ -45,7 +44,12 @@ const config = [
 			{
 				...outputConfig,
 				file: PKG_JSON.module,
-				format: 'es'
+				format: 'esm'
+			},
+			{
+				...outputConfig,
+				file: PKG_JSON.main,
+				format: 'cjs'
 			}
 		],
 		external: ['@tradeshift/elements'],
@@ -100,7 +104,6 @@ const config = [
 						'@babel/env',
 						{
 							modules: false,
-							// useBuiltIns: 'usage',
 							targets: {
 								ie: 11
 							}
