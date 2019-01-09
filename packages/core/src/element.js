@@ -89,5 +89,5 @@ export const defineElement = Element => {
 		Element[$template].innerHTML = Element.html;
 	}
 
-	customElements.define(Element.tagName, Element);
+	customElements.define(Element.tagName, Object.freeze(Element));
 };

@@ -3,7 +3,7 @@ import css from './root.css';
 
 const [$decorateSlots] = [Symbol('decorateSlots')];
 
-class Root extends TSElement('Root') {
+export class Root extends TSElement('Root') {
 	static get observedAttributes() {
 		return [];
 	}

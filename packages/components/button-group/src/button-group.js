@@ -3,7 +3,7 @@ import css from './button-group.css';
 
 const [$groupButtons] = [Symbol('groupButtons')];
 
-class ButtonGroup extends TSElement('ButtonGroup') {
+export class ButtonGroup extends TSElement('ButtonGroup') {
 	static get tagName() {
 		return 'ts-button-group';
 	}

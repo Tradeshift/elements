@@ -60,3 +60,4 @@ typings/
 # build output
 lib
 /commons.host.config.json
+.DS_Store

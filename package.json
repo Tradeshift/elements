@@ -5,7 +5,7 @@
     "lint": "cross-env-shell lerna exec -- eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
     "clean": "cross-env-shell lerna exec -- rm ./lib/*",
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
-    "watch": "cross-env-shell lerna exec --no-sort --stream -- rollup -w -c=`pwd`/rollup.config.js",
+    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "server": "npx @commonshost/server start --watch",
     "start": "run-p watch server"
   },
@@ -37,5 +37,12 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^1.6.3"
+  },
+  "dependencies": {
+    "@tradeshift/elements": "file:packages/core",
+    "@tradeshift/elements.button": "file:packages/components/button",
+    "@tradeshift/elements.button-group": "file:packages/components/button-group",
+    "@tradeshift/elements.example": "file:packages/components/example",
+    "@tradeshift/elements.root": "file:packages/components/root"
   }
 }

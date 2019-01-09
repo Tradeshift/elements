@@ -3,7 +3,7 @@ import css from './button.css';
 
 const [$type, $grouped] = [Symbol('type'), Symbol('grouped')];
 
-class Button extends TSElement('Button') {
+export class Button extends TSElement('Button') {
 	static get observedAttributes() {
 		return ['type', 'grouped'];
 	}

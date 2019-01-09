@@ -4,9 +4,11 @@
   "src": "src/example.js",
   "main": "lib/example.cjs.js",
   "module": "lib/example.mjs",
-  "browser": "lib/example.iife.js",
-  "files": ["lib/*"],
+  "browser": "lib/example.umd.js",
+  "files": [
+    "lib/*"
+  ],
   "dependencies": {
-    "@tradeshift/elements": "*"
+    "@tradeshift/elements": "file:../../core"
   }
 }

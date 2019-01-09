@@ -4,6 +4,8 @@
   "src": "src/index.js",
   "main": "lib/core.cjs.js",
   "module": "lib/core.mjs",
-  "browser": "lib/core.iife.js",
-  "files": ["lib/*"]
+  "browser": "lib/core.umd.js",
+  "files": [
+    "lib/*"
+  ]
 }

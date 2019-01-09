@@ -4,9 +4,11 @@
   "src": "src/root.js",
   "main": "lib/root.cjs.js",
   "module": "lib/root.mjs",
-  "browser": "lib/root.iife.js",
-  "files": ["lib/*"],
+  "browser": "lib/root.umd.js",
+  "files": [
+    "lib/*"
+  ],
   "dependencies": {
-    "@tradeshift/elements": "*"
+    "@tradeshift/elements": "file:../../core"
   }
 }

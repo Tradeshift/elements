@@ -4,9 +4,11 @@
   "src": "src/button.js",
   "main": "lib/button.cjs.js",
   "module": "lib/button.mjs",
-  "browser": "lib/button.iife.js",
-  "files": ["lib/*"],
+  "browser": "lib/button.umd.js",
+  "files": [
+    "lib/*"
+  ],
   "dependencies": {
-    "@tradeshift/elements": "*"
+    "@tradeshift/elements": "file:../../core"
   }
 }

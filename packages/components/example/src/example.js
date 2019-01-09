@@ -16,7 +16,7 @@ const [$cool, $hot, $fancyAction] = [
  *
  * Note: Only Autonomous custom elements are supported.
  */
-class Example extends TSElement('Example') {
+export class Example extends TSElement('Example') {
 	// Setup ..........................................................
 
 	/**
