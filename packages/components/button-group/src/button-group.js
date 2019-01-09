@@ -17,7 +17,8 @@ class ButtonGroup extends TSElement('ButtonGroup') {
 	static get css() {
 		return css;
 	}
-	createdCallback() {
+	constructor() {
+		super();
 		this[$groupButtons] = this[$groupButtons].bind(this);
 		this.shadowRoot
 			.querySelector('slot')

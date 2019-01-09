@@ -36,10 +36,7 @@ export const TSElement = (name = 'Base') => {
 			elementConstructor.observedAttributes.forEach(observedAttribute => {
 				this[observedAttribute] = this.getAttribute(observedAttribute);
 			});
-
-			this.createdCallback();
 		}
-		createdCallback() {}
 
 		connectedCallback() {
 			if (this.isConnected) {
@@ -49,6 +46,8 @@ export const TSElement = (name = 'Base') => {
 				}
 			}
 		}
+		disconnectedCallback() {}
+		adoptedCallback() {}
 		attributeChangedCallback(name, oldValue, newValue) {
 			this[name] = newValue;
 			if (window.ShadyCSS) {

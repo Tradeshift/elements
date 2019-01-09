@@ -23,8 +23,6 @@ class Button extends TSElement('Button') {
 		return css;
 	}
 
-	createdCallback() {}
-
 	get type() {
 		return this[$type];
 	}

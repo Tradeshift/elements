@@ -28,7 +28,8 @@ class Root extends TSElement('Root') {
 	static get css() {
 		return css;
 	}
-	createdCallback() {
+	constructor() {
+		super();
 		this[$decorateSlots] = this[$decorateSlots].bind(this);
 		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
 			slot.classList.add(slot.getAttribute('name'));
