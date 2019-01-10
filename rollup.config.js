@@ -12,8 +12,6 @@ const PACKAGE_ROOT_PATH = process.cwd();
 const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, 'package.json'));
 const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
 
-console.log('\n\n', PKG_JSON, '\n\n');
-
 const outputConfig = {
 	extend: true,
 	sourcemap: true,
