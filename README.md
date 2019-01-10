@@ -33,7 +33,7 @@ This is an incomplete list of limitations that we should watch out for, as long 
 
 ### ShadyCSS
 
-https://github.com/webcomponents/shadycss#limitations
+> https://github.com/webcomponents/shadycss#limitations
 
 #### Selector scoping
 
@@ -81,7 +81,7 @@ ShadyCSS works by processing a template for a given custom element class. Only t
 
 ### ShadyDOM
 
-https://github.com/webcomponents/shadydom#limitations
+> https://github.com/webcomponents/shadydom#limitations
 
 #### Asynchronous operation
 
@@ -89,7 +89,7 @@ ShadyDOM distribution is asynchronous for performance reasons. This means that t
 
 ### Custom Elements
 
-https://github.com/webcomponents/custom-elements#known-bugs-and-limitations
+> https://github.com/webcomponents/custom-elements#known-bugs-and-limitations
 
 #### Element API patching
 
@@ -107,7 +107,7 @@ The :defined CSS pseudo-class is not supported.
 
 ### `<template />`
 
-https://github.com/webcomponents/template#known-limitations
+> https://github.com/webcomponents/template#known-limitations
 
 #### Template nodes in main document are upgraded after DOMContentLoaded
 
