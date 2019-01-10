@@ -6,8 +6,8 @@ The future is here!
 
 This quick example shows off the API, but doesn't really do anything on its own.
 
-- [example.js](./blob/master/packages/components/example/src/example.js)
-- [example.css](./blob/master/packages/components/example/src/example.css)
+- [example.js](./packages/components/example/src/example.js)
+- [example.css](./packages/components/example/src/example.css)
 
 ## Polyfills required
 
