@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ts-example test</title>
+
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="/node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/wct-mocha/wct-mocha.js"></script>
+
+    <!-- Always load @tradeshift/elements first -->
+    <script type="module" src="/packages/core/lib/core.umd.js"></script>
+
+    <!-- Load dependencies of the component here -->
+    <!-- <script type="module" src="/packages/components/dependency-of-example/lib/dependency-of-example.umd.js"></script> -->
+
+    <!-- Load the component you want to test -->
+    <script type="module" src="../lib/example.umd.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture">
+      <template>
+        <ts-example></ts-example>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ChangedPropertyTestFixture">
+      <template>
+        <ts-example cool="very"></ts-example>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+      suite('ts-example', () => {
+
+        test('instantiating the element with default properties works', () => {
+          const element = fixture('BasicTestFixture');
+          const elementShadowRoot = element.shadowRoot;
+          const elementDiv = elementShadowRoot.querySelector('div');
+          assert.equal(elementDiv.innerHTML, 'This is the static template.');
+        });
+
+        test('setting a property on the element works', () => {
+          // Create a test fixture
+          const element = fixture('ChangedPropertyTestFixture');
+          assert.equal(element.cool, 'very');
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

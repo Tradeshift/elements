@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ts-button-group test</title>
+
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="/node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/wct-mocha/wct-mocha.js"></script>
+
+    <!-- Always load @tradeshift/elements first -->
+    <script type="module" src="/packages/core/lib/core.umd.js"></script>
+
+    <!-- Load dependencies of the component here -->
+    <script type="module" src="/packages/components/button/lib/button.umd.js"></script>
+
+    <!-- Load the component you want to test -->
+    <script type="module" src="../lib/button-group.umd.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture">
+      <template>
+        <ts-button-group>
+        	<ts-button>Button</ts-button>
+        	<ts-button>Button</ts-button>
+        </ts-button-group>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+      suite('ts-button-group', () => {
+
+        test('instantiating the element with default properties works', () => {
+          const element = fixture('BasicTestFixture');
+          const elementShadowRoot = element.shadowRoot;
+          const elementSection = elementShadowRoot.querySelector('section');
+          assert.exists(elementSection);
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

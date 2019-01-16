@@ -42,9 +42,7 @@ export class Example extends TSElement('Example') {
 	 */
 	static get html() {
 		return `
-			<div>
-				This is the static template.
-			</div>
+			<div>This is the static template.</div>
 		`;
 	}
 
@@ -64,11 +62,6 @@ export class Example extends TSElement('Example') {
 
 		// Bind private methods to `this`
 		this[$fancyAction] = this[$fancyAction].bind(this);
-
-		// ShadowRoot is available at this point
-		this.shadowRoot
-			.querySelector('slot')
-			.addEventListener('slotchange', this[$fancyAction]);
 	}
 
 	/**

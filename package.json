@@ -7,7 +7,9 @@
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "server": "npx @commonshost/server start --watch",
-    "start": "run-p watch server"
+    "start": "run-p watch server",
+    "test": "run-s build browserstack",
+    "browserstack": "node test/browserstack.js"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -15,12 +17,17 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "@babel/runtime": "^7.2.0",
-    "@webcomponents/webcomponentsjs": "^2.2.2",
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
     "acorn": "^6.0.5",
+    "browserstack-runner": "^0.9.0",
+    "chai": "^4.2.0",
+    "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "eslint": "5.4.0",
     "eslint-config-tradeshift": "6.0.1",
     "lerna": "^3.10.1",
+    "mocha": "^5.2.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.8",
     "postcss-preset-env": "^6.5.0",
@@ -32,7 +39,8 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-postcss": "^1.6.3"
+    "rollup-plugin-postcss": "^1.6.3",
+    "wct-mocha": "^1.0.0"
   },
   "dependencies": {
     "@tradeshift/elements": "file:packages/core",
