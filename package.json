@@ -1,5 +1,5 @@
 {
-  "name": "webcomponents-experiments",
+  "name": "tradeshift-elements",
   "scripts": {
     "prelint": "cross-env-shell lerna exec -- prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css}\"",
     "lint": "cross-env-shell lerna exec -- eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
@@ -8,10 +8,6 @@
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "server": "npx @commonshost/server start --watch",
     "start": "run-p watch server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sampi/webcomponents-experiments.git"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -44,5 +40,25 @@
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.example": "file:packages/components/example",
     "@tradeshift/elements.root": "file:packages/components/root"
-  }
+  },
+  "repository": "github:Tradeshift/elements.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/Tradeshift/elements/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "keywords": [
+    "ui",
+    "components",
+    "tradeshift",
+    "reusable",
+    "webcomponents",
+    "client-side",
+    "javascript",
+    "css",
+    "customelements",
+    "shadowdom"
+  ]
 }

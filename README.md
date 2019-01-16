@@ -1,6 +1,12 @@
 # Tradeshift Elements
 
-The future is here!
+Reusable Tradeshift UI Components as Web Components
+
+## How to run
+
+* `lerna bootstrap` - bootstrap all packages and make sure they work together
+* `npm start` - start the dev server and watch for changes
+* Open [https://localhost:8443/](https://localhost:8443/)
 
 ## Example Element
 
@@ -112,3 +118,14 @@ The :defined CSS pseudo-class is not supported.
 #### Template nodes in main document are upgraded after DOMContentLoaded
 
 The first timepoint in which the polyfill can be certain the main document is loaded is DOMContentLoaded. As such, we use this timepoint to bootstrap any `<template>` as defined in the main document. This means that any scripts in the main document that run before this event (e.g. inline scripts) will not have the properly upgraded templates. Instead, listen for DOMContentLoaded yourself and only after that interact with any `<template>` in the main document.
+
+
+## License
+
+- You can always create forks on GitHub, submit Issues and Pull Requests.
+- You can only use Tradeshift Elements to make apps on a Tradeshift platform, e.g. tradeshift.com.
+- You can fix a bug until the bugfix is deployed by Tradeshift.
+- You can host Tradeshift Elements yourself.
+- If you want to make a bigger change or just want to talk with us, reach out to our team here on GitHub.
+
+You can read the full license agreement in the [LICENSE.md](https://github.com/Tradeshift/elements/blob/master/LICENSE.md).

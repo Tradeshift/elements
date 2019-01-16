@@ -1,1 +1,17 @@
-{"description": "Tradeshift Elements"}
+{
+	"description": "Tradeshift Elements - Reusable Tradeshift UI Components as Web Components",
+	"topics": [
+		"ui",
+		"components",
+		"tradeshift",
+		"reusable",
+		"webcomponents",
+		"client-side",
+		"javascript",
+		"css",
+		"customelements",
+		"shadowdom"
+	],
+	"enableIssues": true,
+	"enableWiki": true
+}
