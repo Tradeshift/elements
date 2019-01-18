@@ -1,6 +1,10 @@
 const chalk = require('chalk');
+// const browserstack = require('browserstack-local');
 const browserStackRunner = require('browserstack-runner');
-const config = require('./browserstack.json');
+const config = require('./browserstack.conf.js');
+
+// const commitId = process.env.TRAVIS_COMMIT;
+// config.build = commitId ? 'Commit-' + commitId.slice(0, commitId.length / 2) : 'Local run, ' + new Date().toISOString();
 
 const logo = function() {
 	console.log('[ INSERT LOGO HERE ]');
