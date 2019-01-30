@@ -1,3 +1,5 @@
+import '@webcomponents/webcomponentsjs/webcomponents-bundle';
+
 import { storiesOf } from '@storybook/html';
 import { select } from '@storybook/addon-knobs';
 
@@ -13,7 +15,21 @@ storiesOf('ts-button', module)
 			<ts-button type="text">Text Button</ts-button>
 		`;
 	})
-	.add('attributes', () => {
+	.add('Attributes', () => {
 		const type = select('Type', ['primary', 'secondary', 'text'], 'text');
 		return `<ts-button type="${type}">Button</ts-button>`;
+	});
+
+storiesOf('ts-button/states', module)
+	.add('default type', () => {
+		return '<ts-button>Button</ts-button>';
+	})
+	.add('type=primary', () => {
+		return '<ts-button type="primary">Button</ts-button>';
+	})
+	.add('type=secondary', () => {
+		return '<ts-button type="secondary">Button</ts-button>';
+	})
+	.add('type=text', () => {
+		return '<ts-button type="text">Button</ts-button>';
 	});

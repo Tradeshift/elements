@@ -1,13 +1,24 @@
 const bs = require('browserstack');
+const geminiBaseConfig = require('./gemini.base.json');
 
 const browserStackCredentials = {
 	username: process.env.BROWSER_STACK_USERNAME,
 	password: process.env.BROWSER_STACK_ACCESS_KEY
 };
 
+const getRandom = max => Math.floor(Math.random() * Math.floor(max));
+
+const getBrowserKey = browser =>
+	`${browser.os.replace(' ', '')}-${browser.os_version}_${
+		browser.browserName
+	}-${browser.version}`
+		.replace(/[ .]/gi, '-')
+		.replace(/-0$/, '')
+		.toLowerCase();
+
 try {
 	const bsClient = bs.createClient(browserStackCredentials);
-	const browsers = [];
+	const browsers = {};
 	const tmpBrowsers = {};
 	bsClient.getBrowsers((error, allBrowsers) => {
 		if (error) {
@@ -19,6 +30,13 @@ try {
 			}
 
 			const { browser, browser_version } = b;
+
+			b.browserName = b.browser;
+			delete b.browser;
+			b.version = b.browser_version;
+			delete b.browser_version;
+			delete b.real_mobile;
+			delete b.device;
 
 			if (
 				browser === 'yandex' ||
@@ -40,16 +58,33 @@ try {
 			const tmpBrowsersArr = Object.values(tmpBrowsers[browser]);
 			const latest = tmpBrowsersArr.pop();
 			const previous = tmpBrowsersArr.pop();
-			browsers.push(
-				latest[Math.floor(Math.random() * Math.floor(latest.length))]
-			);
+
+			const latestBrowser = latest[getRandom(latest.length)];
+			browsers[getBrowserKey(latestBrowser)] = {
+				desiredCapabilities: {
+					...latestBrowser
+				}
+			};
+
 			if (previous) {
-				browsers.push(
-					previous[Math.floor(Math.random() * Math.floor(previous.length))]
-				);
+				const previousBrowser = previous[getRandom(previous.length)];
+				browsers[getBrowserKey(previousBrowser)] = {
+					desiredCapabilities: {
+						...previousBrowser
+					}
+				};
 			}
 		});
-		console.log(JSON.stringify(browsers, null, 2));
+		console.log(
+			JSON.stringify(
+				{
+					...geminiBaseConfig,
+					browsers
+				},
+				null,
+				2
+			)
+		);
 	});
 } catch (e) {
 	console.error(e);

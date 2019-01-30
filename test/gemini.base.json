@@ -1,0 +1,11 @@
+{
+	"rootUrl": "http://localhost:9009/",
+	"gridUrl": "http://this.address.is.ignored/so-anything-goes",
+	"system": {
+		"plugins": {
+			"browserstack": {
+				"localIdentifier": "elements"
+			}
+		}
+	}
+}
