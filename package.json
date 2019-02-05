@@ -8,13 +8,8 @@
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "server": "npx @commonshost/server start --watch",
     "start": "run-p watch server",
-    "pretest": "node test/browserstack.browsers.js > .gemini.json",
-    "test": "start-server-and-test storybook:ci http://localhost:9009 gemini:test",
-    "test:update": "start-server-and-test storybook:ci http://localhost:9009 gemini:update",
-    "gemini:update": "npx gemini update --reporter vflat",
-    "gemini:test": "npx gemini test --reporter vflat",
-    "storybook": "start-storybook -p 9009 -c .storybook",
-    "storybook:ci": "npm run storybook -- --ci "
+    "storybook": "start-storybook",
+    "test-storybook": "screener-storybook --conf screener.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -32,8 +27,6 @@
     "cross-env": "^5.2.0",
     "eslint": "5.4.0",
     "eslint-config-tradeshift": "6.0.1",
-    "gemini": "^7.3.0",
-    "gemini-browserstack": "^1.1.0",
     "lerna": "^3.10.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.8",
@@ -47,7 +40,7 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^1.6.3",
-    "start-server-and-test": "^1.7.11"
+    "screener-storybook": "^0.16.11"
   },
   "dependencies": {
     "@storybook/react": "^4.1.11",

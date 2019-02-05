@@ -1,11 +1,11 @@
-import '@webcomponents/webcomponentsjs/webcomponents-bundle';
+// import '@webcomponents/webcomponentsjs/webcomponents-bundle';
 
 import { storiesOf } from '@storybook/html';
 import { select } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements/src/vars.css';
-import '@tradeshift/elements';
-import '@tradeshift/elements.button';
+// import '@tradeshift/elements';
+// import '@tradeshift/elements.button';
 
 storiesOf('ts-button', module)
 	.add('Gallery', () => {

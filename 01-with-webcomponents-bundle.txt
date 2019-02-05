@@ -1,0 +1,1287 @@
+
+> tradeshift-elements@ test-storybook /Users/dsp/Development/@tradeshift/elements
+> screener-storybook --conf screener.config.js "--debug"
+
+
+screener-storybook v0.16.11
+
+
+Starting Storybook server...
+> start-storybook --port 65393 --config-dir .storybook --ci 
+
+Please wait. Starting Storybook may take a minute...
+
+info
+@storybook/react v4.1.11
+info
+info => Loading presets
+info => Loading presets
+info => Loading custom addons config.
+info => Using base config because react-scripts is not installed.
+info
+=> Using default webpack setup based on "create-react-app".
+info => Using base config because react-scripts is not installed.
+0% compiling
+
+10% building 0/0 modules 0 active
+
+10% building 0/1 modules 1 active ...ck-hot-middleware/client.js?reload=true
+                                           
+10% building 1/1 modules 0 active
+ 10% building 1/2 modules 1 active ...ck-hot-middleware/client.js?reload=true
+                                            10% building 2/2 modules 0 active
+ 10% building 2/3 modules 1 active ...ok/core/dist/server/common/polyfills.js
+
+10% building 2/4 modules 2 active ...ook/core/dist/server/preview/globals.js
+
+10% building 3/4 modules 1 active ...ook/core/dist/server/preview/globals.js
+                                           
+10% building 4/4 modules 0 active
+ 10% building 4/5 modules 1 active ...radeshift/elements/.storybook/config.js
+
+10% building 4/6 modules 2 active ...ebpack-hot-middleware/client-overlay.js
+
+10% building 4/7 modules 3 active ...ebpack-hot-middleware/process-update.js
+
+10% building 4/8 modules 4 active ...s/node_modules/querystring-es3/index.js
+ 10% building 5/8 modules 3 active ...s/node_modules/querystring-es3/index.js
+ 10% building 6/8 modules 2 active ...s/node_modules/querystring-es3/index.js
+ 10% building 6/9 modules 3 active .../node_modules/webpack/buildin/module.js
+ 10% building 7/9 modules 2 active .../node_modules/webpack/buildin/module.js
+
+10% building 8/9 modules 1 active ...radeshift/elements/.storybook/config.js
+                                            11% building 9/9 modules 0 active
+
+11% building 9/10 modules 1 active ..._modules/regenerator-runtime/runtime.js
+ 11% building 9/11 modules 2 active ...dules/webpack/buildin/harmony-module.js
+ 11% building 9/12 modules 3 active ...ckages/components sync /\.stories\.js$/
+ 11% building 9/13 modules 4 active .../node_modules/querystring-es3/decode.js
+ 11% building 9/14 modules 5 active .../node_modules/querystring-es3/encode.js
+ 11% building 10/14 modules 4 active .../node_modules/querystring-es3/encode.js
+
+11% building 11/14 modules 3 active .../node_modules/querystring-es3/encode.js
+ 11% building 12/14 modules 2 active ...ckages/components sync /\.stories\.js$/
+
+11% building 12/15 modules 3 active ...s/node_modules/airbnb-js-shims/index.js
+ 11% building 12/16 modules 4 active .../elements/node_modules/global/window.js
+ 11% building 13/16 modules 3 active .../elements/node_modules/global/window.js
+ 11% building 13/17 modules 4 active ...leware/node_modules/strip-ansi/index.js
+ 11% building 14/17 modules 3 active ...leware/node_modules/strip-ansi/index.js
+ 11% building 14/18 modules 4 active ...js/modules/es7.symbol.async-iterator.js
+
+11% building 14/19 modules 5 active ...e_modules/core-js/modules/es6.symbol.js
+
+11% building 14/20 modules 6 active ...s/core-js/modules/es6.array.iterator.js
+ 11% building 14/21 modules 7 active ...les/core-js/modules/web.dom.iterable.js
+ 11% building 14/22 modules 8 active ...s/core-js/modules/es6.array.for-each.js
+ 11% building 15/22 modules 7 active ...s/core-js/modules/es6.array.for-each.js
+ 11% building 16/22 modules 6 active ...s/core-js/modules/es6.array.for-each.js
+ 11% building 16/23 modules 7 active ...lements/node_modules/ansi-html/index.js
+
+12% building 17/23 modules 6 active ...lements/node_modules/ansi-html/index.js
+ 12% building 18/23 modules 5 active ...lements/node_modules/ansi-html/index.js
+ 12% building 19/23 modules 4 active ...lements/node_modules/ansi-html/index.js
+ 12% building 20/23 modules 3 active ...lements/node_modules/ansi-html/index.js
+ 12% building 21/23 modules 2 active ...lements/node_modules/ansi-html/index.js
+ 12% building 21/24 modules 3 active .../node_modules/webpack/buildin/global.js
+
+12% building 21/25 modules 4 active ...node_modules/core-js/fn/symbol/index.js
+ 12% building 22/25 modules 3 active ...node_modules/core-js/fn/symbol/index.js
+ 12% building 23/25 modules 2 active ...node_modules/core-js/fn/symbol/index.js
+ 12% building 23/26 modules 3 active ...nts/node_modules/html-entities/index.js
+ 12% building 23/27 modules 4 active ...onents/button/stories/button.stories.js
+ 12% building 24/27 modules 3 active ...onents/button/stories/button.stories.js
+ 13% building 25/27 modules 2 active ...onents/button/stories/button.stories.js
+
+13% building 25/28 modules 3 active ...modules/@storybook/addons/dist/index.js
+
+13% building 25/29 modules 4 active ...es/@storybook/addon-knobs/dist/index.js
+ 13% building 25/30 modules 5 active ...e_modules/airbnb-js-shims/target/es5.js
+ 13% building 25/31 modules 6 active ..._modules/core-js/modules/_wks-define.js
+
+13% building 26/31 modules 5 active ..._modules/core-js/modules/_wks-define.js
+
+13% building 26/32 modules 6 active .../core-js/modules/_add-to-unscopables.js
+
+13% building 26/33 modules 7 active ...e_modules/core-js/modules/_iter-step.js
+
+13% building 26/34 modules 8 active ...e_modules/core-js/modules/_iterators.js
+
+13% building 26/35 modules 9 active ..._modules/core-js/modules/_to-iobject.js
+
+13% building 26/36 modules 10 active ...modules/core-js/modules/_iter-define.js
+
+13% building 26/37 modules 11 active ...modules/core-js/modules/_object-keys.js
+
+13% building 26/38 modules 12 active ...de_modules/core-js/modules/_redefine.js
+
+13% building 26/39 modules 13 active ...node_modules/core-js/modules/_global.js
+
+13% building 26/40 modules 14 active ...s/node_modules/core-js/modules/_hide.js
+
+13% building 26/41 modules 15 active ...ts/node_modules/core-js/modules/_wks.js
+
+13% building 26/42 modules 16 active ...node_modules/core-js/modules/_export.js
+
+13% building 26/43 modules 17 active ...dules/core-js/modules/_array-methods.js
+
+13% building 26/44 modules 18 active ...dules/core-js/modules/_strict-method.js
+
+13% building 26/45 modules 19 active ...ts/node_modules/core-js/modules/_has.js
+
+13% building 26/46 modules 20 active ...modules/core-js/modules/_descriptors.js
+
+13% building 26/47 modules 21 active .../node_modules/core-js/modules/_fails.js
+
+13% building 26/48 modules 22 active ...s/node_modules/core-js/modules/_meta.js
+
+13% building 26/49 modules 23 active ...node_modules/core-js/modules/_shared.js
+
+13% building 26/50 modules 24 active ...s/core-js/modules/_set-to-string-tag.js
+
+13% building 26/51 modules 25 active ...ode_modules/core-js/modules/_wks-ext.js
+
+13% building 26/52 modules 26 active ...ts/node_modules/core-js/modules/_uid.js
+
+13% building 26/53 modules 27 active ...e_modules/core-js/modules/_enum-keys.js
+
+13% building 26/54 modules 28 active ...de_modules/core-js/modules/_is-array.js
+
+13% building 26/55 modules 29 active ...e_modules/core-js/modules/_is-object.js
+
+13% building 26/56 modules 30 active ...e_modules/core-js/modules/_an-object.js
+
+13% building 26/57 modules 31 active ...odules/core-js/modules/_to-primitive.js
+
+13% building 26/58 modules 32 active ...dules/core-js/modules/_property-desc.js
+
+13% building 26/59 modules 33 active ...dules/core-js/modules/_object-create.js
+
+13% building 26/60 modules 34 active ...les/core-js/modules/_object-gopn-ext.js
+
+13% building 26/61 modules 35 active ...modules/core-js/modules/_object-gopd.js
+
+13% building 26/62 modules 36 active ...e_modules/core-js/modules/_object-dp.js
+
+13% building 26/63 modules 37 active ...modules/core-js/modules/_object-gopn.js
+
+13% building 26/64 modules 38 active ..._modules/core-js/modules/_object-pie.js
+
+13% building 26/65 modules 39 active ...modules/core-js/modules/_object-gops.js
+
+13% building 26/66 modules 40 active ...ode_modules/core-js/modules/_library.js
+
+13% building 26/67 modules 41 active ...es/@storybook/html/dist/client/index.js
+
+13% building 26/68 modules 42 active ...s/@storybook/react/dist/client/index.js
+ 13% building 27/68 modules 41 active ...s/@storybook/react/dist/client/index.js
+ 13% building 28/68 modules 40 active ...s/@storybook/react/dist/client/index.js
+
+13% building 29/68 modules 39 active ...s/@storybook/react/dist/client/index.js
+ 13% building 30/68 modules 38 active ...s/@storybook/react/dist/client/index.js
+ 13% building 31/68 modules 37 active ...s/@storybook/react/dist/client/index.js
+ 13% building 32/68 modules 36 active ...s/@storybook/react/dist/client/index.js
+ 13% building 33/68 modules 35 active ...s/@storybook/react/dist/client/index.js
+ 14% building 34/68 modules 34 active ...s/@storybook/react/dist/client/index.js
+ 14% building 35/68 modules 33 active ...s/@storybook/react/dist/client/index.js
+ 14% building 36/68 modules 32 active ...s/@storybook/react/dist/client/index.js
+ 14% building 37/68 modules 31 active ...s/@storybook/react/dist/client/index.js
+ 14% building 38/68 modules 30 active ...s/@storybook/react/dist/client/index.js
+ 14% building 39/68 modules 29 active ...s/@storybook/react/dist/client/index.js
+ 14% building 40/68 modules 28 active ...s/@storybook/react/dist/client/index.js
+ 14% building 41/68 modules 27 active ...s/@storybook/react/dist/client/index.js
+ 15% building 42/68 modules 26 active ...s/@storybook/react/dist/client/index.js
+ 15% building 43/68 modules 25 active ...s/@storybook/react/dist/client/index.js
+ 15% building 43/69 modules 26 active ...core-js/modules/es6.object.to-string.js
+ 15% building 43/70 modules 27 active ...ore-js/modules/es7.symbol.observable.js
+ 15% building 43/71 modules 28 active ...s/node_modules/core-js/modules/_core.js
+ 15% building 43/72 modules 29 active ...dules/html-entities/lib/xml-entities.js
+
+15% building 43/73 modules 30 active ...les/html-entities/lib/html4-entities.js
+ 15% building 43/74 modules 31 active ...les/html-entities/lib/html5-entities.js
+
+15% building 44/74 modules 30 active ...les/html-entities/lib/html5-entities.js
+
+15% building 45/74 modules 29 active ...les/html-entities/lib/html5-entities.js
+
+15% building 46/74 modules 28 active ...les/html-entities/lib/html5-entities.js
+
+15% building 47/74 modules 27 active ...les/html-entities/lib/html5-entities.js
+
+15% building 48/74 modules 26 active ...les/html-entities/lib/html5-entities.js
+ 15% building 49/74 modules 25 active ...les/html-entities/lib/html5-entities.js
+ 16% building 50/74 modules 24 active ...les/html-entities/lib/html5-entities.js
+
+16% building 51/74 modules 23 active ...les/html-entities/lib/html5-entities.js
+ 16% building 52/74 modules 22 active ...les/html-entities/lib/html5-entities.js
+ 16% building 53/74 modules 21 active ...les/html-entities/lib/html5-entities.js
+ 16% building 54/74 modules 20 active ...les/html-entities/lib/html5-entities.js
+ 16% building 55/74 modules 19 active ...les/html-entities/lib/html5-entities.js
+ 16% building 56/74 modules 18 active ...les/html-entities/lib/html5-entities.js
+ 16% building 57/74 modules 17 active ...les/html-entities/lib/html5-entities.js
+ 16% building 58/74 modules 16 active ...les/html-entities/lib/html5-entities.js
+ 17% building 59/74 modules 15 active ...les/html-entities/lib/html5-entities.js
+ 17% building 60/74 modules 14 active ...les/html-entities/lib/html5-entities.js
+ 17% building 61/74 modules 13 active ...les/html-entities/lib/html5-entities.js
+ 17% building 62/74 modules 12 active ...les/html-entities/lib/html5-entities.js
+
+17% building 63/74 modules 11 active ...les/html-entities/lib/html5-entities.js
+ 17% building 64/74 modules 10 active ...les/html-entities/lib/html5-entities.js
+  17% building 65/74 modules 9 active ...les/html-entities/lib/html5-entities.js
+ 17% building 66/74 modules 8 active ...les/html-entities/lib/html5-entities.js
+ 18% building 67/74 modules 7 active ...les/html-entities/lib/html5-entities.js
+ 18% building 68/74 modules 6 active ...les/html-entities/lib/html5-entities.js
+ 18% building 69/74 modules 5 active ...les/html-entities/lib/html5-entities.js
+ 18% building 70/74 modules 4 active ...les/html-entities/lib/html5-entities.js
+ 18% building 71/74 modules 3 active ...les/html-entities/lib/html5-entities.js
+ 18% building 72/74 modules 2 active ...les/html-entities/lib/html5-entities.js
+ 18% building 73/74 modules 1 active ...les/html-entities/lib/html5-entities.js
+ 18% building 73/75 modules 2 active ...k/addons/dist/storybook-channel-mock.js
+ 18% building 73/76 modules 3 active ...storybook/addons/dist/make-decorator.js
+ 18% building 73/77 modules 4 active ...s/modules/es6.object.define-property.js
+
+18% building 73/78 modules 5 active ...es/core-js/modules/es6.function.name.js
+
+18% building 73/79 modules 6 active ...ules/core-js/modules/es6.object.keys.js
+
+18% building 73/80 modules 7 active ...odules/core-js/modules/es6.array.map.js
+
+18% building 73/81 modules 8 active ...ybook/addon-knobs/dist/registerKnobs.js
+
+18% building 73/82 modules 9 active ...les/core-js/modules/es6.array.filter.js
+
+18% building 73/83 modules 10 active ...odules/airbnb-js-shims/target/es2015.js
+ 18% building 73/84 modules 11 active ..._modules/core-js/modules/_object-gpo.js
+
+18% building 73/85 modules 12 active ...modules/core-js/modules/_iter-create.js
+
+18% building 73/86 modules 13 active ...ode_modules/core-js/modules/_iobject.js
+ 18% building 73/87 modules 14 active ...ode_modules/core-js/modules/_defined.js
+ 18% building 73/88 modules 15 active ...ore-js/modules/_object-keys-internal.js
+ 18% building 73/89 modules 16 active ...dules/core-js/modules/_enum-bug-keys.js
+ 18% building 73/90 modules 17 active ...ts/node_modules/core-js/modules/_ctx.js
+ 18% building 73/91 modules 18 active ...e_modules/core-js/modules/_to-object.js
+ 18% building 73/92 modules 19 active ...e_modules/core-js/modules/_to-length.js
+ 18% building 73/93 modules 20 active ...ore-js/modules/_array-species-create.js
+
+18% building 73/94 modules 21 active ...ts/node_modules/core-js/modules/_cof.js
+
+18% building 73/95 modules 22 active ..._modules/core-js/modules/_object-dps.js
+
+18% building 73/96 modules 23 active ..._modules/core-js/modules/_dom-create.js
+
+18% building 73/97 modules 24 active ..._modules/core-js/modules/_shared-key.js
+
+18% building 73/98 modules 25 active ...s/node_modules/core-js/modules/_html.js
+
+18% building 73/99 modules 26 active ...ules/core-js/modules/_ie8-dom-define.js
+ 18% building 73/100 modules 27 active ...leware/node_modules/ansi-regex/index.js
+ 18% building 74/100 modules 26 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 75/100 modules 25 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 76/100 modules 24 active ...leware/node_modules/ansi-regex/index.js
+
+19% building 77/100 modules 23 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 78/100 modules 22 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 79/100 modules 21 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 80/100 modules 20 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 81/100 modules 19 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 82/100 modules 18 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 83/100 modules 17 active ...leware/node_modules/ansi-regex/index.js
+ 19% building 83/101 modules 18 active ...ments/node_modules/es5-shim/es5-sham.js
+
+20% building 84/101 modules 17 active ...ments/node_modules/es5-shim/es5-sham.js
+
+20% building 85/101 modules 16 active ...ments/node_modules/es5-shim/es5-sham.js
+
+20% building 86/101 modules 15 active ...ments/node_modules/es5-shim/es5-sham.js
+
+20% building 87/101 modules 14 active ...ments/node_modules/es5-shim/es5-sham.js
+ 20% building 88/101 modules 13 active ...ments/node_modules/es5-shim/es5-sham.js
+ 20% building 89/101 modules 12 active ...ments/node_modules/es5-shim/es5-sham.js
+ 20% building 90/101 modules 11 active ...ments/node_modules/es5-shim/es5-sham.js
+ 20% building 91/101 modules 10 active ...ments/node_modules/es5-shim/es5-sham.js
+ 
+21% building 92/101 modules 9 active ...ments/node_modules/es5-shim/es5-sham.js
+ 21% building 93/101 modules 8 active ...ments/node_modules/es5-shim/es5-sham.js
+
+21% building 93/102 modules 9 active ...ode_modules/core-js/modules/_classof.js
+
+21% building 94/102 modules 8 active ...ode_modules/core-js/modules/_classof.js
+ 21% building 95/102 modules 7 active ...ode_modules/core-js/modules/_classof.js
+ 21% building 96/102 modules 6 active ...ode_modules/core-js/modules/_classof.js
+ 21% building 97/102 modules 5 active ...ode_modules/core-js/modules/_classof.js
+ 21% building 98/102 modules 4 active ...ode_modules/core-js/modules/_classof.js
+ 21% building 99/102 modules 3 active ...ode_modules/core-js/modules/_classof.js
+
+22% building 100/102 modules 2 active ...ode_modules/core-js/modules/_classof.js
+ 22% building 100/103 modules 3 active ...webcomponentsjs/webcomponents-bundle.js
+ 22% building 101/103 modules 2 active ...webcomponentsjs/webcomponents-bundle.js
+ 22% building 101/104 modules 3 active ...ments/node_modules/es5-shim/es5-shim.js
+ 22% building 102/104 modules 2 active ...ments/node_modules/es5-shim/es5-shim.js
+ 22% building 102/105 modules 3 active ..._modules/core-js/modules/_object-sap.js
+ 22% building 102/106 modules 4 active ...orybook/addon-knobs/dist/KnobManager.js
+
+22% building 102/107 modules 5 active ...odules/airbnb-js-shims/target/es2016.js
+ 22% building 102/108 modules 6 active .../node_modules/util-deprecate/browser.js
+ 22% building 102/109 modules 7 active ...ules/core-js/modules/_array-includes.js
+ 22% building 102/110 modules 8 active ..._modules/core-js/modules/_a-function.js
+
+22% building 102/111 modules 9 active ..._modules/core-js/modules/_to-integer.js
+ 22% building 102/112 modules 10 active ...s/modules/_array-species-constructor.js
+ 22% building 102/113 modules 11 active ...ges/components/button/lib/button.umd.js
+
+22% building 102/114 modules 12 active ...ybook/html/dist/client/preview/index.js
+ 22% building 102/115 modules 13 active ...book/react/dist/client/preview/index.js
+ 22% building 103/115 modules 12 active ...book/react/dist/client/preview/index.js
+
+22% building 104/115 modules 11 active ...book/react/dist/client/preview/index.js
+
+22% building 105/115 modules 10 active ...book/react/dist/client/preview/index.js
+ 
+22% building 106/115 modules 9 active ...book/react/dist/client/preview/index.js
+
+22% building 107/115 modules 8 active ...book/react/dist/client/preview/index.js
+
+22% building 108/115 modules 7 active ...book/react/dist/client/preview/index.js
+
+23% building 109/115 modules 6 active ...book/react/dist/client/preview/index.js
+
+23% building 110/115 modules 5 active ...book/react/dist/client/preview/index.js
+
+23% building 110/116 modules 6 active ...modules/function.prototype.name/shim.js
+
+23% building 110/117 modules 7 active ...ift/elements/packages/core/src/vars.css
+ 23% building 111/117 modules 6 active ...modules/function.prototype.name/shim.js
+ 23% building 111/118 modules 7 active ...ift/elements/packages/core/src/vars.css
+ 23% building 112/118 modules 6 active ...ift/elements/packages/core/src/vars.css
+ 23% building 113/118 modules 5 active ...ift/elements/packages/core/src/vars.css
+
+23% building 113/119 modules 6 active .../elements/packages/core/lib/core.umd.js
+
+23% building 114/119 modules 5 active .../elements/packages/core/lib/core.umd.js
+ 23% building 115/119 modules 4 active .../elements/packages/core/lib/core.umd.js
+ 23% building 115/120 modules 5 active ...storybook/addon-knobs/dist/KnobStore.js
+
+23% building 115/121 modules 6 active ...s/core-js/modules/es7.object.entries.js
+
+23% building 115/122 modules 7 active ...les/core-js/modules/es6.array.reduce.js
+ 23% building 115/123 modules 8 active ...dules/core-js/modules/es6.array.some.js
+ 23% building 115/124 modules 9 active ...s/core-js/modules/es6.array.is-array.js
+ 23% building 115/125 modules 10 active ...odules/airbnb-js-shims/target/es2017.js
+ 23% building 115/126 modules 11 active ...modules/@storybook/core-events/index.js
+
+23% building 115/127 modules 12 active ...s/core-js/modules/_to-absolute-index.js
+
+23% building 116/127 modules 11 active ...s/core-js/modules/_to-absolute-index.js
+ 23% building 116/128 modules 12 active ...e_modules/style-loader/lib/addStyles.js
+ 23% building 116/129 modules 13 active ...dules/@storybook/channels/dist/index.js
+ 24% building 117/129 modules 12 active ...dules/@storybook/channels/dist/index.js
+ 24% building 117/130 modules 13 active ...ook/html/dist/client/preview/globals.js
+
+24% building 117/131 modules 14 active ...book/html/dist/client/preview/render.js
+ 24% building 117/132 modules 15 active .../node_modules/@storybook/core/client.js
+ 24% building 117/133 modules 16 active ...ok/react/dist/client/preview/globals.js
+ 24% building 117/134 modules 17 active ...ook/react/dist/client/preview/render.js
+ 24% building 118/134 modules 16 active ...ook/react/dist/client/preview/render.js
+ 24% building 118/135 modules 17 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 119/135 modules 16 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 120/135 modules 15 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 121/135 modules 14 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 122/135 modules 13 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 123/135 modules 12 active ..._modules/webpack/buildin/amd-options.js
+ 24% building 124/135 modules 11 active ..._modules/webpack/buildin/amd-options.js
+ 25% building 125/135 modules 10 active ..._modules/webpack/buildin/amd-options.js
+ 25% building 125/136 modules 11 active ...ments/node_modules/es6-shim/es6-shim.js
+
+25% building 126/136 modules 10 active ...ments/node_modules/es6-shim/es6-shim.js
+
+25% building 126/137 modules 11 active ...node_modules/css-loader/lib/css-base.js
+
+25% building 126/138 modules 12 active ...nts/node_modules/array-includes/shim.js
+
+25% building 126/139 modules 13 active ...les/function.prototype.name/polyfill.js
+ 25% building 127/139 modules 12 active ...les/function.prototype.name/polyfill.js
+ 25% building 128/139 modules 11 active ...les/function.prototype.name/polyfill.js
+ 25% building 129/139 modules 10 active ...les/function.prototype.name/polyfill.js
+  25% building 130/139 modules 9 active ...les/function.prototype.name/polyfill.js
+
+25% building 131/139 modules 8 active ...les/function.prototype.name/polyfill.js
+
+25% building 132/139 modules 7 active ...les/function.prototype.name/polyfill.js
+ 25% building 133/139 modules 6 active ...les/function.prototype.name/polyfill.js
+ 25% building 133/140 modules 7 active ...type.name/helpers/functionsHaveNames.js
+
+25% building 133/141 modules 8 active .../modules/es6.object.set-prototype-of.js
+ 25% building 133/142 modules 9 active ...es/core-js/modules/es6.object.create.js
+
+26% building 134/142 modules 8 active ...es/core-js/modules/es6.object.create.js
+
+26% building 135/142 modules 7 active ...es/core-js/modules/es6.object.create.js
+ 26% building 136/142 modules 6 active ...es/core-js/modules/es6.object.create.js
+ 26% building 137/142 modules 5 active ...es/core-js/modules/es6.object.create.js
+ 26% building 138/142 modules 4 active ...es/core-js/modules/es6.object.create.js
+ 26% building 138/143 modules 5 active ...s/core-js/modules/es6.array.index-of.js
+ 26% building 138/144 modules 6 active ...odules/core-js/modules/_array-reduce.js
+ 26% building 138/145 modules 7 active ...les/core-js/modules/_object-to-array.js
+ 26% building 138/146 modules 8 active ...s/node_modules/fast-deep-equal/index.js
+ 26% building 138/147 modules 9 active ...odules/airbnb-js-shims/target/es2018.js
+ 26% building 139/147 modules 8 active ...odules/airbnb-js-shims/target/es2018.js
+ 26% building 140/147 modules 7 active ...odules/airbnb-js-shims/target/es2018.js
+ 26% building 141/147 modules 6 active ...odules/airbnb-js-shims/target/es2018.js
+ 26% building 141/148 modules 7 active .../node_modules/timers-browserify/main.js
+
+26% building 141/149 modules 8 active .../core-js/modules/es6.string.iterator.js
+
+26% building 141/150 modules 9 active ...dules/core-js/modules/es6.array.from.js
+
+26% building 141/151 modules 10 active ...core-js/modules/es6.regexp.to-string.js
+
+26% building 141/152 modules 11 active ...s/core-js/modules/es6.date.to-string.js
+ 26% building 141/153 modules 12 active ...s/node_modules/style-loader/lib/urls.js
+ 26% building 141/154 modules 13 active ...modules/es6.object.define-properties.js
+ 26% building 141/155 modules 14 active ...es/core-js/modules/es6.object.freeze.js
+ 26% building 141/156 modules 15 active ...ct/dist/client/preview/element_check.js
+ 27% building 142/156 modules 14 active ...ct/dist/client/preview/element_check.js
+ 27% building 143/156 modules 13 active ...ct/dist/client/preview/element_check.js
+ 27% building 144/156 modules 12 active ...ct/dist/client/preview/element_check.js
+ 27% building 145/156 modules 11 active ...ct/dist/client/preview/element_check.js
+ 27% building 146/156 modules 10 active ...ct/dist/client/preview/element_check.js
+ 27% building 146/157 modules 11 active ...ments/node_modules/escape-html/index.js
+ 27% building 147/157 modules 10 active ...ments/node_modules/escape-html/index.js
+ 27% building 147/158 modules 11 active ...node_modules/array-includes/polyfill.js
+ 27% building 147/159 modules 12 active ...ents/node_modules/object.values/shim.js
+
+27% building 147/160 modules 13 active ...dules/string.prototype.padstart/shim.js
+ 27% building 147/161 modules 14 active ...nts/node_modules/object.entries/shim.js
+ 27% building 147/162 modules 15 active ...modules/string.prototype.padend/shim.js
+ 27% building 147/163 modules 16 active ...bject.getownpropertydescriptors/shim.js
+ 27% building 147/164 modules 17 active ...nction.prototype.name/implementation.js
+ 27% building 147/165 modules 18 active ...node_modules/define-properties/index.js
+ 27% building 147/166 modules 19 active ...s/core-js/modules/es6.regexp.replace.js
+
+27% building 147/167 modules 20 active ...node_modules/core-js/modules/es6.map.js
+ 27% building 148/167 modules 19 active ...node_modules/core-js/modules/es6.map.js
+ 27% building 148/168 modules 20 active ...ore-js/modules/es6.reflect.construct.js
+
+27% building 149/168 modules 19 active ...ore-js/modules/es6.reflect.construct.js
+ 28% building 150/168 modules 18 active ...ore-js/modules/es6.reflect.construct.js
+ 28% building 151/168 modules 17 active ...ore-js/modules/es6.reflect.construct.js
+ 28% building 152/168 modules 16 active ...ore-js/modules/es6.reflect.construct.js
+ 28% building 152/169 modules 17 active ...es/core-js/modules/es6.function.bind.js
+
+28% building 153/169 modules 16 active ...es/core-js/modules/es6.function.bind.js
+
+28% building 154/169 modules 15 active ...es/core-js/modules/es6.function.bind.js
+ 28% building 155/169 modules 14 active ...es/core-js/modules/es6.function.bind.js
+ 28% building 155/170 modules 15 active ...e_modules/core-js/modules/_set-proto.js
+ 28% building 156/170 modules 14 active ...e_modules/core-js/modules/_set-proto.js
+
+28% building 157/170 modules 13 active ...e_modules/core-js/modules/_set-proto.js
+ 28% building 158/170 modules 12 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 159/170 modules 11 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 160/170 modules 10 active ...e_modules/core-js/modules/_set-proto.js
+  29% building 161/170 modules 9 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 162/170 modules 8 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 163/170 modules 7 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 164/170 modules 6 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 165/170 modules 5 active ...e_modules/core-js/modules/_set-proto.js
+ 29% building 166/170 modules 4 active ...e_modules/core-js/modules/_set-proto.js
+ 30% building 167/170 modules 3 active ...e_modules/core-js/modules/_set-proto.js
+ 30% building 168/170 modules 2 active ...e_modules/core-js/modules/_set-proto.js
+ 30% building 168/171 modules 3 active ...odules/airbnb-js-shims/target/es2019.js
+
+30% building 169/171 modules 2 active ...odules/airbnb-js-shims/target/es2019.js
+
+30% building 169/172 modules 3 active ...e_modules/core-js/modules/_string-at.js
+ 30% building 169/173 modules 4 active ...e_modules/core-js/modules/_iter-call.js
+
+30% building 169/174 modules 5 active ...les/core-js/modules/_create-property.js
+
+30% building 169/175 modules 6 active ...dules/core-js/modules/_is-array-iter.js
+ 30% building 169/176 modules 7 active ...-js/modules/core.get-iterator-method.js
+
+30% building 169/177 modules 8 active ...modules/core-js/modules/_iter-detect.js
+
+30% building 169/178 modules 9 active ...les/core-js/modules/es6.regexp.flags.js
+
+30% building 169/179 modules 10 active .../node_modules/core-js/modules/_flags.js
+  30% building 170/179 modules 9 active .../node_modules/core-js/modules/_flags.js
+ 30% building 170/180 modules 10 active ...ents/node_modules/lodash/flattenDeep.js
+ 30% building 170/181 modules 11 active ...re-js/modules/es6.number.constructor.js
+ 30% building 170/182 modules 12 active ...lements/node_modules/react-dom/index.js 30% building 170/183 modules 13 active ...les/core-js/modules/es6.regexp.split.js 30% building 170/184 modules 14 active ...ft/elements/node_modules/react/index.js 30% building 171/184 modules 13 active ...ft/elements/node_modules/react/index.js 30% building 171/185 modules 14 active ...es/@storybook/core/dist/client/index.js
+ 30% building 171/186 modules 15 active ...odules/array-includes/implementation.js
+ 30% building 171/187 modules 16 active ...dules/promise.prototype.finally/auto.js
+ 30% building 171/188 modules 17 active .../node_modules/object.values/polyfill.js
+ 30% building 171/189 modules 18 active ...node_modules/object.entries/polyfill.js
+ 30% building 171/190 modules 19 active ...s/string.prototype.padstart/polyfill.js
+ 30% building 171/191 modules 20 active ...les/string.prototype.padend/polyfill.js
+ 30% building 171/192 modules 21 active ...t.getownpropertydescriptors/polyfill.js
+ 30% building 171/193 modules 22 active ...ore-js/modules/_advance-string-index.js
+ 30% building 171/194 modules 23 active ...ore-js/modules/_regexp-exec-abstract.js
+ 30% building 171/195 modules 24 active ..._modules/core-js/modules/_fix-re-wks.js
+ 30% building 171/196 modules 25 active ...s/core-js/modules/_collection-strong.js
+ 30% building 171/197 modules 26 active ...core-js/modules/_validate-collection.js
+ 30% building 171/198 modules 27 active ..._modules/core-js/modules/_collection.js
+ 30% building 172/198 modules 26 active ..._modules/core-js/modules/_collection.js
+ 30% building 172/199 modules 27 active ...s/node_modules/core-js/modules/_bind.js
+ 30% building 173/199 modules 26 active ...s/node_modules/core-js/modules/_bind.js
+ 30% building 174/199 modules 25 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 175/199 modules 24 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 176/199 modules 23 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 177/199 modules 22 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 178/199 modules 21 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 179/199 modules 20 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 180/199 modules 19 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 181/199 modules 18 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 182/199 modules 17 active ...s/node_modules/core-js/modules/_bind.js
+ 31% building 183/199 modules 16 active ...s/node_modules/core-js/modules/_bind.js
+ 32% building 184/199 modules 15 active ...s/node_modules/core-js/modules/_bind.js
+ 32% building 185/199 modules 14 active ...s/node_modules/core-js/modules/_bind.js
+ 32% building 186/199 modules 13 active ...s/node_modules/core-js/modules/_bind.js
+
+32% building 187/199 modules 12 active ...s/node_modules/core-js/modules/_bind.js
+
+32% building 188/199 modules 11 active ...s/node_modules/core-js/modules/_bind.js
+
+32% building 189/199 modules 10 active ...s/node_modules/core-js/modules/_bind.js
+  32% building 190/199 modules 9 active ...s/node_modules/core-js/modules/_bind.js
+ 32% building 191/199 modules 8 active ...s/node_modules/core-js/modules/_bind.js
+
+33% building 192/199 modules 7 active ...s/node_modules/core-js/modules/_bind.js
+
+33% building 193/199 modules 6 active ...s/node_modules/core-js/modules/_bind.js
+
+33% building 194/199 modules 5 active ...s/node_modules/core-js/modules/_bind.js
+ 33% building 195/199 modules 4 active ...s/node_modules/core-js/modules/_bind.js
+ 33% building 196/199 modules 3 active ...s/node_modules/core-js/modules/_bind.js
+
+33% building 197/199 modules 2 active ...s/node_modules/core-js/modules/_bind.js
+ 33% building 198/199 modules 1 active ...s/node_modules/core-js/modules/_bind.js
+                                            33% building 199/199 modules 0 active
+
+33% building 199/200 modules 1 active ...de_modules/setimmediate/setImmediate.js
+
+33% building 199/201 modules 2 active .../react-dom/cjs/react-dom.development.js
+ 33% building 199/202 modules 3 active ..._modules/react/cjs/react.development.js
+
+33% building 199/203 modules 4 active ...browser/node_modules/process/browser.js
+ 33% building 199/204 modules 5 active ...nts/node_modules/lodash/_baseFlatten.js
+ 33% building 199/205 modules 6 active ...core-js/modules/_inherit-if-required.js
+
+33% building 199/206 modules 7 active ...modules/core-js/modules/_string-trim.js
+
+33% building 199/207 modules 8 active ...e_modules/core-js/modules/_is-regexp.js
+
+33% building 199/208 modules 9 active ...core-js/modules/_species-constructor.js
+ 33% building 199/209 modules 10 active ...modules/core-js/modules/_regexp-exec.js
+  34% building 200/209 modules 9 active ...modules/core-js/modules/_regexp-exec.js
+ 34% building 200/210 modules 10 active ...de_modules/array.prototype.flat/auto.js
+ 34% building 200/211 modules 11 active ...dules/promise.prototype.finally/shim.js
+ 34% building 200/212 modules 12 active ...modules/array.prototype.flatmap/auto.js
+ 34% building 200/213 modules 13 active ...es/symbol.prototype.description/auto.js
+ 34% building 200/214 modules 14 active ...dules/string.prototype.matchall/auto.js
+ 34% building 200/215 modules 15 active ...modules/object.values/implementation.js
+
+34% building 200/216 modules 16 active ...node_modules/object.fromentries/auto.js
+ 34% building 200/217 modules 17 active ...odules/object.entries/implementation.js
+ 34% building 200/218 modules 18 active ...ng.prototype.padstart/implementation.js
+ 34% building 200/219 modules 19 active ...ring.prototype.padend/implementation.js
+ 34% building 200/220 modules 20 active ...wnpropertydescriptors/implementation.js
+ 34% building 200/221 modules 21 active ...ments/node_modules/is-callable/index.js
+ 34% building 200/222 modules 22 active ...ments/node_modules/object-keys/index.js
+ 34% building 200/223 modules 23 active ...ules/core-js/modules/es6.regexp.exec.js
+
+34% building 200/224 modules 24 active ...modules/core-js/modules/_an-instance.js
+ 34% building 200/225 modules 25 active ...odules/core-js/modules/_redefine-all.js
+ 34% building 200/226 modules 26 active ...node_modules/core-js/modules/_for-of.js
+
+34% building 200/227 modules 27 active ...modules/core-js/modules/_set-species.js
+
+34% building 200/228 modules 28 active ...node_modules/core-js/modules/_invoke.js
+
+34% building 201/228 modules 27 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 202/228 modules 26 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 203/228 modules 25 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 204/228 modules 24 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 205/228 modules 23 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 206/228 modules 22 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 207/228 modules 21 active ...node_modules/core-js/modules/_invoke.js
+ 34% building 207/229 modules 22 active ...s/node_modules/common-tags/lib/index.js
+
+34% building 208/229 modules 21 active ...s/node_modules/common-tags/lib/index.js
+
+35% building 209/229 modules 20 active ...s/node_modules/common-tags/lib/index.js
+
+35% building 210/229 modules 19 active ...s/node_modules/common-tags/lib/index.js
+
+35% building 211/229 modules 18 active ...s/node_modules/common-tags/lib/index.js
+
+35% building 212/229 modules 17 active ...s/node_modules/common-tags/lib/index.js
+
+35% building 213/229 modules 16 active ...s/node_modules/common-tags/lib/index.js
+ 35% building 214/229 modules 15 active ...s/node_modules/common-tags/lib/index.js
+ 35% building 215/229 modules 14 active ...s/node_modules/common-tags/lib/index.js
+ 35% building 216/229 modules 13 active ...s/node_modules/common-tags/lib/index.js
+ 36% building 217/229 modules 12 active ...s/node_modules/common-tags/lib/index.js
+ 36% building 218/229 modules 11 active ...s/node_modules/common-tags/lib/index.js
+ 36% building 219/229 modules 10 active ...s/node_modules/common-tags/lib/index.js
+  36% building 220/229 modules 9 active ...s/node_modules/common-tags/lib/index.js
+ 36% building 220/230 modules 10 active ...nts/node_modules/function-bind/index.js
+ 
+36% building 221/230 modules 9 active ...nts/node_modules/function-bind/index.js
+
+36% building 222/230 modules 8 active ...nts/node_modules/function-bind/index.js
+ 36% building 223/230 modules 7 active ...nts/node_modules/function-bind/index.js
+ 36% building 224/230 modules 6 active ...nts/node_modules/function-bind/index.js
+ 37% building 225/230 modules 5 active ...nts/node_modules/function-bind/index.js
+ 37% building 226/230 modules 4 active ...nts/node_modules/function-bind/index.js
+ 37% building 226/231 modules 5 active ...lements/node_modules/es-abstract/es6.js
+ 37% building 227/231 modules 4 active ...lements/node_modules/es-abstract/es6.js
+ 37% building 228/231 modules 3 active ...lements/node_modules/es-abstract/es6.js
+
+37% building 229/231 modules 2 active ...lements/node_modules/es-abstract/es6.js
+
+37% building 230/231 modules 1 active .../react-dom/cjs/react-dom.development.js
+
+37% building 230/232 modules 2 active ...s/node_modules/lodash/_isFlattenable.js
+
+37% building 230/233 modules 3 active ...e_modules/core-js/modules/_string-ws.js
+
+37% building 230/234 modules 4 active ...ments/node_modules/lodash/_arrayPush.js
+ 37% building 230/235 modules 5 active ...de_modules/array.prototype.flat/shim.js
+ 37% building 230/236 modules 6 active ...ise.prototype.finally/requirePromise.js
+
+37% building 230/237 modules 7 active ...modules/array.prototype.flatmap/shim.js
+ 37% building 230/238 modules 8 active ...s/promise.prototype.finally/polyfill.js
+ 37% building 230/239 modules 9 active ...dules/string.prototype.matchall/shim.js
+ 37% building 230/240 modules 10 active ...es/symbol.prototype.description/shim.js
+ 37% building 230/241 modules 11 active ...lements/node_modules/es-abstract/es7.js
+ 37% building 230/242 modules 12 active ...node_modules/object.fromentries/shim.js
+ 37% building 230/243 modules 13 active ...node_modules/object-keys/isArguments.js
+ 37% building 230/244 modules 14 active ...ybook/core/dist/client/preview/index.js
+ 37% building 231/244 modules 13 active ...ybook/core/dist/client/preview/index.js
+
+37% building 232/244 modules 12 active ...ybook/core/dist/client/preview/index.js
+
+37% building 233/244 modules 11 active ...ybook/core/dist/client/preview/index.js
+ 38% building 234/244 modules 10 active ...ybook/core/dist/client/preview/index.js
+  38% building 235/244 modules 9 active ...ybook/core/dist/client/preview/index.js
+ 38% building 236/244 modules 8 active ...ybook/core/dist/client/preview/index.js
+ 38% building 237/244 modules 7 active ...ybook/core/dist/client/preview/index.js
+ 38% building 238/244 modules 6 active ...ybook/core/dist/client/preview/index.js
+ 38% building 239/244 modules 5 active ...ybook/core/dist/client/preview/index.js
+
+38% building 240/244 modules 4 active ...ybook/core/dist/client/preview/index.js
+ 38% building 241/244 modules 3 active ...ybook/core/dist/client/preview/index.js
+
+39% building 242/244 modules 2 active ...ybook/core/dist/client/preview/index.js
+
+39% building 242/245 modules 3 active ...modules/function-bind/implementation.js
+
+39% building 243/245 modules 2 active ...modules/function-bind/implementation.js
+ 39% building 243/246 modules 3 active ...ents/node_modules/es-abstract/es2015.js
+
+39% building 244/246 modules 2 active ...ents/node_modules/es-abstract/es2015.js
+
+39% building 244/247 modules 3 active ...de_modules/prop-types/checkPropTypes.js
+
+39% building 244/248 modules 4 active ...elements/node_modules/lodash/_Symbol.js
+ 39% building 244/249 modules 5 active ...ents/node_modules/lodash/isArguments.js
+
+39% building 244/250 modules 6 active ...elements/node_modules/lodash/isArray.js
+
+39% building 244/251 modules 7 active ...odules/array.prototype.flat/polyfill.js
+ 39% building 244/252 modules 8 active ...ise.prototype.finally/implementation.js
+
+39% building 244/253 modules 9 active ...les/array.prototype.flatmap/polyfill.js
+
+39% building 244/254 modules 10 active ...s/string.prototype.matchall/polyfill.js
+
+39% building 244/255 modules 11 active ...g.prototype.matchall/regexp-matchall.js
+ 39% building 244/256 modules 12 active ...ymbol.prototype.description/polyfill.js
+
+39% building 244/257 modules 13 active ...ents/node_modules/es-abstract/es2016.js
+
+39% building 244/258 modules 14 active ..._modules/object.fromentries/polyfill.js
+
+39% building 244/259 modules 15 active ...ybook/core/dist/client/preview/start.js
+ 39% building 244/260 modules 16 active ...ook/core/dist/client/preview/actions.js
+
+39% building 244/261 modules 17 active .../core/dist/client/preview/client_api.js
+ 39% building 244/262 modules 18 active .../core/dist/client/preview/config_api.js
+
+39% building 244/263 modules 19 active ...core/dist/client/preview/story_store.js
+ 39% building 244/264 modules 20 active ...ook/core/dist/client/preview/reducer.js
+
+39% building 244/265 modules 21 active ...dist/client/preview/syncUrlWithStore.js
+
+39% building 245/265 modules 20 active ...dist/client/preview/syncUrlWithStore.js
+ 39% building 246/265 modules 19 active ...dist/client/preview/syncUrlWithStore.js
+ 39% building 247/265 modules 18 active ...dist/client/preview/syncUrlWithStore.js
+ 39% building 248/265 modules 17 active ...dist/client/preview/syncUrlWithStore.js
+ 39% building 249/265 modules 16 active ...dist/client/preview/syncUrlWithStore.js
+ 39% building 249/266 modules 17 active ....description/helpers/getInferredName.js
+ 40% building 250/266 modules 16 active ....description/helpers/getInferredName.js
+ 40% building 251/266 modules 15 active ....description/helpers/getInferredName.js
+ 40% building 252/266 modules 14 active ....description/helpers/getInferredName.js
+ 40% building 253/266 modules 13 active ....description/helpers/getInferredName.js
+ 40% building 254/266 modules 12 active ....description/helpers/getInferredName.js
+ 40% building 255/266 modules 11 active ....description/helpers/getInferredName.js
+ 40% building 256/266 modules 10 active ....description/helpers/getInferredName.js
+  40% building 257/266 modules 9 active ....description/helpers/getInferredName.js
+ 40% building 258/266 modules 8 active ....description/helpers/getInferredName.js
+ 41% building 259/266 modules 7 active ....description/helpers/getInferredName.js
+ 41% building 260/266 modules 6 active ....description/helpers/getInferredName.js
+ 41% building 261/266 modules 5 active ....description/helpers/getInferredName.js
+ 41% building 262/266 modules 4 active ....description/helpers/getInferredName.js
+ 41% building 262/267 modules 5 active ...es/common-tags/lib/TemplateTag/index.js
+ 41% building 262/268 modules 6 active ...tags/lib/trimResultTransformer/index.js
+ 41% building 262/269 modules 7 active ...ags/lib/stripIndentTransformer/index.js
+ 41% building 262/270 modules 8 active ...s/lib/replaceResultTransformer/index.js
+
+41% building 262/271 modules 9 active ...replaceSubstitutionTransformer/index.js
+41% building 262/272 modules 10 active ...s/lib/replaceStringTransformer/index.js
+ 41% building 262/273 modules 11 active ...ags/lib/inlineArrayTransformer/index.js
+ 41% building 262/274 modules 12 active ...les/common-tags/lib/commaLists/index.js
+
+41% building 262/275 modules 13 active ...ags/lib/splitStringTransformer/index.js
+ 41% building 262/276 modules 14 active ...veNonPrintingValuesTransformer/index.js
+
+41% building 262/277 modules 15 active ...s/common-tags/lib/commaListsOr/index.js
+ 41% building 262/278 modules 16 active .../common-tags/lib/commaListsAnd/index.js
+
+41% building 262/279 modules 17 active ...ules/common-tags/lib/codeBlock/index.js
+ 41% building 262/280 modules 18 active ...e_modules/common-tags/lib/html/index.js
+
+41% building 262/281 modules 19 active ...modules/common-tags/lib/source/index.js
+41% building 262/282 modules 20 active ...odules/common-tags/lib/oneLine/index.js
+ 41% building 262/283 modules 21 active ...dules/common-tags/lib/safeHtml/index.js
+ 41% building 262/284 modules 22 active ...es/common-tags/lib/oneLineTrim/index.js
+ 41% building 262/285 modules 23 active ...n-tags/lib/oneLineCommaListsOr/index.js
+ 41% building 262/286 modules 24 active ...mon-tags/lib/oneLineCommaLists/index.js
+ 41% building 262/287 modules 25 active ...-tags/lib/oneLineCommaListsAnd/index.js
+ 41% building 262/288 modules 26 active ...on-tags/lib/oneLineInlineLists/index.js
+ 41% building 262/289 modules 27 active ...es/common-tags/lib/inlineLists/index.js
+
+41% building 262/290 modules 28 active ...es/common-tags/lib/stripIndent/index.js
+ 41% building 262/291 modules 29 active ...s/common-tags/lib/stripIndents/index.js
+
+41% building 263/291 modules 28 active ...s/common-tags/lib/stripIndents/index.js
+ 41% building 264/291 modules 27 active ...s/common-tags/lib/stripIndents/index.js
+
+41% building 265/291 modules 26 active ...s/common-tags/lib/stripIndents/index.js
+
+41% building 265/292 modules 27 active ...nts/node_modules/object-assign/index.js
+
+41% building 265/293 modules 28 active ...ode_modules/es-abstract/GetIntrinsic.js
+
+41% building 265/294 modules 29 active ...lements/node_modules/es-abstract/es5.js
+
+41% building 265/295 modules 30 active ...t/elements/node_modules/lodash/_root.js
+
+41% building 265/296 modules 31 active ...node_modules/lodash/_baseIsArguments.js
+
+41% building 265/297 modules 32 active ...nts/node_modules/lodash/isObjectLike.js
+
+41% building 266/297 modules 31 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 267/297 modules 30 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 268/297 modules 29 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 269/297 modules 28 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 270/297 modules 27 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 271/297 modules 26 active ...nts/node_modules/lodash/isObjectLike.js
+ 42% building 272/297 modules 25 active ...nts/node_modules/lodash/isObjectLike.js
+
+42% building 273/297 modules 24 active ...nts/node_modules/lodash/isObjectLike.js
+ 42% building 274/297 modules 23 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 275/297 modules 22 active ...nts/node_modules/lodash/isObjectLike.js
+
+43% building 276/297 modules 21 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 277/297 modules 20 active ...nts/node_modules/lodash/isObjectLike.js
+
+43% building 278/297 modules 19 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 279/297 modules 18 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 280/297 modules 17 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 281/297 modules 16 active ...nts/node_modules/lodash/isObjectLike.js
+ 43% building 282/297 modules 15 active ...nts/node_modules/lodash/isObjectLike.js
+
+43% building 283/297 modules 14 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 284/297 modules 13 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 285/297 modules 12 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 286/297 modules 11 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 287/297 modules 10 active ...nts/node_modules/lodash/isObjectLike.js
+ 
+44% building 288/297 modules 9 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 289/297 modules 8 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 290/297 modules 7 active ...nts/node_modules/lodash/isObjectLike.js
+
+44% building 290/298 modules 8 active ...les/es-abstract/helpers/assertRecord.js 44% building 290/299 modules 9 active ...de_modules/es-abstract/helpers/isNaN.js
+ 44% building 290/300 modules 10 active ...modules/es-abstract/helpers/isFinite.js
+
+44% building 290/301 modules 11 active ...e_modules/es-abstract/helpers/assign.js
+ 44% building 290/302 modules 12 active ...ode_modules/es-abstract/helpers/sign.js
+
+44% building 290/303 modules 13 active ...node_modules/es-abstract/helpers/mod.js
+ 44% building 290/304 modules 14 active ...ules/es-abstract/helpers/isPrimitive.js
+ 44% building 290/305 modules 15 active .../prop-types/lib/ReactPropTypesSecret.js
+
+44% building 290/306 modules 16 active .../array.prototype.flat/implementation.js
+
+44% building 290/307 modules 17 active ...ray.prototype.flatmap/implementation.js
+
+44% building 290/308 modules 18 active ...ng.prototype.matchall/implementation.js
+
+44% building 290/309 modules 19 active ...ments/node_modules/has-symbols/index.js
+
+44% building 290/310 modules 20 active ...prototype.description/implementation.js
+
+44% building 290/311 modules 21 active ...es/object.fromentries/implementation.js
+
+44% building 290/312 modules 22 active ...dules/core-js/modules/es6.array.sort.js
+
+44% building 290/313 modules 23 active ...es/core-js/modules/es6.regexp.search.js
+ 44% building 291/313 modules 22 active ...es/core-js/modules/es6.regexp.search.js
+ 45% building 292/313 modules 21 active ...es/core-js/modules/es6.regexp.search.js
+
+45% building 292/314 modules 22 active ...es/core-js/modules/es6.object.assign.js
+
+45% building 292/315 modules 23 active ...t/client/preview/subscriptions_store.js
+
+45% building 293/315 modules 22 active ...t/client/preview/subscriptions_store.js
+ 45% building 293/316 modules 23 active ...nts/node_modules/es-to-primitive/es6.js
+
+45% building 294/316 modules 22 active ...nts/node_modules/es-to-primitive/es6.js
+
+45% building 294/317 modules 23 active ...atchall/helpers/RegExpStringIterator.js
+
+45% building 295/317 modules 22 active ...atchall/helpers/RegExpStringIterator.js
+
+45% building 296/317 modules 21 active ...atchall/helpers/RegExpStringIterator.js
+
+45% building 297/317 modules 20 active ...atchall/helpers/RegExpStringIterator.js
+ 45% building 298/317 modules 19 active ...atchall/helpers/RegExpStringIterator.js
+
+45% building 299/317 modules 18 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 300/317 modules 17 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 301/317 modules 16 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 302/317 modules 15 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 303/317 modules 14 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 304/317 modules 13 active ...atchall/helpers/RegExpStringIterator.js
+
+46% building 305/317 modules 12 active ...atchall/helpers/RegExpStringIterator.js
+ 46% building 306/317 modules 11 active ...atchall/helpers/RegExpStringIterator.js
+ 46% building 307/317 modules 10 active ...atchall/helpers/RegExpStringIterator.js
+  46% building 308/317 modules 9 active ...atchall/helpers/RegExpStringIterator.js
+ 47% building 309/317 modules 8 active ...atchall/helpers/RegExpStringIterator.js
+ 47% building 310/317 modules 7 active ...atchall/helpers/RegExpStringIterator.js
+
+47% building 311/317 modules 6 active ...atchall/helpers/RegExpStringIterator.js
+
+47% building 312/317 modules 5 active ...atchall/helpers/RegExpStringIterator.js
+
+47% building 312/318 modules 6 active .../elements/node_modules/has/src/index.js
+
+47% building 312/319 modules 7 active ...ments/node_modules/es-abstract/index.js
+
+47% building 312/320 modules 8 active ...ultTransformer/trimResultTransformer.js
+
+47% building 312/321 modules 9 active ...ntTransformer/stripIndentTransformer.js
+
+47% building 312/322 modules 10 active ...mon-tags/lib/TemplateTag/TemplateTag.js
+
+47% building 312/323 modules 11 active ...Transformer/replaceResultTransformer.js
+
+47% building 312/324 modules 12 active ...ormer/replaceSubstitutionTransformer.js
+
+47% building 312/325 modules 13 active ...Transformer/replaceStringTransformer.js
+
+47% building 312/326 modules 14 active ...ayTransformer/inlineArrayTransformer.js
+
+47% building 312/327 modules 15 active ...ommon-tags/lib/commaLists/commaLists.js
+
+47% building 312/328 modules 16 active ...ngTransformer/splitStringTransformer.js
+
+47% building 312/329 modules 17 active ...r/removeNonPrintingValuesTransformer.js
+
+47% building 312/330 modules 18 active ...n-tags/lib/commaListsOr/commaListsOr.js
+
+47% building 312/331 modules 19 active ...tags/lib/commaListsAnd/commaListsAnd.js
+
+47% building 312/332 modules 20 active ...de_modules/common-tags/lib/html/html.js
+
+47% building 312/333 modules 21 active ...ules/common-tags/lib/oneLine/oneLine.js
+
+47% building 312/334 modules 22 active ...mon-tags/lib/oneLineTrim/oneLineTrim.js
+
+47% building 312/335 modules 23 active ...es/common-tags/lib/safeHtml/safeHtml.js
+
+47% building 312/336 modules 24 active ...LineCommaListsOr/oneLineCommaListsOr.js
+ 47% building 312/337 modules 25 active .../oneLineCommaLists/oneLineCommaLists.js
+
+47% building 312/338 modules 26 active ...neCommaListsAnd/oneLineCommaListsAnd.js
+
+47% building 312/339 modules 27 active ...neLineInlineLists/oneLineInlineLists.js
+
+47% building 312/340 modules 28 active ...mon-tags/lib/inlineLists/inlineLists.js 47% building 312/341 modules 29 active ...mon-tags/lib/stripIndent/stripIndent.js 47% building 312/342 modules 30 active ...n-tags/lib/stripIndents/stripIndents.js 47% building 313/342 modules 29 active ...n-tags/lib/stripIndents/stripIndents.js
+ 47% building 314/342 modules 28 active ...n-tags/lib/stripIndents/stripIndents.js
+
+47% building 315/342 modules 27 active ...n-tags/lib/stripIndents/stripIndents.js
+
+47% building 316/342 modules 26 active ...n-tags/lib/stripIndents/stripIndents.js
+ 47% building 316/343 modules 27 active ...nts/node_modules/es-to-primitive/es5.js
+ 47% building 316/344 modules 28 active ...elements/node_modules/is-regex/index.js
+
+47% building 316/345 modules 29 active ...ents/node_modules/lodash/_freeGlobal.js
+
+48% building 317/345 modules 28 active ...ents/node_modules/lodash/_freeGlobal.js
+ 48% building 318/345 modules 27 active ...ents/node_modules/lodash/_freeGlobal.js
+ 48% building 319/345 modules 26 active ...ents/node_modules/lodash/_freeGlobal.js
+ 48% building 319/346 modules 27 active ...ents/node_modules/lodash/_baseGetTag.js
+ 48% building 320/346 modules 26 active ...ents/node_modules/lodash/_baseGetTag.js
+ 48% building 321/346 modules 25 active ...ents/node_modules/lodash/_baseGetTag.js
+ 48% building 322/346 modules 24 active ...ents/node_modules/lodash/_baseGetTag.js
+ 48% building 323/346 modules 23 active ...ents/node_modules/lodash/_baseGetTag.js
+ 48% building 324/346 modules 22 active ...ents/node_modules/lodash/_baseGetTag.js
+ 49% building 325/346 modules 21 active ...ents/node_modules/lodash/_baseGetTag.js
+
+49% building 326/346 modules 20 active ...ents/node_modules/lodash/_baseGetTag.js
+
+49% building 327/346 modules 19 active ...ents/node_modules/lodash/_baseGetTag.js
+ 49% building 328/346 modules 18 active ...ents/node_modules/lodash/_baseGetTag.js
+ 49% building 329/346 modules 17 active ...ents/node_modules/lodash/_baseGetTag.js
+ 49% building 330/346 modules 16 active ...ents/node_modules/lodash/_baseGetTag.js
+
+49% building 331/346 modules 15 active ...ents/node_modules/lodash/_baseGetTag.js
+ 49% building 332/346 modules 14 active ...ents/node_modules/lodash/_baseGetTag.js
+
+49% building 333/346 modules 13 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 334/346 modules 12 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 335/346 modules 11 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 336/346 modules 10 active ...ents/node_modules/lodash/_baseGetTag.js
+  50% building 337/346 modules 9 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 338/346 modules 8 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 339/346 modules 7 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 340/346 modules 6 active ...ents/node_modules/lodash/_baseGetTag.js
+ 50% building 340/347 modules 7 active ...s/@storybook/ui/dist/libs/key_events.js
+ 50% building 340/348 modules 8 active ...ents/node_modules/es-abstract/es2017.js
+ 50% building 340/349 modules 9 active ...ments/node_modules/has-symbols/shams.js
+ 50% building 341/349 modules 8 active ...ments/node_modules/has-symbols/shams.js
+ 50% building 341/350 modules 9 active ...modules/regexp.prototype.flags/index.js
+ 50% building 341/351 modules 10 active ...nts/node_modules/eventemitter3/index.js
+ 50% building 341/352 modules 11 active ..._modules/core-js/modules/_same-value.js
+
+51% building 342/352 modules 10 active ..._modules/core-js/modules/_same-value.js
+  51% building 343/352 modules 9 active ..._modules/core-js/modules/_same-value.js
+ 51% building 343/353 modules 10 active ...dules/core-js/modules/_object-assign.js
+
+51% building 343/354 modules 11 active .../node_modules/es-to-primitive/es2015.js
+
+51% building 344/354 modules 10 active .../node_modules/es-to-primitive/es2015.js
+
+51% building 344/355 modules 11 active ...ng.prototype.matchall/helpers/hidden.js
+
+51% building 345/355 modules 10 active ...ng.prototype.matchall/helpers/hidden.js
+ 51% building 345/356 modules 11 active ...t/elements/node_modules/qs/lib/index.js
+ 51% building 345/357 modules 12 active .../@storybook/client-logger/dist/index.js
+ 51% building 345/358 modules 13 active ...lements/node_modules/redux/lib/redux.js
+
+51% building 345/359 modules 14 active ...ybook/channel-postmessage/dist/index.js
+ 51% building 346/359 modules 13 active ...ybook/channel-postmessage/dist/index.js
+ 51% building 347/359 modules 12 active ...ybook/channel-postmessage/dist/index.js
+ 51% building 348/359 modules 11 active ...ybook/channel-postmessage/dist/index.js
+ 51% building 349/359 modules 10 active ...ybook/channel-postmessage/dist/index.js
+  52% building 350/359 modules 9 active ...ybook/channel-postmessage/dist/index.js
+
+52% building 350/360 modules 10 active ...ents/node_modules/es-abstract/es2018.js
+ 
+52% building 351/360 modules 9 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 352/360 modules 8 active ...ents/node_modules/es-abstract/es2018.js
+
+52% building 353/360 modules 7 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 354/360 modules 6 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 355/360 modules 5 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 356/360 modules 4 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 357/360 modules 3 active ...ents/node_modules/es-abstract/es2018.js
+ 52% building 358/360 modules 2 active ...lements/node_modules/redux/lib/redux.js
+ 52% building 358/361 modules 3 active ...ments/node_modules/lodash/_getRawTag.js
+ 52% building 358/362 modules 4 active .../node_modules/lodash/_objectToString.js
+ 53% building 359/362 modules 3 active .../node_modules/lodash/_objectToString.js
+
+53% building 359/363 modules 4 active .../es-to-primitive/helpers/isPrimitive.js
+ 53% building 359/364 modules 5 active ..._modules/es-abstract/helpers/forEach.js
+
+53% building 359/365 modules 6 active ...egexp.prototype.flags/implementation.js
+ 53% building 359/366 modules 7 active ...ules/regexp.prototype.flags/polyfill.js
+ 53% building 359/367 modules 8 active ..._modules/regexp.prototype.flags/shim.js
+
+53% building 360/367 modules 7 active ..._modules/regexp.prototype.flags/shim.js
+
+53% building 361/367 modules 6 active ..._modules/regexp.prototype.flags/shim.js
+ 53% building 361/368 modules 7 active ...ements/node_modules/qs/lib/stringify.js
+
+53% building 361/369 modules 8 active ...t/elements/node_modules/qs/lib/parse.js
+
+53% building 361/370 modules 9 active ...elements/node_modules/qs/lib/formats.js
+
+53% building 362/370 modules 8 active ...elements/node_modules/qs/lib/formats.js
+ 53% building 362/371 modules 9 active ..._modules/core-js/modules/es6.promise.js
+ 53% building 363/371 modules 8 active ..._modules/core-js/modules/es6.promise.js
+ 53% building 364/371 modules 7 active ..._modules/core-js/modules/es6.promise.js
+ 53% building 365/371 modules 6 active ..._modules/core-js/modules/es6.promise.js
+ 53% building 366/371 modules 5 active ..._modules/core-js/modules/es6.promise.js
+ 54% building 367/371 modules 4 active ..._modules/core-js/modules/es6.promise.js
+ 54% building 368/371 modules 3 active ..._modules/core-js/modules/es6.promise.js
+ 54% building 369/371 modules 2 active ..._modules/core-js/modules/es6.promise.js
+ 54% building 370/371 modules 1 active .../react-dom/cjs/react-dom.development.js
+ 54% building 370/372 modules 2 active .../elements/node_modules/keycode/index.js
+ 54% building 370/373 modules 3 active ...ts/node_modules/is-date-object/index.js
+ 54% building 370/374 modules 4 active ...lements/node_modules/is-symbol/index.js
+ 54% building 370/375 modules 5 active ...t/elements/node_modules/qs/lib/utils.js
+ 54% building 371/375 modules 4 active ...t/elements/node_modules/qs/lib/utils.js
+ 54% building 371/376 modules 5 active ...odules/json-stringify-safe/stringify.js
+
+54% building 371/377 modules 6 active ...s/node_modules/core-js/modules/_task.js
+ 54% building 371/378 modules 7 active ...ode_modules/core-js/modules/_perform.js
+
+54% building 371/379 modules 8 active ...e_modules/core-js/modules/_microtask.js
+
+54% building 371/380 modules 9 active ..._modules/core-js/modules/_user-agent.js
+
+54% building 371/381 modules 10 active ...e-js/modules/_new-promise-capability.js
+
+54% building 371/382 modules 11 active ...les/core-js/modules/_promise-resolve.js
+
+54% building 372/382 modules 10 active ...les/core-js/modules/_promise-resolve.js
+  54% building 373/382 modules 9 active ...les/core-js/modules/_promise-resolve.js
+ 54% building 374/382 modules 8 active ...les/core-js/modules/_promise-resolve.js
+ 54% building 374/383 modules 9 active ..._modules/symbol-observable/lib/index.js
+ 54% building 375/383 modules 8 active ..._modules/symbol-observable/lib/index.js
+ 55% building 376/383 modules 7 active ..._modules/symbol-observable/lib/index.js
+ 55% building 377/383 modules 6 active ..._modules/symbol-observable/lib/index.js
+ 55% building 378/383 modules 5 active ..._modules/symbol-observable/lib/index.js
+ 55% building 379/383 modules 4 active ..._modules/symbol-observable/lib/index.js
+ 55% building 380/383 modules 3 active ..._modules/symbol-observable/lib/index.js
+ 55% building 381/383 modules 2 active ..._modules/symbol-observable/lib/index.js
+ 55% building 382/383 modules 1 active .../react-dom/cjs/react-dom.development.js
+
+55% building 382/384 modules 2 active ...dules/symbol-observable/lib/ponyfill.js
+
+55% building 383/384 modules 1 active .../react-dom/cjs/react-dom.development.js
+                                            56% building 384/384 modules 0 active
+ 56% building 384/385 modules 1 active ...ments/node_modules/scheduler/tracing.js
+                                            56% building 385/385 modules 0 active
+ 56% building 385/386 modules 1 active ...lements/node_modules/scheduler/index.js
+ 56% building 385/387 modules 2 active ...er/cjs/scheduler-tracing.development.js
+ 56% building 386/387 modules 1 active ...er/cjs/scheduler-tracing.development.js
+
+56% building 386/388 modules 2 active .../scheduler/cjs/scheduler.development.js
+ 56% building 387/388 modules 1 active .../scheduler/cjs/scheduler.development.js
+                                           
+56% building 388/388 modules 0 active
+
+70% building 388/388 modules 0 active
+              
+70% finish module graph
+ 70% finish module graph FlagDependencyExportsPlugin
+                                         70% sealing
+70% sealing WarnCaseSensitiveModulesPlugin
+        71% basic dependencies optimization
+      
+72% dependencies optimization
+72% advanced dependencies optimization
+    73% after dependencies optimization
+                     70% chunk graph
+
+71% after chunk graph 71% after chunk graph WebAssemblyModulesPlugin
+                                
+73% optimizing 74% basic module optimization       74% module optimization
+ 75% advanced module optimization    75% after module optimization
+ 
+76% basic chunk optimization 76% basic chunk optimization EnsureChunkConditionsPlugin
+   76% basic chunk optimization RemoveParentModulesPlugin
+   76% basic chunk optimization RemoveEmptyChunksPlugin 76% basic chunk optimization MergeDuplicateChunksPlugin
+                                 
+76% chunk optimization
+
+77% advanced chunk optimization 77% advanced chunk optimization SplitChunksPlugin
+
+77% advanced chunk optimization RuntimeChunkPlugin
+ 77% advanced chunk optimization RemoveEmptyChunksPlugin
+                           
+77% after chunk optimization
+
+78% module and chunk tree optimization
+ 78% after module and chunk tree optimization
+        
+79% basic chunk modules optimization
+       79% chunk modules optimization
+ 80% advanced chunk modules optimization
+    80% after chunk modules optimization
+                 
+81% module reviving 81% module reviving RecordIdsPlugin
+       81% module order optimization
+ 82% advanced module order optimization
+                 
+82% before module ids 82% before module ids NamedModulesPlugin
+                          
+83% module ids
+
+83% module id optimization
+84% module id optimization
+        
+84% chunk reviving 84% chunk reviving RecordIdsPlugin
+       85% chunk order optimization 85% chunk order optimization OccurrenceOrderChunkIdsPlugin
+                                      
+85% before chunk ids 85% before chunk ids NamedChunksPlugin
+             
+86% chunk id optimization
+ 86% after chunk id optimization
+              87% record modules
+ 87% record modules RecordIdsPlugin
+                  87% record chunks 87% record chunks RecordIdsPlugin
+                       88% hashing
+
+88% content hashing 88% content hashing JavascriptModulesPlugin
+                         88% content hashing 88% content hashing JavascriptModulesPlugin
+                         88% content hashing 88% content hashing JavascriptModulesPlugin
+                           89% after hashing 89% after hashing HotModuleReplacementPlugin
+                              89% record hash
+ 90% module assets processing
+  90% chunk assets processing
+ 91% additional chunk assets processing
+91% additional chunk assets processing HtmlWebpackPlugin 91% additional chunk assets processing HotModuleReplacementPlugin
+                                                     91% recording 91% recording HotModuleReplacementPlugin
+         
+92% additional asset processing   
+92% chunk asset optimization
+ 93% after chunk asset optimization 93% after chunk asset optimization SourceMapDevToolPlugin
+ 93% after chunk asset optimization SourceMapDevToolPlugin main.9e338d9efe9c1392410d.bundle.js generate SourceMap
+ 93% after chunk asset optimization SourceMapDevToolPlugin ...ime~main.9e338d9efe9c1392410d.bundle.js generate SourceMap
+ 93% after chunk asset optimization SourceMapDevToolPlugin ...ors~main.9e338d9efe9c1392410d.bundle.js generate SourceMap
+                                               93% after chunk asset optimization SourceMapDevToolPlugin resolve sources
+ 93% after chunk asset optimization SourceMapDevToolPlugin main.9e338d9efe9c1392410d.bundle.js attach SourceMap
+ 93% after chunk asset optimization SourceMapDevToolPlugin ...ime~main.9e338d9efe9c1392410d.bundle.js attach SourceMap
+ 93% after chunk asset optimization SourceMapDevToolPlugin ...ors~main.9e338d9efe9c1392410d.bundle.js attach SourceMap
+                                                            
+93% after chunk asset optimization SourceMapDevToolPlugin
+                                   
+93% asset optimization
+
+94% after asset optimization
+               94% after seal
+  
+95% emitting
+ 95% emitting HtmlWebpackPlugin
+ 95% emitting WatchMissingNodeModulesPlugin
+                         98% after emitting
+ 98% after emitting SizeLimitsPlugin
+                                    
+webpack built 9e338d9efe9c1392410d in 3486ms
+╭────────────────────────────────────────────────────╮
+│                                                    │
+│   Storybook 4.1.11 started                         │
+│   4.21 s for manager and 3.95 s for preview        │
+│                                                    │
+│   Local:            http://localhost:65393/        │
+│   On your network:  http://10.129.25.139:65393/    │
+│                                                    │
+╰────────────────────────────────────────────────────╯
+Error: Uncaught [ReferenceError: MutationObserver is not defined]
+    at reportException (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at processJavaScript (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:192:7)
+    at HTMLScriptElementImpl._innerEval (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:122:5)
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/browser/resource-loader.js:31:22
+    at Object.check (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Document-impl.js:74:11)
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Document-impl.js:93:12
+    at wrappedEnqueued (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/browser/resource-loader.js:253:16)
+    at Request._callback (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/storybook.js:27:11)
+    at Request.self.callback (/Users/dsp/Development/@tradeshift/elements/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:182:13)
+    at Request.<anonymous> (/Users/dsp/Development/@tradeshift/elements/node_modules/request/request.js:1161:10)
+    at Request.emit (events.js:182:13)
+    at IncomingMessage.<anonymous> (/Users/dsp/Development/@tradeshift/elements/node_modules/request/request.js:1083:12)
+    at Object.onceWrapper (events.js:273:13)
+    at IncomingMessage.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19) ReferenceError: MutationObserver is not defined
+    at Object.<anonymous> (http://localhost:65393/vendors~main.9e338d9efe9c1392410d.bundle.js:3420:194)
+    at Object.<anonymous> (http://localhost:65393/vendors~main.9e338d9efe9c1392410d.bundle.js:3590:178)
+    at Object../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js (http://localhost:65393/vendors~main.9e338d9efe9c1392410d.bundle.js:3594:30)
+    at __webpack_require__ (http://localhost:65393/runtime~main.9e338d9efe9c1392410d.bundle.js:782:30)
+    at fn (http://localhost:65393/runtime~main.9e338d9efe9c1392410d.bundle.js:150:20)
+    at Module.<anonymous> (http://localhost:65393/main.9e338d9efe9c1392410d.bundle.js:303:155)
+    at Module../packages/components/button/stories/button.stories.js (http://localhost:65393/main.9e338d9efe9c1392410d.bundle.js:334:30)
+    at __webpack_require__ (http://localhost:65393/runtime~main.9e338d9efe9c1392410d.bundle.js:782:30)
+    at fn (http://localhost:65393/runtime~main.9e338d9efe9c1392410d.bundle.js:150:20)
+    at webpackContext (http://localhost:65393/main.9e338d9efe9c1392410d.bundle.js:96:9)
+DEBUG: config.storybookPort 65393
+Error: Uncaught [ReferenceError: MutationObserver is not defined]
+    at reportException (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at processJavaScript (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:192:7)
+    at HTMLScriptElementImpl._innerEval (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:122:5)
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/browser/resource-loader.js:31:22
+    at Object.check (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Document-impl.js:74:11)
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Document-impl.js:93:12
+    at HTMLScriptElementImpl._eval (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:116:77)
+    at HTMLScriptElementImpl._attach (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:48:12)
+    at HTMLHtmlElementImpl.insertBefore (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Node-impl.js:229:22)
+    at HTMLHtmlElementImpl.appendChild (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/nodes/Node-impl.js:327:17)
+    at HTMLHtmlElement.appendChild (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/jsdom/living/generated/Node.js:192:45)
+    at processHTML (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/old-api.js:388:39)
+    at Object.exports.env.exports.jsdom.env (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/old-api.js:233:5)
+    at exports.get (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/storybook.js:233:9)
+    at tryCatcher (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at Object.exports.getStorybook (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/index.js:10:10)
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/cli.js:47:28
+    at tryCatcher (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/node_modules/bluebird/js/release/promise.js:612:10) ReferenceError: MutationObserver is not defined
+    at Object.<anonymous> (about:blank:4280:194)
+    at Object.<anonymous> (about:blank:4450:178)
+    at Object../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js (about:blank:4454:30)
+    at __webpack_require__ (about:blank:782:30)
+    at fn (about:blank:150:20)
+    at Module.<anonymous> (about:blank:52074:155)
+    at Module../packages/components/button/stories/button.stories.js (about:blank:52105:30)
+    at __webpack_require__ (about:blank:782:30)
+    at fn (about:blank:150:20)
+    at webpackContext (about:blank:51867:9)
+Error getting Storybook object
+Please send debug output to support@screener.io
+DEBUG: Error: Storybook object not found
+    at /Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/storybook.js:221:27
+    at getStorybook (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/storybook.js:195:5)
+    at Object.done (/Users/dsp/Development/@tradeshift/elements/node_modules/screener-storybook/src/storybook.js:212:7)
+    at process.nextTick (/Users/dsp/Development/@tradeshift/elements/node_modules/jsdom/lib/old-api.js:357:18)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+---
+Exiting Screener Storybook
+Run with --debug flag to log additional information
+Need help? Contact: support@screener.io
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! tradeshift-elements@ test-storybook: `screener-storybook --conf screener.config.js "--debug"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the tradeshift-elements@ test-storybook script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/dsp/.npm/_logs/2019-02-05T13_55_10_985Z-debug.log
