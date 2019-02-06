@@ -1,6 +1,8 @@
 module.exports = {
 	projectRepo: 'Tradeshift/elements',
 	storybookConfigDir: '.storybook',
-	apiKey: process.env.SCREENER_IO_KEY,
-	resolution: '1024x768'
+	storybookStaticDir: './',
+	apiKey: process.env.SCREENER_API_KEY,
+	resolution: '1024x768',
+	excludeRules: [/^(Gallery|Attributes)$/]
 };

@@ -1,11 +1,12 @@
-// import '@webcomponents/webcomponentsjs/webcomponents-bundle';
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
+import '@webcomponents/webcomponentsjs/webcomponents-bundle';
 
 import { storiesOf } from '@storybook/html';
 import { select } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements/src/vars.css';
-// import '@tradeshift/elements';
-// import '@tradeshift/elements.button';
+import '@tradeshift/elements';
+import '@tradeshift/elements.button';
 
 storiesOf('ts-button', module)
 	.add('Gallery', () => {
@@ -18,9 +19,7 @@ storiesOf('ts-button', module)
 	.add('Attributes', () => {
 		const type = select('Type', ['primary', 'secondary', 'text'], 'text');
 		return `<ts-button type="${type}">Button</ts-button>`;
-	});
-
-storiesOf('ts-button/states', module)
+	})
 	.add('default type', () => {
 		return '<ts-button>Button</ts-button>';
 	})
