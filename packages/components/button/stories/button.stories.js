@@ -11,14 +11,25 @@ import '@tradeshift/elements.button';
 
 storiesOf('ts-button', module)
 	.add('type=""', () => {
-		return '<ts-button>Button</ts-button>';
+		const button = document.createElement('ts-button');
+		button.innerHTML = 'Default Button';
+		return button;
 	})
 	.add('type="primary"', () => {
-		return '<ts-button type="primary">Button</ts-button>';
+		const button = document.createElement('ts-button');
+		button.type = 'primary';
+		button.innerHTML = 'Primary Button';
+		return button;
 	})
 	.add('type="secondary"', () => {
-		return '<ts-button type="secondary">Button</ts-button>';
+		const button = document.createElement('ts-button');
+		button.type = 'secondary';
+		button.innerHTML = 'Secondary Button';
+		return button;
 	})
 	.add('type="text"', () => {
-		return '<ts-button type="text">Button</ts-button>';
+		const button = document.createElement('ts-button');
+		button.type = 'text';
+		button.innerHTML = 'Text Button';
+		return button;
 	});

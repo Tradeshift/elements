@@ -30,9 +30,9 @@ export class ButtonGroup extends TSElement('ButtonGroup') {
 		}
 	}
 	[$groupButtons]() {
-		Array.from(this.querySelectorAll('ts-button')).forEach(button => {
-			button.grouped = true;
-		});
+		Array.from(this.querySelectorAll('ts-button')).forEach(
+			button => (button.grouped = true)
+		);
 	}
 }
 
