@@ -69,13 +69,13 @@ export const defineElement = Element => {
 	Element[$cssTemplate].innerHTML = '';
 	if (Element.css) {
 		Element[$cssTemplate].innerHTML = `
-					<style>
-						${commonStyles}
-					</style>
-					<style>
-						${Element.css}
-					</style>
-				`;
+			<style>
+				${commonStyles}
+			</style>
+			<style>
+				${Element.css}
+			</style>
+		`;
 
 		if (window.ShadyCSS && !cssPrepared[Element.tagName]) {
 			window.ShadyCSS.prepareTemplate(Element[$cssTemplate], Element.tagName);
