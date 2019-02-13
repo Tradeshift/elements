@@ -35,7 +35,7 @@ export class Button extends TSElement('Button') {
 		this[type ? 'setAttribute' : 'removeAttribute']('type', type);
 		this.shadowRoot
 			.querySelector('button > span')
-			.classList.toggle('title', this.type !== 'text');
+			.classList[this.type === 'text' ? 'remove' : 'add']('title');
 	}
 	get grouped() {
 		return this[$grouped];

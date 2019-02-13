@@ -84,7 +84,7 @@
 
 /* Filling up the grid */
 
-:host ::slotted(header) {
+:host ::slotted([slot='header']) {
 	-ms-grid-row: 1;
 	-ms-grid-row-span: 1;
 	grid-row: 1 / 1;
@@ -94,32 +94,32 @@
 	grid-column: 1 / 4;
 }
 
-:host ::slotted(.sidebar-left),
-:host ::slotted(.sidebar-right) {
+:host ::slotted([slot='sidebar-left']),
+:host ::slotted([slot='sidebar-right']) {
 	-ms-grid-row: 2;
 	-ms-grid-row-span: 1;
 	grid-row: 2 / 2;
 }
-::slotted(.sidebar-inner-left),
-::slotted(.sidebar-inner-right) {
+:host ::slotted([slot='sidebar-inner-left']),
+:host ::slotted([slot='sidebar-inner-right']) {
 	-ms-grid-row: 1;
 	-ms-grid-row-span: 1;
 	grid-row: 1 / 1;
 }
-:host ::slotted(.sidebar-left),
-:host > .content ::slotted(.sidebar-inner-left) {
+:host ::slotted([slot='sidebar-left']),
+:host > .content ::slotted([slot='sidebar-inner-left']) {
 	-ms-grid-column: 1;
 	-ms-grid-column-span: 1;
 	grid-column: 1 / 1;
 }
-:host ::slotted(.sidebar-right),
-:host > .content ::slotted(.sidebar-inner-right) {
+:host ::slotted([slot='sidebar-right']),
+:host > .content ::slotted([slot='sidebar-inner-right']) {
 	-ms-grid-column: 3;
 	-ms-grid-column-span: 1;
 	grid-column: 3 / 3;
 }
 
-:host ::slotted(footer) {
+:host ::slotted([slot='footer']) {
 	-ms-grid-row: 3;
 	-ms-grid-row-span: 1;
 	grid-row: 3 / 3;

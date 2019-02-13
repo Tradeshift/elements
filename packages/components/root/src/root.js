@@ -39,8 +39,10 @@ export class Root extends TSElement('Root') {
 	[$decorateSlots](slot, e) {
 		const assignedNodes = slot.assignedNodes();
 		const showSlot = assignedNodes && assignedNodes.length;
-		slot.classList.toggle('hidden', !showSlot);
-		this.classList.toggle(`ts-has-${slot.getAttribute('name')}`, showSlot);
+		slot.classList[!showSlot ? 'add' : 'remove']('hidden');
+		this.classList[showSlot ? 'add' : 'remove'](
+			`ts-has-${slot.getAttribute('name')}`
+		);
 	}
 }
 
