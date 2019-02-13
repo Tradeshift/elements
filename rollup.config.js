@@ -68,7 +68,8 @@ const config = [
 							}
 						}
 					]
-				]
+				],
+				plugins: ['@babel/proposal-class-properties']
 			})
 		]
 	},
@@ -117,7 +118,8 @@ const config = [
 							helpers: false,
 							regenerator: true
 						}
-					]
+					],
+					'@babel/proposal-class-properties'
 				]
 			})
 		]

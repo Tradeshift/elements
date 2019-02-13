@@ -1,53 +1,32 @@
-import { TSElement, defineElement } from '@tradeshift/elements';
-import css from './button.css';
+// import { TSElement, defineElement } from '@tradeshift/elements';
+import { LitElement, html, css } from 'lit-element';
+import commonStyles from '@tradeshift/elements/src/common.css';
+import styles from './button.css';
 
-const [$type, $grouped] = [Symbol('type'), Symbol('grouped')];
+export class Button extends LitElement {
+	static styles = [css(commonStyles), css(styles)];
+	static get properties() {
+		return {
+			type: String,
+			grouped: Boolean
+		};
+	}
 
-export class Button extends TSElement('Button') {
-	static get observedAttributes() {
-		return ['type', 'grouped'];
+	constructor() {
+		super();
+		this.type = '';
+		this.grouped = false;
 	}
-	static get tagName() {
-		return 'ts-button';
-	}
-	static get html() {
-		return `
+
+	render() {
+		return html`
 			<button>
-				<span>
+				<span class="${this.type !== text ? 'title' : ''}">
 					<slot></slot>
 				</span>
 			</button>
 		`;
 	}
-	static get css() {
-		return css;
-	}
-
-	get type() {
-		return this[$type];
-	}
-	set type(type) {
-		if (type === this[$type]) {
-			return;
-		}
-
-		this[$type] = type;
-		this[type ? 'setAttribute' : 'removeAttribute']('type', type);
-		this.shadowRoot
-			.querySelector('button > span')
-			.classList.toggle('title', this.type !== 'text');
-	}
-	get grouped() {
-		return this[$grouped];
-	}
-	set grouped(grouped) {
-		if (grouped === this[$grouped]) {
-			return;
-		}
-
-		this[$grouped] = grouped;
-		this[grouped ? 'setAttribute' : 'removeAttribute']('grouped', grouped);
-	}
 }
 
-defineElement(Button);
+customElements.define('ts-button', Button);
