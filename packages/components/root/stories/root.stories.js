@@ -32,20 +32,17 @@ const slots = {
 };
 storiesOf('ts-root', module)
 	.add('empty', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 		return root;
 	})
 	.add('header', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		return root;
 	})
 	.add('header + footer', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		createElement(slots.footer, root);
@@ -53,8 +50,7 @@ storiesOf('ts-root', module)
 		return root;
 	})
 	.add('header + footer + sidebar-left', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		createElement(slots.footer, root);
@@ -63,8 +59,7 @@ storiesOf('ts-root', module)
 		return root;
 	})
 	.add('header + footer + sidebar-right', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		createElement(slots.footer, root);
@@ -73,8 +68,7 @@ storiesOf('ts-root', module)
 		return root;
 	})
 	.add('header + footer + sidebar-inner-left', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		createElement(slots.footer, root);
@@ -83,8 +77,7 @@ storiesOf('ts-root', module)
 		return root;
 	})
 	.add('header + footer + sidebar-inner-right', () => {
-		const root = document.createElement('ts-root');
-		root.innerHTML = 'Content';
+		const root = createRoot();
 
 		createElement(slots.header, root);
 		createElement(slots.footer, root);
@@ -96,8 +89,7 @@ storiesOf('ts-root', module)
 	.add(
 		'header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right',
 		() => {
-			const root = document.createElement('ts-root');
-			root.innerHTML = 'Content';
+			const root = createRoot();
 
 			createElement(slots.header, root);
 			createElement(slots.footer, root);
@@ -109,6 +101,16 @@ storiesOf('ts-root', module)
 			return root;
 		}
 	);
+
+function createRoot() {
+	const root = document.createElement('ts-root');
+	root.innerHTML = 'Content';
+	root.setAttribute(
+		'style',
+		'position: absolute; top: 0; right: 0; bottom: 0; left: 0;'
+	);
+	return root;
+}
 
 function createElement({ slot, height, background }, root) {
 	const element = document.createElement('div');

@@ -1,9 +1,6 @@
 import '@webcomponents/webcomponentsjs/webcomponents-bundle';
 
-import { isHappoRun } from 'happo-plugin-storybook/register';
-
 import { storiesOf } from '@storybook/html';
-import { select } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements/src/vars.css';
 import '@tradeshift/elements';

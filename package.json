@@ -9,7 +9,8 @@
     "server": "npx @commonshost/server start --watch",
     "start": "run-p watch server",
     "storybook": "start-storybook -p 9009",
-    "happo": "happo"
+    "happo": "happo",
+    "screener": "screener-storybook --conf screener.config.js --debug"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -39,9 +40,11 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-postcss": "^1.6.3"
+    "rollup-plugin-postcss": "^1.6.3",
+    "screener-storybook": "^0.17.1"
   },
   "dependencies": {
+    "@storybook/html": "^4.1.11",
     "@tradeshift/elements": "file:packages/core",
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
