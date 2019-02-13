@@ -40,7 +40,7 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^1.6.3",
-    "screener-storybook": "^0.16.12"
+    "screener-storybook": "^0.17.1"
   },
   "dependencies": {
     "@storybook/react": "^4.1.11",
