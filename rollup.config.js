@@ -55,21 +55,25 @@ const config = [
 		external: ['@tradeshift/elements'],
 		plugins: [
 			postcssPlugin,
+			resolve(),
 			babel({
 				babelrc: false,
-				exclude: nodeModules,
-				presets: [
-					[
-						'@babel/env',
-						{
-							modules: false,
-							targets: {
-								esmodules: true
-							}
-						}
-					]
-				],
-				plugins: ['@babel/proposal-class-properties']
+				// exclude: nodeModules,
+				// presets: [
+				// 	[
+				// 		'@babel/env',
+				// 		{
+				// 			modules: false,
+				// 			targets: {
+				// 				esmodules: true
+				// 			}
+				// 		}
+				// 	]
+				// ],
+				plugins: [
+					'@babel/proposal-class-properties',
+					['@babel/proposal-decorators', { decoratorsBeforeExport: true }]
+				]
 			})
 		]
 	},
@@ -112,14 +116,15 @@ const config = [
 					]
 				],
 				plugins: [
+					'@babel/proposal-class-properties',
+					['@babel/proposal-decorators', { decoratorsBeforeExport: true }],
 					[
 						'@babel/transform-runtime',
 						{
 							helpers: false,
 							regenerator: true
 						}
-					],
-					'@babel/proposal-class-properties'
+					]
 				]
 			})
 		]

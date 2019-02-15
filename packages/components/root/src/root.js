@@ -1,47 +1,54 @@
-import { TSElement, defineElement } from '@tradeshift/elements';
-import css from './root.css';
+import { TSElement } from '@tradeshift/elements';
+import { html, css, customElement } from 'lit-element';
+import styles from './root.css';
 
-const [$decorateSlots] = [Symbol('decorateSlots')];
-
-export class Root extends TSElement('Root') {
-	static get observedAttributes() {
-		return [];
-	}
-	static get tagName() {
-		return 'ts-root';
-	}
-	static get html() {
-		return `
-			<slot name="header" class="hidden"></slot>
-			<slot name="sidebar-left" class="hidden"></slot>
+@customElement('ts-root')
+export class Root extends TSElement {
+	static styles = [super.styles, css(styles)];
+	render() {
+		return html`
+			<slot
+				name="header"
+				class="hidden"
+				@slotchange="${this.decorateSlot}"
+			></slot>
+			<slot
+				name="sidebar-left"
+				class="hidden"
+				@slotchange="${this.decorateSlot}"
+			></slot>
 			<section class="content">
-				<slot name="sidebar-inner-left" class="hidden"></slot>
+				<slot
+					name="sidebar-inner-left"
+					class="hidden"
+					@slotchange="${this.decorateSlot}"
+				></slot>
 				<main>
 					<slot></slot>
 				</main>
-				<slot name="sidebar-inner-right" class="hidden"></slot>
+				<slot
+					name="sidebar-inner-right"
+					class="hidden"
+					@slotchange="${this.decorateSlot}"
+				></slot>
 			</section>
-			<slot name="sidebar-right" class="hidden"></slot>
-			<slot name="footer" class="hidden"></slot>
+			<slot
+				name="sidebar-right"
+				class="hidden"
+				@slotchange="${this.decorateSlot}"
+			></slot>
+			<slot
+				name="footer"
+				class="hidden"
+				@slotchange="${this.decorateSlot}"
+			></slot>
 		`;
 	}
-	static get css() {
-		return css;
-	}
-	constructor() {
-		super();
-		this[$decorateSlots] = this[$decorateSlots].bind(this);
-		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
-			slot.classList.add(slot.getAttribute('name'));
-			slot.addEventListener('slotchange', e => this[$decorateSlots](slot, e));
-		});
-	}
-	[$decorateSlots](slot, e) {
-		const assignedNodes = slot.assignedNodes();
-		const showSlot = assignedNodes && assignedNodes.length;
-		slot.classList.toggle('hidden', !showSlot);
-		this.classList.toggle(`ts-has-${slot.getAttribute('name')}`, showSlot);
+	decorateSlot(e) {
+		console.log(e);
+		// const assignedNodes = slot.assignedNodes();
+		// const showSlot = assignedNodes && assignedNodes.length;
+		// slot.classList.toggle('hidden', !showSlot);
+		// this.classList.toggle(`ts-has-${slot.getAttribute('name')}`, showSlot);
 	}
 }
-
-defineElement(Root);

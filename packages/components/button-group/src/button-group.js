@@ -1,39 +1,25 @@
-import { TSElement, defineElement } from '@tradeshift/elements';
-import css from './button-group.css';
+import { TSElement } from '@tradeshift/elements';
+import { html, css, customElement } from 'lit-element';
+import styles from './button-group.css';
 
-const [$groupButtons] = [Symbol('groupButtons')];
+@customElement('ts-button-group')
+export class ButtonGroup extends TSElement {
+	static styles = [super.styles, css(styles)];
 
-export class ButtonGroup extends TSElement('ButtonGroup') {
-	static get tagName() {
-		return 'ts-button-group';
-	}
-	static get html() {
-		return `
+	render() {
+		return html`
 			<section>
-				<slot></slot>
+				<slot @slotchange="${this.handleSlotChange}"></slot>
 			</section>
 		`;
 	}
-	static get css() {
-		return css;
+
+	firstUpdated() {
+		this.handleSlotChange();
 	}
-	constructor() {
-		super();
-		this[$groupButtons] = this[$groupButtons].bind(this);
-		this.shadowRoot
-			.querySelector('slot')
-			.addEventListener('slotchange', this[$groupButtons]);
-	}
-	connectedCallback() {
-		if (this.isConnected) {
-			this[$groupButtons]();
-		}
-	}
-	[$groupButtons]() {
+	handleSlotChange() {
 		Array.from(this.querySelectorAll('ts-button')).forEach(button => {
 			button.grouped = true;
 		});
 	}
 }
-
-defineElement(ButtonGroup);

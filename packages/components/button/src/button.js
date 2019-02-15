@@ -1,22 +1,16 @@
-// import { TSElement, defineElement } from '@tradeshift/elements';
-import { LitElement, html, css } from 'lit-element';
-import commonStyles from '@tradeshift/elements/src/common.css';
+import { TSElement } from '@tradeshift/elements';
+import { html, css, customElement, property } from 'lit-element';
 import styles from './button.css';
 
-export class Button extends LitElement {
-	static styles = [css(commonStyles), css(styles)];
-	static get properties() {
-		return {
-			type: String,
-			grouped: Boolean
-		};
-	}
+@customElement('ts-button')
+export class Button extends TSElement {
+	static styles = [super.styles, css(styles)];
 
-	constructor() {
-		super();
-		this.type = '';
-		this.grouped = false;
-	}
+	@property({ type: String })
+	type = '';
+
+	@property({ type: Boolean })
+	grouped = false;
 
 	render() {
 		return html`
@@ -28,5 +22,3 @@ export class Button extends LitElement {
 		`;
 	}
 }
-
-customElements.define('ts-button', Button);
