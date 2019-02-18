@@ -1,5 +1,4 @@
-import { TSElement } from '@tradeshift/elements';
-import { html, css, customElement } from 'lit-element';
+import { TSElement, html, css, customElement } from '@tradeshift/elements';
 import styles from './root.css';
 
 @customElement('ts-root')

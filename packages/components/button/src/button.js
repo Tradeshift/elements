@@ -1,5 +1,10 @@
-import { TSElement } from '@tradeshift/elements';
-import { html, css, customElement, property } from 'lit-element';
+import {
+	TSElement,
+	html,
+	css,
+	customElement,
+	property
+} from '@tradeshift/elements';
 import styles from './button.css';
 
 @customElement('ts-button')

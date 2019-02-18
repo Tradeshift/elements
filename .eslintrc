@@ -3,5 +3,9 @@
 	"env": {
 		"browser": true
 	},
-	"extends": ["tradeshift"]
+	"rules": {
+		"lit/no-legacy-template-syntax": "warn"
+	},
+	"extends": ["tradeshift"],
+	"plugins": ["lit"]
 }

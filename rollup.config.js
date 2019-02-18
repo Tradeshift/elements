@@ -58,18 +58,18 @@ const config = [
 			resolve(),
 			babel({
 				babelrc: false,
-				// exclude: nodeModules,
-				// presets: [
-				// 	[
-				// 		'@babel/env',
-				// 		{
-				// 			modules: false,
-				// 			targets: {
-				// 				esmodules: true
-				// 			}
-				// 		}
-				// 	]
-				// ],
+				exclude: nodeModules,
+				presets: [
+					[
+						'@babel/env',
+						{
+							modules: false,
+							targets: {
+								esmodules: true
+							}
+						}
+					]
+				],
 				plugins: [
 					'@babel/proposal-class-properties',
 					['@babel/proposal-decorators', { decoratorsBeforeExport: true }]
