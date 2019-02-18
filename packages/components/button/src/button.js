@@ -1,29 +1,34 @@
-import {
-	TSElement,
-	html,
-	css,
-	customElement,
-	property
-} from '@tradeshift/elements';
-import styles from './button.css';
+import { TSElement, styles, html } from '@tradeshift/elements';
+import css from './button.css';
 
-@customElement('ts-button')
-export class Button extends TSElement {
-	static styles = [super.styles, css(styles)];
+customElements.define(
+	'ts-button',
+	class extends TSElement {
+		static get styles() {
+			return [super.styles, styles(css)];
+		}
 
-	@property({ type: String })
-	type = '';
+		static get properties() {
+			return {
+				type: { type: String },
+				grouped: { type: Boolean }
+			};
+		}
 
-	@property({ type: Boolean })
-	grouped = false;
+		constructor() {
+			super();
+			this.type = '';
+			this.grouped = false;
+		}
 
-	render() {
-		return html`
-			<button>
-				<span class="${this.type !== text ? 'title' : ''}">
-					<slot></slot>
-				</span>
-			</button>
-		`;
+		render() {
+			return html`
+				<button>
+					<span class="${this.type !== 'text' ? 'title' : ''}">
+						<slot></slot>
+					</span>
+				</button>
+			`;
+		}
 	}
-}
+);

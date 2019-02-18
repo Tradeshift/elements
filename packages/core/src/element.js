@@ -1,9 +1,11 @@
-import { LitElement, css } from 'lit-element';
-
-import commonStyles from './common.css';
+import { LitElement } from 'lit-element';
+import { styles } from './styles';
+import css from './common.css';
 
 export class TSElement extends LitElement {
-	static styles = [css(commonStyles)];
+	static get styles() {
+		return [styles(css)];
+	}
 }
 
 // export const xTSElement = (name = 'Base') => {

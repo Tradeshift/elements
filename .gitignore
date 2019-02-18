@@ -59,6 +59,7 @@ typings/
 
 # build output
 lib
+dist
 /commons.host.config.json
 .DS_Store
 /.out
