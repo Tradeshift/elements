@@ -19,6 +19,11 @@
 :host span {
 	display: block;
 	padding: 0 var(--ts-unit);
+	font-weight: var(--ts-font-weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Hover/Focus.................................................... */
@@ -70,6 +75,9 @@
 :host([type='text']) span {
 	color: var(--ts-color-blue);
 	padding: 0;
+	font-weight: var(--ts-font-weight);
+	text-transform: none;
+	letter-spacing: normal;
 }
 
 /* Inside a ButtonGroup ...........................................*/

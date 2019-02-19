@@ -117,12 +117,12 @@ const config = [
 			babel({
 				babelrc: false,
 				exclude: [/\/core-js\//],
-				runtimeHelpers: false,
+				runtimeHelpers: true,
+				externalHelpers: true,
 				presets: [
 					[
 						'@babel/env',
 						{
-							debug: true,
 							modules: false,
 							useBuiltIns: 'usage',
 							targets: {

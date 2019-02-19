@@ -17,11 +17,3 @@
 	margin: 0;
 	padding: 0;
 }
-
-:host .title {
-	font-weight: var(--ts-font-weight-semibold);
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
