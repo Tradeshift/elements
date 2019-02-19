@@ -1,5 +1,5 @@
-// import './shims';
-import './native-shim';
 export { TSElement } from './element';
 export { styles } from './styles';
-export * from 'lit-element';
+
+// To help with treeshaking, only exports in use are exported
+export { customElement, property, css, unsafeCSS, html } from 'lit-element';
