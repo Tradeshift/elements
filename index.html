@@ -2,10 +2,12 @@
 <html>
 <head>
 <title>Tradeshift Elements v0.1.0</title>
-<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+<!-- <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script> -->
 
 <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
 
 <script>
 	window.addEventListener('WebComponentsReady', function() {
@@ -41,12 +43,12 @@
 		<article id="ts-root-toggle">
 			<h2>ts-root</h2>
 			<ts-button-group>
-				<ts-button data-toggle="header">Toggle Header</ts-button>
-				<ts-button data-toggle="footer">Toggle Footer</ts-button>
-				<ts-button data-toggle="sidebar-left">Toggle Left Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-right">Toggle Right Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-inner-left">Toggle Inner Left Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-inner-right">Toggle Inner Right Sidebar</ts-button>
+				<ts-button onclick="toggleSlot('header', this)">Toggle Header</ts-button>
+				<ts-button onclick="toggleSlot('footer', this)">Toggle Footer</ts-button>
+				<ts-button onclick="toggleSlot('sidebar-left', this)">Toggle Left Sidebar</ts-button>
+				<ts-button onclick="toggleSlot('sidebar-right', this)">Toggle Right Sidebar</ts-button>
+				<ts-button onclick="toggleSlot('sidebar-inner-left', this)">Toggle Inner Left Sidebar</ts-button>
+				<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
 			</ts-button-group>
 			<script>
 				function toggleSlot(name, button) {
@@ -79,13 +81,6 @@
 								slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
 							}
 						});
-
-						document.getElementById('ts-root-toggle')
-							.addEventListener('click', function(e) {
-								if (e.target && e.target.dataset.toggle) {
-									toggleSlot(e.target.dataset.toggle, e.target);
-								}
-							});
 					});
 				})();
 			</script>

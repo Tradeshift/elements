@@ -63,3 +63,4 @@ dist
 /commons.host.config.json
 .DS_Store
 /.out
+stats.html

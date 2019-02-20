@@ -1,10 +1,9 @@
 import path from 'path';
-import globals from 'rollup-plugin-node-globals';
-import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 // import { terser } from 'rollup-plugin-terser';
+import visualizer from 'rollup-plugin-visualizer';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 
@@ -28,13 +27,6 @@ const nodeModules = [
 	path.join(PACKAGE_ROOT_PATH, 'node_modules/**')
 ];
 
-// [
-// 	PACKAGE_ROOT_PATH,
-// 	path.join(PACKAGE_ROOT_PATH, 'node_modules/lit-element'),
-// 	path.join(PACKAGE_ROOT_PATH, 'node_modules/lit-html'),
-// 	path.join(PACKAGE_ROOT_PATH, '**/src')
-// ]
-
 const postcssPlugin = postcss({
 	plugins: [
 		postcssPresetEnv({
@@ -50,51 +42,44 @@ const postcssPlugin = postcss({
 });
 
 const config = [
-	// {
-	// 	input: INPUT_FILE,
-	// 	output: [
-	// 		{
-	// 			...outputConfig,
-	// 			file: PKG_JSON.module,
-	// 			format: 'esm'
-	// 		},
-	// 		{
-	// 			...outputConfig,
-	// 			file: PKG_JSON.main,
-	// 			format: 'cjs'
-	// 		}
-	// 	],
-	// 	external: ['@tradeshift/elements'],
-	// 	plugins: [
-	// 		postcssPlugin,
-	// 		resolve(),
-	// 		babel({
-	// 			babelrc: false,
-	// 			exclude: nodeModules,
-	// 			presets: [
-	// 				[
-	// 					'@babel/env',
-	// 					{
-	// 						modules: false,
-	// 						targets: {
-	// 							esmodules: true
-	// 						}
-	// 					}
-	// 				]
-	// 			],
-	// 			plugins: [
-	// 				'@babel/proposal-class-properties',
-	// 				['@babel/proposal-decorators', { decoratorsBeforeExport: true }]
-	// 			]
-	// 		})
-	// 	]
-	// },
 	{
 		input: INPUT_FILE,
-		// path.join(
-		// 	LERNA_ROOT_PATH,
-		// 	'node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'
-		// )
+		output: [
+			{
+				...outputConfig,
+				file: PKG_JSON.module,
+				format: 'esm'
+			},
+			{
+				...outputConfig,
+				file: PKG_JSON.main,
+				format: 'cjs'
+			}
+		],
+		external: ['@tradeshift/elements'],
+		plugins: [
+			postcssPlugin,
+			babel({
+				babelrc: false,
+				presets: [
+					[
+						'@babel/env',
+						{
+							modules: false,
+							loose: true,
+							targets: {
+								esmodules: true
+							}
+						}
+					]
+				],
+				plugins: ['module:fast-async']
+			}),
+			visualizer()
+		]
+	},
+	{
+		input: INPUT_FILE,
 		output: [
 			{
 				...outputConfig,
@@ -106,9 +91,6 @@ const config = [
 		external: ['@tradeshift/elements'],
 		plugins: [
 			postcssPlugin,
-
-			// globals(),
-			// builtins(),
 			resolve(),
 			commonjs({
 				include: nodeModules
@@ -117,60 +99,43 @@ const config = [
 			babel({
 				babelrc: false,
 				exclude: [/\/core-js\//],
-				runtimeHelpers: true,
-				externalHelpers: true,
+				runtimeHelpers: false, //true,
+				externalHelpers: false,
 				presets: [
 					[
 						'@babel/env',
 						{
 							modules: false,
-							useBuiltIns: 'usage',
+							useBuiltIns: false, //'usage',
+							loose: true,
 							targets: {
 								ie: '11'
-							}
+							},
+							exclude: ['transform-regenerator', 'transform-async-to-generator']
 						}
 					]
 				],
 				plugins: [
-					'@babel/proposal-class-properties',
-					['@babel/proposal-decorators', { decoratorsBeforeExport: true }]
-					// '@babel/transform-runtime'
+					[
+						'module:fast-async',
+						{
+							env: {
+								log: false
+							},
+							compiler: {
+								promises: true,
+								generators: false
+							},
+							runtimePattern: null,
+							useRuntimeModule: false
+						}
+					]
 				]
-			})
+			}),
+			visualizer()
 			// terser()
 		]
 	}
 ];
-
-/*
-{
-				babelrc: false,
-				exclude: /node_modules\/(?!(lit-html))/,
-				// include: [/node_modules\/*\/src/, /node_modules\/lit-html/, /src/],
-				runtimeHelpers: true,
-				// include,
-				presets: [
-					[
-						'@babel/env',
-						{
-							modules: false,
-							targets: 'ie 11'
-						}
-					]
-				],
-				plugins: [
-					'@babel/proposal-class-properties',
-					['@babel/proposal-decorators', { decoratorsBeforeExport: true }],
-
-					[
-						'@babel/transform-runtime',
-						{
-							helpers: false,
-							regenerator: false
-						}
-					]
-				]
-			}
- */
 
 export default config;

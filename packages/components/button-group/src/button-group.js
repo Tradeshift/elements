@@ -1,29 +1,30 @@
-import {
-	TSElement,
-	customElement,
-	unsafeCSS,
-	html
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
 import css from './button-group.css';
 
-@customElement('ts-button-group')
-export class TSButtonGroup extends TSElement {
-	static styles = [TSElement.styles, unsafeCSS(css)];
+customElements.define(
+	'ts-button-group',
+	class extends TSElement {
+		static get styles() {
+			return [TSElement.styles, unsafeCSS(css)];
+		}
 
-	render() {
-		return html`
-			<section>
-				<slot @slotchange="${this.handleSlotChange}"></slot>
-			</section>
-		`;
-	}
+		render() {
+			return html`
+				<section>
+					<slot @slotchange="${this.handleSlotChange}"></slot>
+				</section>
+			`;
+		}
 
-	firstUpdated() {
-		this.handleSlotChange();
+		firstUpdated() {
+			super.firstUpdated();
+			this.handleSlotChange();
+		}
+
+		handleSlotChange() {
+			Array.from(this.querySelectorAll('ts-button')).forEach(button => {
+				button.grouped = true;
+			});
+		}
 	}
-	handleSlotChange() {
-		Array.from(this.querySelectorAll('ts-button')).forEach(button => {
-			button.grouped = true;
-		});
-	}
-}
+);
