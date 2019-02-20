@@ -1,107 +1,130 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Tradeshift Elements v0.1.0</title>
-<!-- <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script> -->
+	<head>
+		<title>Tradeshift Elements v0.1.0</title>
+		<script>
+			// window.ShadyDOM = { force: true };
+			// window.customElements = { forcePolyfill: true };
+		</script>
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<script
+			src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
+			defer
+		></script>
 
-<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<script> </script>
+		<link rel="stylesheet" href="/index.css" />
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
-
-<script>
-	window.addEventListener('WebComponentsReady', function() {
-		var coreEl = document.createElement('script');
-		coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
-		document.body.appendChild(coreEl);
-		coreEl.onload = function() {
-			var scripts = [
-			'/packages/components/root/lib/root.umd.js',
-			'/packages/components/button/lib/button.umd.js',
-			'/packages/components/button-group/lib/button-group.umd.js'];
-			scripts.forEach(function(script) {
-				var el = document.createElement('script');
-				el.setAttribute('src', script);
-				document.body.appendChild(el);
-			});
-		}
-	});
-</script>
-
-<link rel="stylesheet" href="/packages/core/src/vars.css"><script> </script>
-<link rel="stylesheet" href="/index.css">
-</head>
-<body>
-<ts-root>
-		<header slot="header" class="header">Header</header>
-		<footer slot="footer" class="footer">Footer</footer>
-		<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
-		<section slot="sidebar-right" class="sidebar-right">Right Sidebar</section>
-		<section slot="sidebar-inner-left" class="sidebar-inner-left">Inner Left Sidebar</section>
-		<section slot="sidebar-inner-right" class="sidebar-inner-right">Inner Right Sidebar</section>
-
-		<article id="ts-root-toggle">
-			<h2>ts-root</h2>
-			<ts-button-group>
-				<ts-button onclick="toggleSlot('header', this)">Toggle Header</ts-button>
-				<ts-button onclick="toggleSlot('footer', this)">Toggle Footer</ts-button>
-				<ts-button onclick="toggleSlot('sidebar-left', this)">Toggle Left Sidebar</ts-button>
-				<ts-button onclick="toggleSlot('sidebar-right', this)">Toggle Right Sidebar</ts-button>
-				<ts-button onclick="toggleSlot('sidebar-inner-left', this)">Toggle Inner Left Sidebar</ts-button>
-				<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
-			</ts-button-group>
-			<script>
-				function toggleSlot(name, button) {
-					var enabledSlot = document.querySelector('[slot=' + name + ']');
-					if (enabledSlot) {
-						button.removeAttribute('type');
-						return enabledSlot.setAttribute('slot', '!' + name);
-					}
-
-					var disabledSlot = document.querySelector('[slot="!' + name + '"]');
-					if (disabledSlot) {
-						button.setAttribute('type', 'primary');
-						return disabledSlot.setAttribute('slot', name);
-					}
-				}
-
-				(function() {
-					setTimeout(function() {
-						const slots = [
-							'header',
-							'footer',
-							'sidebar-left',
-							'sidebar-right',
-							'sidebar-inner-left',
-							'sidebar-inner-right'
-						];
-						slots.forEach(function(slotName) {
-							var slot = document.querySelector('[slot=' + slotName + ']');
-							if (slot) {
-								slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
-							}
-						});
+		<script>
+			window.addEventListener('WebComponentsReady', function() {
+				var coreEl = document.createElement('script');
+				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+				document.body.appendChild(coreEl);
+				coreEl.onload = function() {
+					var scripts = [
+						'/packages/components/root/lib/root.umd.js',
+						'/packages/components/button/lib/button.umd.js',
+						'/packages/components/button-group/lib/button-group.umd.js'
+					];
+					scripts.forEach(function(script) {
+						var el = document.createElement('script');
+						el.setAttribute('src', script);
+						document.body.appendChild(el);
 					});
-				})();
-			</script>
-		</article>
+				};
+			});
+		</script>
+	</head>
+	<body>
+		<ts-root>
+			<header slot="header" class="header">Header</header>
+			<footer slot="footer" class="footer">Footer</footer>
+			<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
+			<section slot="sidebar-right" class="sidebar-right">
+				Right Sidebar
+			</section>
+			<section slot="sidebar-inner-left" class="sidebar-inner-left">
+				Inner Left Sidebar
+			</section>
+			<section slot="sidebar-inner-right" class="sidebar-inner-right">
+				Inner Right Sidebar
+			</section>
 
+			<article id="ts-root-toggle">
+				<h2>ts-root</h2>
+				<ts-button-group>
+					<ts-button onclick="toggleSlot('header', this)"
+						>Toggle Header</ts-button
+					>
+					<ts-button onclick="toggleSlot('footer', this)"
+						>Toggle Footer</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-left', this)"
+						>Toggle Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-right', this)"
+						>Toggle Right Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-left', this)"
+						>Toggle Inner Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-right', this)"
+						>Toggle Inner Right Sidebar</ts-button
+					>
+				</ts-button-group>
+				<script>
+					function toggleSlot(name, button) {
+						var enabledSlot = document.querySelector('[slot=' + name + ']');
+						if (enabledSlot) {
+							button.removeAttribute('type');
+							return enabledSlot.setAttribute('slot', '!' + name);
+						}
 
-		<article>
-			<h2>ts-button</h2>
-			<ts-button type="text">Text Button</ts-button>
-			<ts-button type="primary">Primary Button</ts-button>
-			<ts-button>Normal Button</ts-button>
-		</article>
+						var disabledSlot = document.querySelector('[slot="!' + name + '"]');
+						if (disabledSlot) {
+							button.setAttribute('type', 'primary');
+							return disabledSlot.setAttribute('slot', name);
+						}
+					}
 
-		<article>
-			<h2>ts-button-group</h2>
-			<ts-button-group>
+					(function() {
+						setTimeout(function() {
+							const slots = [
+								'header',
+								'footer',
+								'sidebar-left',
+								'sidebar-right',
+								'sidebar-inner-left',
+								'sidebar-inner-right'
+							];
+							slots.forEach(function(slotName) {
+								var slot = document.querySelector('[slot=' + slotName + ']');
+								if (slot) {
+									slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
+								}
+							});
+						});
+					})();
+				</script>
+			</article>
+
+			<article>
+				<h2>ts-button</h2>
 				<ts-button type="text">Text Button</ts-button>
 				<ts-button type="primary">Primary Button</ts-button>
 				<ts-button>Normal Button</ts-button>
-			</ts-button-group>
-		</article>
-	</ts-root>
-</body>
+			</article>
+
+			<article>
+				<h2>ts-button-group</h2>
+				<ts-button-group>
+					<ts-button type="text">Text Button</ts-button>
+					<ts-button type="primary">Primary Button</ts-button>
+					<ts-button>Normal Button</ts-button>
+				</ts-button-group>
+			</article>
+		</ts-root>
+	</body>
 </html>

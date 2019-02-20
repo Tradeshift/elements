@@ -2,12 +2,12 @@ import path from 'path';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-// import { terser } from 'rollup-plugin-terser';
-import visualizer from 'rollup-plugin-visualizer';
+import { terser } from 'rollup-plugin-terser';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 
-const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH } = process.env;
+const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH, PRODUCTION } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
 const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, 'package.json'));
 const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
@@ -18,7 +18,7 @@ const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
 
 const outputConfig = {
 	extend: true,
-	sourcemap: true,
+	sourcemap: !PRODUCTION,
 	globals: require(`${LERNA_ROOT_PATH}/rollup.globals.json`)
 };
 
@@ -36,8 +36,8 @@ const postcssPlugin = postcss({
 	],
 	inject: false,
 	extract: false,
-	minimize: true,
-	sourceMap: 'inline',
+	minimize: !!PRODUCTION,
+	sourceMap: !PRODUCTION && 'inline',
 	autoprefixer: { grid: true }
 });
 
@@ -59,6 +59,7 @@ const config = [
 		external: ['@tradeshift/elements'],
 		plugins: [
 			postcssPlugin,
+			resolve(),
 			babel({
 				babelrc: false,
 				presets: [
@@ -73,10 +74,11 @@ const config = [
 						}
 					]
 				],
-				plugins: ['module:fast-async']
+				plugins: [PRODUCTION && 'minify-dead-code-elimination'].filter(Boolean)
 			}),
-			visualizer()
-		]
+			PRODUCTION && sizeSnapshot(),
+			PRODUCTION && terser()
+		].filter(Boolean)
 	},
 	{
 		input: INPUT_FILE,
@@ -95,18 +97,17 @@ const config = [
 			commonjs({
 				include: nodeModules
 			}),
-
 			babel({
 				babelrc: false,
 				exclude: [/\/core-js\//],
-				runtimeHelpers: false, //true,
+				runtimeHelpers: false,
 				externalHelpers: false,
 				presets: [
 					[
 						'@babel/env',
 						{
 							modules: false,
-							useBuiltIns: false, //'usage',
+							useBuiltIns: false,
 							loose: true,
 							targets: {
 								ie: '11'
@@ -129,12 +130,13 @@ const config = [
 							runtimePattern: null,
 							useRuntimeModule: false
 						}
-					]
-				]
+					],
+					PRODUCTION && 'minify-dead-code-elimination'
+				].filter(Boolean)
 			}),
-			visualizer()
-			// terser()
-		]
+			PRODUCTION && sizeSnapshot(),
+			PRODUCTION && terser()
+		].filter(Boolean)
 	}
 ];
 

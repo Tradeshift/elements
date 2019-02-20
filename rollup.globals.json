@@ -1,6 +1,4 @@
 {
-	"@tradeshift/elements.example": "ts.elements.example",
-
 	"@tradeshift/elements": "ts.elements",
 	"@tradeshift/elements.root": "ts.elements.root",
 	"@tradeshift/elements.button": "ts.elements.button",

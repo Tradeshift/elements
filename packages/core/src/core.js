@@ -1,9 +1,9 @@
 import { LitElement, unsafeCSS } from 'lit-element';
-import css from './common.css';
+import commonCSS from './common.css';
 
 export class TSElement extends LitElement {
 	static get styles() {
-		return unsafeCSS(css);
+		return unsafeCSS(commonCSS);
 	}
 	static get properties() {
 		return { ready: { type: Boolean, reflect: true } };
