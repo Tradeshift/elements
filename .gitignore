@@ -60,7 +60,7 @@ typings/
 # build output
 lib
 dist
-/commons.host.config.json
+commons.host.config.js
 .DS_Store
 /.out
-stats.html
+.size-snapshot.json

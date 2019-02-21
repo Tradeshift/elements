@@ -12,13 +12,12 @@ const PACKAGE_ROOT_PATH = process.cwd();
 const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, 'package.json'));
 const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
 
-/**
- * @TODO compressed, minified, no-sourcemap version for prod
- */
+const PROD = !!PRODUCTION;
+const DEV = !PROD;
 
 const outputConfig = {
 	extend: true,
-	sourcemap: !PRODUCTION,
+	sourcemap: DEV,
 	globals: require(`${LERNA_ROOT_PATH}/rollup.globals.json`)
 };
 
@@ -31,14 +30,15 @@ const postcssPlugin = postcss({
 	plugins: [
 		postcssPresetEnv({
 			importFrom: `${LERNA_ROOT_PATH}/packages/core/src/vars.css`,
-			browsers: 'ie 11'
+			browsers: 'ie 11',
+			preserve: true,
+			stage: 0
 		})
 	],
 	inject: false,
 	extract: false,
-	minimize: !!PRODUCTION,
-	sourceMap: !PRODUCTION && 'inline',
-	autoprefixer: { grid: true }
+	minimize: PROD,
+	sourceMap: DEV && 'inline'
 });
 
 const config = [
@@ -74,10 +74,10 @@ const config = [
 						}
 					]
 				],
-				plugins: [PRODUCTION && 'minify-dead-code-elimination'].filter(Boolean)
+				plugins: [PROD && 'minify-dead-code-elimination'].filter(Boolean)
 			}),
-			PRODUCTION && sizeSnapshot(),
-			PRODUCTION && terser()
+			PROD && sizeSnapshot(),
+			PROD && terser()
 		].filter(Boolean)
 	},
 	{
@@ -131,11 +131,11 @@ const config = [
 							useRuntimeModule: false
 						}
 					],
-					PRODUCTION && 'minify-dead-code-elimination'
+					PROD && 'minify-dead-code-elimination'
 				].filter(Boolean)
 			}),
-			PRODUCTION && sizeSnapshot(),
-			PRODUCTION && terser()
+			PROD && sizeSnapshot(),
+			PROD && terser()
 		].filter(Boolean)
 	}
 ];

@@ -5,16 +5,6 @@ export class TSElement extends LitElement {
 	static get styles() {
 		return unsafeCSS(commonCSS);
 	}
-	static get properties() {
-		return { ready: { type: Boolean, reflect: true } };
-	}
-	constructor() {
-		super();
-		this.ready = false;
-	}
-	firstUpdated() {
-		this.ready = true;
-	}
 }
 
 // To help with treeshaking, only exports in use are listed

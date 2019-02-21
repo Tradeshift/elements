@@ -1,95 +1,99 @@
 /* General........................................................ */
 
-:host > button {
-	position: relative;
-	margin-right: var(--ts-unit-quarter);
-	border: var(--ts-border);
-	border-radius: var(--ts-unit-double);
-	padding: var(--ts-unit-half);
-}
-:host > button:before {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	border: var(--ts-border);
-	border-radius: var(--ts-unit-double);
-}
-:host span {
-	display: block;
-	padding: 0 var(--ts-unit);
-	font-weight: var(--ts-font-weight-semibold);
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Hover/Focus.................................................... */
-:host > button:hover {
-	cursor: pointer;
-	background: rgba(var(--ts-color-gray-rgb), 0.5);
-}
-
-:host > button:focus:before {
-	display: block;
-	content: '';
-	border-color: var(--ts-color-blue);
+:host {
+	& > button {
+		position: relative;
+		margin-right: var(--ts-unit-quarter);
+		border: var(--ts-border);
+		border-radius: var(--ts-unit-double);
+		padding: var(--ts-unit-half);
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: var(--ts-border);
+			border-radius: var(--ts-unit-double);
+		}
+		&:hover {
+			cursor: pointer;
+			background: rgba(var(--ts-color-gray-rgb), 0.5);
+		}
+		&:focus:before {
+			display: block;
+			content: '';
+			border-color: var(--ts-color-blue);
+		}
+	}
+	& span {
+		display: block;
+		padding: 0 var(--ts-unit);
+		font-weight: var(--ts-font-weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }
 
 /* Primary type................................................... */
-:host([type='primary']) > button {
-	background: var(--ts-color-blue);
-	color: var(--ts-color-white);
-	border-color: var(--ts-color-blue);
-}
-:host([type='primary']) > button:hover {
-	background: var(--ts-color-blue-dark);
-}
-:host([type='primary']) > button:focus:before {
-	content: '';
-	border-color: var(--ts-color-blue-darker);
+:host([type='primary']) {
+	& > button {
+		background: var(--ts-color-blue);
+		color: var(--ts-color-white);
+		border-color: var(--ts-color-blue);
+
+		&:hover {
+			background: var(--ts-color-blue-dark);
+		}
+		&:focus:before {
+			content: '';
+			border-color: var(--ts-color-blue-darker);
+		}
+	}
 }
 
 /* Text type...................................................... */
-:host([type='text']) > button {
-	background: transparent;
-	border: 0;
-	border-radius: 0;
-	padding: 0;
-}
-:host([type='text']) > button:before {
-	border-radius: 0;
-}
-:host([type='text']) > button:hover {
-	background: transparent;
-}
-:host([type='text']) > button:hover span {
-	text-decoration: underline;
-}
-:host([type='text']) > button:focus:before {
-	content: '';
-	border-color: var(--ts-color-blue-darker);
-}
-:host([type='text']) span {
-	color: var(--ts-color-blue);
-	padding: 0;
-	font-weight: var(--ts-font-weight);
-	text-transform: none;
-	letter-spacing: normal;
+:host([type='text']) {
+	& > button {
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		padding: 0;
+		&:before {
+			border-radius: 0;
+		}
+		&:hover {
+			background: transparent;
+			& span {
+				text-decoration: underline;
+			}
+		}
+		&:focus:before {
+			content: '';
+			border-color: var(--ts-color-blue-darker);
+		}
+	}
+
+	& span {
+		color: var(--ts-color-blue);
+		padding: 0;
+		font-weight: var(--ts-font-weight);
+		text-transform: none;
+		letter-spacing: normal;
+	}
 }
 
 /* Inside a ButtonGroup ...........................................*/
 
-/* This doesn't work in FF */
-/* :host-context(ts-button-group), */
 :host([grouped]) {
 	display: block;
 	margin-bottom: var(--ts-unit-half);
 	text-align: center;
-}
-:host([grouped]) > button {
-	width: 100%;
-	display: block;
+
+	& > button {
+		width: 100%;
+		display: block;
+	}
 }

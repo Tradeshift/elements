@@ -10,8 +10,13 @@ customElements.define(
 			return [TSElement.styles, unsafeCSS(css)];
 		}
 
+		static get properties() {
+			return { ready: { type: Boolean, reflect: true } };
+		}
+
 		constructor() {
 			super();
+			this.ready = false;
 			this.slotClasses = {
 				header: CLASS_HIDDEN,
 				'sidebar-left': CLASS_HIDDEN,
@@ -20,6 +25,10 @@ customElements.define(
 				'sidebar-right': CLASS_HIDDEN,
 				footer: CLASS_HIDDEN
 			};
+		}
+
+		firstUpdated() {
+			this.ready = true;
 		}
 
 		render() {

@@ -17,7 +17,6 @@ customElements.define(
 		}
 
 		firstUpdated() {
-			super.firstUpdated();
 			this.handleSlotChange();
 		}
 
