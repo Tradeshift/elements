@@ -5,6 +5,8 @@ cache:
     - ~/.npm
 notifications:
   email: false
+before_install:
+  - travis_retry npm install -g lerna
 install:
   - |
     if [[ $TRAVIS_BRANCH == *"greenkeeper"* ]]; then
