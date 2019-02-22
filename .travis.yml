@@ -22,7 +22,9 @@ before_script:
 script:
   - npm run clean
   - npm run lint
-  - npm run test:happo:ci
+  - npm run copy:static
+  - npm run build:prod
+  - npm run happo-ci-travis
 after_script:
   - |
     if [[ $TRAVIS_BRANCH == *"greenkeeper"* ]]; then

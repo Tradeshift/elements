@@ -16,7 +16,7 @@
     "happo": "happo",
     "happo-ci-travis": "happo-ci-travis",
     "test:happo": "npm run happo run",
-    "test:happo:ci": "INSTALL_CMD=\"npm run copy:static && npm run build:prod\" npm run happo-ci-travis",
+    "test:happo:ci": "npm run happo-ci-travis",
     "test:screener": "screener-storybook --conf screener.config.js --debug",
     "copy:static": "./tasks/copy-static.sh",
     "pretest": "run-s build:prod copy:static",
