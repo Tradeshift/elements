@@ -4,7 +4,15 @@
 		"browser": true
 	},
 	"rules": {
-		"lit/no-legacy-template-syntax": "warn"
+		"lit/no-duplicate-template-bindings": "warn",
+		"lit/no-legacy-template-syntax": "warn",
+		"lit/no-template-bind": "error",
+		"lit/no-useless-template-literals": "warn",
+		"lit/attribute-value-entities": "warn",
+		"lit/binding-positions": "warn",
+		"lit/no-property-change-update": "warn",
+		"lit/no-invalid-html": "error",
+		"lit/no-value-attribute": "warn"
 	},
 	"extends": ["tradeshift"],
 	"plugins": ["lit"]
