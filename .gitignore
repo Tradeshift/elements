@@ -64,3 +64,5 @@ commons.host.config.js
 .DS_Store
 /.out
 .size-snapshot.json
+/static
+/.happo

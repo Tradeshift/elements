@@ -20,11 +20,15 @@ module.exports = {
 		}),
 		safari: new RemoteBrowserTarget('safari', {
 			viewport: '1024x768'
+		}),
+		'ios-safari': new RemoteBrowserTarget('ios-safari', {
+			viewport: '750x1334'
 		})
 	},
 	plugins: [
 		happoPluginStorybook({
-			staticDir: './'
+			staticDir: './static',
+			outputDir: './.happo'
 		})
 	]
 };

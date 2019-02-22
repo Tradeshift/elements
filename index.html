@@ -6,7 +6,6 @@
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
 			if (!window.Promise) {
-				window.ShadyDOM = { force: true };
 				window.ShadyCSS = { nativeCss: true };
 			}
 		</script>
@@ -14,12 +13,17 @@
 		<!-- Enable ES5 class-less Custom Elements -->
 		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 		<!-- Load appropriate polyfills and shims -->
-		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+		<script
+			src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
+			defer
+		></script>
 
 		<!-- Set :root CSS Custom Properties -->
 		<link rel="stylesheet" href="/packages/core/src/vars.css" />
 		<!-- Set @font-face for all needed fonts -->
 		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
 
 		<!-- Load user-styles -->
 		<link rel="stylesheet" href="/index.css" />
@@ -63,12 +67,24 @@
 			<article id="ts-root-toggle">
 				<h2>ts-root</h2>
 				<ts-button-group>
-					<ts-button onclick="toggleSlot('header', this)">Toggle Header</ts-button>
-					<ts-button onclick="toggleSlot('footer', this)">Toggle Footer</ts-button>
-					<ts-button onclick="toggleSlot('sidebar-left', this)">Toggle Left Sidebar</ts-button>
-					<ts-button onclick="toggleSlot('sidebar-right', this)">Toggle Right Sidebar</ts-button>
-					<ts-button onclick="toggleSlot('sidebar-inner-left', this)">Toggle Inner Left Sidebar</ts-button>
-					<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
+					<ts-button onclick="toggleSlot('header', this)"
+						>Toggle Header</ts-button
+					>
+					<ts-button onclick="toggleSlot('footer', this)"
+						>Toggle Footer</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-left', this)"
+						>Toggle Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-right', this)"
+						>Toggle Right Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-left', this)"
+						>Toggle Inner Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-right', this)"
+						>Toggle Inner Right Sidebar</ts-button
+					>
 				</ts-button-group>
 				<script>
 					function toggleSlot(name, button) {

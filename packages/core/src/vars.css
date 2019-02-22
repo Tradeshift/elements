@@ -29,14 +29,6 @@
 	--ts-margin: 0 var(--ts-unit) var(--ts-unit) 0;
 }
 
-html {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
 ts-root {
 	visibility: hidden;
 }
