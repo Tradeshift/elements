@@ -1,0 +1,421 @@
+/* General/default state................................................ */
+
+:host > .file-upload-wrapper > .file-upload-button,
+:host > .file-card-wrapper > .file-card {
+  align-items: center;
+  background-color: var(--ts-color-white);
+  border-radius: 3px;
+  border: var(--ts-border);
+  cursor: pointer;
+  display: flex;
+  height: calc(3.5 * var(--ts-unit-half));
+  justify-content: space-between;
+  max-width: 300px;
+  margin-bottom: var(--ts-unit-half);
+  overflow: hidden;
+  padding: calc(0.5 * var(--ts-unit-half)) calc(1px + var(--ts-unit-half));
+  position: relative;
+  transition: border 0.15s ease;
+  width: 300px;
+}
+
+:host > .file-upload-wrapper > .file-upload-button:hover {
+  border: 1px solid var(--ts-color-blue);
+}
+
+:host > .file-upload-wrapper > .file-upload-button > input {
+  cursor: pointer;
+  font-size: 100px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+:host > .file-upload-wrapper > .file-upload-button > span {
+  background-color: var(--ts-color-blue);
+  border-radius: var(--ts-unit);
+  color: var(--ts-color-white);
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: calc(0.2 * var(--ts-unit-half)) var(--ts-unit-half) 0;
+  text-transform: uppercase;
+}
+
+:host > .file-upload-wrapper > label {
+  align-items: center;
+  color: var(--ts-color-gray-darker);
+  display: flex;
+  font-size: calc(1px + var(--ts-unit-half));
+  padding-left: calc(1px + var(--ts-unit-half));
+}
+
+:host > .file-upload-wrapper > label > svg {
+  height: calc(1.5 * var(--ts-unit-half));
+  margin: calc(-0.2 * var(--ts-unit-half)) calc(0.5 * var(--ts-unit-half)) 0 0;
+  width: calc(1.5 * var(--ts-unit-half));
+}
+
+/* Uploading card shared styles....................................... */
+
+:host > .file-card-wrapper > .file-card {
+  margin-top: calc(2 * var(--ts-unit-half));
+}
+
+:host > .file-card-wrapper > .file-card > .file-info--wrapper {
+  align-items: center;
+  display: flex;
+}
+
+:host > .file-card-wrapper > .file-card > .file-info--wrapper > .icon-wrapper {
+  margin-right: var(--ts-unit-half);
+  width: calc(3.5 * var(--ts-unit-half));
+}
+
+:host > .file-card-wrapper > .file-card--failed label,
+:host > .file-card-wrapper > .file-card--download label {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host > .file-card-wrapper > .file-card--failed .file-upload--info,
+:host > .file-card-wrapper > .file-card--download > .file-upload--info > div {
+  line-height: 14px;
+}
+
+:host > .file-card-wrapper > .file-card--failed small,
+:host > .file-card-wrapper > .file-card--download small {  
+  font-size: calc(1px + var(--ts-unit-half));
+}
+
+:host > .file-card-wrapper > .file-card--failed small:first-of-type,
+:host > .file-card-wrapper > .file-card--download small {
+  color: #7F7F7F;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Uploading state................................................... */
+
+:host > .file-card-wrapper > .file-card {
+  cursor: default;
+  height: calc(6.5 * var(--ts-unit-half));
+  margin-bottom: 0;
+}
+
+:host > .file-card-wrapper > .file-card:hover {
+  border: var(--ts-border);
+}
+
+:host > .file-card-wrapper .icon { 
+  align-items: center;
+  border-radius: 50%;
+  color: var(--ts-color-white);
+  display: flex;
+  justify-content: center;
+}
+
+:host > .file-card-wrapper > .file-card .icon:first-of-type {
+  background-color: var(--ts-color-blue);
+  height: 28px;
+  width: 28px;
+}
+
+:host > .file-card-wrapper .icon:first-of-type > span {
+  font-size: var(--ts-unit);
+  font-weight: bold;
+}
+
+:host > .file-card-wrapper .file-upload--info,
+:host > .file-card--download .file-upload--info {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(16.5 * var(--ts-unit-half));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host > .file-card-wrapper > .file-card--uploading .progress {
+  height: calc(0.5 * var(--ts-unit-half));
+  margin-top: calc(0.5 * var(--ts-unit-half));
+  position: relative;
+  width: calc(16.5 * var(--ts-unit-half));
+}
+
+:host > .file-card-wrapper > .file-card--uploading .progress > div {
+  border-radius: calc(0.5 * var(--ts-unit-half));
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+:host > .file-card-wrapper > .file-card--uploading .progress > .track {
+  background-color: var(--ts-color-blue-lighter);
+}
+
+:host > .file-card-wrapper > .file-card--uploading .progress > .indicator {
+  animation-name: progress;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-color: var(--ts-color-blue);
+  width: 50px;
+  z-index: 2;
+}
+
+@keyframes progress {
+  0% {
+    left: 0;
+    width: calc(2.5 * var(--ts-unit-half));
+  }
+  25% {
+    left: 0;
+    width: calc(8 * var(--ts-unit-half));
+  }
+  50% {
+    left: calc(5 * var(--ts-unit-half));
+    width: calc(12 * var(--ts-unit-half));
+  }
+  75% {
+    left: calc(13 * var(--ts-unit-half));
+    width: calc(15 * var(--ts-unit-half));
+  }
+  100% {
+    left: 150%;
+    width: 0;
+  }
+}
+
+:host > .file-card-wrapper > .file-card--uploading label {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host > .file-card-wrapper .icon:last-of-type {
+  background-color: var(--ts-color-gray-dark);
+  height: var(--ts-unit);
+  margin-right: var(--ts-unit-half);
+  width: var(--ts-unit);
+}
+
+:host > .file-card-wrapper .icon:last-of-type:hover {
+  cursor: pointer;
+}
+
+:host > .file-card-wrapper .icon:last-of-type > span {
+  margin-top: -1px;
+}
+
+/* Failed state..................................................... */
+
+:host > .file-card-wrapper > .file-card--failed {
+  border-color: #FF1744;
+}
+
+:host > .file-card-wrapper > .file-card--failed:hover {
+  border-color: #FF1744;
+}
+
+:host > .file-card-wrapper > .file-card--failed .icon:first-of-type {
+  background-color: #FF1744;
+  border-left: 14px solid var(--ts-color-white);
+  border-right: 14px solid var(--ts-color-white);
+  border-bottom: 28px solid red;
+  border-radius: 0px;
+}
+
+:host > .file-card-wrapper > .file-card--failed .icon:first-of-type > span {
+  margin-top: 34px;
+}
+
+:host > .file-card-wrapper > .file-card--failed .file-upload--info {
+  display: flex;
+  flex-direction: row;
+  font-size: calc(1px + var(--ts-unit-half));
+}
+
+:host > .file-card-wrapper > .file-card--failed small:last-of-type {
+  color: var(--ts-color-blue);
+  cursor: pointer;
+  margin-left: calc(0.2 * var(--ts-unit-half));
+}
+
+/* Download state.................................................. */
+
+:host > .file-card-wrapper > .file-card--download:hover {
+  border-color: var(--ts-color-blue);
+  cursor: pointer;
+}
+
+:host > .file-card-wrapper > .file-card--download .icon:first-of-type {
+  background-color: var(--ts-color-white);
+  color: var(--ts-color-slate);
+  height: 44px;
+  position: relative;
+  transition: color 0.15s ease;
+  width: 35px;
+}
+
+:host > .file-card-wrapper > .file-card--download:hover .icon:first-of-type {
+  color: var(--ts-color-blue);
+}
+
+:host > .file-card-wrapper > .file-card--download .icon:first-of-type span {
+  bottom: 4px;
+  color: var(--ts-color-black);
+  font-size: calc(1px + var(--ts-unit-half));
+  position: absolute;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+
+:host > .file-card-wrapper > .file-card--download:hover .icon:first-of-type span {
+  color: var(--ts-color-blue);
+}
+
+:host > .file-card-wrapper > .file-card--download:hover .icon:first-of-type span:before {
+  animation-name: appear;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  background-color: var(--ts-color-blue);
+  border-radius: 50%;
+  content: '';
+  height: 22px;
+  left: 15px;
+  position: absolute;
+  top: 8px;
+  width: 22px;
+}
+
+:host > .file-card-wrapper > .file-card--download:hover .icon:first-of-type span:after {
+  animation-name: appear;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  color: white;
+  content: '↓';
+  font-size: 17px;
+  left: var(--ts-unit);
+  position: absolute;
+  top: var(--ts-unit-half);
+}
+
+@keyframes appear {
+  0% {
+    top: 30px;
+  }
+  100% {
+    top: var(--ts-unit-half);
+  }
+}
+
+:host > .file-card-wrapper > .file-card--download label:hover {
+  cursor: pointer;
+}
+
+:host > .file-card-wrapper > .file-card--download small > small {
+  text-transform: uppercase;
+}
+
+:host > .file-card-wrapper > .file-card--download .filetype .message {
+  color: var(--ts-color-blue);
+  text-transform: unset;
+}
+
+:host > .file-card-wrapper > .file-card--download > .icon:last-of-type {
+  background-color: var(--ts-color-white);
+}
+
+:host > .file-card-wrapper > .file-card--download > .icon:last-of-type > .file-card--menu {
+  color: var(--ts-color-gray-dark);
+  display: none;
+  font-size: calc(3 * var(--ts-unit-half));
+  margin-top: -13px;
+}
+
+/* Dragging state.................................................. */
+
+:host > .file-upload-wrapper .draggable-info {
+  display: none;
+}
+
+:host > .file-upload-wrapper.dragover *  {
+  display: none;
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info * {
+  display: unset;
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info  {
+  display: flex;
+}
+
+:host > .file-upload-wrapper.dragover {
+  align-items: center;
+  background: #fff;
+  border-radius: 3px;
+  border: 2px solid #A5DFFF;
+  display: flex;
+  height: calc(6.5 * var(--ts-unit-half));
+  justify-content: center;
+  width: 300px;
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info {
+  color: #00B0FF;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info .icon { 
+  align-items: center;
+  border-radius: 50%;
+  color: var(--ts-color-white);
+  display: flex;
+  justify-content: center;
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info .icon {
+  background-color: var(--ts-color-blue);
+  height: var(--ts-unit);
+  margin-right: calc(0.5 * var(--ts-unit-half));
+  width: var(--ts-unit);
+}
+
+:host > .file-upload-wrapper.dragover .draggable-info .icon > span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Right-to-left support.................................................. */
+
+:host > .file-upload-wrapper.right-left > .file-upload-button {
+  flex-direction: row-reverse;
+}
+
+:host > .file-upload-wrapper.right-left > label {
+  flex-direction: row-reverse;
+  padding-right: calc(1px + var(--ts-unit-half));
+}
+
+:host > .file-upload-wrapper.right-left > label > svg {
+  margin: calc(-0.2 * var(--ts-unit-half)) 0 0 calc(0.5 * var(--ts-unit-half));
+}
+
+:host > .file-upload-wrapper.dragover.right-left .draggable-info {
+  flex-direction: row-reverse;
+}
+
+:host > .file-upload-wrapper.dragover.right-left .draggable-info .icon {
+  margin-left: calc(0.5 * var(--ts-unit-half));
+}

@@ -11,6 +11,8 @@
 <script src="/packages/components/root/lib/root.umd.js"></script>
 <script src="/packages/components/button/lib/button.umd.js"></script>
 <script src="/packages/components/button-group/lib/button-group.umd.js"></script>
+<script src="/packages/components/file-card/lib/file-card.umd.js"></script>
+<script src="/packages/components/file-uploader/lib/file-uploader.umd.js"></script>
 
 <link rel="stylesheet" href="/packages/core/src/vars.css"><script> </script>
 <link rel="stylesheet" href="/index.css">
@@ -93,6 +95,47 @@
 				<ts-button>Normal Button</ts-button>
 			</ts-button-group>
 		</article>
+
+		<article>
+		<h2>ts-file-uploader, right to left</h2>
+		<ts-file-uploader
+			endpoint="http://localhost:9001/upload"
+			maxfilesize="1"
+			filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
+			rightleft="true"
+			state="upload"
+		></ts-file-uploader>
+	</article>
+
+	<article>
+		<h2>ts-file-uploader</h2>
+		<ts-file-uploader
+			endpoint="http://localhost:9001/upload"
+			maxfilesize="1"
+			filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
+			rightleft="false"
+			state="upload"
+		></ts-file-uploader>
+	</article>
+
+	<article>
+		<h2>ts-file-card, right to left</h2>
+		<ts-file-card
+			fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
+			fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+			rightleft="true"
+			state="download"
+			viewonly="false"></ts-file-card>
+	</article>
+
+	<article>
+		<h2>ts-file-card</h2>
+		<ts-file-card
+			fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
+			fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+			state="download" 
+			viewonly="false"></ts-file-card>
+	</article>
 	</ts-root>
 </body>
 </html>
