@@ -11,7 +11,7 @@ const [ $state, $endpoint, $maxfilesize, $rightleft, $filetypes ] = [ Symbol('st
 
 export class FileUploader extends TSElement('FileUploader') {
   static get observedAttributes() {
-    return ['state', 'endpoint', 'filetypes', 'rightleft']; 
+    return ['state', 'endpoint', 'filetypes', 'rightleft', 'maxfilesize']; 
   }
   static get tagName() {
     return 'ts-file-uploader';
@@ -29,13 +29,14 @@ export class FileUploader extends TSElement('FileUploader') {
   }
   
   constructor() {
-    super();
+    super();    
     
     this.fileType;
     this.dragCounter = 0;
     this.formData = new FormData();
     this.state = this.getAttribute('state');
     this.endpoint = this.getAttribute('endpoint');
+    this.filetypes = this.getAttribute('filetypes');
     this.rightleft = this.getAttribute('rightleft');
     this.maxfilesize = this.getAttribute('maxfilesize');
     this.handleClose = this.handleClose.bind(this);
@@ -50,7 +51,7 @@ export class FileUploader extends TSElement('FileUploader') {
     this.fileUploadWrapper = this.shadowRoot.querySelector('.file-upload-wrapper');
   }
   attributeChangedCallback(name, oldValue, newValue) {
-    super.attributeChangedCallback(name, oldValue, newValue);
+    super.attributeChangedCallback(name, oldValue, newValue);    
     
     // attach event listener when component first loads, otherwise, attach it in the handleClose fn
     if (newValue === 'upload' && oldValue === null) {
