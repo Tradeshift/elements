@@ -1,5 +1,7 @@
 dist: xenial
 language: node_js
+env:
+- INSTALL_CMD="lerna bootstrap"
 cache:
   directories:
     - ~/.npm
