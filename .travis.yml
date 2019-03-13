@@ -19,8 +19,7 @@ script:
   - npm run lint
   - npm run copy:static
   - npm run build:prod
-  - INSTALL_CMD="lerna bootstrap"
-  - npm run happo-ci-travis
+  - npm run happo-ci-travis:INSTALL_CMD="lerna bootstrap"
 after_script:
   - |
     if [[ $TRAVIS_BRANCH == *"greenkeeper"* ]]; then
