@@ -8,7 +8,7 @@ notifications:
 before_install:
   - travis_retry npm install -g lerna
 install:
-  - travis_retry npm run lerna:bootstrap:ci
+  - travis_retry npm run lerna:bootstrap
 before_script:
   - |
     if [[ $TRAVIS_BRANCH == *"greenkeeper"* ]]; then
