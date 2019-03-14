@@ -1,35 +1,28 @@
-import '@webcomponents/webcomponentsjs/webcomponents-bundle';
-
 import { storiesOf } from '@storybook/html';
-import { select } from '@storybook/addon-knobs';
-
-import '@tradeshift/elements/src/vars.css';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
 
 storiesOf('ts-button', module)
-	.add('Gallery', () => {
-		return `
-			<ts-button type="primary">Primary Button</ts-button>
-			<ts-button type="secondary">Secondary Button</ts-button>
-			<ts-button type="text">Text Button</ts-button>
-		`;
+	.add('type=""', () => {
+		const button = document.createElement('ts-button');
+		button.innerHTML = 'Default Button';
+		return button;
 	})
-	.add('Attributes', () => {
-		const type = select('Type', ['primary', 'secondary', 'text'], 'text');
-		return `<ts-button type="${type}">Button</ts-button>`;
-	});
-
-storiesOf('ts-button/states', module)
-	.add('default type', () => {
-		return '<ts-button>Button</ts-button>';
+	.add('type="primary"', () => {
+		const button = document.createElement('ts-button');
+		button.type = 'primary';
+		button.innerHTML = 'Primary Button';
+		return button;
 	})
-	.add('type=primary', () => {
-		return '<ts-button type="primary">Button</ts-button>';
+	.add('type="secondary"', () => {
+		const button = document.createElement('ts-button');
+		button.type = 'secondary';
+		button.innerHTML = 'Secondary Button';
+		return button;
 	})
-	.add('type=secondary', () => {
-		return '<ts-button type="secondary">Button</ts-button>';
-	})
-	.add('type=text', () => {
-		return '<ts-button type="text">Button</ts-button>';
+	.add('type="text"', () => {
+		const button = document.createElement('ts-button');
+		button.type = 'text';
+		button.innerHTML = 'Text Button';
+		return button;
 	});

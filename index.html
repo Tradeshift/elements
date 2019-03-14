@@ -1,141 +1,191 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Tradeshift Elements v0.1.0</title>
-<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<head>
+		<title>Tradeshift Elements v0.2.0</title>
 
-<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
 
-<script src="/packages/core/lib/core.umd.js"></script>
-<script src="/packages/components/root/lib/root.umd.js"></script>
-<script src="/packages/components/button/lib/button.umd.js"></script>
-<script src="/packages/components/button-group/lib/button-group.umd.js"></script>
-<script src="/packages/components/file-card/lib/file-card.umd.js"></script>
-<script src="/packages/components/file-uploader/lib/file-uploader.umd.js"></script>
+		<script src="/packages/core/lib/core.umd.js"></script>
+		<script src="/packages/components/root/lib/root.umd.js"></script>
+		<script src="/packages/components/button/lib/button.umd.js"></script>
+		<script src="/packages/components/button-group/lib/button-group.umd.js"></script>
+		<script src="/packages/components/file-card/lib/file-card.umd.js"></script>
+		<script src="/packages/components/file-uploader/lib/file-uploader.umd.js"></script>
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script
+			src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
+			defer
+		></script>
 
-<link rel="stylesheet" href="/packages/core/src/vars.css"><script> </script>
-<link rel="stylesheet" href="/index.css">
-</head>
-<body>
-	<ts-root>
-		<header slot="header" class="header">Header</header>
-		<footer slot="footer" class="footer">Footer</footer>
-		<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
-		<section slot="sidebar-right" class="sidebar-right">Right Sidebar</section>
-		<section slot="sidebar-inner-left" class="sidebar-inner-left">Inner Left Sidebar</section>
-		<section slot="sidebar-inner-right" class="sidebar-inner-right">Inner Right Sidebar</section>
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
 
-		<article id="ts-root-toggle">
-			<h2>ts-root</h2>
-			<ts-button-group>
-				<ts-button data-toggle="header">Toggle Header</ts-button>
-				<ts-button data-toggle="footer">Toggle Footer</ts-button>
-				<ts-button data-toggle="sidebar-left">Toggle Left Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-right">Toggle Right Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-inner-left">Toggle Inner Left Sidebar</ts-button>
-				<ts-button data-toggle="sidebar-inner-right">Toggle Inner Right Sidebar</ts-button>
-			</ts-button-group>
-			<script>
-				function toggleSlot(name, button) {
-					var enabledSlot = document.querySelector('[slot=' + name + ']');
-					if (enabledSlot) {
-						button.removeAttribute('type');
-						return enabledSlot.setAttribute('slot', '!' + name);
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
+		<script>
+			window.addEventListener('WebComponentsReady', function() {
+				var coreEl = document.createElement('script');
+				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+				document.body.appendChild(coreEl);
+				coreEl.onload = function() {
+					var scripts = [
+						'/packages/components/root/lib/root.umd.js',
+						'/packages/components/button/lib/button.umd.js',
+						'/packages/components/button-group/lib/button-group.umd.js'
+					];
+					scripts.forEach(function(script) {
+						var el = document.createElement('script');
+						el.setAttribute('src', script);
+						document.body.appendChild(el);
+					});
+				};
+			});
+		</script>
+	</head>
+
+	<body>
+		<ts-root>
+			<header slot="header" class="header">Header</header>
+			<footer slot="footer" class="footer">Footer</footer>
+			<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
+			<section slot="sidebar-right" class="sidebar-right">
+				Right Sidebar
+			</section>
+			<section slot="sidebar-inner-left" class="sidebar-inner-left">
+				Inner Left Sidebar
+			</section>
+			<section slot="sidebar-inner-right" class="sidebar-inner-right">
+				Inner Right Sidebar
+			</section>
+
+			<article id="ts-root-toggle">
+				<h2>ts-root</h2>
+				<ts-button-group>
+					<ts-button onclick="toggleSlot('header', this)"
+						>Toggle Header</ts-button
+					>
+					<ts-button onclick="toggleSlot('footer', this)"
+						>Toggle Footer</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-left', this)"
+						>Toggle Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-right', this)"
+						>Toggle Right Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-left', this)"
+						>Toggle Inner Left Sidebar</ts-button
+					>
+					<ts-button onclick="toggleSlot('sidebar-inner-right', this)"
+						>Toggle Inner Right Sidebar</ts-button
+					>
+				</ts-button-group>
+				<script>
+					function toggleSlot(name, button) {
+						var enabledSlot = document.querySelector('[slot=' + name + ']');
+						if (enabledSlot) {
+							button.removeAttribute('type');
+							return enabledSlot.setAttribute('slot', '!' + name);
+						}
+
+						var disabledSlot = document.querySelector('[slot="!' + name + '"]');
+						if (disabledSlot) {
+							button.setAttribute('type', 'primary');
+							return disabledSlot.setAttribute('slot', name);
+						}
 					}
 
-					var disabledSlot = document.querySelector('[slot="!' + name + '"]');
-					if (disabledSlot) {
-						button.setAttribute('type', 'primary');
-						return disabledSlot.setAttribute('slot', name);
-					}
-				}
-
-				(function() {
-					setTimeout(function() {
-						const slots = [
-							'header',
-							'footer',
-							'sidebar-left',
-							'sidebar-right',
-							'sidebar-inner-left',
-							'sidebar-inner-right'
-						];
-						slots.forEach(function(slotName) {
-							var slot = document.querySelector('[slot=' + slotName + ']');
-							if (slot) {
-								slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
-							}
-						});
-
-						document.getElementById('ts-root-toggle')
-							.addEventListener('click', function(e) {
-								if (e.target && e.target.dataset.toggle) {
-									toggleSlot(e.target.dataset.toggle, e.target);
+					(function() {
+						setTimeout(function() {
+							const slots = [
+								'header',
+								'footer',
+								'sidebar-left',
+								'sidebar-right',
+								'sidebar-inner-left',
+								'sidebar-inner-right'
+							];
+							slots.forEach(function(slotName) {
+								var slot = document.querySelector('[slot=' + slotName + ']');
+								if (slot) {
+									slot.setAttribute('slot', '!' + slot.getAttribute('slot'));
 								}
 							});
-					});
-				})();
-			</script>
-		</article>
+						});
+					})();
+				</script>
+			</article>
 
-
-		<article>
-			<h2>ts-button</h2>
-			<ts-button type="text">Text Button</ts-button>
-			<ts-button type="primary">Primary Button</ts-button>
-			<ts-button>Normal Button</ts-button>
-		</article>
-
-		<article>
-			<h2>ts-button-group</h2>
-			<ts-button-group>
+			<article>
+				<h2>ts-button</h2>
 				<ts-button type="text">Text Button</ts-button>
 				<ts-button type="primary">Primary Button</ts-button>
 				<ts-button>Normal Button</ts-button>
-			</ts-button-group>
-		</article>
+			</article>
+			<article>
+				<h2>ts-button-group</h2>
+				<ts-button-group>
+					<ts-button type="text">Text Button</ts-button>
+					<ts-button type="primary">Primary Button</ts-button>
+					<ts-button>Normal Button</ts-button>
+				</ts-button-group>
+			</article>
 
-		<article>
-		<h2>ts-file-uploader, right to left</h2>
-		<ts-file-uploader
-			endpoint="http://localhost:9001/upload"
-			maxfilesize="1"
-			filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
-			rightleft="true"
-			state="upload"
-		></ts-file-uploader>
-	</article>
+			<article>
+				<h2>ts-file-uploader, right to left</h2>
+				<ts-file-uploader
+					endpoint="http://localhost:9001/upload"
+					maxfilesize="1"
+					filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
+					rightleft="true"
+					state="upload"
+				></ts-file-uploader>
+			</article>
 
-	<article>
-		<h2>ts-file-uploader</h2>
-		<ts-file-uploader
-			endpoint="http://localhost:9001/upload"
-			maxfilesize="1"
-			filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
-			rightleft="false"
-			state="upload"
-		></ts-file-uploader>
-	</article>
+			<article>
+				<h2>ts-file-uploader</h2>
+				<ts-file-uploader
+					endpoint="http://localhost:9001/upload"
+					maxfilesize="1"
+					filetypes=".doc, .docx, .pdf, .xls, .xlsx, .jpg"
+					rightleft="false"
+					state="upload"
+				></ts-file-uploader>
+			</article>
 
-	<article>
-		<h2>ts-file-card, right to left</h2>
-		<ts-file-card
-			fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
-			fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
-			rightleft="true"
-			state="download"
-			viewonly="false"></ts-file-card>
-	</article>
+			<article>
+				<h2>ts-file-card, right to left</h2>
+				<ts-file-card
+					fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
+					fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+					rightleft="true"
+					state="download"
+					viewonly="false"
+				></ts-file-card>
+			</article>
 
-	<article>
-		<h2>ts-file-card</h2>
-		<ts-file-card
-			fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
-			fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
-			state="download" 
-			viewonly="false"></ts-file-card>
-	</article>
-	</ts-root>
-</body>
+			<article>
+				<h2>ts-file-card</h2>
+				<ts-file-card
+					fileobject="{ lastModified: 1540981884323, lastModifiedDate: Wed Oct 31 2018 11:31:24 GMT+0100 (Central European Standard Time), name: 'Barclaycard Business ePDQ.pdf', size: 156444, type: 'application/pdf', webkitRelativePath: '' }"
+					fileurl="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+					state="download"
+					viewonly="false"
+				></ts-file-card>
+			</article>
+		</ts-root>
+	</body>
 </html>
