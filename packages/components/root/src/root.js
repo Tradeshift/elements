@@ -1,47 +1,83 @@
-import { TSElement, defineElement } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
 import css from './root.css';
 
-const [$decorateSlots] = [Symbol('decorateSlots')];
+const CLASS_HIDDEN = 'hidden';
 
-export class Root extends TSElement('Root') {
-	static get observedAttributes() {
-		return [];
-	}
-	static get tagName() {
-		return 'ts-root';
-	}
-	static get html() {
-		return `
-			<slot name="header" class="hidden"></slot>
-			<slot name="sidebar-left" class="hidden"></slot>
-			<section class="content">
-				<slot name="sidebar-inner-left" class="hidden"></slot>
-				<main>
-					<slot></slot>
-				</main>
-				<slot name="sidebar-inner-right" class="hidden"></slot>
-			</section>
-			<slot name="sidebar-right" class="hidden"></slot>
-			<slot name="footer" class="hidden"></slot>
-		`;
-	}
-	static get css() {
-		return css;
-	}
-	constructor() {
-		super();
-		this[$decorateSlots] = this[$decorateSlots].bind(this);
-		this.shadowRoot.querySelectorAll('slot[name]').forEach(slot => {
-			slot.classList.add(slot.getAttribute('name'));
-			slot.addEventListener('slotchange', e => this[$decorateSlots](slot, e));
-		});
-	}
-	[$decorateSlots](slot, e) {
-		const assignedNodes = slot.assignedNodes();
-		const showSlot = assignedNodes && assignedNodes.length;
-		slot.classList.toggle('hidden', !showSlot);
-		this.classList.toggle(`ts-has-${slot.getAttribute('name')}`, showSlot);
-	}
-}
+customElements.define(
+	'ts-root',
+	class extends TSElement {
+		static get styles() {
+			return [TSElement.styles, unsafeCSS(css)];
+		}
 
-defineElement(Root);
+		static get properties() {
+			return { ready: { type: Boolean, reflect: true } };
+		}
+
+		constructor() {
+			super();
+			this.ready = false;
+			this.slotClasses = {
+				header: CLASS_HIDDEN,
+				'sidebar-left': CLASS_HIDDEN,
+				'sidebar-inner-left': CLASS_HIDDEN,
+				'sidebar-inner-right': CLASS_HIDDEN,
+				'sidebar-right': CLASS_HIDDEN,
+				footer: CLASS_HIDDEN
+			};
+		}
+
+		firstUpdated() {
+			this.ready = true;
+		}
+
+		render() {
+			return html`
+				<slot
+					name="header"
+					class="${this.slotClasses.header}"
+					@slotchange="${this.decorateSlot}"
+				></slot>
+				<slot
+					name="sidebar-left"
+					class="${this.slotClasses['sidebar-left']}"
+					@slotchange="${this.decorateSlot}"
+				></slot>
+				<section class="content">
+					<slot
+						name="sidebar-inner-left"
+						class="${this.slotClasses['sidebar-inner-left']}"
+						@slotchange="${this.decorateSlot}"
+					></slot>
+					<main>
+						<slot></slot>
+					</main>
+					<slot
+						name="sidebar-inner-right"
+						class="${this.slotClasses['sidebar-inner-right']}"
+						@slotchange="${this.decorateSlot}"
+					></slot>
+				</section>
+				<slot
+					name="sidebar-right"
+					class="${this.slotClasses['sidebar-right']}"
+					@slotchange="${this.decorateSlot}"
+				></slot>
+				<slot
+					name="footer"
+					class="${this.slotClasses.footer}"
+					@slotchange="${this.decorateSlot}"
+				></slot>
+			`;
+		}
+		decorateSlot(e) {
+			const slot = e.currentTarget;
+			const assignedNodes = slot.assignedNodes();
+			const showSlot = assignedNodes && assignedNodes.length;
+			slot.classList[showSlot ? 'remove' : 'add']('hidden');
+			this.classList[showSlot ? 'add' : 'remove'](
+				`ts-has-${slot.getAttribute('name')}`
+			);
+		}
+	}
+);

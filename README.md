@@ -4,34 +4,64 @@ Reusable Tradeshift UI Components as Web Components
 
 ## How to run
 
-* `lerna bootstrap` - bootstrap all packages and make sure they work together
-* `npm start` - start the dev server and watch for changes
-* Open [https://localhost:8443/](https://localhost:8443/)
+- `lerna bootstrap` - bootstrap all packages and make sure they work together
+- `npm start` - start the dev server and watch for changes
+- Open [https://localhost:8443/](https://localhost:8443/)
 
-## Example Element
+## How to write new elements
 
-This quick example shows off the API, but doesn't really do anything on its own.
+### General info
 
-- [example.js](./packages/components/example/src/example.js)
-- [example.css](./packages/components/example/src/example.css)
+- [`lit-element`](https://lit-element.polymer-project.org/)
+- [`lit-html`](https://lit-html.polymer-project.org/)
 
-## Polyfills required
+### `ts.elements`-specific info
 
-- `classlist-polyfill`
-  - `classList.toggle()`'s second argument is not supported in IE11
-- `@webcomponents/webcomponentsjs`
-  - `CustomElements`
-  - `ShadowDOM` (via `ShadyDOM`/`ShadyCSS`)
-  - `<template />`
-  - platform polyfills
-    - `defaultPrevented` is broken in IE.
-    - `Event` constructor shim
-    - `CustomEvent` constructor shim
-    - `Array.from`
-    - `Object.assign`
-  - `Promise`
-  - `Symbol`
-  - `Node.baseURI`
+- Extend `TSElement`, instead of `LitElement`
+- Import `css`, `unsafeCSS` & `html` from `@tradeshift/elements` instead of `lit-html`
+- Add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/io/blob/master/rollup.globals.json)
+
+## How to load in a browser
+
+- Don't shim CSS Custom Properties in IE11
+
+```html
+<!-- Place this in the <head>, before the WC polyfills are loaded -->
+<script>
+	if (!window.Promise) {
+		window.ShadyCSS = { nativeCss: true };
+	}
+</script>
+```
+
+- Enable ES5 class-less Custom Elements
+
+```html
+<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+```
+
+- Load appropriate polyfills and shims with [`@webcomponents/webcomponentsjs`](https://github.com/webcomponents/webcomponentsjs)
+
+```html
+<script
+	src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
+	defer
+></script>
+```
+
+- Load CSS Custom Properties (theming should override some of these)
+
+```html
+<link rel="stylesheet" href="/packages/core/src/vars.css" />
+```
+
+- Load the Open Sans Web Font
+
+```html
+<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+```
+
+---
 
 ## Polyfill Limitations
 
@@ -60,8 +90,8 @@ Since ShadyCSS removes all `<slot>` elements, you cannot select them directly or
 ```html
 <!-- Bad -->
 <style>
-  .foo .bar::slotted(*) {
-  }
+	.foo .bar::slotted(*) {
+	}
 </style>
 <span class="foo"> <slot class="bar"></slot> </span>
 ```
@@ -69,8 +99,8 @@ Since ShadyCSS removes all `<slot>` elements, you cannot select them directly or
 ```html
 <!-- Good -->
 <style>
-  .foo ::slotted(*) {
-  }
+	.foo ::slotted(*) {
+	}
 </style>
 <span class="foo"> <slot></slot> </span>
 ```
@@ -118,7 +148,6 @@ The :defined CSS pseudo-class is not supported.
 #### Template nodes in main document are upgraded after DOMContentLoaded
 
 The first timepoint in which the polyfill can be certain the main document is loaded is DOMContentLoaded. As such, we use this timepoint to bootstrap any `<template>` as defined in the main document. This means that any scripts in the main document that run before this event (e.g. inline scripts) will not have the properly upgraded templates. Instead, listen for DOMContentLoaded yourself and only after that interact with any `<template>` in the main document.
-
 
 ## License
 

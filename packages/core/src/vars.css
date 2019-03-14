@@ -1,5 +1,5 @@
 :root {
-	--ts-font-family: 'Open Sans', 'Segoe UI';
+	--ts-font-family: 'Open Sans', system-ui;
 	--ts-font-weight-semibold: 600;
 	--ts-font-size-default: 14px;
 
@@ -29,10 +29,10 @@
 	--ts-margin: 0 var(--ts-unit) var(--ts-unit) 0;
 }
 
-html {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+ts-root {
+	visibility: hidden;
+}
+
+ts-root[ready] {
+	visibility: visible;
 }

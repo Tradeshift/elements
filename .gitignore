@@ -59,5 +59,11 @@ typings/
 
 # build output
 lib
-/commons.host.config.json
+dist
+commons.host.config.js
 .DS_Store
+/.out
+.size-snapshot.json
+/static
+/.happo
+/gemini
