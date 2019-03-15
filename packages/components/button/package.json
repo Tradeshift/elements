@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "src": "src/button.js",
   "main": "lib/button.cjs.js",
   "module": "lib/button.mjs",
