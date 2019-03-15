@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "src": "src/core.js",
   "main": "lib/core.cjs.js",
   "module": "lib/core.mjs",
