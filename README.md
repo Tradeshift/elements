@@ -8,6 +8,10 @@ Reusable Tradeshift UI Components as Web Components
 - `npm start` - start the dev server and watch for changes
 - Open [https://localhost:8443/](https://localhost:8443/)
 
+## How to release
+
+- `NPM_CONFIG_OTP=123456 lerna publish` - Push the package to registry.npmjs.org
+
 ## How to write new elements
 
 ### General info
