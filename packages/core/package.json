@@ -7,5 +7,6 @@
   "browser": "lib/core.umd.js",
   "files": [
     "lib/*"
-  ]
+  ],
+  "gitHead": "efe9f421455bfae2fdf875a9254ca1dfc1c6e821"
 }

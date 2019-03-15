@@ -9,6 +9,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "file:../../core"
-  }
+    "@tradeshift/elements": "^0.1.2"
+  },
+  "gitHead": "efe9f421455bfae2fdf875a9254ca1dfc1c6e821"
 }
