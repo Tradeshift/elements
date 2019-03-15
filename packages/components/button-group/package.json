@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button-group",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "src": "src/button-group.js",
   "main": "lib/button-group.cjs.js",
   "module": "lib/button-group.mjs",
