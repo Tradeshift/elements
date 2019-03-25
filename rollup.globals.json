@@ -2,5 +2,6 @@
 	"@tradeshift/elements": "ts.elements",
 	"@tradeshift/elements.root": "ts.elements.root",
 	"@tradeshift/elements.button": "ts.elements.button",
-	"@tradeshift/elements.button-group": "ts.elements.button-group"
+	"@tradeshift/elements.button-group": "ts.elements.button-group",
+	"@tradeshift/elements.tooltip": "ts.elements.tooltip"
 }
