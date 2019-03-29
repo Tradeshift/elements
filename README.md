@@ -12,6 +12,8 @@ Reusable Tradeshift UI Components as Web Components
 
 - `NPM_CONFIG_OTP=123456 lerna publish` - Push the package to registry.npmjs.org
 
+NPM_CONFIG_OTP is a workaround way to solve [the problem](https://github.com/lerna/lerna/issues/1137), which lerna fails to publish, after assigning [2FA](https://docs.npmjs.com/about-two-factor-authentication) on npm account
+
 ## How to write new elements
 
 ### General info
