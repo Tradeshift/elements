@@ -19,7 +19,7 @@ Reusable Tradeshift UI Components as Web Components
 
 - Extend `TSElement`, instead of `LitElement`
 - Import `css`, `unsafeCSS` & `html` from `@tradeshift/elements` instead of `lit-html`
-- Add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/io/blob/master/rollup.globals.json)
+- Add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/elements/blob/master/rollup.globals.json)
 
 ## How to load in a browser
 
