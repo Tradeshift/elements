@@ -1,5 +1,14 @@
 {
   "name": "tradeshift-elements",
+  "description": "The Tradeshift Element Library & Framework",
+  "bugs": {
+    "url": "https://github.com/Tradeshift/elements/issues"
+  },
+  "author": "Tradeshift element Team",
+  "contributors": [
+    "Daniel Spitzer <dsp@tradeshift.com> (https://github.com/sampi)",
+    "Leo Zhang <lza@tradeshift.com> (https://github.com/zdlm)"
+  ],
   "scripts": {
     "start": "run-p watch server",
     "test": "run-p --continue-on-error --print-name --print-label test:happo test:screener",
@@ -85,9 +94,6 @@
   "repository": "github:Tradeshift/elements.git",
   "publishConfig": {
     "access": "public"
-  },
-  "bugs": {
-    "url": "https://github.com/Tradeshift/elements/issues"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "keywords": [
