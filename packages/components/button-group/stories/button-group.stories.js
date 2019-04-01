@@ -1,17 +1,26 @@
-import { storiesOf } from '@storybook/html';
+import { storiesOf } from '@storybook/polymer';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
+import { html } from 'lit-html';
 
-storiesOf('ts-button-group', module).add('default', () => {
-	const buttonGroup = document.createElement('ts-button-group');
-	['Primary', 'Secondary', 'Secondary', 'Secondary', 'Text', 'Text'].forEach(
-		type => {
-			const button = document.createElement('ts-button');
-			button.type = type.toLowerCase();
-			button.innerHTML = `${type} Button – Grouped`;
-			buttonGroup.appendChild(button);
-		}
-	);
-	return buttonGroup;
-});
+const buttons = [
+	'Primary',
+	'Secondary',
+	'Secondary',
+	'Secondary',
+	'Text',
+	'Text'
+];
+storiesOf('Button-group', module).add(
+	'Default',
+	() => html`
+		<ts-button-group>
+			${buttons.map(
+				button => html`
+					<ts-button type="${button}">${button} Button – Grouped</ts-button>
+				`
+			)}
+		</ts-button-group>
+	`
+);

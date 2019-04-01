@@ -1,28 +1,24 @@
-import { storiesOf } from '@storybook/html';
+import { storiesOf } from '@storybook/polymer';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
+import { html } from 'lit-html';
 
-storiesOf('ts-button', module)
-	.add('type=""', () => {
-		const button = document.createElement('ts-button');
-		button.innerHTML = 'Default Button';
-		return button;
-	})
-	.add('type="primary"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'primary';
-		button.innerHTML = 'Primary Button';
-		return button;
-	})
-	.add('type="secondary"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'secondary';
-		button.innerHTML = 'Secondary Button';
-		return button;
-	})
-	.add('type="text"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'text';
-		button.innerHTML = 'Text Button';
-		return button;
+storiesOf('Button', module)
+	.addDecorator(withKnobs)
+	.add('Type', () => {
+		const type = select(
+			'Type',
+			{
+				Default: '',
+				Primary: 'primary',
+				Secondary: 'secondary',
+				Text: 'text'
+			},
+			''
+		);
+		const label = text('Label', 'Button');
+		return html`
+			<ts-button type="${type}">${label}</ts-button>
+		`;
 	});
