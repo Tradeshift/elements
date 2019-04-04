@@ -37,6 +37,7 @@
 				coreEl.onload = function() {
 					var scripts = [
 						'/packages/components/root/lib/root.umd.js',
+						'/packages/components/tooltip/lib/tooltip.umd.js',
 						'/packages/components/button/lib/button.umd.js',
 						'/packages/components/button-group/lib/button-group.umd.js'
 					];
@@ -49,6 +50,7 @@
 			});
 		</script>
 	</head>
+
 	<body>
 		<ts-root>
 			<header slot="header" class="header">Header</header>
@@ -136,6 +138,22 @@
 					<ts-button type="primary">Primary Button</ts-button>
 					<ts-button>Normal Button</ts-button>
 				</ts-button-group>
+			</article>
+
+			<article>
+				<h2>ts-tooltip</h2>
+				<ts-tooltip tooltip="tooltip on the right" position="right">
+					<ts-button>Right</ts-button>
+				</ts-tooltip>
+				<ts-tooltip tooltip="tooltip on the top" position="top">
+					<ts-button>Top</ts-button>
+				</ts-tooltip>
+				<ts-tooltip tooltip="tooltip on the bottom" position="bottom">
+					<ts-button>Bottom</ts-button>
+				</ts-tooltip>
+				<ts-tooltip tooltip="tooltip on the left" position="left">
+					<ts-button>Left</ts-button>
+				</ts-tooltip>
 			</article>
 		</ts-root>
 	</body>

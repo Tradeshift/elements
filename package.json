@@ -89,7 +89,8 @@
     "@tradeshift/elements": "file:packages/core",
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
-    "@tradeshift/elements.root": "file:packages/components/root"
+    "@tradeshift/elements.root": "file:packages/components/root",
+    "@tradeshift/elements.tooltip": "file:packages/components/tooltip"
   },
   "repository": "github:Tradeshift/elements.git",
   "publishConfig": {

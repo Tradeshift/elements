@@ -1,31 +1,139 @@
 :root {
-	--ts-font-family: 'Open Sans', system-ui;
-	--ts-font-weight-semibold: 600;
-	--ts-font-size-default: 14px;
-
-	--ts-aside: 320px;
+	/* Units........................................................ */
 
 	--ts-unit: 20px;
 	--ts-unit-half: calc(0.5 * var(--ts-unit));
+	--ts-unit-plus: calc(var(--ts-unit) * 1.5);
 	--ts-unit-quarter: calc(0.25 * var(--ts-unit));
+	--ts-unit-eighth: calc(0.125 * var(--ts-unit));
 	--ts-unit-double: calc(2 * var(--ts-unit));
+	--ts-unit-triple: calc(3 * var(--ts-unit));
+	--ts-aside: 320px;
+	--ts-width-grails: calc(var(--ts-width-aside) - var(--ts-unit-double));
+	--ts-radius: 3px;
 
+	/* Fonts........................................................ */
+
+	--ts-font-size-default: 14px;
+	--ts-fontsize-small: 11px;
+	--ts-fontsize-mini: 12px;
+	--ts-fontsize: 14px;
+	--ts-fontsize-medium: 16px;
+	--ts-fontsize-big: 18px;
+	--ts-fontsize-xbig: 24px;
+	--ts-fontsize-xxbig: 36px;
+	--ts-fontsize-icon: 22px;
+
+	--ts-fontweight-light: 300;
+	--ts-fontweight: 400;
+	--ts-fontweight-semibold: 600;
+	--ts-fontweight-bold: 700;
+
+	--ts-font-family: 'Open Sans', system-ui;
+	--ts-fontstack: 'Open Sans', 'Helvetica Neue', 'Lucida Grande', 'Segoe UI',
+		'Ubuntu', 'Droid Sans', sans-serif;
+	--ts-fontstack-mono: 'Ubuntu Mono', 'Menlo', 'Monaco', 'Consolas',
+		'Bitstream Vera Sans Mono', monospace;
+	--ts-fontstack-icon: 'Tradeshifticons', fantasy;
+
+	/* Z-index........................................................ */
+
+	--ts-zindex-main: 0;
+	--ts-zindex-topbar: 1000;
+	--ts-zindex-modal: 1500;
+	--ts-zindex-aside: 2000;
+	--ts-zindex-dialog: 3000;
+	--ts-zindex-spin: 4000;
+	--ts-zindex-max: 10000;
+	--ts-zindex-dialog-cover: calc(var(--ts-zindex-dialog) - 1);
+	--ts-zindex-aside-cover: calc(var(--ts-zindex-aside) - 1);
+	--ts-zindex-spin-cover: calc(var(--ts-zindex-spin) - 1);
+
+	/* Colors........................................................ */
+
+	/* Base */
 	--ts-color-white: rgb(255, 255, 255);
-	--ts-color-blue: rgb(0, 174, 255);
-	--ts-color-blue-dark: rgb(0, 132, 204);
-	--ts-color-blue-darker: rgb(0, 100, 163);
-
-	--ts-color-red: rgb(222, 69, 69);
-	--ts-color-green: rgb(143, 218, 103);
-	--ts-color-orange: rgb(255, 221, 179);
 	--ts-color-black: rgb(15, 21, 26);
 
-	--ts-color-gray-rgb: 203, 215, 220;
-	--ts-color-gray: rgb(var(--ts-color-gray-rgb));
+	/* Red */
+	--ts-color-red-lightest: rgb(244, 215, 215);
+	--ts-color-red-lighter: rgb(234, 174, 174);
+	--ts-color-red-light: rgb(213, 93, 93);
+	--ts-color-red: rgb(189, 0, 0);
+	--ts-color-red-dark: rgb(153, 0, 0);
+	--ts-color-red-darker: rgb(122, 0, 0);
 
-	--ts-color-slate: rgb(202, 215, 220);
+	/* Orange */
+	--ts-color-orange-lightest: rgb(255, 236, 214);
+	--ts-color-orange-lighter: rgb(255, 218, 173);
+	--ts-color-orange-light: rgb(255, 182, 92);
+	--ts-color-orange: rgb(255, 140, 0);
+	--ts-color-orange-dark: rgb(240, 124, 0);
+	--ts-color-orange-darker: rgb(209, 91, 0);
 
-	--ts-border: 1px solid var(--ts-color-slate);
+	/* Yellow */
+	--ts-color-yellow-lightest: rgb(254, 244, 215);
+	--ts-color-yellow-lighter: rgb(253, 235, 180);
+	--ts-color-yellow-light: rgb(252, 213, 105);
+	--ts-color-yellow: rgb(253, 190, 18);
+	--ts-color-yellow-dark: rgb(255, 173, 10);
+	--ts-color-yellow-darker: rgb(250, 142, 0);
+
+	/* Green */
+	--ts-color-green-lightest: rgb(225, 245, 214);
+	--ts-color-green-lighter: rgb(198, 236, 177);
+	--ts-color-green-light: rgb(143, 218, 103);
+	--ts-color-green: rgb(80, 198, 16);
+	--ts-color-green-dark: rgb(57, 157, 11);
+	--ts-color-green-darker: rgb(40, 127, 6);
+
+	/* Blue */
+	--ts-color-blue-lightest: rgb(214, 242, 255);
+	--ts-color-blue-lighter: rgb(173, 229, 255);
+	--ts-color-blue-light: rgb(92, 203, 255);
+	--ts-color-blue: rgb(0, 174, 255);
+	--ts-color-blue-dark: rgb(0, 133, 204);
+	--ts-color-blue-darker: rgb(0, 101, 163);
+
+	/* Purple */
+	--ts-color-purple-lightest: rgb(236, 216, 238);
+	--ts-color-purple-lighter: rgb(218, 176, 221);
+	--ts-color-purple-light: rgb(182, 101, 189);
+	--ts-color-purple: rgb(144, 18, 155);
+	--ts-color-purple-dark: rgb(110, 12, 121);
+	--ts-color-purple-darker: rgb(90, 0, 97);
+
+	/* Pink */
+	--ts-color-pink-lightest: rgb(240, 214, 229);
+	--ts-color-pink-lighter: rgb(226, 172, 203);
+	--ts-color-pink-light: rgb(198, 93, 154);
+	--ts-color-pink: rgb(167, 2, 98);
+	--ts-color-pink-dark: rgb(132, 1, 73);
+	--ts-color-pink-darker: rgb(107, 0, 55);
+
+	/* Grey */
+	--ts-color-gray-lightest: rgb(239, 243, 245);
+	--ts-color-gray-lighter: rgb(230, 236, 239);
+	--ts-color-gray-light: rgb(203, 215, 220);
+	--ts-color-gray: rgb(154, 178, 188);
+	--ts-color-gray-dark: rgb(130, 159, 171);
+	--ts-color-gray-darker: rgb(100, 135, 150);
+
+	/* Slate */
+	--ts-color-slate-lightest: rgb(80, 107, 119);
+	--ts-color-slate-lighter: rgb(63, 85, 95);
+	--ts-color-slate-light: rgb(45, 60, 67);
+	--ts-color-slate: rgb(31, 42, 46);
+	--ts-color-slate-dark: rgb(20, 28, 31);
+	--ts-color-slate-darker: rgb(14, 19, 21);
+
+	/* Animations........................................................ */
+
+	--ts-transition-now: 0.1s;
+	--ts-transition-fast: 0.2s;
+	--ts-transition-slow: 0.6s;
+
+	--ts-border: 1px solid var(--ts-color-gray-light);
 	--ts-margin: 0 var(--ts-unit) var(--ts-unit) 0;
 }
 

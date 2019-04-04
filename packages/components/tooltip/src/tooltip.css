@@ -1,0 +1,61 @@
+:host {
+	position: relative;
+	cursor: pointer;
+	&:before {
+		position: absolute;
+		display: inline-block;
+		align-items: center;
+		background: var(--ts-color-black);
+		border-radius: var(--ts-radius);
+		color: var(--ts-color-white);
+		padding: 0 var(--ts-unit-half);
+		height: var(--ts-unit-double);
+		line-height: var(--ts-unit-double);
+		content: attr(tooltip);
+		justify-content: center;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+		z-index: var(--ts-zindex-max);
+		transition: var(--ts-transition-fast) ease opacity;
+		transition-delay: var(--ts-transition-fast);
+	}
+}
+
+:host(:hover) {
+	&:before {
+		opacity: 1;
+		transition: var(--ts-transition-fast) ease opacity;
+		transition-delay: var(--ts-transition-fast);
+	}
+}
+
+:host([position='right']) {
+	&:before {
+		bottom: calc(50% - var(--ts-unit));
+		left: 115%;
+	}
+}
+
+:host([position='left']) {
+	&:before {
+		bottom: calc(50% - var(--ts-unit));
+		right: 115%;
+	}
+}
+
+:host([position='top']) {
+	&:before {
+		bottom: 115%;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
+:host([position='bottom']) {
+	&:before {
+		top: 115%;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}

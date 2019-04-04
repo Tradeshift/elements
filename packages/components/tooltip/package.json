@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.tooltip",
+  "version": "0.1.1",
+  "src": "src/tooltip.js",
+  "main": "lib/tooltip.cjs.js",
+  "module": "lib/tooltip.mjs",
+  "browser": "lib/tooltip.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "file:../../core"
+  }
+}
