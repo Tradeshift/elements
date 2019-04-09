@@ -121,14 +121,14 @@ function createRoot() {
 }
 
 function enableSlot(name) {
-	var disabledSlot = document.querySelector('[slot="!' + name + '"]');
+	let disabledSlot = document.querySelector('[slot="!' + name + '"]');
 	if (disabledSlot) {
 		return disabledSlot.setAttribute('slot', name);
 	}
 }
 
 function disableSlot(name) {
-	var enabledSlot = document.querySelector('[slot=' + name + ']');
+	let enabledSlot = document.querySelector('[slot=' + name + ']');
 	if (enabledSlot) {
 		return enabledSlot.setAttribute('slot', '!' + name);
 	}
