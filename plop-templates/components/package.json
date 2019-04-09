@@ -1,0 +1,15 @@
+{
+  "name": "@tradeshift/elements.{{kebabCase name}}",
+  "version": "0.1.5",
+  "src": "src/{{kebabCase name}}.js",
+  "main": "lib/{{kebabCase name}}.cjs.js",
+  "module": "lib/{{kebabCase name}}.mjs",
+  "browser": "lib/{{kebabCase name}}.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.1.5"
+  },
+  "gitHead": ""
+}
