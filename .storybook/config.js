@@ -1,5 +1,5 @@
 import { configure } from '@storybook/polymer';
-// import 'happo-plugin-storybook/register';
+import 'happo-plugin-storybook/register';
 import '@storybook/addon-console';
 
 const req = require.context('../packages/components', true, /\.stories\.js$/);

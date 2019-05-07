@@ -35,4 +35,4 @@ export class TSTooltip extends TSElement {
 	}
 }
 
-customElements.define('ts-tooltip', TSTooltip);
+window.customElements.define('ts-tooltip', TSTooltip);

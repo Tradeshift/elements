@@ -25,4 +25,4 @@ export class TSButtonGroup extends TSElement {
 	}
 }
 
-customElements.define('ts-button-group', TSButtonGroup);
+window.customElements.define('ts-button-group', TSButtonGroup);

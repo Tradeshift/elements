@@ -81,4 +81,4 @@ export class TSRoot extends TSElement {
 		);
 	}
 }
-customElements.define('ts-root', TSRoot);
+window.customElements.define('ts-root', TSRoot);

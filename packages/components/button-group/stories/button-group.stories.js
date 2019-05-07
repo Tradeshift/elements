@@ -9,7 +9,7 @@ storiesOf('ts-button-group', module).add(
 		<ts-button-group>
 			${['Primary', 'Secondary', 'Secondary', 'Secondary', 'Text', 'Text'].map(
 				type => html`
-					<ts-button type=${type.toLowerCase()}
+					<ts-button .type=${type.toLowerCase()}
 						>${type} Button – Grouped</ts-button
 					>
 				`

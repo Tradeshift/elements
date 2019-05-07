@@ -30,4 +30,4 @@ export class TSButton extends TSElement {
 	}
 }
 
-customElements.define('ts-button', TSButton);
+window.customElements.define('ts-button', TSButton);
