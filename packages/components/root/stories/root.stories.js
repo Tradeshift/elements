@@ -95,6 +95,11 @@ storiesOf('ts-root', module)
 
 function createRoot(inner = () => html``) {
 	return html`
+		<style>
+			body {
+				margin: 0;
+			}
+		</style>
 		<ts-root>content ${inner()}</ts-root>
 	`;
 }
