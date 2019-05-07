@@ -17,13 +17,19 @@ module.exports = {
 		}),
 		'internet explorer': new RemoteBrowserTarget('internet explorer', {
 			viewport: '1024x768'
-		}),
-		safari: new RemoteBrowserTarget('safari', {
-			viewport: '1024x768'
-		}),
-		'ios-safari': new RemoteBrowserTarget('ios-safari', {
-			viewport: '750x1334'
 		})
+
+		// happo.io is running Safari v10.0, which doesn't support CSS Grid,
+		// and it's not supported by Tradeshift officially.
+
+		// Until this is fixed, they will not be used for screenshot testing.
+
+		// safari: new RemoteBrowserTarget('safari', {
+		// 	viewport: '1024x768'
+		// }),
+		// 'ios-safari': new RemoteBrowserTarget('ios-safari', {
+		// 	viewport: '750x1334'
+		// })
 	},
 	plugins: [
 		happoPluginStorybook({
