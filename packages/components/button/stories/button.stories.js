@@ -1,28 +1,29 @@
-import { storiesOf } from '@storybook/html';
+import { storiesOf, html } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
 
 storiesOf('ts-button', module)
-	.add('type=""', () => {
-		const button = document.createElement('ts-button');
-		button.innerHTML = 'Default Button';
-		return button;
-	})
-	.add('type="primary"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'primary';
-		button.innerHTML = 'Primary Button';
-		return button;
-	})
-	.add('type="secondary"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'secondary';
-		button.innerHTML = 'Secondary Button';
-		return button;
-	})
-	.add('type="text"', () => {
-		const button = document.createElement('ts-button');
-		button.type = 'text';
-		button.innerHTML = 'Text Button';
-		return button;
-	});
+	.add(
+		'type=""',
+		() => html`
+			<ts-button>Default Button</ts-button>
+		`
+	)
+	.add(
+		'type="primary"',
+		() => html`
+			<ts-button type="primary">Primary Button</ts-button>
+		`
+	)
+	.add(
+		'type="secondary"',
+		() => html`
+			<ts-button type="secondary">Secondary Button</ts-button>
+		`
+	)
+	.add(
+		'type="text"',
+		() => html`
+			<ts-button type="text">Text Button</ts-button>
+		`
+	);
