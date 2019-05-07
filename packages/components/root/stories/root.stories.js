@@ -100,7 +100,10 @@ function createRoot(inner = () => html``) {
 				margin: 0;
 			}
 		</style>
-		<ts-root>content ${inner()}</ts-root>
+		<ts-root>
+			${inner()}
+			<section>content</section>
+		</ts-root>
 	`;
 }
 
