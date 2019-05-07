@@ -1,7 +1,7 @@
 :host {
 	position: relative;
 	cursor: pointer;
-	&:before {
+	&::before {
 		position: absolute;
 		display: inline-block;
 		align-items: center;
@@ -23,7 +23,7 @@
 }
 
 :host(:hover) {
-	&:before {
+	&::before {
 		opacity: 1;
 		transition: var(--ts-transition-fast) ease opacity;
 		transition-delay: var(--ts-transition-fast);
@@ -31,21 +31,21 @@
 }
 
 :host([position='right']) {
-	&:before {
+	&::before {
 		bottom: calc(50% - var(--ts-unit));
 		left: 115%;
 	}
 }
 
 :host([position='left']) {
-	&:before {
+	&::before {
 		bottom: calc(50% - var(--ts-unit));
 		right: 115%;
 	}
 }
 
 :host([position='top']) {
-	&:before {
+	&::before {
 		bottom: 115%;
 		left: 50%;
 		transform: translate(-50%, 0);
@@ -53,7 +53,7 @@
 }
 
 :host([position='bottom']) {
-	&:before {
+	&::before {
 		top: 115%;
 		left: 50%;
 		transform: translate(-50%, 0);
