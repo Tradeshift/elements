@@ -9,5 +9,29 @@
 	}
 </script>
 
+<!-- Force ShadyDOM on Safari <= 11 -->
+<script>
+	(function() {
+		function versionLte(version, range) {
+			var string = range + '';
+			var n = +(string.match(/\d+/) || NaN);
+			return version <= n;
+		}
+		var match = ((navigator && navigator.userAgent) || '')
+			.toLowerCase()
+			.match(/version\/(\d+).+?safari/);
+
+		if (match !== null && versionLte(match[1], '11')) {
+			if (window.ShadyDOM) {
+				window.ShadyDOM.force = true;
+			} else {
+				window.ShadyDOM = {
+					force: true
+				};
+			}
+		}
+	})();
+</script>
+
 <link rel="stylesheet" href="/packages/core/src/fonts.css" />
 <link rel="stylesheet" href="/packages/core/src/vars.css" />
