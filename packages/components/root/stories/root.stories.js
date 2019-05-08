@@ -1,4 +1,4 @@
-import { storiesOf } from '@storybook/html';
+import { storiesOf, html } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.root';
 
@@ -31,95 +31,98 @@ const slots = {
 	}
 };
 storiesOf('ts-root', module)
-	.add('empty', () => {
-		const root = createRoot();
-		return root;
-	})
-	.add('header', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		return root;
-	})
-	.add('header + footer', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		createElement(slots.footer, root);
-
-		return root;
-	})
-	.add('header + footer + sidebar-left', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		createElement(slots.footer, root);
-		createElement(slots['sidebar-left'], root);
-
-		return root;
-	})
-	.add('header + footer + sidebar-right', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		createElement(slots.footer, root);
-		createElement(slots['sidebar-right'], root);
-
-		return root;
-	})
-	.add('header + footer + sidebar-inner-left', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		createElement(slots.footer, root);
-		createElement(slots['sidebar-inner-left'], root);
-
-		return root;
-	})
-	.add('header + footer + sidebar-inner-right', () => {
-		const root = createRoot();
-
-		createElement(slots.header, root);
-		createElement(slots.footer, root);
-		createElement(slots['sidebar-inner-right'], root);
-
-		return root;
-	})
+	.add('empty', () => createRoot())
+	.add('header', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)}
+			`
+		)
+	)
+	.add('header + footer', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)} ${createElement(slots.footer)}
+			`
+		)
+	)
+	.add('header + footer + sidebar-left', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)} ${createElement(slots.footer)}
+				${createElement(slots['sidebar-left'])}
+			`
+		)
+	)
+	.add('header + footer + sidebar-right', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)} ${createElement(slots.footer)}
+				${createElement(slots['sidebar-right'])}
+			`
+		)
+	)
+	.add('header + footer + sidebar-inner-left', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)} ${createElement(slots.footer)}
+				${createElement(slots['sidebar-inner-left'])}
+			`
+		)
+	)
+	.add('header + footer + sidebar-inner-right', () =>
+		createRoot(
+			() => html`
+				${createElement(slots.header)} ${createElement(slots.footer)}
+				${createElement(slots['sidebar-inner-right'])}
+			`
+		)
+	)
 
 	.add(
 		'header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right',
-		() => {
-			const root = createRoot();
-
-			createElement(slots.header, root);
-			createElement(slots.footer, root);
-			createElement(slots['sidebar-left'], root);
-			createElement(slots['sidebar-right'], root);
-			createElement(slots['sidebar-inner-left'], root);
-			createElement(slots['sidebar-inner-right'], root);
-
-			return root;
-		}
+		() =>
+			createRoot(
+				() => html`
+					${createElement(slots.header)} ${createElement(slots.footer)}
+					${createElement(slots['sidebar-left'])}
+					${createElement(slots['sidebar-right'])}
+					${createElement(slots['sidebar-inner-left'])}
+					${createElement(slots['sidebar-inner-right'])}
+				`
+			)
 	);
 
-function createRoot() {
-	const root = document.createElement('ts-root');
-	root.innerHTML = 'Content';
-	root.setAttribute('style', 'display: block; width: 100%; height: 100%;');
-	return root;
+function createRoot(inner = () => html``) {
+	return html`
+		<style>
+			body {
+				margin: 0;
+			}
+		</style>
+		<ts-root>
+			${inner()}
+			<section>content</section>
+		</ts-root>
+	`;
 }
 
-function createElement({ slot, height, background, width }, root) {
-	const tag = ['header', 'footer'].includes(slot) ? slot : 'div';
-	const element = document.createElement(tag);
-	element.innerHTML = slot;
-	element.setAttribute('slot', slot);
-	element.setAttribute('class', slot);
-	element.setAttribute(
-		'style',
-		`height: ${height}; background: ${background}; ${
-			width ? `width: ${width};` : ''
-		}`
-	);
-	root.appendChild(element);
+function createElement({ slot, height, background, width }) {
+	const style = `height: ${height}; background: ${background}; ${
+		width ? `width: ${width};` : ''
+	}`;
+	switch (slot) {
+		case 'header':
+			return html`
+				<header slot=${slot} class=${slot} style=${style}>${slot}</header>
+			`;
+		case 'footer':
+			return html`
+				<footer slot=${slot} class=${slot} style=${style}>${slot}</footer>
+			`;
+		default:
+			return html`
+				<section slot=${slot} class=${slot} style=${style}>${slot}</section>
+			`;
+	}
 }

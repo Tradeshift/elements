@@ -31,6 +31,7 @@
 	-ms-grid-columns: 0 minmax(var(--ts-aside), 1fr) 0;
 	grid-template-columns: 0 minmax(var(--ts-aside), 1fr) 0;
 }
+
 /* Turning rows on/off */
 :host(.ts-has-header) {
 	-ms-grid-rows: max-content 1fr 0;

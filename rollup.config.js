@@ -3,7 +3,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 
@@ -76,7 +75,6 @@ const config = [
 				],
 				plugins: [PROD && 'minify-dead-code-elimination'].filter(Boolean)
 			}),
-			PROD && sizeSnapshot(),
 			PROD && terser()
 		].filter(Boolean)
 	},
@@ -134,7 +132,6 @@ const config = [
 					PROD && 'minify-dead-code-elimination'
 				].filter(Boolean)
 			}),
-			PROD && sizeSnapshot(),
 			PROD && terser()
 		].filter(Boolean)
 	}
