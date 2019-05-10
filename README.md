@@ -27,6 +27,10 @@ NPM_CONFIG_OTP is a workaround way to solve [the problem](https://github.com/ler
 - Import `css`, `unsafeCSS` & `html` from `@tradeshift/elements` instead of `lit-html`
 - Add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/elements/blob/master/rollup.globals.json)
 
+### Component generator
+
+You can use `component-gen` script to generate new component from terminal and it creates the component inside `packages/components`, but still you need to add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/elements/blob/master/rollup.globals.json)
+
 ## How to load in a browser
 
 - Don't shim CSS Custom Properties in IE11

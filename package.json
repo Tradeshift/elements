@@ -30,7 +30,8 @@
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "greenkeeper:lockfile:update": "greenkeeper-lockfile-update",
-    "greenkeeper:lockfile:upload": "greenkeeper-lockfile-upload"
+    "greenkeeper:lockfile:upload": "greenkeeper-lockfile-upload",
+    "component-gen": "plop"
   },
   "husky": {
     "hooks": {
@@ -70,6 +71,7 @@
     "lint-staged": "^8.1.6",
     "lit-element": "^2.1.0",
     "npm-run-all": "^4.1.5",
+    "plop": "^2.3.0",
     "postcss": "^7.0.16",
     "postcss-preset-env": "^6.6.0",
     "prettier": "1.16.4",
