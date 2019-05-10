@@ -1,0 +1,45 @@
+/* General........................................................ */
+
+:host [data-variant='default'] {
+	font-size: var(--ts-fontsize);
+}
+
+:host [data-variant='title'] {
+	font-size: var(--ts-fontsize-medium);
+	font-weight: var(--ts-fontweight-semibold);
+}
+
+:host [data-variant='subtitle'] {
+	font-size: var(--ts-fontsize-mini);
+	color: var(--ts-color-slate-lightest);
+}
+
+:host [data-no-wrap] {
+	position: relative;
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+:host [data-color='default'] {
+	color: var(--ts-color-black);
+}
+
+:host [data-color='warning'] {
+	color: var(--ts-color-orange);
+}
+
+:host [data-color='error'],
+:host [data-color='danger'] {
+	color: var(--ts-color-red);
+}
+
+:host [data-color='primary'],
+:host [data-color='action'] {
+	color: var(--ts-color-blue);
+}
+
+:host [data-color='success'] {
+	color: var(--ts-color-green);
+}
