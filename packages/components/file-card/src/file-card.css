@@ -1,0 +1,142 @@
+:host {
+	display: block;
+}
+
+.action-icon,
+.file-icon-wrapper .file-icon {
+	margin-top: var(--ts-unit-quarter);
+}
+
+.file-icon-wrapper .file-icon #outline {
+	fill: var(--ts-color-white);
+	stroke: var(--ts-color-gray-dark);
+}
+
+.file-icon-wrapper .file-icon #fold {
+	fill: var(--ts-color-gray-dark);
+}
+
+.dots-icon circle {
+	fill: var(--ts-color-gray);
+}
+
+.file-name {
+	font-weight: bold;
+}
+
+.action-icon {
+	fill: var(--ts-color-slate-lightest);
+}
+
+.content,
+.file-icon-wrapper,
+.download-action,
+.remove-action {
+	cursor: pointer;
+}
+
+.state-failed .content,
+.state-failed .file-icon-wrapper {
+	cursor: default;
+}
+
+.content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 2;
+	max-width: calc(100% - 20px - 35px);
+	padding: var(--ts-unit-half) var(--ts-unit-half);
+}
+
+.remove-action-message,
+.download-action-message {
+	color: var(--ts-color-blue);
+}
+
+.remove-action-message,
+.download-action-message {
+	display: none;
+}
+
+.download-action-hovered,
+.remove-action-hovered {
+	& .file-information,
+	& .error-message,
+	& .progress-bar {
+		display: none;
+	}
+}
+
+.download-action-hovered {
+	&.state-uploading,
+	&.state-failed {
+		& .download-action-message {
+			display: none;
+		}
+
+		& .file-information,
+		& .error-message,
+		& .progress-bar {
+			display: block;
+		}
+	}
+}
+
+.remove-action-hovered,
+.download-action-hovered {
+	& .remove-action-message,
+	& .download-action-message {
+		display: block;
+	}
+	& .remove-action,
+	& .download-action {
+		& .action-icon {
+		}
+		fill: var(--ts-color-blue);
+	}
+}
+
+.progress-bar {
+	--ts-progress-bar-margin: calc(
+		(var(--ts-unit) - var(--ts-progress-bar-height)) / 2
+	);
+	margin: var(--ts-progress-bar-margin) 0;
+}
+
+.action-icon-wrapper {
+	display: none;
+}
+
+.state-uploading,
+.state-download[data-removable],
+.state-failed {
+	& .remove-action {
+		display: block;
+	}
+}
+
+.state-download .download-action {
+	display: block;
+}
+.state-download[data-removable] .download-action {
+	display: none;
+}
+
+.file-card-wrapper .file-card {
+	align-items: center;
+	background-color: var(--ts-color-white);
+	border-radius: var(--ts-radius);
+	border: var(--ts-border);
+	cursor: pointer;
+	display: flex;
+	height: calc(6.5 * var(--ts-unit-half));
+	justify-content: space-between;
+	margin-bottom: var(--ts-unit-half);
+	overflow: hidden;
+	padding: calc(0.5 * var(--ts-unit-half)) calc(1px + var(--ts-unit-half));
+	position: relative;
+	transition: border var(--ts-transition-fast) ease;
+	width: 100%;
+}
