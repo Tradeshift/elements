@@ -5,5 +5,6 @@
 	"@tradeshift/elements.button-group": "ts.elements.button-group",
 	"@tradeshift/elements.tooltip": "ts.elements.tooltip",
 	"@tradeshift/elements.typography": "ts.elements.typography",
-	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar"
+	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
+	"@tradeshift/elements.card": "ts.elements.card"
 }
