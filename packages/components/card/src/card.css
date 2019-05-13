@@ -54,7 +54,9 @@
 		}
 	}
 
-	&[data-type='focus'] {
+	&[data-type='focus'],
+	&[data-type='active'],
+	&[data-type='primary'] {
 		border: var(--ts-border-focus);
 
 		&:hover {
