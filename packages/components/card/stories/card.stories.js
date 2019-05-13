@@ -32,9 +32,7 @@ storiesOf('ts-card', module)
 		() => html`
 			<ts-card orientation="vertical">
 				<div>top</div>
-				<div>top</div>
-				<div>top</div>
-				<div>top</div>
+				<div>middle</div>
 				<div>bottom</div>
 			</ts-card>
 		`
