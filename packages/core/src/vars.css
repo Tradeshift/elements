@@ -148,6 +148,9 @@
 		var(--ts-color-blue);
 
 	--ts-progress-bar-height: var(--ts-unit-quarter);
+
+	--ts-box-width-small: 280px;
+	--ts-box-width-medium: 360px;
 }
 
 ts-root {

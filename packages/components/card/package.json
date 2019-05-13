@@ -1,0 +1,15 @@
+{
+  "name": "@tradeshift/elements.card",
+  "version": "0.1.5",
+  "src": "src/card.js",
+  "main": "lib/card.cjs.js",
+  "module": "lib/card.mjs",
+  "browser": "lib/card.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.1.5"
+  },
+  "gitHead": ""
+}
