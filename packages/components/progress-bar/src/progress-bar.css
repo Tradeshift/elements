@@ -1,0 +1,63 @@
+/* General........................................................ */
+:host {
+	width: 100%;
+}
+
+.progress-bar-wrapper {
+	height: var(--ts-progress-bar-height);
+	border-radius: 100em;
+	overflow: hidden;
+}
+
+.progress-bar-total {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: var(--ts-color-blue-lighter);
+}
+
+.progress-bar-done {
+	position: absolute;
+	border-radius: 100em;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: var(--ts-color-blue);
+}
+
+.progress-bar-wrapper[data-indeterminate] .progress-bar-done {
+	animation: infinite-progress 1s linear infinite;
+}
+
+@keyframes infinite-progress {
+	0% {
+		width: 0;
+		margin-left: 0;
+		margin-right: 100%;
+	}
+	20% {
+		width: 30%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	40% {
+		width: 30%;
+		margin-left: 30%;
+		margin-right: 0;
+	}
+	60% {
+		width: 40%;
+		margin-left: 50%;
+		margin-right: 0;
+	}
+	80% {
+		width: 40%;
+		margin-left: 70%;
+		margin-right: 0;
+	}
+	100% {
+		width: 0;
+		margin-left: 100%;
+		margin-right: 0;
+	}
+}
