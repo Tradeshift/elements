@@ -6,5 +6,7 @@
 	"@tradeshift/elements.tooltip": "ts.elements.tooltip",
 	"@tradeshift/elements.typography": "ts.elements.typography",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
-	"@tradeshift/elements.card": "ts.elements.card"
+	"@tradeshift/elements.card": "ts.elements.card",
+	"@tradeshift/elements.file-size": "ts.elements.file-size",
+	"@tradeshift/elements.file-card": "ts.elements.file-card"
 }
