@@ -79,11 +79,11 @@
 	}
 
 	&[data-size='small'] {
-		width: 280px;
+		width: var(--ts-box-width-small);
 	}
 
 	&[data-size='medium'] {
-		width: 360px;
+		width: var(--ts-box-width-medium);
 	}
 
 	&[data-rtl] {
