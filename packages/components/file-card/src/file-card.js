@@ -270,7 +270,7 @@ customElements.define(
 
 		removeFile() {
 			if (this.removable) {
-				let event = new CustomEvent('remove', {
+				const event = new CustomEvent('remove', {
 					detail: {
 						file: this.fileObject
 					},
@@ -284,7 +284,7 @@ customElements.define(
 
 		downloadFile() {
 			if (this.state === 'download') {
-				let event = new CustomEvent('remove', {
+				const event = new CustomEvent('remove', {
 					detail: {
 						file: this.fileObject
 					},
@@ -296,13 +296,13 @@ customElements.define(
 			}
 		}
 
-		toggleRemoveActionHoverState(event) {
+		toggleRemoveActionHoverState() {
 			this.shadowRoot
 				.querySelector('.file-card-wrapper')
 				.classList.toggle('remove-action-hovered');
 		}
 
-		toggleDownloadActionHoverState(event) {
+		toggleDownloadActionHoverState() {
 			this.shadowRoot
 				.querySelector('.file-card-wrapper')
 				.classList.toggle('download-action-hovered');
