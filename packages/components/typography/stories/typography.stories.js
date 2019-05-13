@@ -1,75 +1,71 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
-import '../lib/typography.cjs';
+import '@tradeshift/elements.typography';
 
 storiesOf('ts-typography', module)
 	.add(
 		'Simple',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography>Sample Text</ts-typography>
+			<ts-typography text="Sample Text"></ts-typography>
 		`
 	)
 	.add(
 		'color="danger"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography color="danger">Danger Color Text</ts-typography>
+			<ts-typography color="danger" text="Danger Color Text"></ts-typography>
 		`
 	)
 	.add(
 		'color="error"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography color="error">Error Color Text</ts-typography>
+			<ts-typography color="error" text="Error Color Text"></ts-typography>
 		`
 	)
 	.add(
 		'color="success"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography color="success">Success Color Text</ts-typography>
+			<ts-typography color="success" text="Success Color Text"></ts-typography>
 		`
 	)
 	.add(
 		'color="action"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography color="action">Action Color Text</ts-typography>
+			<ts-typography color="action" text="Action Color Text"></ts-typography>
 		`
 	)
 	.add(
 		'color="primary"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography color="primary">Primary Color Text</ts-typography>
+			<ts-typography color="primary" text="Primary Color Text"></ts-typography>
 		`
 	)
 	.add(
 		'variant="default"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography variant="default">Default Variant Text</ts-typography>
+			<ts-typography
+				variant="default"
+				text="Default Variant Text"
+			></ts-typography>
 		`
 	)
 	.add(
 		'variant="title"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography variant="title">Title Variant Text</ts-typography>
+			<ts-typography variant="title" text="Title Variant Text"></ts-typography>
 		`
 	)
 	.add(
 		'variant="subtitle"',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography variant="subtitle">Subtitle Variant Text</ts-typography>
+			<ts-typography
+				variant="subtitle"
+				text="Subtitle Variant Text"
+			></ts-typography>
 		`
 	)
 	.add(
 		'no-wrap',
 		() => html`
-			<div>fake for storybook</div>
-			<ts-typography no-wrap>No Wrap Text</ts-typography>
+			<ts-typography no-wrap text="No Wrap Text"></ts-typography>
 		`
 	);
