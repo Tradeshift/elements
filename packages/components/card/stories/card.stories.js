@@ -58,6 +58,16 @@ storiesOf('ts-card', module)
 		`
 	)
 	.add(
+		'rtl horizontal',
+		() => html`
+			<ts-card rtl orientation="horizontal">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+			</ts-card>
+		`
+	)
+	.add(
 		'size="small"',
 		() => html`
 			<ts-card size="small">
