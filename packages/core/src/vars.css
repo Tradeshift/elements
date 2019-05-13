@@ -133,8 +133,21 @@
 	--ts-transition-fast: 0.2s;
 	--ts-transition-slow: 0.6s;
 
-	--ts-border: 1px solid var(--ts-color-gray-light);
 	--ts-margin: 0 var(--ts-unit) var(--ts-unit) 0;
+
+	/* Borders........................................................ */
+	--ts-border-width: 1px;
+	--ts-border-type: solid;
+	--ts-border: var(--ts-border-width) var(--ts-border-type)
+		var(--ts-color-gray-light);
+	--ts-border-error: var(--ts-border-width) var(--ts-border-type)
+		var(--ts-color-red);
+	--ts-border-success: var(--ts-border-width) var(--ts-border-type)
+		var(--ts-color-green);
+	--ts-border-focus: var(--ts-border-width) var(--ts-border-type)
+		var(--ts-color-blue);
+
+	--ts-progress-bar-height: var(--ts-unit-quarter);
 }
 
 ts-root {
