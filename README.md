@@ -26,6 +26,7 @@ NPM_CONFIG_OTP is a workaround way to solve [the problem](https://github.com/ler
 - Extend `TSElement`, instead of `LitElement`
 - Import `css`, `unsafeCSS` & `html` from `@tradeshift/elements` instead of `lit-html`
 - Add the UMD global namespace to [`rollup.globals.json`](https://github.com/Tradeshift/elements/blob/master/rollup.globals.json)
+- Add your package to the [`package.json`](<(https://github.com/Tradeshift/elements/blob/master/package.json)>) dependencies
 
 ### Component generator
 
