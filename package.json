@@ -12,7 +12,7 @@
   "scripts": {
     "start": "run-p watch server",
     "test": "npm run happo",
-    "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\"",
+    "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
     "clean": "cross-env-shell lerna exec -- rm -f ./lib/*",
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
@@ -88,7 +88,9 @@
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.root": "file:packages/components/root",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
-    "@tradeshift/elements.typography": "file:packages/components/typography"
+    "@tradeshift/elements.typography": "file:packages/components/typography",
+    "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
+    "@tradeshift/elements.card": "file:packages/components/card"
   },
   "repository": "github:Tradeshift/elements.git",
   "publishConfig": {
