@@ -182,7 +182,7 @@ customElementDefineHelper(
 		}
 
 		handleUpload(e) {
-			let event = new CustomEvent('change', {
+			const event = new CustomEvent('change', {
 				detail: {
 					originalEvent: e,
 					files: e.target.files
