@@ -1,6 +1,12 @@
 import { LitElement, unsafeCSS } from 'lit-element';
 import commonCSS from './common.css';
 
+export function customElementDefineHelper(name, component) {
+	if (!window.customElements.get(name)) {
+		window.customElements.define(name, component);
+	}
+}
+
 export class TSElement extends LitElement {
 	static get styles() {
 		return unsafeCSS(commonCSS);
