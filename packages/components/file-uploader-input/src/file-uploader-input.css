@@ -1,0 +1,138 @@
+/* General........................................................ */
+
+:host {
+	width: 100%;
+}
+
+.file-upload-wrapper {
+	&[data-rtl] {
+		direction: rtl;
+
+		& .help-text {
+			& svg {
+				margin: var(--ts-unit-eighth) 0 0 var(--ts-unit-quarter);
+			}
+		}
+	}
+
+	&[data-size='small'] {
+		width: var(--ts-box-width-small);
+	}
+
+	&[data-size='medium'] {
+		width: var(--ts-box-width-medium);
+	}
+}
+
+.file-upload-button {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--ts-color-white);
+	border-radius: var(--ts-radius);
+	border: var(--ts-border);
+	cursor: pointer;
+	height: var(--ts-unit-plus);
+	margin-bottom: var(--ts-unit-half);
+	overflow: hidden;
+	padding: var(--ts-unit-quarter) var(--ts-unit-half);
+	transition: border 0.15s ease;
+
+	&:hover {
+		border: 1px solid var(--ts-color-blue);
+		box-shadow: 0 0 0 1px hsla(199, 100%, 50%, 0.75);
+	}
+
+	& input {
+		cursor: pointer;
+		font-size: 100px;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	& > span {
+		background-color: var(--ts-color-blue);
+		border-radius: var(--ts-unit);
+		color: var(--ts-color-white);
+		cursor: pointer;
+		font-size: var(--ts-fontsize-mini);
+		/*letter-spacing: 0.5px;*/
+		padding: var(--ts-unit-eighth) var(--ts-unit-half) 0;
+	}
+
+	&[data-disabled] {
+		cursor: default;
+		color: var(--ts-color-gray-light);
+
+		&:hover {
+			border: 1px solid var(--ts-color-gray-light);
+			box-shadow: none;
+		}
+
+		& span {
+			background-color: var(--ts-color-gray-light);
+		}
+
+		& input {
+			cursor: default;
+		}
+	}
+}
+
+.help-text {
+	align-items: center;
+	color: var(--ts-color-gray-darker);
+	display: flex;
+	font-size: var(--ts-fontsize-mini);
+
+	& svg {
+		height: var(--ts-unit);
+		width: var(--ts-unit);
+		margin: -5px var(--ts-unit-quarter) 0 0;
+	}
+}
+
+/* Dragging state.................................................. */
+
+.draggable-info {
+	display: none;
+}
+
+.dragover {
+	align-items: center;
+	background: #fff;
+	border-radius: 3px;
+	border: 2px solid #a5dfff;
+	display: flex;
+	height: calc(6.5 * var(--ts-unit-half));
+	justify-content: center;
+	width: 100%;
+
+	&.file-upload-wrapper .file-upload-button,
+	&.file-upload-wrapper .help-text {
+		display: none;
+	}
+
+	& .draggable-info {
+		display: flex;
+		color: #00b0ff;
+		font-weight: 600;
+		font-size: 14px;
+
+		& * {
+			display: unset;
+		}
+	}
+
+	& .icon {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: 0 var(--ts-unit-half);
+	}
+}
