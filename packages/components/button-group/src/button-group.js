@@ -1,4 +1,9 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './button-group.css';
 
 export class TSButtonGroup extends TSElement {
@@ -25,4 +30,4 @@ export class TSButtonGroup extends TSElement {
 	}
 }
 
-window.customElements.define('ts-button-group', TSButtonGroup);
+customElementDefineHelper('ts-button-group', TSButtonGroup);

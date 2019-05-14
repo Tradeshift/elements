@@ -1,9 +1,14 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 
 import css from './file-size.css';
 
-customElements.define(
+customElementDefineHelper(
 	'ts-file-size',
 	class extends TSElement {
 		static get styles() {

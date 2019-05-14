@@ -1,4 +1,9 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './root.css';
 
 const CLASS_HIDDEN = 'hidden';
@@ -81,4 +86,4 @@ export class TSRoot extends TSElement {
 		);
 	}
 }
-window.customElements.define('ts-root', TSRoot);
+customElementDefineHelper('ts-root', TSRoot);
