@@ -1,7 +1,12 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './typography.css';
 
-customElements.define(
+customElementDefineHelper(
 	'ts-typography',
 	class extends TSElement {
 		constructor() {

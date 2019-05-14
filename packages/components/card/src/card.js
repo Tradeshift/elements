@@ -1,7 +1,12 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './card.css';
 
-customElements.define(
+customElementDefineHelper(
 	'ts-card',
 	class extends TSElement {
 		constructor() {

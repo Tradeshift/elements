@@ -1,11 +1,16 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 import '@tradeshift/elements.card';
 import '@tradeshift/elements.progress-bar';
 import '@tradeshift/elements.file-size';
 import css from './file-card.css';
 
-customElements.define(
+customElementDefineHelper(
 	'ts-file-card',
 	class extends TSElement {
 		constructor() {

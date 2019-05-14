@@ -1,7 +1,7 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './{{kebabCase name}}.css';
 
-customElements.define(
+customElementDefineHelper(
 	`ts-{{kebabCase name}}`,
 	class extends TSElement {
 		static get styles() {

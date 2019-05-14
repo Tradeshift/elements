@@ -1,7 +1,12 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './progress-bar.css';
 
-customElements.define(
+customElementDefineHelper(
 	'ts-progress-bar',
 	class extends TSElement {
 		static get styles() {

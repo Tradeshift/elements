@@ -1,4 +1,9 @@
-import { TSElement, unsafeCSS, html } from '@tradeshift/elements';
+import {
+	TSElement,
+	unsafeCSS,
+	html,
+	customElementDefineHelper
+} from '@tradeshift/elements';
 import css from './tooltip.css';
 
 export class TSTooltip extends TSElement {
@@ -35,4 +40,4 @@ export class TSTooltip extends TSElement {
 	}
 }
 
-window.customElements.define('ts-tooltip', TSTooltip);
+customElementDefineHelper('ts-tooltip', TSTooltip);
