@@ -239,7 +239,7 @@ customElementDefineHelper(
 						type="${this.cardType}"
 						orientation="horizontal"
 						?rtl="${this.rtl}"
-						data-size="${this.size}"
+						size="${this.size}"
 					>
 						${this.fileIcon}
 						<div class="content">

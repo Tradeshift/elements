@@ -35,6 +35,8 @@
 	cursor: pointer;
 }
 
+.state-uploading .content,
+.state-uploading .file-icon-wrapper,
 .state-failed .content,
 .state-failed .file-icon-wrapper {
 	cursor: default;
@@ -84,20 +86,25 @@
 	}
 }
 
-.remove-action-hovered,
-.download-action-hovered {
-	& .remove-action-message,
-	& .download-action-message {
-		display: block;
-	}
-	& .remove-action,
-	& .download-action {
-		& .action-icon {
-		}
-		fill: var(--ts-color-blue);
-	}
+.remove-action-hovered .remove-action-message,
+.download-action-hovered .download-action-message {
+	display: block;
 }
 
+.download-action-hovered {
+	& .download-action {
+		& .action-icon {
+			fill: var(--ts-color-blue);
+		}
+	}
+}
+.remove-action-hovered {
+	& .remove-action {
+		& .action-icon {
+			fill: var(--ts-color-blue);
+		}
+	}
+}
 .progress-bar {
 	--ts-progress-bar-margin: calc(
 		(var(--ts-unit) - var(--ts-progress-bar-height)) / 2
