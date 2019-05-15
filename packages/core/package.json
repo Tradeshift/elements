@@ -6,6 +6,7 @@
   "module": "lib/core.mjs",
   "browser": "lib/core.umd.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "src/*"
   ]
 }
