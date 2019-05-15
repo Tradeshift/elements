@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.card",
-  "version": "0.1.5",
+  "version": "0.2.4",
   "src": "src/card.js",
   "main": "lib/card.cjs.js",
   "module": "lib/card.mjs",
@@ -9,7 +9,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.0-alpha.0"
+    "@tradeshift/elements": "^0.2.4"
   },
   "gitHead": ""
 }
