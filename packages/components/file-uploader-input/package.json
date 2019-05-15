@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-uploader-input",
-  "version": "0.1.5",
+  "version": "0.2.3",
   "src": "src/file-uploader-input.js",
   "main": "lib/file-uploader-input.cjs.js",
   "module": "lib/file-uploader-input.mjs",
@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.0-alpha.0"
+    "@tradeshift/elements": "^0.2.3"
   }
 }
