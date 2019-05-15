@@ -180,6 +180,110 @@
 					In, qui!</ts-card
 				>
 			</article>
+
+			<article>
+				<h2>card</h2>
+				<ts-card no-padding
+					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+					cumque delectus eligendi! Commodi cumque in laboriosam omnis quos
+					tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero.
+					In, qui!</ts-card
+				>
+			</article>
+
+			<article>
+				<h2>file uploader input</h2>
+				<ts-file-uploader-input
+					id="testaki"
+					accepted-file-extensions='["doc", "pdf", "jpg"]'
+					size="medium"
+					rtl
+				></ts-file-uploader-input>
+
+				<script>
+					function onchangeCallback(e) {
+						console.log('onchangeCallback', e);
+						console.log(
+							'onchangeCallback files',
+							e.detail.originalEvent.target.files
+						);
+					}
+					function handleFileChange(e) {
+						console.log('handleFileChange', e);
+						console.log('files', e.detail.originalEvent.target.files);
+					}
+
+					// document.getElementById('testaki').addEventListener('change', handleFileChange);
+					document.getElementById('testaki').onchange = onchangeCallback;
+				</script>
+			</article>
+
+			<article>
+				<h2>ts-file-card</h2>
+				<h4>States</h4>
+				<div class="flex-wrapper">
+					<ts-file-card
+						file-object='{"name":"fileName.pdf","size":15644400,"loadedSize":15000}'
+						file-url="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+						removable
+						state="download"
+						size="medium"
+					></ts-file-card>
+
+					<ts-file-card
+						file-object='{"name":"fileName.pdf","size":156444000,"loadedSize":15000}'
+						state="uploading"
+						size="medium"
+					></ts-file-card>
+
+					<ts-file-card
+						file-object='{"name":"fileName.pdf","size":1111111,"loadedSize":15000}'
+						state="failed"
+						error-message="Failed to upload for some reasons Failed to upload for some reasonsFailed to upload for some reasonsFailed to upload for some reasonsFailed to upload for some reasonsFailed to upload for some reasons"
+						size="medium"
+					></ts-file-card>
+				</div>
+				<hr />
+
+				<h4>sizes</h4>
+				<ts-file-card
+					file-object='{"name":"fileName.pdf","size":1234567890,"loadedSize":15000}'
+					removable
+					state="download"
+				></ts-file-card>
+				<ts-file-card
+					file-object='{"name":"fileName.pdf","size":123456789,"loadedSize":15000}'
+					removable
+					state="download"
+					size="medium"
+				></ts-file-card>
+				<ts-file-card
+					file-object='{"name":"fileName.pdf","size":12345678,"loadedSize":15000}'
+					removable
+					state="download"
+					size="small"
+				></ts-file-card>
+				<hr />
+
+				<h4>Right To Left</h4>
+				<ts-file-card
+					file-object='{"name":"fileName.pdf","size":156444,"loadedSize":15000}'
+					rtl
+					removable
+					size="medium"
+					state="failed"
+					error-message="مشکلی به وجود آمده است"
+				></ts-file-card>
+				<hr />
+
+				<h4>View only</h4>
+				<ts-file-card
+					file-object='{"name":"fileName.pdf","size":156444,"loadedSize":120000}'
+					file-url="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
+					state="download"
+					size="medium"
+				></ts-file-card>
+			</article>
 		</ts-root>
 	</body>
 </html>
