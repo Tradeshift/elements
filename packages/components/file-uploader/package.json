@@ -1,0 +1,17 @@
+{
+  "name": "@tradeshift/elements.file-uploader",
+  "version": "0.1.5",
+  "src": "src/file-uploader.js",
+  "main": "lib/file-uploader.cjs.js",
+  "module": "lib/file-uploader.mjs",
+  "browser": "lib/file-uploader.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.2.0-alpha.0",
+    "@tradeshift/elements.file-card": "file:../file-card",
+    "@tradeshift/elements.file-uploader-input": "file:../file-uploader-input"
+  },
+  "gitHead": ""
+}

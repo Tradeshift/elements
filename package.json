@@ -93,7 +93,8 @@
     "@tradeshift/elements.card": "file:packages/components/card",
     "@tradeshift/elements.file-size": "file:packages/components/file-size",
     "@tradeshift/elements.file-card": "file:packages/components/file-card",
-    "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input"
+    "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
+    "@tradeshift/elements.file-uploader": "file:packages/components/file-uploader"
   },
   "repository": "github:Tradeshift/elements.git",
   "publishConfig": {
