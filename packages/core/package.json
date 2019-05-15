@@ -8,5 +8,6 @@
   "files": [
     "lib/*",
     "src/*"
-  ]
+  ],
+  "gitHead": "990f370b3c9790e2fb413552175b8b98b7c8607c"
 }

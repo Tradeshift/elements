@@ -10,10 +10,10 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.2.4",
-    "@tradeshift/elements.card": "file:../card",
-    "@tradeshift/elements.file-size": "file:../file-size",
-    "@tradeshift/elements.progress-bar": "file:../progress-bar",
-    "@tradeshift/elements.typography": "file:../typography"
+    "@tradeshift/elements.card": "^0.2.4",
+    "@tradeshift/elements.file-size": "^0.2.4",
+    "@tradeshift/elements.progress-bar": "^0.2.4",
+    "@tradeshift/elements.typography": "^0.2.4"
   },
-  "gitHead": ""
+  "gitHead": "990f370b3c9790e2fb413552175b8b98b7c8607c"
 }
