@@ -194,7 +194,7 @@
 			<article>
 				<h2>file uploader input</h2>
 				<ts-file-uploader-input
-					id="testaki"
+					id="fileUploaderInput"
 					accepted-file-extensions='["doc", "pdf", "jpg"]'
 					size="medium"
 					rtl
@@ -213,8 +213,8 @@
 						console.log('files', e.detail.originalEvent.target.files);
 					}
 
-					// document.getElementById('testaki').addEventListener('change', handleFileChange);
-					document.getElementById('testaki').onchange = onchangeCallback;
+					document.getElementById('fileUploaderInput').addEventListener('change', handleFileChange);
+					document.getElementById('fileUploaderInput').onchange = onchangeCallback;
 				</script>
 			</article>
 
