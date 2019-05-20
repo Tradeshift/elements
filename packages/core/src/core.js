@@ -11,6 +11,10 @@ export class TSElement extends LitElement {
 	static get styles() {
 		return unsafeCSS(commonCSS);
 	}
+
+	get bodyHasRTL() {
+		return document.body.getAttribute('dir') === 'rtl';
+	}
 }
 
 // To help with treeshaking, only exports in use are listed
