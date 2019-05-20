@@ -47,7 +47,8 @@
 						'file-size',
 						'file-uploader',
 						'file-uploader-input',
-						'progress-bar'
+						'progress-bar',
+						'help-text'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -199,6 +200,14 @@
 					size="medium"
 					rtl
 				></ts-file-uploader-input>
+				<ts-file-uploader-input
+					id="fileUploaderInput"
+					accepted-file-extensions='["doc", "pdf", "jpg"]'
+					size="medium"
+					max-file-number="4"
+					multiple
+					help-text-title="Test Help Text Title"
+				></ts-file-uploader-input>
 
 				<script>
 					function onchangeCallback(e) {
@@ -213,8 +222,12 @@
 						console.log('files', e.detail.originalEvent.target.files);
 					}
 
-					document.getElementById('fileUploaderInput').addEventListener('change', handleFileChange);
-					document.getElementById('fileUploaderInput').onchange = onchangeCallback;
+					document
+						.getElementById('fileUploaderInput')
+						.addEventListener('change', handleFileChange);
+					document.getElementById(
+						'fileUploaderInput'
+					).onchange = onchangeCallback;
 				</script>
 			</article>
 
@@ -283,6 +296,22 @@
 					state="download"
 					size="medium"
 				></ts-file-card>
+			</article>
+
+			<article>
+				<h2>ts-help-text</h2>
+				<ts-help-text
+					messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta", "message example 1", "message example 2"]'
+					title="Title"
+					size="small"
+				></ts-help-text>
+				<ts-help-text
+					messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta", "message example 1", "message example 2"]'
+					rtl
+				></ts-help-text>
+				<ts-help-text
+					messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta"]'
+				></ts-help-text>
 			</article>
 		</ts-root>
 	</body>
