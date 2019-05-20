@@ -139,7 +139,8 @@ customElementDefineHelper(
 			}
 
 			if (
-				this.multiple & !this.hideMaxFileNumberHelpText &&
+				this.multiple &&
+				!this.hideMaxFileNumberHelpText &&
 				this.maxFileNumber
 			) {
 				helpTextList.push(`Max ${this.maxFileNumber} files`);
