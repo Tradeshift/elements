@@ -200,15 +200,6 @@
 					size="medium"
 					rtl
 				></ts-file-uploader-input>
-				<ts-file-uploader-input
-					id="fileUploaderInput"
-					accepted-file-extensions='["doc", "pdf", "jpg"]'
-					size="medium"
-					max-file-number="4"
-					multiple
-					help-text-title="Test Help Text Title"
-				></ts-file-uploader-input>
-
 				<script>
 					function onchangeCallback(e) {
 						console.log('onchangeCallback', e);
@@ -310,7 +301,7 @@
 					rtl
 				></ts-help-text>
 				<ts-help-text
-					messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta"]'
+					messages='["Files should not be larger than 4 MB!"]'
 				></ts-help-text>
 			</article>
 		</ts-root>
