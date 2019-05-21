@@ -289,7 +289,7 @@ customElementDefineHelper(
 
 		downloadFile() {
 			if (this.state === 'download') {
-				const event = new CustomEvent('remove', {
+				const event = new CustomEvent('download', {
 					detail: {
 						file: this.fileObject
 					},
