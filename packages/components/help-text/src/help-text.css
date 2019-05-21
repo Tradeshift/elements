@@ -1,0 +1,75 @@
+/* General........................................................ */
+
+:host {
+	position: relative;
+	display: block;
+
+	& dl {
+		color: var(--ts-color-black);
+	}
+
+	& dt,
+	& dd {
+		padding-left: var(--ts-unit);
+		position: relative;
+		display: flex;
+		font-size: var(--ts-fontsize-mini);
+	}
+
+	& dt {
+		font-weight: var(--ts-fontweight-bold);
+		align-items: center;
+	}
+
+	& dd {
+		&:before {
+			content: '\2219';
+			width: var(--ts-fontsize-medium);
+			position: absolute;
+			left: 0;
+			text-align: center;
+		}
+
+		&.single-message {
+			align-items: center;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	& svg {
+		width: var(--ts-fontsize-medium);
+		height: var(--ts-fontsize-medium);
+	}
+
+	& svg,
+	& dd:before {
+		position: absolute;
+		left: 0;
+	}
+}
+
+[data-rtl] {
+	direction: rtl;
+
+	& dt,
+	& dd {
+		padding-left: initial;
+		padding-right: var(--ts-unit);
+	}
+	& svg,
+	& dd:before {
+		left: initial;
+		right: 0;
+	}
+}
+
+[data-size='medium'] {
+	width: var(--ts-box-width-medium);
+}
+
+[data-size='small'] {
+	width: var(--ts-box-width-small);
+}

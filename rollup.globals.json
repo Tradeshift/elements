@@ -9,5 +9,6 @@
 	"@tradeshift/elements.card": "ts.elements.card",
 	"@tradeshift/elements.file-size": "ts.elements.file-size",
 	"@tradeshift/elements.file-card": "ts.elements.file-card",
-	"@tradeshift/elements.file-uploader-input": "ts.elements.file-uploader-input"
+	"@tradeshift/elements.file-uploader-input": "ts.elements.file-uploader-input",
+	"@tradeshift/elements.help-text": "ts.elements.help-text"
 }
