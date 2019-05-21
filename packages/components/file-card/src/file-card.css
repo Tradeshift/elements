@@ -81,7 +81,7 @@
 		& .file-information,
 		& .error-message,
 		& .progress-bar {
-			display: block;
+			display: initial;
 		}
 	}
 }
@@ -105,6 +105,7 @@
 		}
 	}
 }
+
 .progress-bar {
 	--ts-progress-bar-margin: calc(
 		(var(--ts-unit) - var(--ts-progress-bar-height)) / 2
@@ -127,6 +128,7 @@
 .state-download .download-action {
 	display: block;
 }
+
 .state-download[data-removable] .download-action {
 	display: none;
 }
@@ -146,4 +148,8 @@
 	position: relative;
 	transition: border var(--ts-transition-fast) ease;
 	width: 100%;
+}
+
+.file-information {
+	display: flex;
 }
