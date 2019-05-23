@@ -31,7 +31,9 @@
 		}
 
 		&.single-message {
-			align-items: center;
+			& svg {
+				margin-top: 2px;
+			}
 
 			&:before {
 				display: none;
