@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-card",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "src": "src/file-card.js",
   "main": "lib/file-card.cjs.js",
   "module": "lib/file-card.mjs",
@@ -9,7 +9,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.6",
+    "@tradeshift/elements": "^0.2.7",
     "@tradeshift/elements.card": "file:../card",
     "@tradeshift/elements.file-size": "file:../file-size",
     "@tradeshift/elements.progress-bar": "file:../progress-bar",

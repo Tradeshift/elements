@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.help-text",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "src": "src/help-text.js",
   "main": "lib/help-text.cjs.js",
   "module": "lib/help-text.mjs",
@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.6"
+    "@tradeshift/elements": "^0.2.7"
   }
 }
