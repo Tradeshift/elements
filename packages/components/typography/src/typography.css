@@ -1,5 +1,9 @@
 /* General........................................................ */
 
+:host {
+	display: block;
+}
+
 :host [data-variant='default'] {
 	font-size: var(--ts-fontsize);
 }
