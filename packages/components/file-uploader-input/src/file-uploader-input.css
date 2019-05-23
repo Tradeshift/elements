@@ -37,8 +37,10 @@
 	height: var(--ts-unit-plus);
 	margin-bottom: var(--ts-unit-half);
 	overflow: hidden;
-	padding: var(--ts-unit-quarter) var(--ts-unit-half);
+	padding: var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-quarter)
+		var(--ts-unit-half);
 	transition: border 0.15s ease;
+	color: var(--ts-color-slate-lightest);
 
 	&:hover {
 		border: 1px solid var(--ts-color-blue);
@@ -61,8 +63,8 @@
 		color: var(--ts-color-white);
 		cursor: pointer;
 		font-size: var(--ts-fontsize-mini);
-		/*letter-spacing: 0.5px;*/
-		padding: var(--ts-unit-eighth) var(--ts-unit-half) 0;
+		letter-spacing: 0.5px;
+		padding: 0 var(--ts-unit-three-fourth);
 	}
 
 	&[data-disabled] {
