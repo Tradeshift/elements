@@ -32,6 +32,7 @@ customElementDefineHelper(
 					attribute: 'disable-drag-and-drop'
 				},
 				helpTextTitle: { type: String, attribute: 'help-text-title' },
+				helpTextMessages: { type: Array, attribute: 'help-text-messages' },
 				hideFileTypeHelpText: {
 					type: Boolean,
 					attribute: 'hide-file-type-help-text'
@@ -51,9 +52,9 @@ customElementDefineHelper(
 			this.disableDragAndDrop = false;
 			this.size = 'full';
 			this.hideFileTypeHelpText = false;
-			this.hideMaxFileSizeHelpText = false;
 			this.hideMaxFileNumberHelpText = false;
 			this.helpTextTitle = '';
+			this.helpTextMessages = [];
 			this.dragCounter = 0;
 			this.handleUpload = this.handleUpload.bind(this);
 			this.dragEnterHandler = this.dragEnterHandler.bind(this);
@@ -129,8 +130,7 @@ customElementDefineHelper(
 		}
 
 		get helpText() {
-			const helpTextList = [];
-
+			const helpTextList = [...this.helpTextMessages];
 			if (!this.hideFileTypeHelpText && this.acceptedFileExtensions) {
 				const acceptedFileExtensions = this.acceptedFileExtensions
 					.map(ext => ext.toUpperCase())

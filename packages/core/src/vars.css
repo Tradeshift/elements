@@ -2,6 +2,7 @@
 	/* Units........................................................ */
 
 	--ts-unit: 20px;
+	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit));
 	--ts-unit-half: calc(0.5 * var(--ts-unit));
 	--ts-unit-plus: calc(var(--ts-unit) * 1.5);
 	--ts-unit-quarter: calc(0.25 * var(--ts-unit));

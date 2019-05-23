@@ -198,6 +198,14 @@
 					id="fileUploaderInput"
 					accepted-file-extensions='["doc", "pdf", "jpg"]'
 					size="medium"
+					help-text-messages='["Some very very long long help text to give user more information about the input that they need to provide"]'
+					hide-file-type-help-text
+				></ts-file-uploader-input>
+
+				<ts-file-uploader-input
+					id="fileUploaderInput2"
+					accepted-file-extensions='["doc", "pdf", "jpg"]'
+					size="small"
 					rtl
 				></ts-file-uploader-input>
 				<script>
@@ -217,7 +225,7 @@
 						.getElementById('fileUploaderInput')
 						.addEventListener('change', handleFileChange);
 					document.getElementById(
-						'fileUploaderInput'
+						'fileUploaderInput2'
 					).onchange = onchangeCallback;
 				</script>
 			</article>
