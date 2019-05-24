@@ -18,7 +18,7 @@
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
     "build:prod": "cross-env PRODUCTION=true npm run build",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
-    "server": "server start --watch",
+    "server": "reload --browser --exts html,umd.js",
     "storybook": "start-storybook -p 9009 -s ./static",
     "storybook:build": "build-storybook -s ./static -o .out",
     "storybook:deploy": "storybook-to-ghpages",
@@ -54,7 +54,6 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "@commonshost/server": "6.9.0",
     "@open-wc/demoing-storybook": "^0.2.2",
     "@storybook/storybook-deployer": "^2.8.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
@@ -83,7 +82,8 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^4.0.4",
+    "reload": "^3.0.1"
   },
   "dependencies": {
     "@tradeshift/elements": "file:packages/core",
