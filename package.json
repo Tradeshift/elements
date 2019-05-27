@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "start": "run-p watch server",
+    "dev": "run-p watch server-reload",
     "test": "npm run happo",
     "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
@@ -18,7 +19,8 @@
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
     "build:prod": "cross-env PRODUCTION=true npm run build",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
-    "server": "reload --browser --exts html,umd.js",
+    "server": "server start --watch",
+    "server-reload": "reload --browser --exts html,umd.js",
     "storybook": "start-storybook -p 9009 -s ./static",
     "storybook:build": "build-storybook -s ./static -o .out",
     "storybook:deploy": "storybook-to-ghpages",
@@ -54,6 +56,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "@commonshost/server": "6.9.0",
     "@open-wc/demoing-storybook": "^0.2.2",
     "@storybook/storybook-deployer": "^2.8.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
