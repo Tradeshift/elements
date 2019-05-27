@@ -140,6 +140,8 @@ const config = [
 ];
 
 // For development we are using `umd`s
-if (PROD) config.unshift(esmCjsConfig);
+if (PROD) {
+	config.unshift(esmCjsConfig);
+}
 
 export default config;
