@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/root.js",
   "main": "lib/root.cjs.js",
-  "module": "lib/root.mjs",
-  "browser": "lib/root.umd.js",
+  "module": "lib/root.umd.js",
   "files": [
     "lib/*"
   ],

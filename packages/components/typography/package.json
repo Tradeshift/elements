@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/typography.js",
   "main": "lib/typography.cjs.js",
-  "module": "lib/typography.mjs",
-  "browser": "lib/typography.umd.js",
+  "module": "lib/typography.umd.js",
   "files": [
     "lib/*"
   ],

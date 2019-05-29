@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/file-size.js",
   "main": "lib/file-size.cjs.js",
-  "module": "lib/file-size.mjs",
-  "browser": "lib/file-size.umd.js",
+  "module": "lib/file-size.umd.js",
   "files": [
     "lib/*"
   ],

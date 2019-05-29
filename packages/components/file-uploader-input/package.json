@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/file-uploader-input.js",
   "main": "lib/file-uploader-input.cjs.js",
-  "module": "lib/file-uploader-input.mjs",
-  "browser": "lib/file-uploader-input.umd.js",
+  "module": "lib/file-uploader-input.umd.js",
   "files": [
     "lib/*"
   ],

@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/file-card.js",
   "main": "lib/file-card.cjs.js",
-  "module": "lib/file-card.mjs",
-  "browser": "lib/file-card.umd.js",
+  "module": "lib/file-card.umd.js",
   "files": [
     "lib/*"
   ],

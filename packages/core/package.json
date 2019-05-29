@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/core.js",
   "main": "lib/core.cjs.js",
-  "module": "lib/core.mjs",
-  "browser": "lib/core.umd.js",
+  "module": "lib/core.umd.js",
   "files": [
     "lib/*",
     "src/*"

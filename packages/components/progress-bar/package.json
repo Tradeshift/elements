@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/progress-bar.js",
   "main": "lib/progress-bar.cjs.js",
-  "module": "lib/progress-bar.mjs",
-  "browser": "lib/progress-bar.umd.js",
+  "module": "lib/progress-bar.umd.js",
   "files": [
     "lib/*"
   ],

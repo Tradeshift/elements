@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/tooltip.js",
   "main": "lib/tooltip.cjs.js",
-  "module": "lib/tooltip.mjs",
-  "browser": "lib/tooltip.umd.js",
+  "module": "lib/tooltip.umd.js",
   "files": [
     "lib/*"
   ],

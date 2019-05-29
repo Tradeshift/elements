@@ -3,8 +3,7 @@
   "version": "0.2.6",
   "src": "src/button-group.js",
   "main": "lib/button-group.cjs.js",
-  "module": "lib/button-group.mjs",
-  "browser": "lib/button-group.umd.js",
+  "module": "lib/button-group.umd.js",
   "files": [
     "lib/*"
   ],
