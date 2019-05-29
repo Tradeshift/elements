@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-size",
-  "version": "0.2.6",
+  "version": "0.2.7-alpha.0",
   "src": "src/file-size.js",
   "main": "lib/file-size.cjs.js",
   "module": "lib/file-size.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.6",
+    "@tradeshift/elements": "^0.2.7-alpha.0",
     "@tradeshift/elements.typography": "file:../typography"
   },
   "gitHead": ""
