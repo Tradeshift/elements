@@ -1,15 +1,14 @@
 {
   "name": "@tradeshift/elements.typography",
-  "version": "0.2.7",
+  "version": "0.2.8-alpha.0",
   "src": "src/typography.js",
   "main": "lib/typography.cjs.js",
-  "module": "lib/typography.mjs",
   "browser": "lib/typography.umd.js",
   "files": [
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.7"
+    "@tradeshift/elements": "^0.2.8-alpha.0"
   },
   "gitHead": ""
 }

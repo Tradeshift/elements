@@ -16,6 +16,7 @@
     "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
     "clean": "cross-env-shell lerna exec -- rm -f ./lib/*",
+    "clean-node-modules": "cross-env-shell rm -rf node_modules/ packages/**/**/node_modules/",
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
     "build:prod": "cross-env PRODUCTION=true npm run build",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",

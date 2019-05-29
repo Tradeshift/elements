@@ -1,9 +1,8 @@
 {
   "name": "@tradeshift/elements.tooltip",
-  "version": "0.2.7",
+  "version": "0.2.8-alpha.0",
   "src": "src/tooltip.js",
   "main": "lib/tooltip.cjs.js",
-  "module": "lib/tooltip.mjs",
   "browser": "lib/tooltip.umd.js",
   "files": [
     "lib/*"
