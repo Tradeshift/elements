@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "start": "run-p watch server",
+    "dev": "run-p watch server-reload",
     "test": "npm run happo",
     "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
@@ -19,6 +20,7 @@
     "build:prod": "cross-env PRODUCTION=true npm run build",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "server": "server start --watch",
+    "server-reload": "reload --browser --exts html,umd.js",
     "storybook": "start-storybook -p 9009 -s ./static",
     "storybook:build": "build-storybook -s ./static -o .out",
     "storybook:deploy": "storybook-to-ghpages",
@@ -83,7 +85,8 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^4.0.4",
+    "reload": "^3.0.1"
   },
   "dependencies": {
     "@tradeshift/elements": "file:packages/core",

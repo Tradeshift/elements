@@ -40,44 +40,47 @@ const postcssPlugin = postcss({
 	sourceMap: DEV && 'inline'
 });
 
-const config = [
-	{
-		input: INPUT_FILE,
-		output: [
-			{
-				...outputConfig,
-				file: PKG_JSON.module,
-				format: 'esm'
-			},
-			{
-				...outputConfig,
-				file: PKG_JSON.main,
-				format: 'cjs'
-			}
-		],
-		external: ['@tradeshift/elements'],
-		plugins: [
-			postcssPlugin,
-			resolve(),
-			babel({
-				babelrc: false,
-				presets: [
-					[
-						'@babel/env',
-						{
-							modules: false,
-							loose: true,
-							targets: {
-								esmodules: true
-							}
+// Plugins used by both configs
+const commonPlugins = [postcssPlugin, resolve()];
+
+const esmCjsConfig = {
+	input: INPUT_FILE,
+	output: [
+		{
+			...outputConfig,
+			file: PKG_JSON.module,
+			format: 'esm'
+		},
+		{
+			...outputConfig,
+			file: PKG_JSON.main,
+			format: 'cjs'
+		}
+	],
+	external: ['@tradeshift/elements'],
+	plugins: [
+		...commonPlugins,
+		babel({
+			babelrc: false,
+			presets: [
+				[
+					'@babel/env',
+					{
+						modules: false,
+						loose: true,
+						targets: {
+							esmodules: true
 						}
-					]
-				],
-				plugins: [PROD && 'minify-dead-code-elimination'].filter(Boolean)
-			}),
-			PROD && terser()
-		].filter(Boolean)
-	},
+					}
+				]
+			],
+			plugins: [PROD && 'minify-dead-code-elimination'].filter(Boolean)
+		}),
+		PROD && terser()
+	].filter(Boolean)
+};
+
+const config = [
 	{
 		input: INPUT_FILE,
 		output: [
@@ -90,8 +93,7 @@ const config = [
 		],
 		external: ['@tradeshift/elements'],
 		plugins: [
-			postcssPlugin,
-			resolve(),
+			...commonPlugins,
 			commonjs({
 				include: nodeModules
 			}),
@@ -136,5 +138,10 @@ const config = [
 		].filter(Boolean)
 	}
 ];
+
+// For development we are using `umd`s
+if (PROD) {
+	config.unshift(esmCjsConfig);
+}
 
 export default config;
