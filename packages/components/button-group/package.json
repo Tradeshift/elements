@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button-group",
-  "version": "0.2.8-alpha.0",
+  "version": "0.2.8",
   "src": "src/button-group.js",
   "main": "lib/button-group.cjs.js",
   "browser": "lib/button-group.umd.js",
@@ -8,8 +8,8 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.8-alpha.0",
-    "@tradeshift/elements.button": "^0.2.8-alpha.0"
+    "@tradeshift/elements": "^0.2.8",
+    "@tradeshift/elements.button": "^0.2.8"
   },
   "gitHead": "e88391ca0cd629eac27ed1ca70ccdb64c1b31b7a"
 }
