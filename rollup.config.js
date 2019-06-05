@@ -48,11 +48,6 @@ const esmCjsConfig = {
 	output: [
 		{
 			...outputConfig,
-			file: PKG_JSON.module,
-			format: 'esm'
-		},
-		{
-			...outputConfig,
 			file: PKG_JSON.main,
 			format: 'cjs'
 		}
