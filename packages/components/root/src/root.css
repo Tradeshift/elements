@@ -56,9 +56,7 @@
 }
 :host(.ts-has-sidebar-left.ts-has-sidebar-right) {
 	-ms-grid-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
-	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(
-			--ts-aside
-		);
+	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
 }
 
 :host > .content {
@@ -78,9 +76,7 @@
 }
 :host(.ts-has-sidebar-inner-left.ts-has-sidebar-inner-right) > .content {
 	-ms-grid-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
-	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(
-			--ts-aside
-		);
+	grid-template-columns: var(--ts-aside) minmax(var(--ts-aside), 1fr) var(--ts-aside);
 }
 
 /* Filling up the grid */

@@ -31,10 +31,8 @@
 	--ts-fontweight-bold: 700;
 
 	--ts-font-family: 'Open Sans', system-ui;
-	--ts-fontstack: 'Open Sans', 'Helvetica Neue', 'Lucida Grande', 'Segoe UI',
-		'Ubuntu', 'Droid Sans', sans-serif;
-	--ts-fontstack-mono: 'Ubuntu Mono', 'Menlo', 'Monaco', 'Consolas',
-		'Bitstream Vera Sans Mono', monospace;
+	--ts-fontstack: 'Open Sans', 'Helvetica Neue', 'Lucida Grande', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+	--ts-fontstack-mono: 'Ubuntu Mono', 'Menlo', 'Monaco', 'Consolas', 'Bitstream Vera Sans Mono', monospace;
 	--ts-fontstack-icon: 'Tradeshifticons', fantasy;
 
 	/* Z-index........................................................ */
@@ -139,16 +137,22 @@
 	/* Borders........................................................ */
 	--ts-border-width: 1px;
 	--ts-border-type: solid;
-	--ts-border: var(--ts-border-width) var(--ts-border-type)
-		var(--ts-color-gray-light);
-	--ts-border-error: var(--ts-border-width) var(--ts-border-type)
-		var(--ts-color-red);
-	--ts-border-success: var(--ts-border-width) var(--ts-border-type)
-		var(--ts-color-green);
-	--ts-border-focus: var(--ts-border-width) var(--ts-border-type)
-		var(--ts-color-blue);
+	--ts-border-color-default: var(--ts-color-gray-light);
+	--ts-border-color-error: var(--ts-color-red);
+	--ts-border-color-success: var(--ts-color-green);
+	--ts-border-color-focus: var(--ts-color-blue);
+	--ts-border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	--ts-border-error: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-error);
+	--ts-border-success: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-success);
+	--ts-border-focus: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-focus);
 
-	--ts-progress-bar-height: var(--ts-unit-quarter);
+	--ts-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
+	--ts-boxshadow-border-default: var(--ts-boxshadow-border-width) var(--ts-border-color-default);
+	--ts-boxshadow-border-error: var(--ts-boxshadow-border-width) var(--ts-border-color-error);
+	--ts-boxshadow-border-success: var(--ts-boxshadow-border-width) var(--ts-border-color-success);
+	--ts-boxshadow-border-focus: var(--ts-boxshadow-border-width) var(--ts-border-color-focus);
+
+	--ts-progress-bar-height: 8px;
 
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;

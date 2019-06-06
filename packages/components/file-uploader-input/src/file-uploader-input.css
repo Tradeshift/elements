@@ -2,6 +2,7 @@
 
 :host {
 	width: 100%;
+	margin-bottom: var(--ts-unit-half);
 }
 
 .file-upload-wrapper {
@@ -37,8 +38,7 @@
 	height: var(--ts-unit-plus);
 	margin-bottom: var(--ts-unit-half);
 	overflow: hidden;
-	padding: var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-quarter)
-		var(--ts-unit-half);
+	padding: var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-half);
 	transition: border 0.15s ease;
 	color: var(--ts-color-slate-lightest);
 
@@ -107,11 +107,11 @@
 
 .dragover {
 	align-items: center;
-	background: #fff;
-	border-radius: 3px;
-	border: 2px solid #a5dfff;
+	background: var(--ts-color-white);
+	border-radius: var(--ts-radius);
+	box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lightest);
 	display: flex;
-	height: calc(6.5 * var(--ts-unit-half));
+	height: var(--ts-unit-triple);
 	justify-content: center;
 	width: 100%;
 
@@ -122,9 +122,9 @@
 
 	& .draggable-info {
 		display: flex;
-		color: #00b0ff;
-		font-weight: 600;
-		font-size: 14px;
+		color: var(--ts-color-blue);
+		font-weight: var(--ts-fontweight-bold);
+		font-size: var(--ts-font-size-default);
 
 		& * {
 			display: unset;
