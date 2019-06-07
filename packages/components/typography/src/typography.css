@@ -4,6 +4,10 @@
 	display: block;
 }
 
+slot {
+	display: block;
+}
+
 :host [data-variant='default'] {
 	font-size: var(--ts-fontsize);
 }

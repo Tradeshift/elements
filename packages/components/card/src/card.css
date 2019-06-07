@@ -8,17 +8,14 @@
 	width: 100%;
 	position: relative;
 	border-radius: var(--ts-radius);
-	border: var(--ts-border);
-	margin-bottom: var(--ts-unit-half);
+	box-shadow: var(--ts-boxshadow-border-default);
 	overflow: hidden;
-	padding: var(--ts-unit-quarter) var(--ts-unit-half);
+	padding: var(--ts-unit-half);
 	background-color: var(--ts-color-white);
-	transition: box-shadow var(--ts-transition-now),
-		border-color var(--ts-transition-now);
+	transition: box-shadow var(--ts-transition-now), border-color var(--ts-transition-now);
 
 	&:hover {
-		border-color: var(--ts-color-blue);
-		box-shadow: 0 0 0 1px var(--ts-color-blue-lighter);
+		box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lighter);
 	}
 
 	&[data-no-horizontal-padding] {
@@ -39,28 +36,28 @@
 	&[data-type='error'],
 	&[data-type='failed'],
 	&[data-type='danger'] {
-		border: var(--ts-border-error);
+		box-shadow: var(--ts-boxshadow-border-error);
 
 		&:hover {
-			box-shadow: 0 0 0 1px var(--ts-color-red-lighter);
+			box-shadow: var(--ts-boxshadow-border-error), 0 0 0 1px var(--ts-color-red-lighter);
 		}
 	}
 
 	&[data-type='success'] {
-		border: var(--ts-border-success);
+		box-shadow: var(--ts-boxshadow-border-success);
 
 		&:hover {
-			box-shadow: 0 0 0 1px var(--ts-color-green-lighter);
+			box-shadow: var(--ts-boxshadow-border-success), 0 0 0 1px var(--ts-color-green-lighter);
 		}
 	}
 
 	&[data-type='focus'],
 	&[data-type='active'],
 	&[data-type='primary'] {
-		border: var(--ts-border-focus);
+		box-shadow: var(--ts-boxshadow-border-focus);
 
 		&:hover {
-			box-shadow: 0 0 0 1px var(--ts-color-blue-lighter);
+			box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lighter);
 		}
 	}
 
