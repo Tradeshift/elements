@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.help-text",
   "version": "0.2.8",
   "src": "src/help-text.js",
-  "main": "lib/help-text.cjs.js",
+  "main": "lib/help-text.umd.js",
   "browser": "lib/help-text.umd.js",
   "files": [
     "lib/*"

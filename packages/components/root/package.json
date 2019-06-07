@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.root",
   "version": "0.2.8",
   "src": "src/root.js",
-  "main": "lib/root.cjs.js",
+  "main": "lib/root.umd.js",
   "browser": "lib/root.umd.js",
   "files": [
     "lib/*"

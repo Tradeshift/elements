@@ -24,7 +24,7 @@ script:
   - npm run lint
   - npm run copy:static
   - npm run build:prod
-  #- INSTALL_CMD="echo 'happo-ci-travis'" npm run happo-ci-travis
+#  - INSTALL_CMD="echo 'happo-ci-travis'" npm run happo-ci-travis
 after_script:
   - |
     if [[ $TRAVIS_BRANCH == *"greenkeeper"* ]]; then

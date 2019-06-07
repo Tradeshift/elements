@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.button",
   "version": "0.2.8",
   "src": "src/button.js",
-  "main": "lib/button.cjs.js",
+  "main": "lib/button.umd.js",
   "browser": "lib/button.umd.js",
   "files": [
     "lib/*"

@@ -1,5 +1,6 @@
 import { LitElement, unsafeCSS } from 'lit-element';
 import commonCSS from './common.css';
+export { constants, helpers } from './utils';
 
 export function customElementDefineHelper(name, component) {
 	if (!window.customElements.get(name)) {

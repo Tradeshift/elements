@@ -36,13 +36,13 @@ customElementDefineHelper(
 		render() {
 			return html`
 				<div
-					title="${this.text}"
+					?title="${this.text}"
 					class="${this.classNames}"
 					data-color="${this.color}"
 					data-variant="${this.variant}"
 					?data-no-wrap="${this.noWrap}"
 				>
-					${this.text}
+					<slot>${this.text}</slot>
 				</div>
 			`;
 		}

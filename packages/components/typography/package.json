@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.typography",
   "version": "0.2.8",
   "src": "src/typography.js",
-  "main": "lib/typography.cjs.js",
+  "main": "lib/typography.umd.js",
   "browser": "lib/typography.umd.js",
   "files": [
     "lib/*"

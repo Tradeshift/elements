@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.card",
   "version": "0.2.8",
   "src": "src/card.js",
-  "main": "lib/card.cjs.js",
+  "main": "lib/card.umd.js",
   "browser": "lib/card.umd.js",
   "files": [
     "lib/*"

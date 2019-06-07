@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.file-size",
   "version": "0.2.8",
   "src": "src/file-size.js",
-  "main": "lib/file-size.cjs.js",
+  "main": "lib/file-size.umd.js",
   "browser": "lib/file-size.umd.js",
   "files": [
     "lib/*"
