@@ -1,0 +1,33 @@
+.fill-none {
+	fill: none;
+}
+
+svg {
+	fill: var(--ts-icon-color);
+}
+
+:host([size='small']) {
+	width: var(--ts-fontsize-mini);
+	height: var(--ts-fontsize-mini);
+}
+
+:host([size='medium']) {
+	width: var(--ts-fontsize-medium);
+	height: var(--ts-fontsize-medium);
+}
+
+:host([size='large']) {
+	width: var(--ts-fontsize-xbig);
+	height: var(--ts-fontsize-xbig);
+}
+
+.icon-wrapper {
+	position: relative;
+	display: block;
+}
+
+svg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}

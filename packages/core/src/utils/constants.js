@@ -7,3 +7,25 @@ export const sizes = {
 	MEDIUM: 'medium',
 	SMALL: 'small'
 };
+
+export const colorModifiers = {
+	LIGHTEST: '-lightest',
+	LIGHTER: '-lighter',
+	LIGHT: '-light',
+	DARK: '-dark',
+	DARKER: '-darker'
+};
+
+export const colors = {
+	WHITE: 'white',
+	BLACK: 'black',
+	RED: 'red',
+	ORANGE: 'orange',
+	YELLOW: 'yellow',
+	GREEN: 'green',
+	BLUE: 'blue',
+	PURPLE: 'purple',
+	PINK: 'pink',
+	GRAY: 'gray',
+	SLATE: 'slate'
+};

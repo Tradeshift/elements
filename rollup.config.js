@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import yaml from 'rollup-plugin-yaml';
+import svgo from 'rollup-plugin-svgo';
 
 const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH, PRODUCTION } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
@@ -41,8 +42,10 @@ const yamlPlugin = yaml({
 	exclude: ['node_modules/**']
 });
 
+const svgoPlugin = svgo({ raw: true });
+
 // Plugins used by both configs
-const commonPlugins = [postcssPlugin, yamlPlugin, resolve()];
+const commonPlugins = [postcssPlugin, yamlPlugin, svgoPlugin, resolve()];
 
 const esmCjsConfig = {
 	input: INPUT_FILE,

@@ -1,9 +1,4 @@
-import {
-	TSElement,
-	unsafeCSS,
-	html,
-	customElementDefineHelper
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 
 import css from './file-size.css';
@@ -45,20 +40,12 @@ customElementDefineHelper(
 			const k = 1000;
 			const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 			const i = Math.floor(Math.log(bytes) / Math.log(k));
-			return (
-				parseFloat((bytes / Math.pow(k, i)).toFixed(decimalPoint)) +
-				' ' +
-				sizes[i]
-			);
+			return parseFloat((bytes / Math.pow(k, i)).toFixed(decimalPoint)) + ' ' + sizes[i];
 		}
 
 		render() {
 			return html`
-				<ts-typography
-					text="${this.formatFileSize}"
-					variant="${this.variant}"
-					color="${this.color}"
-				></ts-typography>
+				<ts-typography text="${this.formatFileSize}" variant="${this.variant}" color="${this.color}"></ts-typography>
 			`;
 		}
 	}

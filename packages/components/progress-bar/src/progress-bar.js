@@ -1,9 +1,4 @@
-import {
-	TSElement,
-	unsafeCSS,
-	html,
-	customElementDefineHelper
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './progress-bar.css';
 
 customElementDefineHelper(
@@ -36,10 +31,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<div
-					class="progress-bar-wrapper"
-					?data-indeterminate="${this.indeterminate}"
-				>
+				<div class="progress-bar-wrapper" ?data-indeterminate="${this.indeterminate}">
 					<div class="progress-bar-total">
 						<div style="${this.doneWidthStyle}" class="progress-bar-done"></div>
 					</div>

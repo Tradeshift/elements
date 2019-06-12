@@ -123,14 +123,14 @@
 }
 
 .dragover {
+	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: var(--ts-unit-triple);
 	background: var(--ts-color-white);
 	border-radius: var(--ts-radius);
 	box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lightest);
-	display: flex;
-	height: var(--ts-unit-triple);
-	justify-content: center;
-	width: 100%;
 
 	&.file-upload-wrapper .file-upload-button,
 	&.file-upload-wrapper .help-text {
@@ -139,6 +139,7 @@
 
 	& .draggable-info {
 		display: flex;
+		align-items: center;
 		color: var(--ts-color-blue);
 		font-weight: var(--ts-fontweight-bold);
 		font-size: var(--ts-font-size-default);
@@ -149,9 +150,6 @@
 	}
 
 	& .icon {
-		align-items: center;
-		display: flex;
-		justify-content: center;
 		margin: 0 var(--ts-unit-half);
 	}
 }

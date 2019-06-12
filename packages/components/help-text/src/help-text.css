@@ -31,7 +31,7 @@
 		}
 
 		&.single-message {
-			& svg {
+			& .info-icon {
 				margin-top: 2px;
 			}
 
@@ -41,12 +41,12 @@
 		}
 	}
 
-	& svg {
+	& .info-icon {
 		width: var(--ts-fontsize-medium);
 		height: var(--ts-fontsize-medium);
 	}
 
-	& svg,
+	& .info-icon,
 	& dd:before {
 		position: absolute;
 		left: 0;
@@ -61,7 +61,7 @@
 		padding-left: initial;
 		padding-right: var(--ts-unit);
 	}
-	& svg,
+	& .info-icon,
 	& dd:before {
 		left: initial;
 		right: 0;
