@@ -57,7 +57,24 @@
 		width: 100%;
 	}
 
+	& label {
+		/* START IE11 fallback */
+		margin-right: auto;
+		@supports (justify-content: space-between) {
+			margin-right: unset;
+		}
+		/* END IE11 fallback */
+	}
+
 	& > span {
+		/* IE11 fallback */
+		display: -ms-flexbox;
+		-ms-flex-pack: center;
+		@supports (justify-content: space-between) {
+			display: unset;
+			-ms-flex-pack: unset;
+		}
+		/* END IE11 fallback */
 		background-color: var(--ts-color-blue);
 		border-radius: var(--ts-unit);
 		color: var(--ts-color-white);
