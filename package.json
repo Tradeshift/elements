@@ -1,42 +1,56 @@
 {
   "name": "tradeshift-elements",
   "description": "The Tradeshift Element Library & Framework",
+  "keywords": [
+    "client-side",
+    "components",
+    "css",
+    "customelements",
+    "javascript",
+    "reusable",
+    "shadowdom",
+    "tradeshift",
+    "ui",
+    "webcomponents"
+  ],
   "bugs": {
     "url": "https://github.com/Tradeshift/elements/issues"
   },
+  "repository": "github:Tradeshift/elements.git",
+  "license": "SEE LICENSE IN LICENSE.md",
   "author": "Tradeshift element Team",
   "contributors": [
     "Daniel Spitzer <dsp@tradeshift.com> (https://github.com/sampi)",
     "Leo Zhang <lza@tradeshift.com> (https://github.com/zdlm)"
   ],
   "scripts": {
-    "start": "run-p watch server",
-    "dev": "run-p watch server-reload",
-    "test": "npm run happo",
-    "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
-    "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
+    "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
+    "build-storybook": "build-storybook -s ./static -o .out",
+    "build:prod": "cross-env PRODUCTION=true npm run build",
     "clean": "cross-env-shell lerna exec -- rm -f ./lib/*",
     "clean-node-modules": "cross-env-shell rm -rf node_modules/ packages/**/**/node_modules/",
-    "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
-    "build:prod": "cross-env PRODUCTION=true npm run build",
-    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
-    "server": "server start --watch",
-    "server-reload": "reload --browser --exts html,umd.js",
-    "storybook": "start-storybook -p 9009 -s ./static",
-    "storybook:build": "build-storybook -s ./static -o .out",
-    "storybook:deploy": "storybook-to-ghpages",
-    "build-storybook": "build-storybook -s ./static -o .out",
-    "happo": "happo",
-    "happo-ci-travis": "happo-ci-travis",
+    "component-gen": "plop",
     "copy:static": "./tasks/copy-static.sh",
-    "pretest": "run-s build:prod copy:static",
-    "prestorybook": "run-s build:prod copy:static",
-    "prestorybook:build": "run-s build:prod copy:static",
-    "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
-    "lerna:bootstrap:ci": "lerna bootstrap --ci",
+    "dev": "run-p watch server-reload",
+    "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
     "greenkeeper:lockfile:update": "greenkeeper-lockfile-update",
     "greenkeeper:lockfile:upload": "greenkeeper-lockfile-upload",
-    "component-gen": "plop"
+    "happo": "happo",
+    "happo-ci-travis": "happo-ci-travis",
+    "lerna:bootstrap:ci": "lerna bootstrap --ci",
+    "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
+    "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
+    "server": "server start --watch",
+    "server-reload": "reload --browser --exts html,umd.js",
+    "start": "run-p watch server",
+    "prestorybook": "run-s build:prod copy:static",
+    "storybook": "start-storybook -p 9009 -s ./static",
+    "prestorybook:build": "run-s build:prod copy:static",
+    "storybook:build": "build-storybook -s ./static -o .out",
+    "storybook:deploy": "storybook-to-ghpages",
+    "pretest": "run-s build:prod copy:static",
+    "test": "npm run happo",
+    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "husky": {
     "hooks": {
@@ -44,22 +58,60 @@
     }
   },
   "lint-staged": {
-    "*.{json,css,md,html}": [
-      "prettier --write",
-      "git add"
-    ],
     "*.js": [
       "eslint",
       "prettier --write",
       "git add"
+    ],
+    "*.{json,css,md,html}": [
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "npx sort-package-json"
     ]
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 11"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "file:packages/core",
+    "@tradeshift/elements.button": "file:packages/components/button",
+    "@tradeshift/elements.button-group": "file:packages/components/button-group",
+    "@tradeshift/elements.card": "file:packages/components/card",
+    "@tradeshift/elements.file-card": "file:packages/components/file-card",
+    "@tradeshift/elements.file-size": "file:packages/components/file-size",
+    "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
+    "@tradeshift/elements.help-text": "file:packages/components/help-text",
+    "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
+    "@tradeshift/elements.root": "file:packages/components/root",
+    "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
+    "@tradeshift/elements.typography": "file:packages/components/typography"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@commonshost/server": "6.9.0",
     "@open-wc/demoing-storybook": "^0.2.2",
+    "@storybook/addon-actions": "5.0.11",
+    "@storybook/addon-knobs": "5.0.11",
+    "@storybook/addon-links": "5.0.11",
+    "@storybook/addon-notes": "5.0.11",
+    "@storybook/addon-storysource": "5.0.11",
+    "@storybook/addon-viewport": "5.0.11",
+    "@storybook/addons": "5.0.11",
+    "@storybook/channel-postmessage": "5.0.11",
+    "@storybook/channels": "5.0.11",
+    "@storybook/client-api": "5.0.11",
+    "@storybook/client-logger": "5.0.11",
+    "@storybook/components": "5.0.11",
+    "@storybook/core": "5.0.11",
+    "@storybook/node-logger": "5.0.11",
+    "@storybook/polymer": "5.0.11",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/ui": "5.0.11",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "babel-loader": "^8.0.5",
     "babel-plugin-minify-dead-code-elimination": "^0.5.0",
@@ -81,29 +133,15 @@
     "postcss": "^7.0.16",
     "postcss-preset-env": "^6.6.0",
     "prettier": "1.16.4",
+    "reload": "^3.0.1",
     "rollup": "^1.11.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-terser": "^4.0.4",
-    "reload": "^3.0.1"
+    "rollup-plugin-yaml": "^1.1.0"
   },
-  "dependencies": {
-    "@tradeshift/elements": "file:packages/core",
-    "@tradeshift/elements.button": "file:packages/components/button",
-    "@tradeshift/elements.button-group": "file:packages/components/button-group",
-    "@tradeshift/elements.root": "file:packages/components/root",
-    "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
-    "@tradeshift/elements.typography": "file:packages/components/typography",
-    "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
-    "@tradeshift/elements.card": "file:packages/components/card",
-    "@tradeshift/elements.file-size": "file:packages/components/file-size",
-    "@tradeshift/elements.file-card": "file:packages/components/file-card",
-    "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
-    "@tradeshift/elements.help-text": "file:packages/components/help-text"
-  },
-  "repository": "github:Tradeshift/elements.git",
   "publishConfig": {
     "access": "public"
   },
@@ -111,18 +149,5 @@
     "gitUsername": "Tradeshift Elements",
     "gitEmail": "lza@tradeshift.com",
     "commitMessage": "Deploy Storybook [skip ci]"
-  },
-  "license": "SEE LICENSE IN LICENSE.md",
-  "keywords": [
-    "ui",
-    "components",
-    "tradeshift",
-    "reusable",
-    "webcomponents",
-    "client-side",
-    "javascript",
-    "css",
-    "customelements",
-    "shadowdom"
-  ]
+  }
 }

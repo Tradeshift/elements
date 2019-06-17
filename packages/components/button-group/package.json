@@ -2,7 +2,7 @@
   "name": "@tradeshift/elements.button-group",
   "version": "0.2.8",
   "src": "src/button-group.js",
-  "main": "lib/button-group.cjs.js",
+  "main": "lib/button-group.umd.js",
   "browser": "lib/button-group.umd.js",
   "files": [
     "lib/*"

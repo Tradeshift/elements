@@ -5,6 +5,7 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
+import yaml from 'rollup-plugin-yaml';
 
 const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH, PRODUCTION } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
@@ -20,16 +21,12 @@ const outputConfig = {
 	globals: require(`${LERNA_ROOT_PATH}/rollup.globals.json`)
 };
 
-const nodeModules = [
-	path.join(LERNA_ROOT_PATH, 'node_modules/**'),
-	path.join(PACKAGE_ROOT_PATH, 'node_modules/**')
-];
+const nodeModules = [path.join(LERNA_ROOT_PATH, 'node_modules/**'), path.join(PACKAGE_ROOT_PATH, 'node_modules/**')];
 
 const postcssPlugin = postcss({
 	plugins: [
 		postcssPresetEnv({
 			importFrom: `${LERNA_ROOT_PATH}/packages/core/src/vars.css`,
-			browsers: 'ie 11',
 			preserve: true,
 			stage: 0
 		})
@@ -40,8 +37,12 @@ const postcssPlugin = postcss({
 	sourceMap: DEV && 'inline'
 });
 
+const yamlPlugin = yaml({
+	exclude: ['node_modules/**']
+});
+
 // Plugins used by both configs
-const commonPlugins = [postcssPlugin, resolve()];
+const commonPlugins = [postcssPlugin, yamlPlugin, resolve()];
 
 const esmCjsConfig = {
 	input: INPUT_FILE,
