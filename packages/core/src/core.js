@@ -13,6 +13,12 @@ export class TSElement extends LitElement {
 		return unsafeCSS(commonCSS);
 	}
 
+	static get properties() {
+		return {
+			busy: { type: String, reflect: true }
+		};
+	}
+
 	get bodyHasRTL() {
 		return document.body.getAttribute('dir') === 'rtl';
 	}

@@ -1,9 +1,4 @@
-import {
-	TSElement,
-	unsafeCSS,
-	html,
-	customElementDefineHelper
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './button.css';
 
 export class TSButton extends TSElement {
@@ -14,6 +9,7 @@ export class TSButton extends TSElement {
 	static get properties() {
 		return {
 			type: { type: String, reflect: true },
+			size: { type: String, reflect: true },
 			grouped: { type: Boolean, reflect: true }
 		};
 	}

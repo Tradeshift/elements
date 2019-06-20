@@ -85,6 +85,21 @@
 	}
 }
 
+/* Micro size......................................................*/
+:host([size='micro']) {
+	& > button {
+		border-radius: var(--ts-unit);
+		padding: 0 var(--ts-unit-half);
+		&:before {
+			border-radius: var(--ts-unit);
+		}
+	}
+	& span {
+		padding: var(--ts-unit-eighth);
+		font-size: var(--ts-fontsize-small);
+	}
+}
+
 /* Inside a ButtonGroup ...........................................*/
 
 :host([grouped]) {
