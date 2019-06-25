@@ -8,6 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.8"
+    "@tradeshift/elements": "^0.2.8",
+    "@tradeshift/elements.icon": "file:../icon"
   }
 }

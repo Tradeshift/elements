@@ -13,10 +13,7 @@
 		<!-- Enable ES5 class-less Custom Elements -->
 		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 		<!-- Load appropriate polyfills and shims -->
-		<script
-			src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
-			defer
-		></script>
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
 
 		<!-- Set :root CSS Custom Properties -->
 		<link rel="stylesheet" href="/packages/core/src/vars.css" />
@@ -45,21 +42,13 @@
 						'card',
 						'file-card',
 						'file-size',
-						'file-uploader',
 						'file-uploader-input',
 						'progress-bar',
 						'help-text'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
-						el.setAttribute(
-							'src',
-							'/packages/components/' +
-								component +
-								'/lib/' +
-								component +
-								'.umd.js'
-						);
+						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
 						document.body.appendChild(el);
 					});
 				};
@@ -85,24 +74,12 @@
 			<article id="ts-root-toggle">
 				<h2>ts-root</h2>
 				<ts-button-group>
-					<ts-button onclick="toggleSlot('header', this)"
-						>Toggle Header</ts-button
-					>
-					<ts-button onclick="toggleSlot('footer', this)"
-						>Toggle Footer</ts-button
-					>
-					<ts-button onclick="toggleSlot('sidebar-left', this)"
-						>Toggle Left Sidebar</ts-button
-					>
-					<ts-button onclick="toggleSlot('sidebar-right', this)"
-						>Toggle Right Sidebar</ts-button
-					>
-					<ts-button onclick="toggleSlot('sidebar-inner-left', this)"
-						>Toggle Inner Left Sidebar</ts-button
-					>
-					<ts-button onclick="toggleSlot('sidebar-inner-right', this)"
-						>Toggle Inner Right Sidebar</ts-button
-					>
+					<ts-button onclick="toggleSlot('header', this)">Toggle Header</ts-button>
+					<ts-button onclick="toggleSlot('footer', this)">Toggle Footer</ts-button>
+					<ts-button onclick="toggleSlot('sidebar-left', this)">Toggle Left Sidebar</ts-button>
+					<ts-button onclick="toggleSlot('sidebar-right', this)">Toggle Right Sidebar</ts-button>
+					<ts-button onclick="toggleSlot('sidebar-inner-left', this)">Toggle Inner Left Sidebar</ts-button>
+					<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
 				</ts-button-group>
 				<script>
 					function toggleSlot(name, button) {
@@ -141,6 +118,17 @@
 			</article>
 
 			<article>
+				<h2>ts-icon</h2>
+				<ts-icon icon="download" size="medium" type="danger"></ts-icon>
+				<ts-icon icon="remove" size="medium" type="active"></ts-icon>
+				<ts-icon icon="arrow-up" size="medium" type="success"></ts-icon>
+				<hr />
+				<ts-icon icon="remove" type="danger" size="small"></ts-icon>
+				<ts-icon icon="remove" type="danger" size="medium"></ts-icon>
+				<ts-icon icon="remove" type="danger" size="large"></ts-icon>
+			</article>
+
+			<article>
 				<h2>ts-button</h2>
 				<ts-button type="text">Text Button</ts-button>
 				<ts-button type="primary">Primary Button</ts-button>
@@ -174,22 +162,10 @@
 
 			<article>
 				<h2>card</h2>
-				<ts-card no-padding
-					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-					cumque delectus eligendi! Commodi cumque in laboriosam omnis quos
-					tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero.
-					In, qui!</ts-card
-				>
-			</article>
-
-			<article>
-				<h2>card</h2>
-				<ts-card no-padding
-					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-					cumque delectus eligendi! Commodi cumque in laboriosam omnis quos
-					tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero.
-					In, qui!</ts-card
-				>
+				<ts-card type="success" size="medium">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque delectus eligendi! Commodi cumque in
+					laboriosam omnis quos tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero. In, qui!
+				</ts-card>
 			</article>
 
 			<article>
@@ -200,7 +176,8 @@
 					size="medium"
 					help-text-messages='["Some very very long long help text to give user more information about the input that they need to provide"]'
 					hide-file-type-help-text
-				></ts-file-uploader-input>
+				>
+				</ts-file-uploader-input>
 
 				<ts-file-uploader-input
 					id="fileUploaderInput2"
@@ -211,22 +188,15 @@
 				<script>
 					function onchangeCallback(e) {
 						console.log('onchangeCallback', e);
-						console.log(
-							'onchangeCallback files',
-							e.detail.originalEvent.target.files
-						);
+						console.log('onchangeCallback files', e.detail.originalEvent.target.files);
 					}
 					function handleFileChange(e) {
 						console.log('handleFileChange', e);
 						console.log('files', e.detail.originalEvent.target.files);
 					}
 
-					document
-						.getElementById('fileUploaderInput')
-						.addEventListener('change', handleFileChange);
-					document.getElementById(
-						'fileUploaderInput2'
-					).onchange = onchangeCallback;
+					document.getElementById('fileUploaderInput').addEventListener('change', handleFileChange);
+					document.getElementById('fileUploaderInput2').onchange = onchangeCallback;
 				</script>
 			</article>
 
@@ -295,6 +265,18 @@
 					state="download"
 					size="medium"
 				></ts-file-card>
+
+				<script>
+					var fileCards = document.querySelectorAll('ts-file-card');
+					fileCards.forEach(function(fileCard) {
+						fileCard.addEventListener('download', function(event) {
+							console.log('download', event);
+						});
+						fileCard.addEventListener('remove', function(event) {
+							console.log('remove', event);
+						});
+					});
+				</script>
 			</article>
 
 			<article>
@@ -308,9 +290,7 @@
 					messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta", "message example 1", "message example 2"]'
 					rtl
 				></ts-help-text>
-				<ts-help-text
-					messages='["Files should not be larger than 4 MB!"]'
-				></ts-help-text>
+				<ts-help-text messages='["Files should not be larger than 4 MB!"]'></ts-help-text>
 			</article>
 		</ts-root>
 	</body>

@@ -1,9 +1,4 @@
-import {
-	TSElement,
-	unsafeCSS,
-	html,
-	customElementDefineHelper
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './root.css';
 
 const CLASS_HIDDEN = 'hidden';
@@ -39,16 +34,8 @@ export class TSRoot extends TSElement {
 
 	render() {
 		return html`
-			<slot
-				name="header"
-				class="${this.slotClasses.header}"
-				@slotchange="${this.decorateSlot}"
-			></slot>
-			<slot
-				name="sidebar-left"
-				class="${this.slotClasses['sidebar-left']}"
-				@slotchange="${this.decorateSlot}"
-			></slot>
+			<slot name="header" class="${this.slotClasses.header}" @slotchange="${this.decorateSlot}"></slot>
+			<slot name="sidebar-left" class="${this.slotClasses['sidebar-left']}" @slotchange="${this.decorateSlot}"></slot>
 			<section class="content">
 				<slot
 					name="sidebar-inner-left"
@@ -64,16 +51,8 @@ export class TSRoot extends TSElement {
 					@slotchange="${this.decorateSlot}"
 				></slot>
 			</section>
-			<slot
-				name="sidebar-right"
-				class="${this.slotClasses['sidebar-right']}"
-				@slotchange="${this.decorateSlot}"
-			></slot>
-			<slot
-				name="footer"
-				class="${this.slotClasses.footer}"
-				@slotchange="${this.decorateSlot}"
-			></slot>
+			<slot name="sidebar-right" class="${this.slotClasses['sidebar-right']}" @slotchange="${this.decorateSlot}"></slot>
+			<slot name="footer" class="${this.slotClasses.footer}" @slotchange="${this.decorateSlot}"></slot>
 		`;
 	}
 	decorateSlot(e) {
@@ -81,9 +60,7 @@ export class TSRoot extends TSElement {
 		const assignedNodes = slot.assignedNodes();
 		const showSlot = assignedNodes && assignedNodes.length;
 		slot.classList[showSlot ? 'remove' : 'add']('hidden');
-		this.classList[showSlot ? 'add' : 'remove'](
-			`ts-has-${slot.getAttribute('name')}`
-		);
+		this.classList[showSlot ? 'add' : 'remove'](`ts-has-${slot.getAttribute('name')}`);
 	}
 }
 customElementDefineHelper('ts-root', TSRoot);

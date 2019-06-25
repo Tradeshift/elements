@@ -6,3 +6,10 @@ export const classNamesToSelector = classNamesObject => {
 	});
 	return selectors;
 };
+
+export const objectKeysChangeCase = (object, toNewCase = 'toLowerCase') =>
+	Object.keys(object).reduce((accumulator, currentKey) => {
+		const changedCaseKey = currentKey[toNewCase]();
+		accumulator[changedCaseKey] = object[currentKey];
+		return accumulator;
+	}, {});
