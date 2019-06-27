@@ -18,17 +18,15 @@
 	margin-top: var(--ts-unit-quarter);
 }
 
-.file-icon-wrapper .file-icon #outline {
-	fill: var(--ts-color-white);
-	stroke: var(--ts-color-gray-dark);
-}
+.file-icon-wrapper {
+	& #outline {
+		fill: var(--ts-color-white);
+		stroke: var(--ts-color-gray-dark);
+	}
 
-.file-icon-wrapper .file-icon #fold {
-	fill: var(--ts-color-gray-dark);
-}
-
-.dots-icon circle {
-	fill: var(--ts-color-gray);
+	& #fold {
+		fill: var(--ts-color-gray-dark);
+	}
 }
 
 .file-name {

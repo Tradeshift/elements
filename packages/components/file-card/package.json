@@ -11,6 +11,7 @@
     "@tradeshift/elements": "^0.2.8",
     "@tradeshift/elements.card": "file:../card",
     "@tradeshift/elements.file-size": "file:../file-size",
+    "@tradeshift/elements.icon": "file:../icon",
     "@tradeshift/elements.progress-bar": "file:../progress-bar",
     "@tradeshift/elements.typography": "file:../typography"
   },

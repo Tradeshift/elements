@@ -42,7 +42,6 @@
 						'card',
 						'file-card',
 						'file-size',
-						'file-uploader',
 						'file-uploader-input',
 						'progress-bar',
 						'help-text'
@@ -119,9 +118,22 @@
 			</article>
 
 			<article>
+				<h2>ts-icon</h2>
+				<ts-icon icon="download" size="medium" type="danger"></ts-icon>
+				<ts-icon icon="remove" size="medium" type="active"></ts-icon>
+				<ts-icon icon="arrow-up" size="medium" type="success"></ts-icon>
+				<hr />
+				<ts-icon icon="remove" type="danger" size="small"></ts-icon>
+				<ts-icon icon="remove" type="danger" size="medium"></ts-icon>
+				<ts-icon icon="remove" type="danger" size="large"></ts-icon>
+			</article>
+
+			<article>
 				<h2>ts-button</h2>
 				<ts-button type="text">Text Button</ts-button>
 				<ts-button type="primary">Primary Button</ts-button>
+				<ts-button type="primary" disabled>Primary Button</ts-button>
+				<ts-button type="primary" icon="download"> </ts-button>
 				<ts-button busy>Normal Button</ts-button>
 				<ts-button busy size="micro">Small Button</ts-button>
 				<ts-button type="primary" size="micro">Small primary Button</ts-button>
@@ -154,18 +166,10 @@
 
 			<article>
 				<h2>card</h2>
-				<ts-card no-padding
-					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque delectus eligendi! Commodi cumque in
-					laboriosam omnis quos tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero. In, qui!</ts-card
-				>
-			</article>
-
-			<article>
-				<h2>card</h2>
-				<ts-card no-padding
-					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque delectus eligendi! Commodi cumque in
-					laboriosam omnis quos tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero. In, qui!</ts-card
-				>
+				<ts-card type="success" size="medium">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque delectus eligendi! Commodi cumque in
+					laboriosam omnis quos tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero. In, qui!
+				</ts-card>
 			</article>
 
 			<article>
@@ -176,7 +180,8 @@
 					size="medium"
 					help-text-messages='["Some very very long long help text to give user more information about the input that they need to provide"]'
 					hide-file-type-help-text
-				></ts-file-uploader-input>
+				>
+				</ts-file-uploader-input>
 
 				<ts-file-uploader-input
 					id="fileUploaderInput2"
@@ -265,6 +270,18 @@
 					state="download"
 					size="medium"
 				></ts-file-card>
+
+				<script>
+					var fileCards = document.querySelectorAll('ts-file-card');
+					fileCards.forEach(function(fileCard) {
+						fileCard.addEventListener('download', function(event) {
+							console.log('download', event);
+						});
+						fileCard.addEventListener('remove', function(event) {
+							console.log('remove', event);
+						});
+					});
+				</script>
 			</article>
 
 			<article>

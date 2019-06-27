@@ -1,0 +1,28 @@
+<svg
+	class="file-icon"
+	width="32px"
+	height="42px"
+	viewBox="0 0 32 42"
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+	<g id="Symbols" stroke-width="1">
+		<g id="card/5.-File-card/mouseover" transform="translate(-9.000000, -9.000000)">
+			<g id="5.-File-card">
+				<g id="File-icon" transform="translate(10.000000, 10.000000)">
+					<path
+						d="M19.5667631,-0.5 L29.5322581,9.79767818 L29.5322581,38.0952381 C29.5322581,39.3654698 28.5111819,40.5 27.3244782,40.5 L1.70777989,40.5 C0.521076133,40.5 -0.5,39.3654698 -0.5,38.0952381 L-0.5,1.9047619 C-0.5,0.634530207 0.521076133,-0.5 1.70777989,-0.5 L19.5667631,-0.5 Z"
+						class="stroke-a fill-none"
+						id="outline"
+					></path>
+					<path
+						d="M19.3548387,0 L29.9943074,11 L21.3186802,11 C20.2340805,11 19.3548387,10.0430649 19.3548387,8.8660465 L19.3548387,0 L19.3548387,0 Z"
+						class="fill-a"
+						id="fold"
+					></path>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -2,7 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './{{kebabCase name}}.css';
 
 customElementDefineHelper(
-	`ts-{{kebabCase name}}`,
+	'ts-{{kebabCase name}}',
 	class extends TSElement {
 		static get styles() {
 			return [TSElement.styles, unsafeCSS(css)];
