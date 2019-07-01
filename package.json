@@ -21,7 +21,8 @@
   "author": "Tradeshift element Team",
   "contributors": [
     "Daniel Spitzer <dsp@tradeshift.com> (https://github.com/sampi)",
-    "Leo Zhang <lza@tradeshift.com> (https://github.com/zdlm)"
+    "Leo Zhang <lza@tradeshift.com> (https://github.com/zdlm)",
+    "Kian (Hossein) Esmaeilpour <hossein.esmaeil@tradeshift.com> (https://github.com/esmailpour-hosein)"
   ],
   "scripts": {
     "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js",
