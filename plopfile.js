@@ -1,3 +1,4 @@
+const fs = require('fs');
 const packagesPath = 'packages';
 const componentsPath = `${packagesPath}/components`;
 const templatesPath = 'plop-templates';
@@ -15,33 +16,30 @@ module.exports = plop => {
 				type: 'input',
 				name: 'name',
 				message: 'What is your component name?'
+			},
+			{
+				type: 'input',
+				name: 'version',
+				message: 'version?',
+				default() {
+					const lernaData = JSON.parse(fs.readFileSync('./lerna.json', 'utf8'));
+					return lernaData.version;
+				}
 			}
 		],
 
 		actions: [
-			// Add component's js file
 			{
-				type: 'add',
-				path: `${componentsPath}/{{kebabCase name}}/src/{{kebabCase name}}.js`,
-				templateFile: `${templatesPath}/components/src/component.js`
-			},
-			// Add component's css file
-			{
-				type: 'add',
-				path: `${componentsPath}/{{kebabCase name}}/src/{{kebabCase name}}.css`,
-				templateFile: `${templatesPath}/components/src/component.css`
-			},
-			// Add component's package.json file
-			{
-				type: 'add',
-				path: `${componentsPath}/{{kebabCase name}}/package.json`,
-				templateFile: `${templatesPath}/components/package.json`
-			},
-			// Add component's stories file
-			{
-				type: 'add',
-				path: `${componentsPath}/{{kebabCase name}}/stories/{{kebabCase name}}.stories.js`,
-				templateFile: `${templatesPath}/components/stories/component.stories.js`
+				type: 'addMany',
+				destination: `${componentsPath}`,
+				base: `${templatesPath}/components`,
+				templateFiles: `${templatesPath}/components/**`,
+				data() {
+					const lernaData = JSON.parse(fs.readFileSync('./lerna.json', 'utf8'));
+					return {
+						version: lernaData.version
+					};
+				}
 			}
 		]
 	});
