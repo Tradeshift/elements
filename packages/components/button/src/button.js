@@ -28,7 +28,7 @@ export class TSButton extends TSElement {
 			<button ?disabled="${this.disabled}">
 				${this.icon
 					? html`
-							<ts-icon icon="${this.icon}" size="medium" type="inverted"></ts-icon>
+							<ts-icon icon="${this.icon}" size="medium"></ts-icon>
 					  `
 					: html`
 							<span><slot></slot></span>

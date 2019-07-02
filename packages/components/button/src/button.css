@@ -39,6 +39,10 @@
 		color: var(--ts-color-white);
 		border-color: var(--ts-color-blue);
 
+		& > ts-icon {
+			fill: var(--ts-color-white);
+		}
+
 		&:hover {
 			background: var(--ts-color-blue-dark);
 		}
@@ -75,7 +79,7 @@
 	& span {
 		color: var(--ts-color-blue);
 		padding: 0;
-		font-weight: var(--ts-font-weight);
+		font-weight: var(--ts-fontweight);
 		text-transform: none;
 		letter-spacing: normal;
 	}
@@ -124,9 +128,18 @@
 	cursor: not-allowed;
 	& > button {
 		pointer-events: none;
-		background-color: var(--ts-color-gray-lighter);
-		border: var(--ts-color-gray-lighter);
-		color: var(--ts-color-gray-dark);
+		background-color: var(--ts-disabled-background-color);
+		border: var(--ts-disabled-border-color);
+	}
+
+	& span {
+		color: var(--ts-disabled-color);
+	}
+}
+
+:host([disabled][type='text']) {
+	& > button {
+		background-color: transparent;
 	}
 }
 
