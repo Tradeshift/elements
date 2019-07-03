@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tradeshift Elements v0.2.0</title>
+		<title>Tradeshift Elements v0.3.0</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
@@ -15,6 +15,8 @@
 		<!-- Load appropriate polyfills and shims -->
 		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
 
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
 		<!-- Set @font-face for all needed fonts -->
 		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
 		<!-- Set margin/padding to be 0 for <html> -->
@@ -197,6 +199,7 @@
 						console.log('onchangeCallback', e);
 						console.log('onchangeCallback files', e.detail.originalEvent.target.files);
 					}
+
 					function handleFileChange(e) {
 						console.log('handleFileChange', e);
 						console.log('files', e.detail.originalEvent.target.files);
@@ -216,7 +219,6 @@
 						file-url="http://localhost:8008/documents/attachment/2c2e3d59-cfb5-43a6-8068-e916ec34111e?name=TS%20Attachment%205.8%20MB.pdf&type=application/pdf&mode=dl&size=5999999"
 						removable
 						state="download"
-						size="medium"
 					></ts-file-card>
 
 					<ts-file-card

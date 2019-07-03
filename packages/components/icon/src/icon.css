@@ -24,10 +24,69 @@ svg {
 .icon-wrapper {
 	position: relative;
 	display: block;
+	padding-top: 100%;
+	width: 100%;
+	height: 0;
 }
 
 svg {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+/* These are fallback for icon colors based on type for IE11 */
+/* The automatically generated style in js file doesn't work in IE11 */
+/* I also tried to add these following generated styles from there as string to here which didn't work */
+/* It's also related to this issue in the polyfill limitation */
+/* https://github.com/Tradeshift/elements/wiki/Polyfill-Limitations */
+svg,
+[type='default'] svg {
+	fill: var(--ts-color-slate-lightest);
+}
+
+[type='inverted'] svg {
+	fill: var(--ts-color-white);
+}
+
+[type='primary'] svg {
+	fill: var(--ts-color-blue);
+}
+
+[type='danger'] svg {
+	fill: var(--ts-color-red);
+}
+
+[type='error'] svg {
+	fill: var(--ts-color-red);
+}
+
+[type='success'] svg {
+	fill: var(--ts-color-green);
+}
+
+[type='active'] svg {
+	fill: var(--ts-color-blue);
+}
+
+[type='info'] svg {
+	fill: var(--ts-color-blue);
+}
+
+[type='focus'] svg {
+	fill: var(--ts-color-blue);
+}
+
+[type='warning'] svg {
+	fill: var(--ts-color-orange);
+}
+
+[type='disabled'] svg {
+	fill: var(--ts-color-gray-lighter);
+}
+
+[type='suggested'] svg {
+	fill: var(--ts-color-purple);
 }
