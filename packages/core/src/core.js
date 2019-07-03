@@ -1,6 +1,5 @@
 import { LitElement, unsafeCSS } from 'lit-element';
 import commonCSS from './common.css';
-import cssVariables from './vars.css';
 export { constants, helpers } from './utils';
 
 export function customElementDefineHelper(name, component) {
@@ -11,7 +10,7 @@ export function customElementDefineHelper(name, component) {
 
 export class TSElement extends LitElement {
 	static get styles() {
-		return [unsafeCSS(cssVariables), unsafeCSS(commonCSS)];
+		return [unsafeCSS(commonCSS)];
 	}
 
 	get bodyHasRTL() {
