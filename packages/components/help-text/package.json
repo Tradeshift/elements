@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.help-text",
-  "version": "0.2.8",
+  "version": "0.3.1",
   "src": "src/help-text.js",
   "main": "lib/help-text.umd.js",
   "browser": "lib/help-text.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.8",
+    "@tradeshift/elements": "^0.3.1",
     "@tradeshift/elements.icon": "file:../icon"
   }
 }

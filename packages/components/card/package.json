@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.card",
-  "version": "0.2.8",
+  "version": "0.3.1",
   "src": "src/card.js",
   "main": "lib/card.umd.js",
   "browser": "lib/card.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.2.8"
+    "@tradeshift/elements": "^0.3.1"
   },
   "gitHead": ""
 }
