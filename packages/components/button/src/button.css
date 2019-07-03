@@ -81,7 +81,7 @@
 
 		&:focus:before {
 			content: '';
-			border-color: var(--ts-color-blue-darker);
+			border-color: transparent;
 		}
 	}
 
