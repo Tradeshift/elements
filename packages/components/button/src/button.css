@@ -7,6 +7,15 @@
 		margin-right: var(--ts-unit-quarter);
 		border: var(--ts-border);
 		border-radius: var(--ts-unit-double);
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: var(--ts-border);
+			border-radius: var(--ts-unit-double);
+		}
 
 		&:hover {
 			cursor: pointer;
