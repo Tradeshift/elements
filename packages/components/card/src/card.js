@@ -42,17 +42,18 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<div
-					class="${classNames.CARD}"
-					data-orientation="${this.orientation}"
-					data-type="${this.type}"
-					?data-no-padding="${this.noPadding}"
-					?data-no-horizontal-padding="${this.noHorizontalPadding}"
-					?data-no-vertical-padding="${this.noVerticalPadding}"
-					data-size="${this.size}"
-					?data-rtl="${this.rtl}"
-				>
-					<slot></slot>
+				<div class="card-wrapper" data-size="${this.size}">
+					<div
+						class="${classNames.CARD}"
+						data-orientation="${this.orientation}"
+						data-type="${this.type}"
+						?data-no-padding="${this.noPadding}"
+						?data-no-horizontal-padding="${this.noHorizontalPadding}"
+						?data-no-vertical-padding="${this.noVerticalPadding}"
+						?data-rtl="${this.rtl}"
+					>
+						<slot></slot>
+					</div>
 				</div>
 			`;
 		}
