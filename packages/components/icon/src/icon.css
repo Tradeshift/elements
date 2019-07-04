@@ -2,8 +2,10 @@
 	fill: none;
 }
 
-svg {
-	fill: var(--ts-icon-color);
+:host {
+	& svg {
+		fill: var(--ts-icon-color);
+	}
 }
 
 :host([size='small']) {
