@@ -2,7 +2,6 @@
 
 :host {
 	position: relative;
-	display: block;
 
 	& dl {
 		color: var(--ts-color-black);
