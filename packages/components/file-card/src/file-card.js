@@ -105,10 +105,21 @@ customElementDefineHelper(
 
 				return html`
 					<div class="${classNames.FILE_INFORMATION}">
-						<ts-file-size size="${this.fileObject.size}"></ts-file-size>
-						<ts-typography text="${`| ${fileExtension} Document`}" variant="subtitle"></ts-typography>
+						${this.fileSize}
+						<ts-typography text="${`${fileExtension} Document`}" variant="subtitle"></ts-typography>
 					</div>
 				`;
+			}
+		}
+
+		get fileSize() {
+			if (this.fileObject.size) {
+				return html`
+					<ts-file-size size="${this.fileObject.size}"></ts-file-size>
+					<ts-typography text="|" variant="subtitle"></ts-typography>
+				`;
+			} else {
+				return html``;
 			}
 		}
 
