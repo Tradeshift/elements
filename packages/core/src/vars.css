@@ -126,6 +126,12 @@
 	--ts-color-slate-dark: rgb(20, 28, 31);
 	--ts-color-slate-darker: rgb(14, 19, 21);
 
+	/* Disabled */
+
+	--ts-disabled-background-color: var(--ts-color-gray-lighter);
+	--ts-disabled-border-color: var(--ts-border-color-default);
+	--ts-disabled-color: var(--ts-color-gray-dark);
+
 	/* Animations........................................................ */
 
 	--ts-transition-now: 0.1s;

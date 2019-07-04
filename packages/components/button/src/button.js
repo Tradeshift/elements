@@ -9,6 +9,10 @@ export class TSButton extends TSElement {
 	static get properties() {
 		return {
 			type: { type: String, reflect: true },
+			size: { type: String, reflect: true },
+			busy: { type: String, reflect: true },
+			icon: { type: String, reflect: true },
+			disabled: { type: Boolean, reflect: true },
 			grouped: { type: Boolean, reflect: true }
 		};
 	}
@@ -21,10 +25,14 @@ export class TSButton extends TSElement {
 
 	render() {
 		return html`
-			<button>
-				<span>
-					<slot></slot>
-				</span>
+			<button ?disabled="${this.disabled}">
+				${this.icon
+					? html`
+							<ts-icon icon="${this.icon}" size="medium"></ts-icon>
+					  `
+					: html`
+							<span><slot></slot></span>
+					  `}
 			</button>
 		`;
 	}
