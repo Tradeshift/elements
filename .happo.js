@@ -7,16 +7,20 @@ module.exports = {
 	apiSecret: process.env.HAPPO_API_SECRET,
 	targets: {
 		chrome: new RemoteBrowserTarget('chrome', {
-			viewport: '1024x768'
+			viewport: '1200x1200',
+			maxHeight: 10000
 		}),
 		firefox: new RemoteBrowserTarget('firefox', {
-			viewport: '1024x768'
+			viewport: '1200x1200',
+			maxHeight: 10000
 		}),
 		edge: new RemoteBrowserTarget('edge', {
-			viewport: '1024x768'
+			viewport: '1200x1200',
+			maxHeight: 10000
 		}),
 		'internet explorer': new RemoteBrowserTarget('internet explorer', {
-			viewport: '1024x768'
+			viewport: '1200x1200',
+			maxHeight: 10000
 		})
 
 		// happo.io is running Safari v10.0, which doesn't support CSS Grid,
@@ -33,6 +37,7 @@ module.exports = {
 	},
 	plugins: [
 		happoPluginStorybook({
+			configDir: './.storybook-happo',
 			staticDir: './static',
 			outputDir: './.happo'
 		})

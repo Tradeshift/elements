@@ -1,4 +1,3 @@
-export {default as selectors, classNames} from './selectors';
+export { default as selectors, classNames } from './selectors';
 
-
-export {orientations, sizes} from './constants';
+export { orientations, sizes, types } from './constants';
