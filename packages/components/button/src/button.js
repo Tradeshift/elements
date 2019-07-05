@@ -1,5 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './button.css';
+import { types } from './utils';
 
 export class TSButton extends TSElement {
 	static get styles() {
@@ -28,7 +29,16 @@ export class TSButton extends TSElement {
 			<button ?disabled="${this.disabled}">
 				${this.icon
 					? html`
-							<ts-icon icon="${this.icon}" size="medium"></ts-icon>
+							<ts-icon
+								icon="${this.icon}"
+								size="medium"
+								type="${this.type === types.PRIMARY ||
+								this.type === types.ACCEPT ||
+								this.type === types.WARNING ||
+								this.type === types.DANGER
+									? 'inverted'
+									: 'default'}"
+							></ts-icon>
 					  `
 					: html`
 							<span><slot></slot></span>
