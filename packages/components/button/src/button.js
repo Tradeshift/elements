@@ -24,21 +24,17 @@ export class TSButton extends TSElement {
 		this.grouped = false;
 	}
 
+	get iconType() {
+		const colorBackgroundTypes = [types.TEXT, types.SECONDARY];
+		return colorBackgroundTypes.includes(this.type) ? 'default' : 'inverted';
+	}
+
 	render() {
 		return html`
 			<button ?disabled="${this.disabled}">
 				${this.icon
 					? html`
-							<ts-icon
-								icon="${this.icon}"
-								size="medium"
-								type="${this.type === types.PRIMARY ||
-								this.type === types.ACCEPT ||
-								this.type === types.WARNING ||
-								this.type === types.DANGER
-									? 'inverted'
-									: 'default'}"
-							></ts-icon>
+							<ts-icon icon="${this.icon}" size="medium" type="${this.iconType}"></ts-icon>
 					  `
 					: html`
 							<span><slot></slot></span>
