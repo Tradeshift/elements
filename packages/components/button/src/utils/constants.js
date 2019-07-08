@@ -3,8 +3,11 @@ export const sizes = {
 	MICRO: 'micro'
 };
 
-export const type = {
+export const types = {
 	PRIMARY: 'primary',
 	SECONDARY: 'secondary',
-	TEXT: 'text'
+	TEXT: 'text',
+	ACCEPT: 'accept',
+	WARNING: 'warning',
+	DANGER: 'danger'
 };

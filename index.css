@@ -37,3 +37,15 @@ footer {
 .content {
 	background: white;
 }
+
+.button-container {
+	display: flex;
+}
+
+.button-container .box {
+	width: 20%;
+}
+
+.button-container .box div {
+	padding: 10px;
+}
