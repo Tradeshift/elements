@@ -108,6 +108,7 @@ customElementDefineHelper(
 
 			return html`
 				<ts-help-text
+					size="${this.size}"
 					class="${classNames.HELP_TEXT}"
 					title="${this.helpTextTitle}"
 					messages="${JSON.stringify(helpTextList)}"
