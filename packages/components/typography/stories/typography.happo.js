@@ -11,9 +11,5 @@ storiesOf('ts-typography', module).add('test', () => {
 		color: colorTypes
 	};
 
-	const options = {
-		columns: 2
-	};
-
-	return createHappoStories('typography', properties, 'Sample Text', options);
+	return createHappoStories('typography', properties, 'Sample Text', { columns: 2 });
 });
