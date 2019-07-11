@@ -11,8 +11,8 @@ storiesOf('ts-card', module).add('test', () => {
 		noPadding: { true: true },
 		rtl: { true: true },
 		orientation: {
-			HORIZONTAL: orientations.HORIZONTAL,
-			VERTICAL: orientations.VERTICAL
+			HORIZONTAL: orientations.HORIZONTAL
+			// VERTICAL: orientations.VERTICAL
 		},
 		size: sizes,
 		type: types
