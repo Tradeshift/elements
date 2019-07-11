@@ -1,4 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import '@tradeshift/elements.icon';
+
 import css from './button.css';
 import { types } from './utils';
 
@@ -25,8 +27,8 @@ export class TSButton extends TSElement {
 	}
 
 	get iconType() {
-		const colorBackgroundTypes = [types.TEXT, types.SECONDARY];
-		return colorBackgroundTypes.includes(this.type) ? 'default' : 'inverted';
+		const colorBackgroundTypes = [types.DANGER, types.WARNING, types.ACCEPT, types.PRIMARY];
+		return colorBackgroundTypes.includes(this.type) ? 'inverted' : 'default';
 	}
 
 	render() {

@@ -8,9 +8,7 @@ export const orientations = {
 export const types = {
 	ERROR: 'error',
 	DANGER: 'danger',
-	FAILED: 'failed',
 	SUCCESS: 'success',
-	FOCUS: 'focus',
 	ACTIVE: 'active',
 	PRIMARY: 'primary'
 };
