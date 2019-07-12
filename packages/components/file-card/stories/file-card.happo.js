@@ -20,8 +20,8 @@ storiesOf('ts-file-card', module).add('test', () => {
 	const options = {
 		columns: 5,
 		persistent_props: {
-			fileObject: { name: 'fileName.pdf', size: 1234567890 },
-			errorMessage: 'Failed to upload',
+			'file-object': { name: 'fileName.pdf', size: 1234567890 },
+			'error-message': 'Failed to upload',
 			state: states.DOWNLOAD
 		}
 	};

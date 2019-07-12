@@ -8,13 +8,12 @@ storiesOf('ts-file-uploader-input', module).add('test', () => {
 	const properties = {
 		rtl: { true: true },
 		disabled: { true: true },
-
-		helpTextMessages: {
+		'help-text-messages': {
 			message: [
 				'Some very very long long help text to give user more information about the input that they need to provide'
 			]
 		},
-		hideFileTypeHelpText: { true: true },
+		'hide-file-type-help-text': { true: true },
 		size: {
 			full: 'full',
 			medium: 'medium',
@@ -25,8 +24,8 @@ storiesOf('ts-file-uploader-input', module).add('test', () => {
 	const options = {
 		columns: 5,
 		persistent_props: {
-			acceptedFileExtensions: ['doc', 'pdf', 'jpg'],
-			helpTextTitle: 'Help Title'
+			'accepted-file-extensions': ['doc', 'pdf', 'jpg'],
+			'helpText-title': 'Help Title'
 		}
 	};
 
