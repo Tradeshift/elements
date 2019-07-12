@@ -8,7 +8,8 @@ export const createComponent = (componentName, content, attrs, noPrefix = false)
 	const prefix = noPrefix ? '' : 'ts-';
 	const element = document.createElement(`${prefix}${componentName}`);
 	Object.keys(attrs).forEach(attrKey => {
-		element[attrKey] = attrs[attrKey];
+		const att = typeof attrs[attrKey] !== 'string' ? JSON.stringify(attrs[attrKey]).replace(/"/g, '"') : attrs[attrKey];
+		element.setAttribute(attrKey, att);
 	});
 	element.innerHTML = content;
 	return element;
