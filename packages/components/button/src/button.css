@@ -223,10 +223,11 @@
 
 :host([disabled]) {
 	cursor: not-allowed;
+
 	& > button {
 		pointer-events: none;
 		background-color: var(--ts-disabled-background-color);
-		border: var(--ts-disabled-border-color);
+		border: var(--ts-disabled-border);
 	}
 
 	& span {

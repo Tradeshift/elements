@@ -1,23 +1,80 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import '@tradeshift/elements';
+import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
+
+import { types, sizes } from '../src/utils';
+import icons from '../../icon/src/assets/icons';
 
 storiesOf('ts-button', module)
 	.addDecorator(withKnobs)
-	.add('type', () => {
+	.add('default', () => {
 		const type = select(
 			'Type',
 			{
-				Default: '',
-				Primary: 'primary',
-				Secondary: 'secondary',
-				Text: 'text'
+				default: '',
+				...helpers.objectKeysChangeCase(types)
 			},
 			''
 		);
-		const lable = text('Lable', 'Button');
+		const size = select(
+			'Size',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(sizes)
+			}
+			, ''
+		);
+
+		const label = text('Lable', 'Button');
+		const busy = boolean('Busy', false);
+		const disabled = boolean('Disabled', true);
+
 		return html`
-			<ts-button type="${type}">${lable}</ts-button>
+			<ts-button 
+				?disabled="${disabled}" 
+				?busy="${busy}" 
+				type="${type}"
+			 	size="${size}">
+				${label}
+			</ts-button>
+		`;
+	})
+	.add('icon', () => {
+		const type = select(
+			'Type',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(types)
+			},
+			''
+		);
+		const size = select(
+			'Size',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(sizes)
+			}
+			, ''
+		);
+
+		const busy = boolean('Busy', false);
+		const disabled = boolean('Disabled', true);
+		const icon = text('Icon', 'remove');
+		const iconSelect = select(
+			'Icon',
+			Object.keys(icons),
+			Object.keys(icons)[0]
+		);
+
+		return html`
+			<ts-button 
+				?disabled="${disabled}"
+				?busy="${busy}"
+				icon="${icon}"
+				type="${type}"
+			 	size="${size}">
+			</ts-button>
 		`;
 	});
