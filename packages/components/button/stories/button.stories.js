@@ -13,10 +13,10 @@ storiesOf('ts-button', module)
 		const type = select(
 			'Type',
 			{
-				default: '',
+				default: null,
 				...helpers.objectKeysChangeCase(types)
 			},
-			''
+			null
 		);
 		const size = select(
 			'Size',
@@ -31,11 +31,17 @@ storiesOf('ts-button', module)
 		const busy = boolean('Busy', false);
 		const disabled = boolean('Disabled', false);
 
-		return html`
-			<ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}">
-				${label}
-			</ts-button>
-		`;
+		return type
+			? html`
+					<ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}">
+						${label}
+					</ts-button>
+			  `
+			: html`
+					<ts-button ?disabled="${disabled}" ?busy="${busy}" size="${size}">
+						${label}
+					</ts-button>
+			  `;
 	})
 	.add('icon', () => {
 		const type = select(
