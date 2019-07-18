@@ -1,8 +1,8 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
-import { createHappoStories } from '../../../../.storybook-happo/utils';
 
+import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { sizes, types } from '../src/utils';
 
 storiesOf('ts-button', module).add('test', () => {

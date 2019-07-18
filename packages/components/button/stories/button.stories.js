@@ -1,6 +1,6 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
-import '@tradeshift/elements';
+
 import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 
@@ -23,20 +23,16 @@ storiesOf('ts-button', module)
 			{
 				default: '',
 				...helpers.objectKeysChangeCase(sizes)
-			}
-			, ''
+			},
+			''
 		);
 
 		const label = text('Lable', 'Button');
 		const busy = boolean('Busy', false);
-		const disabled = boolean('Disabled', true);
+		const disabled = boolean('Disabled', false);
 
 		return html`
-			<ts-button 
-				?disabled="${disabled}" 
-				?busy="${busy}" 
-				type="${type}"
-			 	size="${size}">
+			<ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}">
 				${label}
 			</ts-button>
 		`;
@@ -55,26 +51,15 @@ storiesOf('ts-button', module)
 			{
 				default: '',
 				...helpers.objectKeysChangeCase(sizes)
-			}
-			, ''
+			},
+			''
 		);
 
 		const busy = boolean('Busy', false);
-		const disabled = boolean('Disabled', true);
-		const icon = text('Icon', 'remove');
-		const iconSelect = select(
-			'Icon',
-			Object.keys(icons),
-			Object.keys(icons)[0]
-		);
+		const disabled = boolean('Disabled', false);
+		const icon = select('Icon', Object.keys(icons), Object.keys(icons)[0]);
 
 		return html`
-			<ts-button 
-				?disabled="${disabled}"
-				?busy="${busy}"
-				icon="${icon}"
-				type="${type}"
-			 	size="${size}">
-			</ts-button>
+			<ts-button ?disabled="${disabled}" ?busy="${busy}" icon="${icon}" type="${type}" size="${size}"> </ts-button>
 		`;
 	});

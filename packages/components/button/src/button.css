@@ -214,8 +214,13 @@
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
-		line-height: var(--ts-unit-double);
-		margin: 0 auto;
+	}
+
+	& ts-icon {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 
