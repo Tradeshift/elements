@@ -43,7 +43,7 @@ footer {
 }
 
 .button-container .box {
-	width: 20%;
+	width: calc(100% / 6);
 }
 
 .button-container .box div {
