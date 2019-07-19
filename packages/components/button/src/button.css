@@ -5,17 +5,8 @@
 		position: relative;
 		min-width: var(--ts-unit-double);
 		margin-right: var(--ts-unit-quarter);
-		border: var(--ts-border);
+		border: none;
 		border-radius: var(--ts-unit-double);
-		&:before {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			border: var(--ts-border);
-			border-radius: var(--ts-unit-double);
-		}
 	}
 
 	& span {
@@ -35,11 +26,16 @@
 			cursor: pointer;
 			background: var(--ts-color-gray-lighter);
 		}
+	}
+}
 
-		&:focus:before {
-			display: block;
-			content: '';
-			border-color: var(--ts-color-blue);
+:host(:not([type])),
+:host([type='secondary']) {
+	& > button {
+		box-shadow: var(--ts-boxshadow-border-default);
+
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
 		}
 	}
 }
@@ -50,7 +46,6 @@
 	& > button {
 		background: var(--ts-color-blue);
 		color: var(--ts-color-white);
-		border-color: var(--ts-color-blue);
 	}
 }
 
@@ -60,9 +55,8 @@
 			background: var(--ts-color-blue-dark);
 		}
 
-		&:focus:before {
-			content: '';
-			border-color: var(--ts-color-blue-darker);
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue-darker);
 		}
 	}
 }
@@ -73,7 +67,6 @@
 	& > button {
 		background: var(--ts-color-green);
 		color: var(--ts-color-white);
-		border-color: var(--ts-color-green);
 	}
 }
 
@@ -83,9 +76,8 @@
 			background: var(--ts-color-green-dark);
 		}
 
-		&:focus:before {
-			content: '';
-			border-color: var(--ts-color-green-darker);
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-green-darker);
 		}
 	}
 }
@@ -96,7 +88,6 @@
 	& > button {
 		background: var(--ts-color-orange);
 		color: var(--ts-color-white);
-		border-color: var(--ts-color-orange);
 	}
 }
 
@@ -106,9 +97,8 @@
 			background: var(--ts-color-orange-dark);
 		}
 
-		&:focus:before {
-			content: '';
-			border-color: var(--ts-color-orange-darker);
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-orange-darker);
 		}
 	}
 }
@@ -119,7 +109,6 @@
 	& > button {
 		background: var(--ts-color-red);
 		color: var(--ts-color-white);
-		border-color: var(--ts-color-red);
 	}
 }
 
@@ -129,9 +118,8 @@
 			background: var(--ts-color-red-dark);
 		}
 
-		&:focus:before {
-			content: '';
-			border-color: var(--ts-color-red-darker);
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-red-darker);
 		}
 	}
 }
@@ -141,14 +129,12 @@
 :host([type='text']) {
 	& > button {
 		background: transparent;
-		border: 0;
-		border-radius: 0;
-		padding: 0;
+		border-radius: var(--ts-radius);
 	}
 
 	& span {
 		color: var(--ts-color-blue);
-		padding: 0;
+		padding: 0 var(--ts-unit-quarter);
 		font-weight: var(--ts-fontweight);
 		text-transform: none;
 		letter-spacing: normal;
@@ -161,7 +147,6 @@
 			background: transparent;
 			& span {
 				color: var(--ts-color-blue-dark);
-				text-decoration: underline;
 			}
 		}
 
@@ -176,7 +161,7 @@
 
 /* Micro size......................................................*/
 
-:host([size='micro']) {
+:host(:not([type='text'])[size='micro']) {
 	& > button {
 		border-radius: var(--ts-unit);
 		padding: 0 var(--ts-unit-half);
@@ -185,13 +170,6 @@
 	& span {
 		padding: var(--ts-unit-eighth);
 		font-size: var(--ts-fontsize-small);
-	}
-}
-
-:host([size='micro'][type='text']) {
-	& > button {
-		border-radius: 0;
-		padding: 0;
 	}
 }
 
@@ -214,8 +192,13 @@
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
-		line-height: var(--ts-unit-double);
-		margin: 0 auto;
+	}
+
+	& ts-icon {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -223,10 +206,11 @@
 
 :host([disabled]) {
 	cursor: not-allowed;
+
 	& > button {
 		pointer-events: none;
 		background-color: var(--ts-disabled-background-color);
-		border: var(--ts-disabled-border-color);
+		box-shadow: none;
 	}
 
 	& span {
@@ -246,7 +230,7 @@
 	& > :first-child {
 		pointer-events: none;
 		cursor: default;
-		border: transparent;
+		box-shadow: none;
 		background-size: var(--ts-unit-double) var(--ts-unit-double);
 		background-image: linear-gradient(
 			-45deg,

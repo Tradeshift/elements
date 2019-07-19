@@ -22,7 +22,6 @@ export class TSButton extends TSElement {
 
 	constructor() {
 		super();
-		this.type = '';
 		this.grouped = false;
 	}
 
