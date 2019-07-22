@@ -100,14 +100,10 @@
 
 					function toggleCover(id) {
 						let cover = document.querySelector('#' + id);
-						if (cover) {
-							if (cover.classList.contains('ts-fadeIn')) {
-								cover.classList.remove('ts-fadeIn');
-								cover.classList.add('ts-fadeOut');
-							} else {
-								cover.classList.remove('ts-fadeOut');
-								cover.classList.add('ts-fadeIn');
-							}
+						if (cover.hasAttribute('visible')) {
+							cover.removeAttribute('visible');
+						} else {
+							cover.setAttribute('visible', true);
 						}
 					}
 

@@ -9,12 +9,19 @@ customElementDefineHelper(
 		}
 
 		static get properties() {
-			return {};
+			return {
+				visible: { type: Boolean, reflect: true }
+			};
+		}
+
+		constructor() {
+			super();
+			this.visible = false;
 		}
 
 		render() {
 			return html`
-				<div></div>
+				<div class="${this.visible ? 'ts-fadeIn' : 'ts-fadeOut'}"></div>
 			`;
 		}
 	}
