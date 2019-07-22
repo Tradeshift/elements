@@ -6,14 +6,13 @@
 
 :host {
 	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: var(--ts-font-size-default);
+	line-height: var(--ts-unit);
 	&,
 	& * {
 		box-sizing: border-box;
-		font-size: var(--ts-font-size-default);
-		line-height: var(--ts-unit);
 		font-family: var(--ts-font-family);
-		background: transparent;
-		margin: 0;
-		padding: 0;
 	}
 }
