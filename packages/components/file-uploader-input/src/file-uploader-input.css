@@ -119,3 +119,17 @@
 		margin: 0 var(--ts-unit-half);
 	}
 }
+
+/* Props.................................................. */
+
+:host([size='medium']) {
+	width: var(--ts-box-width-medium);
+}
+
+:host([size='small']) {
+	width: var(--ts-box-width-small);
+}
+
+[data-rtl] {
+	direction: rtl;
+}

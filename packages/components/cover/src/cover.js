@@ -21,7 +21,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<div class="${this.visible ? 'ts-fadeIn' : 'ts-fadeOut'}"></div>
+				<div class="cover ${this.visible ? 'ts-fadeIn' : 'ts-fadeOut'}"></div>
 			`;
 		}
 	}
