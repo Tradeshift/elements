@@ -40,6 +40,7 @@
 						'button',
 						'button-group',
 						'card',
+						'cover',
 						'file-card',
 						'file-size',
 						'file-uploader-input',
@@ -80,6 +81,7 @@
 					<ts-button onclick="toggleSlot('sidebar-right', this)">Toggle Right Sidebar</ts-button>
 					<ts-button onclick="toggleSlot('sidebar-inner-left', this)">Toggle Inner Left Sidebar</ts-button>
 					<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
+					<ts-button onclick="toggleCover('my-cover')">Toggle cover</ts-button>
 				</ts-button-group>
 				<script>
 					function toggleSlot(name, button) {
@@ -93,6 +95,15 @@
 						if (disabledSlot) {
 							button.setAttribute('type', 'primary');
 							return disabledSlot.setAttribute('slot', name);
+						}
+					}
+
+					function toggleCover(id) {
+						let cover = document.querySelector('#' + id);
+						if (cover.hasAttribute('visible')) {
+							cover.removeAttribute('visible');
+						} else {
+							cover.setAttribute('visible', true);
 						}
 					}
 
@@ -408,6 +419,8 @@
 				></ts-help-text>
 				<ts-help-text messages='["Files should not be larger than 4 MB!"]'></ts-help-text>
 			</article>
+
+			<ts-cover id="my-cover"></ts-cover>
 		</ts-root>
 	</body>
 </html>

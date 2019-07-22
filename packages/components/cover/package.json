@@ -1,0 +1,13 @@
+{
+  "name": "@tradeshift/elements.cover",
+  "version": "0.3.3",
+  "src": "src/cover.js",
+  "main": "lib/cover.umd.js",
+  "browser": "lib/cover.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.3.3"
+  }
+}

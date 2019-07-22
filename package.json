@@ -82,6 +82,7 @@
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.card": "file:packages/components/card",
+    "@tradeshift/elements.cover": "file:packages/components/cover",
     "@tradeshift/elements.file-card": "file:packages/components/file-card",
     "@tradeshift/elements.file-size": "file:packages/components/file-size",
     "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
