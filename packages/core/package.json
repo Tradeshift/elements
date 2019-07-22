@@ -9,7 +9,6 @@
     "src/*"
   ],
   "dependencies": {
-    "@open-wc/polyfills-loader": "^0.3.1",
-    "loadash": "^1.0.0"
+    "@open-wc/polyfills-loader": "^0.3.1"
   }
 }

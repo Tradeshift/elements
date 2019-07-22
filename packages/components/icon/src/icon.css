@@ -86,7 +86,7 @@ svg,
 }
 
 [type='disabled'] svg {
-	fill: var(--ts-color-gray-lighter);
+	fill: var(--ts-color-gray);
 }
 
 [type='suggested'] svg {

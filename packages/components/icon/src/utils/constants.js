@@ -28,7 +28,7 @@ export const typeColors = {
 	[types.INFO]: colors.BLUE,
 	[types.FOCUS]: colors.BLUE,
 	[types.WARNING]: colors.ORANGE,
-	[types.DISABLED]: colors.GRAY + colorModifiers.LIGHTER,
+	[types.DISABLED]: colors.GRAY,
 	[types.SUGGESTED]: colors.PURPLE
 };
 
