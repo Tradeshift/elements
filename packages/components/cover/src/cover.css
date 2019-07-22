@@ -28,7 +28,9 @@
 }
 
 :host(.ts-aside-cover, .ts-dialog-cover, .ts-spin-cover) {
-	pointer-events: auto;
+	& > div {
+		pointer-events: auto;
+	}
 }
 
 :host(.ts-aside-cover) {
