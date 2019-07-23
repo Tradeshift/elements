@@ -5,11 +5,15 @@
 
 	& dl {
 		color: var(--ts-color-black);
+		margin: 0;
+		padding: 0;
 	}
 
 	& dt,
 	& dd {
+		padding: 0;
 		padding-left: var(--ts-unit);
+		margin: 0;
 		position: relative;
 		display: flex;
 		font-size: var(--ts-fontsize-mini);

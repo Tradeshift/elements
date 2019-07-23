@@ -7,6 +7,7 @@
 		margin-right: var(--ts-unit-quarter);
 		border: none;
 		border-radius: var(--ts-unit-double);
+		font-size: var(--ts-font-size-default);
 	}
 
 	& span {

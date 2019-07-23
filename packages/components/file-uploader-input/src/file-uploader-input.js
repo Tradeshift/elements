@@ -119,11 +119,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<div
-					?data-rtl="${this.rtl}"
-					data-size="${this.size}"
-					class="${classNames.FILE_UPLOAD_WRAPPER} ${classNames.DROP_BOX}"
-				>
+				<div ?data-rtl="${this.rtl}" class="${classNames.FILE_UPLOAD_WRAPPER} ${classNames.DROP_BOX}">
 					${this.fileUploadInput} ${this.helpText} ${this.dropBox}
 				</div>
 			`;

@@ -1,27 +1,25 @@
 /* General........................................................ */
 
-:host {
-	& > div {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		pointer-events: none;
-		overflow: hidden;
-		visibility: hidden;
-		background-color: var(--ts-color-black);
-		z-index: var(--ts-zindex-max);
-	}
+.cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	overflow: hidden;
+	visibility: hidden;
+	background-color: var(--ts-color-black);
+	z-index: var(--ts-zindex-max);
 }
 
-:host > .ts-fadeIn {
+.ts-fadeIn {
 	visibility: visible;
 	opacity: 0.8;
 	transition: visibility var(--ts-transition-now) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
 }
 
-:host > .ts-fadeOut {
+.ts-fadeOut {
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility var(--ts-transition-now) linear var(--ts-transition-fast), opacity var(--ts-transition-fast);
