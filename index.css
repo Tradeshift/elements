@@ -19,8 +19,8 @@ h2 {
 	font-family: 'Fira Code', Consolas;
 }
 
-header,
-footer {
+.header,
+.footer {
 	display: block;
 	width: 100%;
 	height: 60px;

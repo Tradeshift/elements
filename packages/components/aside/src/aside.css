@@ -1,0 +1,144 @@
+/* General........................................................ */
+
+.aside-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: auto;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: var(--ts-aside);
+	background-color: var(--ts-color-white);
+	box-shadow: 0 0 3px var(--ts-shadow-color);
+	z-index: var(--ts-zindex-aside);
+}
+
+.aside-container > * {
+	padding: var(--ts-unit);
+}
+
+/* Header......................................................... */
+
+header {
+	height: var(--ts-unit-triple);
+	background-color: var(--ts-color-white);
+	display: flex;
+	border-bottom: var(--ts-border);
+}
+
+.aside-title {
+	flex-grow: 1;
+	align-self: center;
+	font-size: var(--ts-fontsize-big);
+}
+
+.aside-close {
+	line-height: 0;
+	align-self: center;
+}
+
+/* Main............................................................ */
+
+.aside-main {
+	flex: 1;
+	overflow: auto;
+	background-color: var(--ts-color-white);
+}
+
+/* Footer......................................................... */
+
+.aside-container footer {
+	display: none;
+	padding: var(--ts-unit-half) var(--ts-unit) 0 var(--ts-unit);
+	border-top: var(--ts-border);
+	background-color: var(--ts-color-white);
+}
+
+.has-footer footer {
+	display: block;
+}
+
+/* Animation...................................................... */
+.ts-slide-in-right,
+.ts-slide-in-left {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity var(--ts-transition-fast) linear;
+}
+
+.ts-slide-in-right {
+	animation: slide-in-right var(--ts-transition-fast) forwards;
+}
+
+.ts-slide-in-left {
+	left: 0;
+	right: auto;
+	animation: slide-in-left var(--ts-transition-fast) forwards;
+}
+
+.ts-slide-out-right,
+.ts-slide-out-left {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s var(--ts-transition-fast), opacity var(--ts-transition-fast) linear;
+}
+
+.ts-slide-out-right {
+	animation: slide-out-right var(--ts-transition-fast) forwards;
+}
+
+.ts-slide-out-left {
+	left: 0;
+	right: auto;
+	animation: slide-out-left var(--ts-transition-fast) forwards;
+}
+
+@-webkit-keyframes slide-in-right {
+	0% {
+		-webkit-transform: translateX(100%);
+	}
+}
+
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(100%);
+	}
+}
+
+@-webkit-keyframes slide-in-left {
+	0% {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(-100%);
+	}
+}
+
+@-webkit-keyframes slide-out-right {
+	100% {
+		-webkit-transform: translateX(100%);
+	}
+}
+
+@keyframes slide-out-right {
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@-webkit-keyframes slide-out-left {
+	100% {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes slide-out-left {
+	100% {
+		transform: translateX(-100%);
+	}
+}

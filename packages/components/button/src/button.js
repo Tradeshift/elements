@@ -27,7 +27,7 @@ export class TSButton extends TSElement {
 
 	get iconType() {
 		const colorBackgroundTypes = [types.DANGER, types.WARNING, types.ACCEPT, types.PRIMARY];
-		return colorBackgroundTypes.includes(this.type) ? 'inverted' : 'default';
+		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
 	render() {

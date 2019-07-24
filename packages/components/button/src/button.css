@@ -8,7 +8,6 @@
 	& > button {
 		position: relative;
 		min-width: var(--ts-unit-double);
-		margin-right: var(--ts-unit-quarter);
 		border: none;
 		border-radius: var(--ts-unit-double);
 		font-size: var(--ts-font-size-default);
@@ -43,6 +42,16 @@
 
 		&:focus {
 			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+		}
+	}
+}
+
+:host(.no-border) {
+	& > button {
+		box-shadow: none;
+		background: transparent;
+		&:focus {
+			box-shadow: none;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"@tradeshift/elements": "ts.elements",
-
+	"@tradeshift/elements.aside": "ts.elements.aside",
 	"@tradeshift/elements.button": "ts.elements.button",
 	"@tradeshift/elements.button-group": "ts.elements.button-group",
 	"@tradeshift/elements.card": "ts.elements.card",

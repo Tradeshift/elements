@@ -136,7 +136,6 @@
 
 .content {
 	position: relative;
-	margin: 50px;
 	-ms-grid-row: 2;
 	-ms-grid-row-span: 1;
 	grid-row: 2 / 2;

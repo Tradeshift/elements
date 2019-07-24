@@ -44,9 +44,9 @@
 	--ts-zindex-dialog: 3000;
 	--ts-zindex-spin: 4000;
 	--ts-zindex-max: 10000;
-	--ts-zindex-dialog-cover: calc(var(--ts-zindex-dialog) - 1);
-	--ts-zindex-aside-cover: calc(var(--ts-zindex-aside) - 1);
-	--ts-zindex-spin-cover: calc(var(--ts-zindex-spin) - 1);
+	--ts-zindex-dialog-cover: 2999; /* calc(var(--ts-zindex-dialog) - 1); */
+	--ts-zindex-aside-cover: 1999; /* calc(var(--ts-zindex-aside) - 1); */
+	--ts-zindex-spin-cover: 3999; /* calc(var(--ts-zindex-spin) - 1); */
 
 	/* Colors........................................................ */
 
@@ -169,6 +169,8 @@
 
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;
+
+	--ts-shadow-color: var(--ts-color-slate-dark);
 }
 
 ts-root {

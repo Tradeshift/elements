@@ -10,7 +10,7 @@ customElementDefineHelper(
 
 		static get properties() {
 			return {
-				visible: { type: Boolean, reflect: true }
+				visible: { type: Boolean, attribute: 'data-visible', reflect: true }
 			};
 		}
 
