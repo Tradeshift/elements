@@ -1,11 +1,12 @@
-.fill-none {
-	fill: none;
-}
-
 :host {
+	display: inline-block;
 	& svg {
 		fill: var(--ts-icon-color);
 	}
+}
+
+.fill-none {
+	fill: none;
 }
 
 :host([size='small']) {

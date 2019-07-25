@@ -2,6 +2,8 @@
 
 :host {
 	display: block;
+	font-size: var(--ts-font-size-default);
+	line-height: var(--ts-unit);
 }
 
 slot {
@@ -9,7 +11,7 @@ slot {
 }
 
 :host [data-variant='default'] {
-	font-size: var(--ts-fontsize);
+	font-size: var(--ts-font-size-default);
 }
 
 :host [data-variant='title'] {
