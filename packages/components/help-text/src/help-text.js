@@ -14,7 +14,9 @@ customElementDefineHelper(
 				messages: { type: Array },
 				title: { type: String },
 				size: { type: String },
-				rtl: { type: Boolean }
+				rtl: { type: Boolean },
+				disabled: { type: Boolean },
+				type: { type: String }
 			};
 		}
 
@@ -24,8 +26,16 @@ customElementDefineHelper(
 		}
 
 		get infoIcon() {
+			const iconTypes = {
+				default: 'info',
+				error: 'error'
+			};
+			let iconType = iconTypes[this.type ? this.type : 'default'];
+			if (this.disabled) {
+				iconType = 'disabled';
+			}
 			return html`
-				<ts-icon class="info-icon" icon="info" size="medium" type="info"></ts-icon>
+				<ts-icon class="info-icon" icon="info" size="medium" type="${iconType}"></ts-icon>
 			`;
 		}
 

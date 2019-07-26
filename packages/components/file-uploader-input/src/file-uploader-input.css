@@ -1,8 +1,11 @@
 /* General........................................................ */
 
 :host {
+	display: inline-block;
 	width: 100%;
 	margin-bottom: var(--ts-unit-half);
+	line-height: var(--ts-unit);
+	font-size: var(--ts-font-size-default);
 }
 
 .file-upload-button {

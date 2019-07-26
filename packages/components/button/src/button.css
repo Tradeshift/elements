@@ -1,6 +1,10 @@
 /* General........................................................ */
 
 :host {
+	display: inline-block;
+	font-size: var(--ts-font-size-default);
+	line-height: var(--ts-unit);
+
 	& > button {
 		position: relative;
 		min-width: var(--ts-unit-double);
@@ -8,6 +12,7 @@
 		border: none;
 		border-radius: var(--ts-unit-double);
 		font-size: var(--ts-font-size-default);
+		padding: 0;
 	}
 
 	& span {
@@ -16,6 +21,7 @@
 		font-weight: var(--ts-fontweight-semibold);
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
+		line-height: var(--ts-unit);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -164,12 +170,13 @@
 
 :host(:not([type='text'])[size='micro']) {
 	& > button {
+		font-size: var(--ts-fontsize-small);
 		border-radius: var(--ts-unit);
 		padding: 0 var(--ts-unit-half);
 	}
 
 	& span {
-		padding: var(--ts-unit-eighth);
+		padding: 0 var(--ts-unit-eighth);
 		font-size: var(--ts-fontsize-small);
 	}
 }
