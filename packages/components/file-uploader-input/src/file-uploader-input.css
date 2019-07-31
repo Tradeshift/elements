@@ -19,7 +19,6 @@
 	border: var(--ts-border);
 	cursor: pointer;
 	height: var(--ts-unit-plus);
-	margin-bottom: var(--ts-unit-half);
 	overflow: hidden;
 	padding: var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-quarter) var(--ts-unit-half);
 	color: var(--ts-color-slate-lightest);
@@ -83,6 +82,10 @@
 			cursor: default;
 		}
 	}
+
+	& ~ .help-text {
+		margin-top: var(--ts-unit-half);
+	}
 }
 
 /* Dragging state.................................................. */
@@ -135,4 +138,8 @@
 
 [data-rtl] {
 	direction: rtl;
+
+	& .file-upload-button {
+		padding: var(--ts-unit-quarter) var(--ts-unit-half) var(--ts-unit-quarter) var(--ts-unit-quarter);
+	}
 }

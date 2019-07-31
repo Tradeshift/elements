@@ -1,3 +1,4 @@
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './file-uploader-input.css';
 import { messages, selectors, classNames, customEventNames, slotNames, sizes } from './utils';
@@ -89,7 +90,7 @@ customElementDefineHelper(
 						type="file"
 						?disabled="${this.disabled}"
 						?multiple="${this.multiple}"
-						?accept="${this.acceptAttrForFileInput}"
+						accept="${ifDefined(this.acceptAttrForFileInput)}"
 					/>
 				</div>
 			`;
@@ -106,15 +107,17 @@ customElementDefineHelper(
 				helpTextList.push(`Max ${this.maxFileNumber} files`);
 			}
 
-			return html`
-				<ts-help-text
-					size="${this.size}"
-					class="${classNames.HELP_TEXT}"
-					title="${this.helpTextTitle}"
-					messages="${JSON.stringify(helpTextList)}"
-					?rtl="${this.rtl}"
-				></ts-help-text>
-			`;
+			if (helpTextList.length) {
+				return html`
+					<ts-help-text
+						size="${this.size}"
+						class="${classNames.HELP_TEXT}"
+						title="${this.helpTextTitle}"
+						messages="${JSON.stringify(helpTextList)}"
+						?rtl="${this.rtl}"
+					></ts-help-text>
+				`;
+			}
 		}
 
 		render() {
@@ -136,7 +139,7 @@ customElementDefineHelper(
 		}
 
 		get acceptAttrForFileInput() {
-			return this.acceptedFileExtensions.map(ext => `.${ext}`).join(',');
+			return this.acceptedFileExtensions ? this.acceptedFileExtensions.map(ext => `.${ext}`).join(',') : undefined;
 		}
 
 		handleUpload(e) {
