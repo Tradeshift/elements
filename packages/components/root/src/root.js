@@ -43,7 +43,7 @@ export class TSRoot extends TSElement {
 					@slotchange="${this.decorateSlot}"
 				></slot>
 				<main>
-					<slot></slot>
+					<slot @slotchange="${this.defaultSlotChangeHandler}"></slot>
 				</main>
 				<slot
 					name="sidebar-inner-right"
@@ -55,12 +55,19 @@ export class TSRoot extends TSElement {
 			<slot name="footer" class="${this.slotClasses.footer}" @slotchange="${this.decorateSlot}"></slot>
 		`;
 	}
+
 	decorateSlot(e) {
 		const slot = e.currentTarget;
 		const assignedNodes = slot.assignedNodes();
 		const showSlot = assignedNodes && assignedNodes.length;
 		slot.classList[showSlot ? 'remove' : 'add']('hidden');
 		this.classList[showSlot ? 'add' : 'remove'](`ts-has-${slot.getAttribute('name')}`);
+	}
+
+	defaultSlotChangeHandler(e) {
+		const slot = e.currentTarget;
+		const hasTsNote = slot.assignedNodes().filter(item => item.tagName === 'TS-NOTE').length;
+		this.classList[hasTsNote ? 'add' : 'remove']('ts-has-note');
 	}
 }
 customElementDefineHelper('ts-root', TSRoot);
