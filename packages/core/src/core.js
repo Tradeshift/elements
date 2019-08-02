@@ -16,6 +16,16 @@ export class TSElement extends LitElement {
 	get bodyHasRTL() {
 		return document.body.getAttribute('dir') === 'rtl';
 	}
+
+	dispatchCustomEvent(eventName, data = {}) {
+		const event = new CustomEvent(eventName, {
+			detail: data,
+			bubbles: true,
+			composed: true
+		});
+
+		this.dispatchEvent(event);
+	}
 }
 
 // To help with treeshaking, only exports in use are listed

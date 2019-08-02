@@ -45,7 +45,8 @@
 						'file-size',
 						'file-uploader-input',
 						'progress-bar',
-						'help-text'
+						'help-text',
+						'note'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -72,6 +73,15 @@
 				Inner Right Sidebar
 			</section>
 
+			<ts-note
+				id="rootNote"
+				icon="info2"
+				buttons='[{"label": "Button", "id": "noteId"}, {"label": "Button 2", "type": "secondary"}]'
+			>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem, deleniti, id illo inventore iste
+				maxime mollitia necessitatibus nobis pariatur quae quaerat quo. Doloremque, dolores eos necessitatibus tempora
+				tenetur vero.
+			</ts-note>
 			<article id="ts-root-toggle">
 				<h2>ts-root</h2>
 				<ts-button-group>
@@ -129,14 +139,61 @@
 			</article>
 
 			<article>
+				<h2>ts-note</h2>
+				<ts-note type="neutral" icon="info"><i>this</i> is <b>easy</b> to <a href="#use">use</a>.</ts-note>
+				<ts-note type="neutral" rtl icon="info">
+					متن پیغام خطا برای کاربر
+				</ts-note>
+				<ts-note icon="info" type="ada">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid asperiores distinctio eligendi eum ipsum
+					iure libero maxime modi perspiciatis quam quis repellendus repudiandae sequi sunt ut, veritatis voluptatem
+					voluptatibus!
+				</ts-note>
+				<ts-note type="ada" rtl icon="info">
+					متن پیغام خطا برای کاربر
+				</ts-note>
+				<ts-note icon="info" closeable id="closeableNote1">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid asperiores distinctio eligendi eum ipsum
+					iure libero maxime modi perspiciatis quam quis repellendus repudiandae sequi sunt ut, veritatis voluptatem
+					voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim ipsum officia omnis quo
+					vero voluptatibus. Eius eum, illum ipsum iste laboriosam magnam natus neque nisi obcaecati officiis quo,
+					repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti ducimus error fugiat
+					ipsam nostrum possimus quo totam velit. At atque consequuntur corporis cum incidunt quidem quis quisquam
+					repellat voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nostrum, perspiciatis!
+					Ab ad aliquam blanditiis debitis dolor earum error, exercitationem illo maiores, mollitia optio perferendis
+					rem repellendus, totam voluptates voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Consequatur in obcaecati provident quo repudiandae sapiente sint ut? Cupiditate deserunt nemo nobis recusandae
+					vel. Beatae esse laboriosam officia sequi voluptas voluptatibus.
+				</ts-note>
+
+				<ts-note id="closeableNote2" rtl closeable icon="info">
+					متن پیغام خطا برای کاربر
+				</ts-note>
+				<script>
+					function handleNoteClose(e) {
+						console.log('handleNoteClose', e);
+					}
+
+					function handleButtonClick(e) {
+						console.log('handleButtonClick', e);
+						e.target.setAttribute('hidden', true);
+					}
+
+					document.getElementById('closeableNote1').addEventListener('close', handleNoteClose);
+					document.getElementById('rootNote').addEventListener('button-click', handleButtonClick);
+				</script>
+			</article>
+
+			<article>
 				<h2>ts-icon</h2>
-				<ts-icon icon="download" size="medium" type="danger"></ts-icon>
-				<ts-icon icon="remove" size="medium" type="active"></ts-icon>
+				<ts-icon icon="download" size="medium"></ts-icon>
+				<ts-icon icon="remove" size="medium" type="error"></ts-icon>
 				<ts-icon icon="arrow-up" size="medium" type="success"></ts-icon>
+				<ts-icon icon="inbox" size="medium" type="success"></ts-icon>
 				<hr />
-				<ts-icon icon="remove" type="danger" size="small"></ts-icon>
-				<ts-icon icon="remove" type="danger" size="medium"></ts-icon>
-				<ts-icon icon="remove" type="danger" size="large"></ts-icon>
+				<ts-icon icon="inbox" size="small"></ts-icon>
+				<ts-icon icon="inbox" size="medium"></ts-icon>
+				<ts-icon icon="inbox" size="large"></ts-icon>
 			</article>
 
 			<article>
