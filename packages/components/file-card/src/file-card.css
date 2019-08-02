@@ -34,7 +34,7 @@
 }
 
 .action-icon {
-	fill: var(--ts-color-slate-lightest);
+	color: var(--ts-color-slate-lightest);
 }
 
 .content,
@@ -104,14 +104,14 @@
 .download-action-hovered {
 	& .download-action {
 		& .action-icon {
-			fill: var(--ts-color-blue);
+			color: var(--ts-color-blue);
 		}
 	}
 }
 .remove-action-hovered {
 	& .remove-action {
 		& .action-icon {
-			fill: var(--ts-color-blue);
+			color: var(--ts-color-blue);
 		}
 	}
 }

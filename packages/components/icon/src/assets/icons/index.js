@@ -4,12 +4,16 @@ import remove from './remove.svg';
 import download from './download.svg';
 import info from './info.svg';
 import arrowUp from './arrow-up.svg';
+import ada from './ada.svg';
+import closeClear from './close-clear.svg';
 
 const icons = {
 	remove,
 	download,
 	info,
-	'arrow-up': arrowUp
+	ada,
+	'arrow-up': arrowUp,
+	'close-clear': closeClear
 };
 
 // convert svg strings to html element

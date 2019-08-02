@@ -1,7 +1,8 @@
 :host {
 	display: inline-block;
+
 	& svg {
-		fill: var(--ts-icon-color);
+		color: var(--ts-icon-color);
 	}
 }
 
@@ -9,17 +10,17 @@
 	fill: none;
 }
 
-:host([size='small']) {
+:host([size='small']) .icon-wrapper {
 	width: var(--ts-fontsize-mini);
 	height: var(--ts-fontsize-mini);
 }
 
-:host([size='medium']) {
+:host([size='medium']) .icon-wrapper {
 	width: var(--ts-fontsize-medium);
 	height: var(--ts-fontsize-medium);
 }
 
-:host([size='large']) {
+:host([size='large']) .icon-wrapper {
 	width: var(--ts-fontsize-xbig);
 	height: var(--ts-fontsize-xbig);
 }
@@ -46,50 +47,50 @@ svg {
 /* It's also related to this issue in the polyfill limitation */
 /* https://github.com/Tradeshift/elements/wiki/Polyfill-Limitations */
 svg,
-[type='default'] svg {
-	fill: var(--ts-color-slate-lightest);
+:host([type='default']) svg {
+	color: var(--ts-color-slate);
 }
 
-[type='inverted'] svg {
-	fill: var(--ts-color-white);
+:host([type='inverted']) svg {
+	color: var(--ts-color-white);
 }
 
-[type='primary'] svg {
-	fill: var(--ts-color-blue);
+:host([type='primary']) svg {
+	color: var(--ts-color-blue);
 }
 
-[type='danger'] svg {
-	fill: var(--ts-color-red);
+:host([type='danger']) svg {
+	color: var(--ts-color-red);
 }
 
-[type='error'] svg {
-	fill: var(--ts-color-red);
+:host([type='error']) svg {
+	color: var(--ts-color-red);
 }
 
-[type='success'] svg {
-	fill: var(--ts-color-green);
+:host([type='success']) svg {
+	color: var(--ts-color-green);
 }
 
-[type='active'] svg {
-	fill: var(--ts-color-blue);
+:host([type='active']) svg {
+	color: var(--ts-color-blue);
 }
 
-[type='info'] svg {
-	fill: var(--ts-color-blue);
+:host([type='info']) svg {
+	color: var(--ts-color-blue);
 }
 
-[type='focus'] svg {
-	fill: var(--ts-color-blue);
+:host([type='focus']) svg {
+	color: var(--ts-color-blue);
 }
 
-[type='warning'] svg {
-	fill: var(--ts-color-orange);
+:host([type='warning']) svg {
+	color: var(--ts-color-slate);
 }
 
-[type='disabled'] svg {
-	fill: var(--ts-color-gray);
+:host([type='disabled']) svg {
+	color: var(--ts-color-gray-lighter);
 }
 
-[type='suggested'] svg {
-	fill: var(--ts-color-purple);
+:host([type='suggested']) svg {
+	color: var(--ts-color-purple);
 }
