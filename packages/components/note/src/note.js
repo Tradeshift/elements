@@ -15,11 +15,15 @@ customElementDefineHelper(
 			return {
 				icon: { type: String },
 				type: { type: String },
-				rtl: { type: Boolean },
+				dir: { type: String },
 				closeable: { type: Boolean },
 				hidden: { type: Boolean, reflect: true },
 				buttons: { type: Array }
 			};
+		}
+
+		get direction() {
+			return this.dir ? this.dir : this.bodyDir;
 		}
 
 		get iconType() {
@@ -77,7 +81,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<div class="${classNames.NOTE_WRAPPER}" ?data-rtl="${this.rtl}">
+				<div class="${classNames.NOTE_WRAPPER}" dir="${this.direction}">
 					${this.icon || this.type === types.ada
 						? html`
 								<ts-icon

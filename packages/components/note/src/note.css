@@ -59,8 +59,7 @@
 	}
 }
 
-[data-rtl] {
-	direction: rtl;
+[dir='rtl'] {
 	& .close-button {
 		margin-left: 0;
 		margin-right: var(--ts-unit-half);
