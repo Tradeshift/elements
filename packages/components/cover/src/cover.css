@@ -25,26 +25,23 @@
 	transition: visibility var(--ts-transition-now) linear var(--ts-transition-fast), opacity var(--ts-transition-fast);
 }
 
-:host(.ts-aside-cover, .ts-dialog-cover, .ts-spin-cover) {
-	& > div {
-		pointer-events: auto;
-	}
-}
-
 :host(.ts-aside-cover) {
 	& > div {
+		pointer-events: auto;
 		z-index: var(--ts-zindex-aside-cover);
 	}
 }
 
 :host(.ts-dialog-cover) {
 	& > div {
+		pointer-events: auto;
 		z-index: var(--ts-zindex-dialog-cover);
 	}
 }
 
 :host(.ts-spin-cover) {
 	& > div {
+		pointer-events: auto;
 		z-index: var(--ts-zindex-spin-cover);
 	}
 }
