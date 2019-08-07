@@ -2,31 +2,18 @@
 
 :host {
 	display: block;
+	padding: var(--ts-unit-half);
+	background-color: var(--ts-color-yellow-lightest);
+	border-bottom: 1px dotted currentColor;
 }
 
 .note-wrapper {
 	position: relative;
 	border-radius: var(--ts-radius) var(--ts-radius) 0 0;
-	padding: var(--ts-unit-half);
-	margin-bottom: var(--ts-unit);
-	background-color: var(--ts-color-yellow-lightest);
 	color: var(--ts-color-black);
 	justify-content: space-between;
 	align-items: start;
 	display: flex;
-
-	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 0;
-		border-bottom: 1px dotted currentColor;
-		opacity: 0.5;
-	}
 }
 
 .content {
@@ -47,16 +34,12 @@
 }
 
 :host([type='ada']) {
-	& .note-wrapper {
-		background-color: var(--ts-color-purple-lightest);
-		color: var(--ts-color-purple);
-	}
+	background-color: var(--ts-color-purple-lightest);
+	color: var(--ts-color-purple);
 }
 
 :host([type='neutral']) {
-	& .note-wrapper {
-		background-color: var(--ts-color-gray-lighter);
-	}
+	background-color: var(--ts-color-gray-lighter);
 }
 
 [dir='rtl'] {

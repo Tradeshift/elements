@@ -53,9 +53,12 @@ customElementDefineHelper(
 					<header>
 						<div class="aside-title">${this.title}</div>
 						<div class="aside-close">
-							<ts-button class="no-border" icon="remove" @click="${this.close}"></ts-button>
+							<ts-button class="no-border" icon="close-clear" @click="${this.close}"></ts-button>
 						</div>
 					</header>
+					<div class="aside-note">
+						<slot name="note" class="note-in-aside"></slot>
+					</div>
 					<main class="aside-main">
 						<slot name="main"></slot>
 					</main>

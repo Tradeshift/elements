@@ -69,11 +69,9 @@ customElementDefineHelper(
 			} else if (this.closeable) {
 				return html`
 					<ts-icon
-						class="${classNames.CLOSE_BUTTON}"
+						class="no-border ${classNames.CLOSE_BUTTON}"
 						@click="${this.closeHandler}"
 						icon="close-clear"
-						size="large"
-						type="${this.iconType}"
 					></ts-icon>
 				`;
 			}
@@ -82,7 +80,7 @@ customElementDefineHelper(
 		render() {
 			return html`
 				<div class="${classNames.NOTE_WRAPPER}" dir="${this.direction}">
-					${this.icon || this.type === types.ada
+					${this.icon || this.type === types.ADA
 						? html`
 								<ts-icon
 									class="${classNames.ICON}"
