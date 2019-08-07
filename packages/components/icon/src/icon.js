@@ -33,7 +33,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<span type="${this.type}" class="${classNames.ICON_WRAPPER}">
+				<span class="${classNames.ICON_WRAPPER}">
 					${icons[this.icon]}
 				</span>
 			`;

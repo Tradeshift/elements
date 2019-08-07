@@ -1,0 +1,85 @@
+/* General........................................................ */
+
+:host {
+	display: block;
+}
+
+.note-wrapper {
+	position: relative;
+	border-radius: var(--ts-radius) var(--ts-radius) 0 0;
+	padding: var(--ts-unit-half);
+	margin-bottom: var(--ts-unit);
+	background-color: var(--ts-color-yellow-lightest);
+	color: var(--ts-color-black);
+	justify-content: space-between;
+	align-items: start;
+	display: flex;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 0;
+		border-bottom: 1px dotted currentColor;
+		opacity: 0.5;
+	}
+}
+
+.content {
+	flex-grow: 2;
+	margin: 0;
+	line-height: var(--ts-unit);
+	/* Fix for icon size which cause unalignment in note */
+	padding-top: 2px;
+}
+
+.close-button {
+	cursor: pointer;
+	margin-left: var(--ts-unit-half);
+}
+
+.icon {
+	margin-right: var(--ts-unit-half);
+}
+
+:host([type='ada']) {
+	& .note-wrapper {
+		background-color: var(--ts-color-purple-lightest);
+		color: var(--ts-color-purple);
+	}
+}
+
+:host([type='neutral']) {
+	& .note-wrapper {
+		background-color: var(--ts-color-gray-lighter);
+	}
+}
+
+[dir='rtl'] {
+	& .close-button {
+		margin-left: 0;
+		margin-right: var(--ts-unit-half);
+	}
+
+	& .icon {
+		margin-right: 0;
+		margin-left: var(--ts-unit-half);
+	}
+}
+
+:host([hidden]) {
+	display: none;
+}
+
+:host ::slotted(a) {
+	color: var(--ts-color-blue);
+	text-decoration: none;
+}
+
+:host ::slotted(a:hover) {
+	text-decoration: underline;
+}

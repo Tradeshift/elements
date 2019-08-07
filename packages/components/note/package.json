@@ -1,0 +1,15 @@
+{
+  "name": "@tradeshift/elements.note",
+  "version": "0.3.3",
+  "src": "src/note.js",
+  "main": "lib/note.umd.js",
+  "browser": "lib/note.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.3.3",
+    "@tradeshift/elements.button": "file:../button",
+    "@tradeshift/elements.icon": "file:../icon"
+  }
+}

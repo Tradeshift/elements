@@ -12,9 +12,23 @@ export class TSElement extends LitElement {
 	static get styles() {
 		return [unsafeCSS(commonCSS)];
 	}
-
+	// TODO: Remove this when changed rtl to dir in ohter components
 	get bodyHasRTL() {
 		return document.body.getAttribute('dir') === 'rtl';
+	}
+
+	get bodyDir() {
+		return document.body.getAttribute('dir') || 'ltr';
+	}
+
+	dispatchCustomEvent(eventName, data = {}) {
+		const event = new CustomEvent(eventName, {
+			detail: data,
+			bubbles: true,
+			composed: true
+		});
+
+		this.dispatchEvent(event);
 	}
 }
 

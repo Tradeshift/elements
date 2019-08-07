@@ -1,6 +1,6 @@
 import { constants } from '@tradeshift/elements';
 
-const { colors, colorModifiers } = constants;
+const { colors } = constants;
 
 export const types = {
 	DEFAULT: 'default',
@@ -18,7 +18,7 @@ export const types = {
 };
 
 export const typeColors = {
-	[types.DEFAULT]: colors.SLATE + colorModifiers.LIGHTEST,
+	[types.DEFAULT]: colors.SLATE,
 	[types.INVERTED]: colors.WHITE,
 	[types.DANGER]: colors.RED,
 	[types.ERROR]: colors.RED,
