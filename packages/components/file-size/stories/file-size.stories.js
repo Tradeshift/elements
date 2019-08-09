@@ -22,8 +22,8 @@ storiesOf('ts-file-size', module)
 		`
 	)
 	.add(
-		'color="success"',
+		'type="success"',
 		() => html`
-			<ts-file-size size="1234567" color="success"></ts-file-size>
+			<ts-file-size size="1234567" type="success"></ts-file-size>
 		`
 	);

@@ -16,12 +16,13 @@ storiesOf('ts-file-size', module).add('test', () => {
 			title: 'title',
 			subtitle: 'subtitle'
 		},
-		color: {
+		type: {
 			default: 'default',
 			danger: 'danger',
 			primary: 'primary',
 			warning: 'warning',
-			success: 'success'
+			success: 'success',
+			disabled: 'disabled'
 		}
 	};
 

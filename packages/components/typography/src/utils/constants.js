@@ -4,7 +4,9 @@ export const colorTypes = {
 	DANGER: 'danger',
 	ERROR: 'error',
 	SUCCESS: 'success',
-	WARNING: 'warning'
+	WARNING: 'warning',
+	DISABLED: 'disabled',
+	DISABLED_CHECKED: 'disabled-checked'
 };
 
 export const variants = {
