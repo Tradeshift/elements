@@ -8,7 +8,7 @@ import { variants, colorTypes } from '../src/utils';
 storiesOf('ts-typography', module).add('test', () => {
 	const properties = {
 		variant: variants,
-		color: colorTypes
+		type: colorTypes
 	};
 
 	const options = {

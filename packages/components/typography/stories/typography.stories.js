@@ -1,71 +1,46 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import '@tradeshift/elements';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+
+import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 
+import { variants, colorTypes } from '../src/utils';
+
 storiesOf('ts-typography', module)
-	.add(
-		'Simple',
-		() => html`
-			<ts-typography text="Sample Text"></ts-typography>
-		`
-	)
-	.add(
-		'color="danger"',
-		() => html`
-			<ts-typography color="danger" text="Danger Color Text"></ts-typography>
-		`
-	)
-	.add(
-		'color="error"',
-		() => html`
-			<ts-typography color="error" text="Error Color Text"></ts-typography>
-		`
-	)
-	.add(
-		'color="success"',
-		() => html`
-			<ts-typography color="success" text="Success Color Text"></ts-typography>
-		`
-	)
-	.add(
-		'color="action"',
-		() => html`
-			<ts-typography color="action" text="Action Color Text"></ts-typography>
-		`
-	)
-	.add(
-		'color="primary"',
-		() => html`
-			<ts-typography color="primary" text="Primary Color Text"></ts-typography>
-		`
-	)
-	.add(
-		'variant="default"',
-		() => html`
+	.addDecorator(withKnobs)
+	.add('default', () => {
+		const type = select(
+			'type',
+			{
+				default: colorTypes.DEFAULT,
+				...helpers.objectKeysChangeCase(colorTypes)
+			},
+			colorTypes.DEFAULT
+		);
+
+		const variant = select(
+			'variant',
+			{
+				default: variants.DEFAULT,
+				...helpers.objectKeysChangeCase(variants)
+			},
+			variants.DEFAULT
+		);
+
+		const label = text('label', 'Sample text');
+		const inline = boolean('inline', false);
+		const noWrap = boolean('no-wrap', false);
+		const noTooltip = boolean('no-tooltip', true);
+
+		return html`
 			<ts-typography
-				variant="default"
-				text="Default Variant Text"
-			></ts-typography>
-		`
-	)
-	.add(
-		'variant="title"',
-		() => html`
-			<ts-typography variant="title" text="Title Variant Text"></ts-typography>
-		`
-	)
-	.add(
-		'variant="subtitle"',
-		() => html`
-			<ts-typography
-				variant="subtitle"
-				text="Subtitle Variant Text"
-			></ts-typography>
-		`
-	)
-	.add(
-		'no-wrap',
-		() => html`
-			<ts-typography no-wrap text="No Wrap Text"></ts-typography>
-		`
-	);
+				type="${type}"
+				variant="${variant}"
+				?inline=${inline}
+				?no-wrap="${noWrap}"
+				?no-tootltip="${noTooltip}"
+			>
+				${label}
+			</ts-typography>
+		`;
+	});

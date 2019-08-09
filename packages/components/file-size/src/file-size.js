@@ -12,14 +12,10 @@ customElementDefineHelper(
 
 		static get properties() {
 			return {
-				size: { type: Number, reflect: true },
-				decimalPoint: {
-					type: Number,
-					reflect: true,
-					attribute: 'decimal-point'
-				},
-				variant: { type: String, reflect: true },
-				color: { type: String, reflect: true }
+				size: { type: Number },
+				decimalPoint: { type: Number, attribute: 'decimal-point' },
+				variant: { type: String },
+				type: { type: String }
 			};
 		}
 
@@ -28,7 +24,7 @@ customElementDefineHelper(
 			this.size = 0;
 			this.decimalPoint = 2;
 			this.variant = 'subtitle';
-			this.color = 'default';
+			this.type = 'default';
 		}
 
 		get formatFileSize() {
@@ -45,7 +41,7 @@ customElementDefineHelper(
 
 		render() {
 			return html`
-				<ts-typography text="${this.formatFileSize}" variant="${this.variant}" color="${this.color}"></ts-typography>
+				<ts-typography text="${this.formatFileSize}" variant="${this.variant}" type="${this.type}"></ts-typography>
 			`;
 		}
 	}

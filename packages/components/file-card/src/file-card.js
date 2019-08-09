@@ -56,13 +56,9 @@ customElementDefineHelper(
 			if (this.state === 'failed') {
 				const message = this.errorMessage;
 				return html`
-					<ts-typography
-						class="${classNames.ERROR_MESSAGE}"
-						text="${message}"
-						color="error"
-						variant="subtitle"
-						no-wrap
-					></ts-typography>
+					<ts-typography class="${classNames.ERROR_MESSAGE}" type="error" variant="subtitle" no-wrap
+						>${message}</ts-typography
+					>
 				`;
 			}
 		}
@@ -106,7 +102,9 @@ customElementDefineHelper(
 				return html`
 					<div class="${classNames.FILE_INFORMATION}">
 						${this.fileSize}
-						<ts-typography text="${`${fileExtension} Document`}" variant="subtitle"></ts-typography>
+						<ts-typography variant="subtitle">
+							${`${fileExtension} Document`}
+						</ts-typography>
 					</div>
 				`;
 			}
@@ -125,10 +123,10 @@ customElementDefineHelper(
 
 		get actionMessage() {
 			return html`
-				<ts-typography class="${classNames.REMOVE_ACTION_MESSAGE}" color="action" variant="subtitle">
+				<ts-typography class="${classNames.REMOVE_ACTION_MESSAGE}" type="action" variant="subtitle">
 					<slot name="${slotNames.REMOVE_ACTION_TEXT}">${messages.GENERAL.REMOVE}</slot>
 				</ts-typography>
-				<ts-typography class="${classNames.DOWNLOAD_ACTION_MESSAGE}" color="action" variant="subtitle">
+				<ts-typography class="${classNames.DOWNLOAD_ACTION_MESSAGE}" type="action" variant="subtitle">
 					<slot name="${slotNames.DOWNLOAD_ACTION_TEXT}">${messages.GENERAL.DOWNLOAD}</slot>
 				</ts-typography>
 			`;
