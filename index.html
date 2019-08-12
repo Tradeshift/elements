@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tradeshift Elements v0.3.0</title>
+		<title>Tradeshift Elements v0.4</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
@@ -34,6 +34,7 @@
 				coreEl.onload = function() {
 					var components = [
 						'root',
+						'list-item',
 						'tooltip',
 						'typography',
 						'icon',
@@ -74,11 +75,7 @@
 				Inner Right Sidebar
 			</section>
 
-			<ts-note
-				id="rootNote"
-				icon="info2"
-				buttons='[{"label": "Button", "id": "noteId"}, {"label": "Button 2", "type": "secondary"}]'
-			>
+			<ts-note id="rootNote" icon="info2" buttons='[{"label": "Button", "id": "noteId"}]'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem, deleniti, id illo inventore iste
 				maxime mollitia necessitatibus nobis pariatur quae quaerat quo. Doloremque, dolores eos necessitatibus tempora
 				tenetur vero.
@@ -193,6 +190,140 @@
 					document.getElementById('closeableNote1').addEventListener('close', handleNoteClose);
 					document.getElementById('rootNote').addEventListener('button-click', handleButtonClick);
 				</script>
+			</article>
+
+			<article>
+				<h2>ts-list-item</h2>
+				<menu>
+					<ts-list-item selectable title="Simplest"></ts-list-item>
+					<hr />
+					<h4>Icons</h4>
+					<ts-list-item selectable icon="ada" title="With icon on the left"></ts-list-item>
+					<ts-list-item selectable icon="ada" icon-right="remove" title="with the icon on both side"></ts-list-item>
+					<ts-list-item selectable icon-right="remove" title="with the icon on the right"></ts-list-item>
+					<ts-list-item selectable icon-right="remove" title="with the icon on the right"></ts-list-item>
+					<hr />
+					<h4>Subtitle</h4>
+					<ts-list-item selectable title="Simplest" subtitle="subtitle text goes here"></ts-list-item>
+					<ts-list-item
+						selectable
+						icon="ada"
+						title="With icon on the left"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						icon="ada"
+						icon-right="remove"
+						title="with the icon on both side"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						disabled
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						disabled
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<hr />
+					<h4>Edge cases</h4>
+					<ts-list-item
+						selectable
+						icon="ada"
+						icon-right="remove"
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						icon="ada"
+						icon-right="remove"
+						subtitle="with subtitle"
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						disabled
+						icon="ada"
+						icon-right="remove"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						disabled
+						dir="rtl"
+						icon="ada"
+						icon-right="remove"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<hr />
+					<h4>RTL</h4>
+					<ts-list-item
+						selectable
+						dir="rtl"
+						icon="ada"
+						icon-right="remove"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						dir="rtl"
+						icon="ada"
+						icon-right="remove"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						disabled
+						dir="rtl"
+						icon="ada"
+						icon-right="remove"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						dir="rtl"
+						subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at autem doloribus ducimus enim eum ex fuga, necessitatibus nulla quas quasi qui quisquam, rerum sapiente tempora tenetur vel, voluptas."
+						title="some extraaaaaa long text title to see what will happen to them in the list item"
+					></ts-list-item>
+
+					<h4>Selectable</h4>
+					<ts-list-item selectable icon="ada" icon-right="check" subtitle="" title="some title"></ts-list-item>
+					<ts-list-item selectable icon="ada" selected icon-right="remove" title="some title"></ts-list-item>
+					<hr />
+					<h4>Disabled</h4>
+					<ts-list-item selectable icon="ada" disabled icon-right="remove" title="some title"></ts-list-item>
+					<ts-list-item selectable icon="ada" disabled selected icon-right="remove" title="some title"></ts-list-item>
+				</menu>
 			</article>
 
 			<article>
