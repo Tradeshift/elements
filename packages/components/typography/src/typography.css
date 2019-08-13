@@ -58,6 +58,6 @@ slot {
 	color: var(--ts-color-gray-light);
 }
 
-:host([type='disabled-active']) .text-wrapper {
+:host([type='disabled-checked']) .text-wrapper {
 	color: var(--ts-color-gray);
 }

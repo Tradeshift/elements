@@ -14,5 +14,6 @@
 	"@tradeshift/elements.root": "ts.elements.root",
 	"@tradeshift/elements.tooltip": "ts.elements.tooltip",
 	"@tradeshift/elements.typography": "ts.elements.typography",
-	"@tradeshift/elements.note": "ts.elements.note"
+	"@tradeshift/elements.note": "ts.elements.note",
+	"@tradeshift/elements.list-item": "ts.elements.list-item"
 }

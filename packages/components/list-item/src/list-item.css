@@ -1,0 +1,90 @@
+/* General........................................................ */
+
+:host {
+}
+
+li {
+	list-style: none;
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border: none;
+	padding: var(--ts-unit-half);
+	background-color: var(--ts-color-white);
+}
+
+button {
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		background-color: var(--ts-color-blue-lightest);
+	}
+}
+
+.text-wrapper {
+	flex-grow: 2;
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+}
+
+.icon-right {
+	padding-left: var(--ts-unit-half);
+}
+
+.icon-left {
+	padding-right: var(--ts-unit-half);
+}
+
+:host([selected]) {
+	& button {
+		background: var(--ts-color-blue);
+
+		&:focus,
+		&:hover {
+			background: var(--ts-color-blue-dark);
+		}
+	}
+}
+
+:host([disabled]) {
+	& button {
+		cursor: not-allowed;
+
+		&,
+		&:focus,
+		&:hover {
+			background: var(--ts-color-white);
+		}
+	}
+}
+
+:host([disabled][selected]) {
+	& button {
+		&,
+		&:focus,
+		&:hover {
+			background: var(--ts-color-gray-lighter);
+		}
+	}
+}
+
+[dir='rtl'] {
+	& .text-wrapper {
+		text-align: right;
+	}
+
+	& .icon-right {
+		padding-left: 0;
+		padding-right: var(--ts-unit-half);
+	}
+
+	& .icon-left {
+		padding-right: 0;
+		padding-left: var(--ts-unit-half);
+	}
+}
