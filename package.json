@@ -89,6 +89,7 @@
     "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
     "@tradeshift/elements.help-text": "file:packages/components/help-text",
     "@tradeshift/elements.icon": "file:packages/components/icon",
+    "@tradeshift/elements.list-item": "file:packages/components/list-item",
     "@tradeshift/elements.note": "file:packages/components/note",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
     "@tradeshift/elements.root": "file:packages/components/root",

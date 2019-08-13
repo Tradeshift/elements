@@ -49,3 +49,8 @@ h2 {
 .button-container .box div {
 	padding: 10px;
 }
+
+ts-list-item {
+	display: block;
+	max-width: var(--ts-box-width-medium);
+}

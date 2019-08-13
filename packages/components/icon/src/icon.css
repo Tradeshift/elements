@@ -91,6 +91,10 @@ svg,
 	color: var(--ts-color-gray-lighter);
 }
 
+:host([type='disabled-checked']) svg {
+	color: var(--ts-color-gray-light);
+}
+
 :host([type='suggested']) svg {
 	color: var(--ts-color-purple);
 }

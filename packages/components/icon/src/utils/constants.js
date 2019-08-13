@@ -1,6 +1,6 @@
 import { constants } from '@tradeshift/elements';
 
-const { colors } = constants;
+const { colors, colorModifiers } = constants;
 
 export const types = {
 	DEFAULT: 'default',
@@ -14,6 +14,7 @@ export const types = {
 	FOCUS: 'focus',
 	WARNING: 'warning',
 	DISABLED: 'disabled',
+	DISABLED_CHECKED: 'disabled-checked',
 	SUGGESTED: 'suggested'
 };
 
@@ -28,8 +29,9 @@ export const typeColors = {
 	[types.INFO]: colors.BLUE,
 	[types.FOCUS]: colors.BLUE,
 	[types.WARNING]: colors.ORANGE,
-	[types.DISABLED]: colors.GRAY,
-	[types.SUGGESTED]: colors.PURPLE
+	[types.DISABLED]: colors.GRAY + colorModifiers.LIGHTER,
+	[types.SUGGESTED]: colors.PURPLE,
+	[types.DISABLED_CHECKED]: colors.GRAY + colorModifiers.LIGHT
 };
 
 export const sizes = {
