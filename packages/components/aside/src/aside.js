@@ -2,6 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
+import { customEventNames } from './utils';
 
 customElementDefineHelper(
 	'ts-aside',
@@ -26,7 +27,9 @@ customElementDefineHelper(
 		}
 
 		close(e) {
+			this.dispatchCustomEvent(customEventNames.ON_CLOSE);
 			this.visible = false;
+			this.dispatchCustomEvent(customEventNames.ON_CLOSED, {}, true);
 		}
 
 		footerSlot(e) {

@@ -1,5 +1,6 @@
 import { LitElement, unsafeCSS } from 'lit-element';
 import commonCSS from './common.css';
+import { constants } from './utils';
 export { constants, helpers } from './utils';
 
 export function customElementDefineHelper(name, component) {
@@ -21,14 +22,19 @@ export class TSElement extends LitElement {
 		return document.body.getAttribute('dir') || 'ltr';
 	}
 
-	dispatchCustomEvent(eventName, data = {}) {
+	dispatchCustomEvent(eventName, data = {}, delayed = false) {
 		const event = new CustomEvent(eventName, {
 			detail: data,
 			bubbles: true,
 			composed: true
 		});
-
-		this.dispatchEvent(event);
+		if (delayed) {
+			setTimeout(() => {
+				this.dispatchEvent(event);
+			}, constants.delay.FAST);
+		} else {
+			this.dispatchEvent(event);
+		}
 	}
 }
 
