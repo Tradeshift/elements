@@ -1,5 +1,5 @@
 {
-	"description": "Tradeshift Elements - Reusable Tradeshift UI Components as Web Components",
+	"description": "Tradeshift Elements - Reusable Tradeshift UI Components as Web Components [https://tradeshift.github.io/elements](https://tradeshift.github.io/elements)",
 	"topics": [
 		"ui",
 		"components",
@@ -15,7 +15,6 @@
 	"enableIssues": true,
 	"enableWiki": true,
 	"extraChecks": [
-		"Travis CI - Pull Request",
-		"Travis CI - Branch"
+		"Travis CI - Pull Request"
 	]
 }
