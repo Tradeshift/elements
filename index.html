@@ -659,5 +659,17 @@
 			</ts-aside>
 			<ts-cover id="my-cover"></ts-cover>
 		</ts-root>
+		<script>
+			function onClose() {
+				console.log('The aside is closing');
+			}
+
+			function onClosed() {
+				console.log('The aside is closed');
+			}
+
+			document.getElementById('my-aside').addEventListener('onClose', onClose);
+			document.getElementById('my-aside').addEventListener('onClosed', onClosed);
+		</script>
 	</body>
 </html>

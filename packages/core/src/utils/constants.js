@@ -29,3 +29,9 @@ export const colors = {
 	GRAY: 'gray',
 	SLATE: 'slate'
 };
+
+export const delay = {
+	NOW: 100,
+	FAST: 200,
+	SLOW: 600
+};
