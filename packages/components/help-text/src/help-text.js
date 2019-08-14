@@ -2,6 +2,8 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './help-text.css';
 import '@tradeshift/elements.icon';
 
+import { classNames, sizes, slotNames } from './utils';
+
 customElementDefineHelper(
 	'ts-help-text',
 	class extends TSElement {
@@ -22,7 +24,7 @@ customElementDefineHelper(
 
 		constructor() {
 			super();
-			this.size = 'full';
+			this.size = sizes.FULL;
 		}
 
 		get infoIcon() {
@@ -50,17 +52,17 @@ customElementDefineHelper(
 						? html`
 								<dt>
 									${this.infoIcon}
-									<slot name="title">
+									<slot name="${slotNames.TITLE}">
 										${this.title}
 									</slot>
 								</dt>
 						  `
 						: ''}
 
-					<slot name="messages">
+					<slot name="${slotNames.MESSAGES}">
 						${this.messages.map(
 							message => html`
-								<dd class="${isSingleMessage ? 'single-message' : ''}">
+								<dd class="${isSingleMessage ? classNames.SINGLE_MESSAGE : ''}">
 									${isSingleMessage ? this.infoIcon : ''} ${message}
 								</dd>
 							`

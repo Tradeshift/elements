@@ -1,5 +1,5 @@
 import { constants } from '@tradeshift/elements';
-import componentMessages from './file-uploader-input.yaml';
+import componentMessages from './file-uploader-input';
 export { default as selectors, classNames } from './selectors';
 
 export const messages = {

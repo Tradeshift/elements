@@ -1,23 +1,15 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import '@tradeshift/elements';
+import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+
 import '@tradeshift/elements.progress-bar';
 
 storiesOf('ts-progress-bar', module)
-	.add(
-		'determinate done="25"',
-		() => html`
-			<ts-progress-bar done="25"></ts-progress-bar>
-		`
-	)
-	.add(
-		'determinate total="10" done="7"',
-		() => html`
-			<ts-progress-bar total="10" done="7"></ts-progress-bar>
-		`
-	)
-	.add(
-		'indeterminate',
-		() => html`
-			<ts-progress-bar indeterminate></ts-progress-bar>
-		`
-	);
+	.addDecorator(withKnobs)
+	.add('default', () => {
+		const indeterminate = boolean('indeterminate', false);
+		const total = number('total', 100);
+		const done = number('done', 20);
+		return html`
+			<ts-progress-bar ?indeterminate="${indeterminate}" total="${total}" done="${done}"></ts-progress-bar>
+		`;
+	});

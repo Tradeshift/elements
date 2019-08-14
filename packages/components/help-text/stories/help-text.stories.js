@@ -1,34 +1,51 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import '@tradeshift/elements';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+
+import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.help-text';
 
+import { types, sizes } from '../src/utils';
+
 storiesOf('ts-help-text', module)
-	.add(
-		'Title & messages',
-		() => html`
-			<ts-help-text
-				messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta", "message example 1", "message example 2"]'
-				title="Title"
-				size="small"
-			></ts-help-text>
-		`
+	.addDecorator(
+		withKnobs({
+			escapeHTML: false
+		})
 	)
-	.add(
-		'Single message',
-		() => html`
+	.add('default', () => {
+		const size = select(
+			'size',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(sizes)
+			},
+			''
+		);
+		const type = select(
+			'type',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(types)
+			},
+			''
+		);
+
+		const rtl = boolean('rtl', false);
+		const disabled = boolean('disabled', false);
+		const title = text('accepted-file-extensions', 'Help text title');
+		const messages = text(
+			'help-text-messages',
+			'["Help message", "Some very very long long help text to give user more information about the input that they need to provide"]'
+		);
+
+		return html`
 			<ts-help-text
-				messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta"]'
-				size="medium"
+				?rtl="${rtl}"
+				?disabled="${disabled}"
+				title="${title}"
+				messages="${messages}"
+				size="${size}"
+				type="${type}"
 			></ts-help-text>
-		`
-	)
-	.add(
-		'RTL',
-		() => html`
-			<ts-help-text
-				messages='["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, at atque deserunt, dignissimos dolor doloribus eaque eius eos eum excepturi fuga, hic incidunt itaque molestias necessitatibus pariatur rem repellat soluta", "message example 1", "message example 2"]'
-				title="Title"
-				rtl
-			></ts-help-text>
-		`
-	);
+		`;
+	});
