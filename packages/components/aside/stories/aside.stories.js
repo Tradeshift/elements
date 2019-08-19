@@ -37,4 +37,22 @@ storiesOf('ts-aside', module)
 				</ts-panel>
 			</ts-aside>
 		`;
+	})
+	.add('With note', () => {
+		const visible = boolean('Visible', false);
+		return html`
+			<ts-aside data-title="Aside with note" ?data-visible="${visible}">
+				<ts-note slot="note">
+					Takimata sed sea lorem kasd sit est.
+				</ts-note>
+				<ts-panel slot="main">
+					Forse donne speranza siamo esperienza mentre seguitando sé nostro l'uomo, dare e di da prestasse noi non.
+					Mentre di alcun vita forza siamo sua io in sogiacere, ciascheduna reputiamo primo forse porgiamo dovendo non,
+					beati infiniti nostro sé di dare nostra e a santo, piaceri santo quale ingannati le ripararci carissime, come
+					piene sí noi l'acume siamo cospetto incominciare pregato per, il come in avvien e la, il pieno alcun
+					convenevole e coloro a ammirabile una nostri, bene noia alla alle credere non. Suo la quegli ma nel dio pieno
+					ma transitorie. Di che seguitando purita incominciare convenevole bene, ora.
+				</ts-panel>
+			</ts-aside>
+		`;
 	});

@@ -15,16 +15,13 @@
 	z-index: var(--ts-zindex-aside);
 }
 
-.aside-container > * {
-	padding: var(--ts-unit);
-}
-
 /* Header......................................................... */
 
-header {
+.aside-container header {
 	height: var(--ts-unit-triple);
 	background-color: var(--ts-color-white);
 	display: flex;
+	padding: var(--ts-unit);
 	border-bottom: var(--ts-border);
 }
 
@@ -37,6 +34,16 @@ header {
 .aside-close {
 	line-height: 0;
 	align-self: center;
+	& ts-button {
+		line-height: 0;
+	}
+}
+
+/* Note............................................................ */
+
+.aside-note ::slotted(ts-note) {
+	padding-left: var(--ts-unit);
+	padding-right: var(--ts-unit);
 }
 
 /* Main............................................................ */
@@ -44,6 +51,7 @@ header {
 .aside-main {
 	flex: 1;
 	overflow: auto;
+	padding: var(--ts-unit);
 	background-color: var(--ts-color-white);
 }
 
