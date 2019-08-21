@@ -16,6 +16,6 @@
 	"enableWiki": true,
 	"extraChecks": [
 		"Travis CI - Pull Request",
-		"continuous-integration/travis-ci/pr"
+		"Travis CI - Branch"
 	]
 }
