@@ -91,6 +91,7 @@
 					<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
 					<ts-button onclick="toggleCover('my-cover')">Toggle cover</ts-button>
 					<ts-button onclick="toggleAside('my-aside')">Toggle aside</ts-button>
+					<ts-button onclick="toggleAside('menu-aside')">Menu aside</ts-button>
 				</ts-button-group>
 				<script>
 					function toggleSlot(name, button) {
@@ -205,12 +206,8 @@
 					<hr />
 					<h4>Subtitle</h4>
 					<ts-list-item selectable title="Simplest" subtitle="subtitle text goes here"></ts-list-item>
-					<ts-list-item
-						selectable
-						icon="ada"
-						title="With icon on the left"
-						subtitle="subtitle text goes here"
-					></ts-list-item>
+					<ts-list-item selectable icon="ada" title="With icon on the left" subtitle="subtitle text goes here">
+					</ts-list-item>
 					<ts-list-item
 						selectable
 						icon="ada"
@@ -662,6 +659,43 @@
 				</ts-button-group>
 			</ts-aside>
 			<ts-cover id="my-cover"></ts-cover>
+			<ts-aside data-title="menu in aside" id="menu-aside">
+				<ts-panel slot="main">
+					<ts-list-item selectable title="Simplest" subtitle="subtitle text goes here"></ts-list-item>
+					<ts-list-item selectable icon="ada" title="With icon on the left" subtitle="subtitle text goes here">
+					</ts-list-item>
+					<ts-list-item
+						selectable
+						icon="ada"
+						icon-right="remove"
+						title="with the icon on both side"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						selected
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+					<ts-list-item
+						selectable
+						disabled
+						icon-right="remove"
+						title="with the icon on the right"
+						subtitle="subtitle text goes here"
+					></ts-list-item>
+				</ts-panel>
+				<ts-button-group slot="footer">
+					<ts-button>Submit</ts-button>
+				</ts-button-group>
+			</ts-aside>
 		</ts-root>
 		<script>
 			function onClose() {
