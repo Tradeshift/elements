@@ -1,9 +1,17 @@
-import { storiesOf } from '@storybook/html';
-import '@tradeshift/elements';
+import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
 import '@tradeshift/elements.{{kebabCase name}}';
 
 storiesOf('ts-{{kebabCase name}}', module)
-	.add('type=""', () => {
-		const {{camelCase name}} = document.createElement('ts-{{kebabCase name}}');
-		return {{camelCase name}};
-	})
+	.addDecorator(withKnobs)
+	.add('default', () => {
+		const label = text('label', 'Label');
+		const disabled = boolean('Disabled', false);
+
+		return html`
+			<ts-{{kebabCase name}} ?disabled="${disabled}">
+				${label}
+			</ts-{{kebabCase name}}>
+		`;
+	});
