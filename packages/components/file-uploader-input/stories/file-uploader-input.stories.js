@@ -1,74 +1,48 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import '@tradeshift/elements';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+
+import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.file-uploader-input';
 
+import { sizes } from '../src/utils';
+
 storiesOf('ts-file-uploader-input', module)
-	.add(
-		'sample',
-		() => html`
-			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				size="medium"
-				disable-drag-and-drop
-			></ts-file-uploader-input>
-		`
+	.addDecorator(
+		withKnobs({
+			escapeHTML: false
+		})
 	)
-	.add(
-		'drag and drop',
-		() => html`
-			<ts-file-uploader-input accepted-file-extensions='["doc", "pdf", "jpg"]' size="medium"></ts-file-uploader-input>
-		`
-	)
-	.add(
-		'Cusotm help text',
-		() => html`
+	.add('default', () => {
+		const size = select(
+			'size',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(sizes)
+			},
+			''
+		);
+
+		const rtl = boolean('rtl', false);
+		const disabled = boolean('disabled', false);
+		const multiple = boolean('multiple', false);
+		const hideFileTypeHelpText = boolean('hide-file-type-help-text', false);
+		const acceptedFileExtensions = text('accepted-file-extensions', '["doc", "pdf", "jpg"]');
+		const helpTextTitle = text('help-text-title', '');
+		const helpTextMessages = text(
+			'help-text-messages',
+			'["Some very very long long help text to give user more information about the input that they need to provide"]'
+		);
+
+		return html`
 			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				hide-file-type-help-text
-				help-text-title="Help text title"
-				help-text-messages='["Some custom help text", "Another custom help text"]'
-				size="medium"
+				accepted-file-extensions="${acceptedFileExtensions}"
+				?rtl="${rtl}"
+				?disabled="${disabled}"
+				?multiple="${multiple}"
+				?hide-file-type-help-text="${hideFileTypeHelpText}"
+				size="${size}"
+				help-text-title="${helpTextTitle}"
+				help-text-messages="${helpTextMessages}"
 			></ts-file-uploader-input>
-		`
-	)
-	.add(
-		'Cusotm help text single help',
-		() => html`
-			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				hide-file-type-help-text
-				help-text-messages='["Some custom help text"]'
-				size="medium"
-			></ts-file-uploader-input>
-		`
-	)
-	.add(
-		'Multiple',
-		() => html`
-			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				multiple
-				size="small"
-			></ts-file-uploader-input>
-		`
-	)
-	.add(
-		'Disabled',
-		() => html`
-			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				disabled
-				size="medium"
-			></ts-file-uploader-input>
-		`
-	)
-	.add(
-		'Right to left',
-		() => html`
-			<ts-file-uploader-input
-				accepted-file-extensions='["doc", "pdf", "jpg"]'
-				rtl
-				size="medium"
-			></ts-file-uploader-input>
-		`
-	);
+		`;
+	});

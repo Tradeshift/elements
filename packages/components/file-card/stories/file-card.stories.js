@@ -1,74 +1,47 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import '@tradeshift/elements';
+import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs';
+
+import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.file-card';
 
+import { states, sizes } from '../src/utils';
+
 storiesOf('ts-file-card', module)
-	.add(
-		'state="download"',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				state="download"
-			></ts-file-card>
-		`
+	.addDecorator(
+		withKnobs({
+			escapeHTML: false
+		})
 	)
-	.add(
-		'state="upload"',
-		() => html`
+	.add('default', () => {
+		const state = select(
+			'state',
+			{
+				...helpers.objectKeysChangeCase(states)
+			},
+			states.DOWNLOAD
+		);
+		const size = select(
+			'size',
+			{
+				default: '',
+				...helpers.objectKeysChangeCase(sizes)
+			},
+			''
+		);
+
+		const errorMessage = text('error-message', 'Sample error message!');
+		const rtl = boolean('rtl', false);
+		const removable = boolean('removable', false);
+		const fileObject = object('file-object', { name: 'fileName.pdf', size: 123456789 });
+
+		return html`
 			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				state="uploading"
+				file-object="${JSON.stringify(fileObject)}"
+				error-message="${errorMessage}"
+				?rtl="${rtl}"
+				?removable="${removable}"
+				state="${state}"
+				size="${size}"
 			></ts-file-card>
-		`
-	)
-	.add(
-		'state="failed"',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				state="failed"
-				error-message="Error message..."
-			></ts-file-card>
-		`
-	)
-	.add(
-		'size="medium"',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				size="medium"
-				state="download"
-			></ts-file-card>
-		`
-	)
-	.add(
-		'size="small"',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				size="small"
-				state="download"
-			></ts-file-card>
-		`
-	)
-	.add(
-		'rtl',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				rtl
-				state="failed"
-				error-message="پیغام خطا..."
-			></ts-file-card>
-		`
-	)
-	.add(
-		'removable',
-		() => html`
-			<ts-file-card
-				file-object='{"name":"fileName.pdf","size":987654321}'
-				state="download"
-				removable
-			></ts-file-card>
-		`
-	);
+		`;
+	});

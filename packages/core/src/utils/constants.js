@@ -1,4 +1,4 @@
-import msgs from './messages.yaml';
+import msgs from './messages';
 
 export const messages = msgs;
 
