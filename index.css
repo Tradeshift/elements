@@ -54,3 +54,8 @@ ts-list-item {
 	display: block;
 	max-width: var(--ts-box-width-medium);
 }
+
+.typography-wrapper {
+	display: flex;
+	max-width: 350px;
+}
