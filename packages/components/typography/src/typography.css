@@ -3,10 +3,9 @@
 :host {
 	display: block;
 	line-height: var(--ts-unit);
-}
-
-slot {
-	display: block;
+	/* it's a hack for truncated text within flexbox */
+	/* https://css-tricks.com/flexbox-truncated-text/ */
+	min-width: 0;
 }
 
 .text-wrapper {
