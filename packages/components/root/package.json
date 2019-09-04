@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.root",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "src": "src/root.js",
   "main": "lib/root.umd.js",
   "browser": "lib/root.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.3"
+    "@tradeshift/elements": "^0.4.4"
   },
   "gitHead": "e88391ca0cd629eac27ed1ca70ccdb64c1b31b7a"
 }
