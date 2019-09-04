@@ -1,6 +1,7 @@
 :host {
 	display: block;
 	margin-bottom: var(--ts-unit-half);
+	width: 100%;
 }
 
 .file-icon-wrapper {
