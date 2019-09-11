@@ -49,6 +49,12 @@
 
 ## ➤ How to use it
 
+- Install the core package of the Elements
+
+```shell
+$ npm i @tradeshift/elements --save
+```
+
 - Install the package of the component you need ([available components](https://github.com/Tradeshift/elements/tree/master/packages/components))
 
 ```shell
@@ -64,6 +70,7 @@ import '@tradeshift/elements.button';
 or
 
 ```html
+<script src="node_modules/@tradeshift/elements/lib/core.umd.js"></script>
 <script src="node_modules/@tradeshift/elements.button/lib/button.umd.js"></script>
 ```
 
@@ -132,6 +139,30 @@ $ npm i @webcomponents/webcomponentsjs --save
 
 ```html
 <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+```
+
+- Load the core and components scripts after `WebComponensReady` event:
+
+```html
+<!-- Load Tradeshift Elements once the polyfills are ready -->
+<script>
+	window.addEventListener('WebComponentsReady', function() {
+		// Load Tradeshift Elements core package
+		var coreEl = document.createElement('script');
+		coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+		document.body.appendChild(coreEl);
+
+		// Load other Tradeshift Elements once the core package is loaded
+		coreEl.onload = function() {
+			var components = ['root', 'button'];
+			components.forEach(function(component) {
+				var el = document.createElement('script');
+				el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
+				document.body.appendChild(el);
+			});
+		};
+	});
+</script>
 ```
 
 ## ➤ How to run it
