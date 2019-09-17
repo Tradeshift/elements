@@ -74,6 +74,18 @@ or
 <script src="node_modules/@tradeshift/elements.button/lib/button.umd.js"></script>
 ```
 
+- Import the css variables
+
+```js
+import '@tradeshift/elements/src/vars.css';
+```
+
+or
+
+```html
+<link rel="stylesheet" href="node_modules/@tradeshift/elements/src/vars.css" />
+```
+
 - Use it
 
 ```html
