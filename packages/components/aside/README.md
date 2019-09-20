@@ -25,6 +25,34 @@
 		</a>
 </p>
 
+<style>
+table {
+    width:100%;
+}
+</style>
+
+## ➤ Properties
+
+| Property | Attribute    | Type    | Default | Description        |
+| -------- | ------------ | ------- | ------- | ------------------ |
+| title    | data-title   | string  | ''      | Aside header title |
+| visible  | data-visible | boolean | false   | Show/hide aside    |
+
+## ➤ Events
+
+| Event Name | Payload | Description                                                                    |
+| ---------- | ------- | ------------------------------------------------------------------------------ |
+| close      |         | Emitted when the user close the aside by clicking on the close button or cover |
+| closed     |         | Emitted when the aside completely closed                                       |
+
+## ➤ Slots
+
+| Slot Name | Default | Description                            |
+| --------- | ------- | -------------------------------------- |
+| main      |         | Main content of the aside              |
+| footer    |         | Footer content and action buttons goes |
+| note      |         | Use it on the `ts-note` in the aside   |
+
 ## ➤ How to use it
 
 - Install the package of aside

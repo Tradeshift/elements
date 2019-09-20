@@ -27,9 +27,9 @@ customElementDefineHelper(
 		}
 
 		close(e) {
-			this.dispatchCustomEvent(customEventNames.ON_CLOSE);
+			this.dispatchCustomEvent(customEventNames.CLOSE);
 			this.visible = false;
-			this.dispatchCustomEvent(customEventNames.ON_CLOSED, {}, true);
+			this.dispatchCustomEvent(customEventNames.CLOSED, {}, true);
 		}
 
 		footerSlot(e) {
