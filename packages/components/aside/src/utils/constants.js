@@ -1,4 +1,6 @@
 export const customEventNames = {
 	CLOSE: 'close',
-	CLOSED: 'closed'
+	CLOSED: 'closed',
+	OPEN: 'open',
+	OPENED: 'opened'
 };

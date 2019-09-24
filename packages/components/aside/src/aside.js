@@ -27,9 +27,7 @@ customElementDefineHelper(
 		}
 
 		close(e) {
-			this.dispatchCustomEvent(customEventNames.CLOSE);
 			this.visible = false;
-			this.dispatchCustomEvent(customEventNames.CLOSED, {}, true);
 		}
 
 		footerSlot(e) {
@@ -68,6 +66,30 @@ customElementDefineHelper(
 				</div>
 				<ts-cover class="ts-aside-cover" ?data-visible=${this.visible} @click="${this.close}"></ts-cover>
 			`;
+		}
+
+		update(changedProperties) {
+			super.update(changedProperties);
+			if (changedProperties.has('visible')) {
+				const oldVal = changedProperties.get('visible');
+				if (oldVal === false) {
+					this.dispatchCustomEvent(customEventNames.OPEN);
+				} else if (oldVal === true) {
+					this.dispatchCustomEvent(customEventNames.CLOSE);
+				}
+			}
+		}
+
+		updated(changedProperties) {
+			super.updated(changedProperties);
+			if (changedProperties.has('visible')) {
+				const oldVal = changedProperties.get('visible');
+				if (oldVal === false) {
+					this.dispatchCustomEvent(customEventNames.OPENED);
+				} else if (oldVal === true) {
+					this.dispatchCustomEvent(customEventNames.CLOSED);
+				}
+			}
 		}
 	}
 );
