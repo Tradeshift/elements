@@ -674,6 +674,14 @@
 			<ts-cover id="my-cover"></ts-cover>
 		</ts-root>
 		<script>
+			function onOpen() {
+				console.log('The aside is opening');
+			}
+
+			function onOpened() {
+				console.log('The aside is opened');
+			}
+
 			function onClose() {
 				console.log('The aside is closing');
 			}
@@ -681,9 +689,10 @@
 			function onClosed() {
 				console.log('The aside is closed');
 			}
-
-			document.getElementById('my-aside').addEventListener('close', onClose);
-			document.getElementById('my-aside').addEventListener('closed', onClosed);
+			document.getElementById('my-aside').addEventListener('onOpen', onOpen);
+			document.getElementById('my-aside').addEventListener('onOpened', onOpened);
+			document.getElementById('my-aside').addEventListener('onClose', onClose);
+			document.getElementById('my-aside').addEventListener('onClosed', onClosed);
 		</script>
 	</body>
 </html>
