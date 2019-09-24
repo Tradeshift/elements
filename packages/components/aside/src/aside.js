@@ -73,9 +73,9 @@ customElementDefineHelper(
 			if (changedProperties.has('visible')) {
 				const oldVal = changedProperties.get('visible');
 				if (oldVal === false) {
-					this.dispatchCustomEvent(customEventNames.ON_OPEN);
+					this.dispatchCustomEvent(customEventNames.OPEN);
 				} else if (oldVal === true) {
-					this.dispatchCustomEvent(customEventNames.ON_CLOSE);
+					this.dispatchCustomEvent(customEventNames.CLOSE);
 				}
 			}
 		}
@@ -85,9 +85,9 @@ customElementDefineHelper(
 			if (changedProperties.has('visible')) {
 				const oldVal = changedProperties.get('visible');
 				if (oldVal === false) {
-					this.dispatchCustomEvent(customEventNames.ON_OPENED);
+					this.dispatchCustomEvent(customEventNames.OPENED);
 				} else if (oldVal === true) {
-					this.dispatchCustomEvent(customEventNames.ON_CLOSED);
+					this.dispatchCustomEvent(customEventNames.CLOSED);
 				}
 			}
 		}
