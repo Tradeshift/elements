@@ -94,6 +94,7 @@
     "@tradeshift/elements.note": "file:packages/components/note",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
     "@tradeshift/elements.root": "file:packages/components/root",
+    "@tradeshift/elements.spinner": "file:packages/components/spinner",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
     "@tradeshift/elements.typography": "file:packages/components/typography"
   },
