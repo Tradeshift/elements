@@ -4,6 +4,7 @@ import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
 
 import { sizes, types } from '../src/utils';
+import icons from '../src/assets/icons';
 
 storiesOf('ts-icon', module)
 	.addDecorator(withKnobs)
@@ -12,16 +13,7 @@ storiesOf('ts-icon', module)
 
 		const type = select('Type', helpers.objectKeysChangeCase(types), types.DEFAULT);
 
-		const icon = select(
-			'Icon',
-			{
-				remove: 'remove',
-				download: 'download',
-				info: 'info',
-				arrowUp: 'arrowUp'
-			},
-			'remove'
-		);
+		const icon = select('Icon', Object.keys(icons), 'remove');
 
 		return html`
 			<ts-icon type="${type}" icon="${icon}" size="${size}"></ts-icon>
