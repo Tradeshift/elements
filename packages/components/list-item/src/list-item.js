@@ -13,15 +13,15 @@ customElementDefineHelper(
 
 		static get properties() {
 			return {
-				title: { type: String },
-				subtitle: { type: String },
-				disabled: { type: Boolean },
-				selectable: { type: Boolean },
-				selected: { type: Boolean },
-				dir: { type: String },
-				icon: { type: String },
-				iconLeft: { type: String, attribute: 'icon-left' },
-				iconRight: { type: String, attribute: 'icon-right' }
+				title: { type: String, reflect: true },
+				subtitle: { type: String, reflect: true },
+				disabled: { type: Boolean, reflect: true },
+				selectable: { type: Boolean, reflect: true },
+				selected: { type: Boolean, reflect: true },
+				dir: { type: String, reflect: true },
+				icon: { type: String, reflect: true },
+				iconLeft: { type: String, attribute: 'icon-left', reflect: true },
+				iconRight: { type: String, attribute: 'icon-right', reflect: true }
 			};
 		}
 
