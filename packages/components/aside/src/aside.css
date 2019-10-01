@@ -15,6 +15,10 @@
 	z-index: var(--ts-zindex-aside);
 }
 
+.hidden {
+	display: none;
+}
+
 /* Header......................................................... */
 
 .aside-container header {
@@ -44,6 +48,13 @@
 .aside-note ::slotted(ts-note) {
 	padding-left: var(--ts-unit);
 	padding-right: var(--ts-unit);
+}
+
+/* Platform object.................................................. */
+
+.aside-platform-object {
+	padding: var(--ts-unit-half);
+	background-color: var(--ts-color-gray-lightest);
 }
 
 /* Main............................................................ */

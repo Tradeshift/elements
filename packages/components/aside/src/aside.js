@@ -15,7 +15,8 @@ customElementDefineHelper(
 			return {
 				title: { type: String, attribute: 'data-title' },
 				visible: { type: Boolean, attribute: 'data-visible', reflect: true },
-				hasFoot: { type: Boolean }
+				hasFoot: { type: Boolean },
+				hasPlatformObject: { type: Boolean }
 			};
 		}
 
@@ -24,6 +25,7 @@ customElementDefineHelper(
 			this.title = '';
 			this.visible = false;
 			this.hasFoot = false;
+			this.hasPlatformObject = false;
 		}
 
 		close(e) {
@@ -32,6 +34,12 @@ customElementDefineHelper(
 
 		footerSlot(e) {
 			this.hasFoot = true;
+		}
+
+		platformObjectSlot(e) {
+			const slot = e.currentTarget;
+			const assignedNodes = slot.assignedNodes();
+			this.hasPlatformObject = assignedNodes && assignedNodes.length;
 		}
 
 		get direction() {
@@ -56,6 +64,9 @@ customElementDefineHelper(
 					</header>
 					<div class="aside-note">
 						<slot name="note" class="note-in-aside"></slot>
+					</div>
+					<div class="aside-platform-object ${this.hasPlatformObject ? '' : 'hidden'}"">
+						<slot name="platform-object" @slotchange="${this.platformObjectSlot}"></slot>
 					</div>
 					<main class="aside-main">
 						<slot name="main"></slot>
