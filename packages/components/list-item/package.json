@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.list-item",
-  "version": "0.4.5-alpha.0",
+  "version": "0.4.5",
   "src": "src/list-item.js",
   "main": "lib/list-item.umd.js",
   "browser": "lib/list-item.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5-alpha.0",
+    "@tradeshift/elements": "^0.4.5",
     "@tradeshift/elements.icon": "file:../icon",
     "@tradeshift/elements.typography": "file:../typography"
   }

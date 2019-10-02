@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.aside",
-  "version": "0.4.5-alpha.0",
+  "version": "0.4.5",
   "src": "src/aside.js",
   "main": "lib/aside.umd.js",
   "browser": "lib/aside.umd.js",
@@ -8,8 +8,8 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5-alpha.0",
-    "@tradeshift/elements.button": "^0.4.5-alpha.0",
-    "@tradeshift/elements.cover": "^0.4.5-alpha.0"
+    "@tradeshift/elements": "^0.4.5",
+    "@tradeshift/elements.button": "^0.4.5",
+    "@tradeshift/elements.cover": "^0.4.5"
   }
 }

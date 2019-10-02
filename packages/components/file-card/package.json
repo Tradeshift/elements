@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-card",
-  "version": "0.4.5-alpha.0",
+  "version": "0.4.5",
   "src": "src/file-card.js",
   "main": "lib/file-card.umd.js",
   "browser": "lib/file-card.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5-alpha.0",
+    "@tradeshift/elements": "^0.4.5",
     "@tradeshift/elements.card": "file:../card",
     "@tradeshift/elements.file-size": "file:../file-size",
     "@tradeshift/elements.icon": "file:../icon",
