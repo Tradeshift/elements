@@ -38,7 +38,7 @@ storiesOf('ts-list-item', module)
 		`;
 	})
 	.add('Menu', () => {
-		const icon = select('icon', [undefined, ...Object.keys(icons)], Object.keys(icons)[4]);
+		const icon = select('icon', [undefined, ...Object.keys(icons)], Object.keys(icons)[5]);
 		const iconRight = select('icon-right', Object.keys(icons), Object.keys(icons)[1]);
 		const title = text('title', 'Title sample text');
 		const subtitle = text('subtitle', 'Subtitle sample text');
@@ -74,9 +74,10 @@ storiesOf('ts-list-item', module)
 			el.dir = dir;
 			el.disabled = boolean('disabled' + data.id, false);
 			el.selectable = 'true';
-			el.selected = boolean('selected' + data.id, false);
 			el.addEventListener('click', e => {
-				e.target.selected = !e.target.selected;
+				if (!e.target.disabled) {
+					e.target.selected = !e.target.selected;
+				}
 			});
 			return el;
 		}
