@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.cover",
-  "version": "0.4.5-alpha.0",
+  "version": "0.4.5",
   "src": "src/cover.js",
   "main": "lib/cover.umd.js",
   "browser": "lib/cover.umd.js",
@@ -8,6 +8,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5-alpha.0"
+    "@tradeshift/elements": "^0.4.5"
   }
 }
