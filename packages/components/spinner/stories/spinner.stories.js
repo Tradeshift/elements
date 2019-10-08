@@ -3,21 +3,13 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { helpers } from '@tradeshift/elements';
 
 import '@tradeshift/elements.spinner';
-import { types, sizes, colors } from '../src/utils';
+import { sizes, colors } from '../src/utils';
 
 storiesOf('ts-spinner', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
 		const message = text('Message', 'Loading...');
 		const visible = boolean('Visible', true);
-		const type = select(
-			'Type',
-			{
-				default: types.LIGHT,
-				...helpers.objectKeysChangeCase(types)
-			},
-			null
-		);
 
 		const size = select(
 			'Size',
@@ -38,13 +30,7 @@ storiesOf('ts-spinner', module)
 		);
 
 		return html`
-			<ts-spinner
-				?data-visible="${visible}"
-				data-message="${message}"
-				data-type="${type}"
-				data-size="${size}"
-				data-color="${color}"
-			>
+			<ts-spinner ?data-visible="${visible}" data-message="${message}" data-size="${size}" data-color="${color}">
 			</ts-spinner>
 		`;
 	});

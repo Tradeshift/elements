@@ -4,12 +4,8 @@ export const sizes = {
 	SMALL: 'small'
 };
 
-export const types = {
-	LIGHT: 'light',
-	DARK: 'dark'
-};
-
 export const colors = {
 	BLUE: 'blue',
-	MONO: 'mono'
+	MONO: 'mono',
+	WHITE: 'white'
 };

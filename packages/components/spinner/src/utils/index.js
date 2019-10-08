@@ -1,1 +1,1 @@
-export { sizes, types, colors } from './constants';
+export { sizes, colors } from './constants';

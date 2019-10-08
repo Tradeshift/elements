@@ -1,7 +1,7 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.cover';
 import css from './spinner.css';
-import { types, sizes, colors } from './utils';
+import { sizes, colors } from './utils';
 
 customElementDefineHelper(
 	'ts-spinner',
@@ -15,7 +15,6 @@ customElementDefineHelper(
 				color: { type: String, attribute: 'data-color', reflect: true },
 				message: { type: String, attribute: 'data-message' },
 				size: { type: String, attribute: 'data-size', reflect: true },
-				type: { type: String, attribute: 'data-type', reflect: true },
 				visible: { type: Boolean, attribute: 'data-visible' }
 			};
 		}
@@ -25,7 +24,6 @@ customElementDefineHelper(
 			this.color = colors.BLUE;
 			this.message = '';
 			this.size = sizes.LARGE;
-			this.type = types.LIGHT;
 			this.visible = false;
 		}
 

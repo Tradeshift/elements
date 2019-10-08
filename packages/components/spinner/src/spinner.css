@@ -6,7 +6,7 @@
 
 :host .spinner {
 	border: var(--spinner-border-large) solid var(--ts-color-gray-lighter);
-	border-top: var(--spinner-border-large) solid var(--spinner-blue-light);
+	border-top: var(--spinner-border-large) solid var(--spinner-color-blue);
 	border-radius: 50%;
 	width: var(--spinner-size-large);
 	height: var(--spinner-size-large);
@@ -57,32 +57,18 @@
 	font-size: var(--ts-fontsize-small);
 }
 
-/* Type............................................................ */
-
-:host([data-type='light']) .spinner {
-	border-color: var(--ts-color-gray-lighter);
-}
-
-:host([data-type='dark']) .spinner {
-	border-color: var(--ts-color-gray-lighter);
-}
-
 /* Color............................................................ */
 
-:host([data-type='light'][data-color='blue']) .spinner {
-	border-top-color: var(--spinner-blue-light);
+:host([data-color='blue']) .spinner {
+	border-top-color: var(--spinner-color-blue);
 }
 
-:host([data-type='light'][data-color='mono']) .spinner {
-	border-top-color: var(--spinner-mono-light);
+:host([data-color='mono']) .spinner {
+	border-top-color: var(--spinner-color-mono);
 }
 
-:host([data-type='dark'][data-color='blue']) .spinner {
-	border-top-color: var(--spinner-blue-dark);
-}
-
-:host([data-type='dark'][data-color='mono']) .spinner {
-	border-top-color: var(--spinner-mono-light);
+:host([data-color='white']) .spinner {
+	border-top-color: var(--spinner-color-white);
 }
 
 @keyframes spin {
