@@ -171,6 +171,17 @@
 	--ts-box-width-medium: 360px;
 
 	--ts-shadow-color: var(--ts-color-slate-dark);
+
+	/* Spinner........................................................ */
+	--spinner-border-large: 8px;
+	--spinner-border-medium: 4px;
+	--spinner-border-small: 2px;
+	--spinner-size-large: 80px;
+	--spinner-size-medium: var(--ts-unit-double);
+	--spinner-size-small: 20px;
+	--spinner-color-blue: var(--ts-color-blue);
+	--spinner-color-mono: var(--ts-color-slate-lightest);
+	--spinner-color-white: var(--ts-color-white);
 }
 
 ts-root {

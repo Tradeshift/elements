@@ -12,6 +12,7 @@
 	"@tradeshift/elements.icon": "ts.elements.icon",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
 	"@tradeshift/elements.root": "ts.elements.root",
+	"@tradeshift/elements.spinner": "ts.elements.spinner",
 	"@tradeshift/elements.tooltip": "ts.elements.tooltip",
 	"@tradeshift/elements.typography": "ts.elements.typography",
 	"@tradeshift/elements.note": "ts.elements.note",
