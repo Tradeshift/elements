@@ -6,7 +6,7 @@
 
 :host .spinner {
 	border: var(--spinner-border-large) solid var(--spinner-border-color);
-	border-top: var(--spinner-border-large) solid var(--spinner-color-blue);
+	border-top-color: var(--spinner-color-blue);
 	border-radius: 50%;
 	width: var(--spinner-size-large);
 	height: var(--spinner-size-large);
@@ -23,7 +23,6 @@
 
 :host([data-size='large']) .spinner {
 	border-width: var(--spinner-border-large);
-	border-top-width: var(--spinner-border-large);
 	width: var(--spinner-size-large);
 	height: var(--spinner-size-large);
 }
@@ -35,7 +34,6 @@
 
 :host([data-size='medium']) .spinner {
 	border-width: var(--spinner-border-medium);
-	border-top-width: var(--spinner-border-medium);
 	width: var(--spinner-size-medium);
 	height: var(--spinner-size-medium);
 }
@@ -47,7 +45,6 @@
 
 :host([data-size='small']) .spinner {
 	border-width: var(--spinner-border-small);
-	border-top-width: var(--spinner-border-small);
 	width: var(--spinner-size-small);
 	height: var(--spinner-size-small);
 }
