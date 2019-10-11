@@ -98,3 +98,12 @@ svg,
 :host([type='suggested']) svg {
 	color: var(--ts-color-purple);
 }
+
+:host([circular]) {
+	border-radius: 50%;
+	background-color: var(--ts-icon-color);
+
+	& svg {
+		color: var(--ts-color-white);
+	}
+}
