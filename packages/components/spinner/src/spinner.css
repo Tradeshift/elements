@@ -5,7 +5,7 @@
 }
 
 :host .spinner {
-	border: var(--spinner-border-large) solid var(--ts-color-gray-lighter);
+	border: var(--spinner-border-large) solid var(--spinner-border-color);
 	border-top: var(--spinner-border-large) solid var(--spinner-color-blue);
 	border-radius: 50%;
 	width: var(--spinner-size-large);
