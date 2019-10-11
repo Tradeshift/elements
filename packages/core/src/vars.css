@@ -1,5 +1,6 @@
 :root {
 	/* Units........................................................ */
+
 	--ts-unit: 20px;
 	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit));
 	--ts-unit-half: calc(0.5 * var(--ts-unit));
@@ -11,7 +12,9 @@
 	--ts-aside: 320px;
 	--ts-width-grails: calc(var(--ts-width-aside) - var(--ts-unit-double));
 	--ts-radius: 3px;
+
 	/* Fonts........................................................ */
+
 	--ts-font-size-default: 14px;
 	--ts-fontsize-small: 11px;
 	--ts-fontsize-mini: 12px;
@@ -29,7 +32,9 @@
 	--ts-fontstack: 'Open Sans', 'Helvetica Neue', 'Lucida Grande', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
 	--ts-fontstack-mono: 'Ubuntu Mono', 'Menlo', 'Monaco', 'Consolas', 'Bitstream Vera Sans Mono', monospace;
 	--ts-fontstack-icon: 'Tradeshifticons', fantasy;
+
 	/* Z-index........................................................ */
+
 	--ts-zindex-main: 0;
 	--ts-zindex-topbar: 1000;
 	--ts-zindex-modal: 1500;
@@ -43,7 +48,9 @@
 	/* calc(var(--ts-zindex-aside) - 1); */
 	--ts-zindex-spin-cover: 3999;
 	/* calc(var(--ts-zindex-spin) - 1); */
+
 	/* Colors........................................................ */
+
 	/* Base */
 	--ts-color-white: rgb(255, 255, 255);
 	--ts-color-black: rgb(15, 21, 26);
@@ -114,12 +121,16 @@
 	--ts-disabled-background-color: var(--ts-color-gray-lighter);
 	--ts-disabled-color: var(--ts-color-gray-dark);
 	--ts-disabled-border: var(--ts-border-disabled);
+
 	/* Animations........................................................ */
+
 	--ts-transition-now: 0.1s;
 	--ts-transition-fast: 0.2s;
 	--ts-transition-slow: 0.6s;
 	--ts-margin: 0 var(--ts-unit) var(--ts-unit) 0;
+
 	/* Borders........................................................ */
+
 	--ts-border-width: 1px;
 	--ts-border-width-focused: 2px;
 	--ts-border-type: solid;
@@ -145,8 +156,10 @@
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;
 	--ts-shadow-color: var(--ts-color-slate-dark);
+
 	/* Spinner........................................................ */
-	--spinner-border-color: rgba(203, 215, 220, 0.5);
+
+	--spinner-border-color: rgba(203, 215, 220, 0.5); /* --ts-color-gray-light */
 	--spinner-border-large: 8px;
 	--spinner-border-medium: 4px;
 	--spinner-border-small: 3px;
