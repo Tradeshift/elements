@@ -5,6 +5,7 @@ import download from './download.svg';
 import info from './info.svg';
 import arrowUp from './arrow-up.svg';
 import ada from './ada.svg';
+import search from './search.svg';
 import closeClear from './close-clear.svg';
 import checkmark from './checkmark.svg';
 
@@ -14,6 +15,7 @@ const icons = {
 	info,
 	ada,
 	checkmark,
+	search,
 	'arrow-up': arrowUp,
 	'close-clear': closeClear
 };
