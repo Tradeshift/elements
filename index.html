@@ -42,6 +42,7 @@
 						'button',
 						'button-group',
 						'card',
+						'checkbox',
 						'cover',
 						'file-card',
 						'file-size',
@@ -49,7 +50,8 @@
 						'progress-bar',
 						'help-text',
 						'note',
-						'spinner'
+						'spinner',
+						'search'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -639,6 +641,41 @@
 			<article>
 				<h2>Spinner</h2>
 				<ts-spinner data-visible data-size="medium" data-color="mono"> </ts-spinner>
+			</article>
+			<article>
+				<h2>Search</h2>
+				<div class="search-container">
+					<div>
+						<ts-search placeholder="یا بخت یا اقبال" id="search" dir="rtl"></ts-search>
+					</div>
+					<div>
+						<ts-search placeholder="Press Enter to search..." id="search2"></ts-search>
+					</div>
+				</div>
+				<div class="search-container">
+					<div>
+						<div id="searchResult">No value</div>
+					</div>
+					<div>
+						<div id="searchResult2">No value</div>
+					</div>
+				</div>
+				<button id="searchButton">Set focus on the right search</button>
+			</article>
+			<script>
+				document.getElementById('search').addEventListener('idle', function(evt) {
+					document.getElementById('searchResult').innerHTML = 'Idle value: ' + evt.detail;
+				});
+				document.getElementById('search2').addEventListener('search', function(evt) {
+					document.getElementById('searchResult2').innerHTML = 'Search value: ' + evt.detail;
+				});
+				document.getElementById('searchButton').addEventListener('click', function(evt) {
+					document.getElementById('search2').focused = true;
+				});
+			</script>
+			<article>
+				<h2>Checkbox</h2>
+				<ts-checkbox data-label="Agree?" name="checkbox" value="yes" checked dir="rtl"></ts-checkbox>
 			</article>
 			<ts-aside data-title="hello" id="my-aside">
 				<ts-note slot="note">

@@ -1,0 +1,46 @@
+/* General........................................................ */
+
+.search-container {
+	align-items: center;
+	background-color: var(--ts-color-white);
+	border: var(--ts-border);
+	border-radius: var(--ts-unit-double);
+	display: flex;
+	height: var(--ts-unit-double);
+
+	&.focused {
+		border: var(--ts-border-focus);
+	}
+}
+
+input {
+	border: 0;
+	flex: 1;
+	font-size: var(--ts-font-size-default);
+	line-height: var(--ts-unit);
+
+	/* hide a default clear input button in IE */
+	&::-ms-clear {
+		display: none;
+	}
+}
+
+.icon-container {
+	align-items: center;
+	display: flex;
+	height: var(--ts-unit-double);
+	margin: 0;
+	width: var(--ts-unit-double);
+}
+
+ts-icon {
+	margin: 0 auto;
+	--ts-icon-color: var(--ts-color-slate-lightest);
+}
+
+.close-icon {
+	cursor: pointer;
+	/* in IE 11 the 'circular' property not work, so we need to set it explicitly here */
+	background-color: var(--ts-color-slate-lightest);
+	border-radius: 50%;
+}
