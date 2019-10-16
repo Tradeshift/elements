@@ -102,7 +102,12 @@ or
 
 ## ➤ Polyfills
 
-For supporting IE11 you need to add couple of things
+For supporting IE11 you need to do couple of more things
+
+- If you are using the [Tradeshift-ui](https://github.com/Tradeshift/tradeshift-ui) you need to upgrade it to a compatible version:
+
+  - For version `12` you should upgrade to `12.2.9` or newer version
+  - For version `11` you should upgrade to `11.3.2` or newer version
 
 - Don't shim CSS Custom Properties in IE11
 
