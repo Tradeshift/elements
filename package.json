@@ -100,6 +100,8 @@
     "@tradeshift/elements.root": "file:packages/components/root",
     "@tradeshift/elements.search": "file:packages/components/search",
     "@tradeshift/elements.spinner": "file:packages/components/spinner",
+    "@tradeshift/elements.tab": "file:packages/components/tab",
+    "@tradeshift/elements.tabs": "file:packages/components/tabs",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
     "@tradeshift/elements.typography": "file:packages/components/typography"
   },

@@ -20,5 +20,7 @@
 	"@tradeshift/elements.typography": "ts.elements.typography",
 	"@tradeshift/elements.note": "ts.elements.note",
 	"@tradeshift/elements.list-item": "ts.elements.list-item",
-	"@tradeshift/elements.search": "ts.elements.search"
+	"@tradeshift/elements.search": "ts.elements.search",
+	"@tradeshift/elements.tabs": "ts.elements.tabs",
+	"@tradeshift/elements.tab": "ts.elements.tab"
 }

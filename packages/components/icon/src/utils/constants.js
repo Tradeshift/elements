@@ -15,7 +15,8 @@ export const types = {
 	WARNING: 'warning',
 	DISABLED: 'disabled',
 	DISABLED_CHECKED: 'disabled-checked',
-	SUGGESTED: 'suggested'
+	SUGGESTED: 'suggested',
+	SLATE_LIGHTEST: 'slate-lightest'
 };
 
 export const typeColors = {
@@ -31,7 +32,8 @@ export const typeColors = {
 	[types.WARNING]: colors.ORANGE,
 	[types.DISABLED]: colors.GRAY + colorModifiers.LIGHTER,
 	[types.SUGGESTED]: colors.PURPLE,
-	[types.DISABLED_CHECKED]: colors.GRAY + colorModifiers.LIGHT
+	[types.DISABLED_CHECKED]: colors.GRAY + colorModifiers.LIGHT,
+	[types.SLATE_LIGHTEST]: colors.SLATE + colorModifiers.LIGHTEST
 };
 
 export const sizes = {

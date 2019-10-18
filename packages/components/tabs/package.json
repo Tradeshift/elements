@@ -1,0 +1,19 @@
+{
+  "name": "@tradeshift/elements.tabs",
+  "version": "^0.5.3",
+  "src": "src/tabs.js",
+  "main": "lib/tabs.umd.js",
+  "browser": "lib/tabs.umd.js",
+  "module": "lib/tabs.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.5.3",
+    "@tradeshift/elements.icon": "^0.5.3",
+    "@tradeshift/elements.typography": "^0.5.3"
+  },
+  "peerDependencies": {
+    "@tradeshift/elements.tab": "^0.5.3"
+  }
+}
