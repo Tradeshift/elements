@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.note",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "src": "src/note.js",
   "main": "lib/note.umd.js",
   "browser": "lib/note.umd.js",
@@ -8,7 +8,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5",
+    "@tradeshift/elements": "^0.5.0",
     "@tradeshift/elements.button": "file:../button",
     "@tradeshift/elements.icon": "file:../icon"
   }
