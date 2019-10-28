@@ -12,8 +12,9 @@ storiesOf('ts-aside', module)
 		() => {
 			const title = text('Title', 'Aside');
 			const visible = boolean('Visible', true);
+			const busy = boolean('Busy', false);
 			return html`
-				<ts-aside data-title="${title}" ?data-visible="${visible}">
+				<ts-aside data-title="${title}" ?data-busy="${busy}" ?data-visible="${visible}">
 					<ts-panel slot="main">
 						These oft shamed not mothernot now harolds tear congealed virtues. To hall riot awake parasites ye his
 						mirthful beyond. Such sighed his start glee had soon yes if, domestic days for labyrinth her within in
@@ -33,8 +34,9 @@ storiesOf('ts-aside', module)
 		() => {
 			const title = text('Title', 'Aside');
 			const visible = boolean('Visible', true);
+			const busy = boolean('Busy', false);
 			return html`
-				<ts-aside data-title="${title}" ?data-visible="${visible}">
+				<ts-aside data-title="${title}" ?data-busy="${busy}" ?data-visible="${visible}">
 					<ts-panel slot="main">
 						Forse donne speranza siamo esperienza mentre seguitando sé nostro l'uomo, dare e di da prestasse noi non.
 						Mentre di alcun vita forza siamo sua io in sogiacere, ciascheduna reputiamo primo forse porgiamo dovendo
@@ -52,8 +54,9 @@ storiesOf('ts-aside', module)
 		'With note',
 		() => {
 			const visible = boolean('Visible', true);
+			const busy = boolean('Busy', false);
 			return html`
-				<ts-aside data-title="Aside with note" ?data-visible="${visible}">
+				<ts-aside data-title="Aside with note" ?data-busy="${busy}" ?data-visible="${visible}">
 					<ts-note slot="note">
 						Takimata sed sea lorem kasd sit est.
 					</ts-note>

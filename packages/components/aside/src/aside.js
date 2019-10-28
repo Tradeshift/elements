@@ -2,6 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
+import '@tradeshift/elements.spinner';
 import { customEventNames } from './utils';
 
 customElementDefineHelper(
@@ -15,6 +16,7 @@ customElementDefineHelper(
 			return {
 				title: { type: String, attribute: 'data-title' },
 				visible: { type: Boolean, attribute: 'data-visible', reflect: true },
+				busy: { type: String, attribute: 'data-busy', reflect: true },
 				hasFoot: { type: Boolean },
 				hasPlatformObject: { type: Boolean }
 			};
@@ -53,6 +55,17 @@ customElementDefineHelper(
 			return `${pre}-${mid}-${dir}`;
 		}
 
+		get spinner() {
+			if (this.busy === undefined || this.busy === null) {
+				return '';
+			}
+			return html`
+				<div class="spinner-overlay">
+					<ts-spinner data-visible data-message="${this.busy}"></ts-spinner>
+				</div>
+			`;
+		}
+
 		render() {
 			return html`
 				<div dir="${this.direction}" class="aside-container ${this.slide} ${this.hasFoot ? 'has-footer' : ''}">
@@ -65,7 +78,7 @@ customElementDefineHelper(
 					<div class="aside-note">
 						<slot name="note" class="note-in-aside"></slot>
 					</div>
-					<div class="aside-platform-object ${this.hasPlatformObject ? '' : 'hidden'}"">
+					<div class="aside-platform-object ${this.hasPlatformObject ? '' : 'hidden'}">
 						<slot name="platform-object" @slotchange="${this.platformObjectSlot}"></slot>
 					</div>
 					<main class="aside-main">
@@ -74,6 +87,7 @@ customElementDefineHelper(
 					<footer>
 						<slot name="footer" @slotchange="${this.footerSlot}"></slot>
 					</footer>
+					${this.spinner}
 				</div>
 				<ts-cover class="ts-aside-cover" ?data-visible=${this.visible} @click="${this.close}"></ts-cover>
 			`;
