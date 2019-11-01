@@ -25,6 +25,22 @@
 		</a>
 </p>
 
+<style>
+table {
+    width:100%;
+}
+</style>
+
+## ➤ Properties
+
+| Property | Attribute  | Type    | Default | Description        |
+| -------- | ---------- | ------- | ------- | ------------------ |
+| name     | name       | string  | ''      | Name of the radio  |
+| value    | value      | string  | ''      | Value of the radio |
+| label    | data-label | string  | ''      | Label of the radio |
+| checked  | checked    | boolean | false   | Check status       |
+| disabled | disabled   | boolean | false   | Disabled status    |
+
 ## ➤ How to use it
 
 - Install the package of radio

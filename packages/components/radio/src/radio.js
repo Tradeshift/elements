@@ -41,8 +41,8 @@ customElementDefineHelper(
 					${this.label}
 					<input
 						type="radio"
-						name="${this.name}"
-						value="${this.value}"
+						.name="${this.name}"
+						.value="${this.value}"
 						?checked="${this.checked}"
 						?disabled="${this.disabled}"
 					/>
