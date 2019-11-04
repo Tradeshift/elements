@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.5.0",
-    "@tradeshift/elements.button": "file:../button",
-    "@tradeshift/elements.icon": "file:../icon"
+    "@tradeshift/elements.button": "^0.5.0",
+    "@tradeshift/elements.icon": "^0.5.0"
   }
 }
