@@ -4,6 +4,7 @@ import css from './file-uploader-input.css';
 import { messages, selectors, classNames, customEventNames, slotNames, sizes } from './utils';
 
 import '@tradeshift/elements.help-text';
+import '@tradeshift/elements.icon';
 
 customElementDefineHelper(
 	'ts-file-uploader-input',

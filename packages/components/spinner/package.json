@@ -4,6 +4,7 @@
   "src": "src/spinner.js",
   "main": "lib/spinner.umd.js",
   "browser": "lib/spinner.umd.js",
+  "module": "lib/spinner.esm.js",
   "files": [
     "lib/*"
   ],

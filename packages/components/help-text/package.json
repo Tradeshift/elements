@@ -4,6 +4,7 @@
   "src": "src/help-text.js",
   "main": "lib/help-text.umd.js",
   "browser": "lib/help-text.umd.js",
+  "module": "lib/help-text.esm.js",
   "files": [
     "lib/*"
   ],

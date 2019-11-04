@@ -4,6 +4,7 @@
   "src": "src/progress-bar.js",
   "main": "lib/progress-bar.umd.js",
   "browser": "lib/progress-bar.umd.js",
+  "module": "lib/progress-bar.esm.js",
   "files": [
     "lib/*"
   ],

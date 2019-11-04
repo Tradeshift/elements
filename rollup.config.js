@@ -13,6 +13,9 @@ const PACKAGE_ROOT_PATH = process.cwd();
 const PKG_JSON = require(path.join(PACKAGE_ROOT_PATH, 'package.json'));
 const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, PKG_JSON.src);
 
+// For efficient build of esm modules, all local dependencies should be external.
+const esmExternals = Object.keys(PKG_JSON.dependencies).filter(depName => depName.startsWith('@tradeshift'));
+
 const PROD = !!PRODUCTION;
 const DEV = !PROD;
 
@@ -40,39 +43,57 @@ const postcssPlugin = postcss({
 
 const svgoPlugin = svgo({ raw: true });
 
+const babelPlugin = babel({
+	babelrc: false,
+	exclude: [/\/core-js\//],
+	runtimeHelpers: false,
+	externalHelpers: false,
+	presets: [
+		[
+			'@babel/env',
+			{
+				modules: false,
+				useBuiltIns: false,
+				loose: true,
+				targets: {
+					ie: '11'
+				},
+				exclude: ['transform-regenerator', 'transform-async-to-generator']
+			}
+		]
+	],
+	plugins: [
+		[
+			'module:fast-async',
+			{
+				env: {
+					log: false
+				},
+				compiler: {
+					promises: true,
+					generators: false
+				},
+				runtimePattern: null,
+				useRuntimeModule: false
+			}
+		],
+		PROD && 'minify-dead-code-elimination'
+	].filter(Boolean)
+});
+
 // Plugins used by both configs
 const commonPlugins = [postcssPlugin, json(), svgoPlugin, resolve()];
 
-const esmCjsConfig = {
+const esmConfig = {
 	input: INPUT_FILE,
 	output: [
 		{
-			...outputConfig,
-			file: PKG_JSON.main,
-			format: 'cjs'
+			file: PKG_JSON.module,
+			format: 'esm'
 		}
 	],
-	external: ['@tradeshift/elements'],
-	plugins: [
-		...commonPlugins,
-		babel({
-			babelrc: false,
-			presets: [
-				[
-					'@babel/env',
-					{
-						modules: false,
-						loose: true,
-						targets: {
-							esmodules: true
-						}
-					}
-				]
-			],
-			plugins: [PROD && 'minify-dead-code-elimination'].filter(Boolean)
-		}),
-		PROD && terser()
-	].filter(Boolean)
+	external: esmExternals,
+	plugins: [...commonPlugins, babelPlugin, terser()]
 };
 
 const config = [
@@ -92,43 +113,7 @@ const config = [
 			commonjs({
 				include: nodeModules
 			}),
-			babel({
-				babelrc: false,
-				exclude: [/\/core-js\//],
-				runtimeHelpers: false,
-				externalHelpers: false,
-				presets: [
-					[
-						'@babel/env',
-						{
-							modules: false,
-							useBuiltIns: false,
-							loose: true,
-							targets: {
-								ie: '11'
-							},
-							exclude: ['transform-regenerator', 'transform-async-to-generator']
-						}
-					]
-				],
-				plugins: [
-					[
-						'module:fast-async',
-						{
-							env: {
-								log: false
-							},
-							compiler: {
-								promises: true,
-								generators: false
-							},
-							runtimePattern: null,
-							useRuntimeModule: false
-						}
-					],
-					PROD && 'minify-dead-code-elimination'
-				].filter(Boolean)
-			}),
+			babelPlugin,
 			PROD && terser()
 		].filter(Boolean)
 	}
@@ -136,7 +121,7 @@ const config = [
 
 // For development we are using `umd`s
 if (PROD) {
-	config.unshift(esmCjsConfig);
+	config.unshift(esmConfig);
 }
 
 export default config;

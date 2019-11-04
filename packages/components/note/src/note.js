@@ -1,4 +1,5 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
 
 import { classNames, types, customEventNames } from './utils';

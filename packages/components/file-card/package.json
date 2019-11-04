@@ -4,6 +4,7 @@
   "src": "src/file-card.js",
   "main": "lib/file-card.umd.js",
   "browser": "lib/file-card.umd.js",
+  "module": "lib/file-card.esm.js",
   "files": [
     "lib/*"
   ],

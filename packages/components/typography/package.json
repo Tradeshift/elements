@@ -4,6 +4,7 @@
   "src": "src/typography.js",
   "main": "lib/typography.umd.js",
   "browser": "lib/typography.umd.js",
+  "module": "lib/typography.esm.js",
   "files": [
     "lib/*"
   ],
