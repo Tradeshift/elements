@@ -1,0 +1,93 @@
+/* General........................................................ */
+
+.checkbox-container {
+	display: block;
+	position: relative;
+	padding-left: var(--ts-unit-plus);
+	margin: var(--ts-unit-half);
+	cursor: pointer;
+	font-size: var(--ts-fontsize);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&:hover {
+		& span {
+			background-color: var(--ts-color-gray-lighter);
+		}
+	}
+
+	& input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	& span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: var(--ts-unit);
+		width: var(--ts-unit);
+		border: var(--ts-border);
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: none;
+			left: var(--ts-unit-quarter);
+			top: 1px;
+			width: var(--ts-unit-quarter);
+			height: var(--ts-unit-half);
+			border: solid var(--ts-color-white);
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.checkbox-container input:checked ~ span {
+	background-color: var(--ts-color-blue);
+	border-color: var(--ts-color-blue);
+
+	&:after {
+		display: block;
+	}
+}
+
+/* Disable status .................................................*/
+:host([disabled]) {
+	& .checkbox-container {
+		color: var(--ts-disabled-background-color);
+		cursor: not-allowed;
+
+		&:hover {
+			& span {
+				background-color: transparent;
+			}
+		}
+		& span {
+			border: var(--ts-disabled-border);
+		}
+	}
+	& .checkbox-container input:checked ~ span {
+		background-color: var(--ts-disabled-background-color);
+		border: var(--ts-disabled-border);
+	}
+}
+
+/* rtl ............................................................*/
+:host([dir='rtl']) {
+	& .checkbox-container {
+		padding-right: var(--ts-unit-plus);
+
+		& span {
+			right: 0;
+		}
+	}
+}
