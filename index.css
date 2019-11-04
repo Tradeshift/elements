@@ -59,3 +59,12 @@ ts-list-item {
 	display: flex;
 	max-width: 350px;
 }
+
+.search-container {
+	display: flex;
+}
+
+.search-container div {
+	width: 400px;
+	margin: 5px;
+}
