@@ -1,0 +1,155 @@
+/* General........................................................ */
+
+:host {
+	& > header {
+		min-width: 100vw;
+		max-width: 100vw;
+		width: 100vw;
+		height: var(--ts-unit-triple);
+		background-color: var(--ts-color-white);
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	& .icon {
+		margin-left: var(--ts-unit-half);
+	}
+
+	& .title {
+		font-size: var(--ts-fontsize-big);
+		margin-left: var(--ts-unit-half);
+	}
+}
+
+::slotted(:first-of-type) {
+	margin-left: auto;
+}
+
+::slotted(*) {
+	margin-right: var(--ts-unit-half);
+}
+
+/* Right to left................................................... */
+
+[dir='rtl'] {
+	& ::slotted(*) {
+		margin-left: var(--ts-unit-half);
+	}
+
+	& ::slotted(:first-of-type) {
+		margin-right: auto;
+	}
+}
+
+/* Colors......................................................... */
+
+:host([color='black']) {
+	& > header {
+		background-color: var(--ts-color-black);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='red']) {
+	& > header {
+		background-color: var(--ts-color-red);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='orange']) {
+	& > header {
+		background-color: var(--ts-color-orange);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='yellow']) {
+	& > header {
+		background-color: var(--ts-color-yellow);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='green']) {
+	& > header {
+		background-color: var(--ts-color-green);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='blue']) {
+	& > header {
+		background-color: var(--ts-color-blue);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='purple']) {
+	& > header {
+		background-color: var(--ts-color-purple);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='pink']) {
+	& > header {
+		background-color: var(--ts-color-pink);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='gray']) {
+	& > header {
+		background-color: var(--ts-color-gray);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='slate']) {
+	& > header {
+		background-color: var(--ts-color-slate);
+	}
+
+	& .title {
+		color: var(--ts-color-white);
+	}
+}
+
+:host([color='white']) {
+	& > header {
+		background-color: var(--ts-color-white);
+	}
+
+	& .title {
+		color: var(--ts-color-black);
+	}
+}

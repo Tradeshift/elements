@@ -48,6 +48,7 @@
 						'file-size',
 						'file-uploader-input',
 						'progress-bar',
+						'header',
 						'help-text',
 						'note',
 						'spinner',
@@ -65,7 +66,9 @@
 
 	<body>
 		<ts-root>
-			<header slot="header" class="header">Header</header>
+			<ts-header slot="header" class="header" icon="/icon.svg" title="Header">
+				<ts-button>Button</ts-button>
+			</ts-header>
 			<footer slot="footer" class="footer">Footer</footer>
 			<section slot="sidebar-left" class="sidebar-left">Left Sidebar</section>
 			<section slot="sidebar-right" class="sidebar-right">
