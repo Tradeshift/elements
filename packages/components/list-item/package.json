@@ -4,6 +4,7 @@
   "src": "src/list-item.js",
   "main": "lib/list-item.umd.js",
   "browser": "lib/list-item.umd.js",
+  "module": "lib/list-item.esm.js",
   "files": [
     "lib/*"
   ],

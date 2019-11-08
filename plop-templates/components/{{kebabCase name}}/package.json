@@ -4,6 +4,7 @@
   "src": "src/{{kebabCase name}}.js",
   "main": "lib/{{kebabCase name}}.umd.js",
   "browser": "lib/{{kebabCase name}}.umd.js",
+  "module": "lib/{{kebabCase name}}.esm.js",
   "files": [
     "lib/*"
   ],

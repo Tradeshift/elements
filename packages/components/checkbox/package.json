@@ -4,10 +4,11 @@
   "src": "src/checkbox.js",
   "main": "lib/checkbox.umd.js",
   "browser": "lib/checkbox.umd.js",
+  "module": "lib/checkbox.esm.js",
   "files": [
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.4.5"
+    "@tradeshift/elements": "^0.5.0"
   }
 }

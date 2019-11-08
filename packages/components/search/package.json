@@ -4,6 +4,7 @@
   "src": "src/search.js",
   "main": "lib/search.umd.js",
   "browser": "lib/search.umd.js",
+  "module": "lib/search.esm.js",
   "files": [
     "lib/*"
   ],

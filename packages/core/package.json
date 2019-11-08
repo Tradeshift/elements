@@ -4,6 +4,7 @@
   "src": "src/core.js",
   "main": "lib/core.umd.js",
   "browser": "lib/core.umd.js",
+  "module": "lib/core.esm.js",
   "files": [
     "lib/*",
     "src/*"

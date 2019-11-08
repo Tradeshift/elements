@@ -4,6 +4,7 @@
   "src": "src/file-uploader-input.js",
   "main": "lib/file-uploader-input.umd.js",
   "browser": "lib/file-uploader-input.umd.js",
+  "module": "lib/file-uploader-input.esm.js",
   "files": [
     "lib/*"
   ],

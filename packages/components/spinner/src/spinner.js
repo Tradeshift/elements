@@ -1,5 +1,4 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
-import '@tradeshift/elements.cover';
 import css from './spinner.css';
 import { sizes, colors } from './utils';
 

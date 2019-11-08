@@ -4,6 +4,7 @@
   "src": "src/file-size.js",
   "main": "lib/file-size.umd.js",
   "browser": "lib/file-size.umd.js",
+  "module": "lib/file-size.esm.js",
   "files": [
     "lib/*"
   ],

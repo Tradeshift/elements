@@ -4,6 +4,7 @@
   "src": "src/note.js",
   "main": "lib/note.umd.js",
   "browser": "lib/note.umd.js",
+  "module": "lib/note.esm.js",
   "files": [
     "lib/*"
   ],

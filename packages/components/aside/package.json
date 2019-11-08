@@ -4,6 +4,7 @@
   "src": "src/aside.js",
   "main": "lib/aside.umd.js",
   "browser": "lib/aside.umd.js",
+  "module": "lib/aside.esm.js",
   "files": [
     "lib/*"
   ],

@@ -4,6 +4,7 @@
   "src": "src/root.js",
   "main": "lib/root.umd.js",
   "browser": "lib/root.umd.js",
+  "module": "lib/root.esm.js",
   "files": [
     "lib/*"
   ],
