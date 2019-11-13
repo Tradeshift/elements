@@ -81,6 +81,7 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "file:packages/core",
+    "@tradeshift/elements.app-icon": "file:packages/components/app-icon",
     "@tradeshift/elements.aside": "file:packages/components/aside",
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
@@ -90,6 +91,7 @@
     "@tradeshift/elements.file-card": "file:packages/components/file-card",
     "@tradeshift/elements.file-size": "file:packages/components/file-size",
     "@tradeshift/elements.file-uploader-input": "file:packages/components/file-uploader-input",
+    "@tradeshift/elements.header": "file:packages/components/header",
     "@tradeshift/elements.help-text": "file:packages/components/help-text",
     "@tradeshift/elements.icon": "file:packages/components/icon",
     "@tradeshift/elements.list-item": "file:packages/components/list-item",

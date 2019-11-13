@@ -1,5 +1,6 @@
 {
 	"@tradeshift/elements": "ts.elements",
+	"@tradeshift/elements.app-icon": "ts.elements.app-icon",
 	"@tradeshift/elements.aside": "ts.elements.aside",
 	"@tradeshift/elements.button": "ts.elements.button",
 	"@tradeshift/elements.button-group": "ts.elements.button-group",
@@ -9,6 +10,7 @@
 	"@tradeshift/elements.file-card": "ts.elements.file-card",
 	"@tradeshift/elements.file-uploader-input": "ts.elements.file-uploader-input",
 	"@tradeshift/elements.file-size": "ts.elements.file-size",
+	"@tradeshift/elements.header": "ts.elements.header",
 	"@tradeshift/elements.help-text": "ts.elements.help-text",
 	"@tradeshift/elements.icon": "ts.elements.icon",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",

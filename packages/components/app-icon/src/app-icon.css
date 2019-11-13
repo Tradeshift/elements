@@ -1,0 +1,9 @@
+/* General........................................................ */
+
+:host {
+	& img {
+		width: var(--ts-unit-double);
+		height: var(--ts-unit-double);
+		border-radius: var(--ts-radius);
+	}
+}

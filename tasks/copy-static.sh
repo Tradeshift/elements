@@ -9,6 +9,9 @@ mkdir -p static/packages/core
 mkdir -p static/packages/core/src
 find packages/core/src/ -name '*.css' -exec cp -prvf '{}' 'static/packages/core/src' ';'
 
+# Copy the test icon for a header storybook story.
+cp -pvf *.svg static/
+
 # Copy webcomponentsjs polyfill
 # mkdir -p static/node_modules
 # mkdir -p static/node_modules/@webcomponents

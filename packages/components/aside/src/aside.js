@@ -14,6 +14,7 @@ customElementDefineHelper(
 
 		static get properties() {
 			return {
+				dir: { type: String, reflect: true },
 				title: { type: String, attribute: 'data-title' },
 				visible: { type: Boolean, attribute: 'data-visible', reflect: true },
 				busy: { type: String, attribute: 'data-busy', reflect: true },
@@ -45,7 +46,7 @@ customElementDefineHelper(
 		}
 
 		get direction() {
-			return this.bodyDir;
+			return this.dir ? this.dir : this.bodyDir;
 		}
 
 		get slide() {
