@@ -1,4 +1,4 @@
 {
 	"packages": ["packages/components/*", "packages/core"],
-	"version": "0.5.0"
+	"version": "0.5.3"
 }

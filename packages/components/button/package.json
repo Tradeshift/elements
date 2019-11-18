@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "src": "src/button.js",
   "main": "lib/button.umd.js",
   "browser": "lib/button.umd.js",
@@ -9,8 +9,8 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.5.0",
-    "@tradeshift/elements.icon": "^0.5.0"
+    "@tradeshift/elements": "^0.5.3",
+    "@tradeshift/elements.icon": "^0.5.3"
   },
-  "gitHead": "e88391ca0cd629eac27ed1ca70ccdb64c1b31b7a"
+  "gitHead": "f9ad23777c014a17b135524dcd23652745337064"
 }
