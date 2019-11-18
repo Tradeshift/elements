@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.spinner",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "src": "src/spinner.js",
   "main": "lib/spinner.umd.js",
   "browser": "lib/spinner.umd.js",
@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.5.0"
+    "@tradeshift/elements": "^0.5.1"
   }
 }

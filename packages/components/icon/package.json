@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.icon",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "src": "src/icon.js",
   "main": "lib/icon.umd.js",
   "browser": "lib/icon.umd.js",
@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.5.0"
+    "@tradeshift/elements": "^0.5.1"
   }
 }
