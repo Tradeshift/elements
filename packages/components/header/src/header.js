@@ -49,8 +49,12 @@ customElementDefineHelper(
 		render() {
 			return html`
 				<header dir=${this.direction}>
-					${this.getIcon()} ${this.getTitle()}
-					<slot> </slot>
+					<div class="title-icon-container">
+						${this.getIcon()} ${this.getTitle()}
+					</div>
+					<div class="slot-container">
+						<slot></slot>
+					</div>
 				</header>
 			`;
 		}

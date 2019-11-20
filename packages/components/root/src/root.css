@@ -82,7 +82,7 @@
 
 /* Filling up the grid */
 
-:host ::slotted(header) {
+:host ::slotted(ts-header) {
 	-ms-grid-row: 1;
 	-ms-grid-row-span: 1;
 	grid-row: 1 / 1;
