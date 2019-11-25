@@ -67,3 +67,22 @@ ts-list-item {
 	width: 400px;
 	margin: 5px;
 }
+
+.document-card-container {
+	width: 300px;
+	border: var(--ts-border-width) var(--ts-border-type) var(--ts-color-gray-dark);
+}
+
+.status-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.grid-status {
+	padding: 10px;
+}
+@media screen and (max-width: 550px) {
+	.status-container {
+		display: flex;
+		flex-direction: column;
+	}
+}

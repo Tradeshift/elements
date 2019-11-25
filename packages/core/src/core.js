@@ -13,7 +13,7 @@ export class TSElement extends LitElement {
 	static get styles() {
 		return [unsafeCSS(commonCSS)];
 	}
-	// TODO: Remove this when changed rtl to dir in ohter components
+	// TODO: Remove this when changed rtl to dir in other components
 	get bodyHasRTL() {
 		return document.body.getAttribute('dir') === 'rtl';
 	}
