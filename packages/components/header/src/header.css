@@ -7,6 +7,7 @@
 		width: 100vw;
 		height: var(--ts-unit-triple);
 		background-color: var(--ts-color-white);
+		border-bottom: var(--ts-border);
 		display: flex;
 		align-items: center;
 		flex-direction: row;
@@ -14,6 +15,7 @@
 
 	& .icon {
 		margin-left: var(--ts-unit-half);
+		block-size: var(--ts-unit-double);
 	}
 
 	& .title {
