@@ -184,6 +184,12 @@ $ npm i @webcomponents/webcomponentsjs --save
 
 ## ➤ How to run it
 
+- Make sure your node version is > 10. If you are using `nvm` you can just run:
+
+```shell
+$ nvm use
+```
+
 - We are using [lerna](https://github.com/lerna/lerna) to manage our components in single repo but their own packages, so for installation you need to run:
 
 ```shell
