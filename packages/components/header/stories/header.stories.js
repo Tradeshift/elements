@@ -24,8 +24,14 @@ storiesOf('ts-header', module)
 			slate: 'slate'
 		});
 
+		const dir = select('Direction', {
+			default: 'ltr',
+			ltr: 'ltr',
+			rtl: 'rtl'
+		});
+
 		return html`
-			<ts-header icon=${icon} title="${title}" color="${color}"> </ts-header>
+			<ts-header dir="${dir}" icon=${icon} title="${title}" color="${color}"> </ts-header>
 		`;
 	})
 	.add('button', () => {
