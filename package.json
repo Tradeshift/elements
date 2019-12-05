@@ -97,6 +97,7 @@
     "@tradeshift/elements.list-item": "file:packages/components/list-item",
     "@tradeshift/elements.note": "file:packages/components/note",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
+    "@tradeshift/elements.radio": "file:packages/components/radio",
     "@tradeshift/elements.root": "file:packages/components/root",
     "@tradeshift/elements.search": "file:packages/components/search",
     "@tradeshift/elements.spinner": "file:packages/components/spinner",

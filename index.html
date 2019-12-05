@@ -51,8 +51,10 @@
 						'header',
 						'help-text',
 						'note',
+						'radio',
 						'spinner',
-						'search'
+						'search',
+						'spinner'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -677,8 +679,16 @@
 				});
 			</script>
 			<article>
-				<h2>Checkbox</h2>
+				<h2>Form</h2>
+				<h3>Checkbox</h3>
 				<ts-checkbox data-label="Agree?" name="checkbox" value="yes" checked dir="rtl"></ts-checkbox>
+				<h3>Radio</h3>
+				<ts-radio name="radio" value="red" data-label="Red pill" checked disabled dir="rtl"></ts-radio>
+				<ts-radio name="radio" value="blue" data-label="Blue pill" dir="rtl"></ts-radio>
+				<ts-radio name="radio" value="yello" data-label="Yello pill" dir="rtl"></ts-radio>
+				<ts-radio name="radio" value="black" data-label="Black pill" dir="rtl"></ts-radio>
+				<ts-radio name="radio" value="white" data-label="White pill"></ts-radio>
+				<ts-radio name="radio" value="green" data-label="Green pill"></ts-radio>
 			</article>
 			<ts-aside data-title="hello" id="my-aside">
 				<ts-note slot="note">

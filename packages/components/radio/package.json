@@ -1,0 +1,13 @@
+{
+  "name": "@tradeshift/elements.radio",
+  "version": "0.4.5",
+  "src": "src/radio.js",
+  "main": "lib/radio.umd.js",
+  "browser": "lib/radio.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.4.5"
+  }
+}

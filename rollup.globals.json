@@ -14,6 +14,7 @@
 	"@tradeshift/elements.help-text": "ts.elements.help-text",
 	"@tradeshift/elements.icon": "ts.elements.icon",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
+	"@tradeshift/elements.radio": "ts.elements.radio",
 	"@tradeshift/elements.root": "ts.elements.root",
 	"@tradeshift/elements.spinner": "ts.elements.spinner",
 	"@tradeshift/elements.tooltip": "ts.elements.tooltip",
