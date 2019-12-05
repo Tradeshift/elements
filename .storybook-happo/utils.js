@@ -1,4 +1,5 @@
 import { html } from '@open-wc/demoing-storybook';
+import { render } from 'lit-html';
 
 /**** Happo storybook helpers ****/
 
@@ -10,7 +11,13 @@ export const createComponent = (componentName, content, attrs, noPrefix = false)
 	Object.keys(attrs).forEach(attrKey => {
 		element[attrKey] = attrs[attrKey];
 	});
-	element.innerHTML = content;
+	// Check for list of other elements
+	// TODO: probably need to be more generic and take care all types of elements as content not only list of them
+	if (Array.isArray(content)) {
+		render(content, element);
+	} else {
+		element.innerHTML = content;
+	}
 	return element;
 };
 
