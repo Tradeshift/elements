@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.tabs",
-  "version": "^0.5.3",
+  "version": "0.5.3",
   "src": "src/tabs.js",
   "main": "lib/tabs.umd.js",
   "browser": "lib/tabs.umd.js",

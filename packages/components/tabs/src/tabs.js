@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
 import css from './tabs.css';
 import { customEventNames } from './utils';
 
@@ -94,11 +94,7 @@ customElementDefineHelper(
 
 		slotChangeHandler(e) {
 			const slottedNodes = e.currentTarget.assignedNodes();
-			const isInvalid = slottedNodes.filter(node => node.nodeType !== Node.TEXT_NODE && node.tagName !== 'TS-TAB')
-				.length;
-			if (isInvalid) {
-				throw new Error('You can only use "ts-tab" in "ts-tabs" component!');
-			}
+			validateSlottedNodes(this.tagName, slottedNodes, ['TS-TAB']);
 			this.generateHeaderTabs();
 		}
 

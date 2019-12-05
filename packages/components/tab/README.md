@@ -25,6 +25,27 @@
 		</a>
 </p>
 
+## ➤ Properties
+
+| Property | Attribute | Type    | Default | Description                                                 |
+| -------- | --------- | ------- | ------- | ----------------------------------------------------------- |
+| label    | label     | String  | -       | The label text for the header                               |
+| selected | selected  | Boolean | false   | Make the tab selected                                       |
+| icon     | icon      | String  | -       | Icon name from the available icons in the ts-icon component |
+| counter  | counter   | Number  | -       | Number for counter badge next to the label                  |
+
+## ➤ Events
+
+| Event name      | Payload | Description                                                                                                            |
+| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| tab-prop-change | {name}  | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. |
+
+## ➤ Slots
+
+| Slot Name | Default | Description                                   |
+| --------- | ------- | --------------------------------------------- |
+| main      | -       | Content of the tab to show when it's selected |
+
 ## ➤ How to use it
 
 - Install the package of tab

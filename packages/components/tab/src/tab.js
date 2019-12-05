@@ -13,7 +13,7 @@ customElementDefineHelper(
 				label: { type: String, reflect: true },
 				selected: { type: Boolean, reflect: true },
 				icon: { type: String, reflect: true },
-				counter: { type: String, reflect: true }
+				counter: { type: Number, reflect: true }
 			};
 		}
 
