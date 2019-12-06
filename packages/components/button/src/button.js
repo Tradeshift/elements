@@ -30,12 +30,24 @@ export class TSButton extends TSElement {
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
+	get iconWithText() {
+		return html`
+			<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon><span><slot></slot></span>
+		`;
+	}
+
+	get normalIcon() {
+		return html`
+			<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
+		`;
+	}
+
 	render() {
 		return html`
 			<button ?disabled="${this.disabled}">
 				${this.icon
 					? html`
-							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
+							${this.type === types.TEXT ? this.iconWithText : this.normalIcon}
 					  `
 					: html`
 							<span><slot></slot></span>
