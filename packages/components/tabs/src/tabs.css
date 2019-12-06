@@ -1,0 +1,113 @@
+/* General........................................................ */
+
+.tabs-wrapper {
+	position: relative;
+	display: flex;
+
+	&:after {
+		position: absolute;
+		content: '';
+		top: 100%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background-color: var(--ts-color-gray-light);
+		pointer-events: none;
+	}
+}
+
+.tabs-content-wrapper {
+	padding: var(--ts-unit);
+}
+
+button {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	height: var(--ts-unit-double);
+	border: none;
+	outline: none;
+	background: var(--ts-color-white);
+	padding: var(--ts-unit-half);
+	font-size: var(--ts-font-size-default);
+	cursor: pointer;
+}
+
+ts-icon,
+ts-typography {
+	color: var(--ts-color-slate-lightest);
+}
+
+/* Has icon ........................................................*/
+
+ts-icon + ts-typography {
+	padding-left: var(--ts-unit-half);
+}
+
+/* Badge (counter)........................................................ */
+
+.badge {
+	min-width: var(--ts-unit);
+	text-align: center;
+	border-radius: var(--ts-radius);
+	font-size: var(--ts-fontsize-small);
+	font-weight: var(--ts-fontweight);
+	background-color: var(--ts-color-gray-lighter);
+	color: var(--ts-color-slate-lightest);
+	margin-left: var(--ts-unit-half);
+}
+
+/* Close Button........................................................ */
+
+.close-button {
+	padding-left: var(--ts-unit-half);
+}
+
+/* Selected........................................................ */
+
+button[selected] {
+	box-shadow: inset 0 -2px 0 0 var(--ts-color-black);
+
+	& ts-icon,
+	& ts-typography {
+		color: var(--ts-color-black);
+	}
+
+	& .badge {
+		background-color: var(--ts-color-black);
+		color: var(--ts-color-white);
+	}
+}
+
+/* Hover........................................................ */
+
+button:hover {
+	& ts-icon,
+	& ts-typography {
+		color: var(--ts-color-black);
+	}
+
+	& .badge {
+		background-color: var(--ts-color-black);
+		color: var(--ts-color-white);
+	}
+}
+
+/* RTL........................................................ */
+
+[dir='rtl'] {
+	& ts-icon + ts-typography {
+		padding-left: 0;
+		padding-right: var(--ts-unit-half);
+	}
+
+	& .badge {
+		margin-left: 0;
+		margin-right: var(--ts-unit-half);
+	}
+
+	& .close-button {
+		padding-left: 0;
+		padding-right: var(--ts-unit-half);
+	}
+}

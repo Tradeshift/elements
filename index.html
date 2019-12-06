@@ -52,7 +52,9 @@
 						'help-text',
 						'note',
 						'spinner',
-						'search'
+						'search',
+						'tabs',
+						'tab'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -87,6 +89,9 @@
 				tenetur vero.
 			</ts-note>
 			<article id="ts-root-toggle">
+				<ts-header icon="/icon.svg" title="Header">
+					<ts-button>Button</ts-button>
+				</ts-header>
 				<h2>ts-root</h2>
 				<ts-button-group>
 					<ts-button onclick="toggleSlot('header', this)">Toggle Header</ts-button>
@@ -196,6 +201,43 @@
 					document.getElementById('closeableNote1').addEventListener('close', handleNoteClose);
 					document.getElementById('rootNote').addEventListener('button-click', handleButtonClick);
 				</script>
+			</article>
+
+			<article>
+				<h2>ts-tabs</h2>
+				<ts-tabs id="tabs1">
+					<ts-tab selected label="tab label 1">
+						<h1>tab 1 content</h1>
+					</ts-tab>
+					<ts-tab label="tab label 2" icon="arrow-up" counter="12">
+						<h2>tab 2 content</h2>
+					</ts-tab>
+					<ts-tab label="tab label 3" icon="ada" counter="12">
+						<h1>
+							tab 3 content
+						</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dolorum ea eum facilis ipsam
+							itaque nisi odit rerum ut. Commodi dignissimos eum facere neque perferendis quam quo reiciendis
+							voluptatum.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolore ex excepturi fugit harum
+							hic, impedit incidunt libero non placeat possimus qui quibusdam quis reprehenderit repudiandae rerum
+							tempora, voluptates!
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias distinctio dolore doloribus eius facere
+							fuga harum impedit iusto labore, laboriosam nemo nisi optio pariatur provident qui repellat sunt
+							voluptatibus.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis maxime officia optio similique
+							soluta, vitae voluptas voluptatem? Debitis deleniti dolor error laboriosam molestiae, nesciunt omnis
+							sequi! Assumenda eveniet ipsum praesentium.
+						</p>
+					</ts-tab>
+				</ts-tabs>
 			</article>
 
 			<article>

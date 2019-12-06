@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.tab",
+  "version": "0.5.3",
+  "src": "src/tab.js",
+  "main": "lib/tab.umd.js",
+  "browser": "lib/tab.umd.js",
+  "module": "lib/tab.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.5.3"
+  }
+}

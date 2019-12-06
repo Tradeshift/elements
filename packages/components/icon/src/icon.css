@@ -46,7 +46,6 @@ svg {
 /* I also tried to add these following generated styles from there as string to here which didn't work */
 /* It's also related to this issue in the polyfill limitation */
 /* https://github.com/Tradeshift/elements/wiki/Polyfill-Limitations */
-svg,
 :host([type='default']) svg {
 	color: var(--ts-color-slate);
 }
@@ -97,6 +96,10 @@ svg,
 
 :host([type='suggested']) svg {
 	color: var(--ts-color-purple);
+}
+
+:host([type='slate-lightest']) svg {
+	color: var(--ts-color-slate-lightest);
 }
 
 :host([circular]) {

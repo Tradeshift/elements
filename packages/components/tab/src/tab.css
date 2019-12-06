@@ -1,0 +1,5 @@
+/* General........................................................ */
+
+.tab-content:not([selected]) {
+	display: none;
+}

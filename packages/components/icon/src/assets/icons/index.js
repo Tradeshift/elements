@@ -7,6 +7,7 @@ import arrowUp from './arrow-up.svg';
 import ada from './ada.svg';
 import search from './search.svg';
 import closeClear from './close-clear.svg';
+import close from './close.svg';
 import checkmark from './checkmark.svg';
 
 const icons = {
@@ -16,6 +17,7 @@ const icons = {
 	ada,
 	checkmark,
 	search,
+	close,
 	'arrow-up': arrowUp,
 	'close-clear': closeClear
 };

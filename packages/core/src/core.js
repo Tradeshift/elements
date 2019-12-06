@@ -38,5 +38,21 @@ export class TSElement extends LitElement {
 	}
 }
 
+export function validateSlottedNodes(componentName, slottedNodes, validNodes) {
+	const lowerCaseValidNodes = validNodes.map(node => node.toLowerCase());
+	const filterInvalidNodes = slottedNode => {
+		// for line breaks in the html we need to ignore TEXT_NODEs
+		if (slottedNode.nodeType !== Node.TEXT_NODE) {
+			return lowerCaseValidNodes.indexOf(slottedNode.tagName.toLowerCase()) === -1;
+		}
+	};
+
+	const isInvalid = slottedNodes.filter(filterInvalidNodes).length > 0;
+	if (isInvalid) {
+		const validNodesNames = validNodes.map(node => node.toLowerCase()).join();
+		throw new Error(`You can only use ${validNodesNames} in ${componentName.toLowerCase()} component!`);
+	}
+}
+
 // To help with treeshaking, only exports in use are listed
 export { css, unsafeCSS, html } from 'lit-element';
