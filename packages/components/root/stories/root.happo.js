@@ -1,6 +1,7 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.root';
+import '@tradeshift/elements.header';
 
 const slots = {
 	header: { slot: 'header', height: '60px', background: '#00AEFF' },
@@ -64,7 +65,7 @@ function createElement({ slot, height, background, width }) {
 	switch (slot) {
 		case 'header':
 			return html`
-				<header slot=${slot} class=${slot} style=${style}>${slot}</header>
+				<ts-header slot=${slot} class=${slot} color="blue" title="${slot}"></ts-header>
 			`;
 		case 'footer':
 			return html`

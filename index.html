@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tradeshift Elements v0.4</title>
+		<title>Tradeshift Elements v0.5</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
@@ -52,6 +52,7 @@
 						'help-text',
 						'note',
 						'spinner',
+						'modal',
 						'search',
 						'tabs',
 						'tab'
@@ -102,6 +103,8 @@
 					<ts-button onclick="toggleSlot('sidebar-inner-right', this)">Toggle Inner Right Sidebar</ts-button>
 					<ts-button onclick="toggleCover('my-cover')">Toggle cover</ts-button>
 					<ts-button onclick="toggleAside('my-aside')">Toggle aside</ts-button>
+					<ts-button onclick="toggleModal('big-modal')">Toggle Big modal</ts-button>
+					<ts-button onclick="toggleModal('medium-modal')">Toggle Medium modal</ts-button>
 				</ts-button-group>
 				<script>
 					function toggleSlot(name, button) {
@@ -134,6 +137,10 @@
 						} else {
 							aside.setAttribute('data-visible', true);
 						}
+					}
+
+					function toggleModal(id) {
+						toggleAside(id);
 					}
 
 					(function() {
@@ -648,15 +655,15 @@
 				></ts-file-card>
 
 				<script>
-					var fileCards = document.querySelectorAll('ts-file-card');
-					fileCards.forEach(function(fileCard) {
-						fileCard.addEventListener('download', function(event) {
+					const fileCards = document.querySelectorAll('ts-file-card');
+					for (let i = 0; i < fileCards.length; i++) {
+						fileCards[i].addEventListener('download', function(event) {
 							console.log('download', event);
 						});
-						fileCard.addEventListener('remove', function(event) {
+						fileCards[i].addEventListener('remove', function(event) {
 							console.log('remove', event);
 						});
-					});
+					}
 				</script>
 			</article>
 
@@ -766,8 +773,31 @@
 				</ts-button-group>
 			</ts-aside>
 			<ts-cover id="my-cover"></ts-cover>
+			<ts-modal id="big-modal" data-title="Available Apps">
+				<div id="big-content" slot="main"></div>
+				<div slot="footer">
+					<ts-button onclick="closeBigModal()">Close!</ts-button>
+				</div>
+			</ts-modal>
+			<ts-modal id="medium-modal" data-title="Available Apps" data-size="medium">
+				<ts-note slot="note">
+					Some important note about this information.
+				</ts-note>
+				<div id="medium-content" slot="main"></div>
+				<div slot="footer">
+					<ts-button onclick="closeModal()">Close!</ts-button>
+				</div>
+			</ts-modal>
 		</ts-root>
 		<script>
+			function closeModal() {
+				document.getElementById('medium-modal').close();
+			}
+
+			function closeBigModal() {
+				document.getElementById('big-modal').close();
+			}
+
 			function onOpen() {
 				console.log('The aside is opening');
 			}
@@ -787,6 +817,35 @@
 			document.getElementById('my-aside').addEventListener('opened', onOpened);
 			document.getElementById('my-aside').addEventListener('close', onClose);
 			document.getElementById('my-aside').addEventListener('closed', onClosed);
+
+			const modal = document.getElementById('medium-modal');
+			modal.addEventListener('open', function() {
+				console.log('medium modal open');
+			});
+			modal.addEventListener('opened', function() {
+				console.log('medium modal opened');
+			});
+			modal.addEventListener('close', function() {
+				console.log('close medium modal');
+			});
+			modal.addEventListener('closed', function() {
+				console.log('medium modal closed');
+			});
+
+			function generateCards() {
+				const fragment = document.createDocumentFragment();
+				for (let i = 0; i < 20; i++) {
+					const card = document.createElement('ts-card');
+					card.textContent =
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque delectus eligendi!' +
+						' Commodi cumque in laboriosam omnis quos tempore! Ad amet at enim necessitatibus, quisquam quos ratione vero. In, qui!';
+					fragment.appendChild(card);
+				}
+				return fragment;
+			}
+
+			document.getElementById('big-content').appendChild(generateCards());
+			document.getElementById('medium-content').appendChild(generateCards());
 		</script>
 	</body>
 </html>

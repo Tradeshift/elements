@@ -1,0 +1,64 @@
+/* General........................................................ */
+
+.container {
+	background-color: var(--ts-color-white);
+	box-shadow: var(--ts-boxshadow-border-default);
+	top: var(--ts-unit);
+	bottom: var(--ts-unit);
+	right: var(--ts-unit);
+	left: var(--ts-unit);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: var(--ts-zindex-dialog);
+}
+
+ts-header {
+	flex-grow: 0;
+	flex-shrink: 0;
+	padding: 0 0 0 var(--ts-unit-quarter);
+}
+
+ts-header[dir='rtl'] {
+	padding: 0 var(--ts-unit-quarter) 0 0;
+}
+
+.note ::slotted(ts-note) {
+	flex-grow: 0;
+	padding-left: var(--ts-unit);
+	padding-right: var(--ts-unit);
+}
+
+.close {
+	height: var(--ts-unit-double);
+	width: var(--ts-unit-double);
+}
+
+main {
+	flex-grow: 1;
+	overflow: auto;
+	padding: var(--ts-unit);
+}
+
+footer {
+	flex-grow: 0;
+}
+
+.container.medium {
+	top: 12.5%;
+	bottom: 12.5%;
+	right: 25%;
+	left: 25%;
+}
+
+.fade-in {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility var(--ts-transition-now) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
+}
+
+.fade-out {
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility var(--ts-transition-fast) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
+}

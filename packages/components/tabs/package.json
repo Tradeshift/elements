@@ -14,6 +14,6 @@
     "@tradeshift/elements.typography": "^0.6.0"
   },
   "peerDependencies": {
-    "@tradeshift/elements.tab": "^0.5.3"
+    "@tradeshift/elements.tab": "^0.6.0"
   }
 }
