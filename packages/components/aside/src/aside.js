@@ -46,7 +46,9 @@ customElementDefineHelper(
 				return;
 			}
 
-			if (e.key === keys.ESCAPE) {
+			// Keycode for IE11
+			const isEsc = e.key === keys.ESCAPE || e.keyCode === 27;
+			if (isEsc) {
 				this.close();
 			}
 		}
