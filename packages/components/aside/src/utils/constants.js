@@ -4,3 +4,7 @@ export const customEventNames = {
 	OPEN: 'open',
 	OPENED: 'opened'
 };
+
+export const keys = {
+	ESCAPE: 'Escape'
+};

@@ -1,1 +1,1 @@
-export { customEventNames } from './constants';
+export { customEventNames, keys } from './constants';

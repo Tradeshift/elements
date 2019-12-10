@@ -3,7 +3,7 @@ import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.spinner';
-import { customEventNames } from './utils';
+import { customEventNames, keys } from './utils';
 
 customElementDefineHelper(
 	'ts-aside',
@@ -29,6 +29,26 @@ customElementDefineHelper(
 			this.visible = false;
 			this.hasFoot = false;
 			this.hasPlatformObject = false;
+		}
+
+		connectedCallback() {
+			super.connectedCallback();
+			document.addEventListener('keydown', this.onKeyDown.bind(this));
+		}
+
+		disconnectedCallback() {
+			super.disconnectedCallback();
+			document.removeEventListener('keydown', this.onKeyDown);
+		}
+
+		onKeyDown(e) {
+			if (!this.visible || e.isComposing) {
+				return;
+			}
+
+			if (e.key === keys.ESCAPE) {
+				this.close();
+			}
 		}
 
 		close(e) {
