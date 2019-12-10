@@ -19,13 +19,13 @@ storiesOf('ts-note', module)
 			null
 		);
 
-		const rtl = boolean('RTL', false);
+		const dir = boolean('RTL', false) ? 'rtl' : 'ltr';
 		const icon = select('Icon', Object.keys(icons), Object.keys(icons)[0]);
 		const hidden = boolean('Hidden', false);
 		const content = text('Content', 'Sample text for note');
 
 		return html`
-			<ts-note type="${type}" ?rtl="${rtl}" icon="${icon}" ?hidden="${hidden}">
+			<ts-note type="${type}" dir="${dir}" icon="${icon}" ?hidden="${hidden}">
 				${content}
 			</ts-note>
 		`;
