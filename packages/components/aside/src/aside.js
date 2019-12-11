@@ -1,9 +1,9 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, helpers } from '@tradeshift/elements';
 import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.spinner';
-import { customEventNames, keys } from './utils';
+import { customEventNames } from './utils';
 
 customElementDefineHelper(
 	'ts-aside',
@@ -18,6 +18,7 @@ customElementDefineHelper(
 				title: { type: String, attribute: 'data-title' },
 				visible: { type: Boolean, attribute: 'data-visible', reflect: true },
 				busy: { type: String, attribute: 'data-busy', reflect: true },
+				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
 				hasFoot: { type: Boolean },
 				hasPlatformObject: { type: Boolean }
 			};
@@ -29,28 +30,8 @@ customElementDefineHelper(
 			this.visible = false;
 			this.hasFoot = false;
 			this.hasPlatformObject = false;
-		}
-
-		connectedCallback() {
-			super.connectedCallback();
-			document.addEventListener('keydown', this.onKeyDown.bind(this));
-		}
-
-		disconnectedCallback() {
-			super.disconnectedCallback();
-			document.removeEventListener('keydown', this.onKeyDown);
-		}
-
-		onKeyDown(e) {
-			if (!this.visible || e.isComposing) {
-				return;
-			}
-
-			// Keycode for IE11
-			const isEsc = e.key === keys.ESCAPE || e.keyCode === 27;
-			if (isEsc) {
-				this.close();
-			}
+			this.noCloseOnEscKey = false;
+			this.onKeyDown = this.onKeyDown.bind(this);
 		}
 
 		close(e) {
@@ -137,6 +118,25 @@ customElementDefineHelper(
 				} else if (oldVal === true) {
 					this.dispatchCustomEvent(customEventNames.CLOSED);
 				}
+			}
+		}
+
+		firstUpdated(changedProperties) {
+			document.addEventListener('keydown', this.onKeyDown);
+		}
+
+		disconnectedCallback() {
+			document.removeEventListener('keydown', this.onKeyDown);
+			super.disconnectedCallback();
+		}
+
+		onKeyDown(event) {
+			if (!this.visible || this.noCloseOnEscKey) {
+				return;
+			}
+
+			if (helpers.isEscapeEvent(event)) {
+				this.close();
 			}
 		}
 	}
