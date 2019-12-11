@@ -1,3 +1,5 @@
+import { keys, keyCodes } from './constants';
+
 export const classNamesToSelector = classNamesObject => {
 	const selectors = {};
 
@@ -20,4 +22,9 @@ export const debounceEvent = (callback, wait) => {
 		clearTimeout(timeout);
 		timeout = setTimeout(() => callback.apply(this, args), wait);
 	};
+};
+
+export const isEscapeEvent = event => {
+	// Keycode for IE11
+	return event.key === keys.ESCAPE || event.keyCode === keyCodes.ESCAPE;
 };

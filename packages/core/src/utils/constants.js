@@ -35,3 +35,11 @@ export const delay = {
 	FAST: 200,
 	SLOW: 600
 };
+
+export const keys = {
+	ESCAPE: 'Escape'
+};
+
+export const keyCodes = {
+	ESCAPE: 27
+};
