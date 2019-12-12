@@ -24,7 +24,5 @@ export const debounceEvent = (callback, wait) => {
 	};
 };
 
-export const isEscapeEvent = event => {
-	// Keycode for IE11
-	return event.key === keys.ESCAPE || event.keyCode === keyCodes.ESCAPE;
-};
+// Keycode check for IE11
+export const isEscapeEvent = event => event.key === keys.ESCAPE || event.keyCode === keyCodes.ESCAPE;

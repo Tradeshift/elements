@@ -85,7 +85,7 @@ customElementDefineHelper(
 			`;
 		}
 
-		firstUpdated(changedProperties) {
+		firstUpdated() {
 			document.addEventListener('keydown', this.onKeyDown);
 		}
 
