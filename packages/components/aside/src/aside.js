@@ -135,6 +135,11 @@ customElementDefineHelper(
 				return;
 			}
 
+			// Ignore all keys fired during IME composition
+			if (event.isComposing) {
+				return;
+			}
+
 			if (helpers.isEscapeEvent(event)) {
 				this.close();
 			}
