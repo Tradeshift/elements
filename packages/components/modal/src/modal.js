@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, CloseOnEscBehavior } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.header';
@@ -17,7 +17,8 @@ customElementDefineHelper(
 				dir: { type: String, reflect: true, attribute: 'data-dir' },
 				size: { type: String, reflect: true, attribute: 'data-size' },
 				title: { type: String, reflect: true, attribute: 'data-title' },
-				visible: { type: Boolean, reflect: true, attribute: 'data-visible' }
+				visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
+				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' }
 			};
 		}
 
@@ -25,6 +26,8 @@ customElementDefineHelper(
 			super();
 			this.size = sizes.LARGE;
 			this.title = '';
+			this.noCloseOnEscKey = false;
+			this.closeBehavior = new CloseOnEscBehavior(this);
 		}
 
 		get direction() {
@@ -80,6 +83,15 @@ customElementDefineHelper(
 				</div>
 				<ts-cover class="ts-dialog-cover" ?data-visible=${this.visible} @click="${this.close}"></ts-cover>
 			`;
+		}
+
+		firstUpdated() {
+			this.closeBehavior.start();
+		}
+
+		disconnectedCallback() {
+			this.closeBehavior.stop();
+			super.disconnectedCallback();
 		}
 	}
 );

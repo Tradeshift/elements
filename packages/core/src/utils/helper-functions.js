@@ -1,3 +1,5 @@
+import { keyboardEventKeys, keyboardEventKeyCodes } from './constants';
+
 export const classNamesToSelector = classNamesObject => {
 	const selectors = {};
 
@@ -21,3 +23,7 @@ export const debounceEvent = (callback, wait) => {
 		timeout = setTimeout(() => callback.apply(this, args), wait);
 	};
 };
+
+// Keycode check for IE11
+export const isEscapeKeyEvent = event =>
+	event.key === keyboardEventKeys.ESCAPE || event.keyCode === keyboardEventKeyCodes.ESCAPE;

@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, CloseOnEscBehavior } from '@tradeshift/elements';
 import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
@@ -18,6 +18,7 @@ customElementDefineHelper(
 				title: { type: String, attribute: 'data-title' },
 				visible: { type: Boolean, attribute: 'data-visible', reflect: true },
 				busy: { type: String, attribute: 'data-busy', reflect: true },
+				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
 				hasFoot: { type: Boolean },
 				hasPlatformObject: { type: Boolean }
 			};
@@ -29,6 +30,8 @@ customElementDefineHelper(
 			this.visible = false;
 			this.hasFoot = false;
 			this.hasPlatformObject = false;
+			this.noCloseOnEscKey = false;
+			this.closeBehavior = new CloseOnEscBehavior(this);
 		}
 
 		close(e) {
@@ -116,6 +119,15 @@ customElementDefineHelper(
 					this.dispatchCustomEvent(customEventNames.CLOSED);
 				}
 			}
+		}
+
+		firstUpdated() {
+			this.closeBehavior.start();
+		}
+
+		disconnectedCallback() {
+			super.disconnectedCallback();
+			this.closeBehavior.stop();
 		}
 	}
 );
