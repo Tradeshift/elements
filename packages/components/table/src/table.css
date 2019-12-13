@@ -1,0 +1,137 @@
+/* General........................................................ */
+
+:host {
+	--ts-table-small: 10%;
+	--ts-table-medium: 15%;
+	--ts-table-large: 20%;
+}
+
+table,
+tr {
+	border: var(--ts-border);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+	background-color: var(--ts-color-white);
+}
+
+th {
+	color: var(--ts-color-slate-dark);
+	text-transform: uppercase;
+	font-weight: var(--ts-fontweight-bold);
+	font-size: var(--ts-fontsize-mini);
+	padding: var(--ts-unit-half);
+	text-align: left;
+	background-color: var(--ts-color-white);
+}
+
+th > div {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+td {
+	padding: var(--ts-unit-half);
+}
+
+td > div.cell {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+tr td {
+	cursor: pointer;
+}
+
+.status-cell {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: var(--ts-border);
+	border-left: var(--ts-border);
+	border-bottom: var(--ts-border);
+	padding: var(--ts-unit);
+	background-color: var(--ts-color-white);
+}
+
+.col-small {
+	width: var(--ts-table-small);
+}
+
+.col-medium {
+	width: var(--ts-table-medium);
+}
+
+.col-large {
+	width: var(--ts-table-large);
+}
+
+.display-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.display-left {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.display-center {
+	display: flex;
+	justify-content: center;
+}
+
+.selected {
+	background-color: var(--ts-color-blue-lightest);
+}
+
+@media screen and (min-width: 1000px) {
+	.mobile-only {
+		display: none;
+	}
+	.pagination {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.pagination {
+		display: none;
+	}
+
+	.desktop-only {
+		display: none;
+	}
+
+	th {
+		padding: 0;
+		border: none;
+	}
+
+	th > div {
+		display: none;
+	}
+
+	table {
+		border: 0;
+	}
+
+	tr {
+		border-left: 0;
+		border-right: 0;
+	}
+
+	thead > tr {
+		border: 0;
+	}
+}

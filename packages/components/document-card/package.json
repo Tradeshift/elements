@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.document-card",
+  "version": "0.5.3",
+  "src": "src/document-card.js",
+  "main": "lib/document-card.umd.js",
+  "browser": "lib/document-card.umd.js",
+  "module": "lib/document-card.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.5.3"
+  }
+}

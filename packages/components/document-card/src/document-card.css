@@ -1,0 +1,53 @@
+/* General........................................................ */
+
+:host {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.document-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.card-container {
+	overflow: hidden;
+	white-space: nowrap;
+	padding-left: var(--ts-unit-quarter);
+}
+
+.card-icon {
+	padding: var(--ts-unit-quarter);
+}
+
+.card-title {
+	font-weight: var(--ts-fontweight-bold);
+	padding-bottom: var(--ts-unit-quarter);
+	color: var(--ts-color-slate-darker);
+	font-size: var(--ts-fontsize);
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.card-description,
+.card-mobile-description {
+	color: var(--ts-color-slate-darker);
+	font-size: var(--ts-fontsize-mini);
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.card-mobile-description {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.card-mobile-description {
+		display: block;
+	}
+
+	.card-description {
+		display: none;
+	}
+}

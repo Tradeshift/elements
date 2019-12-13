@@ -67,3 +67,16 @@ commons.host.config.js
 /static
 /.happo
 /gemini
+
+# IDE files
+target
+target-eclipse
+.project*
+.classpath*
+*.iml
+*.orig
+*sublime-*
+.idea
+.settings*
+.doclum
+.vscode
