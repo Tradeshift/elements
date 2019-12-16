@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.tabs",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "src": "src/tabs.js",
   "main": "lib/tabs.umd.js",
   "browser": "lib/tabs.umd.js",
@@ -9,9 +9,9 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.7.0",
-    "@tradeshift/elements.icon": "^0.7.0",
-    "@tradeshift/elements.typography": "^0.7.0"
+    "@tradeshift/elements": "^0.7.1",
+    "@tradeshift/elements.icon": "^0.7.1",
+    "@tradeshift/elements.typography": "^0.7.1"
   },
   "peerDependencies": {
     "@tradeshift/elements.tab": "^0.6.0"
