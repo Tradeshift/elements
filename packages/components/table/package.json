@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.table",
-  "version": "0.7.0",
+  "version": "0.5.3",
   "src": "src/table.js",
   "main": "lib/table.umd.js",
   "browser": "lib/table.umd.js",
