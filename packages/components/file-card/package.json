@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-card",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "src": "src/file-card.js",
   "main": "lib/file-card.umd.js",
   "browser": "lib/file-card.umd.js",
@@ -9,12 +9,12 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.6.0",
-    "@tradeshift/elements.card": "^0.6.0",
-    "@tradeshift/elements.file-size": "^0.6.0",
-    "@tradeshift/elements.icon": "^0.6.0",
-    "@tradeshift/elements.progress-bar": "^0.6.0",
-    "@tradeshift/elements.typography": "^0.6.0"
+    "@tradeshift/elements": "^0.7.0",
+    "@tradeshift/elements.card": "^0.7.0",
+    "@tradeshift/elements.file-size": "^0.7.0",
+    "@tradeshift/elements.icon": "^0.7.0",
+    "@tradeshift/elements.progress-bar": "^0.7.0",
+    "@tradeshift/elements.typography": "^0.7.0"
   },
   "gitHead": "f9ad23777c014a17b135524dcd23652745337064"
 }
