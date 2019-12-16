@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements",
-  "version": "0.7.1",
+  "version": "0.7.2-0.7.2-alpha.1.0",
   "src": "src/core.js",
   "main": "lib/core.umd.js",
   "browser": "lib/core.umd.js",
