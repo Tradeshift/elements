@@ -237,9 +237,7 @@ We are using [lerna to publish](https://github.com/lerna/lerna/tree/master/comma
 
 - Create a branch for releasing。 `git branch release`
 - `git push release` and set the upstream.
-- `lerna publish`
-
-`NPM_CONFIG_OTP` is a workaround way to solve [the problem](https://github.com/lerna/lerna/issues/1137), which lerna fails to publish, after assigning [2FA](https://docs.npmjs.com/about-two-factor-authentication) on npm account
+- `npm run release`
 
 ---
 
