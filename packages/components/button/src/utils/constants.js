@@ -13,7 +13,6 @@ export const types = {
 };
 
 export const spirits = {
-	NONE: 'none',
 	ACTION_GRAY: 'action-gray',
 	ACTION_BLUE: 'action-blue'
 };

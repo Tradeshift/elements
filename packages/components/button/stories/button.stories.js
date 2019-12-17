@@ -29,7 +29,7 @@ storiesOf('ts-button', module)
 		);
 
 		let spirit;
-		if (type === types.text) {
+		if (type === types.TEXT) {
 			spirit = select('Spirit', {
 				default: undefined,
 				...helpers.objectKeysChangeCase(spirits)
@@ -88,18 +88,15 @@ storiesOf('ts-button', module)
 		`;
 	})
 	.add('action', () => {
-		// const spirit = select(
-		// 	'Spirit',
-		// 	{
-		// 		default: spirits.ACTION_BLUE,
-		// 		...helpers.objectKeysChangeCase(spirits)
-		// 	}
-		// );
+		const spirit = select('Spirit', {
+			default: spirits.ACTION_GRAY,
+			...helpers.objectKeysChangeCase(spirits)
+		});
 
 		const label = text('label', 'Action Button');
 
 		return html`
-			<ts-button type="text" .spirit="action-gray" icon="download">
+			<ts-button type="text" spirit="${spirit}" icon="download">
 				${label}
 			</ts-button>
 		`;
