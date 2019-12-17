@@ -12,7 +12,7 @@ export class TSButton extends TSElement {
 	static get properties() {
 		return {
 			type: { type: String, reflect: true },
-			spirit: { type: String },
+			spirit: { type: String, reflect: true },
 			dir: { type: String },
 			size: { type: String, reflect: true },
 			busy: { type: String, reflect: true },

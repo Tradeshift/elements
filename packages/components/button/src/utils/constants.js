@@ -11,3 +11,9 @@ export const types = {
 	WARNING: 'warning',
 	DANGER: 'danger'
 };
+
+export const spirits = {
+	NONE: 'none',
+	ACTION_GRAY: 'action-gray',
+	ACTION_BLUE: 'action-blue'
+};
