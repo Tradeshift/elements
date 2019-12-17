@@ -53,7 +53,8 @@
     "storybook:deploy": "storybook-to-ghpages",
     "pretest": "run-s build:prod copy:static",
     "test": "npm run happo",
-    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
+    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
+    "release": "run-s build:prod && lerna publish"
   },
   "husky": {
     "hooks": {
