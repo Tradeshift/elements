@@ -99,6 +99,14 @@ svg,
 	color: var(--ts-color-purple);
 }
 
+:host([type='action-gray']) svg {
+	color: var(--ts-color-gray-darker);
+}
+
+:host([type='action-blue']) svg {
+	color: var(--ts-color-blue);
+}
+
 :host([circular]) {
 	border-radius: 50%;
 	background-color: var(--ts-icon-color);

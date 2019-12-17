@@ -12,6 +12,8 @@ export class TSButton extends TSElement {
 	static get properties() {
 		return {
 			type: { type: String, reflect: true },
+			spirit: { type: String },
+			dir: { type: String },
 			size: { type: String, reflect: true },
 			busy: { type: String, reflect: true },
 			icon: { type: String, reflect: true },
@@ -20,12 +22,24 @@ export class TSButton extends TSElement {
 		};
 	}
 
+	get direction() {
+		return this.dir ? this.dir : this.bodyDir;
+	}
+
 	constructor() {
 		super();
 		this.grouped = false;
 	}
 
+	isIconWithTextType() {
+		return this.type === types.TEXT;
+	}
+
 	get iconType() {
+		if (this.spirit) {
+			return this.spirit;
+		}
+
 		const colorBackgroundTypes = [types.DANGER, types.WARNING, types.ACCEPT, types.PRIMARY];
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
@@ -42,16 +56,26 @@ export class TSButton extends TSElement {
 		`;
 	}
 
+	get normalText() {
+		return html`
+			<span><slot id="text-slot"></slot></span>
+		`;
+	}
+
+	get buttonKind() {
+		if (this.icon && this.isIconWithTextType()) {
+			return this.iconWithText;
+		} else if (this.icon) {
+			return this.normalIcon;
+		} else {
+			return this.normalText;
+		}
+	}
+
 	render() {
 		return html`
-			<button ?disabled="${this.disabled}">
-				${this.icon
-					? html`
-							${this.type === types.TEXT ? this.iconWithText : this.normalIcon}
-					  `
-					: html`
-							<span><slot></slot></span>
-					  `}
+			<button ?disabled="${this.disabled}" dir="${this.direction}">
+				${this.buttonKind}
 			</button>
 		`;
 	}

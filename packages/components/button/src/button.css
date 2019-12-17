@@ -177,6 +177,68 @@
 	}
 }
 
+/* Text type, action-gray spirit................................................... */
+
+:host([spirit='action-gray']) {
+	& > button {
+		border-radius: 4px;
+		padding: 10px;
+		& span {
+			color: var(--ts-color-blue-darkest);
+		}
+	}
+}
+
+:host(:not([busy])[spirit='action-gray']) {
+	& > button {
+		&:hover {
+			background: var(--ts-color-gray-lightest);
+			& span {
+				color: var(--ts-color-blue-darkest);
+			}
+		}
+
+		&:focus {
+			background: var(--ts-color-gray-lightest);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-gray);
+			& span {
+				color: var(--ts-color-blue-darkest);
+			}
+		}
+	}
+}
+
+/* Text type, action-blue spirit......................................................*/
+
+:host([spirit='action-blue']) {
+	& > button {
+		border-radius: 4px;
+		padding: 10px;
+		& span {
+			color: var(--ts-color-blue);
+		}
+	}
+}
+
+:host(:not([busy])[spirit='action-blue']) {
+	& > button {
+		&:hover {
+			background: var(--ts-color-gray-lightest);
+			& span {
+				color: var(--ts-color-blue);
+			}
+		}
+
+		&:focus {
+			background: var(--ts-color-gray-lightest);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+			& span {
+				color: var(--ts-color-blue);
+			}
+		}
+	}
+}
+
 /* Micro size......................................................*/
 
 :host(:not([type='text'])[size='micro']) {
