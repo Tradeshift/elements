@@ -12,7 +12,7 @@ export class TSButton extends TSElement {
 	static get properties() {
 		return {
 			type: { type: String, reflect: true },
-			spirit: { type: String, reflect: true },
+			color: { type: String, reflect: true },
 			dir: { type: String },
 			size: { type: String, reflect: true },
 			busy: { type: String, reflect: true },
@@ -32,12 +32,12 @@ export class TSButton extends TSElement {
 	}
 
 	isIconWithTextType() {
-		return this.type === types.TEXT;
+		return this.type === types.ACTION;
 	}
 
 	get iconType() {
-		if (this.spirit) {
-			return this.spirit;
+		if (this.color) {
+			return this.color;
 		}
 
 		const colorBackgroundTypes = [types.DANGER, types.WARNING, types.ACCEPT, types.PRIMARY];

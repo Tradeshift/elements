@@ -1,8 +1,8 @@
-import { TSElement, unsafeCSS, html, css, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import styles from './icon.css';
 
 import icons from './assets/icons';
-import { typeColors, types, classNames, sizes } from './utils';
+import { classNames, sizes } from './utils';
 
 customElementDefineHelper(
 	'ts-icon',
@@ -13,14 +13,15 @@ customElementDefineHelper(
 		}
 
 		static get styles() {
-			const colorTypesStyle = Object.keys(types).map(typeKey => {
-				const type = types[typeKey];
-				const typeColor = typeColors[type];
-				return css`	:host([type="${unsafeCSS(type)}"]) {
-						--ts-icon-color: var(--ts-color-${unsafeCSS(typeColor)});
-				}`;
-			});
-			return [TSElement.styles, unsafeCSS(styles), ...colorTypesStyle];
+			// const colorTypesStyle = Object.keys(types).map(typeKey => {
+			// 	const type = types[typeKey];
+			// 	const typeColor = typeColors[type];
+			// 	return css`	:host([type="${unsafeCSS(type)}"]) {
+			// 			--ts-icon-color: var(--ts-color-${unsafeCSS(typeColor)});
+			// 	}`;
+			// });
+			// return [TSElement.styles, unsafeCSS(styles), ...colorTypesStyle];
+			return [TSElement.styles, unsafeCSS(styles)];
 		}
 
 		static get properties() {

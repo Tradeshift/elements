@@ -99,11 +99,11 @@ svg,
 	color: var(--ts-color-purple);
 }
 
-:host([type='action-gray']) svg {
+:host([type='gray']) svg {
 	color: var(--ts-color-gray-darker);
 }
 
-:host([type='action-blue']) svg {
+:host([type='blue']) svg {
 	color: var(--ts-color-blue);
 }
 

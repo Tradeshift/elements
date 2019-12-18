@@ -9,10 +9,11 @@ export const types = {
 	TEXT: 'text',
 	ACCEPT: 'accept',
 	WARNING: 'warning',
-	DANGER: 'danger'
+	DANGER: 'danger',
+	ACTION: 'action'
 };
 
-export const spirits = {
-	ACTION_GRAY: 'action-gray',
-	ACTION_BLUE: 'action-blue'
+export const colors = {
+	GRAY: 'gray',
+	BLUE: 'blue'
 };

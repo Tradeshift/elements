@@ -6,7 +6,7 @@ import '@tradeshift/elements.button';
 
 import { types, sizes } from '../src/utils';
 import icons from '../../icon/src/assets/icons';
-import { spirits } from '../src/utils/constants';
+import { colors } from '../src/utils/constants';
 
 storiesOf('ts-button', module)
 	.addDecorator(withKnobs)
@@ -28,11 +28,11 @@ storiesOf('ts-button', module)
 			''
 		);
 
-		let spirit;
+		let color;
 		if (type === types.TEXT) {
-			spirit = select('Spirit', {
+			color = select('Color', {
 				default: undefined,
-				...helpers.objectKeysChangeCase(spirits)
+				...helpers.objectKeysChangeCase(colors)
 			});
 		}
 
@@ -40,10 +40,10 @@ storiesOf('ts-button', module)
 		const busy = boolean('busy', false);
 		const disabled = boolean('disabled', false);
 
-		if (type === types.text && spirit && spirit !== spirit.none) {
-			console.log('spirit');
+		if (type === types.text && color && color !== color.none) {
+			console.log('color');
 			return html`
-				<ts-button type="${type}" spirit="${spirit}" icon="download">
+				<ts-button type="${type}" color="${color}" icon="download">
 					${label}
 				</ts-button>
 			`;
@@ -88,16 +88,16 @@ storiesOf('ts-button', module)
 		`;
 	})
 	.add('action', () => {
-		const spirit = select('Spirit', {
-			default: spirits.ACTION_GRAY,
-			...helpers.objectKeysChangeCase(spirits)
-		});
+		// const color = select('Color', {
+		// 	default: colors.GRAY,
+		// 	...helpers.objectKeysChangeCase(colors)
+		// });
 
-		const label = text('label', 'Action Button');
+		// const label = text('label', 'Action Button');
 
 		return html`
-			<ts-button type="text" spirit="${spirit}" icon="download">
-				${label}
+			<ts-button type="action" color="${colors.GRAY}" icon="download">
+				Action button
 			</ts-button>
 		`;
 	});

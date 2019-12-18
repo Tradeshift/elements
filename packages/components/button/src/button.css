@@ -177,19 +177,55 @@
 	}
 }
 
-/* Text type, action-gray spirit................................................... */
+/* Action type...................................................... */
 
-:host([spirit='action-gray']) {
+:host([type='action']) {
 	& > button {
+		background: transparent;
 		border-radius: 4px;
-		padding: 10px;
+		padding: var(--ts-unit-half);
+		display: flex;
+		align-items: center;
+	}
+
+	& span {
+		color: var(--ts-color-blue);
+		padding: 0 var(--ts-unit-quarter);
+		font-weight: var(--ts-fontweight);
+		text-transform: none;
+		letter-spacing: normal;
+	}
+}
+
+:host(:not([busy])[type='action']) {
+	& > button {
+		&:hover {
+			background: transparent;
+			& span {
+				color: var(--ts-color-blue-dark);
+			}
+		}
+
+		&:focus {
+			background: var(--ts-color-blue);
+			& span {
+				color: var(--ts-color-white);
+			}
+		}
+	}
+}
+
+/* Action type, gray color................................................... */
+
+:host([color='gray']) {
+	& > button {
 		& span {
 			color: var(--ts-color-blue-darkest);
 		}
 	}
 }
 
-:host(:not([busy])[spirit='action-gray']) {
+:host(:not([busy])[color='gray']) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -208,19 +244,17 @@
 	}
 }
 
-/* Text type, action-blue spirit......................................................*/
+/* Action type, blue color......................................................*/
 
-:host([spirit='action-blue']) {
+:host([color='blue']) {
 	& > button {
-		border-radius: 4px;
-		padding: 10px;
 		& span {
 			color: var(--ts-color-blue);
 		}
 	}
 }
 
-:host(:not([busy])[spirit='action-blue']) {
+:host(:not([busy])[color='blue']) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -269,7 +303,7 @@
 
 /* Button with an icon ............................................*/
 
-:host(:not([type='text'])[icon]) {
+:host(:not([type='text']):not([type='action'])[icon]) {
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
