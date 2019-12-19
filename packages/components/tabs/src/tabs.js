@@ -98,9 +98,21 @@ customElementDefineHelper(
 			this.generateHeaderTabs();
 		}
 
+		onTabPropChange(e) {
+			// stop event bubbling to prevent any parent tabs from switch
+			if (e) {
+				e.stopImmediatePropagation();
+			}
+			this.generateHeaderTabs();
+		}
+
 		firstUpdated() {
 			// listen to prop change on ts-tab and rerender the tabs header
-			this.shadowRoot.host.addEventListener('tab-prop-change', this.generateHeaderTabs);
+			this.shadowRoot.host.addEventListener('tab-prop-change', this.onTabPropChange);
+		}
+
+		disconnectedCallback() {
+			this.shadowRoot.host.removeEventListener('tab-prop-change', this.onTabPropChange);
 		}
 
 		render() {
