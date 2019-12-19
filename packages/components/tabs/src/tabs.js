@@ -28,7 +28,7 @@ customElementDefineHelper(
 		}
 
 		tabClickHandler(tab, index) {
-			const tabs = this.shadowRoot.host.querySelectorAll('ts-tab');
+			const tabs = this.directChildrenTabs;
 			for (let i = 0; i < tabs.length; ++i) {
 				const curTab = tabs[i];
 				const wasSelected = curTab.getAttribute('selected');
@@ -79,9 +79,13 @@ customElementDefineHelper(
 			/* eslint-enable */
 		}
 
+		get directChildrenTabs() {
+			const tabs = Array.from(this.shadowRoot.host.querySelectorAll('ts-tab'));
+			return tabs.filter(tab => tab.parentNode === this);
+		}
+
 		generateHeaderTabs() {
-			const slottedTabs = this.shadowRoot.host.querySelectorAll('ts-tab');
-			this.tabs = Array.from(slottedTabs).map(tabNode => {
+			this.tabs = this.directChildrenTabs.map(tabNode => {
 				return {
 					label: tabNode.getAttribute('label'),
 					icon: tabNode.getAttribute('icon'),
