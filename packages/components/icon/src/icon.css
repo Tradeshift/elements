@@ -102,6 +102,18 @@ svg {
 	color: var(--ts-color-slate-lightest);
 }
 
+:host([type='action-gray']) svg {
+	color: var(--ts-color-gray-darker);
+}
+
+:host([type='action-blue']) svg {
+	color: var(--ts-color-blue);
+}
+
+:host([type='action-inverted']) svg {
+	color: var(--ts-color-white);
+}
+
 :host([circular]) {
 	border-radius: 50%;
 	background-color: var(--ts-icon-color);

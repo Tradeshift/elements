@@ -1,0 +1,94 @@
+/* General........................................................ */
+
+:host {
+	display: inline-block;
+	font-size: var(--ts-font-size-default);
+	line-height: var(--ts-unit);
+
+	& > button {
+		position: relative;
+		min-width: var(--ts-unit-double);
+		border: none;
+		font-size: var(--ts-font-size-default);
+
+		background: transparent;
+		border-radius: 4px;
+		padding: var(--ts-unit-half);
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			background: var(--ts-color-gray-lightest);
+			color: var(--ts-color-blue-darkest);
+		}
+
+		&:focus {
+			color: var(--ts-color-blue-darkest);
+			background: var(--ts-color-gray-lightest);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-gray);
+		}
+
+		& span {
+			display: block;
+			line-height: var(--ts-unit);
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			color: var(--ts-color-blue-darkest);
+			padding: 0 var(--ts-unit-quarter);
+			font-weight: var(--ts-fontweight);
+			text-transform: none;
+			letter-spacing: normal;
+		}
+	}
+}
+
+/* Blue type......................................................*/
+
+:host([type='blue']) {
+	& > button {
+		& span {
+			color: var(--ts-color-blue);
+		}
+
+		&:hover {
+			& span {
+				color: var(--ts-color-blue);
+			}
+		}
+
+		&:focus {
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+			& span {
+				color: var(--ts-color-blue);
+			}
+		}
+	}
+}
+
+/* Inverted type......................................................*/
+
+:host([type='inverted']) {
+	& > button {
+		box-shadow: none;
+
+		& span {
+			color: var(--ts-color-white);
+		}
+
+		&:hover {
+			background: var(--action-button-inverted-hover);
+			& span {
+				color: var(--ts-color-white);
+			}
+		}
+
+		&:focus {
+			background: var(--action-button-inverted-hover);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+			& span {
+				color: var(--ts-color-white);
+			}
+		}
+	}
+}

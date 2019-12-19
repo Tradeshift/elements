@@ -89,6 +89,7 @@
 	--ts-color-blue: rgb(0, 174, 255);
 	--ts-color-blue-dark: rgb(0, 133, 204);
 	--ts-color-blue-darker: rgb(0, 101, 163);
+	--ts-color-blue-darkest: rgb(40, 53, 79);
 	/* Purple */
 	--ts-color-purple-lightest: rgb(236, 216, 238);
 	--ts-color-purple-lighter: rgb(218, 176, 221);
@@ -169,6 +170,9 @@
 	--spinner-color-blue: var(--ts-color-blue);
 	--spinner-color-mono: var(--ts-color-slate-lightest);
 	--spinner-color-white: var(--ts-color-white);
+
+	/* Action button........................................................ */
+	--action-button-inverted-hover: rgb(57, 75, 104);
 }
 
 ts-root {

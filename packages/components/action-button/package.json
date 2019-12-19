@@ -1,0 +1,15 @@
+{
+  "name": "@tradeshift/elements.action-button",
+  "version": "0.7.3",
+  "src": "src/action-button.js",
+  "main": "lib/action-button.umd.js",
+  "browser": "lib/action-button.umd.js",
+  "module": "lib/action-button.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.7.3",
+    "@tradeshift/elements.icon": "^0.7.3"
+  }
+}
