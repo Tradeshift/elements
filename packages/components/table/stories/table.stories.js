@@ -1,12 +1,110 @@
-import { storiesOf, html, select } from '@open-wc/demoing-storybook';
-import { withKnobs, array } from '@storybook/addon-knobs';
+import { storiesOf, html, select, text, array } from '@open-wc/demoing-storybook';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.table';
+import readme from '../README.md';
+
+/**
+ * Decodes the string with encoded html characters.
+ * @param {string} input
+ */
+function htmlDecode(input) {
+	const e = document.createElement('textarea');
+	e.innerHTML = input;
+	// handle case of empty input
+	return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue;
+}
 
 storiesOf('ts-table', module)
 	.addDecorator(withKnobs)
-	.add('default', () => {
-		const cols = array('cols', [
+	.add(
+		'default',
+		() => {
+			const columnsDefaultConfig = JSON.stringify([
+				{
+					property: 'name',
+					size: 'large',
+					value: 'Context'
+				},
+				{
+					visibility: 'desktop-only',
+					property: 'type',
+					size: 'small',
+					value: 'Type',
+					display: 'left'
+				},
+				{ visibility: 'desktop-only', property: 'participants', size: 'small', value: 'Participants' },
+				{
+					visibility: 'desktop-only',
+					property: 'newActivity',
+					value: 'New Activity'
+				},
+				{
+					visibility: 'desktop-only',
+					property: 'lastActivity',
+					value: 'Last Activity',
+					size: 'medium',
+					display: 'right'
+				},
+				{
+					visibility: 'mobile-only',
+					property: 'unread',
+					size: 'small',
+					display: 'right'
+				}
+			]);
+			const defaultData = JSON.stringify([
+				{
+					name: 'Invoice #32131',
+					type: 'ok',
+					participants: 100,
+					newActivity:
+						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
+					lastActivity: 'Yesterday, 15:01',
+					unread: 10,
+					id: 1
+				},
+				{
+					name: 'Purchase Request #1231',
+					type: 'error',
+					participants: 100,
+					newActivity:
+						"Every little bunny has a habit that is funny. It doesn't matter where he goes he always wrinkles up his nose.",
+					lastActivity: '29 Jul, 15:01',
+					unread: 0,
+					id: 2
+				},
+				{
+					name: 'GoodsReceipt #231',
+					type: 'note',
+					participants: 100,
+					newActivity:
+						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
+					lastActivity: '2 Aug, 15:01',
+					unread: 0,
+					id: 3
+				}
+			]);
+
+			const columns = JSON.parse(htmlDecode(text('columns', columnsDefaultConfig)));
+			const data = JSON.parse(htmlDecode(text('data', defaultData)));
+			const dir = select(
+				'dir',
+				{
+					ltr: 'ltr',
+					rtl: 'rtl'
+				},
+				'ltr'
+			);
+			const selectedIds = array('selectedIds', [1]).map(item => parseInt(item, 10));
+			return html`
+				<ts-table .cols="${columns}" .data="${data}" dir="${dir}" .selectedIds="${selectedIds}"> </ts-table>
+			`;
+		},
+		{ notes: readme }
+	)
+	.add('custom render cells', () => {
+		const cols = [
 			{
 				property: 'context',
 				size: 'large',
@@ -84,8 +182,8 @@ storiesOf('ts-table', module)
 					return div;
 				}
 			}
-		]);
-		const data = array('data', [
+		];
+		const data = [
 			{
 				context: {
 					name: 'Invoice #32131',
@@ -120,7 +218,9 @@ storiesOf('ts-table', module)
 				mobileLastActivity: { lastActivity: '2 Aug, 15:01' },
 				id: 3
 			}
-		]);
+		];
+
+		const selectedIds = array('selectedIds', [1]).map(item => parseInt(item, 10));
 
 		const dir = select(
 			'dir',
@@ -130,8 +230,8 @@ storiesOf('ts-table', module)
 			},
 			'ltr'
 		);
-		const selectedIds = array('selectedIds', [1]);
+
 		return html`
-			<ts-table cols="${cols}" data="${data}" dir="${dir}" selectedIds="${selectedIds}"> </ts-table>
+			<ts-table .cols="${cols}" .data="${data}" dir="${dir}" .selectedIds="${selectedIds}"> </ts-table>
 		`;
 	});
