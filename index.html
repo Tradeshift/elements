@@ -412,6 +412,29 @@
 						</p>
 					</ts-tab>
 				</ts-tabs>
+
+				<h2>Nested tabs</h2>
+
+				<ts-tabs dir="ltr">
+					<ts-tab label="First">
+						<div id="tab1">
+							<ts-tabs dir="rtl">
+								<ts-tab label="Nested1"></ts-tab>
+								<ts-tab label="Nested2"></ts-tab>
+								<ts-tab label="Nested3"></ts-tab>
+							</ts-tabs>
+						</div>
+					</ts-tab>
+					<ts-tab label="Second">
+						<div id="tab2">
+							<ts-tabs dir="ltr">
+								<ts-tab label="Nested4"></ts-tab>
+								<ts-tab label="Nested5"></ts-tab>
+								<ts-tab label="Nested6"></ts-tab>
+							</ts-tabs>
+						</div>
+					</ts-tab>
+				</ts-tabs>
 			</article>
 
 			<article>
