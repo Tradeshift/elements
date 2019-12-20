@@ -23,7 +23,7 @@ storiesOf('ts-action-button', module)
 
 		const dir = boolean('RTL', false) ? 'rtl' : 'ltr';
 		const icon = select('Icon', Object.keys(icons), 'download');
-		const color = type === types.inverted ? '#28354F' : '#FFFFFF';
+		const color = type === types.ACTION_INVERTED ? '#28354F' : '#FFFFFF';
 
 		return html`
 			<div style="background-color: ${color}; padding: 20px;">

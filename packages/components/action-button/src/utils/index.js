@@ -1,1 +1,1 @@
-export { actionTypeToIconType, types } from './constants';
+export { types } from './constants';

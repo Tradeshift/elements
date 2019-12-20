@@ -1,7 +1,7 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
 import css from './action-button.css';
-import { actionTypeToIconType, types } from './utils';
+import { types } from './utils';
 
 customElementDefineHelper(
 	'ts-action-button',
@@ -15,15 +15,13 @@ customElementDefineHelper(
 				type: { type: String, reflect: true },
 				title: { type: String, reflect: true },
 				icon: { type: String, reflect: true },
-				dir: { type: String }
+				dir: { type: String, reflect: true }
 			};
 		}
 
-		get iconType() {
-			if (!this.type) {
-				return actionTypeToIconType[types.gray];
-			}
-			return actionTypeToIconType[this.type];
+		constructor() {
+			super();
+			this.type = types.ACTION_GRAY;
 		}
 
 		get direction() {
@@ -45,7 +43,7 @@ customElementDefineHelper(
 		render() {
 			return html`
 				<button ?disabled="${this.disabled}" dir="${this.direction}">
-					<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
+					<ts-icon icon="${this.icon}" size="large" type="${this.type}"></ts-icon>
 					${this.actionTitle}
 				</button>
 			`;

@@ -1,5 +1,6 @@
 {
 	"@tradeshift/elements": "ts.elements",
+	"@tradeshift/elements.action-button": "ts.elements.action-button",
 	"@tradeshift/elements.app-icon": "ts.elements.app-icon",
 	"@tradeshift/elements.aside": "ts.elements.aside",
 	"@tradeshift/elements.button": "ts.elements.button",

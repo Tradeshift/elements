@@ -25,6 +25,20 @@
 		</a>
 </p>
 
+<style>
+table {
+    width:100%;
+}
+</style>
+
+## ➤ Properties
+
+| Property | Attribute | Type   | Default       | Description              |
+| -------- | --------- | ------ | ------------- | ------------------------ |
+| type     | type      | string | 'action-gray' | Style of the button      |
+| icon     | icon      | string | ''            | Icon on button, required |
+| title    | title     | string | ''            | Text on button, optional |
+
 ## ➤ How to use it
 
 - Install the package of actionButton

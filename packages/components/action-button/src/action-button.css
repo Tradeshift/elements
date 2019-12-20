@@ -45,7 +45,7 @@
 
 /* Blue type......................................................*/
 
-:host([type='blue']) {
+:host([type='action-blue']) {
 	& > button {
 		& span {
 			color: var(--ts-color-blue);
@@ -68,7 +68,7 @@
 
 /* Inverted type......................................................*/
 
-:host([type='inverted']) {
+:host([type='action-inverted']) {
 	& > button {
 		box-shadow: none;
 
