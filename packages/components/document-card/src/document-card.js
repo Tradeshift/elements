@@ -14,6 +14,7 @@ customElementDefineHelper(
 				dir: { type: String, reflect: true },
 				name: { type: String, reflect: true },
 				description: { type: String, reflect: true },
+				selected: { type: Boolean, reflect: true },
 				mobileDescription: { attribute: 'mobile-description', type: String, reflect: true }
 			};
 		}
@@ -37,11 +38,15 @@ customElementDefineHelper(
 			`;
 		}
 
+		get selectedClass() {
+			return this.selected ? 'selected' : '';
+		}
+
 		render() {
 			return html`
 				<div class="document-card" dir=${this.direction}>
 					${this.fileIcon}
-					<div class="card-container">
+					<div class="card-container ${this.selectedClass}">
 						<div class="card-title">${this.name}</div>
 						<div class="card-description">${this.description}</div>
 						<div class="card-mobile-description">${this.mobileDescription}</div>

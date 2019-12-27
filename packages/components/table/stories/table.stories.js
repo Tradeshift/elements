@@ -11,11 +11,12 @@ storiesOf('ts-table', module)
 				property: 'context',
 				size: 'large',
 				value: 'Context',
-				renderFunction(item) {
+				renderFunction(item, row) {
 					const card = document.createElement('ts-document-card');
 					card.name = item.name;
 					card.description = item.description;
 					card.mobileDescription = item.mobileDescription;
+					card.bold = row.mobileLastActivity.unread > 0;
 					return card;
 				}
 			},
