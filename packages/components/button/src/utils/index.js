@@ -1,1 +1,1 @@
-export { sizes, types } from './constants';
+export { sizes, types, kinds } from './constants';

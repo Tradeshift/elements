@@ -179,7 +179,7 @@
 
 /* Action type...................................................... */
 
-:host([type='action']) {
+:host([kind='icon-text']) {
 	& > button {
 		background: transparent;
 		border-radius: 4px;
@@ -197,7 +197,7 @@
 	}
 }
 
-:host(:not([busy])[type='action']) {
+:host(:not([busy])[kind='icon-text']) {
 	& > button {
 		&:hover {
 			background: transparent;
@@ -217,7 +217,7 @@
 
 /* Action type, gray color................................................... */
 
-:host([color='gray']) {
+:host([type='action-primary']) {
 	& > button {
 		& span {
 			color: var(--ts-color-blue-darkest);
@@ -225,7 +225,7 @@
 	}
 }
 
-:host(:not([busy])[color='gray']) {
+:host(:not([busy])[type='action-primary']) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -246,7 +246,7 @@
 
 /* Action type, blue color......................................................*/
 
-:host([color='blue']) {
+:host([type='action-secondary']) {
 	& > button {
 		& span {
 			color: var(--ts-color-blue);
@@ -254,7 +254,7 @@
 	}
 }
 
-:host(:not([busy])[color='blue']) {
+:host(:not([busy])[type='action-secondary']) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -303,17 +303,17 @@
 
 /* Button with an icon ............................................*/
 
-:host(:not([type='text']):not([type='action'])[icon]) {
+:host([kind='icon']) {
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
-	}
 
-	& ts-icon {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
+		& > ts-icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 }
 

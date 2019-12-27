@@ -10,7 +10,15 @@ export const types = {
 	ACCEPT: 'accept',
 	WARNING: 'warning',
 	DANGER: 'danger',
-	ACTION: 'action'
+	ACTION_PRIMARY: 'action-primary',
+	ACTION_SECONDARY: 'action-secondary',
+	ACTION_INVERTED: 'action-inverted'
+};
+
+export const kinds = {
+	TEXT: 'text',
+	ICON: 'icon',
+	ICON_TEXT: 'icon-text'
 };
 
 export const colors = {
