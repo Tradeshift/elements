@@ -2,7 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import '@tradeshift/elements.icon';
 
 import css from './button.css';
-import { kinds, types } from './utils';
+import { kinds, types, sizes } from './utils';
 
 export class TSButton extends TSElement {
 	static get styles() {
@@ -18,7 +18,7 @@ export class TSButton extends TSElement {
 			icon: { type: String, reflect: true },
 			disabled: { type: Boolean, reflect: true },
 			grouped: { type: Boolean, reflect: true },
-			kind: { type: String, reflect: true }
+			kind: { type: String }
 		};
 	}
 
@@ -32,9 +32,7 @@ export class TSButton extends TSElement {
 	}
 
 	isIconWithTextType() {
-		return (
-			this.type === types.ACTION_PRIMARY || this.type === types.ACTION_SECONDARY || this.type === types.ACTION_INVERTED
-		);
+		return this.type === types.ACTION || this.type === types.ACTION_SECONDARY || this.type === types.ACTION_INVERTED;
 	}
 
 	get iconType() {
@@ -46,8 +44,8 @@ export class TSButton extends TSElement {
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
-	get buttonByKind() {
-		switch (this.kind) {
+	getButtonByKind(kind) {
+		switch (kind) {
 			case kinds.TEXT:
 				return html`
 					<span><slot></slot></span>
@@ -64,6 +62,10 @@ export class TSButton extends TSElement {
 	}
 
 	get buttonKind() {
+		if (this.size === sizes.MICRO) {
+			return kinds.TEXT;
+		}
+
 		if (this.isIconWithTextType()) {
 			return kinds.ICON_TEXT;
 		} else if (this.icon) {
@@ -75,13 +77,12 @@ export class TSButton extends TSElement {
 
 	firstUpdated() {
 		this.kind = this.buttonKind;
-		console.log('first updated');
 	}
 
 	render() {
 		return html`
-			<button ?disabled="${this.disabled}" dir="${this.direction}">
-				${this.buttonByKind}
+			<button ?disabled="${this.disabled}" dir="${this.direction}" class="${this.kind}">
+				${this.getButtonByKind(this.kind)}
 			</button>
 		`;
 	}

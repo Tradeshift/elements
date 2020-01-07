@@ -99,7 +99,7 @@ svg,
 	color: var(--ts-color-purple);
 }
 
-:host([type='action-primary']) svg {
+:host([type='action']) svg {
 	color: var(--ts-color-gray-darker);
 }
 

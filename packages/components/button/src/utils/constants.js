@@ -10,7 +10,7 @@ export const types = {
 	ACCEPT: 'accept',
 	WARNING: 'warning',
 	DANGER: 'danger',
-	ACTION_PRIMARY: 'action-primary',
+	ACTION: 'action',
 	ACTION_SECONDARY: 'action-secondary',
 	ACTION_INVERTED: 'action-inverted'
 };

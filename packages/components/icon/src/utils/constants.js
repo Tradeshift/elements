@@ -16,7 +16,7 @@ export const types = {
 	DISABLED: 'disabled',
 	DISABLED_CHECKED: 'disabled-checked',
 	SUGGESTED: 'suggested',
-	ACTION_PRIMARY: 'action-primary',
+	ACTION: 'action',
 	ACTION_SECONDARY: 'action-secondary'
 };
 
@@ -34,7 +34,7 @@ export const typeColors = {
 	[types.DISABLED]: colors.GRAY + colorModifiers.LIGHTER,
 	[types.SUGGESTED]: colors.PURPLE,
 	[types.DISABLED_CHECKED]: colors.GRAY + colorModifiers.LIGHT,
-	[types.ACTION_PRIMARY]: colors.GRAY,
+	[types.ACTION]: colors.GRAY,
 	[types.ACTION_SECONDARY]: colors.BLUE
 };
 

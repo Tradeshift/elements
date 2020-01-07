@@ -179,26 +179,26 @@
 
 /* Action type...................................................... */
 
-:host([kind='icon-text']) {
-	& > button {
+:host {
+	& .icon-text {
 		background: transparent;
 		border-radius: 4px;
 		padding: var(--ts-unit-half);
 		display: flex;
 		align-items: center;
-	}
 
-	& span {
-		color: var(--ts-color-blue);
-		padding: 0 var(--ts-unit-quarter);
-		font-weight: var(--ts-fontweight);
-		text-transform: none;
-		letter-spacing: normal;
+		& span {
+			color: var(--ts-color-blue);
+			padding: 0 var(--ts-unit-quarter);
+			font-weight: var(--ts-fontweight);
+			text-transform: none;
+			letter-spacing: normal;
+		}
 	}
 }
 
-:host(:not([busy])[kind='icon-text']) {
-	& > button {
+:host(:not([busy])) {
+	& .icon-text {
 		&:hover {
 			background: transparent;
 			& span {
@@ -217,7 +217,7 @@
 
 /* Action type, gray color................................................... */
 
-:host([type='action-primary']) {
+:host([type='action']) {
 	& > button {
 		& span {
 			color: var(--ts-color-blue-darkest);
@@ -225,7 +225,7 @@
 	}
 }
 
-:host(:not([busy])[type='action-primary']) {
+:host(:not([busy])[type='action']) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -303,8 +303,8 @@
 
 /* Button with an icon ............................................*/
 
-:host([kind='icon']) {
-	& > button {
+host {
+	.icon {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
 
