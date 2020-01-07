@@ -23,6 +23,7 @@
 		line-height: var(--ts-unit);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		white-space: nowrap;
 	}
 }
 
@@ -177,6 +178,36 @@
 	}
 }
 
+/* Text + icon type (action).....................................................*/
+
+:host([type='text'][icon]) {
+	& > button {
+		padding: var(--ts-unit-half);
+		& span {
+			color: var(--ts-color-blue-darkest);
+		}
+	}
+}
+
+:host(:not([busy])[type='text'][icon]) {
+	& > button {
+		&:hover {
+			background: var(--ts-color-gray-lightest);
+			& span {
+				color: var(--ts-color-blue-darkest);
+			}
+		}
+
+		&:focus {
+			background: var(--ts-color-gray-lightest);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-gray);
+			& span {
+				color: var(--ts-color-blue-darkest);
+			}
+		}
+	}
+}
+
 /* Micro size......................................................*/
 
 :host(:not([type='text'])[size='micro']) {
@@ -218,6 +249,10 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	& span {
+		display: none;
 	}
 }
 

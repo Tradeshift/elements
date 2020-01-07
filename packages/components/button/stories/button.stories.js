@@ -27,7 +27,7 @@ storiesOf('ts-button', module)
 			''
 		);
 
-		const label = text('Lable', 'Button');
+		const label = text('Label', 'Button');
 		const busy = boolean('Busy', false);
 		const disabled = boolean('Disabled', false);
 
@@ -67,5 +67,16 @@ storiesOf('ts-button', module)
 
 		return html`
 			<ts-button ?disabled="${disabled}" ?busy="${busy}" icon="${icon}" type="${type}" size="${size}"> </ts-button>
+		`;
+	})
+	.add('action', () => {
+		const label = text('Label', 'Action');
+		const icon = select('Icon', Object.keys(icons), 'download');
+		const direction = boolean('RTL', false) ? 'rtl' : 'ltr';
+
+		return html`
+			<ts-button type="text" icon="${icon}" dir="${direction}">
+				${label}
+			</ts-button>
 		`;
 	});
