@@ -22,12 +22,12 @@
 }
 
 .card-title {
-	font-weight: var(--ts-fontweight-bold);
 	padding-bottom: var(--ts-unit-quarter);
 	color: var(--ts-color-slate-darker);
-	font-size: var(--ts-fontsize);
+	font-size: var(--ts-fontsize-mini);
 	text-overflow: ellipsis;
 	overflow: hidden;
+	font-weight: var(--ts-fontweight-semibold);
 }
 
 .card-description,
@@ -50,4 +50,12 @@
 	.card-description {
 		display: none;
 	}
+}
+
+.selected .card-title {
+	font-weight: var(--ts-fontweight-bold);
+}
+
+.selected .card-mobile-description {
+	font-weight: var(--ts-fontweight-semibold);
 }

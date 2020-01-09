@@ -21,8 +21,8 @@ table {
 th {
 	color: var(--ts-color-slate-dark);
 	text-transform: uppercase;
-	font-weight: var(--ts-fontweight-bold);
-	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight-semibold);
+	font-size: var(--ts-fontsize-small);
 	padding: var(--ts-unit-half);
 	text-align: left;
 	background-color: var(--ts-color-white);
@@ -46,11 +46,6 @@ td > div.cell {
 
 tr td {
 	cursor: pointer;
-}
-
-.status-cell {
-	display: flex;
-	justify-content: flex-start;
 }
 
 .pagination {

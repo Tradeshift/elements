@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tradeshift Elements v0.5</title>
+		<title>Tradeshift Elements v0.7</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
@@ -116,15 +116,35 @@
 						description="Tradeshift SRL"
 					></ts-document-card>
 					<ts-document-card
+						name="Invoice #344234"
+						mobile-description="Tradeshift SRL | 6 participants"
+						description="Tradeshift SRL"
+						selected="true"
+					></ts-document-card>
+					<ts-document-card
 						name="Invoice RTL"
 						mobile-description="RTL"
 						description="RTL mobile"
 						dir="rtl"
 					></ts-document-card>
 					<ts-document-card
+						name="Invoice RTL"
+						mobile-description="RTL"
+						description="RTL mobile"
+						dir="rtl"
+						selected="true"
+					></ts-document-card>
+					<ts-document-card
 						name="looooooooooooooooooooooooooooooooooooooooong teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeext"
 						description="Tradeshift looooooooooooooooooooooooooooooooooooooooong"
 						mobile-description="Mobile looooooooooooooooooooooooooooooooooooooooong"
+					></ts-document-card>
+					<ts-document-card
+						selected="true"
+						dir="rtl"
+						name="تشزسبشسرنسيردنريندربتنزرنبرزنترطودنط  د د  طز ذنرزندذنزدذنمزذ  زدن نزذ دزمن ذمدز ذمدز نذ"
+						description="ردسبترلتبسرتنلربين ل نيبنز لنيرلزبويمبنكسنتبهخلاتقلو ب زتيب نتزدي بنت"
+						mobile-description="نبينب شرش شقث وثقث سه حثقث مش يش يش يش غش غش غش حخشختبريربتيرسبتنبرنمسوبنموسمنيوس"
 					></ts-document-card>
 				</div>
 			</article>
@@ -142,11 +162,12 @@
 							property: 'context',
 							size: 'large',
 							value: 'Context',
-							renderFunction(item) {
+							renderFunction: function(item, row) {
 								const card = document.createElement('ts-document-card');
 								card.name = item.name;
 								card.description = item.description;
 								card.mobileDescription = item.mobileDescription;
+								card.selected = row.mobileLastActivity.unread > 0;
 								return card;
 							}
 						},
@@ -156,7 +177,7 @@
 							size: 'small',
 							value: 'Type',
 							display: 'left',
-							renderFunction(item) {
+							renderFunction: function(item) {
 								const div = document.createElement('div');
 								div.style.display = 'flex';
 								div.style.justifyContent = 'flex-start';
@@ -172,7 +193,7 @@
 							visibility: 'desktop-only',
 							property: 'newActivity',
 							value: 'New Activity',
-							renderFunction(item, row) {
+							renderFunction: function(item, row) {
 								const div = document.createElement('div');
 								div.innerText = item;
 								if (row.mobileLastActivity.unread > 0) {
@@ -193,9 +214,9 @@
 							property: 'mobileLastActivity',
 							size: 'small',
 							display: 'right',
-							renderFunction(item) {
+							renderFunction: function(item) {
 								const div = document.createElement('div');
-								div.style.padding = '10px';
+								div.style.paddingRight = '10px';
 								div.style.whiteSpace = 'nowrap';
 								if (item.unread && item.unread > 0) {
 									const child = document.createElement('div');
