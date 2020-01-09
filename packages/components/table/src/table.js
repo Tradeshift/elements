@@ -56,7 +56,9 @@ customElementDefineHelper(
 		}
 
 		getVisibilityClass(visibility) {
-			return [VISIBILITY.ALWAYS_VISIBLE, VISIBILITY.DESKTOP_ONLY, VISIBILITY.MOBILE_ONLY].includes(visibility)
+			return [VISIBILITY.ALWAYS_VISIBLE, VISIBILITY.DESKTOP_ONLY, VISIBILITY.MOBILE_ONLY].some(
+				vis => vis === visibility
+			)
 				? visibility
 				: VISIBILITY.ALWAYS_VISIBLE;
 		}
