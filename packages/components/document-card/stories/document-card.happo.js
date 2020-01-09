@@ -7,6 +7,7 @@ import { createHappoStories } from '../../../../.storybook-happo/utils';
 storiesOf('ts-document-card', module).add('test', () => {
 	const properties = {
 		dir: { rtl: 'rtl' },
+		selected: { true: true },
 		mobileDescription: { mobileDescription: 'Nice phone you have' }
 	};
 
