@@ -102,6 +102,10 @@ svg {
 	color: var(--ts-color-slate-lightest);
 }
 
+:host([type='action']) svg {
+	color: var(--ts-color-gray);
+}
+
 :host([circular]) {
 	border-radius: 50%;
 	background-color: var(--ts-icon-color);

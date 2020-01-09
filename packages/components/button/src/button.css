@@ -23,6 +23,7 @@
 		line-height: var(--ts-unit);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		white-space: nowrap;
 	}
 }
 
@@ -146,6 +147,8 @@
 	& > button {
 		background: transparent;
 		border-radius: var(--ts-radius);
+		display: flex;
+		align-items: center;
 	}
 
 	& span {
@@ -170,6 +173,36 @@
 			background: var(--ts-color-blue);
 			& span {
 				color: var(--ts-color-white);
+			}
+		}
+	}
+}
+
+/* Text + icon type (action).....................................................*/
+
+:host([type='text'][icon]) {
+	& > button {
+		padding: var(--ts-unit-half);
+		& span {
+			color: var(--ts-color-blue-darkest);
+		}
+	}
+}
+
+:host(:not([busy])[type='text'][icon]) {
+	& > button {
+		&:hover {
+			background: var(--ts-color-gray-lightest);
+			& span {
+				color: var(--ts-color-blue-darkest);
+			}
+		}
+
+		&:focus {
+			background: var(--ts-color-gray-lightest);
+			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-gray);
+			& span {
+				color: var(--ts-color-blue-darkest);
 			}
 		}
 	}
@@ -205,7 +238,7 @@
 
 /* Button with an icon ............................................*/
 
-:host([icon]) {
+:host(:not([type='text'])[icon]) {
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);
@@ -216,6 +249,10 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	& span {
+		display: none;
 	}
 }
 

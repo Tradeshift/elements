@@ -8,7 +8,7 @@ import icons from '../src/assets/icons';
 
 storiesOf('ts-icon', module)
 	.addDecorator(withKnobs)
-	.add('type"', () => {
+	.add('type', () => {
 		const size = select('Size', helpers.objectKeysChangeCase(sizes), sizes.MEDIUM);
 
 		const type = select('Type', helpers.objectKeysChangeCase(types), types.DEFAULT);
