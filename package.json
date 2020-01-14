@@ -104,9 +104,10 @@
     "@tradeshift/elements.search": "file:packages/components/search",
     "@tradeshift/elements.spinner": "file:packages/components/spinner",
     "@tradeshift/elements.status": "file:packages/components/status",
-    "@tradeshift/elements.table": "file:packages/components/table",
     "@tradeshift/elements.tab": "file:packages/components/tab",
+    "@tradeshift/elements.table": "file:packages/components/table",
     "@tradeshift/elements.tabs": "file:packages/components/tabs",
+    "@tradeshift/elements.textarea": "file:packages/components/textarea",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
     "@tradeshift/elements.typography": "file:packages/components/typography"
   },

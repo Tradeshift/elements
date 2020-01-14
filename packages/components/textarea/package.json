@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.textarea",
+  "version": "0.7.3",
+  "src": "src/textarea.js",
+  "main": "lib/textarea.umd.js",
+  "browser": "lib/textarea.umd.js",
+  "module": "lib/textarea.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.7.3"
+  }
+}

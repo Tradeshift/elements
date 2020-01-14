@@ -137,6 +137,7 @@
 	--ts-border-color-default: var(--ts-color-gray-light);
 	--ts-border-color-error: var(--ts-color-red);
 	--ts-border-color-success: var(--ts-color-green);
+	--ts-border-color-hover: var(--ts-color-blue-light);
 	--ts-border-color-focus: var(--ts-color-blue);
 	--ts-border-color-primary: var(--ts-color-blue);
 	--ts-border-color-disabled: var(--ts-color-gray-lighter);
@@ -144,6 +145,7 @@
 	--ts-border-error: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-error);
 	--ts-border-success: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-success);
 	--ts-border-focus: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-focus);
+	--ts-border-hover: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-hover);
 	--ts-border-disabled: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-disabled);
 	--ts-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
 	--ts-boxshadow-border-width-focused: inset 0 0 0 var(--ts-border-width-focused);

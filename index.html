@@ -58,7 +58,8 @@
 						'status',
 						'document-card',
 						'tabs',
-						'tab'
+						'tab',
+						'textarea'
 					];
 					components.forEach(function(component) {
 						var el = document.createElement('script');
@@ -943,6 +944,58 @@
 				<h2>Checkbox</h2>
 				<ts-checkbox data-label="Agree?" name="checkbox" value="yes" checked dir="rtl"></ts-checkbox>
 			</article>
+
+			<article>
+				<h2>Textarea</h2>
+				<ts-textarea id="textarea-empty" title="Textarea with the empty slot"></ts-textarea>
+				<ts-textarea id="textarea-disabled" title="Disabled textarea" disabled><textarea></textarea></ts-textarea>
+				<script>
+					document.getElementById('textarea-empty').addEventListener('input', function(e) {
+						document.getElementById('textarea-disabled').value = e.target.value;
+					});
+				</script>
+				<ts-textarea title="Textarea with a lot of text. Maximum height 9 lines. Scrolling enabled">
+					<textarea>
+Erat labore sit dolores elitr sadipscing sed amet
+vero accusam ipsum. Et sanctus ipsum et amet, lorem labore elitr takimata stet. Et sanctus dolor lorem no
+takimata, nonumy eos kasd magna kasd sit ea. Et dolore dolor sit et aliquyam labore. Dolor nonumy aliquyam
+accusam invidunt lorem erat at takimata est, sit vero sit diam
+lorem voluptua. Aliquyam duo et dolores sea et erat, sed accusam ipsum sadipscing sanctus. Sed et erat
+takimata gubergren elitr takimata. Et et amet sed elitr dolore sit, elitr sit est amet accusam dolor ea sed.
+Aliquyam lorem sit eos nonumy dolores, sed elitr elitr amet sed eos at diam accusam ipsum, sed lorem justo sed
+accusam. Lorem kasd sed sit ea magna. Amet amet sed ut sed, eirmod ea takimata vero sanctus. Tempor sed sed
+sit clita sed. Elitr labore et justo invidunt, et ipsum accusam gubergren et diam consetetur justo nonumy, et
+stet consetetur magna justo est duo et sea. Dolore ea at eos et dolor sit magna, eirmod tempor eirmod vero
+vero. Erat aliquyam eirmod ipsum est et clita. Takimata lorem justo gubergren magna et et dolor diam,
+consetetur dolor at sea vero, et consetetur dolores nonumy dolor sed et sed, rebum at ipsum sit ipsum voluptua
+amet. Dolore sadipscing dolores amet sit sadipscing et duo, amet stet no vero ut. Lorem dolore elitr stet amet
+consetetur et magna, consetetur magna erat eos ea dolores et gubergren sanctus duo. Diam ipsum et consetetur
+dolore sed ipsum diam est. Labore sed ea et magna sed nonumy, magna gubergren et amet diam sed sanctus sed.
+Takimata dolor kasd sed lorem sit ut accusam tempor, lorem amet invidunt lorem dolor elitr ipsum. Est eos
+dolore dolores ea voluptua takimata aliquyam dolore justo. Erat sed dolor sit amet elitr est eirmod.
+Sadipscing aliquyam lorem est elitr elitr eos accusam gubergren. Et lorem amet sadipscing takimata diam
+tempor. Dolore takimata tempor amet lorem. Tempor sed dolor magna eirmod labore. Dolore stet et ipsum aliquyam
+erat dolor lorem. Amet sed duo voluptua lorem vero amet gubergren ipsum dolor, accusam est sanctus lorem
+consetetur magna. Duo et ipsum no gubergren sadipscing justo et. Vero accusam dolor voluptua rebum et tempor
+ipsum, dolor gubergren vero invidunt sit eos accusam consetetur magna amet, et diam tempor et et eirmod kasd,
+clita lorem lorem stet consetetur rebum dolor diam amet, magna clita no et no clita rebum sed takimata sea,
+duo lorem kasd sanctus no sanctus takimata ut et justo. Sea sit est amet rebum et at at lorem et, sed takimata
+erat sed elitr, et gubergren justo accusam justo. Amet at takimata stet dolores lorem. Elitr rebum ea magna
+sadipscing dolor. Magna eirmod gubergren dolor amet sit stet dolor erat sed. Nonumy sea et at dolor tempor
+tempor. Dolor dolore lorem eirmod lorem aliquyam ipsum sadipscing dolor vero. Et ea sit ut amet. Sit amet et
+sadipscing sit magna sit, kasd invidunt sadipscing dolores et no lorem. Justo et rebum eirmod rebum lorem,
+diam takimata nonumy magna consetetur et, lorem consetetur.</textarea
+					>
+				</ts-textarea>
+				<ts-textarea title="RTL textarea" dir="rtl">
+					<textarea>
+تشزسبشسرنسيردنريندربتنزرنبرزنترطودنطد د  طز ذنرزندذنزدذنمزذ
+زدن نزذ دزمن ذمدز ذمدز نذتشزسبشسرنسيردنريندربتنزرنبرزنترطودنطد د  طز ذنرزندذنزدذنمزذ  زدن نزذ
+دزمن ذمدز ذمدز نذتشزسبشسرنسيردنريندربتنزرنبرزنترطودنطد د  طز ذنرزندذنزدذنمزذ  زدن نزذ دزمن ذمدز ذمدز نذ</textarea
+					>
+				</ts-textarea>
+			</article>
+
 			<ts-aside data-title="hello" id="my-aside">
 				<ts-note slot="note">
 					Takimata gubergren sadipscing sed consetetur gubergren , nonumy diam clita aliquyam consetetur sadipscing,

@@ -26,5 +26,6 @@
 	"@tradeshift/elements.document-card": "ts.elements.document-card",
 	"@tradeshift/elements.search": "ts.elements.search",
 	"@tradeshift/elements.tabs": "ts.elements.tabs",
-	"@tradeshift/elements.tab": "ts.elements.tab"
+	"@tradeshift/elements.tab": "ts.elements.tab",
+	"@tradeshift/elements.textarea": "ts.elements.textarea"
 }
