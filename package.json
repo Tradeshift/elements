@@ -43,6 +43,7 @@
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
+    "release": "run-s build:prod && lerna publish",
     "server": "server start --watch",
     "server-reload": "reload --browser --exts html,umd.js",
     "start": "run-p watch server",
@@ -53,8 +54,7 @@
     "storybook:deploy": "storybook-to-ghpages",
     "pretest": "run-s build:prod copy:static",
     "test": "npm run happo",
-    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
-    "release": "run-s build:prod && lerna publish"
+    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "husky": {
     "hooks": {

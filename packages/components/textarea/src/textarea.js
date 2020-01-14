@@ -49,7 +49,7 @@ class TSTextArea extends TSElement {
 				this.updateValue();
 				break;
 			case 'name':
-				this.textarea.name = this.name;
+				this.updateName();
 				break;
 			default:
 				break;
@@ -104,6 +104,7 @@ class TSTextArea extends TSElement {
 	firstUpdated() {
 		this.findInput();
 		this.updateValue();
+		this.updateName();
 		this.updateDisabled();
 
 		if (this.textarea) {

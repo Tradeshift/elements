@@ -2,46 +2,50 @@
 
 :host {
 	& .textarea-wrapper {
-		width: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	& label {
-		text-transform: uppercase;
 		color: var(--ts-color-black);
 		font-size: var(--ts-fontsize-mini);
 		font-weight: var(--ts-fontweight-semibold);
+		margin: var(--ts-unit-half) 0;
+		text-transform: uppercase;
 	}
+}
 
+.textarea-wrapper {
 	& ::slotted(textarea) {
-		border: var(--ts-border);
+		background-color: var(--ts-color-white);
+		border: none;
 		border-radius: var(--ts-radius);
+		box-shadow: var(--ts-boxshadow-border-width) var(--ts-border-color-default);
 		font-size: var(--ts-fontsize-mini);
 		font-weight: var(--ts-fontweight);
+		outline: none;
 		padding: calc(var(--ts-unit-quarter) - 1px) var(--ts-unit-half);
-		background-color: var(--ts-color-white);
 		resize: none;
-		width: 100%;
-		box-sizing: border-box;
 	}
 
 	& ::slotted(textarea:hover) {
-		border: var(--ts-border-hover);
+		box-shadow: var(--ts-boxshadow-border-width) var(--ts-border-color-hover);
 	}
 
 	& ::slotted(textarea:focus) {
-		border: var(--ts-border-focus);
-		outline: none;
+		box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-border-color-focus);
 	}
 }
 
 /* Disable status .................................................*/
+
 :host([disabled]) {
 	& label {
 		color: var(--ts-color-gray-lighter);
 	}
 
-	& ::slotted(textarea) {
-		border: var(--ts-border-disabled);
+	& .textarea-wrapper ::slotted(textarea) {
+		box-shadow: var(--ts-boxshadow-border-width) var(--ts-border-color-disabled);
 		color: var(--ts-color-gray-lighter);
 	}
 }
