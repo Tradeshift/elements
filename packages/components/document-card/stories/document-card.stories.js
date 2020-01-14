@@ -2,6 +2,8 @@ import { storiesOf, html, select, boolean } from '@open-wc/demoing-storybook';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.document-card';
+import { IconsEnum } from '../src/utils';
+import { helpers } from '@tradeshift/elements';
 
 storiesOf('ts-document-card', module)
 	.addDecorator(withKnobs)
@@ -10,6 +12,10 @@ storiesOf('ts-document-card', module)
 		const selected = boolean('selected', true);
 		const description = text('description', 'CompanyName');
 		const mobileDescription = text('mobileDescription', 'Description');
+		const type = select('type', {
+			default: null,
+			...helpers.objectKeysChangeCase(IconsEnum)
+		});
 		const dir = select(
 			'dir',
 			{
@@ -25,6 +31,7 @@ storiesOf('ts-document-card', module)
 				mobileDescription="${mobileDescription}"
 				dir="${dir}"
 				?selected="${selected}"
+				type="${type}"
 			>
 			</ts-document-card>
 		`;

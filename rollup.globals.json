@@ -23,7 +23,7 @@
 	"@tradeshift/elements.typography": "ts.elements.typography",
 	"@tradeshift/elements.note": "ts.elements.note",
 	"@tradeshift/elements.list-item": "ts.elements.list-item",
-	"@tradeshift/elements.table": "ts.elements.table",
+	"@tradeshift/elements.basic-table": "ts.elements.basic-table",
 	"@tradeshift/elements.status": "ts.elements.status",
 	"@tradeshift/elements.document-card": "ts.elements.document-card",
 	"@tradeshift/elements.search": "ts.elements.search",

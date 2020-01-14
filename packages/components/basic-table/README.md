@@ -8,7 +8,7 @@
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-table--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-basic-table--default">
       Demo
     </a>
 </p>
@@ -42,10 +42,10 @@ import '@tradeshift/elements.table';
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.table/lib/table.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.basic-table/lib/basic-table.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-table--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-basic-table--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 

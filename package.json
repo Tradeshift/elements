@@ -86,6 +86,7 @@
     "@tradeshift/elements": "file:packages/core",
     "@tradeshift/elements.app-icon": "file:packages/components/app-icon",
     "@tradeshift/elements.aside": "file:packages/components/aside",
+    "@tradeshift/elements.basic-table": "file:packages/components/basic-table",
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.card": "file:packages/components/card",
@@ -109,7 +110,6 @@
     "@tradeshift/elements.spinner": "file:packages/components/spinner",
     "@tradeshift/elements.status": "file:packages/components/status",
     "@tradeshift/elements.tab": "file:packages/components/tab",
-    "@tradeshift/elements.table": "file:packages/components/table",
     "@tradeshift/elements.tabs": "file:packages/components/tabs",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
     "@tradeshift/elements.typography": "file:packages/components/typography"
