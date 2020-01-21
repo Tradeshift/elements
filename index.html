@@ -51,6 +51,8 @@
 						'header',
 						'help-text',
 						'note',
+						'radio',
+						'radio-group',
 						'spinner',
 						'modal',
 						'search',
@@ -940,8 +942,23 @@
 				});
 			</script>
 			<article>
-				<h2>Checkbox</h2>
-				<ts-checkbox data-label="Agree?" name="checkbox" value="yes" checked dir="rtl"></ts-checkbox>
+				<h2>Radio</h2>
+				<ts-radio-group name="radio_normal" title="Normal">
+					<ts-radio value="blue" label="Blue pill"></ts-radio>
+					<ts-radio value="black" label="Black pill" disabled></ts-radio>
+					<ts-radio value="white" label="White pill" checked></ts-radio>
+				</ts-radio-group>
+
+				<ts-radio-group name="radio_disabled" title="Disabled">
+					<ts-radio value="black" label="Black pill" disabled></ts-radio>
+					<ts-radio value="white" label="White pill" disabled></ts-radio>
+					<ts-radio value="gray" label="Gray pill" disabled></ts-radio>
+				</ts-radio-group>
+
+				<ts-radio-group name="radio_rtl" title="RTL" dir="rtl">
+					<ts-radio value="blue" label="Blue pill"></ts-radio>
+					<ts-radio value="red" label="Red pill"></ts-radio>
+				</ts-radio-group>
 			</article>
 			<ts-aside data-title="hello" id="my-aside">
 				<ts-note slot="note">

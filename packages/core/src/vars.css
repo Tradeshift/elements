@@ -2,11 +2,11 @@
 	/* Units........................................................ */
 
 	--ts-unit: 20px;
-	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit));
-	--ts-unit-half: calc(0.5 * var(--ts-unit));
-	--ts-unit-plus: calc(var(--ts-unit) * 1.5);
-	--ts-unit-quarter: calc(0.25 * var(--ts-unit));
 	--ts-unit-eighth: calc(0.125 * var(--ts-unit));
+	--ts-unit-quarter: calc(0.25 * var(--ts-unit));
+	--ts-unit-half: calc(0.5 * var(--ts-unit));
+	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit));
+	--ts-unit-plus: calc(1.5 * var(--ts-unit));
 	--ts-unit-double: calc(2 * var(--ts-unit));
 	--ts-unit-triple: calc(3 * var(--ts-unit));
 	--ts-aside: 320px;
@@ -169,6 +169,12 @@
 	--spinner-color-blue: var(--ts-color-blue);
 	--spinner-color-mono: var(--ts-color-slate-lightest);
 	--spinner-color-white: var(--ts-color-white);
+
+	/* Radio button........................................................ */
+
+	--radio-border-selected: var(--ts-unit-quarter);
+	--ts-radio-boxshadow-border-width: inset 0 0 0 var(--radio-border-selected);
+	--ts-radio-unselected-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
 }
 
 ts-root {

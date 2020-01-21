@@ -1,0 +1,17 @@
+{
+  "name": "@tradeshift/elements.radio-group",
+  "version": "0.5.3",
+  "src": "src/radio-group.js",
+  "main": "lib/radio-group.umd.js",
+  "browser": "lib/radio-group.umd.js",
+  "module": "lib/radio-group.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.5.3"
+  },
+  "peerDependencies": {
+    "@tradeshift/elements.radio": "^0.5.3"
+  }
+}
