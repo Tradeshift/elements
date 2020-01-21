@@ -1,0 +1,29 @@
+/* General........................................................ */
+
+:host {
+	& fieldset {
+		border: 0 none;
+
+		& legend {
+			text-transform: uppercase;
+			color: var(--ts-color-black);
+			font-size: var(--ts-fontsize-mini);
+			font-weight: var(--ts-fontweight-semibold);
+		}
+	}
+
+	& .frame {
+		padding: var(--ts-unit-quarter);
+		border-radius: var(--ts-radius);
+	}
+
+	& .frame:hover {
+		box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue-light);
+	}
+}
+
+:host([focused]) {
+	& .frame {
+		box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+	}
+}

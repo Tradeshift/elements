@@ -1,0 +1,53 @@
+/* General........................................................ */
+
+:host {
+	& label {
+		display: block;
+		position: relative;
+		padding-left: var(--ts-unit-plus);
+		margin: var(--ts-unit-half);
+		cursor: pointer;
+		user-select: none;
+		font-size: var(--ts-fontsize);
+		font-weight: var(--ts-fontweight);
+	}
+
+	& .checkbox {
+		box-shadow: var(--ts-radio-unselected-boxshadow-border-width) var(--ts-color-gray-light);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: var(--ts-unit);
+		width: var(--ts-unit);
+		border-radius: 50%;
+	}
+
+	& .checkbox[checked] {
+		box-shadow: var(--ts-radio-boxshadow-border-width) var(--ts-color-blue);
+	}
+}
+
+/* Disable status .................................................*/
+:host([disabled]) {
+	color: var(--ts-disabled-background-color);
+	cursor: not-allowed;
+
+	& .checkbox {
+		box-shadow: var(--ts-radio-unselected-boxshadow-border-width) var(--ts-color-gray-lightest);
+	}
+
+	& .checkbox[checked] {
+		box-shadow: var(--ts-radio-boxshadow-border-width) var(--ts-color-gray-lighter);
+	}
+}
+
+/* rtl ............................................................*/
+:host {
+	& label[dir='rtl'] {
+		padding-right: var(--ts-unit-plus);
+
+		& .checkbox {
+			right: 0;
+		}
+	}
+}

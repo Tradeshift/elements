@@ -37,7 +37,11 @@ export const delay = {
 };
 
 export const keyboardEventKeys = {
-	ESCAPE: 'Escape'
+	ESCAPE: 'Escape',
+	ARROW_RIGHT: 'ArrowRight',
+	ARROW_LEFT: 'ArrowLeft',
+	ARROW_UP: 'ArrowUp',
+	ARROW_DOWN: 'ArrowDown'
 };
 
 export const keyboardEventKeyCodes = {
