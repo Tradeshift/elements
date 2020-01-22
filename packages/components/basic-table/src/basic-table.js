@@ -1,9 +1,9 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
-import css from './table.css';
+import css from './basic-table.css';
 import { VISIBILITY } from './utils/constants';
 
 customElementDefineHelper(
-	'ts-table',
+	'ts-basic-table',
 	class extends TSElement {
 		static get styles() {
 			return [TSElement.styles, unsafeCSS(css)];

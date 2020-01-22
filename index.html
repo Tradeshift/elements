@@ -56,7 +56,7 @@
 						'spinner',
 						'modal',
 						'search',
-						'table',
+						'basic-table',
 						'status',
 						'document-card',
 						'tabs',
@@ -148,15 +148,35 @@
 						description="ردسبترلتبسرتنلربين ل نيبنز لنيرلزبويمبنكسنتبهخلاتقلو ب زتيب نتزدي بنت"
 						mobile-description="نبينب شرش شقث وثقث سه حثقث مش يش يش يش غش غش غش حخشختبريربتيرسبتنبرنمسوبنموسمنيوس"
 					></ts-document-card>
+
+					<ts-document-card
+						name="Invoice #344234"
+						mobile-description="Tradeshift SRL | 6 participants"
+						description="Tradeshift SRL"
+						type="marketplace"
+					></ts-document-card>
+					<ts-document-card
+						name="Invoice #344234"
+						mobile-description="Tradeshift SRL | 6 participants"
+						description="Tradeshift SRL"
+						type="offer"
+					></ts-document-card>
+					<ts-document-card
+						name="Invoice #344234"
+						mobile-description="Tradeshift SRL | 6 participants"
+						description="Tradeshift SRL"
+						type="private"
+					></ts-document-card>
 				</div>
 			</article>
 			<article>
 				<h2>Table</h2>
-				<ts-table id="ts-table-demo"></ts-table>
+				<ts-basic-table id="ts-table-demo"></ts-basic-table>
 				<script>
 					function handleRowClick(e) {
 						console.log('handleRowClick', e);
 					}
+
 					const tsTable = document.getElementById('ts-table-demo');
 					tsTable.addEventListener('row-click', handleRowClick);
 					tsTable.cols = [
@@ -170,6 +190,7 @@
 								card.description = item.description;
 								card.mobileDescription = item.mobileDescription;
 								card.selected = row.mobileLastActivity.unread > 0;
+								card.type = item.type;
 								return card;
 							}
 						},
@@ -245,7 +266,8 @@
 							context: {
 								name: 'Invoice #32131',
 								description: 'Tradeshift',
-								mobileDescription: 'Tradeshift | 5 participants'
+								mobileDescription: 'Tradeshift | 5 participants',
+								type: 'document'
 							},
 							type: { status: 'ok', text: 'External' },
 							participants: 100,
@@ -256,7 +278,12 @@
 							id: 1
 						},
 						{
-							context: { name: 'Purchase Request #1231', description: 'MegaImage', mobileDescription: 'MegaImage' },
+							context: {
+								name: 'Purchase Request #1231',
+								description: 'MegaImage',
+								mobileDescription: 'MegaImage',
+								type: 'offer'
+							},
 							type: { status: 'error', text: 'Private' },
 							participants: 100,
 							newActivity:
@@ -266,7 +293,12 @@
 							id: 2
 						},
 						{
-							context: { name: 'GoodsReceipt #231', description: 'CocaCola', mobileDescription: '5 participants' },
+							context: {
+								name: 'GoodsReceipt #231',
+								description: 'CocaCola',
+								mobileDescription: '5 participants',
+								type: 'marketplace'
+							},
 							type: { status: 'note', text: 'Internal' },
 							participants: 100,
 							newActivity:
@@ -274,6 +306,21 @@
 							lastActivity: '2 Aug, 15:01',
 							mobileLastActivity: { lastActivity: '2 Aug, 15:01' },
 							id: 3
+						},
+						{
+							context: {
+								name: 'John Doe',
+								description: 'CocaCola',
+								mobileDescription: '2 participants',
+								type: 'private'
+							},
+							type: { status: 'note', text: 'Internal' },
+							participants: 2,
+							newActivity:
+								'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
+							lastActivity: '2 Aug, 15:01',
+							mobileLastActivity: { lastActivity: '2 Aug, 15:01' },
+							id: 4
 						}
 					];
 					tsTable.selectedIds = [1];

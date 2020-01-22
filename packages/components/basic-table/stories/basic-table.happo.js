@@ -1,10 +1,10 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
-import '@tradeshift/elements.table';
+import '@tradeshift/elements.basic-table';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-table', module).add('test', () => {
+storiesOf('ts-basic-table', module).add('test', () => {
 	const properties = {
 		selectedIds: { selectedIds: [1] },
 		dir: { rtl: 'rtl' }
@@ -22,7 +22,8 @@ storiesOf('ts-table', module).add('test', () => {
 						card.name = item.name;
 						card.description = item.description;
 						card.mobileDescription = item.mobileDescription;
-						card.bold = row.mobileLastActivity.unread > 0;
+						card.selected = row.mobileLastActivity.unread > 0;
+						card.type = item.type;
 						return card;
 					}
 				},
@@ -97,7 +98,8 @@ storiesOf('ts-table', module).add('test', () => {
 					context: {
 						name: 'Invoice #32131',
 						description: 'Tradeshift',
-						mobileDescription: 'Tradeshift | 5 participants'
+						mobileDescription: 'Tradeshift | 5 participants',
+						type: 'document'
 					},
 					type: { status: 'ok', text: 'External' },
 					participants: 100,
@@ -108,7 +110,12 @@ storiesOf('ts-table', module).add('test', () => {
 					id: 1
 				},
 				{
-					context: { name: 'Purchase Request #1231', description: 'MegaImage', mobileDescription: 'MegaImage' },
+					context: {
+						name: 'Purchase Request #1231',
+						description: 'MegaImage',
+						mobileDescription: 'MegaImage',
+						type: 'offer'
+					},
 					type: { status: 'error', text: 'Private' },
 					participants: 100,
 					newActivity:
@@ -118,7 +125,12 @@ storiesOf('ts-table', module).add('test', () => {
 					id: 2
 				},
 				{
-					context: { name: 'GoodsReceipt #231', description: 'CocaCola', mobileDescription: '5 participants' },
+					context: {
+						name: 'GoodsReceipt #231',
+						description: 'CocaCola',
+						mobileDescription: '5 participants',
+						type: 'private'
+					},
 					type: { status: 'note', text: 'Internal' },
 					participants: 100,
 					newActivity:
@@ -126,10 +138,25 @@ storiesOf('ts-table', module).add('test', () => {
 					lastActivity: '2 Aug, 15:01',
 					mobileLastActivity: { lastActivity: '2 Aug, 15:01' },
 					id: 3
+				},
+				{
+					context: {
+						name: 'GoodsReceipt #231',
+						description: 'CocaCola',
+						mobileDescription: '5 participants',
+						type: 'marketplace'
+					},
+					type: { status: 'note', text: 'Internal' },
+					participants: 100,
+					newActivity:
+						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
+					lastActivity: '2 Aug, 15:01',
+					mobileLastActivity: { lastActivity: '2 Aug, 15:01' },
+					id: 4
 				}
 			]
 		}
 	};
 
-	return createHappoStories('table', properties, '', options);
+	return createHappoStories('basic-table', properties, '', options);
 });

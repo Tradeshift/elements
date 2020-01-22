@@ -1,6 +1,18 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './document-card.css';
 import fileIcon from './assets/document.svg';
+import marketplaceIcon from './assets/marketplace.svg';
+import offerIcon from './assets/offer.svg';
+import privateIcon from './assets/private.svg';
+import { IconsEnum } from './utils';
+
+const icons = {
+	[IconsEnum.MARKETPLACE]: marketplaceIcon,
+	[IconsEnum.PRIVATE]: privateIcon,
+	[IconsEnum.DOCUMENT]: fileIcon,
+	[IconsEnum.DEFAULT]: fileIcon,
+	[IconsEnum.OFFER]: offerIcon
+};
 
 customElementDefineHelper(
 	'ts-document-card',
@@ -15,7 +27,8 @@ customElementDefineHelper(
 				name: { type: String, reflect: true },
 				description: { type: String, reflect: true },
 				selected: { type: Boolean, reflect: true },
-				mobileDescription: { attribute: 'mobile-description', type: String, reflect: true }
+				mobileDescription: { attribute: 'mobile-description', type: String, reflect: true },
+				type: { type: String, reflect: true }
 			};
 		}
 
@@ -30,10 +43,11 @@ customElementDefineHelper(
 			return this.dir || this.bodyDir;
 		}
 
-		get fileIcon() {
+		get icon() {
+			const icon = icons[this.type] || icons[IconsEnum.DEFAULT];
 			return html`
 				<span class="card-icon">
-					${html([fileIcon])}
+					${html([icon])}
 				</span>
 			`;
 		}
@@ -45,7 +59,7 @@ customElementDefineHelper(
 		render() {
 			return html`
 				<div class="document-card" dir=${this.direction}>
-					${this.fileIcon}
+					${this.icon}
 					<div class="card-container ${this.selectedClass}">
 						<div class="card-title">${this.name}</div>
 						<div class="card-description">${this.description}</div>
