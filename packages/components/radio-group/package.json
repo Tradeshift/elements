@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.radio-group",
-  "version": "0.5.3",
+  "version": "0.7.5",
   "src": "src/radio-group.js",
   "main": "lib/radio-group.umd.js",
   "browser": "lib/radio-group.umd.js",
