@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.board",
+  "version": "0.7.4",
+  "src": "src/board.js",
+  "main": "lib/board.umd.js",
+  "browser": "lib/board.umd.js",
+  "module": "lib/board.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.7.4"
+  }
+}

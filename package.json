@@ -87,6 +87,7 @@
     "@tradeshift/elements.app-icon": "file:packages/components/app-icon",
     "@tradeshift/elements.aside": "file:packages/components/aside",
     "@tradeshift/elements.basic-table": "file:packages/components/basic-table",
+    "@tradeshift/elements.board": "file:packages/components/board",
     "@tradeshift/elements.button": "file:packages/components/button",
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.card": "file:packages/components/card",
