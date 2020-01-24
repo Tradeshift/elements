@@ -52,6 +52,14 @@ customElementDefineHelper(
 					this.dispatchIdleEvent = helpers.debounceEvent(() => this.dispatchCustomEvent('idle', this.value), newVal);
 					break;
 				case 'value':
+					if (!this.hasUpdated) {
+						// do not trigger events on initialization.
+						return;
+					}
+					if (newVal === oldVal) {
+						// do not trigger events on re-render with the same value (it happens in React).
+						return;
+					}
 					this.dispatchCustomEvent('change', newVal);
 					this.dispatchIdleEvent();
 					break;
