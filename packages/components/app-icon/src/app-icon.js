@@ -10,8 +10,7 @@ customElementDefineHelper(
 
 		static get properties() {
 			return {
-				// Use the type when have more sizes of app icon
-				type: { type: String, reflect: true },
+				size: { type: String, reflect: true },
 				src: { type: String, reflect: true },
 				alt: { type: String, reflect: true }
 			};
@@ -19,12 +18,12 @@ customElementDefineHelper(
 
 		constructor() {
 			super();
-			this.type = '';
+			this.size = '';
 		}
 
 		render() {
 			return html`
-				<img .src="${this.src}" .alt="${this.alt}"></img>
+				<img .src="${this.src}" .alt="${this.alt}" size="${this.size}"></img>
 			`;
 		}
 	}

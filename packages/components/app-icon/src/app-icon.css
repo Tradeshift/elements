@@ -7,3 +7,10 @@
 		border-radius: var(--ts-radius);
 	}
 }
+
+:host([size='large']) {
+	& img {
+		width: var(--ts-unit-triple);
+		height: var(--ts-unit-triple);
+	}
+}
