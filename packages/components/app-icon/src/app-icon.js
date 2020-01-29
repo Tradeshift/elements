@@ -16,14 +16,9 @@ customElementDefineHelper(
 			};
 		}
 
-		constructor() {
-			super();
-			this.size = '';
-		}
-
 		render() {
 			return html`
-				<img .src="${this.src}" .alt="${this.alt}" size="${this.size}"></img>
+				<img .src="${this.src}" .alt="${this.alt}"></img>
 			`;
 		}
 	}
