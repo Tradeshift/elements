@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
 import css from './list-item.css';
 
 import '@tradeshift/elements.typography';
@@ -21,8 +21,13 @@ customElementDefineHelper(
 				dir: { type: String, reflect: true },
 				icon: { type: String, reflect: true },
 				iconLeft: { type: String, attribute: 'icon-left', reflect: true },
-				iconRight: { type: String, attribute: 'icon-right', reflect: true }
+				iconRight: { type: String, attribute: 'icon-right', reflect: true },
+				noWrap: { type: Boolean, attribute: 'no-wrap' }
 			};
+		}
+		constructor() {
+			super();
+			this.hasSlottedIcon = false;
 		}
 
 		get direction() {
@@ -37,13 +42,26 @@ customElementDefineHelper(
 			return colorType;
 		}
 
+		slotChangeHandler(e) {
+			this.hasSlottedIcon = true;
+			const slottedNodes = e.currentTarget.assignedNodes();
+			validateSlottedNodes(this.tagName, slottedNodes, ['TS-APP-ICON']);
+			this.requestUpdate();
+		}
+
 		get iconLeftTemplate() {
 			const icon = this.icon || this.iconLeft;
-			if (icon) {
-				return html`
-					<ts-icon class="icon-left" icon="${icon}" size="large" type="${this.colorType}"></ts-icon>
-				`;
-			}
+			const slotClass = this.hasSlottedIcon ? 'icon-left' : '';
+
+			return icon
+				? html`
+						<ts-icon class="icon-left" icon="${icon}" size="large" type="${this.colorType}"></ts-icon>
+				  `
+				: html`
+						<span class="${slotClass}">
+							<slot name="icon-left" @slotchange="${this.slotChangeHandler}"></slot>
+						</span>
+				  `;
 		}
 
 		get iconRightTemplate() {
@@ -61,7 +79,12 @@ customElementDefineHelper(
 					<ts-typography variant="title" type="${this.colorType}" text="${this.title}"></ts-typography>
 					${this.subtitle
 						? html`
-								<ts-typography variant="subtitle" type="${this.colorType}" text="${this.subtitle}"></ts-typography>
+								<ts-typography
+									variant="subtitle"
+									type="${this.colorType}"
+									text="${this.subtitle}"
+									?no-wrap="${this.noWrap}"
+								></ts-typography>
 						  `
 						: null}
 				</div>

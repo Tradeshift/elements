@@ -40,6 +40,10 @@ button {
 	padding-right: var(--ts-unit-half);
 }
 
+:host([no-wrap]) .text-wrapper {
+	overflow: hidden;
+}
+
 :host([selected]) {
 	& button {
 		background: var(--ts-color-blue);
