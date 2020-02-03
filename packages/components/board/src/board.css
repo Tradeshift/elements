@@ -1,0 +1,18 @@
+/* General........................................................ */
+
+.board-container {
+	border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	box-shadow: 1px 2px var(--ts-shadow-color);
+	border-radius: var(--ts-radius);
+}
+
+.board-header {
+	border-bottom: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	padding: var(--ts-unit-half) var(--ts-unit);
+	font-size: var(--ts--fontsize);
+	font-weight: var(--ts-fontweight-semibold);
+}
+
+.board-main {
+	padding: var(--ts-unit);
+}

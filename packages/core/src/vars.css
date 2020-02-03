@@ -155,7 +155,7 @@
 	--ts-progress-bar-height: 8px;
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;
-	--ts-shadow-color: var(--ts-color-slate-dark);
+	--ts-shadow-color: var(--ts-color-gray-lightest);
 
 	/* Spinner........................................................ */
 

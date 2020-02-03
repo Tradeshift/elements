@@ -11,7 +11,7 @@
 	min-height: 100vh;
 	width: var(--ts-aside);
 	background-color: var(--ts-color-white);
-	box-shadow: 0 0 3px var(--ts-shadow-color);
+	box-shadow: 0 0 3px var(--ts-color-slate-dark);
 	z-index: var(--ts-zindex-aside);
 }
 
