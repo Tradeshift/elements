@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.modal",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "src": "src/modal.js",
   "main": "lib/modal.umd.js",
   "browser": "lib/modal.umd.js",
@@ -9,9 +9,9 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.7.6",
-    "@tradeshift/elements.button": "^0.7.6",
-    "@tradeshift/elements.cover": "^0.7.6",
-    "@tradeshift/elements.header": "^0.7.6"
+    "@tradeshift/elements": "^0.8.0",
+    "@tradeshift/elements.button": "^0.8.0",
+    "@tradeshift/elements.cover": "^0.8.0",
+    "@tradeshift/elements.header": "^0.8.0"
   }
 }
