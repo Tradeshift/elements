@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.basic-table",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "src": "src/basic-table.js",
   "main": "lib/basic-table.umd.js",
   "browser": "lib/basic-table.umd.js",
@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.7.6"
+    "@tradeshift/elements": "^0.8.0"
   }
 }
