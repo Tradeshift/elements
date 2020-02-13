@@ -137,6 +137,7 @@
 	--ts-border-color-default: var(--ts-color-gray-light);
 	--ts-border-color-error: var(--ts-color-red);
 	--ts-border-color-success: var(--ts-color-green);
+	--ts-border-color-hover: var(--ts-color-blue-lighter);
 	--ts-border-color-focus: var(--ts-color-blue);
 	--ts-border-color-primary: var(--ts-color-blue);
 	--ts-border-color-disabled: var(--ts-color-gray-lighter);
@@ -152,6 +153,8 @@
 	--ts-boxshadow-border-success: var(--ts-boxshadow-border-width) var(--ts-border-color-success);
 	--ts-boxshadow-border-focus: var(--ts-boxshadow-border-width) var(--ts-border-color-focus);
 	--ts-boxshadow-border-primary: var(--ts-boxshadow-border-width) var(--ts-border-color-primary);
+	--ts-boxshadow-border-focused: var(--ts-boxshadow-border-width-focused) var(--ts-border-color-focus);
+	--ts-boxshadow-border-hover: var(--ts-boxshadow-border-width-focused) var(--ts-border-color-hover);
 	--ts-progress-bar-height: 8px;
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;
