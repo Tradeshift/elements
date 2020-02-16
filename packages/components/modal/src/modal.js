@@ -41,7 +41,9 @@ customElementDefineHelper(
 		}
 
 		get header() {
-			if (this.hideHeader) return '';
+			if (this.hideHeader) {
+				return '';
+			}
 			return html`
 				<ts-header .title="${this.title}" dir="${this.direction}">
 					<ts-button class="no-border" icon="close-clear" size="large" @click="${this.close}"></ts-button>
