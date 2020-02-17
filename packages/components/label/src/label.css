@@ -1,0 +1,24 @@
+/* General........................................................ */
+
+:host {
+	& label {
+		display: block;
+		color: var(--ts-color-black);
+		font-size: var(--ts-fontsize-mini);
+		font-weight: var(--ts-fontweight-semibold);
+		padding: var(--ts-unit-quarter) 0;
+		white-space: nowrap;
+		word-wrap: normal;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+	}
+}
+
+/* Disable........................................................ */
+
+:host([disabled]) {
+	& label {
+		color: var(--ts-disabled-color);
+	}
+}
