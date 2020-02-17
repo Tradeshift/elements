@@ -8,6 +8,15 @@ import css from './modal.css';
 customElementDefineHelper(
 	'ts-modal',
 	class extends TSElement {
+		constructor() {
+			super();
+			this.size = sizes.LARGE;
+			this.title = '';
+			this.noCloseOnEscKey = false;
+			this.closeBehavior = new CloseOnEscBehavior(this);
+			this.hideHeader = false;
+		}
+
 		static get styles() {
 			return [TSElement.styles, unsafeCSS(css)];
 		}
@@ -18,16 +27,9 @@ customElementDefineHelper(
 				size: { type: String, reflect: true, attribute: 'data-size' },
 				title: { type: String, reflect: true, attribute: 'data-title' },
 				visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
-				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' }
+				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+				hideHeader: { type: Boolean, attribute: 'hide-header' }
 			};
-		}
-
-		constructor() {
-			super();
-			this.size = sizes.LARGE;
-			this.title = '';
-			this.noCloseOnEscKey = false;
-			this.closeBehavior = new CloseOnEscBehavior(this);
 		}
 
 		get direction() {
@@ -36,6 +38,17 @@ customElementDefineHelper(
 
 		get hidden() {
 			return this.visible ? 'fade-in' : 'fade-out';
+		}
+
+		get header() {
+			if (this.hideHeader) {
+				return '';
+			}
+			return html`
+				<ts-header .title="${this.title}" dir="${this.direction}">
+					<ts-button class="no-border" icon="close-clear" size="large" @click="${this.close}"></ts-button>
+				</ts-header>
+			`;
 		}
 
 		open() {
@@ -68,9 +81,7 @@ customElementDefineHelper(
 					class="container ${this.size} ${this.hidden}"
 					@transitionend="${this.handleTransition}"
 				>
-					<ts-header .title="${this.title}" dir="${this.direction}">
-						<ts-button class="no-border" icon="close-clear" size="large" @click="${this.close}"></ts-button>
-					</ts-header>
+					${this.header}
 					<div class="note">
 						<slot name="note"></slot>
 					</div>

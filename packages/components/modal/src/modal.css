@@ -62,3 +62,19 @@ footer {
 	visibility: hidden;
 	transition: visibility var(--ts-transition-fast) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
 }
+
+@media (max-width: 600px /*small screen*/) {
+	.container {
+		&,
+		&.medium {
+			top: var(--ts-unit-half);
+			bottom: var(--ts-unit-half);
+			right: var(--ts-unit-half);
+			left: var(--ts-unit-half);
+		}
+	}
+
+	.container main {
+		padding: var(--ts-unit-half);
+	}
+}
