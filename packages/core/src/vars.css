@@ -2,15 +2,15 @@
 	/* Units........................................................ */
 
 	--ts-unit: 20px;
-	--ts-unit-eighth: calc(0.125 * var(--ts-unit));
-	--ts-unit-quarter: calc(0.25 * var(--ts-unit));
-	--ts-unit-half: calc(0.5 * var(--ts-unit));
-	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit));
-	--ts-unit-plus: calc(1.5 * var(--ts-unit));
-	--ts-unit-double: calc(2 * var(--ts-unit));
-	--ts-unit-triple: calc(3 * var(--ts-unit));
+	--ts-unit-three-fourth: calc(0.75 * var(--ts-unit)); /* 15px */
+	--ts-unit-half: calc(0.5 * var(--ts-unit)); /* 10px */
+	--ts-unit-plus: calc(var(--ts-unit) * 1.5); /* 30px */
+	--ts-unit-quarter: calc(0.25 * var(--ts-unit)); /* 5px */
+	--ts-unit-eighth: calc(0.125 * var(--ts-unit)); /* 2.5px */
+	--ts-unit-double: calc(2 * var(--ts-unit)); /* 40px */
+	--ts-unit-triple: calc(3 * var(--ts-unit)); /* 60px */
 	--ts-aside: 320px;
-	--ts-width-grails: calc(var(--ts-width-aside) - var(--ts-unit-double));
+	--ts-width-grails: calc(var(--ts-width-aside) - var(--ts-unit-double)); /* 280px */
 	--ts-radius: 3px;
 
 	/* Fonts........................................................ */

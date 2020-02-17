@@ -14,6 +14,8 @@
 	"@tradeshift/elements.header": "ts.elements.header",
 	"@tradeshift/elements.help-text": "ts.elements.help-text",
 	"@tradeshift/elements.icon": "ts.elements.icon",
+	"@tradeshift/elements.input": "ts.elements.input",
+	"@tradeshift/elements.label": "ts.elements.label",
 	"@tradeshift/elements.modal": "ts.elements.modal",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
 	"@tradeshift/elements.radio": "ts.elements.radio",

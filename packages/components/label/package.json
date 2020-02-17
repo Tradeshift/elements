@@ -1,0 +1,14 @@
+{
+  "name": "@tradeshift/elements.label",
+  "version": "0.7.3",
+  "src": "src/label.js",
+  "main": "lib/label.umd.js",
+  "browser": "lib/label.umd.js",
+  "module": "lib/label.esm.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.7.3"
+  }
+}

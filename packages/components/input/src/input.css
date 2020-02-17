@@ -1,0 +1,37 @@
+/* General........................................................ */
+
+:host,
+:host > div {
+	width: 100%;
+}
+
+::slotted(input) {
+	height: var(--ts-unit-plus);
+	width: 100%;
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight);
+	padding: calc(var(--ts-unit-quarter) - 1px) var(--ts-unit-half);
+	border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-color-white);
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+
+::slotted(input:not([disabled]):hover) {
+	border-color: var(--ts-color-blue-light);
+	box-shadow: 0 0 0 1px var(--ts-color-blue-lighter);
+}
+
+::slotted(input:not([disabled]):focus) {
+	border-color: var(--ts-border-color-focus);
+}
+
+/* Disable........................................................ */
+
+::slotted([disabled]) {
+	color: var(--ts-disabled-color);
+}
