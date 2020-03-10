@@ -40,6 +40,10 @@ main {
 	padding: var(--ts-unit);
 }
 
+:host([no-padding]) main {
+	padding: 0;
+}
+
 footer {
 	flex-grow: 0;
 }

@@ -6,7 +6,7 @@ import '@tradeshift/elements.note';
 storiesOf('ts-modal', module)
 	.add('medium', () => {
 		return html`
-			<ts-modal data-title="title" data-size="medium" data-visible>
+			<ts-modal data-title="title" data-size="medium" data-visible no-padding>
 				<ts-note slot="note" style="border: 1px solid black;">
 					Note content
 				</ts-note>
