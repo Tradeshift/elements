@@ -15,6 +15,7 @@ customElementDefineHelper(
 			this.noCloseOnEscKey = false;
 			this.closeBehavior = new CloseOnEscBehavior(this);
 			this.hideHeader = false;
+			this.noPadding = false;
 		}
 
 		static get styles() {
@@ -28,7 +29,8 @@ customElementDefineHelper(
 				title: { type: String, reflect: true, attribute: 'data-title' },
 				visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
 				noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
-				hideHeader: { type: Boolean, attribute: 'hide-header' }
+				hideHeader: { type: Boolean, attribute: 'hide-header' },
+				noPadding: { type: Boolean, attribute: 'no-padding' }
 			};
 		}
 

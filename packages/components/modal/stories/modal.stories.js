@@ -35,11 +35,20 @@ storiesOf('ts-modal', module)
 			const title = text('Title', 'Title');
 			const visible = boolean('Visible', true);
 			const size = select('Size', helpers.objectKeysChangeCase(sizes), sizes.MEDIUM);
+			const hideHeader = boolean('Hide header', false);
+			const noPadding = boolean('Remove paddings in main', false);
 
 			const showNote = boolean('Add note', true);
 			const showFooter = boolean('Add footer', true);
 			return html`
-				<ts-modal data-dir="${dir}" data-title="${title}" data-size="${size}" ?data-visible="${visible}">
+				<ts-modal
+					data-dir="${dir}"
+					data-title="${title}"
+					data-size="${size}"
+					?data-visible="${visible}"
+					?hide-header="${hideHeader}"
+					?no-padding="${noPadding}"
+				>
 					${showNote
 						? html`
 								<ts-note dir="${dir}" slot="note">
