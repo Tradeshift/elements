@@ -12,6 +12,5 @@
     "@tradeshift/elements": "^0.9.0",
     "@tradeshift/elements.icon": "^0.9.0",
     "@tradeshift/elements.typography": "^0.9.0"
-  },
-  "gitHead": "f9ad23777c014a17b135524dcd23652745337064"
+  }
 }
