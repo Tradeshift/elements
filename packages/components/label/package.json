@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.label",
-  "version": "0.7.3",
+  "version": "0.10.0",
   "src": "src/label.js",
   "main": "lib/label.umd.js",
   "browser": "lib/label.umd.js",
