@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.input",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "src": "src/input.js",
   "main": "lib/input.umd.js",
   "browser": "lib/input.umd.js",
