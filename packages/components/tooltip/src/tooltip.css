@@ -60,3 +60,9 @@
 		transform: translate(-50%, 0);
 	}
 }
+
+:host([disabled]) {
+	&::before {
+		display: none;
+	}
+}
