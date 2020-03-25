@@ -10,7 +10,8 @@ export class TSTooltip extends TSElement {
 		return {
 			tooltip: { type: String, reflect: true },
 			position: { type: String, reflect: true },
-			width: { type: String, reflect: true }
+			width: { type: String, reflect: true },
+			disabled: { type: Boolean, reflect: true }
 		};
 	}
 

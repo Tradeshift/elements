@@ -1,16 +1,18 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import '@tradeshift/elements';
 import '@tradeshift/elements.tooltip';
 
 storiesOf('ts-tooltip', module)
 	.addDecorator(withKnobs)
-	.add('Position', () => {
-		const position = select('Position', ['right', 'left', 'top', 'bottom'], 'right');
-		const tooltip = text('Tooltip', 'This is my tooltip');
+	.add('default', () => {
+		const position = select('position', ['right', 'left', 'top', 'bottom'], 'right');
+		const tooltip = text('tooltip', 'This is my tooltip');
+		const disabled = boolean('disabled', false);
+
 		return html`
-			<div style="height:200px; line-height:200px; text-align: center; position:relative">
-				<ts-tooltip tooltip="${tooltip}" Position="${position}">Tooltip</ts-tooltip>
+			<div style="margin-top: 100px;  text-align: center; position:relative">
+				<ts-tooltip tooltip="${tooltip}" position="${position}" ?disabled="${disabled}">Tooltip</ts-tooltip>
 			</div>
 		`;
 	});
