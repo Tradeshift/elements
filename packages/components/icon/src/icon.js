@@ -28,7 +28,9 @@ customElementDefineHelper(
 				icon: { type: String, reflect: true },
 				size: { type: String, reflect: true },
 				type: { type: String, reflect: true },
-				circular: { type: Boolean, reflect: true }
+				circular: { type: Boolean, reflect: true },
+				rotate: { type: Number, reflect: true },
+				flip: { type: String, reflect: true }
 			};
 		}
 

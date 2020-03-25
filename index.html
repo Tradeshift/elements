@@ -33,6 +33,7 @@
 				document.body.appendChild(coreEl);
 				coreEl.onload = function() {
 					var components = [
+						'icon',
 						'button',
 						'button-group',
 						'board',
@@ -40,7 +41,6 @@
 						'list-item',
 						'tooltip',
 						'typography',
-						'icon',
 						'input',
 						'label',
 						'aside',
@@ -660,6 +660,10 @@
 
 			<article>
 				<h2>ts-icon</h2>
+				<ts-icon icon="arrow-left-skip" rotate="90" size="medium"></ts-icon>
+				<ts-icon icon="arrow-left-skip" flip="horizontal" size="medium"></ts-icon>
+				<ts-icon icon="arrow-down-short" size="medium"></ts-icon>
+				<ts-icon icon="arrow-down-short" flip="v" size="medium"></ts-icon>
 				<ts-icon icon="download" size="medium"></ts-icon>
 				<ts-icon icon="remove" size="medium" type="error"></ts-icon>
 				<ts-icon icon="arrow-up" size="medium" type="success"></ts-icon>

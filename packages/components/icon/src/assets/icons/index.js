@@ -9,6 +9,8 @@ import search from './search.svg';
 import closeClear from './close-clear.svg';
 import close from './close.svg';
 import checkmark from './checkmark.svg';
+import arrowDownShort from './arrow-down-short.svg';
+import arrowLeftSkip from './arrow-left-skip.svg';
 
 const icons = {
 	remove,
@@ -19,6 +21,8 @@ const icons = {
 	search,
 	close,
 	'arrow-up': arrowUp,
+	'arrow-down-short': arrowDownShort,
+	'arrow-left-skip': arrowLeftSkip,
 	'close-clear': closeClear
 };
 
