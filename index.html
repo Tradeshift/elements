@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tradeshift Elements v0.7</title>
+		<title>Tradeshift Elements</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
 		<script>
@@ -50,6 +50,7 @@
 						'file-card',
 						'file-size',
 						'file-uploader-input',
+						'pager',
 						'progress-bar',
 						'header',
 						'help-text',
@@ -99,6 +100,29 @@
 				tenetur vero.
 			</ts-note>
 			<article>
+				<h2>Pager</h2>
+				<ts-pager id="mypager" per-page="20" total-pages="10"></ts-pager>
+				<ts-pager per-page="20" total-pages="10" active-page="5"></ts-pager>
+				<ts-pager per-page="40" total-pages="10" active-page="1"></ts-pager>
+				<ts-pager total-pages="10" active-page="1"></ts-pager>
+				<ts-pager per-page="20" total-pages="14000" active-page="14000"></ts-pager>
+				<ts-pager per-page="20" dir="rtl" total-pages="14000" active-page="14000"></ts-pager>
+
+				<script>
+					function handlePageChange(data) {
+						console.log('pager select old value', data.detail.oldVal);
+						console.log('pager select new value', data.detail.newVal);
+					}
+					document.getElementById('mypager').addEventListener('page-change', handlePageChange);
+				</script>
+				<script>
+					function handlePerPageChange(data) {
+						console.log('per page change', data.detail);
+					}
+					document.getElementById('mypager').addEventListener('per-page-change', handlePerPageChange);
+				</script>
+			</article>
+			<article>
 				<h2>Status</h2>
 				<div class="status-container">
 					<ts-status class="grid-status" status="ok"></ts-status>
@@ -110,14 +134,6 @@
 					<ts-status class="grid-status" status="note" text="LTR شسيشسي"></ts-status>
 					<ts-status class="grid-status" dir="rtl" status="note" text="RTL شسيشسي"></ts-status>
 				</div>
-			</article>
-
-			<article>
-				<h2>Form</h2>
-				<ts-label for="test_input">Text</ts-label>
-				<ts-input>
-					<input id="test_input" value="dfa" />
-				</ts-input>
 			</article>
 
 			<article>
@@ -660,10 +676,8 @@
 
 			<article>
 				<h2>ts-icon</h2>
-				<ts-icon icon="arrow-left-skip" rotate="90" size="medium"></ts-icon>
-				<ts-icon icon="arrow-left-skip" flip="horizontal" size="medium"></ts-icon>
-				<ts-icon icon="arrow-down-short" size="medium"></ts-icon>
-				<ts-icon icon="arrow-down-short" flip="v" size="medium"></ts-icon>
+				<ts-icon icon="arrow-short-down" size="medium"></ts-icon>
+				<ts-icon icon="download" size="medium"></ts-icon>
 				<ts-icon icon="download" size="medium"></ts-icon>
 				<ts-icon icon="remove" size="medium" type="error"></ts-icon>
 				<ts-icon icon="arrow-up" size="medium" type="success"></ts-icon>
@@ -1078,7 +1092,7 @@
 					<ts-button onclick="closeBigModal()">Close!</ts-button>
 				</div>
 			</ts-modal>
-			<ts-modal id="medium-modal" hide-header data-size="medium">
+			<ts-modal id="medium-modal" data-title="Available Apps" data-size="medium">
 				<ts-note slot="note">
 					Some important note about this information.
 				</ts-note>

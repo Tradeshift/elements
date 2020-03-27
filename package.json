@@ -44,7 +44,7 @@
     "lerna-clean": "cross-env-shell lerna clean",
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
-    "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/src/**/*.js\"",
+    "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/**/{src,stories}/**/*.js\"",
     "release": "run-s build:prod && lerna publish",
     "server": "server start --watch",
     "server-reload": "reload --browser --exts html,umd.js",
@@ -56,6 +56,7 @@
     "storybook:deploy": "storybook-to-ghpages",
     "pretest": "run-s build:prod copy:static",
     "test": "npm run happo",
+    "stage": "lint-staged",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "husky": {
@@ -105,6 +106,7 @@
     "@tradeshift/elements.list-item": "file:packages/components/list-item",
     "@tradeshift/elements.modal": "file:packages/components/modal",
     "@tradeshift/elements.note": "file:packages/components/note",
+    "@tradeshift/elements.pager": "file:packages/components/pager",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
     "@tradeshift/elements.radio": "file:packages/components/radio",
     "@tradeshift/elements.radio-group": "file:packages/components/radio-group",
