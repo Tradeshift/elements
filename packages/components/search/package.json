@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.search",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "src": "src/search.js",
   "main": "lib/search.umd.js",
   "browser": "lib/search.umd.js",
@@ -9,7 +9,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.11.0",
-    "@tradeshift/elements.icon": "^0.11.0"
+    "@tradeshift/elements": "^0.12.0",
+    "@tradeshift/elements.icon": "^0.12.0"
   }
 }
