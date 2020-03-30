@@ -81,7 +81,7 @@ li {
 	padding: var(--ts-unit-half);
 	padding-right: var(--ts-unit-plus);
 	box-sizing: border-box;
-	margin: 0;
+	margin: 0 var(--ts-unit-half);
 	box-shadow: var(--ts-boxshadow-border-default);
 	border-radius: var(--ts-radius);
 	border: none;
