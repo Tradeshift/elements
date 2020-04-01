@@ -30,7 +30,10 @@ const nodeModules = [path.join(LERNA_ROOT_PATH, 'node_modules/**'), path.join(PA
 const postcssPlugin = postcss({
 	plugins: [
 		postcssPresetEnv({
-			importFrom: `${LERNA_ROOT_PATH}/packages/core/src/vars.css`,
+			importFrom: [
+				`${LERNA_ROOT_PATH}/packages/core/src/utils/env-variables.json`,
+				`${LERNA_ROOT_PATH}/packages/core/src/vars.css`
+			],
 			preserve: true,
 			stage: 0
 		})
