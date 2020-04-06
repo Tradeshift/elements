@@ -4,6 +4,7 @@ import { helpers } from '@tradeshift/elements';
 
 import '@tradeshift/elements.spinner';
 import { sizes, colors } from '../src/utils';
+import readme from '../README.md';
 
 storiesOf('ts-spinner', module)
 	.addDecorator(withKnobs)
@@ -33,4 +34,7 @@ storiesOf('ts-spinner', module)
 			<ts-spinner ?data-visible="${visible}" data-message="${message}" data-size="${size}" data-color="${color}">
 			</ts-spinner>
 		`;
-	});
+	},
+	{ notes: readme }
+	);
+
