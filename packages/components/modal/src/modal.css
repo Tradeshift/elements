@@ -67,7 +67,7 @@ footer {
 	transition: visibility var(--ts-transition-fast) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
 }
 
-@media (max-width: 600px /*small screen*/) {
+@media (max-width: env(--mobile-screen-breakpoint)) {
 	.container {
 		&,
 		&.medium {

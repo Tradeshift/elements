@@ -9,6 +9,6 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.7.3"
+    "@tradeshift/elements": "^0.12.0"
   }
 }

@@ -1,0 +1,5 @@
+{
+	"environmentVariables": {
+		"--mobile-screen-breakpoint": "600px"
+	}
+}

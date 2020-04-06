@@ -43,7 +43,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: env(--mobile-screen-breakpoint)) {
 	.card-mobile-description {
 		display: block;
 	}
