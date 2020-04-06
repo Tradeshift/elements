@@ -19,6 +19,7 @@ storiesOf('ts-pager', module)
 
 			return html`
 				<ts-pager
+					style="position: relative; top: 50px;"
 					per-page="${perPage}"
 					total-pages="${totalPages}"
 					active-page="${activePage}"

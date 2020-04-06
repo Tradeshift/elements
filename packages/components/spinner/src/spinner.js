@@ -5,6 +5,12 @@ import { sizes, colors } from './utils';
 customElementDefineHelper(
 	'ts-spinner',
 	class extends TSElement {
+		constructor() {
+			super();
+			this.color = colors.BLUE;
+			this.size = sizes.LARGE;
+		}
+
 		static get styles() {
 			return [TSElement.styles, unsafeCSS(css)];
 		}
@@ -12,18 +18,10 @@ customElementDefineHelper(
 		static get properties() {
 			return {
 				color: { type: String, attribute: 'data-color', reflect: true },
-				message: { type: String, attribute: 'data-message' },
+				message: { type: String, attribute: 'data-message', reflect: true },
 				size: { type: String, attribute: 'data-size', reflect: true },
-				visible: { type: Boolean, attribute: 'data-visible' }
+				visible: { type: Boolean, attribute: 'data-visible', reflect: true }
 			};
-		}
-
-		constructor() {
-			super();
-			this.color = colors.BLUE;
-			this.message = '';
-			this.size = sizes.LARGE;
-			this.visible = false;
 		}
 
 		get messageHtml() {
@@ -37,7 +35,7 @@ customElementDefineHelper(
 
 		render() {
 			if (!this.visible) {
-				return '';
+				return html``;
 			}
 			return html`
 				<div class="spinner"></div>
