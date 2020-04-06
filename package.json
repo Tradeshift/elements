@@ -16,7 +16,10 @@
   "bugs": {
     "url": "https://github.com/Tradeshift/elements/issues"
   },
-  "repository": "github:Tradeshift/elements.git",
+  "repository" : {
+    "type" : "git",
+    "url": "https://github.com/Tradeshift/elements.git"
+  },
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Tradeshift element Team",
   "contributors": [
