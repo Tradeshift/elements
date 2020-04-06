@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-size",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "src": "src/file-size.js",
   "main": "lib/file-size.umd.js",
   "browser": "lib/file-size.umd.js",
@@ -9,11 +9,11 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.12.0",
-    "@tradeshift/elements.typography": "^0.12.0"
+    "@tradeshift/elements": "^0.12.1",
+    "@tradeshift/elements.typography": "^0.12.1"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/file-size"
   }

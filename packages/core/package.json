@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "src": "src/core.js",
   "main": "lib/core.umd.js",
   "browser": "lib/core.umd.js",
@@ -12,8 +12,8 @@
   "dependencies": {
     "lit-element": "^2.2.1"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/core"
   }
