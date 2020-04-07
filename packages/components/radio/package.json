@@ -4,6 +4,7 @@
   "src": "src/radio.js",
   "main": "lib/radio.umd.js",
   "browser": "lib/radio.umd.js",
+  "module": "lib/radio.esm.js",
   "files": [
     "lib/*"
   ],

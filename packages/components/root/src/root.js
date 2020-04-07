@@ -70,4 +70,5 @@ export class TSRoot extends TSElement {
 		this.classList[hasTsNote ? 'add' : 'remove']('ts-has-note');
 	}
 }
+
 customElementDefineHelper('ts-root', TSRoot);
