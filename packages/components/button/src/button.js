@@ -17,7 +17,7 @@ export class TSButton extends TSElement {
 		return {
 			type: { type: String, reflect: true },
 			size: { type: String, reflect: true },
-			busy: { type: String, reflect: true },
+			busy: { type: Boolean, reflect: true },
 			icon: { type: String, reflect: true },
 			disabled: { type: Boolean, reflect: true },
 			grouped: { type: Boolean, reflect: true },
@@ -38,9 +38,15 @@ export class TSButton extends TSElement {
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
+	clickHandler(event) {
+		if (!this.disabled && !this.busy) {
+			this.dispatchCustomEvent('button-click', event);
+		}
+	}
+
 	render() {
 		return html`
-			<button ?disabled="${this.disabled}" dir="${this.direction}">
+			<button ?disabled="${this.disabled}" dir="${this.direction}" @click="${this.clickHandler}">
 				${this.icon
 					? html`
 							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
