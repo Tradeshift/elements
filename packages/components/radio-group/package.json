@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.radio-group",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "src": "src/radio-group.js",
   "main": "lib/radio-group.umd.js",
   "browser": "lib/radio-group.umd.js",
@@ -9,13 +9,13 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.12.0"
+    "@tradeshift/elements": "^0.12.1"
   },
   "peerDependencies": {
     "@tradeshift/elements.radio": "^0.9.0"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/radio-group"
   }
