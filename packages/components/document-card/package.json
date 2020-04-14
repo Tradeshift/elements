@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.document-card",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "src": "src/document-card.js",
   "main": "lib/document-card.umd.js",
   "browser": "lib/document-card.umd.js",
@@ -9,7 +9,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.12.1"
+    "@tradeshift/elements": "^0.13.0"
   },
   "repository": {
     "type": "git",
