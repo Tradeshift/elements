@@ -4,6 +4,8 @@ import '@tradeshift/elements.icon';
 import css from './button.css';
 import { types } from './utils';
 
+export { sizes, types } from './utils';
+
 export class TSButton extends TSElement {
 	static get styles() {
 		return [TSElement.styles, unsafeCSS(css)];

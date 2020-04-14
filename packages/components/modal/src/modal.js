@@ -5,6 +5,8 @@ import '@tradeshift/elements.header';
 import { customEventNames, sizes } from './utils';
 import css from './modal.css';
 
+export { customEventNames, sizes } from './utils';
+
 export class TSModal extends TSElement {
 	constructor() {
 		super();

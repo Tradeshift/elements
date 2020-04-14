@@ -6,8 +6,10 @@
   "browser": "lib/tab.umd.js",
   "module": "lib/tab.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/tab.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },

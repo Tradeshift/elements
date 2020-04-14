@@ -6,8 +6,10 @@
   "browser": "lib/file-card.umd.js",
   "module": "lib/file-card.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/file-card.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0",
     "@tradeshift/elements.card": "^0.13.0",

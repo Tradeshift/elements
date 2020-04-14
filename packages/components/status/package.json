@@ -6,8 +6,10 @@
   "browser": "lib/status.umd.js",
   "module": "lib/status.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/status.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },

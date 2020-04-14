@@ -6,8 +6,10 @@
   "browser": "lib/spinner.umd.js",
   "module": "lib/spinner.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/spinnder.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },

@@ -4,6 +4,9 @@ import styles from './icon.css';
 import icons from './assets/icons';
 import { typeColors, types, classNames, sizes } from './utils';
 
+export { default as icons } from './assets/icons';
+export { typeColors, types, classNames, sizes } from './utils';
+
 export class TSIcon extends TSElement {
 	constructor() {
 		super();

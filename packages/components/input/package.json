@@ -6,8 +6,10 @@
   "browser": "lib/input.umd.js",
   "module": "lib/input.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/input.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },

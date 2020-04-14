@@ -6,8 +6,10 @@
   "browser": "lib/basic-table.umd.js",
   "module": "lib/basic-table.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/basic-table.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },
