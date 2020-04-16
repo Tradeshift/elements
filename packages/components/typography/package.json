@@ -6,8 +6,10 @@
   "browser": "lib/typography.umd.js",
   "module": "lib/typography.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/typography.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },

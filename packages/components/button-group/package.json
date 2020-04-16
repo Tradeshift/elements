@@ -6,8 +6,10 @@
   "browser": "lib/button-group.umd.js",
   "module": "lib/button-group.esm.js",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
+  "types": "types/button-group.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.13.0"
   },
