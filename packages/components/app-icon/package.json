@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.app-icon",
-  "version": "0.14.0-alpha.1",
+  "version": "0.14.0-alpha.2",
   "src": "src/app-icon.js",
   "main": "lib/app-icon.umd.js",
   "browser": "lib/app-icon.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/app-icon.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.1"
+    "@tradeshift/elements": "^0.14.0-alpha.2"
   },
   "repository": {
     "type": "git",

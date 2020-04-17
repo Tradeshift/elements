@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.radio",
-  "version": "0.14.0-alpha.1",
+  "version": "0.14.0-alpha.2",
   "src": "src/radio.js",
   "main": "lib/radio.umd.js",
   "browser": "lib/radio.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/radio.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.1"
+    "@tradeshift/elements": "^0.14.0-alpha.2"
   },
   "repository": {
     "type": "git",
