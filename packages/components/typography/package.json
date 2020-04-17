@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.typography",
-  "version": "0.14.0-alpha.7",
+  "version": "0.14.0-alpha.8",
   "src": "src/typography.js",
   "main": "lib/typography.umd.js",
   "browser": "lib/typography.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/typography.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.7"
+    "@tradeshift/elements": "^0.14.0-alpha.8"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.input",
-  "version": "0.14.0-alpha.7",
+  "version": "0.14.0-alpha.8",
   "src": "src/input.js",
   "main": "lib/input.umd.js",
   "browser": "lib/input.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/input.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.7"
+    "@tradeshift/elements": "^0.14.0-alpha.8"
   },
   "repository": {
     "type": "git",
