@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.aside",
-  "version": "0.14.0-alpha.2",
+  "version": "0.14.0-alpha.3",
   "src": "src/aside.js",
   "main": "lib/aside.umd.js",
   "browser": "lib/aside.umd.js",
@@ -11,10 +11,10 @@
   ],
   "types": "types/aside.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.2",
-    "@tradeshift/elements.button": "^0.14.0-alpha.2",
-    "@tradeshift/elements.cover": "^0.14.0-alpha.2",
-    "@tradeshift/elements.spinner": "^0.14.0-alpha.2"
+    "@tradeshift/elements": "^0.14.0-alpha.3",
+    "@tradeshift/elements.button": "^0.14.0-alpha.3",
+    "@tradeshift/elements.cover": "^0.14.0-alpha.3",
+    "@tradeshift/elements.spinner": "^0.14.0-alpha.3"
   },
   "repository": {
     "type": "git",

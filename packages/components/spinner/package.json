@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.spinner",
-  "version": "0.14.0-alpha.2",
+  "version": "0.14.0-alpha.3",
   "src": "src/spinner.js",
   "main": "lib/spinner.umd.js",
   "browser": "lib/spinner.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/spinnder.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.2"
+    "@tradeshift/elements": "^0.14.0-alpha.3"
   },
   "repository": {
     "type": "git",
