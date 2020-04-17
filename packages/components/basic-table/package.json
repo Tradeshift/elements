@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.basic-table",
-  "version": "0.13.0",
+  "version": "0.14.0-beta.0",
   "src": "src/basic-table.js",
   "main": "lib/basic-table.umd.js",
   "browser": "lib/basic-table.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/basic-table.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.13.0"
+    "@tradeshift/elements": "^0.14.0-beta.0"
   },
   "repository": {
     "type": "git",
