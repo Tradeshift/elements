@@ -52,7 +52,7 @@
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/**/{src,stories}/**/*.js\"",
     "release": "run-s check-credentials build:prod release:npm release:github",
-    "release:github": "lerna publish --no-git-tag-version --force-publish --registry=https://npm.pkg.github.com/",
+    "release:github": "lerna publish from-package --no-git-tag-version --force-publish --registry=https://npm.pkg.github.com/",
     "release:npm": "lerna publish --force-publish --registry=https://registry.npmjs.org/",
     "server": "server start --watch",
     "server-reload": "reload --browser --exts html,umd.js",
