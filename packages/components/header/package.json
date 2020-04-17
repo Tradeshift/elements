@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.header",
-  "version": "0.14.0-alpha.3",
+  "version": "0.14.0-alpha.4",
   "src": "src/header.js",
   "main": "lib/header.umd.js",
   "browser": "lib/header.umd.js",
@@ -11,8 +11,8 @@
   ],
   "types": "types/header.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.3",
-    "@tradeshift/elements.app-icon": "^0.14.0-alpha.3"
+    "@tradeshift/elements": "^0.14.0-alpha.4",
+    "@tradeshift/elements.app-icon": "^0.14.0-alpha.4"
   },
   "repository": {
     "type": "git",
