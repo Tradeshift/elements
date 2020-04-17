@@ -11,6 +11,7 @@ import close from './close.svg';
 import checkmark from './checkmark.svg';
 import arrowDownShort from './arrow-down-short.svg';
 import arrowLeftSkip from './arrow-left-skip.svg';
+import arrowLeft from './arrow-left.svg';
 
 const icons = {
 	remove,
@@ -23,6 +24,7 @@ const icons = {
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,
+	'arrow-left': arrowLeft,
 	'close-clear': closeClear
 };
 
