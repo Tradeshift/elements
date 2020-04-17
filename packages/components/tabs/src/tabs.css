@@ -3,6 +3,7 @@
 .tabs-wrapper {
 	position: relative;
 	display: flex;
+	background-color: var(--ts-color-white);
 
 	&:after {
 		position: absolute;
@@ -14,10 +15,6 @@
 		background-color: var(--ts-color-gray-light);
 		pointer-events: none;
 	}
-}
-
-.tabs-content-wrapper {
-	padding: var(--ts-unit);
 }
 
 button {

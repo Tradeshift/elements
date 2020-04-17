@@ -3,3 +3,9 @@
 .tab-content:not([selected]) {
 	display: none;
 }
+
+:host([selected]) {
+	display: block;
+	padding: var(--ts-unit);
+	background: var(--ts-color-white);
+}
