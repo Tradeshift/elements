@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button-group",
-  "version": "0.14.0-alpha.6",
+  "version": "0.14.0-alpha.7",
   "src": "src/button-group.js",
   "main": "lib/button-group.umd.js",
   "browser": "lib/button-group.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/button-group.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.6"
+    "@tradeshift/elements": "^0.14.0-alpha.7"
   },
   "repository": {
     "type": "git",

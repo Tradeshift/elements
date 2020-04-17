@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.progress-bar",
-  "version": "0.14.0-alpha.6",
+  "version": "0.14.0-alpha.7",
   "src": "src/progress-bar.js",
   "main": "lib/progress-bar.umd.js",
   "browser": "lib/progress-bar.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/progress-bar.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.6"
+    "@tradeshift/elements": "^0.14.0-alpha.7"
   },
   "repository": {
     "type": "git",

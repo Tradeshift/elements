@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.help-text",
-  "version": "0.14.0-alpha.6",
+  "version": "0.14.0-alpha.7",
   "src": "src/help-text.js",
   "main": "lib/help-text.umd.js",
   "browser": "lib/help-text.umd.js",
@@ -11,8 +11,8 @@
   ],
   "types": "types/help-text.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0-alpha.6",
-    "@tradeshift/elements.icon": "^0.14.0-alpha.6"
+    "@tradeshift/elements": "^0.14.0-alpha.7",
+    "@tradeshift/elements.icon": "^0.14.0-alpha.7"
   },
   "repository": {
     "type": "git",
