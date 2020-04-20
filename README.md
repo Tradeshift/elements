@@ -237,7 +237,9 @@ We are using [lerna to publish](https://github.com/lerna/lerna/tree/master/comma
 
 - Create a branch for releasing。 `git branch release`
 - `git push release` and set the upstream.
+- `npm config delete @tradeshift:registry` delete the registry config so release could publish to different registries
 - `npm run release`
+- `npm config set @tradeshift:registry https://npm.pkg.github.com/` Set back npm to use github for @tradeshift packages
 
 ---
 
