@@ -1,5 +1,5 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, radios, object } from '@storybook/addon-knobs';
+import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { object, radios, withKnobs } from '@storybook/addon-knobs';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
 import '@tradeshift/elements.tabs';

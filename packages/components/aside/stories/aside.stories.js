@@ -1,5 +1,5 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import '@tradeshift/elements';
 import '@tradeshift/elements.aside';
 

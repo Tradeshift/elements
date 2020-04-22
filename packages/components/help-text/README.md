@@ -25,6 +25,23 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property | Attribute | Type    | Default | Description |
+| -------- | --------- | ------- | ------- | ----------- |
+| messages | messages  | Array   |         |             |
+| title    | title     | String  |         |             |
+| size     | size      | String  |         |             |
+| rtl      | rtl       | Boolean | false   |             |
+| disabled | disabled  | Boolean | false   |             |
+| type     | type      | String  |         |             |
+
 ## ➤ How to use it
 
 - Install the package of helpText

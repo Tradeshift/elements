@@ -25,6 +25,21 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property     | Attribute     | Type   | Default | Description |
+| ------------ | ------------- | ------ | ------- | ----------- |
+| size         | size          | Number |         |             |
+| decimalPoint | decimal-point | Number |         |             |
+| variant      | variant       | String |         |             |
+| type         | type          | String |         |             |
+
 ## ➤ How to use it
 
 - Install the package of fileSize

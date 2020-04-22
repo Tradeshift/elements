@@ -1,6 +1,7 @@
-import { storiesOf, select, object, text } from '@open-wc/demoing-storybook';
+import { object, select, storiesOf, text } from '@open-wc/demoing-storybook';
 import { withKnobs } from '@storybook/addon-knobs';
 import '@tradeshift/elements.basic-table';
+import readme from '../README.md';
 
 storiesOf('ts-basic-table', module)
 	.addDecorator(withKnobs)
@@ -194,5 +195,8 @@ storiesOf('ts-basic-table', module)
 			const cols = colsData.map(el => Object.assign({ renderFunction: renderFunctions[el.renderer] }, el));
 			return Object.assign(document.createElement('ts-basic-table'), { cols, data, dir, selectedIds });
 		},
-		{ knobs: { escapeHTML: false } }
+		{
+			knobs: { escapeHTML: false },
+			notes: readme
+		}
 	);

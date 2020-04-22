@@ -25,6 +25,23 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property  | Attribute | Type    | Default | Description |
+| --------- | --------- | ------- | ------- | ----------- |
+| icon      | icon      | String  |         |             |
+| type      | type      | String  |         |             |
+| dir       | dir       | String  | ltr     |             |
+| closeable | closeable | Boolean | false   |             |
+| hidden    | hidden    | Boolean | false   |             |
+| buttons   | buttons   | Array   |         |             |
+
 ## ➤ How to use it
 
 - Install the package of note

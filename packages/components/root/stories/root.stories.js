@@ -1,4 +1,4 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { html, storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.root';
 import '@tradeshift/elements.header';

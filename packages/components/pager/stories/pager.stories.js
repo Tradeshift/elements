@@ -1,5 +1,5 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, number, select } from '@storybook/addon-knobs';
+import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { number, select, withKnobs } from '@storybook/addon-knobs';
 import { decorate } from '@storybook/addon-actions';
 
 import '@tradeshift/elements.pager';

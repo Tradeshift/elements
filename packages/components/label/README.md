@@ -25,6 +25,18 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property | Attribute | Type   | Default | Description |
+| -------- | --------- | ------ | ------- | ----------- |
+| for      | for       | String |         |             |
+
 ## ➤ How to use it
 
 - Install the package of label
