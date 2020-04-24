@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.board",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "src": "src/board.js",
   "main": "lib/board.umd.js",
   "browser": "lib/board.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/board.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.0"
+    "@tradeshift/elements": "^0.14.1"
   },
   "repository": {
     "type": "git",
