@@ -173,7 +173,7 @@ export class TSPager extends TSElement {
 				// do not trigger events on re-render with the same value (it happens in React).
 				return;
 			}
-			this.dispatchCustomEvent(customEventNames.PAGE_CHANGE, { oldVal, newVal });
+			this.dispatchCustomEvent(customEventNames.PAGE_CHANGE, { oldVal: Number(oldVal), newVal: Number(newVal) });
 		}
 	}
 
@@ -183,7 +183,7 @@ export class TSPager extends TSElement {
 
 	handlePerPageChange(e) {
 		this.perPage = Number(e.target.value);
-		this.dispatchCustomEvent(customEventNames.PER_PAGE_CHANGE, { per_page: e.target.value });
+		this.dispatchCustomEvent(customEventNames.PER_PAGE_CHANGE, { per_page: this.perPage });
 	}
 
 	render() {
