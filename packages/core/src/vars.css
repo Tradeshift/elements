@@ -48,6 +48,8 @@
 	/* calc(var(--ts-zindex-aside) - 1); */
 	--ts-zindex-spin-cover: 3999;
 	/* calc(var(--ts-zindex-spin) - 1); */
+	--ts-zindex-modal-cover: 1499;
+	/* calc(var(--ts-zindex-modal) - 1); */
 
 	/* Colors........................................................ */
 

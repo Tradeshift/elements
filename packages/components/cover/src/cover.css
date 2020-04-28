@@ -45,3 +45,10 @@
 		z-index: var(--ts-zindex-spin-cover);
 	}
 }
+
+:host(.ts-modal-cover) {
+	& > div {
+		pointer-events: auto;
+		z-index: var(--ts-zindex-modal-cover);
+	}
+}
