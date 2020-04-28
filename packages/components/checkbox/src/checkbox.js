@@ -26,12 +26,21 @@ export class TSCheckbox extends TSElement {
 		return this.dir || this.bodyDir;
 	}
 
+	onClick(e) {
+		e.stopPropagation();
+		if (this.disabled) {
+			return;
+		}
+		this.checked = !this.checked;
+	}
+
 	render() {
 		return html`
 			<label class="checkbox-container">
 				${this.label}
 				<input
 					type="checkbox"
+					@click="${this.onClick}"
 					.name="${this.name}"
 					.value="${this.value}"
 					?checked="${this.checked}"
