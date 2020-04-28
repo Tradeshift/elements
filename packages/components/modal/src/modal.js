@@ -94,7 +94,7 @@ export class TSModal extends TSElement {
 					<slot name="footer"></slot>
 				</footer>
 			</div>
-			<ts-cover class="ts-dialog-cover" ?data-visible=${this.visible} @click="${this.close}"></ts-cover>
+			<ts-cover class="ts-modal-cover" ?data-visible=${this.visible} @click="${this.close}"></ts-cover>
 		`;
 	}
 
