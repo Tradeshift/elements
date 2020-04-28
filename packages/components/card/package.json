@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.card",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "src": "src/card.js",
   "main": "lib/card.umd.js",
   "browser": "lib/card.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/card.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.1"
+    "@tradeshift/elements": "^0.14.2"
   },
   "repository": {
     "type": "git",
