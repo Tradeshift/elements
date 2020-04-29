@@ -1,4 +1,3 @@
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './file-uploader-input.css';
 import { messages, selectors, classNames, customEventNames, slotNames, sizes } from './utils';
@@ -85,13 +84,20 @@ export class TSFileUploaderInput extends TSElement {
 						${messages.GENERAL.SELECT.toUpperCase()}
 					</slot>
 				</span>
-				<input
-					type="file"
-					?disabled="${this.disabled}"
-					?multiple="${this.multiple}"
-					accept="${ifDefined(this.acceptAttrForFileInput)}"
-				/>
+				${this.htmlFileInput}
 			</div>
+		`;
+	}
+
+	get htmlFileInput() {
+		const acceptedExtenstions = this.acceptAttrForFileInput;
+		if (acceptedExtenstions) {
+			return html`
+				<input type="file" ?disabled="${this.disabled}" ?multiple="${this.multiple}" accept="${acceptedExtenstions}" />
+			`;
+		}
+		return html`
+			<input type="file" ?disabled="${this.disabled}" ?multiple="${this.multiple}" />
 		`;
 	}
 
