@@ -8,17 +8,27 @@
 	border-radius: var(--ts-radius);
 }
 
-.status-ok {
+.status-neutral {
+	color: var(--ts-color-slate-lightest);
+	background-color: var(--ts-color-gray-lighter);
+}
+
+.status-success {
 	color: var(--ts-color-green-darker);
 	background-color: var(--ts-color-green-lightest);
 }
 
 .status-error {
+	color: var(--ts-color-red-darker);
+	background-color: var(--ts-color-red-lightest);
+}
+
+.status-warning {
 	color: var(--ts-color-orange-darker);
 	background-color: var(--ts-color-orange-lightest);
 }
 
-.status-note {
-	color: var(--ts-color-slate-lightest);
-	background-color: var(--ts-color-gray-lighter);
+.status-primary {
+	color: var(--ts-color-blue-darker);
+	background-color: var(--ts-color-blue-lightest);
 }

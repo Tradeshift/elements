@@ -27,14 +27,18 @@ export class TSStatus extends TSElement {
 
 	get statusClass() {
 		switch (this.status.toLowerCase()) {
-			case STATUS_TYPE.OK:
-				return 'status-ok';
+			case STATUS_TYPE.PRIMARY:
+				return 'status-primary';
+			case STATUS_TYPE.SUCCESS:
+				return 'status-success';
 			case STATUS_TYPE.ERROR:
 				return 'status-error';
-			case STATUS_TYPE.NOTE:
-				return 'status-note';
+			case STATUS_TYPE.WARNING:
+				return 'status-warning';
+			case STATUS_TYPE.NEUTRAL:
+				return 'status-neutral';
 			default:
-				return 'status-ok';
+				return 'status-neutral';
 		}
 	}
 

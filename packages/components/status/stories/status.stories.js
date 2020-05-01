@@ -16,7 +16,7 @@ storiesOf('ts-status', module)
 			},
 			''
 		);
-		const statusText = text('text', 'Ok Danger Note');
+		const statusText = text('text', 'Status label');
 		const dir = select(
 			'dir',
 			{

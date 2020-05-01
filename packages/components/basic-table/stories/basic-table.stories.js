@@ -52,7 +52,7 @@ storiesOf('ts-basic-table', module)
 						mobileDescription: 'Tradeshift | 5 participants',
 						type: 'offer'
 					},
-					type: { status: 'ok', text: 'External' },
+					type: { status: 'success', text: 'External' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
@@ -82,7 +82,7 @@ storiesOf('ts-basic-table', module)
 						mobileDescription: '5 participants',
 						type: 'private'
 					},
-					type: { status: 'note', text: 'Internal' },
+					type: { status: 'neutral', text: 'Internal' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',

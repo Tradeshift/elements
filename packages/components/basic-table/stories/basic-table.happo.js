@@ -101,7 +101,7 @@ storiesOf('ts-basic-table', module).add('test', () => {
 						mobileDescription: 'Tradeshift | 5 participants',
 						type: 'document'
 					},
-					type: { status: 'ok', text: 'External' },
+					type: { status: 'success', text: 'External' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
@@ -116,7 +116,7 @@ storiesOf('ts-basic-table', module).add('test', () => {
 						mobileDescription: 'MegaImage',
 						type: 'offer'
 					},
-					type: { status: 'error', text: 'Private' },
+					type: { status: 'warning', text: 'Private' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
@@ -131,7 +131,7 @@ storiesOf('ts-basic-table', module).add('test', () => {
 						mobileDescription: '5 participants',
 						type: 'private'
 					},
-					type: { status: 'note', text: 'Internal' },
+					type: { status: 'neutral', text: 'Internal' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
@@ -146,7 +146,7 @@ storiesOf('ts-basic-table', module).add('test', () => {
 						mobileDescription: '5 participants',
 						type: 'marketplace'
 					},
-					type: { status: 'note', text: 'Internal' },
+					type: { status: 'neutral', text: 'Internal' },
 					participants: 100,
 					newActivity:
 						'Every little bunny has a habit that is funny. It doesnt matter where he goes he always wrinkles up his nose.',
