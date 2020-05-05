@@ -30,11 +30,11 @@ export class TSBoard extends TSElement {
 
 	render() {
 		return html`
-			<div dir="${this.direction}" class="board-container">
+			<div dir="${this.direction}">
 				${this.header}
-				<main class="board-main">
-					<slot name="main"></slot>
-				</main>
+				<div class="board-main">
+					<slot></slot>
+				</div>
 			</div>
 		`;
 	}

@@ -1,13 +1,18 @@
 /* General........................................................ */
 
-.board-container {
-	border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
-	box-shadow: 1px 2px var(--ts-shadow-color);
+:host {
+	background-color: var(--ts-color-white);
+	border: var(--ts-border);
 	border-radius: var(--ts-radius);
+	box-shadow: var(--ts-board-shadow);
+	display: block;
+	overflow: hidden;
 }
 
 .board-header {
-	border-bottom: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	background-color: var(--ts-color-white);
+	border-bottom: var(--ts-border);
+	color: var(--ts-color-black);
 	padding: var(--ts-unit-half) var(--ts-unit);
 	font-size: var(--ts--fontsize);
 	font-weight: var(--ts-fontweight-semibold);

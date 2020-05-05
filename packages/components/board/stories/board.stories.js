@@ -1,18 +1,22 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.board';
 
 storiesOf('ts-board', module)
 	.addDecorator(withKnobs)
-	.add('default', () => {
-		const dir = text('ltr', 'Dir');
-		const title = text('My Board', 'Title');
-		const content = text('Put any html inside the board', 'Content');
-
-		return html`
-			<ts-board dir="${dir}" data-title="${title}">
-				${content}
-			</ts-board>
-		`;
-	});
+	.add(
+		'default',
+		() => {
+			const dir = radios('dir', { ltr: 'ltr', rtl: 'rtl' }, 'ltr');
+			const title = text('data-title', 'My board');
+			const mainDiv = document.createElement('div');
+			mainDiv.innerHTML = text('Put any html inside the board', '<h3>Content</h3>');
+			return html`
+				<ts-board dir="${dir}" data-title="${title}">
+					${mainDiv}
+				</ts-board>
+			`;
+		},
+		{ knobs: { escapeHTML: false } }
+	);
