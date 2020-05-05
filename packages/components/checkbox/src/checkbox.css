@@ -1,9 +1,7 @@
 /* General........................................................ */
 
 .checkbox-container {
-	display: block;
-	position: relative;
-	padding-left: var(--ts-unit-plus);
+	display: flex;
 	margin: var(--ts-unit-half);
 	cursor: pointer;
 	font-size: var(--ts-fontsize);
@@ -13,7 +11,7 @@
 	user-select: none;
 
 	&:hover {
-		& span {
+		& .checkbox {
 			background-color: var(--ts-color-gray-lighter);
 		}
 	}
@@ -26,13 +24,13 @@
 		width: 0;
 	}
 
-	& span {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: var(--ts-unit);
-		width: var(--ts-unit);
+	& .checkbox {
 		border: var(--ts-border);
+		flex: 0 0 var(--ts-unit);
+		height: var(--ts-unit);
+		margin-right: var(--ts-unit-half);
+		position: relative;
+		width: var(--ts-unit);
 
 		&:after {
 			content: '';
@@ -49,14 +47,14 @@
 			transform: rotate(45deg);
 		}
 	}
-}
 
-.checkbox-container input:checked ~ span {
-	background-color: var(--ts-color-blue);
-	border-color: var(--ts-color-blue);
+	& input:checked ~ .checkbox {
+		background-color: var(--ts-color-blue);
+		border-color: var(--ts-color-blue);
 
-	&:after {
-		display: block;
+		&:after {
+			display: block;
+		}
 	}
 }
 
@@ -67,27 +65,26 @@
 		cursor: not-allowed;
 
 		&:hover {
-			& span {
+			& .checkbox {
 				background-color: transparent;
 			}
 		}
-		& span {
+
+		& .checkbox {
 			border: var(--ts-disabled-border);
 		}
-	}
-	& .checkbox-container input:checked ~ span {
-		background-color: var(--ts-disabled-background-color);
-		border: var(--ts-disabled-border);
+
+		& input:checked ~ .checkbox {
+			background-color: var(--ts-disabled-background-color);
+			border: var(--ts-disabled-border);
+		}
 	}
 }
 
 /* rtl ............................................................*/
 :host([dir='rtl']) {
-	& .checkbox-container {
-		padding-right: var(--ts-unit-plus);
-
-		& span {
-			right: 0;
-		}
+	& .checkbox {
+		margin-left: var(--ts-unit-half);
+		margin-right: 0;
 	}
 }
