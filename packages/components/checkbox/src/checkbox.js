@@ -36,18 +36,17 @@ export class TSCheckbox extends TSElement {
 
 	render() {
 		return html`
-			<label class="checkbox-container">
-				${this.label}
+			<div dir="${this.dir}" class="checkbox-container" @click="${this.onClick}">
 				<input
 					type="checkbox"
-					@click="${this.onClick}"
 					.name="${this.name}"
 					.value="${this.value}"
 					?checked="${this.checked}"
 					?disabled="${this.disabled}"
 				/>
-				<span></span>
-			</label>
+				<div class="checkbox"></div>
+				${this.label}
+			</div>
 		`;
 	}
 }

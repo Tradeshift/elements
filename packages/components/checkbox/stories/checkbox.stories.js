@@ -1,15 +1,17 @@
 import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.checkbox';
 
 storiesOf('ts-checkbox', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
-		const label = text('label', 'Label');
-		const disabled = boolean('Disabled', false);
+		const dir = radios('dir', { ltr: 'ltr', rtl: 'rtl' }, 'ltr');
+		const label = text('data-label', 'Label');
+		const checked = boolean('checked', false);
+		const disabled = boolean('disabled', false);
 
 		return html`
-			<ts-checkbox ?disabled="${disabled}" data-label="${label}"> </ts-checkbox>
+			<ts-checkbox dir="${dir}" ?disabled="${disabled}" ?checked="${checked}" data-label="${label}"> </ts-checkbox>
 		`;
 	});
