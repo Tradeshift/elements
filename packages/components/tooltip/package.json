@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.tooltip",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "src": "src/tooltip.js",
   "main": "lib/tooltip.umd.js",
   "browser": "lib/tooltip.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/tooltip.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.15.0"
+    "@tradeshift/elements": "^0.15.1"
   },
   "repository": {
     "type": "git",
