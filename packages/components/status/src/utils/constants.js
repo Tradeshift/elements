@@ -1,5 +1,7 @@
 export const STATUS_TYPE = {
-	OK: 'ok',
+	PRIMARY: 'primary',
+	SUCCESS: 'success',
 	ERROR: 'error',
-	NOTE: 'note'
+	WARNING: 'warning',
+	NEUTRAL: 'neutral'
 };
