@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.note",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "src": "src/note.js",
   "main": "lib/note.umd.js",
   "browser": "lib/note.umd.js",
@@ -11,9 +11,9 @@
   ],
   "types": "types/note.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.3",
-    "@tradeshift/elements.button": "^0.14.3",
-    "@tradeshift/elements.icon": "^0.14.3"
+    "@tradeshift/elements": "^0.14.4",
+    "@tradeshift/elements.button": "^0.14.4",
+    "@tradeshift/elements.icon": "^0.14.4"
   },
   "repository": {
     "type": "git",
