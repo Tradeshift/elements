@@ -26,8 +26,7 @@ export class TSCheckbox extends TSElement {
 		return this.dir || this.bodyDir;
 	}
 
-	onClick(e) {
-		e.stopPropagation();
+	onClick() {
 		if (this.disabled) {
 			return;
 		}
