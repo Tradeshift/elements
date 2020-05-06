@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-uploader-input",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "src": "src/file-uploader-input.js",
   "main": "lib/file-uploader-input.umd.js",
   "browser": "lib/file-uploader-input.umd.js",
@@ -11,9 +11,9 @@
   ],
   "types": "types/file-uploader-input.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.14.3",
-    "@tradeshift/elements.help-text": "^0.14.3",
-    "@tradeshift/elements.icon": "^0.14.3"
+    "@tradeshift/elements": "^0.14.4",
+    "@tradeshift/elements.help-text": "^0.14.4",
+    "@tradeshift/elements.icon": "^0.14.4"
   },
   "repository": {
     "type": "git",
