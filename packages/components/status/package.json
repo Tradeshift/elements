@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.status",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "src": "src/status.js",
   "main": "lib/status.umd.js",
   "browser": "lib/status.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/status.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.15.0"
+    "@tradeshift/elements": "^0.15.1"
   },
   "repository": {
     "type": "git",
