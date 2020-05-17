@@ -25,6 +25,24 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property  | Attribute  | Type    | Default | Description |
+| --------- | ---------- | ------- | ------- | ----------- |
+| text      | text       | String  |         |             |
+| tooltip   | tooltip    | String  |         |             |
+| variant   | variant    | String  |         |             |
+| type      | type       | String  |         |             |
+| inline    | inline     | Boolean | false   |             |
+| noWrap    | no-wrap    | Boolean | false   |             |
+| noTooltip | no-tooltip | Boolean | false   |             |
+
 ## ➤ How to use it
 
 - Install the package of typography

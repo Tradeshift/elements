@@ -25,6 +25,12 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
 ## ➤ Properties
 
 | Property | Attribute    | Type    | Default | Description                                     |

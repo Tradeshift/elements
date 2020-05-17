@@ -2,6 +2,7 @@ import { storiesOf, html } from '@open-wc/demoing-storybook';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.board';
+import readme from '../README.md';
 
 storiesOf('ts-board', module)
 	.addDecorator(withKnobs)
@@ -18,5 +19,8 @@ storiesOf('ts-board', module)
 				</ts-board>
 			`;
 		},
-		{ knobs: { escapeHTML: false } }
+		{
+			notes: readme,
+			knobs: { escapeHTML: false }
+		}
 	);

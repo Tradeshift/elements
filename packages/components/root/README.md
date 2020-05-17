@@ -25,6 +25,19 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property  | Attribute | Type    | Default | Description |
+| --------- | --------- | ------- | ------- | ----------- |
+| ready     | ready     | Boolean | false   |             |
+| maximized | maximized | Boolean | false   |             |
+
 ## ➤ How to use it
 
 - Install the package of root

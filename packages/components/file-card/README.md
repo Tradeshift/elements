@@ -25,6 +25,23 @@
 		</a>
 </p>
 
+<style>
+  table {
+      width:100%;
+  }
+</style>
+
+## ➤ Properties
+
+| Property     | Attribute     | Type    | Default | Description |
+| ------------ | ------------- | ------- | ------- | ----------- |
+| state        | state         | String  |         |             |
+| fileObject   | file-object   | Object  |         |             |
+| rtl          | rtl           | Boolean | false   |             |
+| removable    | removable     | Boolean | false   |             |
+| size         | size          | String  |         |             |
+| errorMessage | error-message | String  |         |             |
+
 ## ➤ How to use it
 
 - Install the package of fileCard

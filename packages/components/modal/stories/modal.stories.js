@@ -1,5 +1,5 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
-import { withKnobs, text, boolean, radios, select } from '@storybook/addon-knobs';
+import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs';
 import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.modal';
 import '@tradeshift/elements.card';
