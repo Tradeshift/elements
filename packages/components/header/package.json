@@ -12,7 +12,8 @@
   "types": "types/header.d.ts",
   "dependencies": {
     "@tradeshift/elements": "^0.15.1",
-    "@tradeshift/elements.app-icon": "^0.15.1"
+    "@tradeshift/elements.app-icon": "^0.15.1",
+    "@tradeshift/elements.icon": "^0.15.1"
   },
   "repository": {
     "type": "git",

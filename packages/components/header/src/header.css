@@ -158,3 +158,24 @@
 		color: var(--ts-color-black);
 	}
 }
+
+.menu-switch {
+	padding: var(--ts-unit-half);
+	cursor: pointer;
+	display: none;
+}
+
+@media screen and (max-width: env(--mobile-screen-breakpoint)) {
+	.icon {
+		display: none;
+	}
+
+	.menu-switch {
+		display: block;
+	}
+
+	:host .title {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
