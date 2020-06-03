@@ -12,6 +12,7 @@ import checkmark from './checkmark.svg';
 import arrowDownShort from './arrow-down-short.svg';
 import arrowLeftSkip from './arrow-left-skip.svg';
 import arrowLeft from './arrow-left.svg';
+import menuSwitch from './menu-switch.svg';
 
 const icons = {
 	remove,
@@ -25,7 +26,8 @@ const icons = {
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,
 	'arrow-left': arrowLeft,
-	'close-clear': closeClear
+	'close-clear': closeClear,
+	'menu-switch': menuSwitch
 };
 
 // convert svg strings to html element

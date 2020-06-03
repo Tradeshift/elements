@@ -1,5 +1,6 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.app-icon';
+import '@tradeshift/elements.icon';
 import css from './header.css';
 
 export class TSHeader extends TSElement {
@@ -22,6 +23,18 @@ export class TSHeader extends TSElement {
 		this.color = 'white';
 	}
 
+	get getMenuSwitch() {
+		return html`
+			<ts-icon
+				@click="${this.openChromeMenu}"
+				class="menu-switch"
+				icon="menu-switch"
+				size="large"
+				tabindex="0"
+			></ts-icon>
+		`;
+	}
+
 	getIcon() {
 		if (!this.icon) {
 			return '';
@@ -29,6 +42,10 @@ export class TSHeader extends TSElement {
 		return html`
 			<ts-app-icon class="icon" src="${this.icon}" alt="${this.title}"></ts-app-icon>
 		`;
+	}
+
+	openChromeMenu() {
+		window.postMessage('ts-broadcast-chrome-menu-open', '*');
 	}
 
 	getTitle() {
@@ -48,7 +65,7 @@ export class TSHeader extends TSElement {
 		return html`
 			<header dir=${this.direction}>
 				<div class="title-icon-container">
-					${this.getIcon()} ${this.getTitle()}
+					${this.getMenuSwitch} ${this.getIcon()} ${this.getTitle()}
 				</div>
 				<div class="slot-container">
 					<slot></slot>
