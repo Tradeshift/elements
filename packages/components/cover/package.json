@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.cover",
-  "version": "0.15.1",
+  "version": "0.16.0",
   "src": "src/cover.js",
   "main": "lib/cover.umd.js",
   "browser": "lib/cover.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/cover.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.15.1"
+    "@tradeshift/elements": "^0.16.0"
   },
   "repository": {
     "type": "git",
