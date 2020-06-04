@@ -45,7 +45,8 @@ export class TSHeader extends TSElement {
 	}
 
 	openChromeMenu() {
-		window.postMessage('ts-broadcast-chrome-menu-open', '*');
+		const msg = 'app-broadcast:{"appIds": "Tradeshift.Chrome", "key": "ts-broadcast-chrome-menu-open"}';
+		window.top.postMessage(msg, '*');
 	}
 
 	getTitle() {
