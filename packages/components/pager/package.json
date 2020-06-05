@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.pager",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "src": "src/pager.js",
   "main": "lib/pager.umd.js",
   "browser": "lib/pager.umd.js",
@@ -11,9 +11,9 @@
   ],
   "types": "types/pager.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.16.0",
-    "@tradeshift/elements.icon": "^0.16.0",
-    "@tradeshift/elements.tooltip": "^0.16.0"
+    "@tradeshift/elements": "^0.16.1",
+    "@tradeshift/elements.icon": "^0.16.1",
+    "@tradeshift/elements.tooltip": "^0.16.1"
   },
   "repository": {
     "type": "git",

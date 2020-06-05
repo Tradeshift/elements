@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.list-item",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "src": "src/list-item.js",
   "main": "lib/list-item.umd.js",
   "browser": "lib/list-item.umd.js",
@@ -11,9 +11,9 @@
   ],
   "types": "types/list-item.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.16.0",
-    "@tradeshift/elements.icon": "^0.16.0",
-    "@tradeshift/elements.typography": "^0.16.0"
+    "@tradeshift/elements": "^0.16.1",
+    "@tradeshift/elements.icon": "^0.16.1",
+    "@tradeshift/elements.typography": "^0.16.1"
   },
   "repository": {
     "type": "git",
