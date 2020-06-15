@@ -10,9 +10,13 @@ export class TSHeader extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction of the button `rtl`, `ltr` */
 			dir: { type: String, reflect: true },
+			/** Icon shows in the header */
 			icon: { type: String, reflect: true },
+			/** Title shows in the header */
 			title: { type: String, reflect: true },
+			/** Colors of the header */
 			color: { type: String, reflect: true }
 		};
 	}

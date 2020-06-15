@@ -22,12 +22,19 @@ export class TSDialog extends TSElement {
 
 	static get properties() {
 		return {
+			/** Dialog can be toggled by add/removing this attribute */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
+			/** Text content of the modal */
 			text: { type: String, reflect: true },
+			/** If you need a different icon that default ones, you can use one of Elements icon names */
 			icon: { type: String, reflect: true },
+			/** `confirm`, `warning`, `danger` */
 			type: { type: String, reflect: true },
+			/** can be used for customizing the buttons text and translations */
 			translations: { type: Object, reflect: true },
+			/** set the default focus on the button, either `accept` or `cancel` */
 			focused: { type: String, reflect: true },
+			/** either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary */
 			primary: { type: String, reflect: true },
 			renderButtons: { type: Boolean, attribute: false }
 		};

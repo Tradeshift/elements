@@ -19,9 +19,13 @@ export class TSPager extends TSElement {
 
 	static get properties() {
 		return {
+			/** Total number of pages */
 			totalPages: { type: Number, reflect: true, attribute: 'total-pages' },
+			/** Currently active page */
 			activePage: { type: Number, reflect: true, attribute: 'active-page' },
+			/** Determining maximum number of items in the page, should be 10,20,30,40,50 */
 			perPage: { type: Number, reflect: true, attribute: 'per-page' },
+			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true }
 		};
 	}

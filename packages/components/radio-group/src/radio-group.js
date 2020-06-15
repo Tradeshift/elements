@@ -11,10 +11,15 @@ export class TSRadioGroup extends TSElement {
 
 	static get properties() {
 		return {
+			/** Value of currently chosen ts-radio node */
 			value: { type: String, reflect: true },
+			/** Title of radio group */
 			title: { type: String, reflect: true },
+			/** Index of checked ts-radio node */
 			index: { type: Number, reflect: true },
+			/** Is group currently focused for keyboard input */
 			focused: { type: Boolean, reflect: true },
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true }
 		};
 	}

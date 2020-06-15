@@ -26,11 +26,17 @@ export class TSIcon extends TSElement {
 
 	static get properties() {
 		return {
+			/** Icon name, ex: 'arrow-up' */
 			icon: { type: String, reflect: true },
+			/** 'small' or 'medium' or 'large' */
 			size: { type: String, reflect: true },
+			/** Determining icon color, ex: 'error', 'focus' */
 			type: { type: String, reflect: true },
+			/** Add circular background for icon */
 			circular: { type: Boolean, reflect: true },
+			/** 90, 180, 270 */
 			rotate: { type: Number, reflect: true },
+			/** 'h', 'horizontal', 'v', 'vertical' */
 			flip: { type: String, reflect: true }
 		};
 	}

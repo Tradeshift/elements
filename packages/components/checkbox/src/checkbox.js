@@ -8,11 +8,16 @@ export class TSCheckbox extends TSElement {
 
 	static get properties() {
 		return {
+			/** Name of checkbox */
 			name: { type: String },
+			/** Value of checkbox */
 			value: { type: String },
 			dir: { type: String },
+			/** Label of checkbox */
 			label: { type: String, attribute: 'data-label' },
+			/** Status of checkbox */
 			checked: { type: Boolean, reflect: true },
+			/** disabled */
 			disabled: { type: Boolean, reflect: true }
 		};
 	}

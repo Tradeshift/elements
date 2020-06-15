@@ -8,9 +8,13 @@ export class TSTab extends TSElement {
 
 	static get properties() {
 		return {
+			/** The label text for the header */
 			label: { type: String, reflect: true },
+			/** Make the tab selected */
 			selected: { type: Boolean, reflect: true },
+			/** Icon name from the available icons in the ts-icon component */
 			icon: { type: String, reflect: true },
+			/** Number for counter badge next to the label */
 			counter: { type: Number, reflect: true }
 		};
 	}

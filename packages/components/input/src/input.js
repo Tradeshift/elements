@@ -8,6 +8,7 @@ export class TSInput extends TSElement {
 
 	static get properties() {
 		return {
+			/** Disable status of input */
 			disabled: { type: Boolean, attribute: 'disabled', reflect: true }
 		};
 	}

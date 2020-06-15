@@ -15,9 +15,13 @@ export class TSSpinner extends TSElement {
 
 	static get properties() {
 		return {
+			/** Spinner color, `blue`, `mono`, `white` */
 			color: { type: String, attribute: 'data-color', reflect: true },
+			/** Text to show below the spinner */
 			message: { type: String, attribute: 'data-message', reflect: true },
+			/** Size of the spinner, `large`, `medium`, `small` */
 			size: { type: String, attribute: 'data-size', reflect: true },
+			/** Show/hide the spinner */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true }
 		};
 	}

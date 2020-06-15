@@ -9,6 +9,7 @@ export class TSBoard extends TSElement {
 	static get properties() {
 		return {
 			dir: { type: String, reflect: true },
+			/** Board header title */
 			title: { type: String, attribute: 'data-title' }
 		};
 	}

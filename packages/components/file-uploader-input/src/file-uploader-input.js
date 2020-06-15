@@ -14,6 +14,7 @@ export class TSFileUploaderInput extends TSElement {
 		return {
 			rtl: { type: Boolean, reflect: true },
 			disabled: { type: Boolean, reflect: true },
+			/** Allow multiple file select. */
 			multiple: { type: Boolean, reflect: true },
 			size: { type: String, reflect: true },
 			acceptedFileExtensions: {
@@ -28,10 +29,12 @@ export class TSFileUploaderInput extends TSElement {
 			},
 			helpTextTitle: { type: String, attribute: 'help-text-title' },
 			helpTextMessages: { type: Array, attribute: 'help-text-messages' },
+			/** Hide the help text about allowed file types. */
 			hideFileTypeHelpText: {
 				type: Boolean,
 				attribute: 'hide-file-type-help-text'
 			},
+			/** Hide the help text about maximum number of files. */
 			hideMaxFileNumberHelpText: {
 				type: Boolean,
 				attribute: 'hide-max-file-number-help-text'

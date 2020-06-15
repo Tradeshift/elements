@@ -9,9 +9,13 @@ export class TSRadio extends TSElement {
 
 	static get properties() {
 		return {
+			/** Value of the radio */
 			value: { type: String, reflect: true },
+			/** Label of the radio */
 			label: { type: String, reflect: true },
+			/** Check status */
 			checked: { type: Boolean, reflect: true },
+			/** Disabled status */
 			disabled: { type: Boolean, reflect: true }
 		};
 	}

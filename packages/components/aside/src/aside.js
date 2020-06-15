@@ -13,9 +13,12 @@ export class TSAside extends TSElement {
 	static get properties() {
 		return {
 			dir: { type: String, reflect: true },
+			/** Aside header title */
 			title: { type: String, attribute: 'data-title' },
+			/** Show/hide aside */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
 			busy: { type: String, attribute: 'data-busy', reflect: true },
+			/** Disable closing the aside with escape key */
 			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
 			hasFoot: { type: Boolean },
 			hasPlatformObject: { type: Boolean }

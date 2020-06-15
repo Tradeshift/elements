@@ -9,8 +9,11 @@ export class TSTooltip extends TSElement {
 	static get properties() {
 		return {
 			tooltip: { type: String, reflect: true },
+			/** 'top', 'bottom', 'right', 'left' */
 			position: { type: String, reflect: true },
+			/** Determining width of thee tooltip */
 			width: { type: String, reflect: true },
+			/** Disable the tooltip and hide it */
 			disabled: { type: Boolean, reflect: true }
 		};
 	}

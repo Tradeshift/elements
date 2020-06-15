@@ -12,11 +12,17 @@ export class TSSearch extends TSElement {
 
 	static get properties() {
 		return {
+			/** Shoud the search be auto focused once page loaded */
 			autofocus: { type: Boolean, reflect: true },
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
+			/** Set the focus on element */
 			focused: { type: Boolean, reflect: true },
+			/** timeout in ms for the 'idle' event */
 			idleTime: { type: Number, attribute: 'idle-time', reflect: true },
+			/** Message when an input is empty */
 			placeholder: { type: String, reflect: true },
+			/** The current value */
 			value: { type: String, reflect: true }
 		};
 	}
