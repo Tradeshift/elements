@@ -13,6 +13,8 @@ import arrowDownShort from './arrow-down-short.svg';
 import arrowLeftSkip from './arrow-left-skip.svg';
 import arrowLeft from './arrow-left.svg';
 import menuSwitch from './menu-switch.svg';
+import settings from './settings.svg';
+import support from './support.svg';
 
 const icons = {
 	remove,
@@ -22,6 +24,8 @@ const icons = {
 	checkmark,
 	search,
 	close,
+	settings,
+	support,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,
