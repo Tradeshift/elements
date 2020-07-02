@@ -19,6 +19,7 @@ storiesOf('ts-list-item', module)
 			const noWrap = boolean('no-wrap', false);
 			const icon = select('icon', Object.keys(icons), Object.keys(icons)[0]);
 			const iconRight = select('icon-right', Object.keys(icons), Object.keys(icons)[1]);
+			const iconSelected = select('icon-selected', Object.keys(icons), Object.keys(icons)[2]);
 			const title = text('title', 'Title sample text');
 			const subtitle = text('subtitle', 'Subtitle sample text');
 
@@ -40,6 +41,7 @@ storiesOf('ts-list-item', module)
 					?no-wrap="${noWrap}"
 					icon="${icon}"
 					icon-right="${iconRight}"
+					icon-selected="${iconSelected}"
 					dir="${dir}"
 				></ts-list-item>
 			`;

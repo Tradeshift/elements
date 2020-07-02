@@ -14,7 +14,8 @@ storiesOf('ts-list-item', module)
 			selected: { true: true },
 			noWrap: { true: true },
 			subtitle: { shortText: 'Subtitle sample text' },
-			icon: { 'arrow-up': 'arrow-up' }
+			icon: { 'arrow-up': 'arrow-up' },
+			iconSelected: { remove: 'remove' }
 		};
 
 		const options = {

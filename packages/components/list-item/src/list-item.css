@@ -30,6 +30,10 @@ button {
 	width: 100%;
 	max-width: 100%;
 	text-align: left;
+
+	& .title {
+		font-size: var(--ts-fontsize-mini);
+	}
 }
 
 .icon-right {

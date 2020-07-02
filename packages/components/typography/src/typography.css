@@ -3,14 +3,11 @@
 :host {
 	display: block;
 	line-height: var(--ts-unit);
+	font-size: var(--ts-font-size-default);
 	/* it's a hack for truncated text within flexbox */
 	/* https://css-tricks.com/flexbox-truncated-text/ */
 	min-width: 0;
 	color: var(--ts-color-black);
-}
-
-.text-wrapper {
-	font-size: var(--ts-font-size-default);
 }
 
 :host([variant='title']) .text-wrapper {
