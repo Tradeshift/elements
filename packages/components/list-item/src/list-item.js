@@ -20,12 +20,14 @@ export class TSListItem extends TSElement {
 			icon: { type: String, reflect: true },
 			iconLeft: { type: String, attribute: 'icon-left', reflect: true },
 			iconRight: { type: String, attribute: 'icon-right', reflect: true },
+			iconSelected: { type: String, attribute: 'icon-selected', reflect: true },
 			noWrap: { type: Boolean, attribute: 'no-wrap' }
 		};
 	}
 	constructor() {
 		super();
 		this.hasSlottedIcon = false;
+		this.iconSelected = 'checkmark';
 	}
 
 	get direction() {
@@ -63,7 +65,7 @@ export class TSListItem extends TSElement {
 	}
 
 	get iconRightTemplate() {
-		const icon = this.selected ? 'checkmark' : this.iconRight;
+		const icon = this.selected ? this.iconSelected : this.iconRight;
 		if (icon) {
 			return html`
 				<ts-icon class="icon-right" icon="${icon}" size="large" type="${this.colorType}"></ts-icon>
@@ -74,7 +76,7 @@ export class TSListItem extends TSElement {
 	get textWrapper() {
 		return html`
 			<div class="text-wrapper">
-				<ts-typography variant="title" type="${this.colorType}" text="${this.title}"></ts-typography>
+				<ts-typography class="title" variant="semi-bold" type="${this.colorType}" text="${this.title}"></ts-typography>
 				${this.subtitle
 					? html`
 							<ts-typography
