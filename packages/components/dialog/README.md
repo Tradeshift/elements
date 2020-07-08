@@ -39,7 +39,7 @@ table {
 | text         | text         | String  | ''                                             | Text content of the modal                                                                                                  |
 | icon         | icon         | String  | depends on type                                | If you need a different icon that default ones, you can use one of Elements icon names                                     |
 | type         | type         | String  | confirm                                        | `confirm`, `warning`, `danger`                                                                                             |
-| translations | translations | Object  | {accept_button: 'OK', cancel_button: 'Cancel'} | can be used for customizing the buttons text adn translations                                                              |
+| translations | translations | Object  | {accept_button: 'OK', cancel_button: 'Cancel'} | can be used for customizing the buttons text and translations                                                              |
 | focused      | focused      | String  | 'cancel'                                       | set the default focus on the button, either `accept` or `cancel`                                                           |
 | primary      | primary      | String  | none                                           | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
 

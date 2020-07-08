@@ -4,6 +4,7 @@ import { withKnobs, text, boolean, object, select } from '@storybook/addon-knobs
 import '@tradeshift/elements.dialog';
 import { dialogTypes } from '../src/utils';
 import icons from '../../icon/src/assets/icons';
+import readme from '../README.md';
 
 function getKnobs() {
 	return {
@@ -19,32 +20,40 @@ function getKnobs() {
 
 storiesOf('ts-dialog', module)
 	.addDecorator(withKnobs)
-	.add('default', () => {
-		const knobs = getKnobs();
-		return html`
-			<ts-dialog
-				?data-visible="${knobs.visible}"
-				translations="${JSON.stringify(knobs.translations)}"
-				text="${knobs.content}"
-				focused="${knobs.focused}"
-				type="${knobs.type}"
-				primary="${knobs.primary}"
-			>
-			</ts-dialog>
-		`;
-	})
-	.add('custom icon', () => {
-		const knobs = getKnobs();
-		return html`
-			<ts-dialog
-				?data-visible="${knobs.visible}"
-				translations="${JSON.stringify(knobs.translations)}"
-				text="${knobs.content}"
-				focused="${knobs.focused}"
-				icon="${knobs.icon}"
-				type="${knobs.type}"
-				primary="${knobs.primary}"
-			>
-			</ts-dialog>
-		`;
-	});
+	.add(
+		'default',
+		() => {
+			const knobs = getKnobs();
+			return html`
+				<ts-dialog
+					?data-visible="${knobs.visible}"
+					translations="${JSON.stringify(knobs.translations)}"
+					text="${knobs.content}"
+					focused="${knobs.focused}"
+					type="${knobs.type}"
+					primary="${knobs.primary}"
+				>
+				</ts-dialog>
+			`;
+		},
+		{ notes: readme }
+	)
+	.add(
+		'custom icon',
+		() => {
+			const knobs = getKnobs();
+			return html`
+				<ts-dialog
+					?data-visible="${knobs.visible}"
+					translations="${JSON.stringify(knobs.translations)}"
+					text="${knobs.content}"
+					focused="${knobs.focused}"
+					icon="${knobs.icon}"
+					type="${knobs.type}"
+					primary="${knobs.primary}"
+				>
+				</ts-dialog>
+			`;
+		},
+		{ notes: readme }
+	);

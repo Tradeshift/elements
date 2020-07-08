@@ -71,7 +71,6 @@ export class TSDialog extends TSElement {
 	onAccept() {
 		this.dispatchCustomEvent('accept');
 		this.dismissModal();
-		this.visible = false;
 	}
 
 	onCancel() {

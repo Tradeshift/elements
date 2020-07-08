@@ -24,10 +24,6 @@
 	width: var(--ts-fontsize-xbig);
 	height: var(--ts-fontsize-xbig);
 }
-:host([size='large']) .icon-wrapper {
-	width: var(--ts-fontsize-xbig);
-	height: var(--ts-fontsize-xbig);
-}
 
 :host([size='extra-large']) .icon-wrapper {
 	width: var(--ts-unit-triple);

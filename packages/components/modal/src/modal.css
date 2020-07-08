@@ -55,6 +55,15 @@ footer {
 	left: 25%;
 }
 
+.container.small {
+	width: var(--ts-modal-width-small);
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .fade-in {
 	opacity: 1;
 	visibility: visible;
