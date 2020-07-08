@@ -100,6 +100,7 @@
     "@tradeshift/elements.card": "file:packages/components/card",
     "@tradeshift/elements.checkbox": "file:packages/components/checkbox",
     "@tradeshift/elements.cover": "file:packages/components/cover",
+    "@tradeshift/elements.dialog": "file:packages/components/dialog",
     "@tradeshift/elements.document-card": "file:packages/components/document-card",
     "@tradeshift/elements.file-card": "file:packages/components/file-card",
     "@tradeshift/elements.file-size": "file:packages/components/file-size",
