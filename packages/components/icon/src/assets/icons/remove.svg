@@ -1,11 +1,1 @@
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<g id="Symbols" stroke="none" stroke-width="1">
-		<g id="card/5.-File-card/standard" transform="translate(-262.000000, -22.000000)">
-			<g id="5.-File-card">
-				<g id="icon/UI-library/clear" transform="translate(258.000000, 18.000000)">
-					<path fill="currentColor" d="M4,12 C4,7.581722 7.59071231,4 12,4 C16.418278,4 20,7.59071231 20,12 C20,16.418278 16.4092877,20 12,20 C7.581722,20 4,16.4092877 4,12 Z M12,13.1313708 L15.0343146,16.1656854 L16.1656854,15.0343146 L13.1313708,12 L16.1656854,8.96568542 L15.0343146,7.83431458 L12,10.8686292 L8.96568542,7.83431458 L7.83431458,8.96568542 L10.8686292,12 L7.83431458,15.0343146 L8.96568542,16.1656854 L12,13.1313708 Z" id="Icon"></path>
-				</g>
-			</g>
-		</g>
-	</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4 12a8 8 0 1116.01.01A8 8 0 014 12zm8 1.13l3.03 3.04 1.14-1.14L13.13 12l3.04-3.03-1.14-1.14L12 10.87 8.97 7.83 7.83 8.97 10.87 12l-3.04 3.03 1.14 1.14L12 13.13z"/></svg>
