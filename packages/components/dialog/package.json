@@ -13,5 +13,10 @@
     "@tradeshift/elements.icon": "^0.18.0",
     "@tradeshift/elements.modal": "^0.18.0",
     "@tradeshift/elements.typography": "^0.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/dialog"
   }
 }
