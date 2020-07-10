@@ -1,0 +1,23 @@
+/* General........................................................ */
+
+:host {
+}
+
+.content {
+	text-align: center;
+	padding: 0 var(--ts-unit) var(--ts-unit);
+}
+
+.footer {
+	padding: 0 var(--ts-unit-double) var(--ts-unit);
+}
+
+::slotted(ts-button) {
+	display: block;
+	margin-bottom: var(--ts-unit-half);
+	text-align: center;
+}
+
+ts-button:focus {
+	box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+}

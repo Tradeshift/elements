@@ -15,6 +15,8 @@ import arrowLeft from './arrow-left.svg';
 import menuSwitch from './menu-switch.svg';
 import settings from './settings.svg';
 import support from './support.svg';
+import alert from './alert.svg';
+import question from './question.svg';
 
 const icons = {
 	remove,
@@ -26,6 +28,8 @@ const icons = {
 	close,
 	settings,
 	support,
+	alert,
+	question,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,

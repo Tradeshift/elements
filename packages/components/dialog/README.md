@@ -4,24 +4,24 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - modal</h1>
+<h1 align="center">Elements - dialog</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-modal--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-dialog--default">
       Demo
     </a>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.modal">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.modal" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.dialog">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.dialog" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.modal?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.modal" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.dialog?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.dialog" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.modal">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.modal" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.dialog">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.dialog" height="20"/>
 		</a>
 </p>
 
@@ -33,54 +33,37 @@ table {
 
 ## ➤ Properties
 
-| Property        | Attribute           | Type    | Default | Description                                                       |
-| --------------- | ------------------- | ------- | ------- | ----------------------------------------------------------------- |
-| dir             | data-dir            | string  | ''      | Direction 'rtl' or 'ltr'                                          |
-| size            | data-size           | string  | 'large' | Size of the modal. Available variants: 'large', 'medium', 'small' |
-| title           | data-title          | string  | ''      | Modal header text                                                 |
-| visible         | data-visible        | boolean | false   | Show/hide the modal                                               |
-| noCloseOnEscKey | no-close-on-esc-key | Boolean | false   |                                                                   |
-| hideHeader      | hide-header         | boolean | false   | Show/hide the title of the modal                                  |
-| noPadding       | no-padding          | boolean | false   | Add/remove standard paddings to the main content                  |
-
-## ➤ Events
-
-| Event Name | Payload | Description                                       |
-| ---------- | ------- | ------------------------------------------------- |
-| open       | null    | Emitted on start of the modal opening             |
-| opened     | null    | Emitted when the animation of opening is finished |
-| close      | null    | Emitted start of the modal closing                |
-| closed     | null    | Emitted when the animation of closing is finished |
-
-## ➤ Slots
-
-| Slot Name | Default | Description                            |
-| --------- | ------- | -------------------------------------- |
-| main      |         | Main content of the modal              |
-| footer    |         | Footer content and action buttons goes |
-| note      |         | Use it on the `ts-note` in the modal   |
+| Property     | Attribute    | Type    | Default                                        | Description                                                                                                                |
+| ------------ | ------------ | ------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| visible      | data-visible | Boolean | false                                          | Dialog can be toggled by add/removing this attribute                                                                       |
+| text         | text         | String  | ''                                             | Text content of the modal                                                                                                  |
+| icon         | icon         | String  | depends on type                                | If you need a different icon that default ones, you can use one of Elements icon names                                     |
+| type         | type         | String  | confirm                                        | `confirm`, `warning`, `danger`                                                                                             |
+| translations | translations | Object  | {accept_button: 'OK', cancel_button: 'Cancel'} | can be used for customizing the buttons text and translations                                                              |
+| focused      | focused      | String  | 'cancel'                                       | set the default focus on the button, either `accept` or `cancel`                                                           |
+| primary      | primary      | String  | none                                           | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
 
 ## ➤ How to use it
 
-- Install the package of modal
+- Install the package of dialog
 
 ```shell
-$ npm i @tradeshift/elements.modal --save
+$ npm i @tradeshift/elements.dialog --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.modal';
+import '@tradeshift/elements.dialog';
 ```
 
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.modal/lib/modal.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.dialog/lib/dialog.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-modal--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-dialog--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 

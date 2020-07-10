@@ -41,5 +41,6 @@ export const typeColors = {
 export const sizes = {
 	SMALL: 'small',
 	MEDIUM: 'medium',
-	LARGE: 'large'
+	LARGE: 'large',
+	EXTRA_LARGE: 'extra-large'
 };

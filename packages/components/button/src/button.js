@@ -7,12 +7,13 @@ import { types } from './utils';
 export { sizes, types } from './utils';
 
 export class TSButton extends TSElement {
-	static get styles() {
-		return [TSElement.styles, unsafeCSS(css)];
+	constructor() {
+		super();
+		this.grouped = false;
 	}
 
-	get direction() {
-		return this.dir || this.bodyDir;
+	static get styles() {
+		return [TSElement.styles, unsafeCSS(css)];
 	}
 
 	static get properties() {
@@ -23,13 +24,13 @@ export class TSButton extends TSElement {
 			icon: { type: String, reflect: true },
 			disabled: { type: Boolean, reflect: true },
 			grouped: { type: Boolean, reflect: true },
+			focused: { type: Boolean, reflect: true },
 			dir: { type: String, reflect: true }
 		};
 	}
 
-	constructor() {
-		super();
-		this.grouped = false;
+	get direction() {
+		return this.dir || this.bodyDir;
 	}
 
 	get iconType() {
@@ -40,6 +41,14 @@ export class TSButton extends TSElement {
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
+	attributeChangedCallback(name, oldVal, newVal) {
+		super.attributeChangedCallback(name, oldVal, newVal);
+		if (name === 'focused' && this.focused) {
+			// set focus only when component is defined.
+			window.customElements.whenDefined('ts-button').then(() => this.shadowRoot.getElementById('button').focus());
+		}
+	}
+
 	clickHandler(event) {
 		if (!this.disabled && !this.busy) {
 			this.dispatchCustomEvent('button-click', event);
@@ -48,7 +57,7 @@ export class TSButton extends TSElement {
 
 	render() {
 		return html`
-			<button ?disabled="${this.disabled}" dir="${this.direction}" @click="${this.clickHandler}">
+			<button id="button" ?disabled="${this.disabled}" dir="${this.direction}" @click="${this.clickHandler}">
 				${this.icon
 					? html`
 							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>

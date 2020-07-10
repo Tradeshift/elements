@@ -181,6 +181,9 @@
 	--radio-border-selected: var(--ts-unit-quarter);
 	--ts-radio-boxshadow-border-width: inset 0 0 0 var(--radio-border-selected);
 	--ts-radio-unselected-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
+
+	/* Modal ........................................................ */
+	--ts-modal-width-small: 380px;
 }
 
 ts-root {

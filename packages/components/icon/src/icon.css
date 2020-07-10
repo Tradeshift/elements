@@ -25,6 +25,11 @@
 	height: var(--ts-fontsize-xbig);
 }
 
+:host([size='extra-large']) .icon-wrapper {
+	width: var(--ts-unit-triple);
+	height: var(--ts-unit-triple);
+}
+
 :host([rotate='90']) .icon-wrapper {
 	transform: rotate(90deg);
 }
@@ -102,7 +107,7 @@ svg {
 }
 
 :host([type='warning']) svg {
-	color: var(--ts-color-slate);
+	color: var(--ts-color-orange);
 }
 
 :host([type='disabled']) svg {
