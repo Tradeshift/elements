@@ -103,7 +103,7 @@ export class TSFileUploaderInput extends TSElement {
 
 	get helpText() {
 		const helpTextList = [...this.helpTextMessages];
-		if (!this.hideFileTypeHelpText && this.acceptedFileExtensions) {
+		if (!this.hideFileTypeHelpText && this.acceptedFileExtensions && this.acceptedFileExtensions.length > 0) {
 			const acceptedFileExtensions = this.acceptedFileExtensions.map(ext => ext.toUpperCase()).join(', ');
 			helpTextList.push(`${messages.ALLOWED_FORMATS}: ${acceptedFileExtensions}`);
 		}
