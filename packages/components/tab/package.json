@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.tab",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "src": "src/tab.js",
   "main": "lib/tab.umd.js",
   "browser": "lib/tab.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/tab.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.0"
+    "@tradeshift/elements": "^0.18.1"
   },
   "repository": {
     "type": "git",
