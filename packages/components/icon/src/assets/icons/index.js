@@ -9,6 +9,7 @@ import search from './search.svg';
 import closeClear from './close-clear.svg';
 import close from './close.svg';
 import checkmark from './checkmark.svg';
+import checkAlt from './check-alt.svg';
 import arrowDownShort from './arrow-down-short.svg';
 import arrowLeftSkip from './arrow-left-skip.svg';
 import arrowLeft from './arrow-left.svg';
@@ -30,6 +31,7 @@ const icons = {
 	support,
 	alert,
 	question,
+	'check-alt': checkAlt,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,
