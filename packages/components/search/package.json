@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.search",
-  "version": "0.18.1",
+  "version": "0.19.0",
   "src": "src/search.js",
   "main": "lib/search.umd.js",
   "browser": "lib/search.umd.js",
@@ -11,8 +11,8 @@
   ],
   "types": "types/search.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.1",
-    "@tradeshift/elements.icon": "^0.18.1"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.dialog",
-  "version": "0.18.1",
+  "version": "0.19.0",
   "src": "src/dialog.js",
   "main": "lib/dialog.umd.js",
   "browser": "lib/dialog.umd.js",
@@ -9,10 +9,10 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.18.1",
-    "@tradeshift/elements.icon": "^0.18.1",
-    "@tradeshift/elements.modal": "^0.18.1",
-    "@tradeshift/elements.typography": "^0.18.1"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0",
+    "@tradeshift/elements.modal": "^0.19.0",
+    "@tradeshift/elements.typography": "^0.19.0"
   },
   "repository": {
     "type": "git",

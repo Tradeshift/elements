@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.checkbox",
-  "version": "0.18.1",
+  "version": "0.19.0",
   "src": "src/checkbox.js",
   "main": "lib/checkbox.umd.js",
   "browser": "lib/checkbox.umd.js",
@@ -11,7 +11,7 @@
   ],
   "types": "types/checkbox.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
+    "@tradeshift/elements": "^0.19.0"
   },
   "repository": {
     "type": "git",
