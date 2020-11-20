@@ -1,23 +1,23 @@
 {
   "name": "@tradeshift/elements.note",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/note"
-  },
+  "version": "0.19.0",
+  "src": "src/note.js",
   "main": "lib/note.umd.js",
-  "module": "lib/note.esm.js",
   "browser": "lib/note.umd.js",
-  "types": "types/note.d.ts",
+  "module": "lib/note.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/note.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2",
-    "@tradeshift/elements.button": "^0.18.2",
-    "@tradeshift/elements.icon": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.button": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0"
   },
-  "src": "src/note.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/note"
+  }
 }

@@ -1,22 +1,22 @@
 {
   "name": "@tradeshift/elements.button",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/button"
-  },
+  "version": "0.19.0",
+  "src": "src/button.js",
   "main": "lib/button.umd.js",
-  "module": "lib/button.esm.js",
   "browser": "lib/button.umd.js",
-  "types": "types/button.d.ts",
+  "module": "lib/button.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/button.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2",
-    "@tradeshift/elements.icon": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0"
   },
-  "src": "src/button.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/button"
+  }
 }

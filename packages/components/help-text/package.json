@@ -1,22 +1,22 @@
 {
   "name": "@tradeshift/elements.help-text",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/help-text"
-  },
+  "version": "0.19.0",
+  "src": "src/help-text.js",
   "main": "lib/help-text.umd.js",
-  "module": "lib/help-text.esm.js",
   "browser": "lib/help-text.umd.js",
-  "types": "types/help-text.d.ts",
+  "module": "lib/help-text.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/help-text.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2",
-    "@tradeshift/elements.icon": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0"
   },
-  "src": "src/help-text.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/help-text"
+  }
 }

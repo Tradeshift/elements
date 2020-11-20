@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.cover",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/cover"
-  },
+  "version": "0.19.0",
+  "src": "src/cover.js",
   "main": "lib/cover.umd.js",
-  "module": "lib/cover.esm.js",
   "browser": "lib/cover.umd.js",
-  "types": "types/cover.d.ts",
+  "module": "lib/cover.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/cover.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0"
   },
-  "src": "src/cover.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/cover"
+  }
 }

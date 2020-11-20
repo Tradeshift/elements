@@ -1,26 +1,26 @@
 {
   "name": "@tradeshift/elements.file-card",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/file-card"
-  },
+  "version": "0.19.0",
+  "src": "src/file-card.js",
   "main": "lib/file-card.umd.js",
-  "module": "lib/file-card.esm.js",
   "browser": "lib/file-card.umd.js",
-  "types": "types/file-card.d.ts",
+  "module": "lib/file-card.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/file-card.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2",
-    "@tradeshift/elements.card": "^0.18.2",
-    "@tradeshift/elements.file-size": "^0.18.2",
-    "@tradeshift/elements.icon": "^0.18.2",
-    "@tradeshift/elements.progress-bar": "^0.18.2",
-    "@tradeshift/elements.typography": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.card": "^0.19.0",
+    "@tradeshift/elements.file-size": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0",
+    "@tradeshift/elements.progress-bar": "^0.19.0",
+    "@tradeshift/elements.typography": "^0.19.0"
   },
-  "src": "src/file-card.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/file-card"
+  }
 }

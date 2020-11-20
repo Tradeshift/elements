@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.label",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/label"
-  },
+  "version": "0.19.0",
+  "src": "src/label.js",
   "main": "lib/label.umd.js",
-  "module": "lib/label.esm.js",
   "browser": "lib/label.umd.js",
-  "types": "types/label.d.ts",
+  "module": "lib/label.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/label.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0"
   },
-  "src": "src/label.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/label"
+  }
 }

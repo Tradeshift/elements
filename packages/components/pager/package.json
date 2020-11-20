@@ -1,23 +1,23 @@
 {
   "name": "@tradeshift/elements.pager",
-  "version": "0.18.2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/components/pager"
-  },
+  "version": "0.19.0",
+  "src": "src/pager.js",
   "main": "lib/pager.umd.js",
-  "module": "lib/pager.esm.js",
   "browser": "lib/pager.umd.js",
-  "types": "types/pager.d.ts",
+  "module": "lib/pager.esm.js",
   "files": [
     "lib/*",
     "types/*"
   ],
+  "types": "types/pager.d.ts",
   "dependencies": {
-    "@tradeshift/elements": "^0.18.2",
-    "@tradeshift/elements.icon": "^0.18.2",
-    "@tradeshift/elements.tooltip": "^0.18.2"
+    "@tradeshift/elements": "^0.19.0",
+    "@tradeshift/elements.icon": "^0.19.0",
+    "@tradeshift/elements.tooltip": "^0.19.0"
   },
-  "src": "src/pager.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/pager"
+  }
 }
