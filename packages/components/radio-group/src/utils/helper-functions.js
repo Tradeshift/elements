@@ -25,7 +25,7 @@ export function getNextElementIndex(direction, index, collectionLength) {
 			index++;
 			return index;
 		case directionTypes.BACKWARD:
-			if (index === 0) {
+			if (index === 0 || index === -1) {
 				return collectionLength - 1;
 			}
 			index--;

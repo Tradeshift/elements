@@ -75,7 +75,7 @@ export class TSRadioGroup extends TSElement {
 	handleSlotChange() {
 		this.radios = this.radioElements;
 
-		this.index = 0;
+		this.index = -1;
 		for (let i = 0; i < this.radios.length; i++) {
 			if (this.radios[i].checked) {
 				this.index = i;
