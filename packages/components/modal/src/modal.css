@@ -79,11 +79,14 @@ footer {
 @media (max-width: env(--mobile-screen-breakpoint)) {
 	.container {
 		&,
-		&.medium {
+		&.medium,
+		&.small {
 			top: var(--ts-unit-half);
 			bottom: var(--ts-unit-half);
 			right: var(--ts-unit-half);
 			left: var(--ts-unit-half);
+			transform: translate(0, 0);
+			width: auto;
 		}
 	}
 
