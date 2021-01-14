@@ -1,9 +1,12 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.file-size';
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-file-size', module).add('test', () => {
+export default {
+	title: 'ts-file-size'
+};
+
+export const Test = () => {
 	const properties = {
 		size: { small: 12345, medium: 12345678, large: 9999 * 1234567 },
 		decimalPoint: {
@@ -33,4 +36,4 @@ storiesOf('ts-file-size', module).add('test', () => {
 		}
 	};
 	return createHappoStories('file-size', properties, 'Button', options);
-});
+};

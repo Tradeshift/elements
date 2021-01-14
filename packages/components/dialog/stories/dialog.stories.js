@@ -1,4 +1,4 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import { withKnobs, text, boolean, object, select } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.dialog';
@@ -18,42 +18,48 @@ function getKnobs() {
 	};
 }
 
-storiesOf('ts-dialog', module)
-	.addDecorator(withKnobs)
-	.add(
-		'default',
-		() => {
-			const knobs = getKnobs();
-			return html`
-				<ts-dialog
-					?data-visible="${knobs.visible}"
-					translations="${JSON.stringify(knobs.translations)}"
-					text="${knobs.content}"
-					focused="${knobs.focused}"
-					type="${knobs.type}"
-					primary="${knobs.primary}"
-				>
-				</ts-dialog>
-			`;
-		},
-		{ notes: readme }
-	)
-	.add(
-		'custom icon',
-		() => {
-			const knobs = getKnobs();
-			return html`
-				<ts-dialog
-					?data-visible="${knobs.visible}"
-					translations="${JSON.stringify(knobs.translations)}"
-					text="${knobs.content}"
-					focused="${knobs.focused}"
-					icon="${knobs.icon}"
-					type="${knobs.type}"
-					primary="${knobs.primary}"
-				>
-				</ts-dialog>
-			`;
-		},
-		{ notes: readme }
-	);
+export default {
+	title: 'ts-dialog',
+	decorators: [withKnobs]
+};
+
+export const Default = () => {
+	const knobs = getKnobs();
+	return html`
+		<ts-dialog
+			?data-visible="${knobs.visible}"
+			translations="${JSON.stringify(knobs.translations)}"
+			text="${knobs.content}"
+			focused="${knobs.focused}"
+			type="${knobs.type}"
+			primary="${knobs.primary}"
+		>
+		</ts-dialog>
+	`;
+};
+
+Default.story = {
+	name: 'default',
+	parameters: { notes: readme }
+};
+
+export const CustomIcon = () => {
+	const knobs = getKnobs();
+	return html`
+		<ts-dialog
+			?data-visible="${knobs.visible}"
+			translations="${JSON.stringify(knobs.translations)}"
+			text="${knobs.content}"
+			focused="${knobs.focused}"
+			icon="${knobs.icon}"
+			type="${knobs.type}"
+			primary="${knobs.primary}"
+		>
+		</ts-dialog>
+	`;
+};
+
+CustomIcon.story = {
+	name: 'custom icon',
+	parameters: { notes: readme }
+};

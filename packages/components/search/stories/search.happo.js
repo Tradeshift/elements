@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.search';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-search', module).add('test', () => {
+export default {
+	title: 'ts-search'
+};
+
+export const Test = () => {
 	const properties = {
 		placeholder: { default: '', custom: 'Please, type here' },
 		value: { default: '', custom: 'some value' },
@@ -17,4 +20,4 @@ storiesOf('ts-search', module).add('test', () => {
 	};
 
 	return createHappoStories('search', properties, '', options);
-});
+};

@@ -1,9 +1,13 @@
-import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.tabs';
 import '@tradeshift/elements.tab';
 
-storiesOf('ts-tabs', module).add('test', () => {
+export default {
+	title: 'ts-tabs'
+};
+
+export const Test = () => {
 	const slottedTabs = html`
 		<ts-tab label="tab1" icon="arrow-up" counter="25">
 			<h2>tab1 content</h2>
@@ -33,4 +37,4 @@ storiesOf('ts-tabs', module).add('test', () => {
 			${slottedTabs}
 		</ts-tabs>
 	`;
-});
+};

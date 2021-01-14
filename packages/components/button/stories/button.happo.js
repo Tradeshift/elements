@@ -1,11 +1,14 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.button';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { sizes, types } from '../src/utils';
 
-storiesOf('ts-button', module).add('test', () => {
+export default {
+	title: 'ts-button'
+};
+
+export const Test = () => {
 	const properties = {
 		icon: { 'arrow-up': 'arrow-up' },
 		disabled: { true: true },
@@ -14,4 +17,4 @@ storiesOf('ts-button', module).add('test', () => {
 		type: types
 	};
 	return createHappoStories('button', properties, 'Button', { columns: 5 });
-});
+};

@@ -1,4 +1,4 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.root';
 import '@tradeshift/elements.header';
@@ -31,17 +31,23 @@ const slots = {
 		background: '#90129B'
 	}
 };
-storiesOf('ts-root', module).add(
-	'header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right',
-	() =>
-		createRoot(
-			() => html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
-				${createElement(slots['sidebar-right'])} ${createElement(slots['sidebar-inner-left'])}
-				${createElement(slots['sidebar-inner-right'])}
-			`
-		)
-);
+
+export default {
+	title: 'ts-root'
+};
+
+export const HeaderFooterSidebarLeftSidebarRightSidebarInnerLeftSidebarInnerRight = () =>
+	createRoot(
+		() => html`
+			${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
+			${createElement(slots['sidebar-right'])} ${createElement(slots['sidebar-inner-left'])}
+			${createElement(slots['sidebar-inner-right'])}
+		`
+	);
+
+HeaderFooterSidebarLeftSidebarRightSidebarInnerLeftSidebarInnerRight.story = {
+	name: 'header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right'
+};
 
 function createRoot(inner = () => html``) {
 	return html`

@@ -1,11 +1,14 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.icon';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { types, sizes } from '../src/utils';
 
-storiesOf('ts-icon', module).add('test', () => {
+export default {
+	title: 'ts-icon'
+};
+
+export const Test = () => {
 	const properties = {
 		icon: { 'arrow-up': 'arrow-up' },
 		size: {
@@ -31,4 +34,4 @@ storiesOf('ts-icon', module).add('test', () => {
 	};
 
 	return createHappoStories('icon', properties, '', options);
-});
+};

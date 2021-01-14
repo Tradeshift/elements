@@ -1,11 +1,14 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.app-icon';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { sizes } from '../src/utils';
 
-storiesOf('ts-app-icon', module).add('test', () => {
+export default {
+	title: 'ts-app-icon'
+};
+
+export const Test = () => {
 	const properties = {
 		src: { icon: '/icon.svg' },
 		size: {
@@ -22,4 +25,4 @@ storiesOf('ts-app-icon', module).add('test', () => {
 	};
 
 	return createHappoStories('app-icon', properties, '', options);
-});
+};

@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.document-card';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-document-card', module).add('test', () => {
+export default {
+	title: 'ts-document-card'
+};
+
+export const Test = () => {
 	const properties = {
 		dir: { rtl: 'rtl' },
 		selected: { true: true },
@@ -26,4 +29,4 @@ storiesOf('ts-document-card', module).add('test', () => {
 	};
 
 	return createHappoStories('document-card', properties, '', options);
-});
+};

@@ -1,13 +1,15 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.{{kebabCase name}}';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
+export default {
+	title: 'ts-{{kebabCase name}}'
+};
 
-storiesOf('ts-{{kebabCase name}}', module).add('test', () => {
+export const Test = () => {
 	const properties = {
-		dir: { 'rtl': 'rtl' },
+		dir: { rtl: 'rtl' },
 		disabled: { true: true },
 		size: sizes
 	};
@@ -15,9 +17,10 @@ storiesOf('ts-{{kebabCase name}}', module).add('test', () => {
 	const options = {
 		columns: 5,
 		persistent_props: {
-			errorMessage: 'Failed message',
+			errorMessage: 'Failed message'
 		}
 	};
 
 	return createHappoStories('{{kebabCase name}}', properties, '', options);
-});
+};
+

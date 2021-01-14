@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.board';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-board', module).add('test', () => {
+export default {
+	title: 'ts-board'
+};
+
+export const Test = () => {
 	const properties = {
 		dir: { rtl: 'rtl' },
 		title: { Title: 'Title' }
@@ -15,4 +18,4 @@ storiesOf('ts-board', module).add('test', () => {
 	};
 
 	return createHappoStories('board', properties, 'Board', options);
-});
+};

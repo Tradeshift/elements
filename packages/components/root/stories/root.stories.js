@@ -1,4 +1,4 @@
-import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.root';
 import '@tradeshift/elements.header';
@@ -31,60 +31,99 @@ const slots = {
 		background: '#90129B'
 	}
 };
-storiesOf('ts-root', module)
-	.add('empty', () => createRoot())
-	.add('header', () =>
-		createRoot(
-			() => html`
+
+export default {
+	title: 'ts-root'
+};
+
+export const Empty = () => createRoot();
+
+Empty.story = {
+	name: 'empty'
+};
+
+export const Header = () =>
+	createRoot(
+		() =>
+			html`
 				${createElement(slots.header)}
 			`
-		)
-	)
-	.add('header + footer', () =>
-		createRoot(
-			() => html`
+	);
+
+Header.story = {
+	name: 'header'
+};
+
+export const HeaderFooter = () =>
+	createRoot(
+		() =>
+			html`
 				${createElement(slots.header)} ${createElement(slots.footer)}
 			`
-		)
-	)
-	.add('header + footer + sidebar-left', () =>
-		createRoot(
-			() => html`
+	);
+
+HeaderFooter.story = {
+	name: 'header + footer'
+};
+
+export const HeaderFooterSidebarLeft = () =>
+	createRoot(
+		() =>
+			html`
 				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
 			`
-		)
-	)
-	.add('header + footer + sidebar-right', () =>
-		createRoot(
-			() => html`
+	);
+
+HeaderFooterSidebarLeft.story = {
+	name: 'header + footer + sidebar-left'
+};
+
+export const HeaderFooterSidebarRight = () =>
+	createRoot(
+		() =>
+			html`
 				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-right'])}
 			`
-		)
-	)
-	.add('header + footer + sidebar-inner-left', () =>
-		createRoot(
-			() => html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-inner-left'])}
-			`
-		)
-	)
-	.add('header + footer + sidebar-inner-right', () =>
-		createRoot(
-			() => html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-inner-right'])}
-			`
-		)
-	)
-
-	.add('header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right', () =>
-		createRoot(
-			() => html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
-				${createElement(slots['sidebar-right'])} ${createElement(slots['sidebar-inner-left'])}
-				${createElement(slots['sidebar-inner-right'])}
-			`
-		)
 	);
+
+HeaderFooterSidebarRight.story = {
+	name: 'header + footer + sidebar-right'
+};
+
+export const HeaderFooterSidebarInnerLeft = () =>
+	createRoot(
+		() => html`
+			${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-inner-left'])}
+		`
+	);
+
+HeaderFooterSidebarInnerLeft.story = {
+	name: 'header + footer + sidebar-inner-left'
+};
+
+export const HeaderFooterSidebarInnerRight = () =>
+	createRoot(
+		() => html`
+			${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-inner-right'])}
+		`
+	);
+
+HeaderFooterSidebarInnerRight.story = {
+	name: 'header + footer + sidebar-inner-right'
+};
+
+export const HeaderFooterSidebarLeftSidebarRightSidebarInnerLeftSidebarInnerRight = () =>
+	createRoot(
+		() => html`
+			${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
+			${createElement(slots['sidebar-right'])} ${createElement(slots['sidebar-inner-left'])}
+			${createElement(slots['sidebar-inner-right'])}
+		`
+	);
+
+HeaderFooterSidebarLeftSidebarRightSidebarInnerLeftSidebarInnerRight.story = {
+	name: 'header + footer + sidebar-left + sidebar-right + sidebar-inner-left + sidebar-inner-right'
+};
 
 function createRoot(inner = () => html``) {
 	return html`

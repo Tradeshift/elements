@@ -1,11 +1,14 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { variants, colorTypes } from '../src/utils';
 
-storiesOf('ts-typography', module).add('test', () => {
+export default {
+	title: 'ts-typography'
+};
+
+export const Test = () => {
 	const properties = {
 		variant: variants,
 		type: colorTypes
@@ -16,4 +19,4 @@ storiesOf('ts-typography', module).add('test', () => {
 	};
 
 	return createHappoStories('typography', properties, 'Sample Text', options);
-});
+};

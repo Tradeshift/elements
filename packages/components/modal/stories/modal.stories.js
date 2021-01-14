@@ -1,4 +1,4 @@
-import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs';
 import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.modal';
@@ -26,42 +26,46 @@ const footer = html`
 	</ts-button-group>
 `;
 
-storiesOf('ts-modal', module)
-	.addDecorator(withKnobs)
-	.add(
-		'With note and footer',
-		() => {
-			const dir = radios('Direction', { ltr: 'ltr', rtl: 'rtl' }, 'ltr');
-			const title = text('Title', 'Title');
-			const visible = boolean('Visible', true);
-			const size = select('Size', helpers.objectKeysChangeCase(sizes), sizes.MEDIUM);
-			const hideHeader = boolean('Hide header', false);
-			const noPadding = boolean('Remove paddings in main', false);
+export default {
+	title: 'ts-modal',
+	decorators: [withKnobs]
+};
 
-			const showNote = boolean('Add note', true);
-			const showFooter = boolean('Add footer', true);
-			return html`
-				<ts-modal
-					data-dir="${dir}"
-					data-title="${title}"
-					data-size="${size}"
-					?data-visible="${visible}"
-					?hide-header="${hideHeader}"
-					?no-padding="${noPadding}"
-				>
-					${showNote
-						? html`
-								<ts-note dir="${dir}" slot="note">
-									Some important note about this information.
-								</ts-note>
-						  `
-						: ''}
-					<div slot="main">
-						${cardsArray.map(c => c)}
-					</div>
-					${showFooter ? footer : ''}
-				</ts-modal>
-			`;
-		},
-		{ notes: readme }
-	);
+export const WithNoteAndFooter = () => {
+	const dir = radios('Direction', { ltr: 'ltr', rtl: 'rtl' }, 'ltr');
+	const title = text('Title', 'Title');
+	const visible = boolean('Visible', true);
+	const size = select('Size', helpers.objectKeysChangeCase(sizes), sizes.MEDIUM);
+	const hideHeader = boolean('Hide header', false);
+	const noPadding = boolean('Remove paddings in main', false);
+
+	const showNote = boolean('Add note', true);
+	const showFooter = boolean('Add footer', true);
+	return html`
+		<ts-modal
+			data-dir="${dir}"
+			data-title="${title}"
+			data-size="${size}"
+			?data-visible="${visible}"
+			?hide-header="${hideHeader}"
+			?no-padding="${noPadding}"
+		>
+			${showNote
+				? html`
+						<ts-note dir="${dir}" slot="note">
+							Some important note about this information.
+						</ts-note>
+				  `
+				: ''}
+			<div slot="main">
+				${cardsArray.map(c => c)}
+			</div>
+			${showFooter ? footer : ''}
+		</ts-modal>
+	`;
+};
+
+WithNoteAndFooter.story = {
+	name: 'With note and footer',
+	parameters: { notes: readme }
+};
