@@ -3,7 +3,6 @@ import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.spinner';
-import { customEventNames } from './utils';
 
 export class TSAside extends TSElement {
 	constructor() {
@@ -107,9 +106,9 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
-				this.dispatchCustomEvent(customEventNames.OPEN);
+				this.dispatchCustomEvent('open');
 			} else if (oldVal === true) {
-				this.dispatchCustomEvent(customEventNames.CLOSE);
+				this.dispatchCustomEvent('close');
 			}
 		}
 	}
@@ -119,9 +118,9 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
-				this.dispatchCustomEvent(customEventNames.OPENED);
+				this.dispatchCustomEvent('opened');
 			} else if (oldVal === true) {
-				this.dispatchCustomEvent(customEventNames.CLOSED);
+				this.dispatchCustomEvent('closed');
 			}
 		}
 	}

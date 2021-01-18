@@ -1,6 +1,5 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
 import css from './tabs.css';
-import { customEventNames } from './utils';
 
 import '@tradeshift/elements.icon';
 import '@tradeshift/elements.typography';
@@ -44,7 +43,7 @@ export class TSTabs extends TSElement {
 				this.tabs[i].selected = true;
 			}
 		}
-		this.dispatchCustomEvent(customEventNames.TAB_CLICK, { tab, index });
+		this.dispatchCustomEvent('tab-click', { tab, index });
 		this.requestUpdate();
 	}
 

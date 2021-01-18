@@ -44,7 +44,7 @@ export class TSRadioGroup extends TSElement {
 				const value = radio.value;
 				this.index = index;
 				this.value = value;
-				this.dispatchCustomEvent(customEventNames.RADIO_SELECTED, { radio, index, value });
+				this.dispatchCustomEvent('radio-selected', { radio, index, value });
 			}
 		}
 	}
