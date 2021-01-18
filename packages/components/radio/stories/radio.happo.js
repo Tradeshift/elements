@@ -1,8 +1,12 @@
-import { html, storiesOf } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.radio-group';
 
-storiesOf('ts-radio-group', module).add('test', () => {
+export default {
+	title: 'ts-radio-group'
+};
+
+export const Test = () => {
 	return html`
 		<h1>
 			dir
@@ -20,4 +24,4 @@ storiesOf('ts-radio-group', module).add('test', () => {
 			<ts-radio value="black" label="Black pill" disabled dir="rtl"></ts-radio>
 		</ts-radio-group>
 	`;
-});
+};

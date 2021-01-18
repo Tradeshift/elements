@@ -1,11 +1,14 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.status';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { STATUS_TYPE } from '../src/utils/constants';
 
-storiesOf('ts-status', module).add('test', () => {
+export default {
+	title: 'ts-status'
+};
+
+export const Test = () => {
 	const properties = {
 		status: STATUS_TYPE,
 		text: {
@@ -15,4 +18,4 @@ storiesOf('ts-status', module).add('test', () => {
 	};
 
 	return createHappoStories('status', properties, '');
-});
+};

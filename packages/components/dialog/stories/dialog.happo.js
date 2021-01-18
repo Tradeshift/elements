@@ -1,9 +1,13 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.dialog';
 import '@tradeshift/elements.button-group';
 
-storiesOf('ts-dialog', module).add('test', () => {
+export default {
+	title: 'ts-dialog'
+};
+
+export const Test = () => {
 	const translations = { accept_button: 'custom accept', cancel_button: 'custom cancel' };
 	return html`
 		<ts-dialog
@@ -20,4 +24,4 @@ storiesOf('ts-dialog', module).add('test', () => {
 			</ts-button-group>
 		</ts-dialog>
 	`;
-});
+};

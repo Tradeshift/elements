@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.basic-table';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-basic-table', module).add('test', () => {
+export default {
+	title: 'ts-basic-table'
+};
+
+export const Test = () => {
 	const properties = {
 		selectedIds: { selectedIds: [1] },
 		dir: { rtl: 'rtl' }
@@ -159,4 +162,4 @@ storiesOf('ts-basic-table', module).add('test', () => {
 	};
 
 	return createHappoStories('basic-table', properties, '', options);
-});
+};

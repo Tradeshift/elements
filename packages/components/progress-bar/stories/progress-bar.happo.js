@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.progress-bar';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-progress-bar', module).add('test', () => {
+export default {
+	title: 'ts-progress-bar'
+};
+
+export const Test = () => {
 	const properties = {
 		done: {
 			'0': 0,
@@ -23,4 +26,4 @@ storiesOf('ts-progress-bar', module).add('test', () => {
 	};
 
 	return createHappoStories('progress-bar', properties, '', options);
-});
+};

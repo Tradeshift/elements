@@ -1,8 +1,12 @@
-import { storiesOf, html } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '@tradeshift/elements';
 import '@tradeshift/elements.pager';
 
-storiesOf('ts-pager', module).add('test', () => {
+export default {
+	title: 'ts-pager'
+};
+
+export const Test = () => {
 	return html`
 		<ts-pager per-page="20" total-pages="10"></ts-pager>
 		<ts-pager per-page="20" total-pages="10" active-page="5"></ts-pager>
@@ -16,4 +20,4 @@ storiesOf('ts-pager', module).add('test', () => {
 			translations='{"page": "side", "of": "af", "items_per_page": "varer pr. side"}'
 		></ts-pager>
 	`;
-});
+};

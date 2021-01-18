@@ -1,10 +1,13 @@
-import { storiesOf } from '@open-wc/demoing-storybook';
 import '@tradeshift/elements';
 import '@tradeshift/elements.checkbox';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
-storiesOf('ts-checkbox', module).add('test', () => {
+export default {
+	title: 'ts-checkbox'
+};
+
+export const Test = () => {
 	const properties = {
 		dir: { rtl: 'rtl' },
 		label: { label: 'Checkbox label' },
@@ -17,4 +20,4 @@ storiesOf('ts-checkbox', module).add('test', () => {
 	};
 
 	return createHappoStories('checkbox', properties, 'Checkbox', options);
-});
+};

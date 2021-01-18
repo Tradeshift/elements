@@ -1,5 +1,4 @@
-import { html } from '@open-wc/demoing-storybook';
-import { render } from 'lit-html';
+import { html, render } from 'lit-html';
 
 /**** Happo storybook helpers ****/
 
