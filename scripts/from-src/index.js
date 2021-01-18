@@ -7,6 +7,6 @@ module.exports = function(componentName, callback) {
 	compStateLogger(componentName, `Getting src data...`);
 	getSrcData(componentName, data => {
 		compStateLogger(componentName, 'Got data from src, writing it to file');
-		saveDataFromSrc(componentName, data.properties, callback);
+		saveDataFromSrc(componentName, data, callback);
 	});
 };

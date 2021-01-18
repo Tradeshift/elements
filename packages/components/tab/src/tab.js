@@ -27,6 +27,7 @@ export class TSTab extends TSElement {
 	render() {
 		return html`
 			<div class="tab-content" ?selected="${this.selected}">
+				<!-- Content of the tab should be wrapped in \`ts-tab\` element	-->
 				<slot></slot>
 			</div>
 		`;

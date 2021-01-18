@@ -106,6 +106,7 @@ export class TSDialog extends TSElement {
 			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header>
 				<div class="content" slot="main">
 					<ts-icon icon="${this.getIcon}" type="${this.getIconType}" size="extra-large"></ts-icon>
+					<!-- If in rare cases you need to have more complex content than text property, you can override the text by using this slot	-->
 					<slot name="content">
 						<ts-typography>${this.text}</ts-typography>
 					</slot>
@@ -119,6 +120,7 @@ export class TSDialog extends TSElement {
 						>
 							${this.translations.accept_button}
 						</ts-button>
+						<!-- To add more options to the dialog, between cancel and 	-->
 						<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
 						<ts-button
 							?focused="${this.isFocused('cancel')}"

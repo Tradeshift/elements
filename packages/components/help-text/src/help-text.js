@@ -2,7 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './help-text.css';
 import '@tradeshift/elements.icon';
 
-import { classNames, sizes, slotNames } from './utils';
+import { classNames, sizes } from './utils';
 
 export class TSHelpText extends TSElement {
 	static get styles() {
@@ -50,14 +50,14 @@ export class TSHelpText extends TSElement {
 					? html`
 							<dt>
 								${this.infoIcon}
-								<slot name="${slotNames.TITLE}">
+								<slot name="title">
 									${this.title}
 								</slot>
 							</dt>
 					  `
 					: ''}
 
-				<slot name="${slotNames.MESSAGES}">
+				<slot name="messages">
 					${this.messages.map(
 						message => html`
 							<dd class="${isSingleMessage ? classNames.SINGLE_MESSAGE : ''}">

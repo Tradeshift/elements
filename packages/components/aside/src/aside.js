@@ -6,6 +6,16 @@ import '@tradeshift/elements.spinner';
 import { customEventNames } from './utils';
 
 export class TSAside extends TSElement {
+	constructor() {
+		super();
+		this.title = '';
+		this.visible = false;
+		this.hasFoot = false;
+		this.hasPlatformObject = false;
+		this.noCloseOnEscKey = false;
+		this.closeBehavior = new CloseOnEscBehavior(this);
+	}
+
 	static get styles() {
 		return [TSElement.styles, unsafeCSS(css)];
 	}
@@ -23,30 +33,6 @@ export class TSAside extends TSElement {
 			hasFoot: { type: Boolean },
 			hasPlatformObject: { type: Boolean }
 		};
-	}
-
-	constructor() {
-		super();
-		this.title = '';
-		this.visible = false;
-		this.hasFoot = false;
-		this.hasPlatformObject = false;
-		this.noCloseOnEscKey = false;
-		this.closeBehavior = new CloseOnEscBehavior(this);
-	}
-
-	close(e) {
-		this.visible = false;
-	}
-
-	footerSlot(e) {
-		this.hasFoot = true;
-	}
-
-	platformObjectSlot(e) {
-		const slot = e.currentTarget;
-		const assignedNodes = slot.assignedNodes();
-		this.hasPlatformObject = assignedNodes && assignedNodes.length;
 	}
 
 	get direction() {
@@ -71,6 +57,20 @@ export class TSAside extends TSElement {
 		`;
 	}
 
+	close(e) {
+		this.visible = false;
+	}
+
+	footerSlot(e) {
+		this.hasFoot = true;
+	}
+
+	platformObjectSlot(e) {
+		const slot = e.currentTarget;
+		const assignedNodes = slot.assignedNodes();
+		this.hasPlatformObject = assignedNodes && assignedNodes.length;
+	}
+
 	render() {
 		return html`
 			<div dir="${this.direction}" class="aside-container ${this.slide} ${this.hasFoot ? 'has-footer' : ''}">
@@ -81,15 +81,19 @@ export class TSAside extends TSElement {
 					</div>
 				</header>
 				<div class="aside-note">
+					<!-- Use this slot name on the \`ts-note\` in the aside	-->
 					<slot name="note" class="note-in-aside"></slot>
 				</div>
 				<div class="aside-platform-object ${this.hasPlatformObject ? '' : 'hidden'}">
+					<!-- The section between aside header and content that platform object should be shown with different background color	-->
 					<slot name="platform-object" @slotchange="${this.platformObjectSlot}"></slot>
 				</div>
 				<main class="aside-main">
+					<!-- Main content of the aside that doesn't fit into any other available slots	-->
 					<slot name="main"></slot>
 				</main>
 				<footer>
+					<!-- Footer content and action buttons goes. You should use the ts-button-group here.	-->
 					<slot name="footer" @slotchange="${this.footerSlot}"></slot>
 				</footer>
 				${this.spinner}

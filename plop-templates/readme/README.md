@@ -30,13 +30,18 @@
         width:100%;
     }
 </style>
-
 {{#if properties}}
+
 ## ➤ Properties
 
 {{{properties}}}
 {{/if}}
+{{#if slots}}
 
+## ➤ Slots
+
+{{{slots}}}
+{{/if}}
 ## ➤ How to use it
 
 - Install the package of {{camelCase name}}

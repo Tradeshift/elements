@@ -7,7 +7,7 @@ import '@tradeshift/elements.icon';
 
 import css from './file-card.css';
 import fileIcon from './assets/file.svg';
-import { messages, slotNames, customEventNames, states, sizes, classNames, selectors } from './utils';
+import { messages, customEventNames, states, sizes, classNames, selectors } from './utils';
 
 export class TSFileCard extends TSElement {
 	constructor() {
@@ -122,10 +122,10 @@ export class TSFileCard extends TSElement {
 	get actionMessage() {
 		return html`
 			<ts-typography class="${classNames.REMOVE_ACTION_MESSAGE}" type="action" variant="subtitle">
-				<slot name="${slotNames.REMOVE_ACTION_TEXT}">${messages.GENERAL.REMOVE}</slot>
+				<slot name="remove-action-text">${messages.GENERAL.REMOVE}</slot>
 			</ts-typography>
 			<ts-typography class="${classNames.DOWNLOAD_ACTION_MESSAGE}" type="action" variant="subtitle">
-				<slot name="${slotNames.DOWNLOAD_ACTION_TEXT}">${messages.GENERAL.DOWNLOAD}</slot>
+				<slot name="download-action-text">${messages.GENERAL.DOWNLOAD}</slot>
 			</ts-typography>
 		`;
 	}

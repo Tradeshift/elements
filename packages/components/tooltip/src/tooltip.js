@@ -8,6 +8,7 @@ export class TSTooltip extends TSElement {
 
 	static get properties() {
 		return {
+			/** Text that should be shown in the tooltip popover */
 			tooltip: { type: String, reflect: true },
 			/** 'top', 'bottom', 'right', 'left' */
 			position: { type: String, reflect: true },
@@ -33,6 +34,7 @@ export class TSTooltip extends TSElement {
 				}
 			</style>
 			<div>
+				<!-- Elements that have tooltip should be wrapped with ts-tooltip	-->
 				<slot></slot>
 			</div>
 		`;

@@ -1,6 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './file-uploader-input.css';
-import { messages, selectors, classNames, customEventNames, slotNames, sizes } from './utils';
+import { messages, selectors, classNames, customEventNames, sizes } from './utils';
 
 import '@tradeshift/elements.help-text';
 import '@tradeshift/elements.icon';
@@ -78,12 +78,12 @@ export class TSFileUploaderInput extends TSElement {
 		return html`
 			<div class="${classNames.FILE_UPLOAD_BUTTON}" ?data-disabled="${this.disabled}">
 				<label>
-					<slot name="${slotNames.PLACEHOLDER_TEXT}">
+					<slot name="placeholder-text">
 						${messages.PLACEHOLDER[this.multiple ? 'MULTIPLE' : 'SINGLE']}
 					</slot>
 				</label>
 				<span>
-					<slot name="${slotNames.BUTTON_TEXT}">
+					<slot name="button-text">
 						${messages.GENERAL.SELECT.toUpperCase()}
 					</slot>
 				</span>

@@ -6,4 +6,4 @@ export const messages = {
 	...constants.messages
 };
 
-export { states, customEventNames, slotNames, sizes } from './constants';
+export { states, customEventNames, sizes } from './constants';

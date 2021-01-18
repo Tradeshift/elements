@@ -9,6 +9,7 @@ export class TSButtonGroup extends TSElement {
 	render() {
 		return html`
 			<section>
+				<!-- All \`ts-button\` elements in the group should be wrapped with \`ts-button-group\` element to be grouped together -->
 				<slot @slotchange="${this.handleSlotChange}"></slot>
 			</section>
 		`;

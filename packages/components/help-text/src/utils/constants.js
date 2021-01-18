@@ -1,8 +1,3 @@
-export const slotNames = {
-	TITLE: 'title',
-	MESSAGES: 'messages'
-};
-
 export const types = {
 	ERROR: 'error'
 };

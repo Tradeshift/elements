@@ -70,7 +70,10 @@ export class TSButton extends TSElement {
 							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
 					  `
 					: ''}
-				<span><slot></slot></span>
+				<span>
+					<!-- Text of the button should be wrapped around \`ts-button\` element -->
+					<slot></slot>
+				</span>
 			</button>
 		`;
 	}

@@ -73,6 +73,7 @@ export class TSHeader extends TSElement {
 					${this.getMenuSwitch} ${this.getIcon()} ${this.getTitle()}
 				</div>
 				<div class="slot-container">
+					<!-- Extra items on the opposite side of the header goes here, like button group. 	-->
 					<slot></slot>
 				</div>
 			</header>

@@ -121,6 +121,7 @@ export class TSTabs extends TSElement {
 				${this.tabs.map((tab, index) => html` ${this.tabTemplate(tab, index)} `)}
 			</header>
 			<div class="tabs-content-wrapper">
+				<!-- All \`ts-tab\` elements should be wrapped with \`ts-tabs\` element to be grouped together -->
 				<slot @slotchange="${this.slotChangeHandler}"></slot>
 			</div>
 		`;

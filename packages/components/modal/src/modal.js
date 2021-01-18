@@ -24,12 +24,19 @@ export class TSModal extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true, attribute: 'data-dir' },
+			/** Size of the modal. Available variants: 'large', 'medium', 'small' */
 			size: { type: String, reflect: true, attribute: 'data-size' },
+			/** Modal header text */
 			title: { type: String, reflect: true, attribute: 'data-title' },
+			/** Show/hide the modal */
 			visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
+			/** Disable the functionality to close the modal on press of escape key */
 			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+			/** Show/hide the title of the modal */
 			hideHeader: { type: Boolean, attribute: 'hide-header' },
+			/** Add/remove standard paddings to the main content */
 			noPadding: { type: Boolean, attribute: 'no-padding' }
 		};
 	}
@@ -85,12 +92,15 @@ export class TSModal extends TSElement {
 			>
 				${this.header}
 				<div class="note">
+					<!-- Use this slot name on the \`ts-note\` in the modal	-->
 					<slot name="note"></slot>
 				</div>
 				<main>
+					<!-- Content in the main section of the modal	-->
 					<slot name="main"></slot>
 				</main>
 				<footer>
+					<!-- Content in the footer section of the modal, most of the time \`ts-button-group\`	-->
 					<slot name="footer"></slot>
 				</footer>
 			</div>

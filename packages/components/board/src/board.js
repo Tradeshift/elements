@@ -34,6 +34,7 @@ export class TSBoard extends TSElement {
 			<div dir="${this.direction}">
 				${this.header}
 				<div class="board-main">
+					<!-- Content of the board should be wrapped around \`ts-board\` element -->
 					<slot></slot>
 				</div>
 			</div>
