@@ -24,6 +24,7 @@ export class TSListItem extends TSElement {
 			noWrap: { type: Boolean, attribute: 'no-wrap' }
 		};
 	}
+
 	constructor() {
 		super();
 		this.hasSlottedIcon = false;
@@ -54,9 +55,7 @@ export class TSListItem extends TSElement {
 		const slotClass = this.hasSlottedIcon ? 'icon-left' : '';
 
 		return icon
-			? html`
-					<ts-icon class="icon-left" icon="${icon}" size="large" type="${this.colorType}"></ts-icon>
-			  `
+			? html` <ts-icon class="icon-left" icon="${icon}" size="large" type="${this.colorType}"></ts-icon> `
 			: html`
 					<span class="${slotClass}">
 						<slot name="icon-left" @slotchange="${this.slotChangeHandler}"></slot>
@@ -67,9 +66,7 @@ export class TSListItem extends TSElement {
 	get iconRightTemplate() {
 		const icon = this.selected ? this.iconSelected : this.iconRight;
 		if (icon) {
-			return html`
-				<ts-icon class="icon-right" icon="${icon}" size="large" type="${this.colorType}"></ts-icon>
-			`;
+			return html` <ts-icon class="icon-right" icon="${icon}" size="large" type="${this.colorType}"></ts-icon> `;
 		}
 	}
 
@@ -92,21 +89,15 @@ export class TSListItem extends TSElement {
 	}
 
 	get content() {
-		return html`
-			${this.iconLeftTemplate} ${this.textWrapper} ${this.iconRightTemplate}
-		`;
+		return html` ${this.iconLeftTemplate} ${this.textWrapper} ${this.iconRightTemplate} `;
 	}
 
 	render() {
 		return html`
 			<li ?selected="${this.selected}" dir="${this.direction}">
 				${this.selectable
-					? html`
-							<button ?disabled="${this.disabled}" class="content-wrapper">${this.content}</button>
-					  `
-					: html`
-							<div class="content-wrapper">${this.content}</div>
-					  `}
+					? html` <button ?disabled="${this.disabled}" class="content-wrapper">${this.content}</button> `
+					: html` <div class="content-wrapper">${this.content}</div> `}
 			</li>
 		`;
 	}

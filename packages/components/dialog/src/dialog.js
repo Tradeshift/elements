@@ -91,6 +91,7 @@ export class TSDialog extends TSElement {
 	isFocused(buttonType) {
 		return this.renderButtons && this.focused === buttonType;
 	}
+
 	render() {
 		return html`
 			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header no-close-on-esc-key>

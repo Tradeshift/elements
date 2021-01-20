@@ -27,13 +27,13 @@
 
 		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
 		<script>
-			window.addEventListener('WebComponentsReady', function() {
+			window.addEventListener('WebComponentsReady', function () {
 				var coreEl = document.createElement('script');
 				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
 				document.body.appendChild(coreEl);
-				coreEl.onload = function() {
+				coreEl.onload = function () {
 					var components = ['button'];
-					components.forEach(function(component) {
+					components.forEach(function (component) {
 						var el = document.createElement('script');
 						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
 						document.body.appendChild(el);
