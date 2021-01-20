@@ -1,20 +1,20 @@
 {
   "name": "@tradeshift/elements",
   "version": "0.18.1",
-  "src": "src/core.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/core"
+  },
   "main": "lib/core.umd.js",
-  "browser": "lib/core.umd.js",
   "module": "lib/core.esm.js",
+  "browser": "lib/core.umd.js",
   "files": [
     "lib/*",
     "src/*"
   ],
   "dependencies": {
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.4.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Tradeshift/elements.git",
-    "directory": "packages/core"
-  }
+  "src": "src/core.js"
 }

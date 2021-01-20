@@ -1,12 +1,12 @@
 import path from 'path';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import svgo from 'rollup-plugin-svgo';
-import json from 'rollup-plugin-json';
+import json from '@rollup/plugin-json';
 
 const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH, PRODUCTION } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
@@ -49,8 +49,7 @@ const svgoPlugin = svgo({ raw: true });
 const babelPlugin = babel({
 	babelrc: false,
 	exclude: [/\/core-js\//],
-	runtimeHelpers: false,
-	externalHelpers: false,
+	babelHelpers: 'bundled',
 	presets: [
 		[
 			'@babel/env',
