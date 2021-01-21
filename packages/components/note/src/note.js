@@ -40,6 +40,7 @@ export class TSNote extends TSElement {
 		this.hidden = true;
 		this.dispatchCustomEvent(customEventNames.CLOSE);
 	}
+
 	buttonClickHandler(event) {
 		const buttonData = event.target.getAttribute('data-button');
 		this.dispatchCustomEvent(customEventNames.BUTTON_CLICK, JSON.parse(buttonData));
