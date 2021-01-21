@@ -42,6 +42,12 @@
 
 {{{slots}}}
 {{/if}}
+{{#if events}}
+
+## ➤ Events
+
+{{{events}}}
+{{/if}}
 ## ➤ How to use it
 
 - Install the package of {{camelCase name}}

@@ -7,15 +7,22 @@ const { compStateLogger } = require('./helpers');
 module.exports = function(componentName) {
 	const slots = getSlots(componentName);
 	const properties = getProperties(componentName);
+	const events = getEvents(componentName);
 	return {
 		properties: properties.length && tablemark(properties),
-		slots: slots.length && tablemark(slots)
+		slots: slots.length && tablemark(slots),
+		events: events.length && tablemark(events)
 	};
 };
 
 function getSlots(componentName) {
 	compStateLogger(componentName, 'Read src slots.json file...');
 	return readComponentFile(componentName, '/docs/src/slots.json');
+}
+
+function getEvents(componentName) {
+	compStateLogger(componentName, 'Read src events.json file...');
+	return readComponentFile(componentName, '/docs/src/events.json');
 }
 
 function getProperties(componentName) {
