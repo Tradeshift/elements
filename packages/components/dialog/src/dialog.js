@@ -78,11 +78,17 @@ export class TSDialog extends TSElement {
 	}
 
 	onAccept() {
+		/**
+		 * Emitted when the user choose the accept option
+		 */
 		this.dispatchCustomEvent('accept');
 		this.dismissModal();
 	}
 
 	onCancel() {
+		/**
+		 * Emitted when the user choose the cancel option
+		 */
 		this.dispatchCustomEvent('cancel');
 		this.dismissModal();
 	}

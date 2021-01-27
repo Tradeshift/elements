@@ -44,6 +44,10 @@ export class TSRadioGroup extends TSElement {
 				const value = radio.value;
 				this.index = index;
 				this.value = value;
+				/**
+				 * Emitted on radio element select
+				 * @payload { radio, index, value }
+				 */
 				this.dispatchCustomEvent('radio-selected', { radio, index, value });
 			}
 		}
@@ -133,6 +137,7 @@ export class TSRadioGroup extends TSElement {
 					  `
 					: ''}
 				<div class="frame">
+					<!-- All ts-radio elements should be wrapped by ts-radio-group to be grouped together	-->
 					<slot @slotchange="${this.handleSlotChange}"></slot>
 				</div>
 			</fieldset>
