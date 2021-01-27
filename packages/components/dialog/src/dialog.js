@@ -94,7 +94,7 @@ export class TSDialog extends TSElement {
 
 	render() {
 		return html`
-			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header no-close-on-esc-key>
+			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header>
 				<div class="content" slot="main">
 					<ts-icon icon="${this.getIcon}" type="${this.getIconType}" size="extra-large"></ts-icon>
 					<slot name="content">
