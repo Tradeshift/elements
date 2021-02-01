@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.progress-bar",
-  "version": "0.18.1",
-  "src": "src/progress-bar.js",
-  "main": "lib/progress-bar.umd.js",
-  "browser": "lib/progress-bar.umd.js",
-  "module": "lib/progress-bar.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/progress-bar.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/progress-bar"
-  }
+  },
+  "main": "lib/progress-bar.umd.js",
+  "module": "lib/progress-bar.esm.js",
+  "browser": "lib/progress-bar.umd.js",
+  "types": "types/progress-bar.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/progress-bar.js"
 }

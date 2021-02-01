@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.tooltip",
-  "version": "0.18.1",
-  "src": "src/tooltip.js",
-  "main": "lib/tooltip.umd.js",
-  "browser": "lib/tooltip.umd.js",
-  "module": "lib/tooltip.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/tooltip.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/tooltip"
-  }
+  },
+  "main": "lib/tooltip.umd.js",
+  "module": "lib/tooltip.esm.js",
+  "browser": "lib/tooltip.umd.js",
+  "types": "types/tooltip.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/tooltip.js"
 }

@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.tab",
-  "version": "0.18.1",
-  "src": "src/tab.js",
-  "main": "lib/tab.umd.js",
-  "browser": "lib/tab.umd.js",
-  "module": "lib/tab.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/tab.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/tab"
-  }
+  },
+  "main": "lib/tab.umd.js",
+  "module": "lib/tab.esm.js",
+  "browser": "lib/tab.umd.js",
+  "types": "types/tab.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/tab.js"
 }

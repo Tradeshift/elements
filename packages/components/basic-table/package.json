@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.basic-table",
-  "version": "0.18.1",
-  "src": "src/basic-table.js",
-  "main": "lib/basic-table.umd.js",
-  "browser": "lib/basic-table.umd.js",
-  "module": "lib/basic-table.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/basic-table.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/basic-table"
-  }
+  },
+  "main": "lib/basic-table.umd.js",
+  "module": "lib/basic-table.esm.js",
+  "browser": "lib/basic-table.umd.js",
+  "types": "types/basic-table.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/basic-table.js"
 }

@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.input",
-  "version": "0.18.1",
-  "src": "src/input.js",
-  "main": "lib/input.umd.js",
-  "browser": "lib/input.umd.js",
-  "module": "lib/input.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/input.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/input"
-  }
+  },
+  "main": "lib/input.umd.js",
+  "module": "lib/input.esm.js",
+  "browser": "lib/input.umd.js",
+  "types": "types/input.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/input.js"
 }

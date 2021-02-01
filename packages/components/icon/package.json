@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.icon",
-  "version": "0.18.1",
-  "src": "src/icon.js",
-  "main": "lib/icon.umd.js",
-  "browser": "lib/icon.umd.js",
-  "module": "lib/icon.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/icon.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/icon"
-  }
+  },
+  "main": "lib/icon.umd.js",
+  "module": "lib/icon.esm.js",
+  "browser": "lib/icon.umd.js",
+  "types": "types/icon.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/icon.js"
 }
