@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.app-icon",
-  "version": "0.18.1",
-  "src": "src/app-icon.js",
-  "main": "lib/app-icon.umd.js",
-  "browser": "lib/app-icon.umd.js",
-  "module": "lib/app-icon.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/app-icon.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/app-icon"
-  }
+  },
+  "main": "lib/app-icon.umd.js",
+  "module": "lib/app-icon.esm.js",
+  "browser": "lib/app-icon.umd.js",
+  "types": "types/app-icon.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/app-icon.js"
 }

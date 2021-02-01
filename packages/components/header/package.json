@@ -1,23 +1,23 @@
 {
   "name": "@tradeshift/elements.header",
-  "version": "0.18.1",
-  "src": "src/header.js",
-  "main": "lib/header.umd.js",
-  "browser": "lib/header.umd.js",
-  "module": "lib/header.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/header.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1",
-    "@tradeshift/elements.app-icon": "^0.18.1",
-    "@tradeshift/elements.icon": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/header"
-  }
+  },
+  "main": "lib/header.umd.js",
+  "module": "lib/header.esm.js",
+  "browser": "lib/header.umd.js",
+  "types": "types/header.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2",
+    "@tradeshift/elements.app-icon": "^0.18.2",
+    "@tradeshift/elements.icon": "^0.18.2"
+  },
+  "src": "src/header.js"
 }

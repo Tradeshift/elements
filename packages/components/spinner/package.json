@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.spinner",
-  "version": "0.18.1",
-  "src": "src/spinner.js",
-  "main": "lib/spinner.umd.js",
-  "browser": "lib/spinner.umd.js",
-  "module": "lib/spinner.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/spinnder.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/spinner"
-  }
+  },
+  "main": "lib/spinner.umd.js",
+  "module": "lib/spinner.esm.js",
+  "browser": "lib/spinner.umd.js",
+  "types": "types/spinnder.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/spinner.js"
 }

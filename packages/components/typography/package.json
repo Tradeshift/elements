@@ -1,21 +1,21 @@
 {
   "name": "@tradeshift/elements.typography",
-  "version": "0.18.1",
-  "src": "src/typography.js",
-  "main": "lib/typography.umd.js",
-  "browser": "lib/typography.umd.js",
-  "module": "lib/typography.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/typography.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/typography"
-  }
+  },
+  "main": "lib/typography.umd.js",
+  "module": "lib/typography.esm.js",
+  "browser": "lib/typography.umd.js",
+  "types": "types/typography.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "src": "src/typography.js"
 }

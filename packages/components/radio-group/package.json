@@ -1,24 +1,24 @@
 {
   "name": "@tradeshift/elements.radio-group",
-  "version": "0.18.1",
-  "src": "src/radio-group.js",
-  "main": "lib/radio-group.umd.js",
-  "browser": "lib/radio-group.umd.js",
-  "module": "lib/radio-group.esm.js",
-  "files": [
-    "lib/*",
-    "types/*"
-  ],
-  "types": "types/radio-group.d.ts",
-  "dependencies": {
-    "@tradeshift/elements": "^0.18.1"
-  },
-  "peerDependencies": {
-    "@tradeshift/elements.radio": "^0.9.0"
-  },
+  "version": "0.18.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
     "directory": "packages/components/radio-group"
-  }
+  },
+  "main": "lib/radio-group.umd.js",
+  "module": "lib/radio-group.esm.js",
+  "browser": "lib/radio-group.umd.js",
+  "types": "types/radio-group.d.ts",
+  "files": [
+    "lib/*",
+    "types/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.18.2"
+  },
+  "peerDependencies": {
+    "@tradeshift/elements.radio": "^0.9.0"
+  },
+  "src": "src/radio-group.js"
 }
