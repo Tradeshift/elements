@@ -52,7 +52,7 @@
     "release": "run-s check-credentials build:prod release:npm release:github",
     "release:github": "lerna publish from-package --no-git-tag-version --yes --registry=https://npm.pkg.github.com/",
     "release:npm": "lerna publish --registry=https://registry.npmjs.org/",
-    "server": "server start --watch",
+    "server": "npx http-server",
     "server-reload": "reload --browser --exts html,umd.js",
     "stage": "lint-staged",
     "start": "run-p watch server",
@@ -129,7 +129,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "@commonshost/server": "^6.17.0",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-json": "^4.1.0",

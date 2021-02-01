@@ -15,6 +15,12 @@
 	z-index: var(--ts-zindex-aside);
 }
 
+@media (max-width: env(--mobile-screen-breakpoint)) {
+	.aside-container {
+		width: 100%;
+	}
+}
+
 .hidden {
 	display: none;
 }
