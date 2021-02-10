@@ -1,0 +1,24 @@
+
+# catalog-info.yml
+# This file contains metadata for backstage
+# Read more about available fields and annotations:
+# https://github.com/tradeshift/backstage
+#
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Elements
+  description: |
+    New Tradeshift UI library - Reusable Tradeshift UI Components as Web Components https://tradeshift.github.io/elements
+  annotations:
+    github.com/project-slug: Tradeshift/elements # GitHub project name
+    sonarqube.org/project-key: elements # Name of the project in SonarQube
+  tags:
+    - js
+    - nodejs
+    - web-component
+    - npm
+spec:
+  type: library
+  owner: tradeshiftui
+  lifecycle: production
