@@ -4,6 +4,7 @@ import { customEventNames } from './utils';
 
 import '@tradeshift/elements.icon';
 import '@tradeshift/elements.typography';
+import '@tradeshift/elements.tab';
 
 export class TSTabs extends TSElement {
 	constructor() {
@@ -51,18 +52,14 @@ export class TSTabs extends TSElement {
 			return '';
 		}
 		const type = tab.icon === 'ada' ? 'suggested' : 'default';
-		return html`
-			<ts-icon icon="${tab.icon}" type="${type}" size="medium"></ts-icon>
-		`;
+		return html` <ts-icon icon="${tab.icon}" type="${type}" size="medium"></ts-icon> `;
 	}
 
 	badgeTemplate(tab) {
 		if (!tab.counter) {
 			return '';
 		}
-		return html`
-			<em class="badge">${tab.counter}</em>
-		`;
+		return html` <em class="badge">${tab.counter}</em> `;
 	}
 
 	tabTemplate(tab, index) {
@@ -120,12 +117,7 @@ export class TSTabs extends TSElement {
 	render() {
 		return html`
 			<header class="tabs-wrapper" dir="${this.direction}">
-				${this.tabs.map(
-					(tab, index) =>
-						html`
-							${this.tabTemplate(tab, index)}
-						`
-				)}
+				${this.tabs.map((tab, index) => html` ${this.tabTemplate(tab, index)} `)}
 			</header>
 			<div class="tabs-content-wrapper">
 				<slot @slotchange="${this.slotChangeHandler}"></slot>
