@@ -1,7 +1,9 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
+import '@tradeshift/elements.button';
+import '@tradeshift/elements.button-group';
+import '@tradeshift/elements.icon';
 import '@tradeshift/elements.modal';
 import '@tradeshift/elements.typography';
-import '@tradeshift/elements.icon';
 
 import css from './dialog.css';
 import { translations, dialogTypes, dialogTypeIcon, dialogTypeIconTypes, dialogTypeButtonType } from './utils';

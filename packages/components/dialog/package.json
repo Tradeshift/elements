@@ -14,6 +14,8 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.19.1",
+    "@tradeshift/elements.button": "^0.19.1",
+    "@tradeshift/elements.button-group": "^0.19.1",
     "@tradeshift/elements.icon": "^0.19.1",
     "@tradeshift/elements.modal": "^0.19.1",
     "@tradeshift/elements.typography": "^0.19.1"
