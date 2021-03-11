@@ -20,6 +20,10 @@ export class TSTab extends TSElement {
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {
+		/**
+		 * (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes.
+		 * @payload {name}
+		 */
 		this.dispatchCustomEvent('tab-prop-change', { name });
 		super.attributeChangedCallback(name, oldValue, newValue);
 	}

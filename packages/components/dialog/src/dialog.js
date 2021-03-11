@@ -36,6 +36,7 @@ export class TSDialog extends TSElement {
 			focused: { type: String, reflect: true },
 			/** either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary */
 			primary: { type: String, reflect: true },
+			/** INTERNAL */
 			renderButtons: { type: Boolean, attribute: false }
 		};
 	}

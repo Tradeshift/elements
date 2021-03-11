@@ -27,24 +27,31 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property   | Attribute  | Type    | Default | Description |
-| ---------- | ---------- | ------- | ------- | ----------- |
-| title      | title      | String  |         |             |
-| subtitle   | subtitle   | String  |         |             |
-| disabled   | disabled   | Boolean | false   |             |
-| selectable | selectable | Boolean | false   |             |
-| selected   | selected   | Boolean | false   |             |
-| dir        | dir        | String  | ltr     |             |
-| icon       | icon       | String  |         |             |
-| iconLeft   | icon-left  | String  |         |             |
-| iconRight  | icon-right | String  |         |             |
-| noWrap     | no-wrap    | Boolean | false   |             |
+| Property     | Attribute     | Type    | Default     | Description |
+| ------------ | ------------- | ------- | ----------- | ----------- |
+| title        | title         | String  |             |             |
+| subtitle     | subtitle      | String  |             |             |
+| disabled     | disabled      | Boolean | false       |             |
+| selectable   | selectable    | Boolean | false       |             |
+| selected     | selected      | Boolean | false       |             |
+| dir          | dir           | String  | ltr         |             |
+| icon         | icon          | String  |             |             |
+| iconLeft     | icon-left     | String  |             |             |
+| iconRight    | icon-right    | String  |             |             |
+| iconSelected | icon-selected | String  | 'checkmark' |             |
+| noWrap       | no-wrap       | Boolean | false       |             |
+
+## ➤ Slots
+
+| Name      | Description                                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| icon-left | In case you don't want to use "ts-icon"s as left icon, you can use this slot. Remember to remove icon attribute. |
 
 ## ➤ How to use it
 

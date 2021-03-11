@@ -27,20 +27,20 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default   | Description                                  |
-| -------- | --------- | ------- | --------- | -------------------------------------------- |
-| icon     | icon      | string  | -         | Icon name, ex: 'arrow-up'                    |
-| size     | size      | string  | -         | 'small' or 'medium' or 'large'               |
-| type     | type      | string  | 'default' | Determining icon color, ex: 'error', 'focus' |
-| circular | circular  | boolean | false     | Add circular background for icon             |
-| rotate   | rotate    | number  | -         | 90, 180, 270                                 |
-| flip     | flip      | string  | -         | 'h', 'horizontal', 'v', 'vertical'           |
+| Property | Attribute | Type    | Default      | Description                                  |
+| -------- | --------- | ------- | ------------ | -------------------------------------------- |
+| icon     | icon      | String  |              | Icon name, ex: 'arrow-up'                    |
+| size     | size      | String  | sizes.MEDIUM | 'small' or 'medium' or 'large'               |
+| type     | type      | String  |              | Determining icon color, ex: 'error', 'focus' |
+| circular | circular  | Boolean | false        | Add circular background for icon             |
+| rotate   | rotate    | Number  |              | 90, 180, 270                                 |
+| flip     | flip      | String  |              | 'h', 'horizontal', 'v', 'vertical'           |
 
 ## ➤ How to use it
 

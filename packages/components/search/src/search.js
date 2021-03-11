@@ -32,7 +32,13 @@ export class TSSearch extends TSElement {
 		this.idleTime = 300;
 		this.placeholder = 'Search...';
 		this.value = '';
-		this.dispatchIdleEvent = helpers.debounceEvent(() => this.dispatchCustomEvent('idle', this.value), this.idleTime);
+		this.dispatchIdleEvent = helpers.debounceEvent(() => {
+			/**
+			 * Emitted when the user not change input value for a provided timeout
+			 * @payload search input value
+			 */
+			this.dispatchCustomEvent('idle', this.value);
+		}, this.idleTime);
 	}
 
 	get direction() {
@@ -64,6 +70,10 @@ export class TSSearch extends TSElement {
 					// do not trigger events on re-render with the same value (it happens in React).
 					return;
 				}
+				/**
+				 * Emitted on every user's change in a search input
+				 * @payload search input value
+				 */
 				this.dispatchCustomEvent('change', newVal);
 				this.dispatchIdleEvent();
 				break;
@@ -84,6 +94,10 @@ export class TSSearch extends TSElement {
 
 	handleKeyDown(e) {
 		if (e.key === 'Enter') {
+			/**
+			 * Emitted when the user press the 'Enter' key
+			 * @payload search input value
+			 */
 			this.dispatchCustomEvent('search', this.value);
 		}
 	}

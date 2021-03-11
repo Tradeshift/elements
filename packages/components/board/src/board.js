@@ -8,6 +8,7 @@ export class TSBoard extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
 			/** Board header title */
 			title: { type: String, attribute: 'data-title' }

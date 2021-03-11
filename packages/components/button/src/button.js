@@ -30,8 +30,9 @@ export class TSButton extends TSElement {
 			disabled: { type: Boolean, reflect: true },
 			/** For internal use in `ts-button-group` component */
 			grouped: { type: Boolean, reflect: true },
+			/** Make the button focused */
 			focused: { type: Boolean, reflect: true },
-			/** Direction of the button `rtl`, `ltr` */
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true }
 		};
 	}

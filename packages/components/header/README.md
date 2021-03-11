@@ -26,18 +26,25 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute | Type   | Default | Description               |
-| -------- | --------- | ------ | ------- | ------------------------- |
-| icon     | icon      | string | ''      | Icon shows in the header  |
-| title    | title     | string | ''      | Title shows in the header |
-| color    | color     | string | ''      | Colors of the header      |
+| Property | Attribute | Type   | Default | Description                          |
+| -------- | --------- | ------ | ------- | ------------------------------------ |
+| dir      | dir       | String | ltr     | Direction of the button `rtl`, `ltr` |
+| icon     | icon      | String |         | Icon shows in the header             |
+| title    | title     | String |         | Title shows in the header            |
+| color    | color     | String | 'white' | Colors of the header                 |
+
+## ➤ Slots
+
+| Name    | Description                                                                  |
+| ------- | ---------------------------------------------------------------------------- |
+| default | Extra items on the opposite side of the header goes here, like button group. |
 
 ## ➤ How to use it
 

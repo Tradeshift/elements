@@ -26,29 +26,30 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
 | Property    | Attribute   | Type    | Default     | Description                                       |
 | ----------- | ----------- | ------- | ----------- | ------------------------------------------------- |
-| autofocus   | autofocus   | boolean | false       | Shoud the search be auto focused once page loaded |
-| dir         | dir         | string  | ''          | Direction 'rtl' or 'ltr'                          |
-| focused     | focused     | boolean | false       | Set the focus on element                          |
-| idleTime    | idle-time   | number  | 300         | timeout in ms for the 'idle' event                |
-| placeholder | placeholder | string  | 'Search...' | Message when an input is empty                    |
-| value       | value       | string  | ''          | The current value                                 |
+| autofocus   | autofocus   | Boolean | false       | Shoud the search be auto focused once page loaded |
+| dir         | dir         | String  | ltr         | Direction 'rtl' or 'ltr'                          |
+| focused     | focused     | Boolean | false       | Set the focus on element                          |
+| idleTime    | idle-time   | Number  | 300         | timeout in ms for the 'idle' event                |
+| placeholder | placeholder | String  | 'Search...' | Message when an input is empty                    |
+| value       | value       | String  | ''          | The current value                                 |
 
 ## ➤ Events
 
-| Event Name | Payload | Description                                                         |
-| ---------- | ------- | ------------------------------------------------------------------- |
-| change     | string  | Emitted on every user's change in a search input                    |
-| idle       | string  | Emitted when the user not change input value for a provided timeout |
-| search     | string  | Emitted when the user press the 'Enter' key                         |
+| Name   | Description                                                         | Payload            |
+| ------ | ------------------------------------------------------------------- | ------------------ |
+| idle   | Emitted when the user not change input value for a provided timeout | search input value |
+| idle   |                                                                     |                    |
+| change | Emitted on every user's change in a search input                    | search input value |
+| search | Emitted when the user press the 'Enter' key                         | search input value |
 
 ## ➤ How to use it
 

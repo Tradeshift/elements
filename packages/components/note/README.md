@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -41,6 +41,19 @@
 | closeable | closeable | Boolean | false   |             |
 | hidden    | hidden    | Boolean | false   |             |
 | buttons   | buttons   | Array   |         |             |
+
+## ➤ Slots
+
+| Name    | Description |
+| ------- | ----------- |
+| default |             |
+
+## ➤ Events
+
+| Name         | Description |
+| ------------ | ----------- |
+| close        |             |
+| button-click |             |
 
 ## ➤ How to use it
 

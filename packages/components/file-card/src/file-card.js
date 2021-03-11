@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.typography';
 import '@tradeshift/elements.card';
 import '@tradeshift/elements.progress-bar';
@@ -7,7 +7,7 @@ import '@tradeshift/elements.icon';
 
 import css from './file-card.css';
 import fileIcon from './assets/file.svg';
-import { messages, customEventNames, states, sizes, classNames, selectors } from './utils';
+import { classNames, customEventNames, messages, selectors, sizes, states } from './utils';
 
 export class TSFileCard extends TSElement {
 	constructor() {
@@ -27,16 +27,17 @@ export class TSFileCard extends TSElement {
 
 	static get properties() {
 		return {
+			/** type/state of the file card: 'download', 'failed', 'uploading' */
 			state: { type: String, reflect: true },
+			/** File data object, {name, size, ...} */
 			fileObject: { type: Object, attribute: 'file-object' },
 			rtl: { type: Boolean, reflect: true },
+			/** Show a remove button on the card, which emit an event when it's been clicked */
 			removable: { type: Boolean, reflect: true },
+			/** Size of the file card: 'full','medium','small' */
 			size: { type: String, reflect: true },
-			errorMessage: {
-				type: String,
-				reflect: true,
-				attribute: 'error-message'
-			}
+			/** The error message to be shown on the file card when it's in failed state */
+			errorMessage: { type: String, reflect: true, attribute: 'error-message' }
 		};
 	}
 
@@ -122,9 +123,11 @@ export class TSFileCard extends TSElement {
 	get actionMessage() {
 		return html`
 			<ts-typography class="${classNames.REMOVE_ACTION_MESSAGE}" type="action" variant="subtitle">
+				<!-- To customize the remove action message  -->
 				<slot name="remove-action-text">${messages.GENERAL.REMOVE}</slot>
 			</ts-typography>
 			<ts-typography class="${classNames.DOWNLOAD_ACTION_MESSAGE}" type="action" variant="subtitle">
+				<!-- To customize the download action message  -->
 				<slot name="download-action-text">${messages.GENERAL.DOWNLOAD}</slot>
 			</ts-typography>
 		`;
@@ -152,15 +155,11 @@ export class TSFileCard extends TSElement {
 
 	removeFile() {
 		if (this.removable) {
-			const event = new CustomEvent(customEventNames.REMOVE, {
-				detail: {
-					file: this.fileObject
-				},
-				bubbles: true,
-				composed: true
-			});
-
-			this.dispatchEvent(event);
+			/**
+			 * Emitted when user clicks the remove action
+			 * @payload { file }
+			 */
+			this.dispatchCustomEvent('remove', { file: this.fileObject });
 		}
 	}
 

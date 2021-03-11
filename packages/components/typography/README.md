@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -42,6 +42,13 @@
 | inline    | inline     | Boolean | false   |             |
 | noWrap    | no-wrap    | Boolean | false   |             |
 | noTooltip | no-tooltip | Boolean | false   |             |
+
+## ➤ Slots
+
+| Name    | Description |
+| ------- | ----------- |
+| default |             |
+| default |             |
 
 ## ➤ How to use it
 

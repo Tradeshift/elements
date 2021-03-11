@@ -23,7 +23,7 @@ export class TSPager extends TSElement {
 			totalPages: { type: Number, reflect: true, attribute: 'total-pages' },
 			/** Currently active page */
 			activePage: { type: Number, reflect: true, attribute: 'active-page' },
-			/** Determining maximum number of items in the page, should be 10,20,30,40,50 */
+			/** Determining maximum number of items in the page, should be either of 10,20,30,40,50 */
 			perPage: { type: Number, reflect: true, attribute: 'per-page' },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true }
@@ -177,6 +177,10 @@ export class TSPager extends TSElement {
 				// do not trigger events on re-render with the same value (it happens in React).
 				return;
 			}
+			/**
+			 * Emitted on page change, either by navigation button, arrow keys or typing in the input
+			 * @payload {oldVal, newVal}
+			 */
 			this.dispatchCustomEvent('page-change', { oldVal: Number(oldVal), newVal: Number(newVal) });
 		}
 	}
@@ -187,6 +191,11 @@ export class TSPager extends TSElement {
 
 	handlePerPageChange(e) {
 		this.perPage = Number(e.target.value);
+
+		/**
+		 * Emitted on items per page select value change
+		 * @payload {per_page}
+		 */
 		this.dispatchCustomEvent('per-page-change', { per_page: this.perPage });
 	}
 

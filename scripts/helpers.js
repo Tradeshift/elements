@@ -8,8 +8,8 @@ const compStateLogger = function(componentName, text) {
 
 const getComponentNames = function() {
 	const componentsPath = path.join(process.cwd(), '/packages/components');
-	// const componentNames = fs.readdirSync(componentsPath);
-	const componentNames = staticComponentNames();
+	const componentNames = fs.readdirSync(componentsPath);
+	// const componentNames = staticComponentNames();
 
 	return componentNames.filter(file => !['.DS_Store', 'root', ''].includes(file));
 };

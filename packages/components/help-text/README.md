@@ -27,20 +27,27 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default | Description |
-| -------- | --------- | ------- | ------- | ----------- |
-| messages | messages  | Array   |         |             |
-| title    | title     | String  |         |             |
-| size     | size      | String  |         |             |
-| rtl      | rtl       | Boolean | false   |             |
-| disabled | disabled  | Boolean | false   |             |
-| type     | type      | String  |         |             |
+| Property | Attribute | Type    | Default    | Description                                                               |
+| -------- | --------- | ------- | ---------- | ------------------------------------------------------------------------- |
+| messages | messages  | Array   |            | List of message(s)                                                        |
+| title    | title     | String  |            | If there are multiple messages, there should be a title for the help text |
+| size     | size      | String  | sizes.FULL |                                                                           |
+| rtl      | rtl       | Boolean | false      |                                                                           |
+| disabled | disabled  | Boolean | false      | Apply disabled style for the message                                      |
+| type     | type      | String  |            | Type of the help text which changes the styling and icon: 'error'         |
+
+## ➤ Slots
+
+| Name     | Description                                                     |
+| -------- | --------------------------------------------------------------- |
+| title    | Customize title of the help text if there are multiple messages |
+| messages | Customize message items                                         |
 
 ## ➤ How to use it
 

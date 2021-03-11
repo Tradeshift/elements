@@ -18,16 +18,16 @@
       <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.radio-group" height="20"/>
     </a>
     <a href="https://npmcharts.com/compare/@tradeshift/elements.radio-group?minimal=true">
-      <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.radio-group" height="20"/>
-    </a>
-    <a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.radio-group">
-      <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.radio-group" height="20"/>
-    </a>
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.radio-group" height="20"/>
+		</a>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.radio-group">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.radio-group" height="20"/>
+		</a>
 </p>
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -35,11 +35,23 @@
 
 | Property | Attribute | Type    | Default | Description                                   |
 | -------- | --------- | ------- | ------- | --------------------------------------------- |
-| title    | title     | string  | ''      | Title of radio group                          |
-| value    | value     | string  | ''      | Value of currently chosen ts-radio node       |
-| index    | index     | number  | 0       | Index of checked ts-radio node                |
-| focused  | focused   | boolean | false   | Is group currently focused for keyboard input |
-| dir      | dir       | string  | ''      | Direction 'rtl' or 'ltr'                      |
+| value    | value     | String  |         | Value of currently chosen ts-radio node       |
+| title    | title     | String  |         | Title of radio group                          |
+| index    | index     | Number  |         | Index of checked ts-radio node                |
+| focused  | focused   | Boolean | false   | Is group currently focused for keyboard input |
+| dir      | dir       | String  | ltr     | Direction 'rtl' or 'ltr'                      |
+
+## ➤ Slots
+
+| Name    | Description                                                                      |
+| ------- | -------------------------------------------------------------------------------- |
+| default | All ts-radio elements should be wrapped by ts-radio-group to be grouped together |
+
+## ➤ Events
+
+| Name           | Description                     | Payload                 |
+| -------------- | ------------------------------- | ----------------------- |
+| radio-selected | Emitted on radio element select | { radio, index, value } |
 
 ## ➤ How to use it
 

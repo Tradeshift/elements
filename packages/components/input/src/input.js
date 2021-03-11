@@ -46,6 +46,7 @@ export class TSInput extends TSElement {
 	render() {
 		return html`
 			<div>
+				<!--	Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data -->
 				<slot></slot>
 			</div>
 		`;

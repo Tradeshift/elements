@@ -27,21 +27,27 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property            | Attribute             | Type    | Default | Description |
-| ------------------- | --------------------- | ------- | ------- | ----------- |
-| type                | type                  | String  |         |             |
-| orientation         | orientation           | String  |         |             |
-| rtl                 | rtl                   | Boolean | false   |             |
-| size                | size                  | String  |         |             |
-| noPadding           | no-padding            | Boolean | false   |             |
-| noHorizontalPadding | no-horizontal-padding | Boolean | false   |             |
-| noVerticalPadding   | no-vertical-padding   | Boolean | false   |             |
+| Property            | Attribute             | Type    | Default               | Description |
+| ------------------- | --------------------- | ------- | --------------------- | ----------- |
+| type                | type                  | String  | ''                    |             |
+| orientation         | orientation           | String  | orientations.VERTICAL |             |
+| rtl                 | rtl                   | Boolean | false                 |             |
+| size                | size                  | String  | sizes.FULL            |             |
+| noPadding           | no-padding            | Boolean | false                 |             |
+| noHorizontalPadding | no-horizontal-padding | Boolean | false                 |             |
+| noVerticalPadding   | no-vertical-padding   | Boolean | false                 |             |
+
+## ➤ Slots
+
+| Name    | Description |
+| ------- | ----------- |
+| default |             |
 
 ## ➤ How to use it
 

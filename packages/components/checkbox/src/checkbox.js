@@ -12,6 +12,7 @@ export class TSCheckbox extends TSElement {
 			name: { type: String },
 			/** Value of checkbox */
 			value: { type: String },
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String },
 			/** Label of checkbox */
 			label: { type: String, attribute: 'data-label' },

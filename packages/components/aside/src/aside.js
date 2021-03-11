@@ -21,15 +21,19 @@ export class TSAside extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
 			/** Aside header title */
 			title: { type: String, attribute: 'data-title' },
 			/** Show/hide aside */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
+			/** If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it */
 			busy: { type: String, attribute: 'data-busy', reflect: true },
 			/** Disable closing the aside with escape key */
 			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+			/** INTERNAL */
 			hasFoot: { type: Boolean },
+			/** INTERNAL */
 			hasPlatformObject: { type: Boolean }
 		};
 	}
@@ -106,8 +110,14 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
+				/**
+				 * Emitted when the aside is about to be opened
+				 */
 				this.dispatchCustomEvent('open');
 			} else if (oldVal === true) {
+				/**
+				 * Emitted when the aside is about to be closed
+				 */
 				this.dispatchCustomEvent('close');
 			}
 		}
@@ -118,8 +128,14 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
+				/**
+				 * Emitted when the aside has been opened
+				 */
 				this.dispatchCustomEvent('opened');
 			} else if (oldVal === true) {
+				/**
+				 * Emitted when the aside has been closed
+				 */
 				this.dispatchCustomEvent('closed');
 			}
 		}

@@ -27,24 +27,24 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default       | Description                       |
-| -------- | --------- | ------- | ------------- | --------------------------------- |
-| tootlip  | tooltip   | string  | ''            | Tooltip text, simple string only. |
-| position | position  | string  | right         | 'top', 'bottom', 'right', 'left'  |
-| width    | width     | string  | 'max-content' | Determining width of thee tooltip |
-| disabled | disabled  | boolean | false         | Disable the tooltip and hide it   |
+| Property | Attribute | Type    | Default       | Description                                      |
+| -------- | --------- | ------- | ------------- | ------------------------------------------------ |
+| tooltip  | tooltip   | String  | ''            | Text that should be shown in the tooltip popover |
+| position | position  | String  | 'right'       | 'top', 'bottom', 'right', 'left'                 |
+| width    | width     | String  | 'max-content' | Determining width of thee tooltip                |
+| disabled | disabled  | Boolean | false         | Disable the tooltip and hide it                  |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                                            |
-| --------- | ------- | ------------------------------------------------------ |
-| main      |         | Content that hovering over them would show the tooltip |
+| Name    | Description                                                  |
+| ------- | ------------------------------------------------------------ |
+| default | Elements that have tooltip should be wrapped with ts-tooltip |
 
 ## ➤ How to use it
 

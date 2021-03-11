@@ -65,6 +65,9 @@ function getPropertyDescription(propertyName, srcProperties) {
 	splittedProps.forEach(propString => {
 		if (propString.indexOf(`*/${propertyName}`) > 0) {
 			description = propString.split(`*/${propertyName}`)[0].split('/**')[1];
+			// Multiline description would still have beginning *, which need to be replaced by the <br> to be shown
+			// properly, on multi lines, in markdown table cell.
+			description = description.replace(/\*/g, '<br>');
 		}
 	});
 	return description;

@@ -26,9 +26,9 @@
 </p>
 
 <style>
-    table {
+  table {
         width:100%;
-    }
+  }
 </style>
 {{#if properties}}
 

@@ -7,8 +7,4 @@ export const messages = {
 	...componentMessages
 };
 
-export const customEventNames = {
-	FILE_CHANGE: 'change'
-};
-
 export const sizes = constants.sizes;

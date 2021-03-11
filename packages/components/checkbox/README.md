@@ -26,20 +26,21 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute  | Type    | Default | Description        |
-| -------- | ---------- | ------- | ------- | ------------------ |
-| name     | name       | string  | ''      | Name of checkbox   |
-| value    | value      | string  | ''      | Value of checkbox  |
-| label    | data-label | string  | ''      | Label of checkbox  |
-| checked  | checked    | boolean | false   | Status of checkbox |
-| disabled | disabled   | boolean | false   | disabled           |
+| Property | Attribute  | Type    | Default | Description                               |
+| -------- | ---------- | ------- | ------- | ----------------------------------------- |
+| name     | name       | String  | ''      | Name of checkbox                          |
+| value    | value      | String  |         | Value of checkbox                         |
+| dir      | dir        | String  | ltr     | Direction of the component 'rtl' or 'ltr' |
+| label    | data-label | String  |         | Label of checkbox                         |
+| checked  | checked    | Boolean | false   | Status of checkbox                        |
+| disabled | disabled   | Boolean | false   | disabled                                  |
 
 ## ➤ How to use it
 

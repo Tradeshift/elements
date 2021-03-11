@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -35,19 +35,19 @@
 
 | Property | Attribute | Type   | Default | Description         |
 | -------- | --------- | ------ | ------- | ------------------- |
-| dir      | dir       | string | ltr     | Direction (rtl/ltr) |
-
-## ➤ Events
-
-| Event Name | Payload  | Description                          |
-| ---------- | -------- | ------------------------------------ |
-| tab-click  | tab : {} | Emitted when the user click on a tab |
+| dir      | dir       | String | ltr     | Direction (rtl/ltr) |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                                                   |
-| --------- | ------- | ------------------------------------------------------------- |
-| main      |         | You can only use the `ts-tab` component inside this component |
+| Name    | Description                                                                               |
+| ------- | ----------------------------------------------------------------------------------------- |
+| default | All \`ts-tab\` elements should be wrapped with \`ts-tabs\` element to be grouped together |
+
+## ➤ Events
+
+| Name      | Description |
+| --------- | ----------- |
+| tab-click |             |
 
 ## ➤ How to use it
 
