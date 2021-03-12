@@ -49,8 +49,8 @@
 
 ## ➤ Slots
 
-| Name      | Description                                                                                                      |
-| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| Name | Description |
+| --- | --- |
 | icon-left | In case you don't want to use "ts-icon"s as left icon, you can use this slot. Remember to remove icon attribute. |
 
 ## ➤ How to use it

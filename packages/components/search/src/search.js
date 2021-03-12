@@ -32,13 +32,7 @@ export class TSSearch extends TSElement {
 		this.idleTime = 300;
 		this.placeholder = 'Search...';
 		this.value = '';
-		this.dispatchIdleEvent = helpers.debounceEvent(() => {
-			/**
-			 * Emitted when the user not change input value for a provided timeout
-			 * @payload search input value
-			 */
-			this.dispatchCustomEvent('idle', this.value);
-		}, this.idleTime);
+		this.updateDispatchIdleEvent();
 	}
 
 	get direction() {
@@ -55,11 +49,22 @@ export class TSSearch extends TSElement {
 		`;
 	}
 
+	updateDispatchIdleEvent(newIdleTime) {
+		const idleTime = newIdleTime || this.idleTime;
+		this.dispatchIdleEvent = helpers.debounceEvent(() => {
+			/**
+			 * Emitted when the user not change input value for a provided timeout
+			 * @payload search input value
+			 */
+			this.dispatchCustomEvent('idle', this.value);
+		}, idleTime);
+	}
+
 	attributeChangedCallback(name, oldVal, newVal) {
 		super.attributeChangedCallback(name, oldVal, newVal);
 		switch (name) {
 			case 'idle-time':
-				this.dispatchIdleEvent = helpers.debounceEvent(() => this.dispatchCustomEvent('idle', this.value), newVal);
+				this.updateDispatchIdleEvent(newVal);
 				break;
 			case 'value':
 				if (!this.hasUpdated) {

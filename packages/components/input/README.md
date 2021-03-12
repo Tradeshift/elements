@@ -39,8 +39,8 @@
 
 ## ➤ Slots
 
-| Name    | Description                                                                                                               |
-| ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Name | Description |
+| --- | --- |
 | default | Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data |
 
 ## ➤ How to use it

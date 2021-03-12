@@ -33,20 +33,20 @@
 
 ## ➤ Properties
 
-| Property                  | Attribute                      | Type    | Default    | Description                                                     |
-| ------------------------- | ------------------------------ | ------- | ---------- | --------------------------------------------------------------- |
-| rtl                       | rtl                            | Boolean | false      |                                                                 |
-| disabled                  | disabled                       | Boolean | false      | Disable the input                                               |
-| multiple                  | multiple                       | Boolean | false      | Allow multiple file select.                                     |
-| size                      | size                           | String  | sizes.full | Size of the input: 'full'(default), 'medium', 'small'           |
-| acceptedFileExtensions    | accepted-file-extensions       | Array   |            | List of accepted file extensions                                |
-| disableDragAndDrop        | disable-drag-and-drop          | Boolean | false      | Disable drag and drop functionality                             |
-| helpTextTitle             | help-text-title                | String  | ''         |                                                                 |
-| helpTextMessages          | help-text-messages             | Array   | []         |                                                                 |
-| hideFileTypeHelpText      | hide-file-type-help-text       | Boolean | false      | Hide the help text about allowed file types.                    |
-| hideMaxFileNumberHelpText | hide-max-file-number-help-text | Boolean | false      | Hide the help text about maximum number of files.               |
-| maxFileNumber             | max-file-number                | Number  |            | Maximum limit for number of files to be shown as helper message |
-| fileUploadWrapper         | fileUploadWrapper              |         |            | INTERNAL                                                        |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| rtl | rtl | Boolean | false |  |
+| disabled | disabled | Boolean | false | Disable the input |
+| multiple | multiple | Boolean | false | Allow multiple file select. |
+| size | size | String | sizes.full | Size of the input: 'full'(default), 'medium', 'small' |
+| acceptedFileExtensions | accepted-file-extensions | Array |  | List of accepted file extensions |
+| disableDragAndDrop | disable-drag-and-drop | Boolean | false | Disable drag and drop functionality |
+| helpTextTitle | help-text-title | String | '' |  |
+| helpTextMessages | help-text-messages | Array | [] |  |
+| hideFileTypeHelpText | hide-file-type-help-text | Boolean | false | Hide the help text about allowed file types. |
+| hideMaxFileNumberHelpText | hide-max-file-number-help-text | Boolean | false | Hide the help text about maximum number of files. |
+| maxFileNumber | max-file-number | Number |  | Maximum limit for number of files to be shown as helper message |
+| fileUploadWrapper | fileUploadWrapper |  |  | INTERNAL |
 
 ## ➤ Slots
 

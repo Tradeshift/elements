@@ -48,9 +48,9 @@
 
 ## ➤ Events
 
-| Name            | Description                                                                                                            | Payload |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------- | ------- |
-| tab-prop-change | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. | {name}  |
+| Name | Description | Payload |
+| --- | --- | --- |
+| tab-prop-change | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. | {name} |
 
 ## ➤ How to use it
 

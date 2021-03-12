@@ -64,9 +64,9 @@
     "storybook:deploy": "storybook-to-ghpages",
     "pretest": "run-s build:prod copy:static",
     "test": "npm run happo",
-    "update-doc-src-from-readme": "cross-env-shell nodemon --watch ./scripts ./scripts/from-readme/index.js",
-    "update-readme": "cross-env-shell nodemon --watch ./scripts ./scripts/update-readme-files.js",
-    "add-desc-to-src": "cross-env-shell nodemon --watch ./scripts ./scripts/add-description-to-src.js",
+    "update-doc-src-from-readme": "cross-env-shell node ./scripts/from-readme/index.js",
+    "update-readme": "cross-env-shell node ./scripts/update-readme-files.js",
+    "add-desc-to-src": "cross-env-shell node ./scripts/add-description-to-src.js",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "husky": {

@@ -37,13 +37,11 @@
 {{{properties}}}
 {{/if}}
 {{#if slots}}
-
 ## ➤ Slots
 
 {{{slots}}}
 {{/if}}
 {{#if events}}
-
 ## ➤ Events
 
 {{{events}}}

@@ -33,24 +33,24 @@
 
 ## ➤ Properties
 
-| Property          | Attribute           | Type    | Default | Description                                                                                                                      |
-| ----------------- | ------------------- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| dir               | dir                 | String  | ltr     | Direction of the component 'rtl' or 'ltr'                                                                                        |
-| title             | data-title          | String  | ''      | Aside header title                                                                                                               |
-| visible           | data-visible        | Boolean | false   | Show/hide aside                                                                                                                  |
-| busy              | data-busy           | String  |         | If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it |
-| noCloseOnEscKey   | no-close-on-esc-key | Boolean | false   | Disable closing the aside with escape key                                                                                        |
-| hasFoot           | hasFoot             | Boolean | false   | INTERNAL                                                                                                                         |
-| hasPlatformObject | hasPlatformObject   | Boolean | false   | INTERNAL                                                                                                                         |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
+| title | data-title | String | '' | Aside header title |
+| visible | data-visible | Boolean | false | Show/hide aside |
+| busy | data-busy | String |  | If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it |
+| noCloseOnEscKey | no-close-on-esc-key | Boolean | false | Disable closing the aside with escape key |
+| hasFoot | hasFoot | Boolean | false | INTERNAL |
+| hasPlatformObject | hasPlatformObject | Boolean | false | INTERNAL |
 
 ## ➤ Slots
 
-| Name            | Description                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------- |
-| note            | Use this slot name on the \`ts-note\` in the aside                                                                |
+| Name | Description |
+| --- | --- |
+| note | Use this slot name on the \`ts-note\` in the aside |
 | platform-object | The section between aside header and content that platform object should be shown with different background color |
-| main            | Main content of the aside that doesn't fit into any other available slots                                         |
-| footer          | Footer content and action buttons goes. You should use the ts-button-group here.                                  |
+| main | Main content of the aside that doesn't fit into any other available slots |
+| footer | Footer content and action buttons goes. You should use the ts-button-group here. |
 
 ## ➤ Events
 

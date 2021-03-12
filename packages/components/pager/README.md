@@ -33,19 +33,19 @@
 
 ## ➤ Properties
 
-| Property     | Attribute    | Type   | Default | Description                                                                         |
-| ------------ | ------------ | ------ | ------- | ----------------------------------------------------------------------------------- |
-| totalPages   | total-pages  | Number |         | Total number of pages                                                               |
-| activePage   | active-page  | Number | 1       | Currently active page                                                               |
-| perPage      | per-page     | Number |         | Determining maximum number of items in the page, should be either of 10,20,30,40,50 |
-| translations | translations | Object |         | Translated messages for the user locale                                             |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| totalPages | total-pages | Number |  | Total number of pages |
+| activePage | active-page | Number | 1 | Currently active page |
+| perPage | per-page | Number |  | Determining maximum number of items in the page, should be either of 10,20,30,40,50 |
+| translations | translations | Object |  | Translated messages for the user locale |
 
 ## ➤ Events
 
-| Name            | Description                                                                            | Payload          |
-| --------------- | -------------------------------------------------------------------------------------- | ---------------- |
-| page-change     | Emitted on page change, either by navigation button, arrow keys or typing in the input | {oldVal, newVal} |
-| per-page-change | Emitted on items per page select value change                                          | {per_page}       |
+| Name | Description | Payload |
+| --- | --- | --- |
+| page-change | Emitted on page change, either by navigation button, arrow keys or typing in the input | {oldVal, newVal} |
+| per-page-change | Emitted on items per page select value change | {per_page} |
 
 ## ➤ How to use it
 

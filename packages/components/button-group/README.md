@@ -39,8 +39,8 @@
 
 ## ➤ Slots
 
-| Name    | Description                                                                                                       |
-| ------- | ----------------------------------------------------------------------------------------------------------------- |
+| Name | Description |
+| --- | --- |
 | default | All \`ts-button\` elements in the group should be wrapped with \`ts-button-group\` element to be grouped together |
 
 ## ➤ How to use it

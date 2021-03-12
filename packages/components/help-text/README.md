@@ -33,14 +33,14 @@
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default    | Description                                                               |
-| -------- | --------- | ------- | ---------- | ------------------------------------------------------------------------- |
-| messages | messages  | Array   |            | List of message(s)                                                        |
-| title    | title     | String  |            | If there are multiple messages, there should be a title for the help text |
-| size     | size      | String  | sizes.FULL |                                                                           |
-| rtl      | rtl       | Boolean | false      |                                                                           |
-| disabled | disabled  | Boolean | false      | Apply disabled style for the message                                      |
-| type     | type      | String  |            | Type of the help text which changes the styling and icon: 'error'         |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| messages | messages | Array |  | List of message(s) |
+| title | title | String |  | If there are multiple messages, there should be a title for the help text |
+| size | size | String | sizes.FULL |  |
+| rtl | rtl | Boolean | false |  |
+| disabled | disabled | Boolean | false | Apply disabled style for the message |
+| type | type | String |  | Type of the help text which changes the styling and icon: 'error' |
 
 ## ➤ Slots
 

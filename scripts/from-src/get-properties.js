@@ -1,4 +1,4 @@
-module.exports = function(componentName, content) {
+module.exports = function (componentName, content) {
 	const srcProperties = getSrcProperties(content);
 	const defaults = getDefaultValues(content);
 	const properties = eval(`(${srcProperties})`);
@@ -39,9 +39,11 @@ function getDefaultValues(fileContent) {
 	defaults = defaults.split('}')[0];
 	defaults = defaults.split('this.').map(data => data.split('='));
 	defaults.shift();
-
 	defaults = defaults.filter(item => item.length === 2);
-	return defaults.reduce((o, k) => ((o[k[0]] = k[1]), o), {});
+	return defaults.reduce((accumulator, currentTuple) => {
+		accumulator[currentTuple[0]] = currentTuple[1];
+		return accumulator;
+	}, {});
 }
 
 function getDefaultValueOfProperty(propertyName, propertyData, defaultValues = {}) {

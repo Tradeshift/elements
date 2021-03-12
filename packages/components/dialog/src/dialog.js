@@ -127,7 +127,7 @@ export class TSDialog extends TSElement {
 						>
 							${this.translations.accept_button}
 						</ts-button>
-						<!-- To add more options to the dialog, between cancel and 	-->
+						<!-- To add more options to the dialog, between accept and cancel buttons  	-->
 						<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
 						<ts-button
 							?focused="${this.isFocused('cancel')}"

@@ -33,14 +33,14 @@
 
 ## ➤ Properties
 
-| Property     | Attribute     | Type    | Default          | Description                                                                  |
-| ------------ | ------------- | ------- | ---------------- | ---------------------------------------------------------------------------- |
-| state        | state         | String  | states.UPLOADING | type/state of the file card: 'download', 'failed', 'uploading'               |
-| fileObject   | file-object   | Object  |                  | File data object, {name, size, ...}                                          |
-| rtl          | rtl           | Boolean | false            |                                                                              |
-| removable    | removable     | Boolean | false            | Show a remove button on the card, which emit an event when it's been clicked |
-| size         | size          | String  | sizes.FULL       | Size of the file card: 'full','medium','small'                               |
-| errorMessage | error-message | String  |                  | The error message to be shown on the file card when it's in failed state     |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| state | state | String | states.UPLOADING | type/state of the file card: 'download', 'failed', 'uploading' |
+| fileObject | file-object | Object |  | File data object, {name, size, ...} |
+| rtl | rtl | Boolean | false |  |
+| removable | removable | Boolean | false | Show a remove button on the card, which emit an event when it's been clicked |
+| size | size | String | sizes.FULL | Size of the file card: 'full','medium','small' |
+| errorMessage | error-message | String |  | The error message to be shown on the file card when it's in failed state |
 
 ## ➤ Slots
 

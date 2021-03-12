@@ -33,15 +33,15 @@
 
 ## ➤ Properties
 
-| Property        | Attribute           | Type    | Default     | Description                                                         |
-| --------------- | ------------------- | ------- | ----------- | ------------------------------------------------------------------- |
-| dir             | data-dir            | String  | ltr         | Direction 'rtl' or 'ltr'                                            |
-| size            | data-size           | String  | sizes.LARGE | Size of the modal. Available variants: 'large', 'medium', 'small'   |
-| title           | data-title          | String  | ''          | Modal header text                                                   |
-| visible         | data-visible        | Boolean | false       | Show/hide the modal                                                 |
-| noCloseOnEscKey | no-close-on-esc-key | Boolean | false       | Disable the functionality to close the modal on press of escape key |
-| hideHeader      | hide-header         | Boolean | false       | Show/hide the title of the modal                                    |
-| noPadding       | no-padding          | Boolean | false       | Add/remove standard paddings to the main content                    |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| dir | data-dir | String | ltr | Direction 'rtl' or 'ltr' |
+| size | data-size | String | sizes.LARGE | Size of the modal. Available variants: 'large', 'medium', 'small' |
+| title | data-title | String | '' | Modal header text |
+| visible | data-visible | Boolean | false | Show/hide the modal |
+| noCloseOnEscKey | no-close-on-esc-key | Boolean | false | Disable the functionality to close the modal on press of escape key |
+| hideHeader | hide-header | Boolean | false | Show/hide the title of the modal |
+| noPadding | no-padding | Boolean | false | Add/remove standard paddings to the main content |
 
 ## ➤ Slots
 
