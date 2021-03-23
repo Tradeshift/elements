@@ -118,6 +118,7 @@
     "@tradeshift/elements.modal": "file:packages/components/modal",
     "@tradeshift/elements.note": "file:packages/components/note",
     "@tradeshift/elements.pager": "file:packages/components/pager",
+    "@tradeshift/elements.popover": "file:packages/components/popover",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
     "@tradeshift/elements.radio": "file:packages/components/radio",
     "@tradeshift/elements.radio-group": "file:packages/components/radio-group",

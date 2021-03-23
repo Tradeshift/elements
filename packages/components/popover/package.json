@@ -1,0 +1,15 @@
+{
+  "name": "@tradeshift/elements.popover",
+  "version": "0.19.3",
+  "main": "lib/popover.umd.js",
+  "module": "lib/popover.esm.js",
+  "browser": "lib/popover.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.19.3",
+    "@tradeshift/elements.icon": "^0.19.3"
+  },
+  "src": "src/popover.js"
+}
