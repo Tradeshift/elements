@@ -1,4 +1,3 @@
-
 # catalog-info.yml
 # This file contains metadata for backstage
 # Read more about available fields and annotations:
@@ -20,5 +19,5 @@ metadata:
     - npm
 spec:
   type: library
-  owner: tradeshiftui
+  owner: partner-enablement-and-apps
   lifecycle: production
