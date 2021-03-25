@@ -29,14 +29,11 @@ export class TSBasicTable extends TSElement {
 
 	get tableHeader() {
 		return this.cols.map(
-			column =>
-				html`
-					<th class="${this.getHeaderSizeClass(column.size)} ${this.getVisibilityClass(column.visibility)}">
-						<div class="${this.getHeaderClasses(column)}">
-							${column.value}
-						</div>
-					</th>
-				`
+			column => html`
+				<th class="${this.getHeaderSizeClass(column.size) + ' ' + this.getVisibilityClass(column.visibility)}">
+					<div class="${this.getHeaderClasses(column)}">${column.value}</div>
+				</th>
+			`
 		);
 	}
 

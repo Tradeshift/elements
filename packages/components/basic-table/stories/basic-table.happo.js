@@ -1,5 +1,7 @@
 import '@tradeshift/elements';
 import '@tradeshift/elements.basic-table';
+import '@tradeshift/elements.document-card';
+import '@tradeshift/elements.status';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
@@ -72,7 +74,7 @@ export const Test = () => {
 					visibility: 'mobile-only',
 					property: 'mobileLastActivity',
 					size: 'small',
-					display: 'right',
+					value: 'Last activity',
 					renderFunction(item) {
 						const div = document.createElement('div');
 						div.style.padding = '10px';
