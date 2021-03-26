@@ -9,9 +9,21 @@ export class TSBasicTable extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
+			/**
+			 * List of columns configs, including:
+			 * - property: Property key of the column in data object,
+			 * - value: value of the title of column',
+			 * - visibility?: Which screen sizes this column should be visible -> 'always-visible'(default) or 'desktop-only' or 'mobile-only',
+			 * - size?: 'small' or 'medium' or 'large',
+			 * - display?: 'left' or 'right' or 'center',
+			 * - renderer?: you can pass a renderer function to customize the content of the cells in this column, args: (cellValue, rowObject)
+			 * */
 			cols: { type: Array, reflect: true },
+			/** List of selected rows ids (caveat: the row should include id property)  */
 			selectedIds: { type: Array, reflect: true },
+			/** List of rows data objects */
 			data: { type: Array, reflect: true }
 		};
 	}
@@ -70,6 +82,10 @@ export class TSBasicTable extends TSElement {
 	}
 
 	handleClick(row) {
+		/**
+		 * Emitted on table row click
+		 * @payload { row }
+		 */
 		this.dispatchCustomEvent('row-click', row);
 	}
 

@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -36,6 +36,12 @@
 | Property | Attribute | Type   | Default | Description |
 | -------- | --------- | ------ | ------- | ----------- |
 | for      | for       | String |         |             |
+
+## ➤ Slots
+
+| Name    | Description |
+| ------- | ----------- |
+| default |             |
 
 ## ➤ How to use it
 

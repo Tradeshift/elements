@@ -26,22 +26,37 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property     | Attribute    | Type    | Default                                        | Description                                                                                                                |
-| ------------ | ------------ | ------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| visible      | data-visible | Boolean | false                                          | Dialog can be toggled by add/removing this attribute                                                                       |
-| text         | text         | String  | ''                                             | Text content of the modal                                                                                                  |
-| icon         | icon         | String  | depends on type                                | If you need a different icon that default ones, you can use one of Elements icon names                                     |
-| type         | type         | String  | confirm                                        | `confirm`, `warning`, `danger`                                                                                             |
-| translations | translations | Object  | {accept_button: 'OK', cancel_button: 'Cancel'} | can be used for customizing the buttons text and translations                                                              |
-| focused      | focused      | String  | 'cancel'                                       | set the default focus on the button, either `accept` or `cancel`                                                           |
-| primary      | primary      | String  | none                                           | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| visible | data-visible | Boolean | false | Dialog can be toggled by add/removing this attribute |
+| text | text | String |  | Text content of the modal |
+| icon | icon | String |  | If you need a different icon that default ones, you can use one of Elements icon names |
+| type | type | String | dialogTypes.CONFIRM | `confirm`, `warning`, `danger` |
+| translations | translations | Object |  | can be used for customizing the buttons text and translations |
+| focused | focused | String | 'cancel' | set the default focus on the button, either `accept` or `cancel` |
+| primary | primary | String |  | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
+| renderButtons | renderButtons | Boolean | false | INTERNAL |
+
+## ➤ Slots
+
+| Name | Description |
+| --- | --- |
+| content | If in rare cases you need to have more complex content than text property, you can override the text by using this slot |
+| extra-buttons | To add more options to the dialog, between accept and cancel buttons |
+
+## ➤ Events
+
+| Name   | Description                                    | Payload |
+| ------ | ---------------------------------------------- | ------- |
+| accept | Emitted when the user choose the accept option |         |
+| cancel | Emitted when the user choose the cancel option |         |
 
 ## ➤ How to use it
 

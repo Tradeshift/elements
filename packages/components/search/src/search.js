@@ -12,11 +12,17 @@ export class TSSearch extends TSElement {
 
 	static get properties() {
 		return {
+			/** Shoud the search be auto focused once page loaded */
 			autofocus: { type: Boolean, reflect: true },
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
+			/** Set the focus on element */
 			focused: { type: Boolean, reflect: true },
+			/** timeout in ms for the 'idle' event */
 			idleTime: { type: Number, attribute: 'idle-time', reflect: true },
+			/** Message when an input is empty */
 			placeholder: { type: String, reflect: true },
+			/** The current value */
 			value: { type: String, reflect: true }
 		};
 	}
@@ -26,7 +32,7 @@ export class TSSearch extends TSElement {
 		this.idleTime = 300;
 		this.placeholder = 'Search...';
 		this.value = '';
-		this.dispatchIdleEvent = helpers.debounceEvent(() => this.dispatchCustomEvent('idle', this.value), this.idleTime);
+		this.updateDispatchIdleEvent();
 	}
 
 	get direction() {
@@ -43,11 +49,22 @@ export class TSSearch extends TSElement {
 		`;
 	}
 
+	updateDispatchIdleEvent(newIdleTime) {
+		const idleTime = newIdleTime || this.idleTime;
+		this.dispatchIdleEvent = helpers.debounceEvent(() => {
+			/**
+			 * Emitted when the user not change input value for a provided timeout
+			 * @payload search input value
+			 */
+			this.dispatchCustomEvent('idle', this.value);
+		}, idleTime);
+	}
+
 	attributeChangedCallback(name, oldVal, newVal) {
 		super.attributeChangedCallback(name, oldVal, newVal);
 		switch (name) {
 			case 'idle-time':
-				this.dispatchIdleEvent = helpers.debounceEvent(() => this.dispatchCustomEvent('idle', this.value), newVal);
+				this.updateDispatchIdleEvent(newVal);
 				break;
 			case 'value':
 				if (!this.hasUpdated) {
@@ -58,6 +75,10 @@ export class TSSearch extends TSElement {
 					// do not trigger events on re-render with the same value (it happens in React).
 					return;
 				}
+				/**
+				 * Emitted on every user's change in a search input
+				 * @payload search input value
+				 */
 				this.dispatchCustomEvent('change', newVal);
 				this.dispatchIdleEvent();
 				break;
@@ -78,6 +99,10 @@ export class TSSearch extends TSElement {
 
 	handleKeyDown(e) {
 		if (e.key === 'Enter') {
+			/**
+			 * Emitted when the user press the 'Enter' key
+			 * @payload search input value
+			 */
 			this.dispatchCustomEvent('search', this.value);
 		}
 	}

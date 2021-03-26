@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -36,10 +36,10 @@
 | Property          | Attribute          | Type    | Default | Description |
 | ----------------- | ------------------ | ------- | ------- | ----------- |
 | dir               | dir                | String  | ltr     |             |
-| name              | name               | String  |         |             |
-| description       | description        | String  |         |             |
+| name              | name               | String  | ''      |             |
+| description       | description        | String  | ''      |             |
 | selected          | selected           | Boolean | false   |             |
-| mobileDescription | mobile-description | String  |         |             |
+| mobileDescription | mobile-description | String  | ''      |             |
 | type              | type               | String  |         |             |
 
 ## ➤ How to use it

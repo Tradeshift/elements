@@ -1,6 +1,5 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './radio.css';
-import { customEventNames } from './utils/constants';
 
 export class TSRadio extends TSElement {
 	static get styles() {
@@ -9,9 +8,13 @@ export class TSRadio extends TSElement {
 
 	static get properties() {
 		return {
+			/** Value of the radio */
 			value: { type: String, reflect: true },
+			/** Label of the radio */
 			label: { type: String, reflect: true },
+			/** Check status */
 			checked: { type: Boolean, reflect: true },
+			/** Disabled status */
 			disabled: { type: Boolean, reflect: true }
 		};
 	}
@@ -23,15 +26,15 @@ export class TSRadio extends TSElement {
 	handleClick(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		this.dispatchCustomEvent(customEventNames.RADIO_CLICK);
+		this.dispatchCustomEvent('radio-click');
 	}
 
 	handleFocus() {
-		this.dispatchCustomEvent(customEventNames.RADIO_FOCUS);
+		this.dispatchCustomEvent('radio-focus');
 	}
 
 	handleBlur() {
-		this.dispatchCustomEvent(customEventNames.RADIO_BLUR);
+		this.dispatchCustomEvent('radio-blur');
 	}
 
 	firstUpdated() {

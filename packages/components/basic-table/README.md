@@ -4,7 +4,7 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - table</h1>
+<h1 align="center">Elements - basic-table</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
@@ -14,44 +14,50 @@
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.table">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.table" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.basic-table">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.basic-table" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.table?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.table" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.basic-table?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.basic-table" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.table">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.table" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.basic-table">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.basic-table" height="20"/>
 		</a>
 </p>
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property    | Attribute   | Type   | Default | Description |
-| ----------- | ----------- | ------ | ------- | ----------- |
-| dir         | dir         | String | ltr     |             |
-| cols        | cols        | Array  |         |             |
-| selectedIds | selectedIds | Array  |         |             |
-| data        | data        | Array  |         |             |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
+| cols | cols | Array | [] | <br> List of columns configs, including: <br> - property: Property key of the column in data object, <br> - value: value of the title of column', <br> - visibility?: Which screen sizes this column should be visible -> 'always-visible'(default) or 'desktop-only' or 'mobile-only', <br> - size?: 'small' or 'medium' or 'large', <br> - display?: 'left' or 'right' or 'center', <br> - renderer?: you can pass a renderer function to customize the content of the cells in this column, args: (cellValue, rowObject) <br> |
+| selectedIds | selectedIds | Array | [] | List of selected rows ids (caveat: the row should include id property) |
+| data | data | Array | [] | List of rows data objects |
+
+## ➤ Events
+
+| Name      | Description                | Payload |
+| --------- | -------------------------- | ------- |
+| row-click | Emitted on table row click | { row } |
 
 ## ➤ How to use it
 
-- Install the package of Table
+- Install the package of basicTable
 
 ```shell
-$ npm i @tradeshift/elements.table --save
+$ npm i @tradeshift/elements.basic-table --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.table';
+import '@tradeshift/elements.basic-table';
 ```
 
 or

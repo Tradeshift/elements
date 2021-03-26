@@ -8,7 +8,9 @@ export class TSBoard extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
+			/** Board header title */
 			title: { type: String, attribute: 'data-title' }
 		};
 	}
@@ -33,6 +35,7 @@ export class TSBoard extends TSElement {
 			<div dir="${this.direction}">
 				${this.header}
 				<div class="board-main">
+					<!-- Content of the board should be wrapped around \`ts-board\` element -->
 					<slot></slot>
 				</div>
 			</div>

@@ -22,13 +22,21 @@ export class TSDialog extends TSElement {
 
 	static get properties() {
 		return {
+			/** Dialog can be toggled by add/removing this attribute */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
+			/** Text content of the modal */
 			text: { type: String, reflect: true },
+			/** If you need a different icon that default ones, you can use one of Elements icon names */
 			icon: { type: String, reflect: true },
+			/** `confirm`, `warning`, `danger` */
 			type: { type: String, reflect: true },
+			/** can be used for customizing the buttons text and translations */
 			translations: { type: Object, reflect: true },
+			/** set the default focus on the button, either `accept` or `cancel` */
 			focused: { type: String, reflect: true },
+			/** either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary */
 			primary: { type: String, reflect: true },
+			/** INTERNAL */
 			renderButtons: { type: Boolean, attribute: false }
 		};
 	}
@@ -71,11 +79,17 @@ export class TSDialog extends TSElement {
 	}
 
 	onAccept() {
+		/**
+		 * Emitted when the user choose the accept option
+		 */
 		this.dispatchCustomEvent('accept');
 		this.dismissModal();
 	}
 
 	onCancel() {
+		/**
+		 * Emitted when the user choose the cancel option
+		 */
 		this.dispatchCustomEvent('cancel');
 		this.dismissModal();
 	}
@@ -99,6 +113,7 @@ export class TSDialog extends TSElement {
 			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header>
 				<div class="content" slot="main">
 					<ts-icon icon="${this.getIcon}" type="${this.getIconType}" size="extra-large"></ts-icon>
+					<!-- If in rare cases you need to have more complex content than text property, you can override the text by using this slot	-->
 					<slot name="content">
 						<ts-typography>${this.text}</ts-typography>
 					</slot>
@@ -112,6 +127,7 @@ export class TSDialog extends TSElement {
 						>
 							${this.translations.accept_button}
 						</ts-button>
+						<!-- To add more options to the dialog, between accept and cancel buttons  	-->
 						<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
 						<ts-button
 							?focused="${this.isFocused('cancel')}"

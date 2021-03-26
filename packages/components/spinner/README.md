@@ -27,18 +27,18 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute    | Type    | Default | Description                                     |
-| -------- | ------------ | ------- | ------- | ----------------------------------------------- |
-| visible  | data-visible | boolean | false   | Show/hide the spinner                           |
-| message  | data-message | string  | -       | Text to show below the spinner                  |
-| size     | data-size    | string  | large   | Size of the spinner, `large`, `medium`, `small` |
-| color    | data-color   | string  | blue    | Spinner color, `blue`, `mono`, `white`          |
+| Property | Attribute    | Type    | Default     | Description                                     |
+| -------- | ------------ | ------- | ----------- | ----------------------------------------------- |
+| color    | data-color   | String  | colors.BLUE | Spinner color, `blue`, `mono`, `white`          |
+| message  | data-message | String  |             | Text to show below the spinner                  |
+| size     | data-size    | String  | sizes.LARGE | Size of the spinner, `large`, `medium`, `small` |
+| visible  | data-visible | Boolean | false       | Show/hide the spinner                           |
 
 ## ➤ How to use it
 

@@ -27,18 +27,18 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property     | Attribute     | Type   | Default | Description |
-| ------------ | ------------- | ------ | ------- | ----------- |
-| size         | size          | Number |         |             |
-| decimalPoint | decimal-point | Number |         |             |
-| variant      | variant       | String |         |             |
-| type         | type          | String |         |             |
+| Property     | Attribute     | Type   | Default    | Description                             |
+| ------------ | ------------- | ------ | ---------- | --------------------------------------- |
+| size         | size          | Number | 0          | Size of the file                        |
+| decimalPoint | decimal-point | Number | 2          | How many decimal points should be shown |
+| variant      | variant       | String | 'subtitle' | Typography variant                      |
+| type         | type          | String | 'default'  | Typography type                         |
 
 ## ➤ How to use it
 

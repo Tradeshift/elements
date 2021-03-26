@@ -2,3 +2,4 @@ lib/
 package.json
 package-lock.json
 plop-templates/
+scripts/

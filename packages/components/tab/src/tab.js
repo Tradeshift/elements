@@ -8,14 +8,22 @@ export class TSTab extends TSElement {
 
 	static get properties() {
 		return {
+			/** The label text for the header */
 			label: { type: String, reflect: true },
+			/** Make the tab selected */
 			selected: { type: Boolean, reflect: true },
+			/** Icon name from the available icons in the ts-icon component */
 			icon: { type: String, reflect: true },
+			/** Number for counter badge next to the label */
 			counter: { type: Number, reflect: true }
 		};
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {
+		/**
+		 * (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes.
+		 * @payload {name}
+		 */
 		this.dispatchCustomEvent('tab-prop-change', { name });
 		super.attributeChangedCallback(name, oldValue, newValue);
 	}
@@ -23,6 +31,7 @@ export class TSTab extends TSElement {
 	render() {
 		return html`
 			<div class="tab-content" ?selected="${this.selected}">
+				<!-- Content of the tab should be wrapped in \`ts-tab\` element	-->
 				<slot></slot>
 			</div>
 		`;

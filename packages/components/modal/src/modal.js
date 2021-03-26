@@ -1,7 +1,8 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper, CloseOnEscBehavior } from '@tradeshift/elements';
+import { CloseOnEscBehavior, customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.header';
+// eslint-disable-next-line no-unused-vars
 import { customEventNames, sizes } from './utils';
 import css from './modal.css';
 
@@ -24,12 +25,19 @@ export class TSModal extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true, attribute: 'data-dir' },
+			/** Size of the modal. Available variants: 'large', 'medium', 'small' */
 			size: { type: String, reflect: true, attribute: 'data-size' },
+			/** Modal header text */
 			title: { type: String, reflect: true, attribute: 'data-title' },
+			/** Show/hide the modal */
 			visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
+			/** Disable the functionality to close the modal on press of escape key */
 			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+			/** Show/hide the title of the modal */
 			hideHeader: { type: Boolean, attribute: 'hide-header' },
+			/** Add/remove standard paddings to the main content */
 			noPadding: { type: Boolean, attribute: 'no-padding' }
 		};
 	}
@@ -65,7 +73,17 @@ export class TSModal extends TSElement {
 		if (e.propertyName !== 'opacity') {
 			return;
 		}
-		this.dispatchCustomEvent(this.visible ? customEventNames.OPENED : customEventNames.CLOSED);
+		if (this.visible) {
+			/**
+			 * Emitted when the animation of opening is finished
+			 */
+			this.dispatchCustomEvent('opened');
+		} else {
+			/**
+			 * Emitted when the animation of closing is finished
+			 */
+			this.dispatchCustomEvent('closed');
+		}
 	}
 
 	attributeChangedCallback(name, oldVal, newVal) {
@@ -73,7 +91,17 @@ export class TSModal extends TSElement {
 		if (name !== 'data-visible') {
 			return;
 		}
-		this.dispatchCustomEvent(newVal ? customEventNames.OPEN : customEventNames.CLOSE);
+		if (newVal) {
+			/**
+			 * Emitted on start of the modal opening
+			 */
+			this.dispatchCustomEvent('open');
+		} else {
+			/**
+			 * Emitted on start of the modal closing
+			 */
+			this.dispatchCustomEvent('close');
+		}
 	}
 
 	render() {
@@ -85,12 +113,15 @@ export class TSModal extends TSElement {
 			>
 				${this.header}
 				<div class="note">
+					<!-- Use this slot name on the \`ts-note\` in the modal	-->
 					<slot name="note"></slot>
 				</div>
 				<main>
+					<!-- Content in the main section of the modal	-->
 					<slot name="main"></slot>
 				</main>
 				<footer>
+					<!-- Content in the footer section of the modal, most of the time \`ts-button-group\`	-->
 					<slot name="footer"></slot>
 				</footer>
 			</div>

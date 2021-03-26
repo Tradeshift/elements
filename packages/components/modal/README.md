@@ -26,39 +26,39 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property        | Attribute           | Type    | Default | Description                                                       |
-| --------------- | ------------------- | ------- | ------- | ----------------------------------------------------------------- |
-| dir             | data-dir            | string  | ''      | Direction 'rtl' or 'ltr'                                          |
-| size            | data-size           | string  | 'large' | Size of the modal. Available variants: 'large', 'medium', 'small' |
-| title           | data-title          | string  | ''      | Modal header text                                                 |
-| visible         | data-visible        | boolean | false   | Show/hide the modal                                               |
-| noCloseOnEscKey | no-close-on-esc-key | Boolean | false   |                                                                   |
-| hideHeader      | hide-header         | boolean | false   | Show/hide the title of the modal                                  |
-| noPadding       | no-padding          | boolean | false   | Add/remove standard paddings to the main content                  |
-
-## ➤ Events
-
-| Event Name | Payload | Description                                       |
-| ---------- | ------- | ------------------------------------------------- |
-| open       | null    | Emitted on start of the modal opening             |
-| opened     | null    | Emitted when the animation of opening is finished |
-| close      | null    | Emitted start of the modal closing                |
-| closed     | null    | Emitted when the animation of closing is finished |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| dir | data-dir | String | ltr | Direction 'rtl' or 'ltr' |
+| size | data-size | String | sizes.LARGE | Size of the modal. Available variants: 'large', 'medium', 'small' |
+| title | data-title | String | '' | Modal header text |
+| visible | data-visible | Boolean | false | Show/hide the modal |
+| noCloseOnEscKey | no-close-on-esc-key | Boolean | false | Disable the functionality to close the modal on press of escape key |
+| hideHeader | hide-header | Boolean | false | Show/hide the title of the modal |
+| noPadding | no-padding | Boolean | false | Add/remove standard paddings to the main content |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                            |
-| --------- | ------- | -------------------------------------- |
-| main      |         | Main content of the modal              |
-| footer    |         | Footer content and action buttons goes |
-| note      |         | Use it on the `ts-note` in the modal   |
+| Name   | Description                                                                      |
+| ------ | -------------------------------------------------------------------------------- |
+| note   | Use this slot name on the \`ts-note\` in the modal                               |
+| main   | Content in the main section of the modal                                         |
+| footer | Content in the footer section of the modal, most of the time \`ts-button-group\` |
+
+## ➤ Events
+
+| Name   | Description                                       | Payload |
+| ------ | ------------------------------------------------- | ------- |
+| opened | Emitted when the animation of opening is finished |         |
+| closed | Emitted when the animation of closing is finished |         |
+| open   | Emitted on start of the modal opening             |         |
+| close  | Emitted on start of the modal closing             |         |
 
 ## ➤ How to use it
 

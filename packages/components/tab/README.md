@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -35,22 +35,22 @@
 
 | Property | Attribute | Type    | Default | Description                                                 |
 | -------- | --------- | ------- | ------- | ----------------------------------------------------------- |
-| label    | label     | String  | -       | The label text for the header                               |
+| label    | label     | String  |         | The label text for the header                               |
 | selected | selected  | Boolean | false   | Make the tab selected                                       |
-| icon     | icon      | String  | -       | Icon name from the available icons in the ts-icon component |
-| counter  | counter   | Number  | -       | Number for counter badge next to the label                  |
-
-## ➤ Events
-
-| Event name      | Payload | Description                                                                                                            |
-| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| tab-prop-change | {name}  | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. |
+| icon     | icon      | String  |         | Icon name from the available icons in the ts-icon component |
+| counter  | counter   | Number  |         | Number for counter badge next to the label                  |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                                   |
-| --------- | ------- | --------------------------------------------- |
-| main      | -       | Content of the tab to show when it's selected |
+| Name    | Description                                                |
+| ------- | ---------------------------------------------------------- |
+| default | Content of the tab should be wrapped in \`ts-tab\` element |
+
+## ➤ Events
+
+| Name | Description | Payload |
+| --- | --- | --- |
+| tab-prop-change | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. | {name} |
 
 ## ➤ How to use it
 

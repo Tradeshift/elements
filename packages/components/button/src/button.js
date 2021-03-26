@@ -18,13 +18,21 @@ export class TSButton extends TSElement {
 
 	static get properties() {
 		return {
+			/** Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger` */
 			type: { type: String, reflect: true },
+			/** Size of the button, `macro`, `micro` */
 			size: { type: String, reflect: true },
+			/** Show busy/loading animation */
 			busy: { type: Boolean, reflect: true },
+			/** Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text */
 			icon: { type: String, reflect: true },
+			/** Determine if the button is disabled. `button-click` event won't be dispatched */
 			disabled: { type: Boolean, reflect: true },
+			/** For internal use in `ts-button-group` component */
 			grouped: { type: Boolean, reflect: true },
+			/** Make the button focused */
 			focused: { type: Boolean, reflect: true },
+			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true }
 		};
 	}
@@ -63,7 +71,10 @@ export class TSButton extends TSElement {
 							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
 					  `
 					: ''}
-				<span><slot></slot></span>
+				<span>
+					<!-- Text of the button should be wrapped around \`ts-button\` element -->
+					<slot></slot>
+				</span>
 			</button>
 		`;
 	}

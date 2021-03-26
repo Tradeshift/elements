@@ -3,25 +3,8 @@ import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.spinner';
-import { customEventNames } from './utils';
 
 export class TSAside extends TSElement {
-	static get styles() {
-		return [TSElement.styles, unsafeCSS(css)];
-	}
-
-	static get properties() {
-		return {
-			dir: { type: String, reflect: true },
-			title: { type: String, attribute: 'data-title' },
-			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
-			busy: { type: String, attribute: 'data-busy', reflect: true },
-			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
-			hasFoot: { type: Boolean },
-			hasPlatformObject: { type: Boolean }
-		};
-	}
-
 	constructor() {
 		super();
 		this.title = '';
@@ -32,18 +15,27 @@ export class TSAside extends TSElement {
 		this.closeBehavior = new CloseOnEscBehavior(this);
 	}
 
-	close(e) {
-		this.visible = false;
+	static get styles() {
+		return [TSElement.styles, unsafeCSS(css)];
 	}
 
-	footerSlot(e) {
-		this.hasFoot = true;
-	}
-
-	platformObjectSlot(e) {
-		const slot = e.currentTarget;
-		const assignedNodes = slot.assignedNodes();
-		this.hasPlatformObject = assignedNodes && assignedNodes.length;
+	static get properties() {
+		return {
+			/** Direction of the component 'rtl' or 'ltr' */
+			dir: { type: String, reflect: true },
+			/** Aside header title */
+			title: { type: String, attribute: 'data-title' },
+			/** Show/hide aside */
+			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
+			/** If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it */
+			busy: { type: String, attribute: 'data-busy', reflect: true },
+			/** Disable closing the aside with escape key */
+			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+			/** INTERNAL */
+			hasFoot: { type: Boolean },
+			/** INTERNAL */
+			hasPlatformObject: { type: Boolean }
+		};
 	}
 
 	get direction() {
@@ -68,6 +60,20 @@ export class TSAside extends TSElement {
 		`;
 	}
 
+	close(e) {
+		this.visible = false;
+	}
+
+	footerSlot(e) {
+		this.hasFoot = true;
+	}
+
+	platformObjectSlot(e) {
+		const slot = e.currentTarget;
+		const assignedNodes = slot.assignedNodes();
+		this.hasPlatformObject = assignedNodes && assignedNodes.length;
+	}
+
 	render() {
 		return html`
 			<div dir="${this.direction}" class="aside-container ${this.slide} ${this.hasFoot ? 'has-footer' : ''}">
@@ -78,15 +84,19 @@ export class TSAside extends TSElement {
 					</div>
 				</header>
 				<div class="aside-note">
+					<!-- Use this slot name on the \`ts-note\` in the aside	-->
 					<slot name="note" class="note-in-aside"></slot>
 				</div>
 				<div class="aside-platform-object ${this.hasPlatformObject ? '' : 'hidden'}">
+					<!-- The section between aside header and content that platform object should be shown with different background color	-->
 					<slot name="platform-object" @slotchange="${this.platformObjectSlot}"></slot>
 				</div>
 				<main class="aside-main">
+					<!-- Main content of the aside that doesn't fit into any other available slots	-->
 					<slot name="main"></slot>
 				</main>
 				<footer>
+					<!-- Footer content and action buttons goes. You should use the ts-button-group here.	-->
 					<slot name="footer" @slotchange="${this.footerSlot}"></slot>
 				</footer>
 				${this.spinner}
@@ -100,9 +110,15 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
-				this.dispatchCustomEvent(customEventNames.OPEN);
+				/**
+				 * Emitted when the aside is about to be opened
+				 */
+				this.dispatchCustomEvent('open');
 			} else if (oldVal === true) {
-				this.dispatchCustomEvent(customEventNames.CLOSE);
+				/**
+				 * Emitted when the aside is about to be closed
+				 */
+				this.dispatchCustomEvent('close');
 			}
 		}
 	}
@@ -112,9 +128,15 @@ export class TSAside extends TSElement {
 		if (changedProperties.has('visible')) {
 			const oldVal = changedProperties.get('visible');
 			if (oldVal === false) {
-				this.dispatchCustomEvent(customEventNames.OPENED);
+				/**
+				 * Emitted when the aside has been opened
+				 */
+				this.dispatchCustomEvent('opened');
 			} else if (oldVal === true) {
-				this.dispatchCustomEvent(customEventNames.CLOSED);
+				/**
+				 * Emitted when the aside has been closed
+				 */
+				this.dispatchCustomEvent('closed');
 			}
 		}
 	}

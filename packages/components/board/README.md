@@ -27,21 +27,22 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute  | Type   | Default | Description        |
-| -------- | ---------- | ------ | ------- | ------------------ |
-| title    | data-title | string | ''      | Board header title |
+| Property | Attribute  | Type   | Default | Description                               |
+| -------- | ---------- | ------ | ------- | ----------------------------------------- |
+| dir      | dir        | String | ltr     | Direction of the component 'rtl' or 'ltr' |
+| title    | data-title | String |         | Board header title                        |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description               |
-| --------- | ------- | ------------------------- |
-| main      |         | Main content of the board |
+| Name    | Description                                                        |
+| ------- | ------------------------------------------------------------------ |
+| default | Content of the board should be wrapped around \`ts-board\` element |
 
 ## ➤ How to use it
 

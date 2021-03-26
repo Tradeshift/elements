@@ -2,7 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
 
-import { classNames, types, customEventNames } from './utils';
+import { classNames, types } from './utils';
 import css from './note.css';
 
 export class TSNote extends TSElement {
@@ -38,12 +38,12 @@ export class TSNote extends TSElement {
 
 	closeHandler() {
 		this.hidden = true;
-		this.dispatchCustomEvent(customEventNames.CLOSE);
+		this.dispatchCustomEvent('close');
 	}
 
 	buttonClickHandler(event) {
 		const buttonData = event.target.getAttribute('data-button');
-		this.dispatchCustomEvent(customEventNames.BUTTON_CLICK, JSON.parse(buttonData));
+		this.dispatchCustomEvent('button-click', JSON.parse(buttonData));
 	}
 
 	get actionsTemplate() {

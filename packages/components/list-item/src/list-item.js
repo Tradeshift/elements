@@ -58,6 +58,7 @@ export class TSListItem extends TSElement {
 			? html` <ts-icon class="icon-left" icon="${icon}" size="large" type="${this.colorType}"></ts-icon> `
 			: html`
 					<span class="${slotClass}">
+						<!--	In case you don't want to use "ts-icon"s as left icon, you can use this slot. Remember to remove icon attribute. -->
 						<slot name="icon-left" @slotchange="${this.slotChangeHandler}"></slot>
 					</span>
 			  `;

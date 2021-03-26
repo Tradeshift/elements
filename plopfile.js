@@ -1,4 +1,5 @@
 const fs = require('fs');
+const getReadmeData = require('./scripts/get-readme-template-data');
 const packagesPath = 'packages';
 const componentsPath = `${packagesPath}/components`;
 const templatesPath = 'plop-templates';
@@ -42,5 +43,28 @@ module.exports = plop => {
 				}
 			}
 		]
+	});
+
+	plop.setGenerator('readme', {
+		description: 'Generate README.md files',
+		prompts: [
+			{
+				type: 'input',
+				name: 'name',
+				message: 'What is the component name?'
+			}
+		],
+
+		actions: function(data) {
+			return [
+				{
+					type: 'add',
+					force: true,
+					path: `${componentsPath}/{{kebabCase name}}/README.md`,
+					templateFile: `${templatesPath}/readme/README.md`,
+					data: () => getReadmeData(data.name)
+				}
+			];
+		}
 	});
 };

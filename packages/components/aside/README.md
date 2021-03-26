@@ -26,32 +26,40 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute    | Type    | Default | Description        |
-| -------- | ------------ | ------- | ------- | ------------------ |
-| title    | data-title   | string  | ''      | Aside header title |
-| visible  | data-visible | boolean | false   | Show/hide aside    |
-
-## ➤ Events
-
-| Event Name | Payload | Description                                                                    |
-| ---------- | ------- | ------------------------------------------------------------------------------ |
-| close      |         | Emitted when the user close the aside by clicking on the close button or cover |
-| closed     |         | Emitted when the aside completely closed                                       |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
+| title | data-title | String | '' | Aside header title |
+| visible | data-visible | Boolean | false | Show/hide aside |
+| busy | data-busy | String |  | If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it |
+| noCloseOnEscKey | no-close-on-esc-key | Boolean | false | Disable closing the aside with escape key |
+| hasFoot | hasFoot | Boolean | false | INTERNAL |
+| hasPlatformObject | hasPlatformObject | Boolean | false | INTERNAL |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                            |
-| --------- | ------- | -------------------------------------- |
-| main      |         | Main content of the aside              |
-| footer    |         | Footer content and action buttons goes |
-| note      |         | Use it on the `ts-note` in the aside   |
+| Name | Description |
+| --- | --- |
+| note | Use this slot name on the \`ts-note\` in the aside |
+| platform-object | The section between aside header and content that platform object should be shown with different background color |
+| main | Main content of the aside that doesn't fit into any other available slots |
+| footer | Footer content and action buttons goes. You should use the ts-button-group here. |
+
+## ➤ Events
+
+| Name   | Description                                  | Payload |
+| ------ | -------------------------------------------- | ------- |
+| open   | Emitted when the aside is about to be opened |         |
+| close  | Emitted when the aside is about to be closed |         |
+| opened | Emitted when the aside has been opened       |         |
+| closed | Emitted when the aside has been closed       |         |
 
 ## ➤ How to use it
 

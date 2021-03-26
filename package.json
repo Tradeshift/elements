@@ -37,7 +37,7 @@
     "check-deps": "lerna exec --stream --no-bail \"depcheck --ignore-dirs=lib,stories\"",
     "clean": "cross-env-shell lerna exec -- rm -f ./lib/*",
     "clean-install": "run-s clean lerna-clean lerna:bootstrap:no-ci",
-    "component-gen": "plop",
+    "component-gen": "plop component",
     "copy:static": "./tasks/copy-static.sh",
     "dev": "run-p watch server-reload",
     "format": "cross-env-shell prettier --write --config `pwd`/.prettierrc \"packages/**/src/**/*.{js,json,css,md,html}\" \"index.{js,html}\"",
@@ -49,6 +49,7 @@
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/**/{src,stories}/**/*.js\"",
+    "prerelease": "run-s update-doc-src-from-readme update-readme",
     "release": "run-s check-credentials build:prod release:npm release:github",
     "release:github": "lerna publish from-package --no-git-tag-version --yes --registry=https://npm.pkg.github.com/",
     "release:npm": "lerna publish --registry=https://registry.npmjs.org/",
@@ -63,6 +64,9 @@
     "storybook:deploy": "storybook-to-ghpages",
     "pretest": "run-s build:prod copy:static",
     "test": "npm run happo",
+    "update-doc-src-from-readme": "cross-env-shell node ./scripts/from-readme/index.js",
+    "update-readme": "cross-env-shell node ./scripts/update-readme-files.js",
+    "add-desc-to-src": "cross-env-shell node ./scripts/add-description-to-src.js",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "husky": {
@@ -156,6 +160,7 @@
     "husky": "^4.3.8",
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.3",
+    "node-plop": "^0.26.0",
     "npm-run-all": "^4.1.5",
     "plop": "^2.7.4",
     "postcss": "^8.2.4",
@@ -165,7 +170,9 @@
     "rollup": "^2.37.1",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-svgo": "^1.0.3",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "tablemark": "^2.0.0",
+    "xa": "^2.4.0"
   },
   "publishConfig": {
     "access": "public"

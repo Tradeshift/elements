@@ -1,6 +1,5 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
 import css from './tabs.css';
-import { customEventNames } from './utils';
 
 import '@tradeshift/elements.icon';
 import '@tradeshift/elements.typography';
@@ -18,6 +17,7 @@ export class TSTabs extends TSElement {
 
 	static get properties() {
 		return {
+			/** Direction (rtl/ltr) */
 			dir: { type: String, reflect: true }
 		};
 	}
@@ -43,7 +43,7 @@ export class TSTabs extends TSElement {
 				this.tabs[i].selected = true;
 			}
 		}
-		this.dispatchCustomEvent(customEventNames.TAB_CLICK, { tab, index });
+		this.dispatchCustomEvent('tab-click', { tab, index });
 		this.requestUpdate();
 	}
 
@@ -120,6 +120,7 @@ export class TSTabs extends TSElement {
 				${this.tabs.map((tab, index) => html` ${this.tabTemplate(tab, index)} `)}
 			</header>
 			<div class="tabs-content-wrapper">
+				<!-- All \`ts-tab\` elements should be wrapped with \`ts-tabs\` element to be grouped together -->
 				<slot @slotchange="${this.slotChangeHandler}"></slot>
 			</div>
 		`;

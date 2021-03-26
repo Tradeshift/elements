@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -36,8 +36,8 @@
 | Property | Attribute | Type   | Default | Description |
 | -------- | --------- | ------ | ------- | ----------- |
 | dir      | dir       | String | ltr     |             |
-| status   | status    | String |         |             |
-| text     | text      | String |         |             |
+| status   | status    | String | ''      |             |
+| text     | text      | String | ''      |             |
 
 ## ➤ How to use it
 

@@ -8,8 +8,11 @@ export class TSIcon extends TSElement {
 
 	static get properties() {
 		return {
+			/** Size of the app icon, available variants: ''(default), 'large' */
 			size: { type: String, reflect: true },
+			/** Specifies the URL of an image */
 			src: { type: String, reflect: true },
+			/** Specifies an alternate text for an image */
 			alt: { type: String, reflect: true }
 		};
 	}

@@ -27,25 +27,25 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
 ## ➤ Properties
 
-| Property     | Attribute    | Type   | Default                                                                                                                                                                    | Description                                                               |
-| ------------ | ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| totalPages   | total-pages  | number | -                                                                                                                                                                          | Total number of pages                                                     |
-| activePage   | active-page  | number | 1                                                                                                                                                                          | Currently active page                                                     |
-| perPage      | per-page     | number | 20                                                                                                                                                                         | Determining maximum number of items in the page, should be 10,20,30,40,50 |
-| translations | translations | object | {page: 'Page', of: 'of', items_per_page: 'Items per page', first_page_tooltip: 'You are already on the first page', last_page_tooltip: 'You are already on the last page'} | Translated messages for the user locale                                   |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| totalPages | total-pages | Number |  | Total number of pages |
+| activePage | active-page | Number | 1 | Currently active page |
+| perPage | per-page | Number |  | Determining maximum number of items in the page, should be either of 10,20,30,40,50 |
+| translations | translations | Object |  | Translated messages for the user locale |
 
-## ➤ Eventss
+## ➤ Events
 
-| Event Name      | Payload          | Description                                                                            |
-| --------------- | ---------------- | -------------------------------------------------------------------------------------- |
-| page-change     | {oldVal, newVal} | Emitted on page change, either by navigation button, arrow keys or typing in the input |
-| per-page-change | {per_page}       | Emitted on items per page select value change                                          |
+| Name | Description | Payload |
+| --- | --- | --- |
+| page-change | Emitted on page change, either by navigation button, arrow keys or typing in the input | {oldVal, newVal} |
+| per-page-change | Emitted on items per page select value change | {per_page} |
 
 ## ➤ How to use it
 

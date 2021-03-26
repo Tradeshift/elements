@@ -27,7 +27,7 @@
 
 <style>
   table {
-      width:100%;
+        width:100%;
   }
 </style>
 
@@ -35,8 +35,8 @@
 
 | Property      | Attribute     | Type    | Default | Description |
 | ------------- | ------------- | ------- | ------- | ----------- |
-| total         | total         | Number  |         |             |
-| done          | done          | Number  |         |             |
+| total         | total         | Number  | 100     |             |
+| done          | done          | Number  | 0       |             |
 | indeterminate | indeterminate | Boolean | false   |             |
 
 ## ➤ How to use it

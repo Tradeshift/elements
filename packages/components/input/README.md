@@ -26,22 +26,22 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
 | Property | Attribute | Type    | Default | Description             |
 | -------- | --------- | ------- | ------- | ----------------------- |
-| disabled | disabled  | boolean | false   | Disable status of input |
+| disabled | disabled  | Boolean | false   | Disable status of input |
 
 ## ➤ Slots
 
-| Slot Name | Default | Description                                                                          |
-| --------- | ------- | ------------------------------------------------------------------------------------ |
-| --------- |         | Put an input element in the light dom that could be submitted all the data in a form |
+| Name | Description |
+| --- | --- |
+| default | Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data |
 
 ## ➤ How to use it
 

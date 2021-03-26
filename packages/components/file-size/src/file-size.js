@@ -10,9 +10,13 @@ export class TSFileSize extends TSElement {
 
 	static get properties() {
 		return {
+			/** Size of the file */
 			size: { type: Number },
+			/** How many decimal points should be shown */
 			decimalPoint: { type: Number, attribute: 'decimal-point' },
+			/** Typography variant */
 			variant: { type: String },
+			/** Typography type */
 			type: { type: String }
 		};
 	}

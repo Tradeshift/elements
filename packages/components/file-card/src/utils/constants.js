@@ -1,8 +1,3 @@
-export const slotNames = {
-	REMOVE_ACTION_TEXT: 'remove-action-text',
-	DOWNLOAD_ACTION_TEXT: 'download-action-text'
-};
-
 export const customEventNames = {
 	REMOVE: 'remove',
 	DOWNLOAD: 'download'

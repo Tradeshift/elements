@@ -26,20 +26,27 @@
 </p>
 
 <style>
-table {
-    width:100%;
-}
+  table {
+        width:100%;
+  }
 </style>
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default | Description              |
-| -------- | --------- | ------- | ------- | ------------------------ |
-| value    | value     | string  | ''      | Value of the radio       |
-| label    | data      | string  | ''      | Label of the radio       |
-| checked  | checked   | boolean | false   | Check status             |
-| disabled | disabled  | boolean | false   | Disabled status          |
-| dir      | dir       | string  | ''      | Direction 'rtl' or 'ltr' |
+| Property | Attribute | Type    | Default | Description        |
+| -------- | --------- | ------- | ------- | ------------------ |
+| value    | value     | String  |         | Value of the radio |
+| label    | label     | String  |         | Label of the radio |
+| checked  | checked   | Boolean | false   | Check status       |
+| disabled | disabled  | Boolean | false   | Disabled status    |
+
+## ➤ Events
+
+| Name        | Description |
+| ----------- | ----------- |
+| radio-click |             |
+| radio-focus |             |
+| radio-blur  |             |
 
 ## ➤ How to use it
 

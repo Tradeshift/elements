@@ -11,10 +11,15 @@ export class TSRadioGroup extends TSElement {
 
 	static get properties() {
 		return {
+			/** Value of currently chosen ts-radio node */
 			value: { type: String, reflect: true },
+			/** Title of radio group */
 			title: { type: String, reflect: true },
+			/** Index of checked ts-radio node */
 			index: { type: Number, reflect: true },
+			/** Is group currently focused for keyboard input */
 			focused: { type: Boolean, reflect: true },
+			/** Direction 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true }
 		};
 	}
@@ -39,7 +44,11 @@ export class TSRadioGroup extends TSElement {
 				const value = radio.value;
 				this.index = index;
 				this.value = value;
-				this.dispatchCustomEvent(customEventNames.RADIO_SELECTED, { radio, index, value });
+				/**
+				 * Emitted on radio element select
+				 * @payload { radio, index, value }
+				 */
+				this.dispatchCustomEvent('radio-selected', { radio, index, value });
 			}
 		}
 	}
@@ -128,6 +137,7 @@ export class TSRadioGroup extends TSElement {
 					  `
 					: ''}
 				<div class="frame">
+					<!-- All ts-radio elements should be wrapped by ts-radio-group to be grouped together	-->
 					<slot @slotchange="${this.handleSlotChange}"></slot>
 				</div>
 			</fieldset>

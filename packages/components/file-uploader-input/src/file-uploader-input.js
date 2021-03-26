@@ -1,6 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './file-uploader-input.css';
-import { messages, selectors, classNames, customEventNames, slotNames, sizes } from './utils';
+import { messages, selectors, classNames, sizes } from './utils';
 
 import '@tradeshift/elements.help-text';
 import '@tradeshift/elements.icon';
@@ -13,14 +13,19 @@ export class TSFileUploaderInput extends TSElement {
 	static get properties() {
 		return {
 			rtl: { type: Boolean, reflect: true },
+			/** Disable the input */
 			disabled: { type: Boolean, reflect: true },
+			/** Allow multiple file select. */
 			multiple: { type: Boolean, reflect: true },
+			/** Size of the input: 'full'(default), 'medium', 'small' */
 			size: { type: String, reflect: true },
+			/** List of accepted file extensions */
 			acceptedFileExtensions: {
 				type: Array,
 				reflect: true,
 				attribute: 'accepted-file-extensions'
 			},
+			/** Disable drag and drop functionality */
 			disableDragAndDrop: {
 				type: Boolean,
 				reflect: true,
@@ -28,15 +33,19 @@ export class TSFileUploaderInput extends TSElement {
 			},
 			helpTextTitle: { type: String, attribute: 'help-text-title' },
 			helpTextMessages: { type: Array, attribute: 'help-text-messages' },
+			/** Hide the help text about allowed file types. */
 			hideFileTypeHelpText: {
 				type: Boolean,
 				attribute: 'hide-file-type-help-text'
 			},
+			/** Hide the help text about maximum number of files. */
 			hideMaxFileNumberHelpText: {
 				type: Boolean,
 				attribute: 'hide-max-file-number-help-text'
 			},
+			/** Maximum limit for number of files to be shown as helper message */
 			maxFileNumber: { type: Number, attribute: 'max-file-number' },
+			/** INTERNAL */
 			fileUploadWrapper: { attribute: false }
 		};
 	}
@@ -75,12 +84,14 @@ export class TSFileUploaderInput extends TSElement {
 		return html`
 			<div class="${classNames.FILE_UPLOAD_BUTTON}" ?data-disabled="${this.disabled}">
 				<label>
-					<slot name="${slotNames.PLACEHOLDER_TEXT}">
+					<!-- Customize the placeholder text	-->
+					<slot name="placeholder-text">
 						${messages.PLACEHOLDER[this.multiple ? 'MULTIPLE' : 'SINGLE']}
 					</slot>
 				</label>
 				<span>
-					<slot name="${slotNames.BUTTON_TEXT}">
+					<!-- Customize the button text	-->
+					<slot name="button-text">
 						${messages.GENERAL.SELECT.toUpperCase()}
 					</slot>
 				</span>
@@ -148,13 +159,14 @@ export class TSFileUploaderInput extends TSElement {
 	}
 
 	handleUpload(e) {
-		const event = new CustomEvent(customEventNames.FILE_CHANGE, {
-			detail: {
-				originalEvent: e,
-				files: e.target.files
-			}
+		/**
+		 * Emitted on file(s) upload
+		 * @payload { originalEvent, files }
+		 */
+		this.dispatchCustomEvent('change', {
+			originalEvent: e,
+			files: e.target.files
 		});
-		this.dispatchEvent(event);
 	}
 
 	dragEnterHandler(e) {
