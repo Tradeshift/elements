@@ -19,6 +19,7 @@
 	"@tradeshift/elements.label": "ts.elements.label",
 	"@tradeshift/elements.modal": "ts.elements.modal",
 	"@tradeshift/elements.pager": "ts.elements.pager",
+	"@tradeshift/elements.popover": "ts.elements.popover",
 	"@tradeshift/elements.progress-bar": "ts.elements.progress-bar",
 	"@tradeshift/elements.radio": "ts.elements.radio",
 	"@tradeshift/elements.radio-group": "ts.elements.radio-group",

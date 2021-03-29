@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const xa = require('xa');
 
-const compStateLogger = function(componentName, text) {
+const compStateLogger = function (componentName, text) {
 	xa.custom(componentName.toUpperCase(), text, { titleColor: 'yellow', backgroundColor: '#212121' });
 };
 
-const getComponentNames = function() {
+const getComponentNames = function () {
 	const componentsPath = path.join(process.cwd(), '/packages/components');
 	const componentNames = fs.readdirSync(componentsPath);
 	// const componentNames = staticComponentNames();
@@ -47,6 +47,7 @@ function staticComponentNames() {
 		'modal',
 		'note',
 		'pager',
+		'popover',
 		'progress-bar',
 		'radio',
 		'radio-group',
