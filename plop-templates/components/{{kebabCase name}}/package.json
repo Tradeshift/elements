@@ -1,14 +1,19 @@
 {
   "name": "@tradeshift/elements.{{kebabCase name}}",
   "version": "{{version}}",
-  "src": "src/{{kebabCase name}}.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/{{kebabCase name}}"
+  },
   "main": "lib/{{kebabCase name}}.umd.js",
-  "browser": "lib/{{kebabCase name}}.umd.js",
   "module": "lib/{{kebabCase name}}.esm.js",
+  "browser": "lib/{{kebabCase name}}.umd.js",
   "files": [
     "lib/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^{{version}}"
-  }
+  },
+  "src": "src/{{kebabCase name}}.js"
 }
