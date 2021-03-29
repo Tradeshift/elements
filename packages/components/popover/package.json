@@ -1,6 +1,11 @@
 {
   "name": "@tradeshift/elements.popover",
   "version": "0.19.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/popover"
+  },
   "main": "lib/popover.umd.js",
   "module": "lib/popover.esm.js",
   "browser": "lib/popover.umd.js",
