@@ -23,9 +23,7 @@ export const Default = () => {
 		''
 	);
 
-	return html`
-		<ts-app-icon src="${icon}" size="${size}" alt="icon"> </ts-app-icon>
-	`;
+	return html` <ts-app-icon src="${icon}" size="${size}" alt="icon"> </ts-app-icon> `;
 };
 
 Default.story = {

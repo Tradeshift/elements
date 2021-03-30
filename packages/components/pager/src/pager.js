@@ -45,9 +45,7 @@ export class TSPager extends TSElement {
 			className: 'first-page',
 			disabled: this.activePage === 1,
 			tooltip: this.translations.first_page_tooltip,
-			icon: html`
-				<ts-icon icon="arrow-left-skip" size="large"></ts-icon>
-			`,
+			icon: html` <ts-icon icon="arrow-left-skip" size="large"></ts-icon> `,
 			callback: () => (this.activePage = 1)
 		});
 	}
@@ -56,9 +54,7 @@ export class TSPager extends TSElement {
 		return this.navigationButton({
 			className: 'last-page',
 			tooltip: this.translations.last_page_tooltip,
-			icon: html`
-				<ts-icon icon="arrow-left-skip" size="large" flip="h"></ts-icon>
-			`,
+			icon: html` <ts-icon icon="arrow-left-skip" size="large" flip="h"></ts-icon> `,
 			disabled: this.activePage === this.totalPages,
 			callback: () => (this.activePage = this.totalPages)
 		});
@@ -69,9 +65,7 @@ export class TSPager extends TSElement {
 			className: 'prev-page',
 			disabled: this.activePage === 1,
 			tooltip: this.translations.first_page_tooltip,
-			icon: html`
-				<ts-icon icon="arrow-down-short" size="large" rotate="90"></ts-icon>
-			`,
+			icon: html` <ts-icon icon="arrow-down-short" size="large" rotate="90"></ts-icon> `,
 			callback: () => (this.activePage -= 1)
 		});
 	}
@@ -81,9 +75,7 @@ export class TSPager extends TSElement {
 			className: 'prev-page',
 			disabled: this.activePage === this.totalPages,
 			tooltip: this.translations.last_page_tooltip,
-			icon: html`
-				<ts-icon icon="arrow-down-short" size="large" rotate="270"></ts-icon>
-			`,
+			icon: html` <ts-icon icon="arrow-down-short" size="large" rotate="270"></ts-icon> `,
 			callback: () => (this.activePage += 1)
 		});
 	}
@@ -125,10 +117,7 @@ export class TSPager extends TSElement {
 				${this.translations.items_per_page}
 				<select id="itemsPerPage" @change="${this.handlePerPageChange}">
 					${perPageSelectValues.map(
-						value =>
-							html`
-								<option value="${value}" ?selected="${value === this.perPage}">${value}</option>
-							`
+						value => html` <option value="${value}" ?selected="${value === this.perPage}">${value}</option> `
 					)}
 				</select>
 			</label>
@@ -139,9 +128,7 @@ export class TSPager extends TSElement {
 		return html`
 			<li class="${className}">
 				<ts-tooltip ?disabled="${!disabled}" tooltip="${tooltip}" position="top">
-					<button ?disabled=${disabled} @click="${callback}">
-						${icon}
-					</button>
+					<button ?disabled=${disabled} @click="${callback}">${icon}</button>
 				</ts-tooltip>
 			</li>
 		`;
@@ -203,9 +190,7 @@ export class TSPager extends TSElement {
 		return html`
 			<div class="container">
 				${this.itemsPerPageSelector}
-				<menu>
-					${this.toStart} ${this.prev} ${this.pageInput} ${this.next} ${this.toEnd}
-				</menu>
+				<menu> ${this.toStart} ${this.prev} ${this.pageInput} ${this.next} ${this.toEnd} </menu>
 			</div>
 		`;
 	}

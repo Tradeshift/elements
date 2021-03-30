@@ -134,12 +134,12 @@
 	/* Borders........................................................ */
 
 	--ts-border-width: 1px;
-	--ts-border-width-focused: 2px;
 	--ts-border-type: solid;
 	--ts-border-color-default: var(--ts-color-gray-light);
 	--ts-border-color-error: var(--ts-color-red);
 	--ts-border-color-success: var(--ts-color-green);
-	--ts-border-color-hover: var(--ts-color-blue-lighter);
+	--ts-border-color-hover-inner: var(--ts-color-blue-lighter);
+	--ts-border-color-hover-outer: var(--ts-color-blue);
 	--ts-border-color-focus: var(--ts-color-blue);
 	--ts-border-color-primary: var(--ts-color-blue);
 	--ts-border-color-disabled: var(--ts-color-gray-lighter);
@@ -149,14 +149,14 @@
 	--ts-border-focus: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-focus);
 	--ts-border-disabled: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-disabled);
 	--ts-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
-	--ts-boxshadow-border-width-focused: inset 0 0 0 var(--ts-border-width-focused);
 	--ts-boxshadow-border-default: var(--ts-boxshadow-border-width) var(--ts-border-color-default);
 	--ts-boxshadow-border-error: var(--ts-boxshadow-border-width) var(--ts-border-color-error);
 	--ts-boxshadow-border-success: var(--ts-boxshadow-border-width) var(--ts-border-color-success);
-	--ts-boxshadow-border-focus: var(--ts-boxshadow-border-width) var(--ts-border-color-focus);
+	--ts-boxshadow-border-focus: var(--ts-boxshadow-border-width) var(--ts-border-color-focus),
+		0 0 0 1px var(--ts-border-color-focus);
 	--ts-boxshadow-border-primary: var(--ts-boxshadow-border-width) var(--ts-border-color-primary);
-	--ts-boxshadow-border-focused: var(--ts-boxshadow-border-width-focused) var(--ts-border-color-focus);
-	--ts-boxshadow-border-hover: var(--ts-boxshadow-border-width-focused) var(--ts-border-color-hover);
+	--ts-boxshadow-border-hover: var(--ts-boxshadow-border-width) var(--ts-border-color-hover-inner),
+		0 0 0 1px var(--ts-border-color-hover-outer);
 	--ts-progress-bar-height: 8px;
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;

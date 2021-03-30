@@ -13,9 +13,7 @@ export const Default = () => {
 	const indeterminate = boolean('indeterminate', false);
 	const total = number('total', 100);
 	const done = number('done', 20);
-	return html`
-		<ts-progress-bar ?indeterminate="${indeterminate}" total="${total}" done="${done}"></ts-progress-bar>
-	`;
+	return html` <ts-progress-bar ?indeterminate="${indeterminate}" total="${total}" done="${done}"></ts-progress-bar> `;
 };
 
 Default.story = {

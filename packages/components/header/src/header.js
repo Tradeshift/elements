@@ -43,9 +43,7 @@ export class TSHeader extends TSElement {
 		if (!this.icon) {
 			return '';
 		}
-		return html`
-			<ts-app-icon class="icon" src="${this.icon}" alt="${this.title}"></ts-app-icon>
-		`;
+		return html` <ts-app-icon class="icon" src="${this.icon}" alt="${this.title}"></ts-app-icon> `;
 	}
 
 	openChromeMenu() {
@@ -57,9 +55,7 @@ export class TSHeader extends TSElement {
 		if (!this.title) {
 			return '';
 		}
-		return html`
-			<span class="title">${this.title}</span>
-		`;
+		return html` <span class="title">${this.title}</span> `;
 	}
 
 	get direction() {
@@ -69,9 +65,7 @@ export class TSHeader extends TSElement {
 	render() {
 		return html`
 			<header dir=${this.direction}>
-				<div class="title-icon-container">
-					${this.getMenuSwitch} ${this.getIcon()} ${this.getTitle()}
-				</div>
+				<div class="title-icon-container">${this.getMenuSwitch} ${this.getIcon()} ${this.getTitle()}</div>
 				<div class="slot-container">
 					<!-- Extra items on the opposite side of the header goes here, like button group. 	-->
 					<slot></slot>

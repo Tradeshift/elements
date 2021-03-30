@@ -36,16 +36,8 @@ export const Default = () => {
 	const disabled = boolean('Disabled', false);
 
 	return type
-		? html`
-				<ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}">
-					${label}
-				</ts-button>
-		  `
-		: html`
-				<ts-button ?disabled="${disabled}" ?busy="${busy}" size="${size}">
-					${label}
-				</ts-button>
-		  `;
+		? html` <ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}"> ${label} </ts-button> `
+		: html` <ts-button ?disabled="${disabled}" ?busy="${busy}" size="${size}"> ${label} </ts-button> `;
 };
 
 Default.story = {
@@ -90,11 +82,7 @@ export const Action = () => {
 	const icon = select('Icon', Object.keys(icons), 'download');
 	const direction = boolean('RTL', false) ? 'rtl' : 'ltr';
 
-	return html`
-		<ts-button type="text" icon="${icon}" dir="${direction}">
-			${label}
-		</ts-button>
-	`;
+	return html` <ts-button type="text" icon="${icon}" dir="${direction}"> ${label} </ts-button> `;
 };
 
 Action.story = {

@@ -23,11 +23,7 @@ export const Default = () => {
 		<ts-radio-group title="${title}" dir="${dir}" ?focused="${focused}">
 			<ts-radio value="value1" label="${label1}" disabled></ts-radio>
 			<ts-radio value="value2" label="${label2}" ?disabled="${disabled}" checked></ts-radio>
-			${additional
-				? html`
-						<ts-radio value="value3" label="${label3}"></ts-radio>
-				  `
-				: ''}
+			${additional ? html` <ts-radio value="value3" label="${label3}"></ts-radio> ` : ''}
 		</ts-radio-group>
 	`;
 };

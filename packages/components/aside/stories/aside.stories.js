@@ -62,9 +62,7 @@ export const WithNote = () => {
 	const busy = boolean('Busy', false);
 	return html`
 		<ts-aside data-title="Aside with note" ?data-busy="${busy}" ?data-visible="${visible}">
-			<ts-note slot="note">
-				Takimata sed sea lorem kasd sit est.
-			</ts-note>
+			<ts-note slot="note"> Takimata sed sea lorem kasd sit est. </ts-note>
 			<ts-panel slot="main">
 				Forse donne speranza siamo esperienza mentre seguitando sé nostro l'uomo, dare e di da prestasse noi non. Mentre
 				di alcun vita forza siamo sua io in sogiacere, ciascheduna reputiamo primo forse porgiamo dovendo non, beati

@@ -43,11 +43,7 @@ export class TSStatus extends TSElement {
 	}
 
 	render() {
-		return html`
-			<span class="status ${this.statusClass}" dir=${this.direction}>
-				${this.text || this.status}
-			</span>
-		`;
+		return html` <span class="status ${this.statusClass}" dir=${this.direction}> ${this.text || this.status} </span> `;
 	}
 }
 

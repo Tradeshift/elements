@@ -85,15 +85,11 @@ export class TSFileUploaderInput extends TSElement {
 			<div class="${classNames.FILE_UPLOAD_BUTTON}" ?data-disabled="${this.disabled}">
 				<label>
 					<!-- Customize the placeholder text	-->
-					<slot name="placeholder-text">
-						${messages.PLACEHOLDER[this.multiple ? 'MULTIPLE' : 'SINGLE']}
-					</slot>
+					<slot name="placeholder-text"> ${messages.PLACEHOLDER[this.multiple ? 'MULTIPLE' : 'SINGLE']} </slot>
 				</label>
 				<span>
 					<!-- Customize the button text	-->
-					<slot name="button-text">
-						${messages.GENERAL.SELECT.toUpperCase()}
-					</slot>
+					<slot name="button-text"> ${messages.GENERAL.SELECT.toUpperCase()} </slot>
 				</span>
 				${this.htmlFileInput}
 			</div>
@@ -107,9 +103,7 @@ export class TSFileUploaderInput extends TSElement {
 				<input type="file" ?disabled="${this.disabled}" ?multiple="${this.multiple}" accept="${acceptedExtenstions}" />
 			`;
 		}
-		return html`
-			<input type="file" ?disabled="${this.disabled}" ?multiple="${this.multiple}" />
-		`;
+		return html` <input type="file" ?disabled="${this.disabled}" ?multiple="${this.multiple}" /> `;
 	}
 
 	get helpText() {

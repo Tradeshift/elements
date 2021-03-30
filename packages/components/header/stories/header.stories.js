@@ -34,9 +34,7 @@ export const Default = () => {
 		rtl: 'rtl'
 	});
 
-	return html`
-		<ts-header dir="${dir}" icon=${icon} title="${title}" color="${color}"> </ts-header>
-	`;
+	return html` <ts-header dir="${dir}" icon=${icon} title="${title}" color="${color}"> </ts-header> `;
 };
 
 Default.story = {

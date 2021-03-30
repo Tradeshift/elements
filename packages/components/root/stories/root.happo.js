@@ -70,16 +70,10 @@ function createElement({ slot, height, background, width }) {
 	const style = `height: ${height}; background: ${background}; ${width ? `width: ${width};` : ''}`;
 	switch (slot) {
 		case 'header':
-			return html`
-				<ts-header slot=${slot} class=${slot} color="blue" title="${slot}"></ts-header>
-			`;
+			return html` <ts-header slot=${slot} class=${slot} color="blue" title="${slot}"></ts-header> `;
 		case 'footer':
-			return html`
-				<footer slot=${slot} class=${slot} style=${style}>${slot}</footer>
-			`;
+			return html` <footer slot=${slot} class=${slot} style=${style}>${slot}</footer> `;
 		default:
-			return html`
-				<section slot=${slot} class=${slot} style=${style}>${slot}</section>
-			`;
+			return html` <section slot=${slot} class=${slot} style=${style}>${slot}</section> `;
 	}
 }

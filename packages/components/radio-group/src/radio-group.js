@@ -131,11 +131,7 @@ export class TSRadioGroup extends TSElement {
 				@focus="${this.handleFocus}"
 				@blur="${this.handleBlur}"
 			>
-				${this.title
-					? html`
-							<legend>${this.title}</legend>
-					  `
-					: ''}
+				${this.title ? html` <legend>${this.title}</legend> ` : ''}
 				<div class="frame">
 					<!-- All ts-radio elements should be wrapped by ts-radio-group to be grouped together	-->
 					<slot @slotchange="${this.handleSlotChange}"></slot>

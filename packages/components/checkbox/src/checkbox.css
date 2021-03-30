@@ -2,18 +2,21 @@
 
 .checkbox-container {
 	display: flex;
-	margin: var(--ts-unit-half);
+	padding: var(--ts-unit-half);
 	cursor: pointer;
 	font-size: var(--ts-fontsize);
+	border-radius: var(--ts-radius);
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 
-	&:hover {
-		& .checkbox {
-			background-color: var(--ts-color-gray-lighter);
-		}
+	&:hover:not(.disabled) {
+		box-shadow: var(--ts-boxshadow-border-hover);
+	}
+
+	&:focus-within {
+		box-shadow: var(--ts-boxshadow-border-focus);
 	}
 
 	& input {
@@ -26,6 +29,7 @@
 
 	& .checkbox {
 		border: var(--ts-border);
+		border-radius: var(--ts-radius);
 		flex: 0 0 var(--ts-unit);
 		height: var(--ts-unit);
 		margin-right: var(--ts-unit-half);
@@ -87,4 +91,15 @@
 		margin-left: var(--ts-unit-half);
 		margin-right: 0;
 	}
+}
+
+/* links in label ............................................................*/
+:host ::slotted(a) {
+	padding: 0 var(--ts-unit-quarter);
+	color: var(--ts-color-blue);
+	text-decoration: none;
+}
+
+:host ::slotted(a:hover) {
+	text-decoration: underline;
 }

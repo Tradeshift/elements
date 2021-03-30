@@ -43,11 +43,7 @@ export class TSDocumentCard extends TSElement {
 
 	get icon() {
 		const icon = icons[this.type] || icons[IconsEnum.DEFAULT];
-		return html`
-			<span class="card-icon">
-				${html([icon])}
-			</span>
-		`;
+		return html` <span class="card-icon"> ${html([icon])} </span> `;
 	}
 
 	get selectedClass() {

@@ -38,9 +38,7 @@ export class TSHelpText extends TSElement {
 		if (this.disabled) {
 			iconType = 'disabled';
 		}
-		return html`
-			<ts-icon class="info-icon" icon="info" size="medium" type="${iconType}"></ts-icon>
-		`;
+		return html` <ts-icon class="info-icon" icon="info" size="medium" type="${iconType}"></ts-icon> `;
 	}
 
 	render() {
@@ -55,9 +53,7 @@ export class TSHelpText extends TSElement {
 							<dt>
 								${this.infoIcon}
 								<!-- Customize title of the help text if there are multiple messages -->
-								<slot name="title">
-									${this.title}
-								</slot>
+								<slot name="title"> ${this.title} </slot>
 							</dt>
 					  `
 					: ''}

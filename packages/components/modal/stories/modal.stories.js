@@ -12,11 +12,7 @@ import readme from '../README.md';
 
 const cardsArray = [];
 for (let i = 0; i < 20; i++) {
-	cardsArray.push(
-		html`
-			<ts-card>App # ${i + 1}</ts-card>
-		`
-	);
+	cardsArray.push(html` <ts-card>App # ${i + 1}</ts-card> `);
 }
 
 const footer = html`
@@ -51,15 +47,9 @@ export const WithNoteAndFooter = () => {
 			?no-padding="${noPadding}"
 		>
 			${showNote
-				? html`
-						<ts-note dir="${dir}" slot="note">
-							Some important note about this information.
-						</ts-note>
-				  `
+				? html` <ts-note dir="${dir}" slot="note"> Some important note about this information. </ts-note> `
 				: ''}
-			<div slot="main">
-				${cardsArray.map(c => c)}
-			</div>
+			<div slot="main">${cardsArray.map(c => c)}</div>
 			${showFooter ? footer : ''}
 		</ts-modal>
 	`;

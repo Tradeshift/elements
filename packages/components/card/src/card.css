@@ -15,7 +15,7 @@
 	transition: box-shadow var(--ts-transition-now), border-color var(--ts-transition-now);
 
 	&:hover {
-		box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lighter);
+		box-shadow: var(--ts-boxshadow-border-hover);
 	}
 }
 
@@ -62,7 +62,7 @@
 	box-shadow: var(--ts-boxshadow-border-focus);
 
 	&:hover {
-		box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lighter);
+		box-shadow: var(--ts-boxshadow-border-hover);
 	}
 }
 

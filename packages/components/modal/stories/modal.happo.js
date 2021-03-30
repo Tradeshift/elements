@@ -10,15 +10,9 @@ export default {
 export const Medium = () => {
 	return html`
 		<ts-modal data-title="title" data-size="medium" data-visible no-padding>
-			<ts-note slot="note" style="border: 1px solid black;">
-				Note content
-			</ts-note>
-			<div slot="main" style="border: 1px solid black;">
-				Main content
-			</div>
-			<div slot="footer" style="border: 1px solid black;">
-				Footer content
-			</div>
+			<ts-note slot="note" style="border: 1px solid black;"> Note content </ts-note>
+			<div slot="main" style="border: 1px solid black;">Main content</div>
+			<div slot="footer" style="border: 1px solid black;">Footer content</div>
 		</ts-modal>
 	`;
 };
@@ -30,15 +24,9 @@ Medium.story = {
 export const LargeAndRtl = () => {
 	return html`
 		<ts-modal data-dir="rtl" data-title="title" data-size="large" data-visible>
-			<ts-note dir="rtl" slot="note" style="border: 1px solid black;">
-				Note content
-			</ts-note>
-			<div slot="main" style="border: 1px solid black;">
-				Main content
-			</div>
-			<div slot="footer" style="border: 1px solid black;">
-				Footer content
-			</div>
+			<ts-note dir="rtl" slot="note" style="border: 1px solid black;"> Note content </ts-note>
+			<div slot="main" style="border: 1px solid black;">Main content</div>
+			<div slot="footer" style="border: 1px solid black;">Footer content</div>
 		</ts-modal>
 	`;
 };
