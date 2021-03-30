@@ -19,5 +19,5 @@ export const Test = () => {
 		columns: 4
 	};
 
-	return createHappoStories('checkbox', properties, 'Checkbox', options);
+	return createHappoStories('checkbox', properties, 'text <a href="#test">slotted link</a>', options);
 };

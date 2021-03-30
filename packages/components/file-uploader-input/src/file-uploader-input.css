@@ -102,7 +102,7 @@
 	height: var(--ts-unit-triple);
 	background: var(--ts-color-white);
 	border-radius: var(--ts-radius);
-	box-shadow: var(--ts-boxshadow-border-focus), 0 0 0 1px var(--ts-color-blue-lightest);
+	box-shadow: var(--ts-boxshadow-border-hover);
 
 	&.file-upload-wrapper .file-upload-button,
 	&.file-upload-wrapper .help-text {

@@ -33,14 +33,20 @@
 
 ## ➤ Properties
 
-| Property | Attribute  | Type    | Default | Description                               |
-| -------- | ---------- | ------- | ------- | ----------------------------------------- |
-| name     | name       | String  | ''      | Name of checkbox                          |
-| value    | value      | String  |         | Value of checkbox                         |
-| dir      | dir        | String  | ltr     | Direction of the component 'rtl' or 'ltr' |
-| label    | data-label | String  |         | Label of checkbox                         |
-| checked  | checked    | Boolean | false   | Status of checkbox                        |
-| disabled | disabled   | Boolean | false   | disabled                                  |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| name | name | String | '' | Name of checkbox |
+| value | value | String |  | Value of checkbox |
+| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
+| label | data-label | String |  | Label of checkbox. To customize the label and have something more than simple string, use the slot, and remove this attribute |
+| checked | checked | Boolean | false | Status of checkbox |
+| disabled | disabled | Boolean | false | disabled |
+
+## ➤ Slots
+
+| Name    | Description                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------- |
+| default | To customized checkbox label (links, ...). Remember you need to remove 'data-label' attribute. |
 
 ## ➤ How to use it
 

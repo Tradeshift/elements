@@ -1,7 +1,12 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import css from './checkbox.css';
 
 export class TSCheckbox extends TSElement {
+	constructor() {
+		super();
+		this.name = '';
+	}
+
 	static get styles() {
 		return [TSElement.styles, unsafeCSS(css)];
 	}
@@ -9,23 +14,18 @@ export class TSCheckbox extends TSElement {
 	static get properties() {
 		return {
 			/** Name of checkbox */
-			name: { type: String },
+			name: { type: String, reflect: true },
 			/** Value of checkbox */
-			value: { type: String },
+			value: { type: String, reflect: true },
 			/** Direction of the component 'rtl' or 'ltr' */
-			dir: { type: String },
-			/** Label of checkbox */
+			dir: { type: String, reflect: true },
+			/** Label of checkbox. To customize the label and have something more than simple string, use the slot, and remove this attribute */
 			label: { type: String, attribute: 'data-label' },
 			/** Status of checkbox */
 			checked: { type: Boolean, reflect: true },
 			/** disabled */
 			disabled: { type: Boolean, reflect: true }
 		};
-	}
-
-	constructor() {
-		super();
-		this.name = '';
 	}
 
 	get direction() {
@@ -41,7 +41,7 @@ export class TSCheckbox extends TSElement {
 
 	render() {
 		return html`
-			<div dir="${this.dir}" class="checkbox-container" @click="${this.onClick}">
+			<div dir="${this.dir}" class="checkbox-container ${this.disabled ? 'disabled' : ''}" @click="${this.onClick}">
 				<input
 					type="checkbox"
 					.name="${this.name}"
@@ -50,7 +50,12 @@ export class TSCheckbox extends TSElement {
 					?disabled="${this.disabled}"
 				/>
 				<div class="checkbox"></div>
-				${this.label}
+				${this.label
+					? this.label
+					: html`
+							<!-- To customized checkbox label (links, ...). Remember you need to remove 'data-label' attribute. -->
+							<slot></slot>
+					  `}
 			</div>
 		`;
 	}

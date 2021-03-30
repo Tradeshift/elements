@@ -59,7 +59,7 @@ li {
 	}
 
 	&:focus {
-		box-shadow: var(--ts-boxshadow-border-focused);
+		box-shadow: var(--ts-boxshadow-border-focus);
 	}
 
 	&::-webkit-outer-spin-button,
@@ -103,7 +103,7 @@ li {
 	}
 
 	&:focus {
-		box-shadow: var(--ts-boxshadow-border-focused);
+		box-shadow: var(--ts-boxshadow-border-focus);
 		outline: none;
 	}
 
