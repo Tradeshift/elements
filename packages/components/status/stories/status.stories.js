@@ -29,9 +29,7 @@ export const Default = () => {
 		},
 		'ltr'
 	);
-	return html`
-		<ts-status status="${status}" text="${statusText}" dir="${dir}"> </ts-status>
-	`;
+	return html` <ts-status status="${status}" text="${statusText}" dir="${dir}"> </ts-status> `;
 };
 
 Default.story = {

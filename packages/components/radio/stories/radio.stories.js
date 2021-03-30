@@ -14,9 +14,7 @@ export const Default = () => {
 	const disabled = boolean('Disabled', false);
 	const checked = boolean('Checked', false);
 
-	return html`
-		<ts-radio label="${label}" ?checked="${checked}" ?disabled="${disabled}"></ts-radio>
-	`;
+	return html` <ts-radio label="${label}" ?checked="${checked}" ?disabled="${disabled}"></ts-radio> `;
 };
 
 Default.story = {

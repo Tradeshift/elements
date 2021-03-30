@@ -42,25 +42,14 @@ Empty.story = {
 	name: 'empty'
 };
 
-export const Header = () =>
-	createRoot(
-		() =>
-			html`
-				${createElement(slots.header)}
-			`
-	);
+export const Header = () => createRoot(() => html` ${createElement(slots.header)} `);
 
 Header.story = {
 	name: 'header'
 };
 
 export const HeaderFooter = () =>
-	createRoot(
-		() =>
-			html`
-				${createElement(slots.header)} ${createElement(slots.footer)}
-			`
-	);
+	createRoot(() => html` ${createElement(slots.header)} ${createElement(slots.footer)} `);
 
 HeaderFooter.story = {
 	name: 'header + footer'
@@ -68,10 +57,7 @@ HeaderFooter.story = {
 
 export const HeaderFooterSidebarLeft = () =>
 	createRoot(
-		() =>
-			html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])}
-			`
+		() => html` ${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-left'])} `
 	);
 
 HeaderFooterSidebarLeft.story = {
@@ -80,10 +66,7 @@ HeaderFooterSidebarLeft.story = {
 
 export const HeaderFooterSidebarRight = () =>
 	createRoot(
-		() =>
-			html`
-				${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-right'])}
-			`
+		() => html` ${createElement(slots.header)} ${createElement(slots.footer)} ${createElement(slots['sidebar-right'])} `
 	);
 
 HeaderFooterSidebarRight.story = {
@@ -143,16 +126,10 @@ function createElement({ slot, height, background, width }) {
 	const style = `height: ${height}; background: ${background}; ${width ? `width: ${width};` : ''}`;
 	switch (slot) {
 		case 'header':
-			return html`
-				<ts-header slot=${slot} class=${slot} color="blue" title="${slot}"></ts-header>
-			`;
+			return html` <ts-header slot=${slot} class=${slot} color="blue" title="${slot}"></ts-header> `;
 		case 'footer':
-			return html`
-				<footer slot=${slot} class=${slot} style=${style}>${slot}</footer>
-			`;
+			return html` <footer slot=${slot} class=${slot} style=${style}>${slot}</footer> `;
 		default:
-			return html`
-				<section slot=${slot} class=${slot} style=${style}>${slot}</section>
-			`;
+			return html` <section slot=${slot} class=${slot} style=${style}>${slot}</section> `;
 	}
 }

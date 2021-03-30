@@ -11,10 +11,7 @@ export default {
 export const Default = () => html`
 	<ts-button-group>
 		${['Primary', 'Secondary', 'Secondary', 'Secondary', 'Text', 'Text'].map(
-			type =>
-				html`
-					<ts-button .type=${type.toLowerCase()}>${type} Button – Grouped</ts-button>
-				`
+			type => html` <ts-button .type=${type.toLowerCase()}>${type} Button – Grouped</ts-button> `
 		)}
 	</ts-button-group>
 `;

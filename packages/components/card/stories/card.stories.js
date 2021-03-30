@@ -53,9 +53,7 @@ export const Default = () => {
 	const rtl = boolean('rtl', false);
 
 	return html`
-		<ts-card ?rtl="${rtl}" type="${type}" size="${size}" orientation="${orientation}">
-			${html([content])}
-		</ts-card>
+		<ts-card ?rtl="${rtl}" type="${type}" size="${size}" orientation="${orientation}"> ${html([content])} </ts-card>
 	`;
 };
 

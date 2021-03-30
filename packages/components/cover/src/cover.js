@@ -18,9 +18,7 @@ export class TSCover extends TSElement {
 	}
 
 	render() {
-		return html`
-			<div class="cover ${this.visible ? 'ts-fadeIn' : 'ts-fadeOut'}"></div>
-		`;
+		return html` <div class="cover ${this.visible ? 'ts-fadeIn' : 'ts-fadeOut'}"></div> `;
 	}
 }
 

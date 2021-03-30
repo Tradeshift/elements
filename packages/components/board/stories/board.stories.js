@@ -14,11 +14,7 @@ export const Default = () => {
 	const title = text('data-title', 'My board');
 	const mainDiv = document.createElement('div');
 	mainDiv.innerHTML = text('Put any html inside the board', '<h3>Content</h3>');
-	return html`
-		<ts-board dir="${dir}" data-title="${title}">
-			${mainDiv}
-		</ts-board>
-	`;
+	return html` <ts-board dir="${dir}" data-title="${title}"> ${mainDiv} </ts-board> `;
 };
 
 Default.story = {

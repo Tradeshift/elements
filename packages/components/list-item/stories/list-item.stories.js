@@ -175,16 +175,7 @@ export const Menu = () => {
 		return el;
 	}
 
-	return html`
-		<div class="menu" style="width: 360px">
-			${items.map(
-				item =>
-					html`
-						${test(item)}
-					`
-			)}
-		</div>
-	`;
+	return html` <div class="menu" style="width: 360px">${items.map(item => html` ${test(item)} `)}</div> `;
 };
 
 Menu.story = {

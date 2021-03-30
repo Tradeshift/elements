@@ -17,9 +17,11 @@ export class TSIcon extends TSElement {
 		const colorTypesStyle = Object.keys(types).map(typeKey => {
 			const type = types[typeKey];
 			const typeColor = typeColors[type];
-			return css`	:host([type="${unsafeCSS(type)}"]) {
-						--ts-icon-color: var(--ts-color-${unsafeCSS(typeColor)});
-				}`;
+			return css`
+				:host([type='${unsafeCSS(type)}']) {
+					--ts-icon-color: var(--ts-color-${unsafeCSS(typeColor)});
+				}
+			`;
 		});
 		return [TSElement.styles, unsafeCSS(styles), ...colorTypesStyle];
 	}
@@ -42,11 +44,7 @@ export class TSIcon extends TSElement {
 	}
 
 	render() {
-		return html`
-			<span class="${classNames.ICON_WRAPPER}">
-				${icons[this.icon]}
-			</span>
-		`;
+		return html` <span class="${classNames.ICON_WRAPPER}"> ${icons[this.icon]} </span> `;
 	}
 }
 

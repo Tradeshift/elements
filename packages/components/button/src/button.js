@@ -66,11 +66,7 @@ export class TSButton extends TSElement {
 	render() {
 		return html`
 			<button id="button" ?disabled="${this.disabled}" dir="${this.direction}" @click="${this.clickHandler}">
-				${this.icon
-					? html`
-							<ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon>
-					  `
-					: ''}
+				${this.icon ? html` <ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon> ` : ''}
 				<span>
 					<!-- Text of the button should be wrapped around \`ts-button\` element -->
 					<slot></slot>

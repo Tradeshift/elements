@@ -28,11 +28,7 @@ export const Default = () => {
 	const hidden = boolean('Hidden', false);
 	const content = text('Content', 'Sample text for note');
 
-	return html`
-		<ts-note type="${type}" dir="${dir}" icon="${icon}" ?hidden="${hidden}">
-			${content}
-		</ts-note>
-	`;
+	return html` <ts-note type="${type}" dir="${dir}" icon="${icon}" ?hidden="${hidden}"> ${content} </ts-note> `;
 };
 
 Default.story = {

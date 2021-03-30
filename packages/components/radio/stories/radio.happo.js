@@ -8,9 +8,7 @@ export default {
 
 export const Test = () => {
 	return html`
-		<h1>
-			dir
-		</h1>
+		<h1>dir</h1>
 
 		<ts-radio-group name="radio">
 			<ts-radio value="blue" label="Blue pill"></ts-radio>

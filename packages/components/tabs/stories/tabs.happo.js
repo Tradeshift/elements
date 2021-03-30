@@ -27,14 +27,8 @@ export const Test = () => {
 	`;
 
 	return html`
-		<h1>
-			dir
-		</h1>
-		<ts-tabs>
-			${slottedTabs}
-		</ts-tabs>
-		<ts-tabs dir="rtl">
-			${slottedTabs}
-		</ts-tabs>
+		<h1>dir</h1>
+		<ts-tabs> ${slottedTabs} </ts-tabs>
+		<ts-tabs dir="rtl"> ${slottedTabs} </ts-tabs>
 	`;
 };

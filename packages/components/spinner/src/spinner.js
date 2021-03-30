@@ -30,9 +30,7 @@ export class TSSpinner extends TSElement {
 		if (!this.message) {
 			return '';
 		}
-		return html`
-			<div class="message">${this.message}</div>
-		`;
+		return html` <div class="message">${this.message}</div> `;
 	}
 
 	render() {

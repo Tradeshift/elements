@@ -19,9 +19,7 @@ export const Type = () => {
 
 	const icon = select('Icon', Object.keys(icons), 'remove');
 
-	return html`
-		<ts-icon type="${type}" icon="${icon}" size="${size}"></ts-icon>
-	`;
+	return html` <ts-icon type="${type}" icon="${icon}" size="${size}"></ts-icon> `;
 };
 
 Type.story = {

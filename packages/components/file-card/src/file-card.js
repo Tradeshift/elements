@@ -63,18 +63,12 @@ export class TSFileCard extends TSElement {
 	}
 
 	get fileIcon() {
-		return html`
-			<span class="${classNames.FILE_ICON_WRAPPER}">
-				${html([fileIcon])}
-			</span>
-		`;
+		return html` <span class="${classNames.FILE_ICON_WRAPPER}"> ${html([fileIcon])} </span> `;
 	}
 
 	get progressBar() {
 		if (this.state === states.UPLOADING) {
-			return html`
-				<ts-progress-bar class="${classNames.PROGRESS_BAR}" indeterminate></ts-progress-bar>
-			`;
+			return html` <ts-progress-bar class="${classNames.PROGRESS_BAR}" indeterminate></ts-progress-bar> `;
 		}
 	}
 
@@ -93,17 +87,12 @@ export class TSFileCard extends TSElement {
 
 	get fileInformation() {
 		if (this.state === states.DOWNLOAD) {
-			const fileExtension = this.fileObject.name
-				.split('.')
-				.pop()
-				.toUpperCase();
+			const fileExtension = this.fileObject.name.split('.').pop().toUpperCase();
 
 			return html`
 				<div class="${classNames.FILE_INFORMATION}">
 					${this.fileSize}
-					<ts-typography variant="subtitle">
-						${`${fileExtension} Document`}
-					</ts-typography>
+					<ts-typography variant="subtitle"> ${`${fileExtension} Document`} </ts-typography>
 				</div>
 			`;
 		}
