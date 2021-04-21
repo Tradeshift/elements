@@ -1,0 +1,134 @@
+/* General........................................................ */
+
+#container {
+	background-color: var(--ts-color-white);
+	position: relative;
+}
+
+#listContainer {
+	overflow: auto;
+}
+
+#dropdown {
+	border: var(--ts-border);
+	border-radius: var(--ts-radius);
+	box-shadow: 0px 5px 10px 0px rgba(88, 124, 141, 0.1);
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: var(--ts-zindex-max);
+
+	& ul {
+		list-style: none outside none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+:host([opened]) #dropdown {
+	display: block;
+}
+
+.apply-button-container {
+	background-color: var(--ts-color-white);
+	border-top: var(--ts-border);
+	bottom: 0;
+	position: relative;
+
+	& ts-button-group {
+		padding: var(--ts-unit-half);
+		& ts-button {
+			margin-bottom: 0;
+		}
+	}
+}
+
+#selectInput {
+	background-color: var(--ts-color-white);
+	border: var(--ts-border);
+	border-radius: var(--ts-radius);
+	cursor: pointer;
+	display: flex;
+	flex-flow: row nowrap;
+	height: var(--ts-unit-plus);
+
+	& .filter-input {
+		border: 0;
+		box-sizing: border-box;
+		cursor: pointer;
+		flex: 1 1 0;
+		font-size: var(--ts-fontsize-mini);
+		font-weight: var(--ts-fontweight);
+		height: calc(var(--ts-unit-plus) - 6px);
+		margin: 2px;
+		overflow: hidden;
+		padding: 4px var(--ts-unit-half);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&::placeholder {
+			color: var(--ts-color-slate-lightest);
+			font-style: italic;
+		}
+
+		/* hide a default clear input button in IE */
+		&::-ms-clear {
+			display: none;
+		}
+	}
+
+	& .icon-end {
+		cursor: pointer;
+		flex: 0 0 var(--ts-unit-plus);
+	}
+}
+
+.no-items {
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight);
+	padding: var(--ts-unit-half);
+}
+
+.show-selection {
+	align-items: center;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight);
+	padding: var(--ts-unit) var(--ts-unit) var(--ts-unit-half) var(--ts-unit);
+	& ts-icon {
+		margin-right: var(--ts-unit-half);
+	}
+}
+
+:host(:not([disabled])) #selectInput:focus-within {
+	border-color: var(--ts-border-color-focus);
+	box-shadow: var(--ts-boxshadow-border-focus);
+}
+
+/* RTL............................................................ */
+:host([dir='rtl']) {
+	& .show-selection ts-icon {
+		margin-left: var(--ts-unit-half);
+		margin-right: 0;
+	}
+}
+
+/* Disable........................................................ */
+:host([disabled]) #selectInput {
+	color: var(--ts-disabled-color);
+}
+
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#selectInput .icon-end {
+		margin: 2px 0;
+	}
+
+	.filter-input {
+		max-width: 90%;
+		min-width: 0px;
+		width: 90%;
+	}
+}

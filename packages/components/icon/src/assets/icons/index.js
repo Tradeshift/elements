@@ -24,6 +24,8 @@ import addToArchive from './add-to-archive.svg';
 import discovery from './discovery.svg';
 import edit from './edit.svg';
 import deleteIcon from './delete.svg';
+import checkbox from './checkbox.svg';
+import checkboxOn from './checkbox-on.svg';
 
 const icons = {
 	remove,
@@ -42,6 +44,7 @@ const icons = {
 	discovery,
 	edit,
 	delete: deleteIcon,
+	checkbox,
 	'check-alt': checkAlt,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
@@ -49,7 +52,8 @@ const icons = {
 	'arrow-left': arrowLeft,
 	'close-clear': closeClear,
 	'menu-switch': menuSwitch,
-	'add-to-archive': addToArchive
+	'add-to-archive': addToArchive,
+	'checkbox-on': checkboxOn
 };
 
 // convert svg strings to html element

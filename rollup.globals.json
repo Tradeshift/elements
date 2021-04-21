@@ -33,6 +33,7 @@
 	"@tradeshift/elements.status": "ts.elements.status",
 	"@tradeshift/elements.document-card": "ts.elements.document-card",
 	"@tradeshift/elements.search": "ts.elements.search",
+	"@tradeshift/elements.select": "ts.elements.select",
 	"@tradeshift/elements.tabs": "ts.elements.tabs",
 	"@tradeshift/elements.tab": "ts.elements.tab"
 }

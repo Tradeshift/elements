@@ -126,6 +126,10 @@ svg {
 	color: var(--ts-color-slate-lightest);
 }
 
+:host([type='gray-darker']) svg {
+	color: var(--ts-color-gray-darker);
+}
+
 :host([type='action']) svg {
 	color: var(--ts-color-gray);
 }
