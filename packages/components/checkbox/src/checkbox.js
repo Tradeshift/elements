@@ -24,7 +24,9 @@ export class TSCheckbox extends TSElement {
 			/** Status of checkbox */
 			checked: { type: Boolean, reflect: true },
 			/** disabled */
-			disabled: { type: Boolean, reflect: true }
+			disabled: { type: Boolean, reflect: true },
+			/** readonly, user can't change the value like disabled, but with different styling */
+			readonly: { type: Boolean, reflect: true }
 		};
 	}
 
@@ -33,7 +35,7 @@ export class TSCheckbox extends TSElement {
 	}
 
 	onClick() {
-		if (this.disabled) {
+		if (this.disabled || this.readonly) {
 			return;
 		}
 		this.checked = !this.checked;
@@ -47,7 +49,7 @@ export class TSCheckbox extends TSElement {
 					.name="${this.name}"
 					.value="${this.value}"
 					?checked="${this.checked}"
-					?disabled="${this.disabled}"
+					?disabled="${this.disabled || this.readonly}"
 				/>
 				<div class="checkbox"></div>
 				${this.label
