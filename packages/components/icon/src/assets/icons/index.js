@@ -18,6 +18,12 @@ import settings from './settings.svg';
 import support from './support.svg';
 import alert from './alert.svg';
 import question from './question.svg';
+import apps from './apps.svg';
+import lock from './lock.svg';
+import addToArchive from './add-to-archive.svg';
+import discovery from './discovery.svg';
+import edit from './edit.svg';
+import deleteIcon from './delete.svg';
 
 const icons = {
 	remove,
@@ -31,13 +37,19 @@ const icons = {
 	support,
 	alert,
 	question,
+	apps,
+	lock,
+	discovery,
+	edit,
+	delete: deleteIcon,
 	'check-alt': checkAlt,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
 	'arrow-left-skip': arrowLeftSkip,
 	'arrow-left': arrowLeft,
 	'close-clear': closeClear,
-	'menu-switch': menuSwitch
+	'menu-switch': menuSwitch,
+	'add-to-archive': addToArchive
 };
 
 // convert svg strings to html element

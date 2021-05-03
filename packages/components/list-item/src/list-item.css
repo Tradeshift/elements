@@ -30,6 +30,8 @@ button {
 	width: 100%;
 	max-width: 100%;
 	text-align: left;
+	/* to make the icon and title align vertically. calculation: (iconSize-textHeight)/2 */
+	margin-top: calc((var(--ts-fontsize-xbig) - var(--ts-unit)) / 2);
 
 	& .title {
 		font-size: var(--ts-fontsize-mini);
