@@ -32,7 +32,7 @@
 				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
 				document.body.appendChild(coreEl);
 				coreEl.onload = function () {
-					var components = ['button'];
+					var components = ['button', 'icon', 'list-item'];
 					components.forEach(function (component) {
 						var el = document.createElement('script');
 						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
@@ -47,6 +47,18 @@
 	<body>
 		<article>
 			<ts-button>Button</ts-button>
+		</article>
+		<article>
+			<ts-list-item title="Title sample text 2" icon="remove" selectable></ts-list-item>
+		</article>
+		<article>
+			<ts-list-item title="Title sample text 2" icon="remove" icon-right="remove"></ts-list-item>
+		</article>
+		<article>
+			<ts-list-item title="Title sample text 2" selectable subtitle="Title sample text 2" icon="remove"></ts-list-item>
+		</article>
+		<article>
+			<ts-list-item title="Title sample text 2" subtitle="Title sample text 2" icon="remove"></ts-list-item>
 		</article>
 	</body>
 </html>
