@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.board",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.21.0"
+    "@tradeshift/elements": "^0.22.0"
   },
   "src": "src/board.js"
 }
