@@ -10,6 +10,7 @@ li {
 .content-wrapper {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	border: none;
 	padding: var(--ts-unit-half);
