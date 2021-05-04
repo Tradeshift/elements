@@ -1,0 +1,34 @@
+/* General........................................................ */
+
+.text-field-wrapper {
+	margin-bottom: var(--ts-unit);
+}
+
+ts-help-text {
+	margin-top: var(--ts-unit-half);
+}
+
+/* Label ........................................................ */
+
+label {
+	display: block;
+	color: var(--ts-color-black);
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight-semibold);
+	padding: var(--ts-unit-quarter) 0;
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+}
+
+:host([disabled]) {
+	& label {
+		color: var(--ts-disabled-color);
+	}
+}
+
+.required-asterisk {
+	color: var(--ts-color-red-light);
+}

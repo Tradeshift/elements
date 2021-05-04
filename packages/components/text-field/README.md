@@ -4,24 +4,24 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - input</h1>
+<h1 align="center">Elements - text-field</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-input--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-text-field--default">
       Demo
     </a>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.input">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.input" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.text-field">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.text-field" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.input?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.input" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.text-field?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.text-field" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.input">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.input" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.text-field">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.text-field" height="20"/>
 		</a>
 </p>
 
@@ -35,40 +35,59 @@
 
 | Property | Attribute | Type | Default | Description |
 | --- | --- | --- | --- | --- |
-| hasError | hasError | Boolean | false | Show error style |
-| disabled | disabled | Boolean | false | Disable state of the input |
-| readonly | readonly | Boolean | false | Readonly state of the input |
+| label | label | String | '' | Label of the text field. If you need something more than simple string, use the label slot. |
+| id | id | String | 'input-id' | Id of the text field |
+| value | value | String | '' | Value of the text field |
+| type | type | String | 'text' | Pass type of the input element, if it's not multiline |
+| placeholder | placeholder | String | '' | Placeholder of the text field |
+| helpTextMessages | help-text-messages | Array |  | Array of messages to pass to helpt-text component. See help-text component for more info |
+| helpTextTitle | help-text-title | String |  | If you have more than one help text message , you should pass a title to it. See help-text component for more info |
+| errorMessages | error-messages | Array |  | Error messages to show underneath of the input when it has error |
+| errorTitle | error-title | String |  | Error title, if there are more than one error message |
+| hasError | has-error | Boolean | false | If the text field has an error, to show error messages and change the style of the input |
+| required | required | Boolean | false | To show the astrix in the label, not doing validation yet |
+| disabled | disabled | Boolean | false | Is the text field disabled? |
+| readonly | readonly | Boolean | false | Is the text field readonly? |
+| multiline | multiline | Boolean | false | Will show a textarea instead of an input |
 | dir | dir | String | ltr | Direction 'rtl' or 'ltr' |
-| iconStart | icon-start | String |  | Icon that appears at the beginning of the input (left in ltr direction) |
-| iconEnd | icon-end | String |  | Icon that appears at the ending part of the input (right in ltr direction). Readonly and disabled state will show a lock icon instead. |
+| iconStart | icon-start | String | '' | Icon that appears at the beginning of the input (left in ltr direction) |
+| iconEnd | icon-end | String | '' | Icon that appears at the end part of the input (end in ltr direction). Readonly and disabled state will show a lock icon instead. |
 
 ## ➤ Slots
 
 | Name | Description |
 | --- | --- |
-| default | Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data |
+| label | If you want to have custom html in label, you can use this slot |
+| ts-input | If you want to have the input/textarea in the light DOM, for example, to be able to access it in the form data, you can pass the ts-input element with the input/textarea yourself. |
+
+## ➤ Events
+
+| Name   | Description                              | Payload                      |
+| ------ | ---------------------------------------- | ---------------------------- |
+| input  | Emitted onInput event of input/textarea  | { value, originalEvent }     |
+| change | Emitted onChange event of input/textarea | { value, id, originalEvent } |
 
 ## ➤ How to use it
 
-- Install the package of input
+- Install the package of textField
 
 ```shell
-$ npm i @tradeshift/elements.input --save
+$ npm i @tradeshift/elements.text-field --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.input';
+import '@tradeshift/elements.text-field';
 ```
 
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.input/lib/input.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.text-field/lib/text-field.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-input--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-text-field--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 
