@@ -85,6 +85,29 @@
 	}
 }
 
+:host([readonly]) {
+	& .checkbox-container {
+		cursor: not-allowed;
+
+		&:hover {
+			box-shadow: none;
+		}
+
+		& .checkbox {
+			border: var(--ts-disabled-border);
+			border-color: var(--ts-color-gray-light);
+			background-color: var(--ts-color-gray-lightest);
+		}
+
+		& input:checked ~ .checkbox {
+			border: var(--ts-disabled-border);
+			&:after {
+				border-color: var(--ts-color-gray-dark);
+			}
+		}
+	}
+}
+
 /* rtl ............................................................*/
 :host([dir='rtl']) {
 	& .checkbox {

@@ -9,10 +9,11 @@ export default {
 
 export const Test = () => {
 	const properties = {
-		dir: { rtl: 'rtl' },
 		label: { label: 'Checkbox label' },
 		disabled: { true: true },
-		checked: { true: true }
+		checked: { true: true },
+		readonly: { true: true },
+		dir: { rtl: 'rtl' }
 	};
 
 	const options = {

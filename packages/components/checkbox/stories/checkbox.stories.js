@@ -14,9 +14,17 @@ export const Default = () => {
 	const label = text('data-label', 'Label');
 	const checked = boolean('checked', false);
 	const disabled = boolean('disabled', false);
+	const readonly = boolean('readonly', false);
 
 	return html`
-		<ts-checkbox dir="${dir}" ?disabled="${disabled}" ?checked="${checked}" data-label="${label}"> </ts-checkbox>
+		<ts-checkbox
+			dir="${dir}"
+			?disabled="${disabled}"
+			?readonly="${readonly}"
+			?checked="${checked}"
+			data-label="${label}"
+		>
+		</ts-checkbox>
 	`;
 };
 
