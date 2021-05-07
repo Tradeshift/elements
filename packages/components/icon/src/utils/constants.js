@@ -17,6 +17,7 @@ export const types = {
 	DISABLED_CHECKED: 'disabled-checked',
 	SUGGESTED: 'suggested',
 	SLATE_LIGHTEST: 'slate-lightest',
+	GRAY_DARKER: 'gray-darker',
 	ACTION: 'action'
 };
 
@@ -35,6 +36,7 @@ export const typeColors = {
 	[types.SUGGESTED]: colors.PURPLE,
 	[types.DISABLED_CHECKED]: colors.GRAY + colorModifiers.LIGHT,
 	[types.SLATE_LIGHTEST]: colors.SLATE + colorModifiers.LIGHTEST,
+	[types.GRAY_DARKER]: colors.GRAY + colorModifiers.DARKER,
 	[types.ACTION]: colors.GRAY
 };
 

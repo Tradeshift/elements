@@ -1,0 +1,23 @@
+{
+  "name": "@tradeshift/elements.select",
+  "version": "0.22.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/select"
+  },
+  "main": "lib/select.umd.js",
+  "module": "lib/select.esm.js",
+  "browser": "lib/select.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.22.0",
+    "@tradeshift/elements.button": "^0.22.0",
+    "@tradeshift/elements.button-group": "^0.22.0",
+    "@tradeshift/elements.icon": "^0.22.0",
+    "@tradeshift/elements.list-item": "^0.22.0"
+  },
+  "src": "src/select.js"
+}

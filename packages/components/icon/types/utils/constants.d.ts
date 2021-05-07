@@ -13,6 +13,7 @@ export namespace types {
     export const DISABLED_CHECKED: string;
     export const SUGGESTED: string;
     export const SLATE_LIGHTEST: string;
+    export const GRAY_DARKER: string;
     export const ACTION: string;
 }
 export const typeColors: {
