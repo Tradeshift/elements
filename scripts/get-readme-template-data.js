@@ -4,7 +4,7 @@ const tablemark = require('tablemark');
 const componentsPath = `./packages/components`;
 const { compStateLogger } = require('./helpers');
 
-module.exports = function(componentName) {
+module.exports = function (componentName) {
 	const slots = getSlots(componentName);
 	const properties = getProperties(componentName);
 	const events = getEvents(componentName);
@@ -49,6 +49,11 @@ function getProperties(componentName) {
 
 function readComponentFile(componentName, filePth) {
 	const filePath = path.join(process.cwd(), `${componentsPath}/${componentName}${filePth}`);
-	const fileContent = fs.readFileSync(filePath, 'utf8');
-	return fileContent.length ? JSON.parse(fileContent) : {};
+	try {
+		const fileContent = fs.readFileSync(filePath, 'utf8');
+		return fileContent.length ? JSON.parse(fileContent) : [];
+	} catch {
+		compStateLogger(componentName, 'No file was found: ' + filePath);
+		return [];
+	}
 }

@@ -2,36 +2,115 @@
 
 :host,
 :host > div {
+	position: relative;
 	width: 100%;
+	margin-bottom: var(--ts-unit-half);
+}
+
+::slotted(input),
+::slotted(textarea) {
+	width: 100%;
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight);
+	padding: var(--ts-unit-quarter) var(--ts-unit-half);
+	border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
+	border-radius: var(--ts-radius);
+	background-color: var(--ts-color-white);
+	box-sizing: border-box;
 }
 
 ::slotted(input) {
 	height: var(--ts-unit-plus);
-	width: 100%;
-	font-size: var(--ts-fontsize-mini);
-	font-weight: var(--ts-fontweight);
-	padding: calc(var(--ts-unit-quarter) - 1px) var(--ts-unit-half);
-	border: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-default);
-	border-radius: var(--ts-radius);
-	background-color: var(--ts-color-white);
 	white-space: nowrap;
 	word-wrap: normal;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	box-sizing: border-box;
 }
 
-::slotted(input:not([disabled]):hover) {
-	border-color: var(--ts-color-blue-light);
-	box-shadow: 0 0 0 1px var(--ts-color-blue-lighter);
+::slotted(textarea) {
+	resize: none;
+	min-height: calc(3 * var(--ts-unit) + var(--ts-unit-half));
+	max-height: calc(10 * var(--ts-unit) + var(--ts-unit-half));
 }
 
-::slotted(input:not([disabled]):focus) {
-	border-color: var(--ts-border-color-focus);
+::slotted(input:not([disabled]):not([readonly]):hover),
+::slotted(textarea:not([disabled]):not([readonly]):hover) {
+	border-color: var(--ts-color-blue-lighter);
+	box-shadow: 0 0 0 1px var(--ts-color-blue-light);
+}
+
+::slotted(input:not([disabled]):not([readonly]):focus-visible),
+::slotted(textarea:not([disabled]):not([readonly]):focus-visible) {
+	outline: none;
+}
+
+::slotted(input:not([disabled]):not([readonly]):focus),
+::slotted(textarea:not([disabled]):not([readonly]):focus) {
+	border-color: var(--ts-color-blue);
+	box-shadow: 0 0 0 1px var(--ts-color-blue-light);
+}
+
+:host([has-error]) {
+	& ::slotted(input:not([disabled]):not([readonly])),
+	& ::slotted(textarea:not([disabled]):not([readonly])) {
+		border-color: var(--ts-color-red);
+	}
+
+	& ::slotted(input:not([disabled]):not([readonly]):hover),
+	& ::slotted(textarea:not([disabled]):not([readonly]):hover) {
+		box-shadow: 0 0 0 1px var(--ts-color-red-light);
+	}
+
+	& ::slotted(input:not([disabled]):not([readonly]):focus),
+	& ::slotted(textarea:not([disabled]):not([readonly]):focus) {
+		box-shadow: 0 0 0 1px var(--ts-color-red-dark);
+	}
 }
 
 /* Disable........................................................ */
 
 ::slotted([disabled]) {
 	color: var(--ts-disabled-color);
+}
+
+/* With icons ........................................................ */
+
+.icon-end,
+.icon-start {
+	position: absolute;
+	top: calc((var(--ts-unit-plus) - var(--ts-fontsize-xbig)) / 2);
+}
+
+.icon-end {
+	right: var(--ts-unit-quarter);
+}
+
+:host([icon-end]:not([icon-end=''])) {
+	& ::slotted(input),
+	& ::slotted(textarea) {
+		padding-right: var(--ts-unit-plus);
+	}
+}
+
+.icon-start {
+	left: var(--ts-unit-quarter);
+}
+
+:host([icon-start]:not([icon-start=''])) {
+	& ::slotted(input),
+	& ::slotted(textarea) {
+		padding-left: var(--ts-unit-plus);
+	}
+}
+
+[dir='rtl'] {
+	& .icon-end {
+		right: initial;
+		left: var(--ts-unit-quarter);
+	}
+
+	& .icon-start {
+		left: initial;
+		right: var(--ts-unit-quarter);
+	}
 }

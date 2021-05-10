@@ -129,6 +129,7 @@
     "@tradeshift/elements.status": "file:packages/components/status",
     "@tradeshift/elements.tab": "file:packages/components/tab",
     "@tradeshift/elements.tabs": "file:packages/components/tabs",
+    "@tradeshift/elements.text-field": "file:packages/components/text-field",
     "@tradeshift/elements.tooltip": "file:packages/components/tooltip",
     "@tradeshift/elements.typography": "file:packages/components/typography"
   },

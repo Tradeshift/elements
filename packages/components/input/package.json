@@ -15,7 +15,8 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.22.0"
+    "@tradeshift/elements": "^0.22.0",
+    "@tradeshift/elements.icon": "^0.22.0"
   },
   "src": "src/input.js"
 }

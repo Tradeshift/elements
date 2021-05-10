@@ -1,0 +1,21 @@
+{
+  "name": "@tradeshift/elements.text-field",
+  "version": "0.22.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/text-field"
+  },
+  "main": "lib/text-field.umd.js",
+  "module": "lib/text-field.esm.js",
+  "browser": "lib/text-field.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.22.0",
+    "@tradeshift/elements.help-text": "^0.22.0",
+    "@tradeshift/elements.input": "^0.22.0"
+  },
+  "src": "src/text-field.js"
+}

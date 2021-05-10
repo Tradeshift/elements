@@ -12,15 +12,15 @@ export class TSHelpText extends TSElement {
 	static get properties() {
 		return {
 			/** List of message(s) */
-			messages: { type: Array },
+			messages: { type: Array, reflect: true },
 			/** If there are multiple messages, there should be a title for the help text */
-			title: { type: String },
-			size: { type: String },
-			rtl: { type: Boolean },
+			title: { type: String, reflect: true },
+			size: { type: String, reflect: true },
+			rtl: { type: Boolean, reflect: true },
 			/** Apply disabled style for the message */
-			disabled: { type: Boolean },
+			disabled: { type: Boolean, reflect: true },
 			/** Type of the help text which changes the styling and icon: 'error' */
-			type: { type: String }
+			type: { type: String, reflect: true }
 		};
 	}
 
@@ -34,7 +34,7 @@ export class TSHelpText extends TSElement {
 			default: 'info',
 			error: 'error'
 		};
-		let iconType = iconTypes[this.type ? this.type : 'default'];
+		let iconType = iconTypes[this.type ? this.type : iconTypes.default];
 		if (this.disabled) {
 			iconType = 'disabled';
 		}
@@ -53,7 +53,7 @@ export class TSHelpText extends TSElement {
 							<dt>
 								${this.infoIcon}
 								<!-- Customize title of the help text if there are multiple messages -->
-								<slot name="title"> ${this.title} </slot>
+								<slot name="title">${this.title}</slot>
 							</dt>
 					  `
 					: ''}
