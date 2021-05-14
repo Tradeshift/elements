@@ -71,7 +71,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run check-deps"
+      "pre-commit": "npm run update-readme && lint-staged && npm run check-deps"
     }
   },
   "lint-staged": {
