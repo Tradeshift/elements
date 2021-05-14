@@ -53,6 +53,7 @@ function staticComponentNames() {
 		'radio-group',
 		// 'root',
 		'search',
+		'select',
 		'spinner',
 		'status',
 		'tab',
