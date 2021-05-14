@@ -40,12 +40,12 @@
 | value | value | String | '' | Value of the text field |
 | type | type | String | 'text' | Pass type of the input element, if it's not multiline |
 | placeholder | placeholder | String | '' | Placeholder of the text field |
-| helpTextMessages | help-text-messages | Array |  | Array of messages to pass to helpt-text component. See help-text component for more info |
+| helpTextMessages | help-text-messages | Array |  | Array of messages to pass to help-text component. See help-text component for more info |
 | helpTextTitle | help-text-title | String |  | If you have more than one help text message , you should pass a title to it. See help-text component for more info |
 | errorMessages | error-messages | Array |  | Error messages to show underneath of the input when it has error |
 | errorTitle | error-title | String |  | Error title, if there are more than one error message |
 | hasError | has-error | Boolean | false | If the text field has an error, to show error messages and change the style of the input |
-| required | required | Boolean | false | To show the astrix in the label, not doing validation yet |
+| required | required | Boolean | false | To show the asterisk in the label, not doing validation yet |
 | disabled | disabled | Boolean | false | Is the text field disabled? |
 | readonly | readonly | Boolean | false | Is the text field readonly? |
 | multiline | multiline | Boolean | false | Will show a textarea instead of an input |

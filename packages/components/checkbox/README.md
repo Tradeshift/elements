@@ -41,6 +41,7 @@
 | label | data-label | String |  | Label of checkbox. To customize the label and have something more than simple string, use the slot, and remove this attribute |
 | checked | checked | Boolean | false | Status of checkbox |
 | disabled | disabled | Boolean | false | disabled |
+| readonly | readonly | Boolean | false | readonly, user can't change the value like disabled, but with different styling |
 
 ## ➤ Slots
 

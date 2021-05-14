@@ -16,6 +16,7 @@ function getSrcProperties(fileContent) {
 
 function getPropertiesObject(properties, defaultValues, srcProperties) {
 	const outObject = [];
+	const propertiesDescriptions = getPropertiesDescriptions(Object.keys(properties), srcProperties);
 	Object.keys(properties).forEach((propertyName, index) => {
 		const propertyData = properties[propertyName];
 		delete propertyData.reflect; // delete reflect since it's not useful information for readme
@@ -24,7 +25,7 @@ function getPropertiesObject(properties, defaultValues, srcProperties) {
 			Attribute: propertyData.attribute || propertyName,
 			Type: getPropertyType(propertyData),
 			Default: getDefaultValueOfProperty(propertyName, propertyData, defaultValues),
-			Description: getPropertyDescription(propertyName, srcProperties)
+			Description: propertiesDescriptions[propertyName]
 		};
 	});
 	return outObject;
@@ -61,16 +62,20 @@ function getPropertyType(propertyData) {
 	return propertyData && propertyData.type && propertyData.type.name;
 }
 
-function getPropertyDescription(propertyName, srcProperties) {
+function getPropertiesDescriptions(properties, srcProperties) {
 	const splittedProps = srcProperties.split(`: {`);
-	let description = '';
-	splittedProps.forEach(propString => {
-		if (propString.indexOf(`*/${propertyName}`) > 0) {
-			description = propString.split(`*/${propertyName}`)[0].split('/**')[1];
+	const descriptions = {};
+
+	properties.forEach(propertyName => {
+		let description = '';
+		const descriptionAndPropName = splittedProps.find(propString => propString.indexOf(`*/${propertyName}`) > 0);
+		if (descriptionAndPropName) {
+			description = descriptionAndPropName.split(`*/${propertyName}`)[0].split('/**')[1];
 			// Multiline description would still have beginning *, which need to be replaced by the <br> to be shown
 			// properly, on multi lines, in markdown table cell.
 			description = description.replace(/\*/g, '<br>');
 		}
+		descriptions[propertyName] = description;
 	});
-	return description;
+	return descriptions;
 }
