@@ -34,20 +34,20 @@
 :host([position='right']) {
 	&::before {
 		bottom: calc(50% - var(--ts-unit));
-		left: 115%;
+		left: calc(100% + var(--ts-unit-half));
 	}
 }
 
 :host([position='left']) {
 	&::before {
 		bottom: calc(50% - var(--ts-unit));
-		right: 115%;
+		right: calc(100% + var(--ts-unit-half));
 	}
 }
 
 :host([position='top']) {
 	&::before {
-		bottom: 115%;
+		bottom: calc(100% + var(--ts-unit-half));
 		left: 50%;
 		transform: translate(-50%, 0);
 	}
@@ -55,7 +55,7 @@
 
 :host([position='bottom']) {
 	&::before {
-		top: 115%;
+		top: calc(100% + var(--ts-unit-half));
 		left: 50%;
 		transform: translate(-50%, 0);
 	}
