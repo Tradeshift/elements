@@ -35,7 +35,7 @@
 
 | Property | Attribute | Type | Default | Description |
 | --- | --- | --- | --- | --- |
-| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
+| dir | dir | String | ltr | INTERNAL Does component has uncommited changes or not. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | opened | opened | Boolean | false | Is the dropdown part opened or not. |
 | items | items | Array |  | List of available options. |
