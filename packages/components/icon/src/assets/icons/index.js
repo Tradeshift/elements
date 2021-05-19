@@ -26,6 +26,15 @@ import edit from './edit.svg';
 import deleteIcon from './delete.svg';
 import checkbox from './checkbox.svg';
 import checkboxOn from './checkbox-on.svg';
+import allDocuments from './all-documents.svg';
+import cancel from './cancel.svg';
+import companySize from './company-size.svg';
+import industry from './industry.svg';
+import insertFromInventory from './insert-from-inventory.svg';
+import network from './network.svg';
+import pay from './pay.svg';
+import preview from './preview.svg';
+import send from './send.svg';
 
 const icons = {
 	remove,
@@ -45,6 +54,15 @@ const icons = {
 	edit,
 	delete: deleteIcon,
 	checkbox,
+	cancel,
+	industry,
+	network,
+	pay,
+	preview,
+	send,
+	'company-size': companySize,
+	'insert-from-inventory': insertFromInventory,
+	'all-documents': allDocuments,
 	'check-alt': checkAlt,
 	'arrow-up': arrowUp,
 	'arrow-down-short': arrowDownShort,
