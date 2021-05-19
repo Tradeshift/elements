@@ -74,7 +74,13 @@ export class TSListItem extends TSElement {
 	get textWrapper() {
 		return html`
 			<div class="text-wrapper">
-				<ts-typography class="title" variant="semi-bold" type="${this.colorType}" text="${this.title}"></ts-typography>
+				<ts-typography
+					class="title"
+					variant="semi-bold"
+					type="${this.colorType}"
+					text="${this.title}"
+					no-tooltip
+				></ts-typography>
 				${this.subtitle
 					? html`
 							<ts-typography
@@ -82,6 +88,7 @@ export class TSListItem extends TSElement {
 								type="${this.colorType}"
 								text="${this.subtitle}"
 								?no-wrap="${this.noWrap}"
+								no-tooltip
 							></ts-typography>
 					  `
 					: null}
