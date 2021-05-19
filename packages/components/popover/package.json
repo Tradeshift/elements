@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.popover",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,8 +13,8 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.23.0",
-    "@tradeshift/elements.icon": "^0.23.0"
+    "@tradeshift/elements": "^0.24.0",
+    "@tradeshift/elements.icon": "^0.24.0"
   },
   "src": "src/popover.js"
 }
