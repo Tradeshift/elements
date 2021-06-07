@@ -15,13 +15,6 @@ pipeline {
     }
 
     stages {
-        stage('Initialise PR') {
-            when { changeRequest() }
-            steps {
-                // We need to reset the SonarQube status in the beginning
-                githubNotify(status: 'PENDING', context: 'sonarqube', description: 'Not analysed')
-            }
-        }
         stage('Clone') {
             steps {
                 checkout scm
