@@ -40,7 +40,7 @@
 | size | size | String | sizes.FULL |  |
 | rtl | rtl | Boolean | false |  |
 | disabled | disabled | Boolean | false | Apply disabled style for the message |
-| type | type | String |  | Type of the help text which changes the styling and icon: 'error' |
+| type | type | String |  | Type of the help text which changes the styling and icon: 'error', 'warning' |
 
 ## ➤ Slots
 
