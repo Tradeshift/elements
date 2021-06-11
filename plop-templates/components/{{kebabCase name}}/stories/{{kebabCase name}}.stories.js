@@ -2,6 +2,7 @@ import { html } from 'lit-html';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.{{kebabCase name}}';
+import readme from '../README.md';
 
 export default {
 	title: 'ts-{{kebabCase name}}',
@@ -20,5 +21,6 @@ export const Default = () => {
 };
 
 Default.story = {
-	name: 'default'
+	name: 'default',
+	parameters: { notes: readme }
 };
