@@ -36,5 +36,6 @@
 	"@tradeshift/elements.select": "ts.elements.select",
 	"@tradeshift/elements.tabs": "ts.elements.tabs",
 	"@tradeshift/elements.tab": "ts.elements.tab",
-	"@tradeshift/elements.text-field": "ts.elements.text-field"
+	"@tradeshift/elements.text-field": "ts.elements.text-field",
+	"@tradeshift/elements.confirmation-prompt": "ts.elements.confirmation-prompt"
 }
