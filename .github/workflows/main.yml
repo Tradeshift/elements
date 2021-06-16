@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
 
       - name: ⎔ Setup node
         uses: actions/setup-node@v1
@@ -23,13 +25,15 @@ jobs:
       - name: 📥 Download
         run: npm run lerna:bootstrap:ci
 
-      - name: ▶️ Run tests
+      - name: ▶️ Lint and build
         run: |
           npm run clean
           npm run lint
           npm run copy:static
           npm run build:prod
-          INSTALL_CMD="echo 'happo-ci-travis'" npm run happo-ci-travis
+
+      - name: 🔎 Run happo
+        run: npm run happo-ci-github-actions
         env:
-          HAPPO_API_KEY: ""
-          HAPPO_API_SECRET: ""
+          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
+          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
