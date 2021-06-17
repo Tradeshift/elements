@@ -44,7 +44,7 @@
     "greenkeeper:lockfile:update": "greenkeeper-lockfile-update",
     "greenkeeper:lockfile:upload": "greenkeeper-lockfile-upload",
     "happo": "happo",
-    "happo-ci-travis": "happo-ci-travis",
+    "happo-ci-github-actions": "happo-ci-github-actions",
     "lerna-clean": "cross-env-shell lerna clean",
     "lerna:bootstrap:ci": "lerna bootstrap --ci",
     "lerna:bootstrap:no-ci": "lerna bootstrap --no-ci",
