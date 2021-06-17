@@ -1,0 +1,21 @@
+/* General........................................................ */
+
+:host {
+}
+
+.content {
+	max-width: 500px;
+	margin: auto;
+}
+
+.footer {
+	padding: var(--ts-unit-half) 0;
+	background-color: var(--ts-color-gray-lightest);
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row-reverse;
+}
+
+ts-button {
+	margin-right: var(--ts-unit-half);
+}

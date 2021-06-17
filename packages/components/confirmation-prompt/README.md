@@ -4,24 +4,24 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - help-text</h1>
+<h1 align="center">Elements - confirmation-prompt</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-help-text--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-confirmation-prompt--default">
       Demo
     </a>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.help-text">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.help-text" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.confirmation-prompt">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.confirmation-prompt" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.help-text?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.help-text" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.confirmation-prompt?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.confirmation-prompt" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.help-text">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.help-text" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.confirmation-prompt">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.confirmation-prompt" height="20"/>
 		</a>
 </p>
 
@@ -35,41 +35,54 @@
 
 | Property | Attribute | Type | Default | Description |
 | --- | --- | --- | --- | --- |
-| messages | messages | Array |  | List of message(s) |
-| title | title | String |  | If there are multiple messages, there should be a title for the help text |
-| size | size | String | sizes.FULL |  |
-| rtl | rtl | Boolean | false |  |
-| disabled | disabled | Boolean | false | Apply disabled style for the message |
-| type | type | String |  | Type of the help text which changes the styling and icon: 'error', 'warning' |
+| visible | data-visible | Boolean | false | Dialog can be toggled by add/removing this attribute |
+| header | data-header | String |  | Header of the modal |
+| title | data-title | String |  | Title on top of the text part |
+| text | text | String |  | Text content of the modal |
+| textFieldLabel | text-field-label | String |  | Label of the text field component |
+| textFieldPlaceholder | text-field-placeholder | String |  | Placeholder of the text field component |
+| helpTextMessages | help-text-messages | Array |  | Array of messages to pass to help-text component. See help-text component for more info |
+| helpTextTitle | help-text-title | String |  | If you have more than one help text message, you should pass a title to it. See help-text component for more info |
+| translations | translations | Object |  | Can be used for customizing the buttons text and providing translations for them |
+| textToMatch | text-to-match | String |  | Text that the user need to type for confirmation |
+| matched | matched | Boolean | false | INTERNAL |
 
 ## ➤ Slots
 
-| Name     | Description                                                     |
-| -------- | --------------------------------------------------------------- |
-| title    | Customize title of the help text if there are multiple messages |
-| messages | Customize message items                                         |
+| Name | Description |
+| --- | --- |
+| title | If in rare cases you need to have more complex title than text property, you can override the title by using this slot |
+| content | If in rare cases you need to have more complex content than text property, you can override the text by using this slot |
+
+## ➤ Events
+
+| Name | Description | Payload |
+| --- | --- | --- |
+| accept | Emitted when the user choose the accept option |  |
+| cancel | Emitted when the user choose the cancel option |  |
+| close | Emitted when the user dismiss the modal, includes cancel button click, close button click, backdrop cover click |  |
 
 ## ➤ How to use it
 
-- Install the package of helpText
+- Install the package of confirmationPrompt
 
 ```shell
-$ npm i @tradeshift/elements.help-text --save
+$ npm i @tradeshift/elements.confirmation-prompt --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.help-text';
+import '@tradeshift/elements.confirmation-prompt';
 ```
 
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.help-text/lib/help-text.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.confirmation-prompt/lib/confirmation-prompt.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-help-text--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-confirmation-prompt--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 

@@ -103,6 +103,7 @@
     "@tradeshift/elements.button-group": "file:packages/components/button-group",
     "@tradeshift/elements.card": "file:packages/components/card",
     "@tradeshift/elements.checkbox": "file:packages/components/checkbox",
+    "@tradeshift/elements.confirmation-prompt": "file:packages/components/confirmation-prompt",
     "@tradeshift/elements.cover": "file:packages/components/cover",
     "@tradeshift/elements.dialog": "file:packages/components/dialog",
     "@tradeshift/elements.document-card": "file:packages/components/document-card",

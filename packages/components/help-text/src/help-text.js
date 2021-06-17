@@ -2,7 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshi
 import css from './help-text.css';
 import '@tradeshift/elements.icon';
 
-import { classNames, sizes } from './utils';
+import { sizes } from './utils';
 
 export class TSHelpText extends TSElement {
 	static get styles() {
@@ -19,7 +19,7 @@ export class TSHelpText extends TSElement {
 			rtl: { type: Boolean, reflect: true },
 			/** Apply disabled style for the message */
 			disabled: { type: Boolean, reflect: true },
-			/** Type of the help text which changes the styling and icon: 'error' */
+			/** Type of the help text which changes the styling and icon: 'error', 'warning' */
 			type: { type: String, reflect: true }
 		};
 	}
@@ -29,16 +29,22 @@ export class TSHelpText extends TSElement {
 		this.size = sizes.FULL;
 	}
 
-	get infoIcon() {
+	get icon() {
 		const iconTypes = {
 			default: 'info',
-			error: 'error'
+			error: 'error',
+			warning: 'warning'
 		};
 		let iconType = iconTypes[this.type ? this.type : iconTypes.default];
 		if (this.disabled) {
 			iconType = 'disabled';
 		}
-		return html` <ts-icon class="info-icon" icon="info" size="medium" type="${iconType}"></ts-icon> `;
+		const icons = {
+			default: 'info',
+			warning: 'alert'
+		};
+		const icon = icons[this.type] ? icons[this.type] : icons.default;
+		return html`<ts-icon class="info-icon" icon="${icon}" size="medium" type="${iconType}"></ts-icon>`;
 	}
 
 	render() {
@@ -48,11 +54,11 @@ export class TSHelpText extends TSElement {
 
 		return html`
 			<dl ?data-rtl="${rtl}" data-size="${this.size}">
-				${!isSingleMessage && this.title
+				${this.title
 					? html`
 							<dt>
-								${this.infoIcon}
-								<!-- Customize title of the help text if there are multiple messages -->
+								${this.icon}
+								<!-- You can use this slot to provide custom html as title of the help text -->
 								<slot name="title">${this.title}</slot>
 							</dt>
 					  `
@@ -61,8 +67,8 @@ export class TSHelpText extends TSElement {
 				<slot name="messages">
 					${this.messages.map(
 						message => html`
-							<dd class="${isSingleMessage ? classNames.SINGLE_MESSAGE : ''}">
-								${isSingleMessage ? this.infoIcon : ''} ${message}
+							<dd class="${isSingleMessage && !this.title ? 'single-message' : ''}">
+								${isSingleMessage && !this.title ? this.icon : ''} ${message}
 							</dd>
 						`
 					)}

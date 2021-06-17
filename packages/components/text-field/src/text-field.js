@@ -35,6 +35,8 @@ export class TSTextField extends TSElement {
 			helpTextMessages: { type: Array, reflect: true, attribute: 'help-text-messages' },
 			/** If you have more than one help text message , you should pass a title to it. See help-text component for more info  */
 			helpTextTitle: { type: String, reflect: true, attribute: 'help-text-title' },
+			/** To change the help text icon and style if needed. See help-text component for more info  */
+			helpTextType: { type: String, reflect: true, attribute: 'help-text-type' },
 			/** Error messages to show underneath of the input when it has error */
 			errorMessages: { type: Array, reflect: true, attribute: 'error-messages' },
 			/** Error title, if there are more than one error message */

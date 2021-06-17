@@ -42,6 +42,7 @@
 | placeholder | placeholder | String | '' | Placeholder of the text field |
 | helpTextMessages | help-text-messages | Array |  | Array of messages to pass to help-text component. See help-text component for more info |
 | helpTextTitle | help-text-title | String |  | If you have more than one help text message , you should pass a title to it. See help-text component for more info |
+| helpTextType | help-text-type | String |  | To change the help text icon and style if needed. See help-text component for more info |
 | errorMessages | error-messages | Array |  | Error messages to show underneath of the input when it has error |
 | errorTitle | error-title | String |  | Error title, if there are more than one error message |
 | hasError | has-error | Boolean | false | If the text field has an error, to show error messages and change the style of the input |

@@ -1,0 +1,22 @@
+{
+  "name": "@tradeshift/elements.confirmation-prompt",
+  "version": "0.24.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/confirmation-prompt"
+  },
+  "main": "lib/confirmation-prompt.umd.js",
+  "module": "lib/confirmation-prompt.esm.js",
+  "browser": "lib/confirmation-prompt.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.24.0",
+    "@tradeshift/elements.button": "^0.24.0",
+    "@tradeshift/elements.modal": "^0.24.0",
+    "@tradeshift/elements.text-field": "^0.24.0"
+  },
+  "src": "src/confirmation-prompt.js"
+}
