@@ -44,10 +44,10 @@
 
 ## ➤ Slots
 
-| Name     | Description                                                     |
-| -------- | --------------------------------------------------------------- |
-| title    | Customize title of the help text if there are multiple messages |
-| messages | Customize message items                                         |
+| Name     | Description                                           |
+| -------- | ----------------------------------------------------- |
+| title    | You can use this slot to provide custom html as title |
+| messages | Customize message items                               |
 
 ## ➤ How to use it
 

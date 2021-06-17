@@ -58,7 +58,7 @@ export class TSHelpText extends TSElement {
 					? html`
 							<dt>
 								${this.icon}
-								<!-- You can use this slot to provide custom html as title of the help text -->
+								<!-- You can use this slot to provide custom html as title -->
 								<slot name="title">${this.title}</slot>
 							</dt>
 					  `
