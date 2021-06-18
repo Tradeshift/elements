@@ -3,6 +3,8 @@
 :host {
 	& fieldset {
 		border: 0 none;
+		margin: 0;
+		padding: 0;
 
 		& legend {
 			text-transform: uppercase;
