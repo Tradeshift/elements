@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.text-field",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,9 +13,9 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.25.0",
-    "@tradeshift/elements.help-text": "^0.25.0",
-    "@tradeshift/elements.input": "^0.25.0"
+    "@tradeshift/elements": "^0.26.0",
+    "@tradeshift/elements.help-text": "^0.26.0",
+    "@tradeshift/elements.input": "^0.26.0"
   },
   "src": "src/text-field.js"
 }
