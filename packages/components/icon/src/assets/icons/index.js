@@ -35,6 +35,7 @@ import network from './network.svg';
 import pay from './pay.svg';
 import preview from './preview.svg';
 import send from './send.svg';
+import associated from './associated.svg';
 
 const icons = {
 	remove,
@@ -60,6 +61,7 @@ const icons = {
 	pay,
 	preview,
 	send,
+	associated,
 	'company-size': companySize,
 	'insert-from-inventory': insertFromInventory,
 	'all-documents': allDocuments,
