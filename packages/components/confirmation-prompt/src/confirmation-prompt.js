@@ -94,7 +94,7 @@ export class TSConfirmationPrompt extends TSElement {
 				?data-visible=${this.visible}
 				data-size="medium"
 				data-title="${this.header || ''}"
-				@close="${this.onClose}"
+				@closed="${this.onClose}"
 			>
 				<div class="content" slot="main">
 					<h2>
