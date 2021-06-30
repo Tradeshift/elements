@@ -67,6 +67,10 @@ export class TSModal extends TSElement {
 
 	close() {
 		this.visible = false;
+		/**
+		 * Emitted on start of the modal closing
+		 */
+		this.dispatchCustomEvent('close');
 	}
 
 	handleTransition(e) {
@@ -96,11 +100,6 @@ export class TSModal extends TSElement {
 			 * Emitted on start of the modal opening
 			 */
 			this.dispatchCustomEvent('open');
-		} else {
-			/**
-			 * Emitted on start of the modal closing
-			 */
-			this.dispatchCustomEvent('close');
 		}
 	}
 
