@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.progress-bar",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.26.0"
+    "@tradeshift/elements": "^0.27.0"
   },
   "src": "src/progress-bar.js"
 }
