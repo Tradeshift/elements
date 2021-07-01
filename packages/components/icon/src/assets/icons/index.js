@@ -36,6 +36,7 @@ import pay from './pay.svg';
 import preview from './preview.svg';
 import send from './send.svg';
 import associated from './associated.svg';
+import companyProfile from './company-profile.svg';
 
 const icons = {
 	remove,
@@ -73,7 +74,8 @@ const icons = {
 	'close-clear': closeClear,
 	'menu-switch': menuSwitch,
 	'add-to-archive': addToArchive,
-	'checkbox-on': checkboxOn
+	'checkbox-on': checkboxOn,
+	'company-profile': companyProfile
 };
 
 // convert svg strings to html element
