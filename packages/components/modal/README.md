@@ -55,10 +55,10 @@
 
 | Name   | Description                                       | Payload |
 | ------ | ------------------------------------------------- | ------- |
+| close  | Emitted on start of the modal closing             |         |
 | opened | Emitted when the animation of opening is finished |         |
 | closed | Emitted when the animation of closing is finished |         |
 | open   | Emitted on start of the modal opening             |         |
-| close  | Emitted on start of the modal closing             |         |
 
 ## ➤ How to use it
 
