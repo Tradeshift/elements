@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './list-item.css';
 
 import '@tradeshift/elements.typography';
@@ -43,10 +43,8 @@ export class TSListItem extends TSElement {
 		return colorType;
 	}
 
-	slotChangeHandler(e) {
+	slotChangeHandler() {
 		this.hasSlottedIcon = true;
-		const slottedNodes = e.currentTarget.assignedNodes();
-		validateSlottedNodes(this.tagName, slottedNodes, ['TS-APP-ICON']);
 		this.requestUpdate();
 	}
 
