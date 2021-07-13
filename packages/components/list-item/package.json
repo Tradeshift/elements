@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.list-item",
-  "version": "0.27.0",
+  "version": "0.27.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,9 +15,9 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.27.0",
-    "@tradeshift/elements.icon": "^0.27.0",
-    "@tradeshift/elements.typography": "^0.27.0"
+    "@tradeshift/elements": "^0.27.1",
+    "@tradeshift/elements.icon": "^0.27.1",
+    "@tradeshift/elements.typography": "^0.27.1"
   },
   "src": "src/list-item.js"
 }
