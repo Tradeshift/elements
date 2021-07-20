@@ -233,10 +233,14 @@ $ npm run component-gen
 
 We are using [lerna to publish](https://github.com/lerna/lerna/tree/main/commands/version#readme) our elements
 
-- Create a branch for releasing。 `git branch release`
-- `git push release` and set the upstream.
-- `npm run lerna-version` calculate a new version number, generate CHANGELOG.md for all components and make a commit with a predefined commit message.
-- Create a PR from the branch created earlier.
+- Checkout a master branch.
+- Run the `npm run new-version` command. It will invoke a shell script that:
+  - calculate a new version number
+  - create a new branch with new version number and a new git tag
+  - generate CHANGELOG.md for all components
+  - make a commit with a predefined commit message to created branch
+  - push this branch and git tag to origin
+- Go to Github and create a PR from the branch created at previous step.
 - After merge a new version of elements will be built and published to NPM registry and Github Packages.
 
 ---
