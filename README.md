@@ -89,9 +89,7 @@ or
 - Use it
 
 ```html
-<ts-button type="primary">
-	Sample Button
-</ts-button>
+<ts-button type="primary"> Sample Button </ts-button>
 ```
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
@@ -163,16 +161,16 @@ $ npm i @webcomponents/webcomponentsjs --save
 ```html
 <!-- Load Tradeshift Elements once the polyfills are ready -->
 <script>
-	window.addEventListener('WebComponentsReady', function() {
+	window.addEventListener('WebComponentsReady', function () {
 		// Load Tradeshift Elements core package
 		var coreEl = document.createElement('script');
 		coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
 		document.body.appendChild(coreEl);
 
 		// Load other Tradeshift Elements once the core package is loaded
-		coreEl.onload = function() {
+		coreEl.onload = function () {
 			var components = ['root', 'button'];
-			components.forEach(function(component) {
+			components.forEach(function (component) {
 				var el = document.createElement('script');
 				el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
 				document.body.appendChild(el);
@@ -233,13 +231,13 @@ $ npm run component-gen
 
 ## ➤ How to release
 
-We are using [lerna to publish](https://github.com/lerna/lerna/tree/master/commands/publish#readme) our elements
+We are using [lerna to publish](https://github.com/lerna/lerna/tree/main/commands/version#readme) our elements
 
 - Create a branch for releasing。 `git branch release`
 - `git push release` and set the upstream.
-- `npm config delete @tradeshift:registry` delete the registry config so release could publish to different registries
-- `npm run release`
-- `npm config set @tradeshift:registry https://npm.pkg.github.com/` Set back npm to use github for @tradeshift packages
+- `npm run lerna-version` calculate a new version number, generate CHANGELOG.md for all components and make a commit with a predefined commit message.
+- Create a PR from the branch created earlier.
+- After merge a new version of elements will be built and published to NPM registry and Github Packages.
 
 ---
 
