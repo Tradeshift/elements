@@ -1,7 +1,5 @@
 name: Publish packages
 
-name: Publish packages
-
 on:
   push:
     branches:
