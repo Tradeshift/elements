@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.select",
-  "version": "0.27.2",
+  "version": "0.27.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,11 +13,11 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.27.2",
-    "@tradeshift/elements.button": "^0.27.2",
-    "@tradeshift/elements.button-group": "^0.27.2",
-    "@tradeshift/elements.icon": "^0.27.2",
-    "@tradeshift/elements.list-item": "^0.27.2"
+    "@tradeshift/elements": "^0.27.3",
+    "@tradeshift/elements.button": "^0.27.3",
+    "@tradeshift/elements.button-group": "^0.27.3",
+    "@tradeshift/elements.icon": "^0.27.3",
+    "@tradeshift/elements.list-item": "^0.27.3"
   },
   "src": "src/select.js"
 }
