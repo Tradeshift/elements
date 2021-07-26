@@ -306,9 +306,10 @@ export class TSSelect extends TSElement {
 
 	/** @private */
 	get dropdown() {
+		const searchString = this.filterValue.toLowerCase();
 		const filteredItems = this.items.filter(
 			item =>
-				item.title.indexOf(this.filterValue) > -1 &&
+				item.title.toLowerCase().indexOf(searchString) > -1 &&
 				(this.showSelectedOnly ? this.currentSelection.indexOf(item.id) > -1 : true)
 		);
 		return html`<div id="dropdown">
