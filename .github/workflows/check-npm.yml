@@ -1,0 +1,23 @@
+name: Check npm credentials
+
+on: [pull_request]
+
+jobs:
+  validate:
+    name: Check npm credentials
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+          cache: npm
+
+      - name: 📥 Check credentials
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN_PUBLIC }}
