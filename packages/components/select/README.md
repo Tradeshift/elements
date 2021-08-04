@@ -38,7 +38,7 @@
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | opened | opened | Boolean | false | Is the dropdown part opened or not. |
-| items | items | Array |  | List of available options. |
+| items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
 | multiselect | multiselect | Boolean | false | Allow users to select several options or not. |
 | selected | selected | Array | [] | List of selected items' ids |
 | placeholder | placeholder | String |  | Default placeholder when there is no selection. |

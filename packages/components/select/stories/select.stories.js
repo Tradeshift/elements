@@ -2,6 +2,7 @@ import { html } from 'lit-html';
 import { array, boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import '@tradeshift/elements.select';
+import readme from '../README.md';
 
 export default {
 	title: 'ts-select',
@@ -44,17 +45,24 @@ export const Default = () => {
 		}
 	}
 
-	return html`<ts-select
-		.dir="${dir}"
-		?disabled="${disabled}"
-		?opened="${opened}"
-		?multiselect="${multiselect}"
-		.placeholder="${placeholder}"
-		.selected="${selected}"
-		.items="${selectItems}"
-	></ts-select>`;
+	return html`
+		<div style="max-width: 500px;">
+			<ts-select
+				.dir="${dir}"
+				?disabled="${disabled}"
+				?opened="${opened}"
+				?multiselect="${multiselect}"
+				.placeholder="${placeholder}"
+				.selected="${selected}"
+				.items="${selectItems}"
+			></ts-select>
+		</div>
+	`;
 };
 
 Default.story = {
-	name: 'default'
+	name: 'default',
+	parameters: {
+		notes: readme
+	}
 };
