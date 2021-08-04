@@ -40,7 +40,7 @@ export class TSSelect extends TSElement {
 			disabled: { type: Boolean, reflect: true },
 			/** Is the dropdown part opened or not. */
 			opened: { type: Boolean, reflect: true },
-			/** List of available options. */
+			/** List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon */
 			items: { type: Array, reflect: true },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
