@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.5](https://github.com/Tradeshift/elements/compare/v0.27.4...v0.27.5) (2021-08-04)
+
+### Bug Fixes
+
+- **select:** [PEAA-632] update select documentation and show it in storybook ([9fea7c7](https://github.com/Tradeshift/elements/commit/9fea7c734e649c7d3c58825e77ab4b616aca2869))
+
 ## [0.27.4](https://github.com/Tradeshift/elements/compare/v0.27.2...v0.27.4) (2021-07-28)
 
 ### Bug Fixes
