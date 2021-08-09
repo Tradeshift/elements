@@ -1,0 +1,7 @@
+#container {
+	background-color: var(--ts-color-white);
+	display: flex;
+	& ts-icon {
+		cursor: pointer;
+	}
+}

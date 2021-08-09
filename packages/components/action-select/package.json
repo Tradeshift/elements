@@ -1,0 +1,22 @@
+{
+  "name": "@tradeshift/elements.action-select",
+  "version": "0.27.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/action-select"
+  },
+  "main": "lib/action-select.umd.js",
+  "module": "lib/action-select.esm.js",
+  "browser": "lib/action-select.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.27.6",
+    "@tradeshift/elements.icon": "^0.27.6",
+    "@tradeshift/elements.overlay": "^0.27.6",
+    "@tradeshift/elements.select-menu": "^0.27.6"
+  },
+  "src": "src/action-select.js"
+}
