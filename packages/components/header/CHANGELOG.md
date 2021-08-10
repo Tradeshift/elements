@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.6](https://github.com/Tradeshift/elements/compare/v0.27.5...v0.27.6) (2021-08-10)
+
+**Note:** Version bump only for package @tradeshift/elements.header
+
 ## [0.27.5](https://github.com/Tradeshift/elements/compare/v0.27.4...v0.27.5) (2021-08-04)
 
 **Note:** Version bump only for package @tradeshift/elements.header
