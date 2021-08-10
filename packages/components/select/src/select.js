@@ -94,6 +94,8 @@ export class TSSelect extends TSElement {
 		if (changedProperties.has('selected')) {
 			// initialise a current selection with selected items.
 			this.currentSelection = [...this.selected];
+			// update displayed value of selected items
+			this.updateInputValue();
 		}
 		if (changedProperties.has('opened') && !changedProperties.get('opened')) {
 			// clean filter values on every opening.
@@ -108,7 +110,6 @@ export class TSSelect extends TSElement {
 		super.attributeChangedCallback(name, oldVal, newVal);
 		switch (name) {
 			case 'opened':
-				console.log('opened');
 				if (newVal === null) {
 					// discard changes by assigning previously selected items to current selection
 					this.currentSelection = [...this.selected];
@@ -132,7 +133,9 @@ export class TSSelect extends TSElement {
 	/** @private */
 	updateInputValue() {
 		if (this.selected.length === 0) {
-			return '';
+			this.inputValue = '';
+			this.filterValue = '';
+			return;
 		}
 
 		if (this.selected.length === 1) {
