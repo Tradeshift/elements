@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.6](https://github.com/Tradeshift/elements/compare/v0.27.5...v0.27.6) (2021-08-10)
+
+### Bug Fixes
+
+- fixed incorrectly displayed value in a select component when a selection changed in property ([6157eca](https://github.com/Tradeshift/elements/commit/6157eca851c2d77fd40bfd3195f0803e8ce71978))
+
 ## [0.27.5](https://github.com/Tradeshift/elements/compare/v0.27.4...v0.27.5) (2021-08-04)
 
 ### Bug Fixes
