@@ -1,0 +1,6 @@
+/* General........................................................ */
+
+#container {
+	background-color: var(--ts-color-white);
+	position: absolute;
+}

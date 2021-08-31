@@ -114,6 +114,7 @@
     "@tradeshift/elements.list-item": "file:packages/components/list-item",
     "@tradeshift/elements.modal": "file:packages/components/modal",
     "@tradeshift/elements.note": "file:packages/components/note",
+    "@tradeshift/elements.overlay": "file:packages/components/overlay",
     "@tradeshift/elements.pager": "file:packages/components/pager",
     "@tradeshift/elements.popover": "file:packages/components/popover",
     "@tradeshift/elements.progress-bar": "file:packages/components/progress-bar",
