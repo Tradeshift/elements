@@ -20,6 +20,20 @@ export class TSOverlay extends TSElement {
 		};
 	}
 
+	/**
+	 * Reparents the overlay to document.body and returns a callback to remove it
+	 * @param {!HTMLElement} overlay the overlay component
+	 * @param {!HTMLElement} anchor anchor for overlay's positioning
+	 * @returns close callback to remove overlay from document.body
+	 */
+	static open(overlay, anchor) {
+		overlay.anchor = anchor;
+		document.body.appendChild(overlay);
+		return () => {
+			document.body.removeChild(overlay);
+		};
+	}
+
 	constructor() {
 		super();
 		this.autoWidth = false;
@@ -60,7 +74,10 @@ export class TSOverlay extends TSElement {
 			}
 
 			const slot = this.shadowRoot.querySelector('slot');
-			const childElements = slot.assignedElements();
+			const childElements = Array.prototype.filter.call(
+				slot.assignedNodes(),
+				node => node.nodeType === Node.ELEMENT_NODE
+			);
 			const contentContainer = childElements[0];
 			const anchorRect = this.anchor.getBoundingClientRect();
 			const contentWidth = contentContainer.getBoundingClientRect().width;
@@ -77,7 +94,7 @@ export class TSOverlay extends TSElement {
 	/**
 	 * Calculates horizontal position and width of the container
 	 * @private
-	 * @param {!ClientRect} anchorRect ClientRect of the container's anchor
+	 * @param {!DomRect} anchorRect ClientRect of the container's anchor
 	 * @param {!Number} contentWidth width of the content
 	 * @returns {!Object} position on left, right and width of the container
 	 */
@@ -123,7 +140,7 @@ export class TSOverlay extends TSElement {
 	/**
 	 * Calculates vertical position and max height of the container
 	 * @private
-	 * @param {!ClientRect} anchorRect
+	 * @param {!DomRect} anchorRect
 	 * @param {!Number} contentHeight
 	 * @returns {!Object} position on top, bottom and max height of the container
 	 */
@@ -154,7 +171,7 @@ export class TSOverlay extends TSElement {
 
 	/**
 	 * @private
-	 * @param {Event} event
+	 * @param {!Event} event
 	 */
 	handleOutsideClick(event) {
 		if (!('composedPath' in event)) {

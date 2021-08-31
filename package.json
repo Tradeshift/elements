@@ -123,6 +123,7 @@
     "@tradeshift/elements.root": "file:packages/components/root",
     "@tradeshift/elements.search": "file:packages/components/search",
     "@tradeshift/elements.select": "file:packages/components/select",
+    "@tradeshift/elements.select-menu": "file:packages/components/select-menu",
     "@tradeshift/elements.spinner": "file:packages/components/spinner",
     "@tradeshift/elements.status": "file:packages/components/status",
     "@tradeshift/elements.tab": "file:packages/components/tab",
