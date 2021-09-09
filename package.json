@@ -91,6 +91,7 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "file:packages/core",
+    "@tradeshift/elements.action-select": "file:packages/components/action-select",
     "@tradeshift/elements.app-icon": "file:packages/components/app-icon",
     "@tradeshift/elements.aside": "file:packages/components/aside",
     "@tradeshift/elements.basic-table": "file:packages/components/basic-table",
