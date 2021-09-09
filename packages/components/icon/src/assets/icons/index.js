@@ -37,6 +37,7 @@ import preview from './preview.svg';
 import send from './send.svg';
 import associated from './associated.svg';
 import companyProfile from './company-profile.svg';
+import more from './more.svg';
 
 const icons = {
 	remove,
@@ -63,6 +64,7 @@ const icons = {
 	preview,
 	send,
 	associated,
+	more,
 	'company-size': companySize,
 	'insert-from-inventory': insertFromInventory,
 	'all-documents': allDocuments,
