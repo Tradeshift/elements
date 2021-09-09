@@ -76,7 +76,7 @@ export const TestSingleSelect = () => {
 	`;
 };
 
-export const TestMultipeSelect = () => {
+export const TestMultipleSelect = () => {
 	return html`
 		<style>
 			.render-block {
@@ -112,13 +112,6 @@ export const TestMultipeSelect = () => {
 				<ts-select multiselect opened placeholder="Placeholder" .items="${items}" .selected="${[1, 2]}"></ts-select>
 			</div>
 
-			<!-- TODO: do not use internal property -->
-			<div class="render-block">
-				<p>Multiselect with uncommited changes</p>
-				<ts-select multiselect opened placeholder="Placeholder" .items="${items}" .selected="${[1]}" dirty></ts-select>
-			</div>
-
-			<!-- TODO: do not use internal property -->
 			<div class="render-block">
 				<p>RTL Multiselect with selected items</p>
 				<ts-select
@@ -128,7 +121,6 @@ export const TestMultipeSelect = () => {
 					placeholder="Placeholder"
 					.items="${items}"
 					.selected="${[1, 2]}"
-					dirty
 				></ts-select>
 			</div>
 		</div>

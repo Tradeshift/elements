@@ -4,24 +4,24 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - select</h1>
+<h1 align="center">Elements - select-menu</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-select--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-select-menu--default">
       Demo
     </a>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.select">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.select" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.select-menu">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.select-menu" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.select?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.select" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.select-menu?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.select-menu" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.select">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.select" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.select-menu">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.select-menu" height="20"/>
 		</a>
 </p>
 
@@ -37,42 +37,42 @@
 | --- | --- | --- | --- | --- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
-| opened | opened | Boolean | false | Is the dropdown part opened or not. |
 | items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
 | multiselect | multiselect | Boolean | false | Allow users to select several options or not. |
 | selected | selected | Array | [] | List of selected items' ids |
-| placeholder | placeholder | String |  | Default placeholder when there is no selection. |
 | translations | translations | Object |  | Translated messages for the user locale |
-| inputValue | inputValue | String | '' | INTERNAL Current value in input. |
+| dirty | dirty | Boolean | false | INTERNAL Does component has uncommited changes or not. |
+| currentSelection | currentSelection | Array | [] | INTERNAL List of currently selected changes that user not commited yet. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
+| showSelectedOnly | showSelectedOnly | Boolean | false | INTERNAL Filter to show only selected items. |
 
 ## ➤ Events
 
-| Name           | Description                                    | Payload |
-| -------------- | ---------------------------------------------- | ------- |
-| select-changed | Emitted when user applies the selected changes |         |
+| Name                | Description                                    | Payload |
+| ------------------- | ---------------------------------------------- | ------- |
+| select-menu-changed | Emitted when user applies the selected changes |         |
 
 ## ➤ How to use it
 
-- Install the package of select
+- Install the package of selectMenu
 
 ```shell
-$ npm i @tradeshift/elements.select --save
+$ npm i @tradeshift/elements.select-menu --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.select';
+import '@tradeshift/elements.select-menu';
 ```
 
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.select/lib/select.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.select-menu/lib/select-menu.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-select--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-select-menu--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 

@@ -14,10 +14,9 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.27.6",
-    "@tradeshift/elements.button": "^0.27.6",
-    "@tradeshift/elements.button-group": "^0.27.6",
     "@tradeshift/elements.icon": "^0.27.6",
-    "@tradeshift/elements.list-item": "^0.27.6"
+    "@tradeshift/elements.overlay": "^0.27.6",
+    "@tradeshift/elements.select-menu": "^0.27.6"
   },
   "src": "src/select.js"
 }

@@ -1,0 +1,19 @@
+{
+  "name": "@tradeshift/elements.overlay",
+  "version": "0.27.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tradeshift/elements.git",
+    "directory": "packages/components/overlay"
+  },
+  "main": "lib/overlay.umd.js",
+  "module": "lib/overlay.esm.js",
+  "browser": "lib/overlay.umd.js",
+  "files": [
+    "lib/*"
+  ],
+  "dependencies": {
+    "@tradeshift/elements": "^0.27.6"
+  },
+  "src": "src/overlay.js"
+}
