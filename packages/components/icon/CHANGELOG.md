@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/Tradeshift/elements/compare/v0.27.6...v0.28.0) (2021-09-10)
+
+### Features
+
+- add the 'more' icon ([28b3ffb](https://github.com/Tradeshift/elements/commit/28b3ffb969e2a27555ec73c3bb5e516d1baebc83))
+
 ## [0.27.6](https://github.com/Tradeshift/elements/compare/v0.27.5...v0.27.6) (2021-08-10)
 
 **Note:** Version bump only for package @tradeshift/elements.icon

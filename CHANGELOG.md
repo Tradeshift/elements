@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/Tradeshift/elements/compare/v0.27.6...v0.28.0) (2021-09-10)
+
+### Features
+
+- add action-select component ([d1151f9](https://github.com/Tradeshift/elements/commit/d1151f993212fd628a243609b519578ce7c1e656))
+- add overlay component ([fc2d4af](https://github.com/Tradeshift/elements/commit/fc2d4af0f40997dead51fc2cb23098f1ee425af4))
+- add the 'more' icon ([28b3ffb](https://github.com/Tradeshift/elements/commit/28b3ffb969e2a27555ec73c3bb5e516d1baebc83))
+- move the dropdown logic of select to select-menu and use the overlay to render ([6720af1](https://github.com/Tradeshift/elements/commit/6720af18af7eb2dc17074cf9097d11ec84a51243))
+
 ## [0.27.6](https://github.com/Tradeshift/elements/compare/v0.27.5...v0.27.6) (2021-08-10)
 
 ### Bug Fixes
