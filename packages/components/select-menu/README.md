@@ -39,6 +39,7 @@
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
 | multiselect | multiselect | Boolean | false | Allow users to select several options or not. |
+| noApplyButton | no-apply-button | Boolean | false | Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. |
 | selected | selected | Array | [] | List of selected items' ids |
 | translations | translations | Object |  | Translated messages for the user locale |
 | dirty | dirty | Boolean | false | INTERNAL Does component has uncommited changes or not. |

@@ -123,6 +123,11 @@ export const TestMultipleSelect = () => {
 					.selected="${[1, 2]}"
 				></ts-select>
 			</div>
+
+			<div class="render-block">
+				<p>Multiselect without apply selection button</p>
+				<ts-select multiselect noapply opened placeholder="Placeholder" .items="${items}"></ts-select>
+			</div>
 		</div>
 	`;
 };

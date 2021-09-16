@@ -48,9 +48,9 @@
 
 ## ➤ Events
 
-| Name                | Description                          | Payload      |
-| ------------------- | ------------------------------------ | ------------ |
-| action-select-click | Emitted when user clicks on the item | { selected } |
+| Name                | Description                         | Payload      |
+| ------------------- | ----------------------------------- | ------------ |
+| action-select-click | Emitted when user clicks on an item | { selected } |
 
 ## ➤ How to use it
 

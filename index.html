@@ -33,7 +33,7 @@
 				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
 				document.body.appendChild(coreEl);
 				coreEl.onload = function () {
-					var components = ['button'];
+					var components = ['icon', 'typography', 'button', 'overlay', 'select-menu', 'list-item', 'select'];
 					components.forEach(function (component) {
 						var el = document.createElement('script');
 						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
@@ -49,5 +49,20 @@
 		<article>
 			<ts-button>Button</ts-button>
 		</article>
+		<article>
+			<ts-select
+				id="s1"
+				multiselect
+				no-apply-button
+				items='[{"id":0,"title":"Item 1"},{"id":1,"title":"Item 2"},{"id":2,"title":"Item 3"}]'
+			/>
+		</article>
+		<script>
+			window.addEventListener('load', () => {
+				document.getElementById('s1').addEventListener('select-changed', e => {
+					console.log('select-changed', e);
+				});
+			});
+		</script>
 	</body>
 </html>
