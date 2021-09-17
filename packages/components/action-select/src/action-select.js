@@ -103,13 +103,12 @@ export class TSActionSelect extends TSElement {
 			return;
 		}
 		event.stopPropagation();
-		const item = event.target;
-		const itemId = item['item-id'];
+		const selected = event.detail.selected[0];
 		/**
-		 * Emitted when user clicks on the item
+		 * Emitted when user clicks on an item
 		 * @payload { selected }
 		 */
-		this.dispatchCustomEvent('action-select-click', { selected: itemId });
+		this.dispatchCustomEvent('action-select-click', { selected });
 		this.opened = false;
 	}
 
