@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/Tradeshift/elements/compare/v0.28.0...v0.29.0) (2021-09-23)
+
+**Note:** Version bump only for package @tradeshift/elements.overlay
+
 # [0.28.0](https://github.com/Tradeshift/elements/compare/v0.27.6...v0.28.0) (2021-09-10)
 
 ### Features
