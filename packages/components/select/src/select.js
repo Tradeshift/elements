@@ -13,6 +13,7 @@ export class TSSelect extends TSElement {
 		super();
 		this.opened = false;
 		this.multiselect = false;
+		this.noApplyButton = false;
 		this.selected = [];
 		this.inputValue = '';
 		this.filterValue = '';
@@ -38,6 +39,9 @@ export class TSSelect extends TSElement {
 			items: { type: Array, reflect: true },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
+			/** Do not show the apply button and directly emit select-changed when the selection changes.
+			 * Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. */
+			noApplyButton: { type: Boolean, reflect: true, attribute: 'no-apply-button' },
 			/** List of selected items' ids */
 			selected: { type: Array, reflect: true },
 			/** Default placeholder when there is no selection. */
@@ -133,7 +137,9 @@ export class TSSelect extends TSElement {
 		 * Emitted when user applies the selected changes
 		 */
 		this.dispatchCustomEvent('select-changed', { selected: this.selected });
-		this.opened = false;
+		if (!this.noApplyButton) {
+			this.opened = false;
+		}
 		this.updateInputValue();
 	};
 
@@ -229,6 +235,7 @@ export class TSSelect extends TSElement {
 								.dir="${this.dir}"
 								?disabled="${this.disabled}"
 								?multiselect="${this.multiselect}"
+								?noApplyButton="${this.noApplyButton}"
 								.filterValue="${this.filterValue}"
 								.currentSelection="${[...this.selected]}"
 								@select-menu-changed=${this.onChangeListener}

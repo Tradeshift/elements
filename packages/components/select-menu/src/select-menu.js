@@ -21,6 +21,9 @@ export class TSSelectMenu extends TSElement {
 			items: { type: Array, reflect: true },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
+			/** Do not show the apply button and directly emit select-menu-changed when the selection changes.
+			 * Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. */
+			noApplyButton: { type: Boolean, reflect: true, attribute: 'no-apply-button' },
 			/** List of selected items' ids */
 			selected: { type: Array, reflect: true },
 			/** Translated messages for the user locale */
@@ -39,6 +42,7 @@ export class TSSelectMenu extends TSElement {
 	constructor() {
 		super();
 		this.multiselect = false;
+		this.noApplyButton = false;
 		this.dirty = false;
 		this.currentSelection = [];
 		this.selected = [];
@@ -71,7 +75,7 @@ export class TSSelectMenu extends TSElement {
 		} else {
 			this.currentSelection = [itemId];
 		}
-		if (!this.multiselect) {
+		if (!this.multiselect || this.noApplyButton) {
 			this.applySelection();
 		} else {
 			this.dirty = true;
@@ -126,6 +130,7 @@ export class TSSelectMenu extends TSElement {
 				item.title.toLowerCase().indexOf(searchString) > -1 &&
 				(this.showSelectedOnly ? this.currentSelection.indexOf(item.id) > -1 : true)
 		);
+		const showApplyButtonContainer = !this.noApplyButton && this.multiselect && this.dirty;
 		return html`<div id="listContainer">
 				<ul>
 					${filteredItems.length > 0
@@ -147,7 +152,7 @@ export class TSSelectMenu extends TSElement {
 						: html`<li class="no-items">${this.translations.no_items}</li>`}
 				</ul>
 			</div>
-			<div class="apply-button-container ${this.multiselect && this.dirty ? 'show' : 'hide'}">
+			<div class="apply-button-container ${showApplyButtonContainer ? 'show' : 'hide'}">
 				${this.showSelectedButton} ${this.selectButton}
 			</div>`;
 	}
