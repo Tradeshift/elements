@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/Tradeshift/elements/compare/v0.28.0...v0.29.0) (2021-09-23)
+
+### Features
+
+- **select:** (PDV-1405) select items without confirmation apply button ([d6d74bc](https://github.com/Tradeshift/elements/commit/d6d74bc434e7e26ca8be6bbc76cf6852803e85b0))
+
 # [0.28.0](https://github.com/Tradeshift/elements/compare/v0.27.6...v0.28.0) (2021-09-10)
 
 ### Features
