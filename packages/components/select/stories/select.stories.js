@@ -33,7 +33,7 @@ export const Default = () => {
 	const disabled = boolean('disabled', false);
 	const opened = boolean('opened', false);
 	const multiselect = boolean('multiselect', false);
-	const noApplyButton = boolean('no apply button', false);
+	const noApplyButton = boolean('no-apply-button', false);
 	const withIcons = boolean('with icons', false);
 	const placeholder = text('placeholder', 'placeholder');
 	let selected = array('selected', [3]);
