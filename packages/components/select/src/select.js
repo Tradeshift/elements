@@ -235,7 +235,7 @@ export class TSSelect extends TSElement {
 								.dir="${this.dir}"
 								?disabled="${this.disabled}"
 								?multiselect="${this.multiselect}"
-								?noApplyButton="${this.noApplyButton}"
+								?no-apply-button="${this.noApplyButton}"
 								.filterValue="${this.filterValue}"
 								.currentSelection="${[...this.selected]}"
 								@select-menu-changed=${this.onChangeListener}

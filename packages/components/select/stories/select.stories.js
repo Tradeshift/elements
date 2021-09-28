@@ -53,7 +53,7 @@ export const Default = () => {
 				?disabled="${disabled}"
 				?opened="${opened}"
 				?multiselect="${multiselect}"
-				?noApplyButton="${noApplyButton}"
+				?no-apply-button="${noApplyButton}"
 				.placeholder="${placeholder}"
 				.selected="${selected}"
 				.items="${selectItems}"
