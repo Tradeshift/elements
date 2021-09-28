@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/Tradeshift/elements/compare/v0.29.0...v0.29.1) (2021-09-28)
+
+### Bug Fixes
+
+- **select:** no-apply-button attribute wrongly set on select-menu ([caeafdf](https://github.com/Tradeshift/elements/commit/caeafdfcd5d33822875e9819c36ca7d689df07dd))
+
 # [0.29.0](https://github.com/Tradeshift/elements/compare/v0.28.0...v0.29.0) (2021-09-23)
 
 ### Features
