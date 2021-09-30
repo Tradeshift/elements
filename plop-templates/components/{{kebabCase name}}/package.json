@@ -15,5 +15,8 @@
   "dependencies": {
     "@tradeshift/elements": "^{{version}}"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "src": "src/{{kebabCase name}}.js"
 }

@@ -38,6 +38,7 @@ import send from './send.svg';
 import associated from './associated.svg';
 import companyProfile from './company-profile.svg';
 import more from './more.svg';
+import calendar from './calendar.svg';
 
 const icons = {
 	remove,
@@ -65,6 +66,7 @@ const icons = {
 	send,
 	associated,
 	more,
+	calendar,
 	'company-size': companySize,
 	'insert-from-inventory': insertFromInventory,
 	'all-documents': allDocuments,

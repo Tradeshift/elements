@@ -40,5 +40,7 @@
 	"@tradeshift/elements.tabs": "ts.elements.tabs",
 	"@tradeshift/elements.tab": "ts.elements.tab",
 	"@tradeshift/elements.text-field": "ts.elements.text-field",
-	"@tradeshift/elements.confirmation-prompt": "ts.elements.confirmation-prompt"
+	"@tradeshift/elements.confirmation-prompt": "ts.elements.confirmation-prompt",
+	"@tradeshift/elements.date-picker": "ts.elements.date-picker",
+	"@tradeshift/elements.date-picker-overlay": "ts.elements.date-picker-overlay"
 }
