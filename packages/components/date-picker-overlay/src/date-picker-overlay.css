@@ -1,0 +1,113 @@
+/* General........................................................ */
+
+:host {
+	max-width: 320px;
+	display: inline-block;
+}
+
+.container {
+	font-family: var(--ts-font-family);
+	font-size: var(--ts-fontsize);
+	font-weight: var(--ts-fontweight);
+	color: var(--ts-color-slate);
+	background-color: var(--ts-color-white);
+	cursor: default;
+	padding: var(--ts-unit);
+	padding-bottom: var(--ts-unit-half);
+	box-shadow: 0 5px 10px rgba(88, 124, 141, 0.1);
+	text-transform: uppercase;
+	max-width: 320px;
+	user-select: none;
+}
+
+.day-picker {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	width: 100%;
+}
+
+.day-name,
+.day-cell {
+	padding: var(--ts-unit-quarter);
+	margin: var(--ts-unit-quarter);
+	line-height: var(--ts-unit);
+	color: var(--ts-color-slate);
+	text-align: center;
+	width: var(--ts-unit-plus);
+}
+
+.day-name {
+	font-size: var(--ts-fontsize-small);
+}
+
+.day-cell {
+	cursor: pointer;
+	border-radius: var(--ts-unit);
+	color: var(--ts-color-gray-light);
+
+	&:hover {
+		background: var(--ts-color-blue-lightest);
+	}
+
+	&.selected {
+		background: var(--ts-color-blue);
+		color: var(--ts-color-white);
+		font-weight: var(--ts-fontweight-semibold);
+	}
+
+	&.disabled {
+		background: var(--ts-color-gray-lightest);
+		color: var(--ts-color-gray-light);
+		cursor: not-allowed;
+	}
+}
+
+.day-current-month {
+	color: var(--ts-color-slate);
+}
+
+.today {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		background: var(--ts-color-blue-dark);
+		bottom: 2px;
+		left: calc(50% - 2px);
+		line-height: 0;
+		width: var(--ts-unit-quarter);
+		height: var(--ts-unit-quarter);
+		border-radius: var(--ts-unit-quarter);
+	}
+
+	&.selected:after {
+		background: var(--ts-color-white);
+	}
+}
+
+.controls-wrapper,
+.month-control,
+.year-control {
+	display: flex;
+	align-items: center;
+	direction: ltr;
+}
+
+.controls-wrapper {
+	justify-content: space-between;
+	margin-bottom: var(--ts-unit);
+}
+
+.control-value {
+	min-width: var(--ts-unit-triple);
+	text-align: center;
+}
+
+.control-button {
+	cursor: pointer;
+}
+
+.deselect-button {
+	margin-top: var(--ts-unit-half);
+}

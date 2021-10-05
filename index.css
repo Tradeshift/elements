@@ -1,12 +1,12 @@
 html,
 body {
-	background-color: rgb(230, 236, 238);
+	background-color: var(--ts-color-gray);
 	margin: 0;
 	padding: 0;
 }
 
 article {
-	background: white;
+	background: var(--ts-color-gray-lightest);
 	padding: 20px 20px 10px;
 	margin: 0 0 20px;
 	border: 1px solid #cad7dc;

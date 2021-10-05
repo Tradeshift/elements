@@ -4,24 +4,24 @@
     </a>
 </h1>
 
-<h1 align="center">Elements - button</h1>
+<h1 align="center">Elements - date-picker-overlay</h1>
 
 <p align="center">
   Part of the reusable Tradeshift UI Components as Web Components.
-    <a href="https://tradeshift.github.io/elements/?path=/story/ts-button--default">
+    <a href="https://tradeshift.github.io/elements/?path=/story/ts-date-picker-overlay--default">
       Demo
     </a>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@tradeshift/elements.button">
-      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.button" height="20"/>
+    <a href="https://www.npmjs.com/package/@tradeshift/elements.date-picker-overlay">
+      <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.date-picker-overlay" height="20"/>
     </a>
-    <a href="https://npmcharts.com/compare/@tradeshift/elements.button?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.button" height="20"/>
+    <a href="https://npmcharts.com/compare/@tradeshift/elements.date-picker-overlay?minimal=true">
+		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.date-picker-overlay" height="20"/>
 		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.button">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.button" height="20"/>
+		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.date-picker-overlay">
+		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.date-picker-overlay" height="20"/>
 		</a>
 </p>
 
@@ -33,51 +33,43 @@
 
 ## ➤ Properties
 
-| Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| type | type | String |  | Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger` |
-| size | size | String |  | Size of the button, `macro`, `micro` |
-| busy | busy | Boolean | false | Show busy/loading animation |
-| icon | icon | String |  | Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text |
-| disabled | disabled | Boolean | false | Determine if the button is disabled. `button-click` event won't be dispatched |
-| grouped | grouped | Boolean | false | For internal use in `ts-button-group` component |
-| focused | focused | Boolean | false | Make the button focused |
-| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
-| fullWidth | full-width | Boolean | false | Make the button take the full width of the container |
-
-## ➤ Slots
-
-| Name    | Description                                                       |
-| ------- | ----------------------------------------------------------------- |
-| default | Text of the button should be wrapped around \`ts-button\` element |
+| Property          | Attribute         | Type     | Default | Description |
+| ----------------- | ----------------- | -------- | ------- | ----------- |
+| dir               | dir               | String   | ltr     |             |
+| translations      | translations      | Object   |         |             |
+| firstDay          | firstDay          | Number   |         |             |
+| pageDate          | pageDate          | String   |         |             |
+| selectedDate      | selectedDate      | String   |         |             |
+| required          | required          | Boolean  | false   |             |
+| disabledDateCheck | disabledDateCheck | Function |         |             |
 
 ## ➤ Events
 
-| Name         | Description |
-| ------------ | ----------- |
-| button-click |             |
+| Name                 | Description |
+| -------------------- | ----------- |
+| selected-date-change |             |
 
 ## ➤ How to use it
 
-- Install the package of button
+- Install the package of datePickerOverlay
 
 ```shell
-$ npm i @tradeshift/elements.button --save
+$ npm i @tradeshift/elements.date-picker-overlay --save
 ```
 
 - Import the component
 
 ```js
-import '@tradeshift/elements.button';
+import '@tradeshift/elements.date-picker-overlay';
 ```
 
 or
 
 ```html
-<script src="node_modules/@tradeshift/elements.button/lib/button.umd.js"></script>
+<script src="node_modules/@tradeshift/elements.date-picker-overlay/lib/date-picker-overlay.umd.js"></script>
 ```
 
-- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-button--default")
+- Use it like [demo]("https://tradeshift.github.io/elements/?path=/story/ts-date-picker-overlay--default")
 
 - Our components rely on having the `Open Sans` available, You can see the `font-weight` and `font-style` you need to load [here](https://github.com/Tradeshift/elements/blob/master/packages/core/src/fonts.css), or you can just load it from our package (for now)
 

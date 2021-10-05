@@ -33,7 +33,9 @@ export class TSButton extends TSElement {
 			/** Make the button focused */
 			focused: { type: Boolean, reflect: true },
 			/** Direction of the component 'rtl' or 'ltr' */
-			dir: { type: String, reflect: true }
+			dir: { type: String, reflect: true },
+			/** Make the button take the full width of the container */
+			fullWidth: { type: Boolean, reflect: true, attribute: 'full-width' }
 		};
 	}
 

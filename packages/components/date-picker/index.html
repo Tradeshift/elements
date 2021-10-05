@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Tradeshift Elements</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
+		<script>
+			window.addEventListener('WebComponentsReady', function () {
+				var coreEl = document.createElement('script');
+				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+				document.body.appendChild(coreEl);
+				coreEl.onload = function () {
+					var components = ['icon', 'button', 'overlay', 'date-picker-overlay', 'date-picker'];
+					components.forEach(function (component) {
+						var el = document.createElement('script');
+						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
+						document.body.appendChild(el);
+					});
+				};
+			});
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body>
+		<article>
+			<ts-date-picker required max="2021-10-20" id="datepicker" page-date="2021-10-15"></ts-date-picker>
+			<script>
+				document.getElementById('datepicker').isDisabledDate = function (dateObj) {
+					return dateObj.getFullYear() >= 2025;
+				};
+			</script>
+		</article>
+		<article>
+			<ts-date-picker
+				required
+				label="Creation date"
+				id="datepicker2"
+				selected-date="2021-09-10"
+				help-text-title="Test the title"
+				help-text-messages='["Some text to help you pick a date","Other text to help you pick a date"]'
+			></ts-date-picker>
+			<script>
+				document.getElementById('datepicker2').translations = {
+					placeholder: 'What is the date?',
+					daysAbbreviations: {
+						monday: 'M',
+						tuesday: 'T',
+						wednesday: 'W',
+						thursday: 'T',
+						friday: 'F',
+						saturday: 'S',
+						sunday: 'S'
+					},
+					monthsAbbreviations: ['Ja?', 'Fe?', 'Ma?', 'Ap?', 'Ma?', 'Ju?', 'Ju?', 'Au?', 'Se?', 'Oc?', 'No?', 'De?']
+				};
+			</script>
+		</article>
+		<article>
+			<ts-date-picker disabled label="Disabled" id="datepicker3" max="2021-09-21"></ts-date-picker>
+		</article>
+		<article>
+			<ts-date-picker
+				id="datepicker4"
+				selected-date="1990-09-10"
+				label="Has error"
+				help-text-title="Test the title"
+				help-text-messages='["Some text to help you pick a date","Other text to help you pick a date"]'
+				error-title="Test the Error title"
+				error-messages='["Some error to help you pick a date","Other error to help you pick a date"]'
+				has-error
+			></ts-date-picker>
+		</article>
+		<article>
+			<ts-date-picker
+				label="first day sunday"
+				first-day="0"
+				id="datepicker51"
+				max="2021-09-21"
+				selected-date="2021-09-10"
+			></ts-date-picker>
+			<script>
+				document.getElementById('datepicker51').addEventListener('date-select', function (event) {
+					console.log('event', event.detail.selectedDate.toISOString());
+				});
+			</script>
+		</article>
+		<article>
+			<ts-date-picker dir="rtl" id="datepicker5" max="2021-09-21" selected-date="2021-09-10"></ts-date-picker>
+		</article>
+	</body>
+</html>

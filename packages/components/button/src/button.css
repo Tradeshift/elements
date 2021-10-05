@@ -39,6 +39,7 @@
 :host(:not([type])),
 :host([type='secondary']) {
 	& > button {
+		background: var(--ts-color-white);
 		box-shadow: var(--ts-boxshadow-border-default);
 
 		&:focus {
@@ -223,11 +224,11 @@
 	}
 }
 
-/* Inside a ButtonGroup ...........................................*/
+/* Inside a ButtonGroup & full-width ...........................................*/
 
+:host([full-width]),
 :host([grouped]) {
 	display: block;
-	margin-bottom: var(--ts-unit-half);
 	text-align: center;
 
 	& > button {
@@ -236,6 +237,9 @@
 	}
 }
 
+:host([grouped]) {
+	margin-bottom: var(--ts-unit-half);
+}
 /* Button with an icon ............................................*/
 
 :host(:not([type='text'])[icon]) {
