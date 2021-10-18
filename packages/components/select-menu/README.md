@@ -18,11 +18,8 @@
       <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements.select-menu" height="20"/>
     </a>
     <a href="https://npmcharts.com/compare/@tradeshift/elements.select-menu?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.select-menu" height="20"/>
-		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements.select-menu">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements.select-menu" height="20"/>
-		</a>
+      <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements.select-menu" height="20"/>
+    </a>
 </p>
 
 <style>
