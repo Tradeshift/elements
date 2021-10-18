@@ -31,7 +31,7 @@ export const Default = () => {
 	const readonly = boolean('readonly', false);
 	const opened = boolean('opened', false);
 	const required = boolean('required', false);
-	const notTypeable = boolean('notTypeable', true);
+	const notTypeable = boolean('not-typeable', false);
 	const pageDate = text('page-date', null);
 	const selectedDate = text('selected-date', '2021-09-10');
 	const min = text('min', '2015-09-10');
@@ -45,6 +45,7 @@ export const Default = () => {
 	const hasError = boolean('has-error', false);
 	const translation = object('translations', {
 		placeholder: 'Select date',
+		deselectButton: 'Deselect',
 		daysAbbreviations: {
 			monday: 'Mo',
 			tuesday: 'Tu',
