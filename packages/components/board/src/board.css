@@ -16,6 +16,9 @@
 	padding: var(--ts-unit-half) var(--ts-unit);
 	font-size: var(--ts--fontsize);
 	font-weight: var(--ts-fontweight-semibold);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .board-main {

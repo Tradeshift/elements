@@ -26,6 +26,11 @@ export class TSBoard extends TSElement {
 		return html`
 			<header class="board-header">
 				<div class="board-title">${this.title}</div>
+				<!--
+						To add action items like buttons and action-select to the header (opposite side of the title).
+						For having header-actions, it is required for the board to have a title.
+				-->
+				<slot name="header-actions"></slot>
 			</header>
 		`;
 	}
