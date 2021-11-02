@@ -134,7 +134,7 @@ export class TSActionSelect extends TSElement {
 	render() {
 		return html`
 			<div id="container">
-				<div @click="${this.menuClick}" style="position: relative;">
+				<div @click="${this.menuClick}" class="relative font-size-0">
 					<!-- Element in this slot becomes the anchor for the action menu. When empty, it will render a menu icon -->
 					<slot>
 						<ts-icon
