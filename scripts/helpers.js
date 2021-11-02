@@ -3,7 +3,9 @@ const path = require('path');
 const xa = require('xa');
 
 const compStateLogger = function (componentName, text) {
-	xa.custom(componentName.toUpperCase(), text, { titleColor: 'yellow', backgroundColor: '#212121' });
+	if (process.env.DEBUG_MODE) {
+		xa.custom(componentName.toUpperCase(), text, { titleColor: 'yellow', backgroundColor: '#212121' });
+	}
 };
 
 const getComponentNames = function () {
