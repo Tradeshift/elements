@@ -18,13 +18,7 @@
       <img alt="NPM Version" src="https://badgen.net/npm/v/@tradeshift/elements" height="20"/>
     </a>
     <a href="https://npmcharts.com/compare/@tradeshift/elements?minimal=true">
-		  <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements" height="20"/>
-		</a>
-		<a href="https://www.npmjs.com/browse/depended/@tradeshift/elements">
-		  <img alt="Dependent packages" src="https://badgen.net/npm/dependents/@tradeshift/elements" height="20"/>
-		</a>
-    <a href="https://david-dm.org/tradeshift/elements">
-      <img alt="Dependencies" src="https://badgen.net/david/dep/Tradeshift/elements" height="20"/>
+      <img alt="Downloads per month" src="https://badgen.net/npm/dm/@tradeshift/elements" height="20"/>
     </a>
     <a href="https://github.com/Tradeshift/elements/graphs/contributors">
       <img alt="Contributors" src="https://badgen.net/github/contributors/Tradeshift/elements" height="20"/>
