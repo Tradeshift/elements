@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Tradeshift/elements/compare/v0.30.0...v0.31.0) (2021-11-03)
+
+### Bug Fixes
+
+- **action-select:** remove empty space to be aligned center vertically ([edf576f](https://github.com/Tradeshift/elements/commit/edf576faaf5fcf9deec74ba7f6b0a26b0f35dce9))
+
 # [0.30.0](https://github.com/Tradeshift/elements/compare/v0.29.1...v0.30.0) (2021-10-05)
 
 **Note:** Version bump only for package @tradeshift/elements.action-select

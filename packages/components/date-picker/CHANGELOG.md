@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Tradeshift/elements/compare/v0.30.0...v0.31.0) (2021-11-03)
+
+### Bug Fixes
+
+- **date-picker:** update date-picker story translations ([c0ce771](https://github.com/Tradeshift/elements/commit/c0ce7719ea698c8a2b23e8dd1207fe6eb54c9ef5))
+
 # [0.30.0](https://github.com/Tradeshift/elements/compare/v0.29.1...v0.30.0) (2021-10-05)
 
 ### Features

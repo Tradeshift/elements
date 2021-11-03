@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.confirmation-prompt",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,10 +13,10 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.30.0",
-    "@tradeshift/elements.button": "^0.30.0",
-    "@tradeshift/elements.modal": "^0.30.0",
-    "@tradeshift/elements.text-field": "^0.30.0"
+    "@tradeshift/elements": "^0.31.0",
+    "@tradeshift/elements.button": "^0.31.0",
+    "@tradeshift/elements.modal": "^0.31.0",
+    "@tradeshift/elements.text-field": "^0.31.0"
   },
   "src": "src/confirmation-prompt.js"
 }
