@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.app-icon",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.30.0"
+    "@tradeshift/elements": "^0.31.0"
   },
   "src": "src/app-icon.js"
 }

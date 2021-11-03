@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/Tradeshift/elements/compare/v0.30.0...v0.31.0) (2021-11-03)
+
+### Bug Fixes
+
+- **action-select:** remove empty space to be aligned center vertically ([edf576f](https://github.com/Tradeshift/elements/commit/edf576faaf5fcf9deec74ba7f6b0a26b0f35dce9))
+- **date-picker:** update date-picker story translations ([c0ce771](https://github.com/Tradeshift/elements/commit/c0ce7719ea698c8a2b23e8dd1207fe6eb54c9ef5))
+- **deps:** add npm-force-resolution to preinstall to fix dependabot vulns ([ef657a8](https://github.com/Tradeshift/elements/commit/ef657a8247e21fdb7169a7bce7a462e988759518))
+
+### Features
+
+- **ts-board:** [peaa-755] add actions-header slot ([fb814e2](https://github.com/Tradeshift/elements/commit/fb814e27d3578811f1f3b09a5436ea438cbb8dc2))
+
 # [0.30.0](https://github.com/Tradeshift/elements/compare/v0.29.1...v0.30.0) (2021-10-05)
 
 ### Features
