@@ -37,8 +37,9 @@
 
 ## ➤ Slots
 
-| Name    | Description                                                        |
-| ------- | ------------------------------------------------------------------ |
+| Name | Description |
+| --- | --- |
+| header-actions | To add action items like buttons and action-select to the header (opposite side of the title).For having header-actions, it is required for the board to have a title. |
 | default | Content of the board should be wrapped around \`ts-board\` element |
 
 ## ➤ How to use it

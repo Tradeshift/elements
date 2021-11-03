@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Tradeshift Elements</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
+		<script>
+			window.addEventListener('WebComponentsReady', function () {
+				var coreEl = document.createElement('script');
+				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+				document.body.appendChild(coreEl);
+				coreEl.onload = function () {
+					var components = ['icon', 'button', 'board', 'action-select'];
+					components.forEach(function (component) {
+						var el = document.createElement('script');
+						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
+						document.body.appendChild(el);
+					});
+				};
+			});
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body>
+		<article>
+			<ts-board data-title="test title">
+				<div slot="header-actions">
+					<ts-button size="micro">test</ts-button>
+					<ts-button size="micro" type="danger">click</ts-button>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
+					veritatis. Ab dicta hic nostrum odit, pariatur rem rerum. Alias at culpa eveniet odio veritatis?
+				</p>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="test title">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<ts-button size="macro">test</ts-button>
+					<ts-button size="micro" type="danger">click</ts-button>
+					<ts-action-select
+						dir="ltr"
+						items='[{"id":0,"title":"Action Select Item 1"},{"id":1,"title":"Another Action Item 2"},{"id":2,"title":"Some Item on place number 3"}]'
+					></ts-action-select>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
+					veritatis. Ab dicta hic nostrum odit, pariatur rem rerum. Alias at culpa eveniet odio veritatis?
+				</p>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="Title of the board">
+				<ts-button slot="header-actions" size="macro">test</ts-button>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
+					veritatis. Ab dicta hic nostrum odit, pariatur rem rerum. Alias at culpa eveniet odio veritatis?
+				</p>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="Title of the board">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
+					veritatis. Ab dicta hic nostrum odit, pariatur rem rerum. Alias at culpa eveniet odio veritatis?
+				</p>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
+					veritatis. Ab dicta hic nostrum odit, pariatur rem rerum. Alias at culpa eveniet odio veritatis?
+				</p>
+			</ts-board>
+		</article>
+	</body>
+</html>

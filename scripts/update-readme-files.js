@@ -3,9 +3,9 @@ const updateDocSource = require('./from-src');
 const { getComponentNames, compStateLogger } = require('./helpers');
 const xa = require('xa');
 
-(function() {
-	getComponentNames().forEach(function(componentName) {
-		console.log('___________________________________________________________________');
+(function () {
+	getComponentNames().forEach(function (componentName) {
+		compStateLogger(componentName, '___________________________________________________________________');
 		compStateLogger(componentName, 'Start updating readme file...');
 		updateDocSource(componentName, () => updateReadmeFiles(componentName));
 	});
