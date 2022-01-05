@@ -1,8 +1,29 @@
-export declare class TSNote {
+export interface TSNoteHTMLAttributes {
 	icon?: string;
+
 	type?: string;
-	dir?: 'rtl' | 'ltr' | 'auto';
+
+	dir?: string;
+
 	closeable?: boolean;
+
 	hidden?: boolean;
-	buttons?: any[];
+
+	buttons?: [];
+
+}
+
+export interface TSNote {
+	icon?: string;
+
+	type?: string;
+
+	dir?: string;
+
+	closeable?: boolean;
+
+	hidden?: boolean;
+
+	buttons?: [];
+
 }
