@@ -53,7 +53,7 @@
     "lerna-version": "lerna version --conventional-commits --yes --no-push",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/**/{src,stories}/**/*.js\"",
     "new-version": "sh ./scripts/new-version.sh",
-    "preversion": "run-s update-doc-src-from-readme update-readme format",
+    "preversion": "run-s update-doc-src-from-readme update-readme generate-types format",
     "server": "npx http-server",
     "server-reload": "reload --browser --exts html,umd.js",
     "stage": "lint-staged",
@@ -68,6 +68,7 @@
     "update-doc-src-from-readme": "cross-env-shell node ./scripts/from-readme/index.js",
     "update-readme": "cross-env-shell node ./scripts/update-readme-files.js",
     "add-desc-to-src": "cross-env-shell node ./scripts/add-description-to-src.js",
+    "generate-types": "cross-env-shell node ./scripts/generate-types.js",
     "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
     "prepare": "husky install"
   },

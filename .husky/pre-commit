@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run update-readme && npm run format && npx lint-staged && npm run check-deps
+npm run update-readme && npm run generate-types && npm run format && npx lint-staged && npm run check-deps

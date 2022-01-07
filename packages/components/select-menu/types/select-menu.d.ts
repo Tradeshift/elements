@@ -1,12 +1,9 @@
-export interface TSSelectHTMLAttributes {
+export interface TSSelectMenuHTMLAttributes {
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
 
 	/**  Is component disabled or not.  */
 	disabled?: boolean;
-
-	/**  Is the dropdown part opened or not.  */
-	opened?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: [];
@@ -14,29 +11,23 @@ export interface TSSelectHTMLAttributes {
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
-	/**  Do not show the apply button and directly emit select-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
+	/**  Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
 	"no-apply-button"?: boolean;
 
 	/**  List of selected items' ids  */
 	selected?: [];
-
-	/**  Default placeholder when there is no selection.  */
-	placeholder?: string;
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
 
 }
 
-export interface TSSelect {
+export interface TSSelectMenu {
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
 
 	/**  Is component disabled or not.  */
 	disabled?: boolean;
-
-	/**  Is the dropdown part opened or not.  */
-	opened?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: [];
@@ -44,14 +35,11 @@ export interface TSSelect {
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
-	/**  Do not show the apply button and directly emit select-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
+	/**  Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
 	noApplyButton?: boolean;
 
 	/**  List of selected items' ids  */
 	selected?: [];
-
-	/**  Default placeholder when there is no selection.  */
-	placeholder?: string;
 
 	/**  Translated messages for the user locale  */
 	translations?: object;

@@ -1,1 +1,5 @@
-export declare class TSButtonGroup {}
+export interface TSButtonGroupHTMLAttributes {
+}
+
+export interface TSButtonGroup {
+}
