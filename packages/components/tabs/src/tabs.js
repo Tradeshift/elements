@@ -65,7 +65,11 @@ export class TSTabs extends TSElement {
 	tabTemplate(tab, index) {
 		/* eslint-disable lit/no-template-bind */
 		return html`
-			<button ?selected="${tab.selected}" @click="${() => this.tabClickHandler(tab, index)}">
+			<button
+				?selected="${tab.selected}"
+				id="${tab.id || `tab-${index}`}"
+				@click="${() => this.tabClickHandler(tab, index)}"
+			>
 				${this.iconTemplate(tab)}
 				<ts-typography text="${tab.label}" variant="semi-bold"></ts-typography>
 				${this.badgeTemplate(tab)}
@@ -83,6 +87,7 @@ export class TSTabs extends TSElement {
 		this.tabs = this.directChildrenTabs.map(tabNode => {
 			return {
 				label: tabNode.getAttribute('label'),
+				id: tabNode.getAttribute('id'),
 				icon: tabNode.getAttribute('icon'),
 				counter: tabNode.getAttribute('counter'),
 				selected: tabNode.getAttribute('selected') !== null

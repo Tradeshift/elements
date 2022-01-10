@@ -15,7 +15,9 @@ export class TSTab extends TSElement {
 			/** Icon name from the available icons in the ts-icon component */
 			icon: { type: String, reflect: true },
 			/** Number for counter badge next to the label */
-			counter: { type: Number, reflect: true }
+			counter: { type: Number, reflect: true },
+			/** Id of the tab which will be added to the tab button in the header of tabs. It can also be used for identifying the tab on tab-click event  */
+			id: { type: String, reflect: true }
 		};
 	}
 
