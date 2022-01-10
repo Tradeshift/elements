@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/Tradeshift/elements/compare/v0.31.1...v0.32.0) (2022-01-10)
+
+### Features
+
+- **ts-tabs:** add id property to the tab button ([8e7656c](https://github.com/Tradeshift/elements/commit/8e7656c2de4fa7543b7b0f6bf429e687e22288f6))
+- [PEAA-851] add an autogeneration of types for elements ([ba15ab6](https://github.com/Tradeshift/elements/commit/ba15ab68bafd40d9210886a5b527180c113c3712))
+
 ## [0.31.1](https://github.com/Tradeshift/elements/compare/v0.31.0...v0.31.1) (2021-11-03)
 
 **Note:** Version bump only for package tradeshift-elements
