@@ -17,7 +17,7 @@ export const Default = () => {
 	const tabsData = [
 		{ label: 'One', icon: 'ada' },
 		{ label: 'Two', counter: 12 },
-		{ label: 'Three' },
+		{ label: 'Three', id: 'the-third-one' },
 		{ label: 'Four', selected: true },
 		{ label: 'Five', icon: 'ada', counter: 9 },
 		{ label: 'Six' }
@@ -33,6 +33,7 @@ export const Default = () => {
 						icon="${ifDefined(tabData.icon)}"
 						?selected="${tabData.selected}"
 						counter="${ifDefined(tabData.counter)}"
+						id="${ifDefined(tabData.id)}"
 					>
 						<h1>${tabData.label} content</h1>
 					</ts-tab>

@@ -11,6 +11,9 @@ export interface TSTabHTMLAttributes {
 	/**  Number for counter badge next to the label  */
 	counter?: number;
 
+	/**  Id of the tab which will be added to the tab button in the header of tabs. It can also be used for identifying the tab on tab-click event   */
+	id?: string;
+
 }
 
 export interface TSTab {
@@ -25,5 +28,8 @@ export interface TSTab {
 
 	/**  Number for counter badge next to the label  */
 	counter?: number;
+
+	/**  Id of the tab which will be added to the tab button in the header of tabs. It can also be used for identifying the tab on tab-click event   */
+	id?: string;
 
 }
