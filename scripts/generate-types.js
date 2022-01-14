@@ -52,9 +52,23 @@ const getJsPropertiesInterfaces = (typesFileContent, className, properties) => {
 	typesFileContent += `}${EOL}`;
 	return typesFileContent;
 };
+
+const getReactTypesfileContent = (componentName, className) => {
+	return `import React from "@types/react";
+import { TS${className}HTMLAttributes } from "@tradeshift/elements.${componentName}";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "ts-${componentName}": TS${className}HTMLAttributes & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    }
+  }
+}
+`;
+};
+
 /**
- *  Read description from docs/properties and add it to the src file
- *  Single time script to update the src file with all available description in README files
+ *  Read description from src/properties.json and generate d.ts files
  */
 (async function () {
 	// read the data from the src properties
@@ -68,6 +82,7 @@ const getJsPropertiesInterfaces = (typesFileContent, className, properties) => {
 		const properties = getExposedProperties(srcProps);
 
 		const typesFilePath = `${componentDir}/types/${compName}.d.ts`;
+		const reactTypesFilePath = `${componentDir}/types/react-types.d.ts`;
 		await fs.mkdir(`${componentDir}/types/`, { recursive: true });
 		const className = camelize(capitalizeFirstLetter(compName));
 		let typesFileContent = '';
@@ -77,7 +92,10 @@ const getJsPropertiesInterfaces = (typesFileContent, className, properties) => {
 		// Generate interface for js properties
 		typesFileContent = getJsPropertiesInterfaces(typesFileContent, className, properties);
 
+		const reactTypesContent = getReactTypesfileContent(compName, className);
+
 		await fs.writeFile(typesFilePath, typesFileContent);
+		await fs.writeFile(reactTypesFilePath, reactTypesContent);
 		compStateLogger(compName, 'Added type definitions.');
 	}
 })();
