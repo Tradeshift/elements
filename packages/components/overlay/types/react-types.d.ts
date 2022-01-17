@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSOverlayHTMLAttributes } from "@tradeshift/elements.overlay";
 
 declare global {

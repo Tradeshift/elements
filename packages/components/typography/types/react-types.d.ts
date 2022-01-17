@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSTypographyHTMLAttributes } from "@tradeshift/elements.typography";
 
 declare global {

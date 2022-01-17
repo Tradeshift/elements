@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSPagerHTMLAttributes } from "@tradeshift/elements.pager";
 
 declare global {

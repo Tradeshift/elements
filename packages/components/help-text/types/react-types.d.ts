@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSHelpTextHTMLAttributes } from "@tradeshift/elements.help-text";
 
 declare global {

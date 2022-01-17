@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSBoardHTMLAttributes } from "@tradeshift/elements.board";
 
 declare global {

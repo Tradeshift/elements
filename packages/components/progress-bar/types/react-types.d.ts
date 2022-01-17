@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSProgressBarHTMLAttributes } from "@tradeshift/elements.progress-bar";
 
 declare global {

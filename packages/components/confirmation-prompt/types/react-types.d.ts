@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSConfirmationPromptHTMLAttributes } from "@tradeshift/elements.confirmation-prompt";
 
 declare global {

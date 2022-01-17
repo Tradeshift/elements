@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSDatePickerHTMLAttributes } from "@tradeshift/elements.date-picker";
 
 declare global {

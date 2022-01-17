@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSAsideHTMLAttributes } from "@tradeshift/elements.aside";
 
 declare global {

@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSCardHTMLAttributes } from "@tradeshift/elements.card";
 
 declare global {

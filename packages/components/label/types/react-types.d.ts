@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSLabelHTMLAttributes } from "@tradeshift/elements.label";
 
 declare global {

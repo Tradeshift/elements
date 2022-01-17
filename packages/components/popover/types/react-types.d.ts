@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSPopoverHTMLAttributes } from "@tradeshift/elements.popover";
 
 declare global {

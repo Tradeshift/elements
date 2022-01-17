@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSDialogHTMLAttributes } from "@tradeshift/elements.dialog";
 
 declare global {

@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSTooltipHTMLAttributes } from "@tradeshift/elements.tooltip";
 
 declare global {

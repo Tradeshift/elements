@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSFileUploaderInputHTMLAttributes } from "@tradeshift/elements.file-uploader-input";
 
 declare global {
