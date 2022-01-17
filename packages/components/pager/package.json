@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.pager",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,9 +15,9 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.32.0",
-    "@tradeshift/elements.icon": "^0.32.0",
-    "@tradeshift/elements.tooltip": "^0.32.0"
+    "@tradeshift/elements": "^0.33.0",
+    "@tradeshift/elements.icon": "^0.33.0",
+    "@tradeshift/elements.tooltip": "^0.33.0"
   },
   "src": "src/pager.js"
 }
