@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.overlay",
-  "version": "0.33.0",
+  "version": "0.33.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,7 +13,7 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.33.0"
+    "@tradeshift/elements": "^0.33.1"
   },
   "src": "src/overlay.js"
 }
