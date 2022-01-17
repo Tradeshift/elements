@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.dialog",
-  "version": "0.33.1",
+  "version": "0.33.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -13,12 +13,12 @@
     "lib/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.33.1",
-    "@tradeshift/elements.button": "^0.33.1",
-    "@tradeshift/elements.button-group": "^0.33.1",
-    "@tradeshift/elements.icon": "^0.33.1",
-    "@tradeshift/elements.modal": "^0.33.1",
-    "@tradeshift/elements.typography": "^0.33.1"
+    "@tradeshift/elements": "^0.33.2",
+    "@tradeshift/elements.button": "^0.33.2",
+    "@tradeshift/elements.button-group": "^0.33.2",
+    "@tradeshift/elements.icon": "^0.33.2",
+    "@tradeshift/elements.modal": "^0.33.2",
+    "@tradeshift/elements.typography": "^0.33.2"
   },
   "src": "src/dialog.js"
 }
