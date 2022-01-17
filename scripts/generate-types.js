@@ -54,7 +54,7 @@ const getJsPropertiesInterfaces = (typesFileContent, className, properties) => {
 };
 
 const getReactTypesfileContent = (componentName, className) => {
-	return `import React from "@types/react";
+	return `import React from "react";
 import { TS${className}HTMLAttributes } from "@tradeshift/elements.${componentName}";
 
 declare global {

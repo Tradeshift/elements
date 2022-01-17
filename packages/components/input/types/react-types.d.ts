@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSInputHTMLAttributes } from "@tradeshift/elements.input";
 
 declare global {

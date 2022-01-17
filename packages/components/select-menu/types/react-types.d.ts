@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSSelectMenuHTMLAttributes } from "@tradeshift/elements.select-menu";
 
 declare global {

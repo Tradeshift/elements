@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSFileSizeHTMLAttributes } from "@tradeshift/elements.file-size";
 
 declare global {

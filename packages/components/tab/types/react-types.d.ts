@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSTabHTMLAttributes } from "@tradeshift/elements.tab";
 
 declare global {

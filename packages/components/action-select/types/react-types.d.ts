@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSActionSelectHTMLAttributes } from "@tradeshift/elements.action-select";
 
 declare global {

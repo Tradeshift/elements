@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSSpinnerHTMLAttributes } from "@tradeshift/elements.spinner";
 
 declare global {

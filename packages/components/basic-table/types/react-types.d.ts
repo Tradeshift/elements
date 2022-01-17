@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSBasicTableHTMLAttributes } from "@tradeshift/elements.basic-table";
 
 declare global {

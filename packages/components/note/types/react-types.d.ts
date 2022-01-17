@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSNoteHTMLAttributes } from "@tradeshift/elements.note";
 
 declare global {

@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSCoverHTMLAttributes } from "@tradeshift/elements.cover";
 
 declare global {

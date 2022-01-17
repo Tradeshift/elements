@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSModalHTMLAttributes } from "@tradeshift/elements.modal";
 
 declare global {

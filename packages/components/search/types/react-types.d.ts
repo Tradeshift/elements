@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSSearchHTMLAttributes } from "@tradeshift/elements.search";
 
 declare global {

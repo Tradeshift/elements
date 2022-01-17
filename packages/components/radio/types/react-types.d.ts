@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSRadioHTMLAttributes } from "@tradeshift/elements.radio";
 
 declare global {

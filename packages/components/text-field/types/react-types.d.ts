@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSTextFieldHTMLAttributes } from "@tradeshift/elements.text-field";
 
 declare global {

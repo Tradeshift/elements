@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSIconHTMLAttributes } from "@tradeshift/elements.icon";
 
 declare global {

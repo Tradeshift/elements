@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSButtonHTMLAttributes } from "@tradeshift/elements.button";
 
 declare global {

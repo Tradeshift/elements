@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSStatusHTMLAttributes } from "@tradeshift/elements.status";
 
 declare global {

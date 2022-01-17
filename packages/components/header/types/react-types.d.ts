@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 import { TSHeaderHTMLAttributes } from "@tradeshift/elements.header";
 
 declare global {
