@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.1](https://github.com/Tradeshift/elements/compare/v0.33.0...v0.33.1) (2022-01-17)
+
+### Bug Fixes
+
+- fix package-lock file ([e821aeb](https://github.com/Tradeshift/elements/commit/e821aebc687731a5ff8a1cc4d875259cb9f36d56))
+
 # [0.33.0](https://github.com/Tradeshift/elements/compare/v0.32.0...v0.33.0) (2022-01-17)
 
 ### Features
