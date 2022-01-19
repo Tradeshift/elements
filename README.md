@@ -134,7 +134,7 @@ loadPolyfills().then(() => import('./my-app.js'));
 
 - Installation
 
-```hell
+```shell
 $ npm i @webcomponents/webcomponentsjs --save
 ```
 
@@ -194,7 +194,7 @@ $ npx lerna bootstrap     # bootstrap all packages and make sure they work toget
 $ npm start
 ```
 
-- Open [https://localhost:8443/](https://localhost:8443/)
+- Open [http://127.0.0.1:8080/](http://127.0.0.1:8080/), or e.g. http://127.0.0.1:8080/packages/components/{PACKAGE_NAME}/ if you want to test a specific element and that element (PACKAGE_NAME) has got an `index.html` file. If not, feel free to add one. Example: [http://127.0.0.1:8080/packages/components/action-select/](http://127.0.0.1:8080/packages/components/action-select/)
 
 ## ➤ How to contribute
 
