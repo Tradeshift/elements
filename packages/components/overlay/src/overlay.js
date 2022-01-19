@@ -99,19 +99,18 @@ export class TSOverlay extends TSElement {
 	 * @returns {!Object} position on left, right and width of the container
 	 */
 	calculateHorizontalPosition(anchorRect, contentWidth) {
-		const result = { left: 'auto', right: 'auto', width: undefined };
+		const result = { left: 'auto', right: 'auto' };
 		const { width, left, right } = anchorRect;
 		if (this.autoWidth) {
 			// calculate horizontal position
-			const menuWidth = anchorRect.width;
 			const { innerWidth } = window;
 			const fitOnRight = left + contentWidth + HALF_UNIT <= innerWidth;
 			const fitOnLeft = left + width - contentWidth - HALF_UNIT >= 0;
 			if (this.dir === 'rtl') {
 				if (!fitOnRight && !fitOnLeft) {
-					// cannot fit on both sides, align to left border
-					result.right = `${innerWidth - HALF_UNIT - contentWidth}px`;
-				} else if (!fitOnLeft) {
+					// cannot fit on either side, align to left border
+					result.right = `${Math.max(HALF_UNIT, innerWidth - HALF_UNIT - contentWidth)}px`;
+				} else if (!fitOnLeft && fitOnRight) {
 					// cannot fit on left, put on right side
 					result.left = `${left}px`;
 				} else {
@@ -120,11 +119,11 @@ export class TSOverlay extends TSElement {
 				}
 			} else {
 				if (!fitOnRight && !fitOnLeft) {
-					// cannot fit on both sides, align to right border
-					result.left = `${innerWidth - contentWidth - HALF_UNIT - left}px`;
-				} else if (!fitOnRight) {
+					// cannot fit on either side, align to right border
+					result.left = `${Math.max(HALF_UNIT, innerWidth - contentWidth - HALF_UNIT - left)}px`;
+				} else if (fitOnLeft && !fitOnRight) {
 					// cannot fit on right, put on left side
-					result.left = `${left + menuWidth - contentWidth}px`;
+					result.right = `${innerWidth - right}px`;
 				} else {
 					// put on right as default
 					result.left = left + 'px';
