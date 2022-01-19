@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.3](https://github.com/Tradeshift/elements/compare/v0.33.2...v0.33.3) (2022-01-19)
+
+### Bug Fixes
+
+- **action-select:** remove background color ([78a8fb8](https://github.com/Tradeshift/elements/commit/78a8fb879f9c944f19e2e8a56470af626b11cf7e))
+
 ## [0.33.2](https://github.com/Tradeshift/elements/compare/v0.33.1...v0.33.2) (2022-01-17)
 
 ### Bug Fixes
