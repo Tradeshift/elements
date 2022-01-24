@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.help-text",
-  "version": "0.33.4",
+  "version": "0.33.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,8 +15,8 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.33.4",
-    "@tradeshift/elements.icon": "^0.33.4"
+    "@tradeshift/elements": "^0.33.5",
+    "@tradeshift/elements.icon": "^0.33.5"
   },
   "src": "src/help-text.js"
 }
