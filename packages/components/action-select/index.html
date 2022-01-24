@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Tradeshift Elements: Action-Select</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
+		<script>
+			window.addEventListener('WebComponentsReady', function () {
+				var coreEl = document.createElement('script');
+				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
+				document.body.appendChild(coreEl);
+				coreEl.onload = function () {
+					var components = ['header', 'board', 'action-select', 'overlay'];
+					components.forEach(function (component) {
+						var el = document.createElement('script');
+						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
+						document.body.appendChild(el);
+					});
+				};
+			});
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body style="display: flex; justify-content: center">
+		<article>
+			<ts-board data-title="ts-action-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 0 10px 20px 0">
+							<ts-action-select
+								items='[{"id":0,"title":"Action Select Item 1"},{"id":1,"title":"Another Action Item 2"},{"id":2,"title":"Some quite pretty very insanely long text item on place number 3 not that it matters but it does"}]'
+							></ts-action-select>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-action-select RTL">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 0 10px 20px 0">
+							<ts-action-select
+								dir="rtl"
+								items='[{"id":0,"title":"Action Select Item 1"},{"id":1,"title":"Another Action Item 2"},{"id":2,"title":"Some quite pretty very insanely long text item on place number 3 not that it matters but it does"}]'
+							></ts-action-select>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+		</article>
+	</body>
+</html>
