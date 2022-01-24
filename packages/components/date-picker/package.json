@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.date-picker",
-  "version": "0.33.5",
+  "version": "0.33.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,10 +15,10 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.33.5",
-    "@tradeshift/elements.date-picker-overlay": "^0.33.5",
-    "@tradeshift/elements.overlay": "^0.33.5",
-    "@tradeshift/elements.text-field": "^0.33.5"
+    "@tradeshift/elements": "^0.33.6",
+    "@tradeshift/elements.date-picker-overlay": "^0.33.6",
+    "@tradeshift/elements.overlay": "^0.33.6",
+    "@tradeshift/elements.text-field": "^0.33.6"
   },
   "publishConfig": {
     "access": "public"

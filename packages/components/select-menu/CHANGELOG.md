@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.6](https://github.com/Tradeshift/elements/compare/v0.33.5...v0.33.6) (2022-01-24)
+
+### Bug Fixes
+
+- add missing types for new components and fix new component template to add them by default ([c491ca8](https://github.com/Tradeshift/elements/commit/c491ca870b5c89fad821757ea0a20a0bf4a50091))
+
 ## [0.33.5](https://github.com/Tradeshift/elements/compare/v0.33.3...v0.33.5) (2022-01-24)
 
 **Note:** Version bump only for package @tradeshift/elements.select-menu
