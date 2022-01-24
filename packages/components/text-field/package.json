@@ -9,8 +9,10 @@
   "main": "lib/text-field.umd.js",
   "module": "lib/text-field.esm.js",
   "browser": "lib/text-field.umd.js",
+  "types": "types/text-field.d.ts",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.33.5",

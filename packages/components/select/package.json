@@ -9,8 +9,10 @@
   "main": "lib/select.umd.js",
   "module": "lib/select.esm.js",
   "browser": "lib/select.umd.js",
+  "types": "types/select.d.ts",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.33.5",

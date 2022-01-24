@@ -9,8 +9,10 @@
   "main": "lib/confirmation-prompt.umd.js",
   "module": "lib/confirmation-prompt.esm.js",
   "browser": "lib/confirmation-prompt.umd.js",
+  "types": "types/confirmation-prompt.d.ts",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.33.5",
