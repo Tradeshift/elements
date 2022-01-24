@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.5](https://github.com/Tradeshift/elements/compare/v0.33.3...v0.33.5) (2022-01-24)
+
+### Bug Fixes
+
+- updates position and alignment calculation of action-select dropout ([4275e56](https://github.com/Tradeshift/elements/commit/4275e567933ef5e18bf125c4aef780b3730828b3))
+
 ## [0.33.4](https://github.com/Tradeshift/elements/compare/v0.33.3...v0.33.4) (2022-01-24)
 
 ### Bug Fixes
