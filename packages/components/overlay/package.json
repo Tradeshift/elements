@@ -9,8 +9,10 @@
   "main": "lib/overlay.umd.js",
   "module": "lib/overlay.esm.js",
   "browser": "lib/overlay.umd.js",
+  "types": "types/overlay.d.ts",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.33.5"

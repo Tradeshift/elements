@@ -9,8 +9,10 @@
   "main": "lib/{{kebabCase name}}.umd.js",
   "module": "lib/{{kebabCase name}}.esm.js",
   "browser": "lib/{{kebabCase name}}.umd.js",
+  "types": "lib/{{kebabCase name}}.d.ts",
   "files": [
-    "lib/*"
+    "lib/*",
+    "types/*"
   ],
   "dependencies": {
     "@tradeshift/elements": "^{{version}}"
