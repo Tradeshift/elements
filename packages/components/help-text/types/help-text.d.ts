@@ -1,6 +1,6 @@
 export interface TSHelpTextHTMLAttributes {
 	/**  List of message(s)  */
-	messages?: [];
+	messages?: any[];
 
 	/**  If there are multiple messages, there should be a title for the help text  */
 	title?: string;
@@ -19,7 +19,7 @@ export interface TSHelpTextHTMLAttributes {
 
 export interface TSHelpText {
 	/**  List of message(s)  */
-	messages?: [];
+	messages?: any[];
 
 	/**  If there are multiple messages, there should be a title for the help text  */
 	title?: string;

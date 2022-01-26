@@ -39,7 +39,7 @@ export interface TSDatePickerHTMLAttributes {
 	"first-day"?: number;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info  */
-	"help-text-messages"?: [];
+	"help-text-messages"?: any[];
 
 	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info  */
 	"help-text-title"?: string;
@@ -48,7 +48,7 @@ export interface TSDatePickerHTMLAttributes {
 	"help-text-type"?: string;
 
 	/**  Error messages to show underneath of the input when it has error  */
-	"error-messages"?: [];
+	"error-messages"?: any[];
 
 	/**  Error title, if there are more than one error message  */
 	"error-title"?: string;
@@ -102,7 +102,7 @@ export interface TSDatePicker {
 	firstDay?: number;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info  */
-	helpTextMessages?: [];
+	helpTextMessages?: any[];
 
 	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info  */
 	helpTextTitle?: string;
@@ -111,7 +111,7 @@ export interface TSDatePicker {
 	helpTextType?: string;
 
 	/**  Error messages to show underneath of the input when it has error  */
-	errorMessages?: [];
+	errorMessages?: any[];
 
 	/**  Error title, if there are more than one error message  */
 	errorTitle?: string;

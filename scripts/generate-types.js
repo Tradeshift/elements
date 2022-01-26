@@ -22,7 +22,7 @@ const generatePropertyLine = (name, type, description) => {
 	// Replace 'Array' with '[]'.
 	// Better to use Array<T> but we don't have information about structure of array items now.
 	if (type.toLowerCase() === 'array') {
-		type = '[]';
+		type = 'any[]';
 	}
 	result += `\t${name}?: ${type.toLowerCase()};${EOL}${EOL}`;
 	return result;

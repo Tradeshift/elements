@@ -6,7 +6,7 @@ export interface TSSelectMenuHTMLAttributes {
 	disabled?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -15,7 +15,7 @@ export interface TSSelectMenuHTMLAttributes {
 	"no-apply-button"?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: [];
+	selected?: any[];
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
@@ -30,7 +30,7 @@ export interface TSSelectMenu {
 	disabled?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -39,7 +39,7 @@ export interface TSSelectMenu {
 	noApplyButton?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: [];
+	selected?: any[];
 
 	/**  Translated messages for the user locale  */
 	translations?: object;

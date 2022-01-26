@@ -11,14 +11,14 @@ export interface TSFileUploaderInputHTMLAttributes {
 	size?: string;
 
 	/**  List of accepted file extensions  */
-	"accepted-file-extensions"?: [];
+	"accepted-file-extensions"?: any[];
 
 	/**  Disable drag and drop functionality  */
 	"disable-drag-and-drop"?: boolean;
 
 	"help-text-title"?: string;
 
-	"help-text-messages"?: [];
+	"help-text-messages"?: any[];
 
 	/**  Hide the help text about allowed file types.  */
 	"hide-file-type-help-text"?: boolean;
@@ -44,14 +44,14 @@ export interface TSFileUploaderInput {
 	size?: string;
 
 	/**  List of accepted file extensions  */
-	acceptedFileExtensions?: [];
+	acceptedFileExtensions?: any[];
 
 	/**  Disable drag and drop functionality  */
 	disableDragAndDrop?: boolean;
 
 	helpTextTitle?: string;
 
-	helpTextMessages?: [];
+	helpTextMessages?: any[];
 
 	/**  Hide the help text about allowed file types.  */
 	hideFileTypeHelpText?: boolean;
