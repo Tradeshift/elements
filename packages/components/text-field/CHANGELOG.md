@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.8](https://github.com/Tradeshift/elements/compare/v0.33.7...v0.33.8) (2022-01-27)
+
+### Bug Fixes
+
+- changed the array type in d.ts files from '[]' to 'any[]' ([e6a53dd](https://github.com/Tradeshift/elements/commit/e6a53dd323fab9e07479bdd7572e8b9d66d063a5))
+
 ## [0.33.7](https://github.com/Tradeshift/elements/compare/v0.33.6...v0.33.7) (2022-01-25)
 
 **Note:** Version bump only for package @tradeshift/elements.text-field
