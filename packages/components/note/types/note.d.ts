@@ -9,7 +9,7 @@ export interface TSNoteHTMLAttributes {
 
 	hidden?: boolean;
 
-	buttons?: [];
+	buttons?: any[];
 
 }
 
@@ -24,6 +24,6 @@ export interface TSNote {
 
 	hidden?: boolean;
 
-	buttons?: [];
+	buttons?: any[];
 
 }

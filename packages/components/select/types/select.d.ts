@@ -9,7 +9,7 @@ export interface TSSelectHTMLAttributes {
 	opened?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -18,7 +18,7 @@ export interface TSSelectHTMLAttributes {
 	"no-apply-button"?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: [];
+	selected?: any[];
 
 	/**  Default placeholder when there is no selection.  */
 	placeholder?: string;
@@ -39,7 +39,7 @@ export interface TSSelect {
 	opened?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -48,7 +48,7 @@ export interface TSSelect {
 	noApplyButton?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: [];
+	selected?: any[];
 
 	/**  Default placeholder when there is no selection.  */
 	placeholder?: string;

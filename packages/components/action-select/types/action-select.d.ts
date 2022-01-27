@@ -9,7 +9,7 @@ export interface TSActionSelectHTMLAttributes {
 	opened?: boolean;
 
 	/**  Array of action items. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 }
 
@@ -24,6 +24,6 @@ export interface TSActionSelect {
 	opened?: boolean;
 
 	/**  Array of action items. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: [];
+	items?: any[];
 
 }
