@@ -18,5 +18,5 @@ export const Default = () => {
 
 Default.story = {
 	name: 'default',
-	parameters: { note: readme }
+	parameters: { notes: readme }
 };
