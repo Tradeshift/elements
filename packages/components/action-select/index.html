@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tradeshift Elements: Action-Select</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
@@ -26,23 +27,8 @@
 		<!-- Load user-styles -->
 		<link rel="stylesheet" href="/index.css" />
 
-		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
-		<script>
-			window.addEventListener('WebComponentsReady', function () {
-				var coreEl = document.createElement('script');
-				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
-				document.body.appendChild(coreEl);
-				coreEl.onload = function () {
-					var components = ['header', 'board', 'action-select', 'overlay'];
-					components.forEach(function (component) {
-						var el = document.createElement('script');
-						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
-						document.body.appendChild(el);
-					});
-				};
-			});
-		</script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="module" src="/packages/components/action-select/lib/action-select.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
 	</head>
 
 	<body style="display: flex; justify-content: center">

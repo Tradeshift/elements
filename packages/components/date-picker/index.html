@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tradeshift Elements</title>
 
 		<!-- Don't shim CSS Custom Properties on IE11 -->
@@ -26,23 +27,7 @@
 		<!-- Load user-styles -->
 		<link rel="stylesheet" href="/index.css" />
 
-		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
-		<script>
-			window.addEventListener('WebComponentsReady', function () {
-				var coreEl = document.createElement('script');
-				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
-				document.body.appendChild(coreEl);
-				coreEl.onload = function () {
-					var components = ['icon', 'button', 'overlay', 'date-picker-overlay', 'date-picker'];
-					components.forEach(function (component) {
-						var el = document.createElement('script');
-						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
-						document.body.appendChild(el);
-					});
-				};
-			});
-		</script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="module" src="/packages/components/date-picker/lib/date-picker.esm.js"></script>
 	</head>
 
 	<body>
