@@ -21,6 +21,10 @@
 	overflow: auto;
 }
 
+.loading-container {
+	padding: var(--ts-unit) 0;
+}
+
 .apply-button-container {
 	background-color: var(--ts-color-white);
 	border-top: var(--ts-border);

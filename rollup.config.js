@@ -95,7 +95,7 @@ const esmConfig = {
 		}
 	],
 	external: esmExternals,
-	plugins: [...commonPlugins, PROD && babelPlugin, terser()].filter(Boolean)
+	plugins: [...commonPlugins, PROD && babelPlugin, PROD && terser()].filter(Boolean)
 };
 
 let config = [

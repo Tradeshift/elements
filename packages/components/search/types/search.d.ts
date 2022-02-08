@@ -17,6 +17,18 @@ export interface TSSearchHTMLAttributes {
 	/**  The current value  */
 	value?: string;
 
+	/**  Translated messages for the user locale. <br> @type {{ loading: string, no_items: string }}  */
+	translations?: object;
+
+	/**  Should dropdown items be rendered or not  */
+	"has-dropdown"?: boolean;
+
+	/**  Show loading spinner when waiting for drodwon items  */
+	loading?: boolean;
+
+	/**  Dropdown items to show when user clicks on search component  */
+	"dropdown-items"?: any[];
+
 }
 
 export interface TSSearch {
@@ -37,5 +49,17 @@ export interface TSSearch {
 
 	/**  The current value  */
 	value?: string;
+
+	/**  Translated messages for the user locale. <br> @type {{ loading: string, no_items: string }}  */
+	translations?: object;
+
+	/**  Should dropdown items be rendered or not  */
+	hasDropdown?: boolean;
+
+	/**  Show loading spinner when waiting for drodwon items  */
+	loading?: boolean;
+
+	/**  Dropdown items to show when user clicks on search component  */
+	dropdownItems?: any[];
 
 }

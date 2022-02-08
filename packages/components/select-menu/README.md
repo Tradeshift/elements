@@ -39,6 +39,7 @@
 | noApplyButton | no-apply-button | Boolean | false | Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. |
 | selected | selected | Array | [] | List of selected items' ids |
 | translations | translations | Object |  | Translated messages for the user locale |
+| loading | loading | Boolean | false | Set component in loading state and render a spinner instead of list of items |
 | dirty | dirty | Boolean | false | INTERNAL Does component has uncommited changes or not. |
 | currentSelection | currentSelection | Array | [] | INTERNAL List of currently selected changes that user not commited yet. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |

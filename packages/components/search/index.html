@@ -36,7 +36,7 @@
 		<br />
 		<article>
 			Search with suggestions
-			<ts-search id="search" placeholder="Start search here..." show-suggestions />
+			<ts-search id="search" placeholder="Start search here..." has-dropdown />
 		</article>
 	</body>
 	<script>
@@ -46,7 +46,7 @@
 				if (val) {
 					search.loading = true;
 					setTimeout(() => {
-						search.searchSuggestions = [
+						search.dropdownItems = [
 							{ id: 1, title: val + ' 1' },
 							{ id: 2, title: val + ' 2' },
 							{ id: 3, title: val + ' 3' },
@@ -55,12 +55,12 @@
 						search.loading = false;
 					}, 1000);
 				} else {
-					search.searchSuggestions = [];
+					search.dropdownItems = [];
 				}
 			};
 
 			const search = document.getElementById('search');
-			search.searchSuggestions = [
+			search.dropdownItems = [
 				{ id: 1, title: 'Previously searched item 1' },
 				{ id: 2, title: 'Previously searched item 2' },
 				{ id: 3, title: 'Previously searched item 3' }
