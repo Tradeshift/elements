@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "@tradeshift/elements": "^0.33.8",
-    "@tradeshift/elements.icon": "^0.33.8"
+    "@tradeshift/elements.icon": "^0.33.8",
+    "@tradeshift/elements.overlay": "^0.33.8",
+    "@tradeshift/elements.select-menu": "^0.33.8"
   },
   "src": "src/search.js"
 }

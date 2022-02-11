@@ -20,6 +20,9 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  Translated messages for the user locale  */
 	translations?: object;
 
+	/**  Set component in loading state and render a spinner instead of list of items  */
+	loading?: boolean;
+
 }
 
 export interface TSSelectMenu {
@@ -43,5 +46,8 @@ export interface TSSelectMenu {
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
+
+	/**  Set component in loading state and render a spinner instead of list of items  */
+	loading?: boolean;
 
 }

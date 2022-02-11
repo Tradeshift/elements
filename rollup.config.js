@@ -95,10 +95,10 @@ const esmConfig = {
 		}
 	],
 	external: esmExternals,
-	plugins: [...commonPlugins, babelPlugin, terser()]
+	plugins: [...commonPlugins, PROD && babelPlugin, PROD && terser()].filter(Boolean)
 };
 
-const config = [
+let config = [
 	{
 		input: INPUT_FILE,
 		output: [
@@ -121,8 +121,10 @@ const config = [
 	}
 ];
 
-// For development we are using `umd`s
-if (PROD) {
+// For development we are using `esm`s
+if (DEV) {
+	config = [esmConfig];
+} else {
 	config.unshift(esmConfig);
 }
 

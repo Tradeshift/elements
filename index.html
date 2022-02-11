@@ -2,19 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tradeshift Elements</title>
-
-		<!-- Don't shim CSS Custom Properties on IE11 -->
-		<script>
-			if (!window.Promise) {
-				window.ShadyCSS = { nativeCss: true };
-			}
-		</script>
-
-		<!-- Enable ES5 class-less Custom Elements -->
-		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-		<!-- Load appropriate polyfills and shims -->
-		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
 
 		<!-- Set :root CSS Custom Properties -->
 		<link rel="stylesheet" href="/packages/core/src/vars.css" />
@@ -25,44 +14,24 @@
 
 		<!-- Load user-styles -->
 		<link rel="stylesheet" href="/index.css" />
-
-		<!-- Load Tradeshift Elements once the polyfills are ready (optional?) -->
-		<script>
-			window.addEventListener('WebComponentsReady', function () {
-				var coreEl = document.createElement('script');
-				coreEl.setAttribute('src', '/packages/core/lib/core.umd.js');
-				document.body.appendChild(coreEl);
-				coreEl.onload = function () {
-					var components = ['icon', 'typography', 'button', 'overlay', 'select-menu', 'list-item', 'select'];
-					components.forEach(function (component) {
-						var el = document.createElement('script');
-						el.setAttribute('src', '/packages/components/' + component + '/lib/' + component + '.umd.js');
-						document.body.appendChild(el);
-					});
-				};
-			});
-		</script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
-
 	<body>
 		<article>
-			<ts-button>Button</ts-button>
+			Available components:
+			<ul>
+				<li>
+					<a href="/packages/components/action-select/index.html">Action select</a>
+				</li>
+				<li>
+					<a href="/packages/components/board/index.html">Board</a>
+				</li>
+				<li>
+					<a href="/packages/components/date-picker/index.html">Date picker</a>
+				</li>
+				<li>
+					<a href="/packages/components/search/index.html">Search</a>
+				</li>
+			</ul>
 		</article>
-		<article>
-			<ts-select
-				id="s1"
-				multiselect
-				no-apply-button
-				items='[{"id":0,"title":"Item 1"},{"id":1,"title":"Item 2"},{"id":2,"title":"Item 3"}]'
-			/>
-		</article>
-		<script>
-			window.addEventListener('load', () => {
-				document.getElementById('s1').addEventListener('select-changed', e => {
-					console.log('select-changed', e);
-				});
-			});
-		</script>
 	</body>
 </html>

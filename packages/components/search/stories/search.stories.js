@@ -20,6 +20,14 @@ export const Default = () => {
 	const focused = boolean('Focused', false);
 	const idleTime = number('Idle time', 500);
 	const value = text('Value', '');
+	const hasDropdown = boolean('has-dropdown', false);
+	const loading = boolean('loading', false);
+	const dropdownItems = [
+		{ id: 1, title: 'search suggestion item 1' },
+		{ id: 2, title: 'search suggestion item 2' },
+		{ id: 3, title: 'search suggestion item 3' },
+		{ id: 4, title: 'search suggestion item 4' }
+	];
 
 	return html`
 		<ts-search
@@ -28,6 +36,9 @@ export const Default = () => {
 			?focused="${focused}"
 			idle-time="${idleTime}"
 			value="${value}"
+			?has-dropdown="${hasDropdown}"
+			?loading="${loading}"
+			.dropdownItems="${dropdownItems}"
 			@idle="${action('event after idle timeout')}"
 			@search="${action('event after search')}"
 		>

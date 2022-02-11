@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" lang="en" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements</title>
+		<link rel="icon" href="data:," />
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<script type="module" src="/packages/components/search/lib/search.esm.js"></script>
+	</head>
+
+	<body>
+		<article>
+			basic search
+			<ts-search placeholder="Start search here..." />
+		</article>
+		<br />
+		<article>
+			Search with suggestions
+			<ts-search id="search" placeholder="Start search here..." has-dropdown />
+		</article>
+	</body>
+	<script>
+		customElements.whenDefined('ts-search').then(() => {
+			const onIdleCallback = event => {
+				const val = event.detail;
+				if (val) {
+					search.loading = true;
+					setTimeout(() => {
+						search.dropdownItems = [
+							{ id: 1, title: val + ' 1' },
+							{ id: 2, title: val + ' 2' },
+							{ id: 3, title: val + ' 3' },
+							{ id: 4, title: val + ' 4' }
+						];
+						search.loading = false;
+					}, 1000);
+				} else {
+					search.dropdownItems = [];
+				}
+			};
+
+			const search = document.getElementById('search');
+			search.dropdownItems = [
+				{ id: 1, title: 'Previously searched item 1' },
+				{ id: 2, title: 'Previously searched item 2' },
+				{ id: 3, title: 'Previously searched item 3' }
+			];
+			search.translations = { loading: 'Loading ...', no_items: 'No suggestions' };
+
+			search.addEventListener('idle', onIdleCallback);
+		});
+	</script>
+</html>

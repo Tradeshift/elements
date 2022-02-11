@@ -30,14 +30,19 @@
 
 ## ➤ Properties
 
-| Property    | Attribute   | Type    | Default     | Description                                       |
-| ----------- | ----------- | ------- | ----------- | ------------------------------------------------- |
-| autofocus   | autofocus   | Boolean | false       | Shoud the search be auto focused once page loaded |
-| dir         | dir         | String  | ltr         | Direction 'rtl' or 'ltr'                          |
-| focused     | focused     | Boolean | false       | Set the focus on element                          |
-| idleTime    | idle-time   | Number  | 300         | timeout in ms for the 'idle' event                |
-| placeholder | placeholder | String  | 'Search...' | Message when an input is empty                    |
-| value       | value       | String  | ''          | The current value                                 |
+| Property | Attribute | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| autofocus | autofocus | Boolean | false | Shoud the search be auto focused once page loaded |
+| dir | dir | String | ltr | Direction 'rtl' or 'ltr' |
+| focused | focused | Boolean | false | Set the focus on element |
+| idleTime | idle-time | Number | 300 | timeout in ms for the 'idle' event |
+| placeholder | placeholder | String | 'Search...' | Message when an input is empty |
+| value | value | String | '' | The current value |
+| translations | translations | Object |  | Translated messages for the user locale. <br> @type {{ loading: string, no_items: string }} |
+| hasDropdown | has-dropdown | Boolean | false | Should dropdown items be rendered or not |
+| loading | loading | Boolean | false | Show loading spinner when waiting for drodwon items |
+| dropdownItems | dropdown-items | Array | [] | Dropdown items to show when user clicks on search component |
+| opened | opened | Boolean | false | INTERNAL Opens the dropdown |
 
 ## ➤ Events
 

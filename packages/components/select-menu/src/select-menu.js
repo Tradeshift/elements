@@ -3,6 +3,7 @@ import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
 import '@tradeshift/elements.list-item';
+import '@tradeshift/elements.spinner';
 import css from './select-menu.css';
 import translations from './utils/translations';
 
@@ -28,6 +29,8 @@ export class TSSelectMenu extends TSElement {
 			selected: { type: Array, reflect: true },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true },
+			/** Set component in loading state and render a spinner instead of list of items */
+			loading: { type: Boolean, reflect: true },
 			/** INTERNAL Does component has uncommited changes or not. */
 			dirty: { type: Boolean, reflect: true },
 			/** INTERNAL List of currently selected changes that user not commited yet. */
@@ -48,11 +51,18 @@ export class TSSelectMenu extends TSElement {
 		this.selected = [];
 		this.filterValue = '';
 		this.showSelectedOnly = false;
+		this.loading = false;
 		this._translations = Object.assign({}, translations);
 	}
 
 	get translations() {
 		return this._translations;
+	}
+
+	set translations(val) {
+		const oldVal = this._translations;
+		this._translations = Object.assign(oldVal, val);
+		this.requestUpdate('translations', oldVal);
 	}
 
 	/**
@@ -132,29 +142,37 @@ export class TSSelectMenu extends TSElement {
 		);
 		const showApplyButtonContainer = !this.noApplyButton && this.multiselect && this.dirty;
 		return html`<div id="listContainer">
+			${this.loading
+				? html`<div class="loading-container">
+						<ts-spinner data-visible data-message="${this.translations.loading}" data-size="medium"></ts-spinner>
+				  </div>`
+				: html`
 				<ul>
-					${filteredItems.length > 0
-						? filteredItems.map(
-								item => html`<ts-list-item
-									class="items-list"
-									selectable
-									?disabled="${this.disabled}"
-									?selected="${this.currentSelection.indexOf(item.id) > -1}"
-									.item-id=${item.id}
-									dir="${this.dir}"
-									title="${item.title}"
-									icon="${item.icon || ''}"
-									icon-right="${this.multiselect ? 'checkbox' : ''}"
-									icon-selected="checkbox-on"
-									@click="${this.handleSelection}"
-								></ts-list-item>`
-						  )
-						: html`<li class="no-items">${this.translations.no_items}</li>`}
+					${
+						filteredItems.length > 0
+							? filteredItems.map(
+									item => html`<ts-list-item
+										class="items-list"
+										selectable
+										?disabled="${this.disabled}"
+										?selected="${this.currentSelection.indexOf(item.id) > -1}"
+										.item-id=${item.id}
+										dir="${this.dir}"
+										title="${item.title}"
+										icon="${item.icon || ''}"
+										icon-right="${this.multiselect ? 'checkbox' : ''}"
+										icon-selected="checkbox-on"
+										@click="${this.handleSelection}"
+									></ts-list-item>`
+							  )
+							: html`<li class="no-items">${this.translations.no_items}</li>`
+					}
 				</ul>
 			</div>
 			<div class="apply-button-container ${showApplyButtonContainer ? 'show' : 'hide'}">
 				${this.showSelectedButton} ${this.selectButton}
-			</div>`;
+			</div>`}
+		</div>`;
 	}
 }
 
