@@ -46,11 +46,11 @@
 
 ## ➤ Events
 
-| Name   | Description                                                         | Payload            |
-| ------ | ------------------------------------------------------------------- | ------------------ |
-| idle   | Emitted when the user not change input value for a provided timeout | search input value |
-| change | Emitted on every user's change in a search input                    | search input value |
-| search | Emitted when the user press the 'Enter' key                         | search input value |
+| Name | Description | Payload |
+| --- | --- | --- |
+| idle | Emitted when the user not change input value for a provided timeout | search input value |
+| change | Emitted on every user's change in a search input or when user selects an item from the provided `dropdownItems` | search input value |
+| search | Emitted when the user press the 'Enter' key | search input value |
 
 ## ➤ How to use it
 

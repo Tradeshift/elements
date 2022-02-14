@@ -138,7 +138,7 @@ export class TSSearch extends TSElement {
 					return;
 				}
 				/**
-				 * Emitted on every user's change in a search input
+				 * Emitted on every user's change in a search input or when user selects an item from the provided `dropdownItems`
 				 * @payload search input value
 				 */
 				this.dispatchCustomEvent('change', newVal);
