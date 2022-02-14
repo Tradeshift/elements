@@ -90,6 +90,7 @@ export class TSActionSelect extends TSElement {
 	removeOverlay() {
 		if (this.closeOverlay) {
 			this.closeOverlay();
+			delete this.closeOverlay;
 		}
 	}
 
