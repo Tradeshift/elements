@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/Tradeshift/elements/compare/v0.33.8...v0.34.0) (2022-02-14)
+
+### Bug Fixes
+
+- **storybook:** fix missing notes for tabs, tab and progress-bar ([caca453](https://github.com/Tradeshift/elements/commit/caca4530b2fc43654da2beca32ff2b978a01b504))
+
 ## [0.33.8](https://github.com/Tradeshift/elements/compare/v0.33.7...v0.33.8) (2022-01-27)
 
 **Note:** Version bump only for package @tradeshift/elements.progress-bar

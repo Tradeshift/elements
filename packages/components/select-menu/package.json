@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.select-menu",
-  "version": "0.33.8",
+  "version": "0.34.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,12 +15,12 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.33.8",
-    "@tradeshift/elements.button": "^0.33.8",
-    "@tradeshift/elements.button-group": "^0.33.8",
-    "@tradeshift/elements.icon": "^0.33.8",
-    "@tradeshift/elements.list-item": "^0.33.8",
-    "@tradeshift/elements.spinner": "^0.33.8"
+    "@tradeshift/elements": "^0.34.0",
+    "@tradeshift/elements.button": "^0.34.0",
+    "@tradeshift/elements.button-group": "^0.34.0",
+    "@tradeshift/elements.icon": "^0.34.0",
+    "@tradeshift/elements.list-item": "^0.34.0",
+    "@tradeshift/elements.spinner": "^0.34.0"
   },
   "src": "src/select-menu.js"
 }

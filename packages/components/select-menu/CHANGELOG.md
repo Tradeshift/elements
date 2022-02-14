@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/Tradeshift/elements/compare/v0.33.8...v0.34.0) (2022-02-14)
+
+### Features
+
+- [PEAA-593] add search suggestions to a search component ([3690719](https://github.com/Tradeshift/elements/commit/36907194bf7b7ab0c9d0f6e748299d8c32d995b8))
+
 ## [0.33.8](https://github.com/Tradeshift/elements/compare/v0.33.7...v0.33.8) (2022-01-27)
 
 ### Bug Fixes
