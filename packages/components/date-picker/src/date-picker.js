@@ -151,6 +151,7 @@ export class TSDatePicker extends TSElement {
 	removeOverlay() {
 		if (this.closeOverlay) {
 			this.closeOverlay();
+			delete this.closeOverlay;
 		}
 	}
 
