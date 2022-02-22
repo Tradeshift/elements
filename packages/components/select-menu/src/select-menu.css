@@ -25,19 +25,19 @@
 	padding: var(--ts-unit) 0;
 }
 
-.apply-button-container {
+.footer-container {
 	background-color: var(--ts-color-white);
 	border-top: var(--ts-border);
 	bottom: 0;
 	position: relative;
+}
 
-	& ts-button-group {
-		padding: var(--ts-unit-half);
-		& ts-button {
-			margin-bottom: 0;
-		}
+.apply-button-container {
+	padding: var(--ts-unit-half);
+	padding-top: 0;
+	& ts-button {
+		margin-bottom: 0;
 	}
-
 	&.show {
 		display: block;
 	}
@@ -59,8 +59,16 @@
 	display: inline-flex;
 	font-size: var(--ts-fontsize-mini);
 	font-weight: var(--ts-fontweight);
-	padding: var(--ts-unit) var(--ts-unit) var(--ts-unit-half) var(--ts-unit);
+	padding: var(--ts-unit);
+
 	& ts-icon {
 		margin-right: var(--ts-unit-half);
+	}
+
+	&.show {
+		display: inline-flex;
+	}
+	&.hide {
+		display: none;
 	}
 }

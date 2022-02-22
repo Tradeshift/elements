@@ -117,7 +117,10 @@ export class TSSelectMenu extends TSElement {
 
 	/** @private */
 	get showSelectedButton() {
-		return html`<div class="show-selection" @click="${this.showSelectedClick}">
+		return html`<div
+			class="show-selection ${this.isVisibleShowSelectedButton ? 'show' : 'hide'}"
+			@click="${this.showSelectedClick}"
+		>
 			<ts-icon icon="${this.showSelectedOnly ? 'checkbox' : 'checkbox-on'}" size="large" type="disabled-checked">
 			</ts-icon>
 			${this.showSelectedOnly
@@ -126,10 +129,14 @@ export class TSSelectMenu extends TSElement {
 		</div>`;
 	}
 
+	get isVisibleShowSelectedButton() {
+		return this.multiselect && (this.dirty || this.currentSelection.length);
+	}
+
 	/** @private */
 	get selectButton() {
 		return html`
-			<ts-button-group>
+			<ts-button-group class="apply-button-container ${this.showApplyButtonContainer ? 'show' : 'hide'}">
 				<ts-button type="primary" @click=${this.applySelection}
 					>${this.translations.select} ${this.currentSelection.length}</ts-button
 				>
@@ -138,7 +145,7 @@ export class TSSelectMenu extends TSElement {
 	}
 
 	get showApplyButtonContainer() {
-		return !this.noApplyButton && this.multiselect && this.dirty;
+		return !this.noApplyButton && this.multiselect && (this.dirty || this.currentSelection.length);
 	}
 
 	get displayedItems() {
@@ -184,7 +191,7 @@ export class TSSelectMenu extends TSElement {
 					}
 				</ul>
 			</div>
-			<div class="apply-button-container ${this.showApplyButtonContainer ? 'show' : 'hide'}">
+			<div class="footer-container">
 				${this.showSelectedButton} ${this.selectButton}
 			</div>`}
 		</div>`;
