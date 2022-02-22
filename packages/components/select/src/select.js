@@ -169,6 +169,9 @@ export class TSSelect extends TSElement {
 
 	/** @private */
 	updateInputValue() {
+		if (this.opened) {
+			return;
+		}
 		if (this.selected.length === 0) {
 			this.inputValue = '';
 			return;

@@ -87,12 +87,7 @@
 									console.log('tsSelect input change event', e.detail.inputValue);
 									tsSelect.loading = true;
 									window.setTimeout(() => {
-										tsSelect.items = [
-											...initialItems,
-											...serverSideFilteredItems.filter(
-												item => !initialItems.some(innerItem => item.id === innerItem.id)
-											)
-										];
+										tsSelect.items = [...initialItems, ...serverSideFilteredItems];
 										tsSelect.loading = false;
 									}, 2000);
 								});
@@ -113,19 +108,12 @@
 								});
 								tsSelectMulti.addEventListener('filter-value-change', e => {
 									console.log('tsSelect input change event', e.detail.filterValue);
-									window.setTimeout(() => {
-										tsSelectMulti.loading = true;
-									}, 2000);
+									tsSelectMulti.loading = true;
 									window.setTimeout(() => {
 										tsSelectMulti.filteredItems = serverSideFilteredItems;
-										tsSelectMulti.items = [
-											...initialItems,
-											...serverSideFilteredItems.filter(
-												item => !initialItems.some(innerItem => item.id === innerItem.id)
-											)
-										];
+										tsSelectMulti.items = [...initialItems, ...serverSideFilteredItems];
 										tsSelectMulti.loading = false;
-									}, 4000);
+									}, 1000);
 								});
 							</script>
 						</div>
@@ -147,12 +135,7 @@
 									tsSelectMultiNoApply.loading = true;
 									window.setTimeout(() => {
 										tsSelectMultiNoApply.filteredItems = serverSideFilteredItems;
-										tsSelectMultiNoApply.items = [
-											...initialItems,
-											...serverSideFilteredItems.filter(
-												item => !initialItems.some(innerItem => item.id === innerItem.id)
-											)
-										];
+										tsSelectMultiNoApply.items = [...initialItems, ...serverSideFilteredItems];
 										tsSelectMultiNoApply.loading = false;
 									}, 1000);
 								});
