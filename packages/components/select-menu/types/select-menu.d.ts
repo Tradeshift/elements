@@ -8,6 +8,9 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
+	/**  List of filtered options based on the select filter input value. You should update the   */
+	"filtered-items"?: any[];
+
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
@@ -37,6 +40,9 @@ export interface TSSelectMenu {
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
+
+	/**  List of filtered options based on the select filter input value. You should update the   */
+	filteredItems?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;

@@ -20,6 +20,12 @@ export class TSSelect extends TSElement {
 		this._translations = Object.assign({}, translations);
 		this.handleInputDebounced = helpers.debounceEvent(() => {
 			this.filterValue = this.inputValue;
+			/**
+			 * Emitted when filter value of the select changes. You can listen to this to update the
+			 */
+			this.dispatchCustomEvent('filter-value-change', {
+				filterValue: this.caseSensitive ? this.filterValue : this.filterValue.toLowerCase()
+			});
 		}, 300);
 	}
 
@@ -37,6 +43,8 @@ export class TSSelect extends TSElement {
 			opened: { type: Boolean, reflect: true },
 			/** List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon */
 			items: { type: Array, reflect: true },
+			/** List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.   */
+			filteredItems: { type: Array, reflect: true, attribute: 'filtered-items' },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
 			/** Do not show the apply button and directly emit select-changed when the selection changes.
@@ -48,6 +56,8 @@ export class TSSelect extends TSElement {
 			placeholder: { type: String, reflect: true },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true },
+			/** Show the loading spinner  */
+			loading: { type: Boolean, reflect: true },
 			/** Make client side filtering case sensitive which by default is case-insensitive */
 			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
 			/** INTERNAL Current value in input. */
@@ -235,12 +245,15 @@ export class TSSelect extends TSElement {
 					? html`<ts-overlay id="overlay" @overlay-close=${this.onOverlayCloseListener}>
 							<ts-select-menu
 								.items="${this.items}"
+								.filteredItems="${this.filteredItems}"
 								.dir="${this.dir}"
 								?disabled="${this.disabled}"
 								?multiselect="${this.multiselect}"
 								?no-apply-button="${this.noApplyButton}"
 								.filterValue="${this.filterValue}"
 								.currentSelection="${[...this.selected]}"
+								.translations="${this.translations}"
+								.loading="${this.loading}"
 								.caseSensitive="${this.caseSensitive}"
 								@select-menu-changed=${this.onChangeListener}
 							></ts-select-menu>

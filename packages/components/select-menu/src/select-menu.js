@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
@@ -20,6 +20,8 @@ export class TSSelectMenu extends TSElement {
 			disabled: { type: Boolean, reflect: true },
 			/** List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon */
 			items: { type: Array, reflect: true },
+			/** List of filtered options based on the select filter input value. You should update the  */
+			filteredItems: { type: Array, reflect: true, attribute: 'filtered-items' },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
 			/** Do not show the apply button and directly emit select-menu-changed when the selection changes.
@@ -140,11 +142,16 @@ export class TSSelectMenu extends TSElement {
 	}
 
 	get displayedItems() {
+		if (this.showSelectedOnly) {
+			return this.items.filter(item => this.currentSelection.indexOf(item.id) > -1);
+		}
+		if (this.filteredItems && this.filterValue) {
+			return this.filteredItems;
+		}
 		const searchString = this.caseSensitive ? this.filterValue : this.filterValue?.toLowerCase();
 		return this.items.filter(item => {
 			const itemTitle = this.caseSensitive ? item.title : item.title.toLowerCase();
-			const isSelected = this.currentSelection.indexOf(item.id) > -1;
-			return itemTitle.indexOf(searchString) > -1 && (this.showSelectedOnly ? isSelected : true);
+			return itemTitle.indexOf(searchString) > -1;
 		});
 	}
 
