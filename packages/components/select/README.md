@@ -41,6 +41,7 @@
 | selected | selected | Array | [] | List of selected items' ids |
 | placeholder | placeholder | String |  | Default placeholder when there is no selection. |
 | translations | translations | Object |  | Translated messages for the user locale |
+| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive which by default is case-insensitive |
 | inputValue | inputValue | String | '' | INTERNAL Current value in input. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
 

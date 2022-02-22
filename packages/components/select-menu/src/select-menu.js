@@ -31,6 +31,8 @@ export class TSSelectMenu extends TSElement {
 			translations: { type: Object, reflect: true },
 			/** Set component in loading state and render a spinner instead of list of items */
 			loading: { type: Boolean, reflect: true },
+			/** Make client side filtering case sensitive which by default is case-insensitive */
+			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
 			/** INTERNAL Does component has uncommited changes or not. */
 			dirty: { type: Boolean, reflect: true },
 			/** INTERNAL List of currently selected changes that user not commited yet. */
@@ -133,14 +135,20 @@ export class TSSelectMenu extends TSElement {
 		`;
 	}
 
+	get showApplyButtonContainer() {
+		return !this.noApplyButton && this.multiselect && this.dirty;
+	}
+
+	get displayedItems() {
+		const searchString = this.caseSensitive ? this.filterValue : this.filterValue?.toLowerCase();
+		return this.items.filter(item => {
+			const itemTitle = this.caseSensitive ? item.title : item.title.toLowerCase();
+			const isSelected = this.currentSelection.indexOf(item.id) > -1;
+			return itemTitle.indexOf(searchString) > -1 && (this.showSelectedOnly ? isSelected : true);
+		});
+	}
+
 	render() {
-		const searchString = this.filterValue.toLowerCase();
-		const filteredItems = this.items.filter(
-			item =>
-				item.title.toLowerCase().indexOf(searchString) > -1 &&
-				(this.showSelectedOnly ? this.currentSelection.indexOf(item.id) > -1 : true)
-		);
-		const showApplyButtonContainer = !this.noApplyButton && this.multiselect && this.dirty;
 		return html`<div id="listContainer">
 			${this.loading
 				? html`<div class="loading-container">
@@ -149,8 +157,8 @@ export class TSSelectMenu extends TSElement {
 				: html`
 				<ul>
 					${
-						filteredItems.length > 0
-							? filteredItems.map(
+						this.displayedItems.length > 0
+							? this.displayedItems.map(
 									item => html`<ts-list-item
 										class="items-list"
 										selectable
@@ -169,7 +177,7 @@ export class TSSelectMenu extends TSElement {
 					}
 				</ul>
 			</div>
-			<div class="apply-button-container ${showApplyButtonContainer ? 'show' : 'hide'}">
+			<div class="apply-button-container ${this.showApplyButtonContainer ? 'show' : 'hide'}">
 				${this.showSelectedButton} ${this.selectButton}
 			</div>`}
 		</div>`;

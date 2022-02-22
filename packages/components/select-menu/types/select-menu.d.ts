@@ -23,6 +23,9 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;
 
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	"case-sensitive"?: boolean;
+
 }
 
 export interface TSSelectMenu {
@@ -49,5 +52,8 @@ export interface TSSelectMenu {
 
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;
+
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	caseSensitive?: boolean;
 
 }

@@ -26,6 +26,9 @@ export interface TSSelectHTMLAttributes {
 	/**  Translated messages for the user locale  */
 	translations?: object;
 
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	"case-sensitive"?: boolean;
+
 }
 
 export interface TSSelect {
@@ -55,5 +58,8 @@ export interface TSSelect {
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
+
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	caseSensitive?: boolean;
 
 }

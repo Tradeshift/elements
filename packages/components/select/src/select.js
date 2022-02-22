@@ -48,6 +48,8 @@ export class TSSelect extends TSElement {
 			placeholder: { type: String, reflect: true },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true },
+			/** Make client side filtering case sensitive which by default is case-insensitive */
+			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
 			/** INTERNAL Current value in input. */
 			inputValue: { type: String, attribute: false },
 			/** INTERNAL Latest input value that was used to filter. */
@@ -239,6 +241,7 @@ export class TSSelect extends TSElement {
 								?no-apply-button="${this.noApplyButton}"
 								.filterValue="${this.filterValue}"
 								.currentSelection="${[...this.selected]}"
+								.caseSensitive="${this.caseSensitive}"
 								@select-menu-changed=${this.onChangeListener}
 							></ts-select-menu>
 					  </ts-overlay>`

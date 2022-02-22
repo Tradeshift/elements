@@ -40,6 +40,7 @@
 | selected | selected | Array | [] | List of selected items' ids |
 | translations | translations | Object |  | Translated messages for the user locale |
 | loading | loading | Boolean | false | Set component in loading state and render a spinner instead of list of items |
+| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive which by default is case-insensitive |
 | dirty | dirty | Boolean | false | INTERNAL Does component has uncommited changes or not. |
 | currentSelection | currentSelection | Array | [] | INTERNAL List of currently selected changes that user not commited yet. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
