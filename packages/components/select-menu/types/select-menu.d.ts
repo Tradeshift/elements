@@ -8,7 +8,7 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
-	/**  List of filtered options based on the select filter input value. You should update the   */
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.  */
 	"filtered-items"?: any[];
 
 	/**  Allow users to select several options or not.  */
@@ -41,7 +41,7 @@ export interface TSSelectMenu {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
-	/**  List of filtered options based on the select filter input value. You should update the   */
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.  */
 	filteredItems?: any[];
 
 	/**  Allow users to select several options or not.  */

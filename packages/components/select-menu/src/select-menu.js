@@ -20,7 +20,7 @@ export class TSSelectMenu extends TSElement {
 			disabled: { type: Boolean, reflect: true },
 			/** List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon */
 			items: { type: Array, reflect: true },
-			/** List of filtered options based on the select filter input value. You should update the  */
+			/** List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items. */
 			filteredItems: { type: Array, reflect: true, attribute: 'filtered-items' },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
@@ -130,22 +130,22 @@ export class TSSelectMenu extends TSElement {
 	}
 
 	get isVisibleShowSelectedButton() {
-		return this.multiselect && (this.dirty || this.currentSelection.length);
+		return this.multiselect && (this.dirty || this.currentSelection.length > 0);
 	}
 
 	/** @private */
 	get selectButton() {
 		return html`
 			<ts-button-group class="apply-button-container ${this.showApplyButtonContainer ? 'show' : 'hide'}">
-				<ts-button type="primary" @click=${this.applySelection}
-					>${this.translations.select} ${this.currentSelection.length}</ts-button
-				>
+				<ts-button type="primary" @click=${this.applySelection}>
+					${this.translations.select} ${this.currentSelection.length}
+				</ts-button>
 			</ts-button-group>
 		`;
 	}
 
 	get showApplyButtonContainer() {
-		return !this.noApplyButton && this.multiselect && (this.dirty || this.currentSelection.length);
+		return !this.noApplyButton && this.multiselect && (this.dirty || this.currentSelection.length > 0);
 	}
 
 	get displayedItems() {
@@ -163,6 +163,7 @@ export class TSSelectMenu extends TSElement {
 	}
 
 	render() {
+		const displayedItems = this.displayedItems;
 		return html`<div id="listContainer">
 			${this.loading
 				? html`<div class="loading-container">
@@ -171,8 +172,8 @@ export class TSSelectMenu extends TSElement {
 				: html`
 				<ul>
 					${
-						this.displayedItems.length > 0
-							? this.displayedItems.map(
+						displayedItems.length > 0
+							? displayedItems.map(
 									item => html`<ts-list-item
 										class="items-list"
 										selectable

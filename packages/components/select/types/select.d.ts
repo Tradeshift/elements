@@ -29,10 +29,10 @@ export interface TSSelectHTMLAttributes {
 	/**  Translated messages for the user locale  */
 	translations?: object;
 
-	/**  Show the loading spinner   */
+	/**  Show the loading spinner in select dropdown  */
 	loading?: boolean;
 
-	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
 	"case-sensitive"?: boolean;
 
 }
@@ -68,10 +68,10 @@ export interface TSSelect {
 	/**  Translated messages for the user locale  */
 	translations?: object;
 
-	/**  Show the loading spinner   */
+	/**  Show the loading spinner in select dropdown  */
 	loading?: boolean;
 
-	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
 	caseSensitive?: boolean;
 
 }

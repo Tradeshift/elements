@@ -42,8 +42,8 @@
 | selected | selected | Array | [] | List of selected items' ids |
 | placeholder | placeholder | String |  | Default placeholder when there is no selection. |
 | translations | translations | Object |  | Translated messages for the user locale |
-| loading | loading | Boolean | false | Show the loading spinner |
-| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive which by default is case-insensitive |
+| loading | loading | Boolean | false | Show the loading spinner in select dropdown |
+| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event |
 | inputValue | inputValue | String | '' | INTERNAL Current value in input. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
 
@@ -51,7 +51,7 @@
 
 | Name | Description | Payload |
 | --- | --- | --- |
-| filter-value-change | Emitted when filter value of the select changes. You can listen to this to update the |  |
+| filter-value-change | Emitted when filter value of the select changes. You can listen to this for doing custom filtering and providing filteredItems to override the default component filtering. |  |
 | select-changed | Emitted when user applies the selected changes |  |
 
 ## ➤ How to use it

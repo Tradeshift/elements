@@ -21,7 +21,8 @@ export class TSSelect extends TSElement {
 		this.handleInputDebounced = helpers.debounceEvent(() => {
 			this.filterValue = this.inputValue;
 			/**
-			 * Emitted when filter value of the select changes. You can listen to this to update the
+			 * Emitted when filter value of the select changes. You can listen to this for doing custom filtering and
+			 * providing filteredItems to override the default component filtering.
 			 */
 			this.dispatchCustomEvent('filter-value-change', {
 				filterValue: this.caseSensitive ? this.filterValue : this.filterValue.toLowerCase()
@@ -56,9 +57,9 @@ export class TSSelect extends TSElement {
 			placeholder: { type: String, reflect: true },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true },
-			/** Show the loading spinner  */
+			/** Show the loading spinner in select dropdown */
 			loading: { type: Boolean, reflect: true },
-			/** Make client side filtering case sensitive which by default is case-insensitive */
+			/** Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event */
 			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
 			/** INTERNAL Current value in input. */
 			inputValue: { type: String, attribute: false },
