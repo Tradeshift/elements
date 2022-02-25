@@ -23,7 +23,7 @@ export const TestSingleSelect = () => {
 	return html`
 		<style>
 			.render-block {
-				flex: 0 0 19%;
+				flex: 0 0 16%;
 				height: 400px;
 			}
 		</style>
@@ -72,6 +72,10 @@ export const TestSingleSelect = () => {
 				Opened:
 				<ts-select opened placeholder="Placeholder" .items="${itemsWithIcons}" .selected="${[1]}"></ts-select>
 			</div>
+			<div class="render-block">
+				<p>Simple select in loading state</p>
+				<ts-select opened placeholder="Placeholder" .items="${itemsWithIcons}" loading></ts-select>
+			</div>
 		</div>
 	`;
 };
@@ -80,7 +84,7 @@ export const TestMultipleSelect = () => {
 	return html`
 		<style>
 			.render-block {
-				flex: 0 0 19%;
+				flex: 0 0 16%;
 				height: 600px;
 			}
 		</style>
@@ -127,6 +131,11 @@ export const TestMultipleSelect = () => {
 			<div class="render-block">
 				<p>Multiselect without apply selection button</p>
 				<ts-select multiselect noapply opened placeholder="Placeholder" .items="${items}"></ts-select>
+			</div>
+
+			<div class="render-block">
+				<p>Multiselect select in loading state</p>
+				<ts-select opened placeholder="Placeholder" .items="${itemsWithIcons}" loading></ts-select>
 			</div>
 		</div>
 	`;

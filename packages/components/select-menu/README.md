@@ -35,11 +35,13 @@
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
+| filteredItems | filtered-items | Array |  | List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items. |
 | multiselect | multiselect | Boolean | false | Allow users to select several options or not. |
 | noApplyButton | no-apply-button | Boolean | false | Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. |
 | selected | selected | Array | [] | List of selected items' ids |
 | translations | translations | Object |  | Translated messages for the user locale |
 | loading | loading | Boolean | false | Set component in loading state and render a spinner instead of list of items |
+| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive which by default is case-insensitive |
 | dirty | dirty | Boolean | false | INTERNAL Does component has uncommited changes or not. |
 | currentSelection | currentSelection | Array | [] | INTERNAL List of currently selected changes that user not commited yet. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |

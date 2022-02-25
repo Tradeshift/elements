@@ -8,6 +8,9 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.  */
+	"filtered-items"?: any[];
+
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
@@ -23,6 +26,9 @@ export interface TSSelectMenuHTMLAttributes {
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;
 
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	"case-sensitive"?: boolean;
+
 }
 
 export interface TSSelectMenu {
@@ -34,6 +40,9 @@ export interface TSSelectMenu {
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
+
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.  */
+	filteredItems?: any[];
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -49,5 +58,8 @@ export interface TSSelectMenu {
 
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;
+
+	/**  Make client side filtering case sensitive which by default is case-insensitive  */
+	caseSensitive?: boolean;
 
 }

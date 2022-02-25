@@ -11,6 +11,9 @@ export interface TSSelectHTMLAttributes {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.    */
+	"filtered-items"?: any[];
+
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
@@ -25,6 +28,12 @@ export interface TSSelectHTMLAttributes {
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
+
+	/**  Show the loading spinner in select dropdown  */
+	loading?: boolean;
+
+	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
+	"case-sensitive"?: boolean;
 
 }
 
@@ -41,6 +50,9 @@ export interface TSSelect {
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: any[];
 
+	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.    */
+	filteredItems?: any[];
+
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
 
@@ -55,5 +67,11 @@ export interface TSSelect {
 
 	/**  Translated messages for the user locale  */
 	translations?: object;
+
+	/**  Show the loading spinner in select dropdown  */
+	loading?: boolean;
+
+	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
+	caseSensitive?: boolean;
 
 }

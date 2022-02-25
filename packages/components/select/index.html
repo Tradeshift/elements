@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements: Action-Select</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<script type="module" src="/packages/components/select/lib/select.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
+	</head>
+
+	<body style="display: flex; justify-content: center">
+		<script>
+			const initialItems = [
+				{ id: 0, title: 'asd 1' },
+				{ id: 1, title: 'Asd 2' },
+				{ id: 2, title: 'xcv 3' },
+				{ id: 3, title: 'qwe 4' },
+				{ id: 4, title: 'wer 5' },
+				{ id: 5, title: 'QWE 6' },
+				{ id: 6, title: 'yui 7' },
+				{ id: 7, title: 'hjk 8' },
+				{ id: 8, title: 'HJK 9' }
+			];
+			const serverSideFilteredItems = [
+				{ id: 0, title: 'asd 1' },
+				{ id: 1, title: 'Asd 2' },
+				{ id: 10, title: 'ASD 10' },
+				{ id: 11, title: 'aaa 2' },
+				{ id: 12, title: 'aaa 3' },
+				{ id: 13, title: 'aaa 4' },
+				{ id: 14, title: 'aaa 5' },
+				{ id: 15, title: 'aaa 6' },
+				{ id: 16, title: 'aaa 7' },
+				{ id: 17, title: 'aaa 8' },
+				{ id: 18, title: 'aaa 9' }
+			];
+			const translations = {
+				select: 'Select',
+				show_all: 'Show all',
+				no_items: 'Nothing to show here.....',
+				view_selection: 'View selection',
+				loading: 'Loading ...'
+			};
+
+			function initializeSelect(id) {
+				const tsSelect = document.getElementById(id);
+				tsSelect.items = [...initialItems];
+				window.setTimeout(() => {
+					// tsSelect.selected = [2];
+					tsSelect.setAttribute('selected', JSON.stringify([2]));
+				}, 3000 * Math.random());
+				tsSelect.translations = translations;
+				return tsSelect;
+			}
+		</script>
+		<article style="margin-top: 200px">
+			<ts-board data-title="ts-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 10px 20px 0">
+							<ts-select id="tsSelectLoading" placeholder="loading" loading></ts-select>
+							<ts-select id="tsSelect" placeholder="placeholder"></ts-select>
+							<script>
+								initializeSelect('tsSelectLoading');
+								const tsSelect = initializeSelect('tsSelect');
+								tsSelect.addEventListener('filter-value-change', e => {
+									console.log('tsSelect input change event', e.detail.inputValue);
+									tsSelect.loading = true;
+									window.setTimeout(() => {
+										tsSelect.items = [...initialItems, ...serverSideFilteredItems];
+										tsSelect.loading = false;
+									}, 2000);
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+			<ts-board data-title="ts-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 10px 20px 0">
+							Normal multi select
+							<ts-select id="tsSelectMulti" placeholder="multiple" multiselect></ts-select>
+							<script>
+								const tsSelectMulti = initializeSelect('tsSelectMulti');
+								tsSelectMulti.addEventListener('select-changed', e => {
+									console.log('tsSelect select change event', e.detail);
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+			<ts-board data-title="ts-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 10px 20px 0">
+							<ts-select id="tsSelectMultiCustom" placeholder="multiple" multiselect></ts-select>
+							<script>
+								const tsSelectMultiCustom = initializeSelect('tsSelectMultiCustom');
+								tsSelectMultiCustom.addEventListener('select-changed', e => {
+									console.log('tsSelect select change event', e.detail);
+								});
+								tsSelectMultiCustom.addEventListener('filter-value-change', e => {
+									console.log('tsSelect input change event', e.detail.filterValue);
+									tsSelectMultiCustom.loading = true;
+									window.setTimeout(() => {
+										tsSelectMultiCustom.filteredItems = serverSideFilteredItems;
+										tsSelectMultiCustom.items = [...initialItems, ...serverSideFilteredItems];
+										tsSelectMultiCustom.loading = false;
+									}, 1000);
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+			<ts-board data-title="ts-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 10px 20px 0">
+							<ts-select id="tsSelectMultiNoApply" placeholder="multiple" multiselect no-apply-button></ts-select>
+							<script>
+								const tsSelectMultiNoApply = initializeSelect('tsSelectMultiNoApply');
+								tsSelectMultiNoApply.addEventListener('select-changed', e => {
+									console.log('tsSelect select change event', e.detail);
+								});
+								tsSelectMultiNoApply.addEventListener('filter-value-change', e => {
+									console.log('tsSelect input change event', e.detail.filterValue);
+									tsSelectMultiNoApply.loading = true;
+									window.setTimeout(() => {
+										tsSelectMultiNoApply.filteredItems = serverSideFilteredItems;
+										tsSelectMultiNoApply.items = [...initialItems, ...serverSideFilteredItems];
+										tsSelectMultiNoApply.loading = false;
+									}, 1000);
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+		</article>
+	</body>
+</html>

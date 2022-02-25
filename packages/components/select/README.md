@@ -36,19 +36,23 @@
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | opened | opened | Boolean | false | Is the dropdown part opened or not. |
 | items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
+| filteredItems | filtered-items | Array |  | List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items. |
 | multiselect | multiselect | Boolean | false | Allow users to select several options or not. |
 | noApplyButton | no-apply-button | Boolean | false | Do not show the apply button and directly emit select-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior. |
 | selected | selected | Array | [] | List of selected items' ids |
 | placeholder | placeholder | String |  | Default placeholder when there is no selection. |
 | translations | translations | Object |  | Translated messages for the user locale |
+| loading | loading | Boolean | false | Show the loading spinner in select dropdown |
+| caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event |
 | inputValue | inputValue | String | '' | INTERNAL Current value in input. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
 
 ## ➤ Events
 
-| Name           | Description                                    | Payload |
-| -------------- | ---------------------------------------------- | ------- |
-| select-changed | Emitted when user applies the selected changes |         |
+| Name | Description | Payload |
+| --- | --- | --- |
+| filter-value-change | Emitted when filter value of the select changes. You can listen to this for doing custom filtering and providing filteredItems to override the default component filtering. |  |
+| select-changed | Emitted when user applies the selected changes |  |
 
 ## ➤ How to use it
 

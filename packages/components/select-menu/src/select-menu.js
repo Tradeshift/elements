@@ -1,4 +1,4 @@
-import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
@@ -20,6 +20,8 @@ export class TSSelectMenu extends TSElement {
 			disabled: { type: Boolean, reflect: true },
 			/** List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon */
 			items: { type: Array, reflect: true },
+			/** List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items. */
+			filteredItems: { type: Array, reflect: true, attribute: 'filtered-items' },
 			/** Allow users to select several options or not. */
 			multiselect: { type: Boolean, reflect: true },
 			/** Do not show the apply button and directly emit select-menu-changed when the selection changes.
@@ -31,6 +33,8 @@ export class TSSelectMenu extends TSElement {
 			translations: { type: Object, reflect: true },
 			/** Set component in loading state and render a spinner instead of list of items */
 			loading: { type: Boolean, reflect: true },
+			/** Make client side filtering case sensitive which by default is case-insensitive */
+			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
 			/** INTERNAL Does component has uncommited changes or not. */
 			dirty: { type: Boolean, reflect: true },
 			/** INTERNAL List of currently selected changes that user not commited yet. */
@@ -113,7 +117,10 @@ export class TSSelectMenu extends TSElement {
 
 	/** @private */
 	get showSelectedButton() {
-		return html`<div class="show-selection" @click="${this.showSelectedClick}">
+		return html`<div
+			class="show-selection ${this.isVisibleShowSelectedButton ? 'show' : 'hide'}"
+			@click="${this.showSelectedClick}"
+		>
 			<ts-icon icon="${this.showSelectedOnly ? 'checkbox' : 'checkbox-on'}" size="large" type="disabled-checked">
 			</ts-icon>
 			${this.showSelectedOnly
@@ -122,25 +129,62 @@ export class TSSelectMenu extends TSElement {
 		</div>`;
 	}
 
+	get isVisibleShowSelectedButton() {
+		return this.multiselect && (this.dirty || this.currentSelection.length > 0);
+	}
+
 	/** @private */
 	get selectButton() {
 		return html`
-			<ts-button-group>
-				<ts-button type="primary" @click=${this.applySelection}
-					>${this.translations.select} ${this.currentSelection.length}</ts-button
-				>
+			<ts-button-group class="apply-button-container ${this.showApplyButtonContainer ? 'show' : 'hide'}">
+				<ts-button type="primary" @click=${this.applySelection}>
+					${this.translations.select} ${this.currentSelection.length}
+				</ts-button>
 			</ts-button-group>
 		`;
 	}
 
+	get showApplyButtonContainer() {
+		return !this.noApplyButton && this.multiselect && (this.dirty || this.currentSelection.length > 0);
+	}
+
+	get displayedItems() {
+		// it should only show selected items, without applying any filter
+		if (this.showSelectedOnly) {
+			return this.items.filter(item => this.currentSelection.indexOf(item.id) > -1);
+		}
+		// it should show the filtered items if they are provided and the filter field is not empty
+		if (this.filteredItems && this.filterValue) {
+			return this.filteredItems;
+		}
+		const searchString = this.caseSensitive ? this.filterValue : this.filterValue?.toLowerCase();
+		return this.items.filter(item => {
+			const itemTitle = this.caseSensitive ? item.title : item.title.toLowerCase();
+			return itemTitle.indexOf(searchString) > -1;
+		});
+	}
+
+	update(changedProperties) {
+		super.update(changedProperties);
+		if (changedProperties.has('selected')) {
+			this.addSelectedToCurrentSelection();
+		}
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this.addSelectedToCurrentSelection();
+	}
+
+	addSelectedToCurrentSelection() {
+		this.currentSelection = [
+			...this.currentSelection,
+			...this.selected.filter(item => this.currentSelection.indexOf(item) === -1)
+		];
+	}
+
 	render() {
-		const searchString = this.filterValue.toLowerCase();
-		const filteredItems = this.items.filter(
-			item =>
-				item.title.toLowerCase().indexOf(searchString) > -1 &&
-				(this.showSelectedOnly ? this.currentSelection.indexOf(item.id) > -1 : true)
-		);
-		const showApplyButtonContainer = !this.noApplyButton && this.multiselect && this.dirty;
+		const displayedItems = this.displayedItems;
 		return html`<div id="listContainer">
 			${this.loading
 				? html`<div class="loading-container">
@@ -149,8 +193,8 @@ export class TSSelectMenu extends TSElement {
 				: html`
 				<ul>
 					${
-						filteredItems.length > 0
-							? filteredItems.map(
+						displayedItems.length > 0
+							? displayedItems.map(
 									item => html`<ts-list-item
 										class="items-list"
 										selectable
@@ -169,7 +213,7 @@ export class TSSelectMenu extends TSElement {
 					}
 				</ul>
 			</div>
-			<div class="apply-button-container ${showApplyButtonContainer ? 'show' : 'hide'}">
+			<div class="footer-container">
 				${this.showSelectedButton} ${this.selectButton}
 			</div>`}
 		</div>`;
