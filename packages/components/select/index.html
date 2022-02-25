@@ -68,7 +68,10 @@
 			function initializeSelect(id) {
 				const tsSelect = document.getElementById(id);
 				tsSelect.items = [...initialItems];
-				tsSelect.selected = [];
+				window.setTimeout(() => {
+					// tsSelect.selected = [2];
+					tsSelect.setAttribute('selected', JSON.stringify([2]));
+				}, 3000 * Math.random());
 				tsSelect.translations = translations;
 				return tsSelect;
 			}
@@ -77,7 +80,7 @@
 			<ts-board data-title="ts-select">
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
-						<div style="margin: 0 10px 20px 0">
+						<div style="margin: 10px 20px 0">
 							<ts-select id="tsSelectLoading" placeholder="loading" loading></ts-select>
 							<ts-select id="tsSelect" placeholder="placeholder"></ts-select>
 							<script>
@@ -99,20 +102,36 @@
 			<ts-board data-title="ts-select">
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
-						<div style="margin: 0 10px 20px 0">
+						<div style="margin: 10px 20px 0">
+							Normal multi select
 							<ts-select id="tsSelectMulti" placeholder="multiple" multiselect></ts-select>
 							<script>
 								const tsSelectMulti = initializeSelect('tsSelectMulti');
 								tsSelectMulti.addEventListener('select-changed', e => {
 									console.log('tsSelect select change event', e.detail);
 								});
-								tsSelectMulti.addEventListener('filter-value-change', e => {
+							</script>
+						</div>
+					</div>
+				</div>
+			</ts-board>
+			<ts-board data-title="ts-select">
+				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
+					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
+						<div style="margin: 10px 20px 0">
+							<ts-select id="tsSelectMultiCustom" placeholder="multiple" multiselect></ts-select>
+							<script>
+								const tsSelectMultiCustom = initializeSelect('tsSelectMultiCustom');
+								tsSelectMultiCustom.addEventListener('select-changed', e => {
+									console.log('tsSelect select change event', e.detail);
+								});
+								tsSelectMultiCustom.addEventListener('filter-value-change', e => {
 									console.log('tsSelect input change event', e.detail.filterValue);
-									tsSelectMulti.loading = true;
+									tsSelectMultiCustom.loading = true;
 									window.setTimeout(() => {
-										tsSelectMulti.filteredItems = serverSideFilteredItems;
-										tsSelectMulti.items = [...initialItems, ...serverSideFilteredItems];
-										tsSelectMulti.loading = false;
+										tsSelectMultiCustom.filteredItems = serverSideFilteredItems;
+										tsSelectMultiCustom.items = [...initialItems, ...serverSideFilteredItems];
+										tsSelectMultiCustom.loading = false;
 									}, 1000);
 								});
 							</script>
@@ -123,7 +142,7 @@
 			<ts-board data-title="ts-select">
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
-						<div style="margin: 0 10px 20px 0">
+						<div style="margin: 10px 20px 0">
 							<ts-select id="tsSelectMultiNoApply" placeholder="multiple" multiselect no-apply-button></ts-select>
 							<script>
 								const tsSelectMultiNoApply = initializeSelect('tsSelectMultiNoApply');

@@ -255,7 +255,7 @@ export class TSSelect extends TSElement {
 								?multiselect="${this.multiselect}"
 								?no-apply-button="${this.noApplyButton}"
 								.filterValue="${this.filterValue}"
-								.currentSelection="${[...this.selected]}"
+								.selected="${[...this.selected]}"
 								.translations="${this.translations}"
 								.loading="${this.loading}"
 								.caseSensitive="${this.caseSensitive}"

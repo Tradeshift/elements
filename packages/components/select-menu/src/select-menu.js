@@ -149,9 +149,11 @@ export class TSSelectMenu extends TSElement {
 	}
 
 	get displayedItems() {
+		// it should only show selected items, without applying any filter
 		if (this.showSelectedOnly) {
 			return this.items.filter(item => this.currentSelection.indexOf(item.id) > -1);
 		}
+		// it should show the filtered items if they are provided and the filter field is not empty
 		if (this.filteredItems && this.filterValue) {
 			return this.filteredItems;
 		}
@@ -160,6 +162,25 @@ export class TSSelectMenu extends TSElement {
 			const itemTitle = this.caseSensitive ? item.title : item.title.toLowerCase();
 			return itemTitle.indexOf(searchString) > -1;
 		});
+	}
+
+	update(changedProperties) {
+		super.update(changedProperties);
+		if (changedProperties.has('selected')) {
+			this.addSelectedToCurrentSelection();
+		}
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this.addSelectedToCurrentSelection();
+	}
+
+	addSelectedToCurrentSelection() {
+		this.currentSelection = [
+			...this.currentSelection,
+			...this.selected.filter(item => this.currentSelection.indexOf(item) === -1)
+		];
 	}
 
 	render() {
