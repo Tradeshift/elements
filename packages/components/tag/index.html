@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements - tag</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<script type="module" src="/packages/components/tag/lib/tag.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
+
+		<style>
+			a {
+				text-decoration: underline !important;
+				font-style: italic;
+			}
+			#with-margin {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			#with-margin ts-tag {
+				margin: 0;
+			}
+		</style>
+		<script>
+			/**
+			 * Simple examples of catching and reacting on tag events
+			 */
+			window.addEventListener('delete-tag', e => {
+				if (!e.target.id) {
+					alert("The id attribute is required for this event listener to do its work, and you didn't provide one");
+					return;
+				}
+				const myTag = document.querySelector(`#${e.target.id}`);
+				console.log('delete tag', `'#${e.target.id}'`, myTag);
+				myTag.setAttribute('busy', true);
+				setTimeout(() => {
+					myTag.removeAttribute('busy');
+				}, 1000);
+			});
+
+			window.addEventListener('click-tag', e => console.log('klik tag', e.target.id));
+
+			// example of catching keyboard enter events on focused ts-tags:
+			window.addEventListener('keyup', e => {
+				if (e.target.tagName === 'TS-TAG' && e.type === 'keyup' && e.key === 'Enter') {
+					alert('you hit this tag. ID: ' + (e.target.id || 'undefined'));
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<article>
+			<ts-board data-title="ts-tag, multiple in a flexbox">
+				<div style="display: flex; flex-wrap: wrap">
+					<span style="text-decoration: line-through"
+						><ts-tag
+							clickable
+							tabindex="0"
+							labels='["key 1", "key 2"]'
+							values='["value 1", "value 2", "value 3"]'
+							type="success"
+							deletable
+							id="this-id"
+						></ts-tag
+					></span>
+					<ts-tag tabindex="0" clickable labels='["key only"]' locked></ts-tag>
+					<ts-tag tabindex="0" clickable values='["Value only"]' deletable locked></ts-tag>
+					<ts-tag tabindex="0" clickable labels='["key 1", "key 2"]' type="danger"></ts-tag>
+					<ts-tag tabindex="0" clickable labels='["type"]' values='["warning"]' type="warning"></ts-tag>
+					<div>
+						<ts-tag
+							tabindex="0"
+							clickable
+							labels='["type", "wrapped in"]'
+							values='["warning-lite", "a div"]'
+							type="warning-lite"
+						></ts-tag>
+					</div>
+					<ts-tag tabindex="0" clickable labels='["type"]' values='["blue"]' type="blue"></ts-tag>
+					<ts-tag tabindex="0" clickable labels='["type"]' values='["blue-lite"]' type="blue-lite"></ts-tag>
+					<ts-tag
+						tabindex="0"
+						clickable
+						labels='["type"]'
+						values='["unknown type", "defaults to this"]'
+						type="unknown-type"
+					></ts-tag>
+					<a href="https://dr.dk">
+						<ts-tag tabindex="0" clickable labels='["In a", "link"]' values='["value"]'></ts-tag>
+					</a>
+					<ts-tag tabindex="0" clickable labels='["clickable"]' values='["true"]' type="danger" clickable></ts-tag>
+				</div>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-tags, all not clickable, margin overridden">
+				<div id="with-margin">
+					<ts-tag labels='["key 1", "key 2", "area of origin"]'></ts-tag>
+					<ts-tag labels='["hello"]' deletable></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="success"></ts-tag>
+					<ts-tag labels='["hello hello"]'></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="danger"></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="warning"></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="warning-lite"></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="blue"></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="blue-lite"></ts-tag>
+					<ts-tag labels='["hello", "goodbye"]' type="unknown-type"></ts-tag>
+				</div>
+			</ts-board>
+		</article>
+	</body>
+</html>

@@ -10,8 +10,7 @@ export default {
 export const Test = () => {
 	const properties = {
 		dir: { rtl: 'rtl' },
-		disabled: { true: true },
-		size: sizes
+		disabled: { true: true }
 	};
 
 	const options = {
