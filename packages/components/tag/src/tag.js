@@ -102,13 +102,17 @@ export class TSTag extends TSElement {
 	}
 
 	render() {
+		// prettier-ignore
 		return html`<div
 			dir=${this.direction}
 			class=${this.classes}
 			@click=${this.handleClickEvent}
 			@keyup=${this.handleClickEvent}
 		>
-			${this._labels} ${this._separator} ${this._values} ${this._icons}
+			${this._labels}
+			${this._separator}
+			${this._values}
+			${this._icons}
 		</div>`;
 	}
 }

@@ -49,7 +49,8 @@
 :host([type='blue-lite']:focus-within) {
 	outline-color: var(--ts-color-blue-light);
 }
-:host(:not([type]):focus-within) {
+:host(:not([type]):focus-within),
+:host([locked]:focus-within) {
 	outline-color: var(--ts-color-gray-light);
 }
 
@@ -82,60 +83,62 @@
 	}
 }
 
-:host(:not([busy]):not([locked])[type='success']) .container {
+:host([type='success']) .container {
 	background-color: var(--ts-color-green);
 }
 
-:host(:not([busy]):not([locked])[type='success'][clickable]) .container:hover {
+:host([type='success'][clickable]) .container:hover {
 	background-color: var(--ts-color-green-dark);
 }
 
-:host(:not([busy]):not([locked])[type='warning']) .container {
+:host([type='warning']) .container {
 	background-color: var(--ts-color-orange);
 }
 
-:host(:not([busy]):not([locked])[type='warning'][clickable]) .container:hover {
+:host([type='warning'][clickable]) .container:hover {
 	background-color: var(--ts-color-orange-dark);
 }
 
-:host(:not([busy]):not([locked])[type='warning-lite']) .container {
+:host([type='warning-lite']) .container {
 	background-color: var(--ts-color-orange-lightest);
 }
 
-:host(:not([busy]):not([locked])[type='warning-lite'][clickable]) .container:hover {
+:host([type='warning-lite'][clickable]) .container:hover {
 	background-color: var(--ts-color-orange-lighter);
 }
 
-:host(:not([busy]):not([locked])[type='danger']) .container {
+:host([type='danger']) .container {
 	background-color: var(--ts-color-red);
 }
 
-:host(:not([busy]):not([locked])[type='danger'][clickable]) .container:hover {
+:host([type='danger'][clickable]) .container:hover {
 	background-color: var(--ts-color-red-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue']) .container {
+:host([type='blue']) .container {
 	background-color: var(--ts-color-blue);
 }
 
-:host(:not([busy]):not([locked])[type='blue'][clickable]) .container:hover {
+:host([type='blue'][clickable]) .container:hover {
 	background-color: var(--ts-color-blue-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue-lite']) .container {
+:host([type='blue-lite']) .container {
 	background-color: var(--ts-color-blue-lighter);
-	& .label,
-	& .value {
-		color: var(--ts-color-blue-dark);
-	}
+	color: var(--ts-color-blue-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue-lite'][clickable]) .container:hover {
+:host([type='blue-lite'][clickable]) .container:hover {
 	background-color: var(--ts-color-blue-light);
 }
 
 :host([locked]) .container {
-	color: var(--ts-color-slate-lightest);
+	background-color: var(--ts-color-gray-lighter);
+	color: var(--ts-color-slate-lightest) !important;
+}
+
+:host([clickable][locked]) .container:hover {
+	background-color: var(--ts-color-gray-light);
 }
 
 /* Specific clickable styles .....................................................*/
