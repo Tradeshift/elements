@@ -49,7 +49,8 @@
 :host([type='blue-lite']:focus-within) {
 	outline-color: var(--ts-color-blue-light);
 }
-:host(:not([type]):focus-within) {
+:host(:not([type]):focus-within),
+:host([locked]:focus-within) {
 	outline-color: var(--ts-color-gray-light);
 }
 
@@ -82,84 +83,62 @@
 	}
 }
 
-:host(:not([busy]):not([locked])[type='success']) {
-	& .container {
-		background-color: var(--ts-color-green);
-	}
+:host([type='success']) .container {
+	background-color: var(--ts-color-green);
 }
 
-:host(:not([busy]):not([locked])[type='success'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-green-dark);
-	}
+:host([type='success'][clickable]) .container:hover {
+	background-color: var(--ts-color-green-dark);
 }
 
-:host(:not([busy]):not([locked])[type='warning']) {
-	& .container {
-		background-color: var(--ts-color-orange);
-	}
+:host([type='warning']) .container {
+	background-color: var(--ts-color-orange);
 }
 
-:host(:not([busy]):not([locked])[type='warning'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-orange-dark);
-	}
+:host([type='warning'][clickable]) .container:hover {
+	background-color: var(--ts-color-orange-dark);
 }
 
-:host(:not([busy]):not([locked])[type='warning-lite']) {
-	& .container {
-		background-color: var(--ts-color-orange-lightest);
-	}
+:host([type='warning-lite']) .container {
+	background-color: var(--ts-color-orange-lightest);
 }
 
-:host(:not([busy]):not([locked])[type='warning-lite'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-orange-lighter);
-	}
+:host([type='warning-lite'][clickable]) .container:hover {
+	background-color: var(--ts-color-orange-lighter);
 }
 
-:host(:not([busy]):not([locked])[type='danger']) {
-	& .container {
-		background-color: var(--ts-color-red);
-	}
+:host([type='danger']) .container {
+	background-color: var(--ts-color-red);
 }
 
-:host(:not([busy]):not([locked])[type='danger'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-red-dark);
-	}
+:host([type='danger'][clickable]) .container:hover {
+	background-color: var(--ts-color-red-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue']) {
-	& .container {
-		background-color: var(--ts-color-blue);
-	}
+:host([type='blue']) .container {
+	background-color: var(--ts-color-blue);
 }
 
-:host(:not([busy]):not([locked])[type='blue'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-blue-dark);
-	}
+:host([type='blue'][clickable]) .container:hover {
+	background-color: var(--ts-color-blue-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue-lite']) {
-	& .container {
-		background-color: var(--ts-color-blue-lighter);
-		& .label,
-		& .value {
-			color: var(--ts-color-blue-dark);
-		}
-	}
+:host([type='blue-lite']) .container {
+	background-color: var(--ts-color-blue-lighter);
+	color: var(--ts-color-blue-dark);
 }
 
-:host(:not([busy]):not([locked])[type='blue-lite'][clickable]) {
-	& .container:hover {
-		background-color: var(--ts-color-blue-light);
-	}
+:host([type='blue-lite'][clickable]) .container:hover {
+	background-color: var(--ts-color-blue-light);
 }
 
 :host([locked]) .container {
-	color: var(--ts-color-slate-lightest);
+	background-color: var(--ts-color-gray-lighter);
+	color: var(--ts-color-slate-lightest) !important;
+}
+
+:host([clickable][locked]) .container:hover {
+	background-color: var(--ts-color-gray-light);
 }
 
 /* Specific clickable styles .....................................................*/
@@ -177,13 +156,7 @@
 :host([locked]),
 :host([deletable]) {
 	& .container {
-		padding-right: 0;
-	}
-}
-:host([locked]),
-:host([deletable]) {
-	& .container[dir='rtl'] {
-		padding-left: 0;
+		padding-inline-end: 0;
 	}
 }
 
@@ -202,29 +175,27 @@
 
 /* Busy status ....................................................*/
 
-:host([busy]) {
-	& > :first-child {
-		color: transparent;
-		font-style: unset;
-		pointer-events: none;
-		cursor: default;
-		box-shadow: none;
-		background-size: var(--ts-unit-double) var(--ts-unit-double);
-		background-image: linear-gradient(
-			-45deg,
-			var(--ts-color-gray-light) 25%,
-			var(--ts-color-gray-lightest) 25%,
-			var(--ts-color-gray-lightest) 50%,
-			var(--ts-color-gray-light) 50%,
-			var(--ts-color-gray-light) 75%,
-			var(--ts-color-gray-lightest) 75%,
-			var(--ts-color-gray-lightest)
-		);
-		animation: move 1s linear infinite;
+:host([busy]) > :first-child {
+	color: transparent;
+	font-style: unset;
+	pointer-events: none;
+	cursor: default;
+	box-shadow: none;
+	background-size: var(--ts-unit-double) var(--ts-unit-double);
+	background-image: linear-gradient(
+		-45deg,
+		var(--ts-color-gray-light) 25%,
+		var(--ts-color-gray-lightest) 25%,
+		var(--ts-color-gray-lightest) 50%,
+		var(--ts-color-gray-light) 50%,
+		var(--ts-color-gray-light) 75%,
+		var(--ts-color-gray-lightest) 75%,
+		var(--ts-color-gray-lightest)
+	);
+	animation: move 1s linear infinite;
 
-		& > * {
-			visibility: hidden;
-		}
+	& > * {
+		visibility: hidden;
 	}
 }
 

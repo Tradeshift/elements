@@ -63,7 +63,7 @@ export class TSTag extends TSElement {
 		return classList.filter(classname => classname).join(' ');
 	}
 
-	get icons() {
+	get _icons() {
 		if (this.locked) {
 			return html`
 				<span class="icon">
@@ -83,17 +83,36 @@ export class TSTag extends TSElement {
 		return null;
 	}
 
+	get _labels() {
+		if (this.labels) {
+			return html`<span class="label">${this.labels.join(', ')}</span>`;
+		}
+		return null;
+	}
+
+	get _separator() {
+		return this._hasBothLabelsAndValues() ? html`<span>:&nbsp;</span>` : null;
+	}
+
+	get _values() {
+		if (this.values) {
+			return html`<span class="value">${this.values.join(', ')}</span>`;
+		}
+		return null;
+	}
+
 	render() {
+		// prettier-ignore
 		return html`<div
 			dir=${this.direction}
 			class=${this.classes}
 			@click=${this.handleClickEvent}
 			@keyup=${this.handleClickEvent}
 		>
-			${this.labels &&
-			html`<span class="label">${this.labels.join(', ')}${this._hasBothLabelsAndValues() ? `:` : null}</span>`}
-			${this._hasBothLabelsAndValues() ? html`<span>&nbsp;</span>` : null}
-			${this.values && html`<span class="value">${this.values.join(', ')}</span>`} ${this.icons}
+			${this._labels}
+			${this._separator}
+			${this._values}
+			${this._icons}
 		</div>`;
 	}
 }

@@ -60,7 +60,7 @@
 				}, 1000);
 			});
 
-			window.addEventListener('click-tag', e => console.log('klik tag', e.target.id));
+			window.addEventListener('click-tag', e => console.log('click tag', e.target.id));
 
 			// example of catching keyboard enter events on focused ts-tags:
 			window.addEventListener('keyup', e => {
@@ -87,7 +87,7 @@
 						></ts-tag
 					></span>
 					<ts-tag tabindex="0" clickable labels='["key only"]' locked></ts-tag>
-					<ts-tag tabindex="0" clickable values='["Value only"]' deletable locked></ts-tag>
+					<ts-tag dir="rtl" tabindex="0" values='["Value only"]' deletable locked></ts-tag>
 					<ts-tag tabindex="0" clickable labels='["key 1", "key 2"]' type="danger"></ts-tag>
 					<ts-tag tabindex="0" clickable labels='["type"]' values='["warning"]' type="warning"></ts-tag>
 					<div>
@@ -101,14 +101,17 @@
 					</div>
 					<ts-tag tabindex="0" clickable labels='["type"]' values='["blue"]' type="blue"></ts-tag>
 					<ts-tag tabindex="0" clickable labels='["type"]' values='["blue-lite"]' type="blue-lite"></ts-tag>
+					<ts-tag locked tabindex="0" clickable labels='["type"]' values='["blue"]' type="blue"></ts-tag>
+					<ts-tag locked tabindex="0" clickable labels='["type"]' values='["blue-lite"]' type="blue-lite"></ts-tag>
 					<ts-tag
+						locked
 						tabindex="0"
 						clickable
 						labels='["type"]'
 						values='["unknown type", "defaults to this"]'
 						type="unknown-type"
 					></ts-tag>
-					<a href="https://dr.dk">
+					<a href="#">
 						<ts-tag tabindex="0" clickable labels='["In a", "link"]' values='["value"]'></ts-tag>
 					</a>
 					<ts-tag tabindex="0" clickable labels='["clickable"]' values='["true"]' type="danger" clickable></ts-tag>
