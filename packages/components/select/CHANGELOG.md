@@ -2,18 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-02-25)
-
-### Bug Fixes
-
-- **select:** do not set input value for multi select and no apply ([b5abd21](https://github.com/Tradeshift/elements/commit/b5abd2129c38e464a719f08b6b7bdaa8599635e6))
-- **select:** peaa-941 current selection clears on search input ([15b80ca](https://github.com/Tradeshift/elements/commit/15b80caaa96ace990e9616a317492c5d74397258))
-
-### Features
-
-- **select:** add case-sensitive filtering to select component ([ee8182f](https://github.com/Tradeshift/elements/commit/ee8182f4ca559e2815d6ee4e54f638e20b528dec))
-- **select:** add custom filtering to select component ([690abf8](https://github.com/Tradeshift/elements/commit/690abf8ff1cd4164dcfead0d33e1d49c0f934cab))
-
 # [0.34.0](https://github.com/Tradeshift/elements/compare/v0.33.8...v0.34.0) (2022-02-14)
 
 ### Bug Fixes
