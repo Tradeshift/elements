@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
+
+### Reverts
+
+- Revert "chore(release): v0.35.0" ([e1d235c](https://github.com/Tradeshift/elements/commit/e1d235cf73f262b34a5e7ddeb09e6f06619d2c41))
+
 # [0.34.0](https://github.com/Tradeshift/elements/compare/v0.33.8...v0.34.0) (2022-02-14)
 
 **Note:** Version bump only for package @tradeshift/elements.board

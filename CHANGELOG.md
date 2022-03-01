@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
+
+### Bug Fixes
+
+- **tag:** fixes padding issue in locked and deletable items; also cleans up code a bit ([411721f](https://github.com/Tradeshift/elements/commit/411721fda92a8067d30d97d98b3daacee659cade))
+- removes import of non-existing export in plop template for auto-generating elements ([91203d6](https://github.com/Tradeshift/elements/commit/91203d63ce9788d7296bf866611eddc70efe5423))
+- **select:** do not set input value for multi select and no apply ([b5abd21](https://github.com/Tradeshift/elements/commit/b5abd2129c38e464a719f08b6b7bdaa8599635e6))
+- **select:** peaa-941 current selection clears on search input ([15b80ca](https://github.com/Tradeshift/elements/commit/15b80caaa96ace990e9616a317492c5d74397258))
+- **select:** show the `View selection` button in multi select with no apply ([c70c4f6](https://github.com/Tradeshift/elements/commit/c70c4f606e9b0548235e6ab539ed124acaa6fce3))
+
+### Features
+
+- adds ts-tag element ([ae9a078](https://github.com/Tradeshift/elements/commit/ae9a078cfd3f57fc030374f068edf3879b92a758))
+- **select:** add case-sensitive filtering to select component ([ee8182f](https://github.com/Tradeshift/elements/commit/ee8182f4ca559e2815d6ee4e54f638e20b528dec))
+- **select:** add custom filtering to select component ([690abf8](https://github.com/Tradeshift/elements/commit/690abf8ff1cd4164dcfead0d33e1d49c0f934cab))
+
+### Reverts
+
+- Revert "chore(release): v0.35.0" ([e1d235c](https://github.com/Tradeshift/elements/commit/e1d235cf73f262b34a5e7ddeb09e6f06619d2c41))
+
 # [0.34.0](https://github.com/Tradeshift/elements/compare/v0.33.8...v0.34.0) (2022-02-14)
 
 ### Bug Fixes
