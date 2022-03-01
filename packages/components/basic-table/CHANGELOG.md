@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.1](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.35.1) (2022-03-01)
+
+**Note:** Version bump only for package @tradeshift/elements.basic-table
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-02-25)
 
 **Note:** Version bump only for package @tradeshift/elements.basic-table

@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.search",
-  "version": "0.35.0",
+  "version": "0.35.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,10 +15,10 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.35.0",
-    "@tradeshift/elements.icon": "^0.35.0",
-    "@tradeshift/elements.overlay": "^0.35.0",
-    "@tradeshift/elements.select-menu": "^0.35.0"
+    "@tradeshift/elements": "^0.35.1",
+    "@tradeshift/elements.icon": "^0.35.1",
+    "@tradeshift/elements.overlay": "^0.35.1",
+    "@tradeshift/elements.select-menu": "^0.35.1"
   },
   "src": "src/search.js"
 }
