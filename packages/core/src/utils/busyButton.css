@@ -1,0 +1,34 @@
+/* Busy status. Adds an animated diagonal stripe fill to indicate loading ............*/
+
+:host([busy]) > :first-child {
+	color: transparent;
+	font-style: unset;
+	pointer-events: none;
+	cursor: default;
+	box-shadow: none;
+	background-size: var(--ts-unit-double) var(--ts-unit-double);
+	background-image: linear-gradient(
+		-45deg,
+		var(--ts-color-gray-light) 25%,
+		var(--ts-color-gray-lightest) 25%,
+		var(--ts-color-gray-lightest) 50%,
+		var(--ts-color-gray-light) 50%,
+		var(--ts-color-gray-light) 75%,
+		var(--ts-color-gray-lightest) 75%,
+		var(--ts-color-gray-lightest)
+	);
+	animation: move 1s linear infinite;
+
+	& > * {
+		visibility: hidden;
+	}
+}
+
+@keyframes move {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: var(--ts-unit-double) var(--ts-unit-double);
+	}
+}
