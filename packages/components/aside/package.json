@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.aside",
-  "version": "0.35.0",
+  "version": "0.34.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,10 +15,10 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.35.0",
-    "@tradeshift/elements.button": "^0.35.0",
-    "@tradeshift/elements.cover": "^0.35.0",
-    "@tradeshift/elements.spinner": "^0.35.0"
+    "@tradeshift/elements": "^0.34.0",
+    "@tradeshift/elements.button": "^0.34.0",
+    "@tradeshift/elements.cover": "^0.34.0",
+    "@tradeshift/elements.spinner": "^0.34.0"
   },
   "src": "src/aside.js"
 }
