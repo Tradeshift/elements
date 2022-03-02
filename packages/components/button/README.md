@@ -37,10 +37,11 @@
 | busy | busy | Boolean | false | Show busy/loading animation |
 | icon | icon | String |  | Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text |
 | disabled | disabled | Boolean | false | Determine if the button is disabled. `button-click` event won't be dispatched |
-| grouped | grouped | Boolean | false | For internal use in `ts-button-group` component |
 | focused | focused | Boolean | false | Make the button focused |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
 | fullWidth | full-width | Boolean | false | Make the button take the full width of the container |
+| grouped | grouped | Boolean | false | INTERNAL For internal use in `ts-button-group` component |
+| inline | inline | Boolean | false | INTERNAL For internal use in `ts-button-group` component |
 
 ## ➤ Slots
 

@@ -31,8 +31,9 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| -------- | --------- | ---- | ------- | ----------- |
-|          |           |      |         |             |
+| --- | --- | --- | --- | --- |
+| dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
+| inline | inline | Boolean | false | Make the buttons inline instead of stacking which is the default behaviour |
 
 ## ➤ Slots
 

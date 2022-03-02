@@ -14,9 +14,6 @@ export interface TSButtonHTMLAttributes {
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;
 
-	/**  For internal use in `ts-button-group` component  */
-	grouped?: boolean;
-
 	/**  Make the button focused  */
 	focused?: boolean;
 
@@ -43,9 +40,6 @@ export interface TSButton {
 
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;
-
-	/**  For internal use in `ts-button-group` component  */
-	grouped?: boolean;
 
 	/**  Make the button focused  */
 	focused?: boolean;

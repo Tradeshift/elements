@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements: button-group</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<script type="module" src="/packages/components/button/lib/button.esm.js"></script>
+		<script type="module" src="/packages/components/button-group/lib/button-group.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
+	</head>
+
+	<body>
+		<article>
+			<ts-board data-title="ts-button-group">
+				<ts-button-group>
+					<ts-button type="primary">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="text" icon="ada">Action Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+				</ts-button-group>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-button-group">
+				<ts-button-group inline>
+					<ts-button type="primary">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="text" icon="ada">Action Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+					<ts-button type="primary" icon="ada">Icon Button – Grouped</ts-button>
+				</ts-button-group>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="sizes ts-button-group">
+				<ts-button-group inline>
+					<ts-button type="primary" size="micro">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary" size="micro">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary" size="micro">Secondary Button – Grouped</ts-button>
+					<ts-button type="text" size="micro">Text Button – Grouped</ts-button>
+					<ts-button type="text" icon="ada">Action Button – Grouped</ts-button>
+					<ts-button type="primary" size="micro" icon="ada">Icon Button – Grouped</ts-button>
+				</ts-button-group>
+				<ts-button-group>
+					<ts-button type="primary" size="micro">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary" size="micro">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary" size="micro">Secondary Button – Grouped</ts-button>
+					<ts-button type="text" size="micro">Text Button – Grouped</ts-button>
+					<ts-button type="text" size="micro" icon="ada">Action Button – Grouped</ts-button>
+					<ts-button type="primary" size="micro" icon="download">Icon Button – Grouped</ts-button>
+				</ts-button-group>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="RTL ts-button-group">
+				<ts-button-group inline dir="rtl">
+					<ts-button type="primary">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+				</ts-button-group>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="programmatically">
+				<label>
+					<input id="inlineSwitch" type="checkbox" />
+					Inline?
+				</label>
+				<hr />
+				<ts-button-group id="group">
+					<ts-button type="primary">Primary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="secondary">Secondary Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+					<ts-button type="text">Text Button – Grouped</ts-button>
+				</ts-button-group>
+				<script>
+					const inlineSwitch = document.getElementById('inlineSwitch');
+					const btnGroupEl = document.getElementById('group');
+					inlineSwitch.addEventListener('change', event => {
+						btnGroupEl.inline = event.target.checked;
+					});
+				</script>
+			</ts-board>
+		</article>
+	</body>
+</html>
