@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements - dialog</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<script type="module" src="/packages/components/dialog/lib/dialog.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
+		<script>
+			function toggleDialog(id) {
+				if (!id) {
+					console.error('no dialog id provided');
+					return;
+				}
+				const dialog = document.querySelector(`#${id}`);
+				if (!dialog) {
+					console.error('dialog id not found in DOM');
+					return;
+				}
+				if ('visible' in dialog.dataset) {
+					dialog.removeAttribute('data-visible');
+					return;
+				}
+				dialog.setAttribute('data-visible', '');
+			}
+
+			window.addEventListener('accept', event => {
+				console.log('accept');
+			});
+			window.addEventListener('cancel', event => {
+				console.log('cancel');
+			});
+			function makeNotifications() {
+				const dialogs = document.querySelectorAll('ts-dialog');
+				dialogs.forEach(dialog => {
+					dialog.setAttribute('notification', 'true');
+				});
+			}
+			function makeDialogs() {
+				const dialogs = document.querySelectorAll('ts-dialog');
+				dialogs.forEach(dialog => {
+					dialog.removeAttribute('notification');
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<article>
+			<ts-board data-title="ts-tag, multiple in a flexbox">
+				<div>
+					<button onclick="javascript:makeNotifications()">Make notifications</button>
+					<button onclick="javascript:makeDialogs()">Make dialogs</button>
+				</div>
+				<br />
+				<div>
+					<button onclick="javascript:toggleDialog('success')">Toggle success</button>
+					<button onclick="javascript:toggleDialog('info')">Toggle info</button>
+					<button onclick="javascript:toggleDialog('confirm')">Toggle confirm</button>
+					<button onclick="javascript:toggleDialog('warning')">Toggle warning</button>
+					<button onclick="javascript:toggleDialog('danger')">Toggle danger</button>
+					<button onclick="javascript:toggleDialog('error')">Toggle error</button>
+					<button onclick="javascript:toggleDialog('extrabuttons')">With extra buttons</button>
+					<button onclick="javascript:toggleDialog('extrabuttonssuccess')">
+						With extra buttons, but success no-buttons (works as notification)
+					</button>
+				</div>
+				<ts-dialog
+					id="success"
+					text="success 🎉"
+					type="success"
+					primary="accept"
+					focused="accept"
+					icon="discovery"
+				></ts-dialog>
+				<ts-dialog id="info" text="info 💁🏻‍♀️" type="info" primary="accept"></ts-dialog>
+				<ts-dialog id="confirm" text="confirm ✓" type="confirm" primary="accept"></ts-dialog>
+				<ts-dialog id="warning" text="warning ⚠️" type="warning" primary="accept"></ts-dialog>
+				<ts-dialog id="danger" text="danger 😱" type="danger" primary="accept">
+					<div slot="content">Render in "content" slot.</div>
+				</ts-dialog>
+				<ts-dialog id="error" text="error 💥" type="error" primary="accept" non-dismissable></ts-dialog>
+				<ts-dialog id="extrabuttons" text="has extra buttons" type="info" primary="accept" no-buttons>
+					<ts-button-group slot="extra-buttons">
+						<ts-button type="danger">another action</ts-button>
+						<ts-button type="primary">primary action</ts-button>
+					</ts-button-group>
+				</ts-dialog>
+				<ts-dialog
+					id="extrabuttonssuccess"
+					text="has extra buttons, but no-buttons"
+					type="success"
+					primary="accept"
+					no-buttons
+				>
+					<ts-button-group slot="extra-buttons">
+						<ts-button type="danger">another action</ts-button>
+						<ts-button type="primary">primary action</ts-button>
+					</ts-button-group>
+				</ts-dialog>
+			</ts-board>
+		</article>
+	</body>
+</html>

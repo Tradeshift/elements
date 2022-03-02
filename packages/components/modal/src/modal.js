@@ -17,6 +17,7 @@ export class TSModal extends TSElement {
 		this.closeBehavior = new CloseOnEscBehavior(this);
 		this.hideHeader = false;
 		this.noPadding = false;
+		this.noCloseOnCoverClick = false;
 	}
 
 	static get styles() {
@@ -35,6 +36,8 @@ export class TSModal extends TSElement {
 			visible: { type: Boolean, reflect: true, attribute: 'data-visible' },
 			/** Disable the functionality to close the modal on press of escape key */
 			noCloseOnEscKey: { type: Boolean, attribute: 'no-close-on-esc-key' },
+			/** Disable the functionality to close the modal by clicking the cover (background) */
+			noCloseOnCoverClick: { type: Boolean, attribute: 'no-close-on-cover-click' },
 			/** Show/hide the title of the modal */
 			hideHeader: { type: Boolean, attribute: 'hide-header' },
 			/** Add/remove standard paddings to the main content */
@@ -66,11 +69,13 @@ export class TSModal extends TSElement {
 	}
 
 	close() {
-		this.visible = false;
-		/**
-		 * Emitted on start of the modal closing
-		 */
-		this.dispatchCustomEvent('close');
+		if (!this.noCloseOnCoverClick) {
+			this.visible = false;
+			/**
+			 * Emitted on start of the modal closing
+			 */
+			this.dispatchCustomEvent('close');
+		}
 	}
 
 	handleTransition(e) {

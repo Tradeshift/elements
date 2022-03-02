@@ -14,6 +14,9 @@ export interface TSModalHTMLAttributes {
 	/**  Disable the functionality to close the modal on press of escape key  */
 	"no-close-on-esc-key"?: boolean;
 
+	/**  Disable the functionality to close the modal by clicking the cover (background)  */
+	"no-close-on-cover-click"?: boolean;
+
 	/**  Show/hide the title of the modal  */
 	"hide-header"?: boolean;
 
@@ -37,6 +40,9 @@ export interface TSModal {
 
 	/**  Disable the functionality to close the modal on press of escape key  */
 	noCloseOnEscKey?: boolean;
+
+	/**  Disable the functionality to close the modal by clicking the cover (background)  */
+	noCloseOnCoverClick?: boolean;
 
 	/**  Show/hide the title of the modal  */
 	hideHeader?: boolean;
