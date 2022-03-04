@@ -49,7 +49,7 @@ export class TSDialog extends TSElement {
 			notification: { type: Boolean, reflect: true },
 			/** Render no buttons. This only affects notifications of type 'success' */
 			noButtons: { type: Boolean, reflect: true, attribute: 'no-buttons' },
-			/** Cannot be dismissed. This only affect notifications */
+			/** Cannot be dismissed except by clicking available buttons in the dialog/notification */
 			nonDismissable: { type: Boolean, reflect: true, attribute: 'non-dismissable' },
 			/** INTERNAL */
 			renderButtons: { type: Boolean, attribute: false }
@@ -114,11 +114,13 @@ export class TSDialog extends TSElement {
 	}
 
 	onCancel() {
-		/**
-		 * Emitted when the user choose the cancel option
-		 */
-		this.dispatchCustomEvent('cancel');
-		this.dismissModal();
+		if (!this.nonDismissable) {
+			/**
+			 * Emitted when the user choose the cancel option
+			 */
+			this.dispatchCustomEvent('cancel');
+			this.dismissModal();
+		}
 	}
 
 	dismissModal() {
@@ -148,18 +150,14 @@ export class TSDialog extends TSElement {
 		return this.noButtons && this.notification && this.type === dialogTypes.SUCCESS;
 	}
 
-	get _nonDismissable() {
-		return this.notification && this.nonDismissable;
-	}
-
 	render() {
 		return html`
 			<ts-modal
 				?data-visible=${this.visible}
 				data-size="small"
 				hide-header
-				?no-close-on-esc-key=${this._nonDismissable}
-				?no-close-on-cover-click=${this._nonDismissable}
+				?no-close-on-esc-key=${this.nonDismissable}
+				?no-close-on-cover-click=${this.nonDismissable}
 			>
 				<div class="content" slot="main">
 					<ts-icon icon="${this.getIcon}" type="${this.getIconType}" size="extra-large"></ts-icon>
@@ -185,7 +183,8 @@ export class TSDialog extends TSElement {
 							?focused="${this.isFocused('cancel')}"
 							@click="${this.onCancel}"
 							type="${this.getCancelButtonType}"
-							class="${this.notification ? 'visuallyhidden' : ''}"
+							class="${this.notification || this.nonDismissable ? 'visuallyhidden' : ''}"
+							?disabled="${this.nonDismissable}"
 						>
 							${this.translations.cancel_button}
 						</ts-button>

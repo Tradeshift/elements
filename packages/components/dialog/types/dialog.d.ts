@@ -26,7 +26,7 @@ export interface TSDialogHTMLAttributes {
 	/**  Render no buttons. This only affects notifications of type 'success'  */
 	"no-buttons"?: boolean;
 
-	/**  Cannot be dismissed. This only affect notifications  */
+	/**  Cannot be dismissed except by clicking available buttons in the dialog/notification  */
 	"non-dismissable"?: boolean;
 
 }
@@ -59,7 +59,7 @@ export interface TSDialog {
 	/**  Render no buttons. This only affects notifications of type 'success'  */
 	noButtons?: boolean;
 
-	/**  Cannot be dismissed. This only affect notifications  */
+	/**  Cannot be dismissed except by clicking available buttons in the dialog/notification  */
 	nonDismissable?: boolean;
 
 }

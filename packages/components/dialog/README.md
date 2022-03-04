@@ -41,7 +41,7 @@
 | primary | primary | String |  | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
 | notification | notification | Boolean | false | If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable` |
 | noButtons | no-buttons | Boolean | false | Render no buttons. This only affects notifications of type 'success' |
-| nonDismissable | non-dismissable | Boolean | false | Cannot be dismissed. This only affect notifications |
+| nonDismissable | non-dismissable | Boolean | false | Cannot be dismissed except by clicking available buttons in the dialog/notification |
 | renderButtons | renderButtons | Boolean | false | INTERNAL |
 
 ## ➤ Slots

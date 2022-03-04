@@ -70,23 +70,30 @@
 
 	<body>
 		<article>
-			<ts-board data-title="ts-tag, multiple in a flexbox">
+			<ts-board data-title="ts-dialog">
 				<div>
-					<button onclick="javascript:makeNotifications()">Make notifications</button>
-					<button onclick="javascript:makeDialogs()">Make dialogs</button>
+					<h3>Make All</h3>
+					<button onclick="makeNotifications()">notifications</button>
+					<button onclick="makeDialogs()">dialogs</button>
 				</div>
-				<br />
 				<div>
-					<button onclick="javascript:toggleDialog('success')">Toggle success</button>
-					<button onclick="javascript:toggleDialog('info')">Toggle info</button>
-					<button onclick="javascript:toggleDialog('confirm')">Toggle confirm</button>
-					<button onclick="javascript:toggleDialog('warning')">Toggle warning</button>
-					<button onclick="javascript:toggleDialog('danger')">Toggle danger</button>
-					<button onclick="javascript:toggleDialog('error')">Toggle error</button>
-					<button onclick="javascript:toggleDialog('extrabuttons')">With extra buttons</button>
-					<button onclick="javascript:toggleDialog('extrabuttonssuccess')">
-						With extra buttons, but success no-buttons (works as notification)
+					<h3>Toggle</h3>
+					<button onclick="toggleDialog('success')">success</button>
+					<button onclick="toggleDialog('info')">info</button>
+					<button onclick="toggleDialog('confirm')">confirm</button>
+					<button onclick="toggleDialog('warning')">warning</button>
+					<button onclick="toggleDialog('danger')">danger</button>
+					<button onclick="toggleDialog('error')">error</button>
+					<button onclick="toggleDialog('extrabuttons')">with extra buttons</button>
+					<button onclick="toggleDialog('extrabuttonssuccess')">
+						with extra buttons, but success no-buttons (works as notification)
 					</button>
+				</div>
+				<div>
+					<h3>Non-dismissable</h3>
+					<button onclick="toggleDialog('non-dismissable-success')">non-dismissable success</button>
+					<button onclick="toggleDialog('non-dismissable-info')">non-dismissable info</button>
+					<button onclick="toggleDialog('non-dismissable-no-buttons')">non-dismissable warning, no-buttons</button>
 				</div>
 				<ts-dialog
 					id="success"
@@ -102,7 +109,7 @@
 				<ts-dialog id="danger" text="danger 😱" type="danger" primary="accept">
 					<div slot="content">Render in "content" slot.</div>
 				</ts-dialog>
-				<ts-dialog id="error" text="error 💥" type="error" primary="accept" non-dismissable></ts-dialog>
+				<ts-dialog id="error" text="error 💥" type="error" primary="accept"></ts-dialog>
 				<ts-dialog id="extrabuttons" text="has extra buttons" type="info" primary="accept" no-buttons>
 					<ts-button-group slot="extra-buttons">
 						<ts-button type="danger">another action</ts-button>
@@ -121,6 +128,28 @@
 						<ts-button type="primary">primary action</ts-button>
 					</ts-button-group>
 				</ts-dialog>
+				<ts-dialog
+					id="non-dismissable-success"
+					text="non-dismissable success"
+					type="success"
+					primary="accept"
+					non-dismissable
+				></ts-dialog>
+				<ts-dialog
+					id="non-dismissable-info"
+					text="non-dismissable info"
+					type="info"
+					primary="accept"
+					non-dismissable
+				></ts-dialog>
+				<ts-dialog
+					id="non-dismissable-no-buttons"
+					text="non-dismissable info"
+					type="info"
+					primary="accept"
+					non-dismissable
+					no-buttons
+				></ts-dialog>
 			</ts-board>
 		</article>
 	</body>
