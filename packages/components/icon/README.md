@@ -30,14 +30,16 @@
 
 ## ➤ Properties
 
-| Property | Attribute | Type    | Default      | Description                                  |
-| -------- | --------- | ------- | ------------ | -------------------------------------------- |
-| icon     | icon      | String  |              | Icon name, ex: 'arrow-up'                    |
-| size     | size      | String  | sizes.MEDIUM | 'small' or 'medium' or 'large'               |
-| type     | type      | String  |              | Determining icon color, ex: 'error', 'focus' |
-| circular | circular  | Boolean | false        | Add circular background for icon             |
-| rotate   | rotate    | Number  |              | 90, 180, 270                                 |
-| flip     | flip      | String  |              | 'h', 'horizontal', 'v', 'vertical'           |
+| Property   | Attribute  | Type    | Default      | Description                                             |
+| ---------- | ---------- | ------- | ------------ | ------------------------------------------------------- |
+| icon       | icon       | String  |              | Icon name, ex: 'arrow-up'                               |
+| src        | src        | String  |              | Url to svg for icon. It will override the icon property |
+| size       | size       | String  | sizes.MEDIUM | 'small' or 'medium' or 'large'                          |
+| type       | type       | String  |              | Determining icon color, ex: 'error', 'focus'            |
+| circular   | circular   | Boolean | false        | Add circular background for icon                        |
+| rotate     | rotate     | Number  |              | 90, 180, 270                                            |
+| flip       | flip       | String  |              | 'h', 'horizontal', 'v', 'vertical'                      |
+| svgContent | svgContent | String  | ''           | INTERNAL svg content to be rendered inside icon         |
 
 ## ➤ How to use it
 

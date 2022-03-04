@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import svgo from 'rollup-plugin-svgo';
 import json from '@rollup/plugin-json';
+import { copy } from '@web/rollup-plugin-copy';
 
 const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH, PRODUCTION } = process.env;
 const PACKAGE_ROOT_PATH = process.cwd();
@@ -45,6 +46,7 @@ const postcssPlugin = postcss({
 });
 
 const svgoPlugin = svgo({ raw: true });
+const copyPlugin = copy({ patterns: '**/*.svg', rootDir: './src', flatten: false });
 
 const babelPlugin = babel({
 	babelrc: false,
@@ -84,7 +86,7 @@ const babelPlugin = babel({
 });
 
 // Plugins used by both configs
-const commonPlugins = [postcssPlugin, json(), svgoPlugin, resolve()];
+const commonPlugins = [postcssPlugin, json(), svgoPlugin, resolve(), copyPlugin];
 
 const esmConfig = {
 	input: INPUT_FILE,

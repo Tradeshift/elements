@@ -5,7 +5,7 @@ import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 
 import { sizes, types } from '../src/utils';
-import icons from '../../icon/src/assets/icons';
+import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import readme from '../README.md';
 
 export default {
@@ -65,7 +65,7 @@ export const Icon = () => {
 
 	const busy = boolean('Busy', false);
 	const disabled = boolean('Disabled', false);
-	const icon = select('Icon', Object.keys(icons), Object.keys(icons)[0]);
+	const icon = select('Icon', iconList, iconList[0]);
 
 	return html`
 		<ts-button ?disabled="${disabled}" ?busy="${busy}" icon="${icon}" type="${type}" size="${size}"> </ts-button>
@@ -79,7 +79,7 @@ Icon.story = {
 
 export const Action = () => {
 	const label = text('Label', 'Action');
-	const icon = select('Icon', Object.keys(icons), 'download');
+	const icon = select('Icon', iconList, 'download');
 	const direction = boolean('RTL', false) ? 'rtl' : 'ltr';
 
 	return html` <ts-button type="text" icon="${icon}" dir="${direction}"> ${label} </ts-button> `;

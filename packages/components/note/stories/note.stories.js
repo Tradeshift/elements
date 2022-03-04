@@ -5,7 +5,7 @@ import { helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.note';
 
 import { types } from '../src/utils';
-import icons from '../../icon/src/assets/icons';
+import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import readme from '../README.md';
 
 export default {
@@ -24,7 +24,7 @@ export const Default = () => {
 	);
 
 	const dir = boolean('RTL', false) ? 'rtl' : 'ltr';
-	const icon = select('Icon', Object.keys(icons), Object.keys(icons)[0]);
+	const icon = select('Icon', iconList, iconList[0]);
 	const hidden = boolean('Hidden', false);
 	const content = text('Content', 'Sample text for note');
 

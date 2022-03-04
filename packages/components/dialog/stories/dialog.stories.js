@@ -3,7 +3,7 @@ import { withKnobs, text, boolean, object, select } from '@storybook/addon-knobs
 
 import '@tradeshift/elements.dialog';
 import { dialogTypes } from '../src/utils';
-import icons from '../../icon/src/assets/icons';
+import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import readme from '../README.md';
 
 function getKnobs() {
@@ -14,7 +14,7 @@ function getKnobs() {
 		focused: select('focused', { accept: 'accept', cancel: 'cancel', null: null }, 'cancel'),
 		primary: select('primary', { accept: 'accept', cancel: 'cancel', null: null }, null),
 		type: select('type', dialogTypes, dialogTypes.CONFIRM),
-		icon: select('icon', Object.keys(icons), Object.keys(icons)[0]),
+		icon: select('icon', iconList, iconList[0]),
 		notification: boolean('notification', false),
 		nonDismissable: boolean('non-dismissable', false)
 	};

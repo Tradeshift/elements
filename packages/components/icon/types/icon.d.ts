@@ -2,6 +2,9 @@ export interface TSIconHTMLAttributes {
 	/**  Icon name, ex: 'arrow-up'  */
 	icon?: string;
 
+	/**  Url to svg for icon. It will override the icon property  */
+	src?: string;
+
 	/**  'small' or 'medium' or 'large'  */
 	size?: string;
 
@@ -22,6 +25,9 @@ export interface TSIconHTMLAttributes {
 export interface TSIcon {
 	/**  Icon name, ex: 'arrow-up'  */
 	icon?: string;
+
+	/**  Url to svg for icon. It will override the icon property  */
+	src?: string;
 
 	/**  'small' or 'medium' or 'large'  */
 	size?: string;

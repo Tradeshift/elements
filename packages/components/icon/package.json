@@ -12,8 +12,12 @@
   "types": "types/icon.d.ts",
   "files": [
     "lib/*",
+    "lib/assets/icons/*",
     "types/*"
   ],
+  "scripts": {
+    "post-build": "node ./scripts/export-svg.js"
+  },
   "dependencies": {
     "@tradeshift/elements": "^0.36.3"
   },

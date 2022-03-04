@@ -4,7 +4,7 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import '@tradeshift/elements.list-item';
 import '@tradeshift/elements.app-icon';
 
-import icons from '../../icon/src/assets/icons';
+import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import appIcon from '../../../../static/icon.svg';
 import readme from '../README.md';
 
@@ -18,9 +18,9 @@ export const Default = () => {
 	const disabled = boolean('disabled', false);
 	const selected = boolean('selected', false);
 	const noWrap = boolean('no-wrap', false);
-	const icon = select('icon', Object.keys(icons), Object.keys(icons)[0]);
-	const iconRight = select('icon-right', Object.keys(icons), Object.keys(icons)[1]);
-	const iconSelected = select('icon-selected', Object.keys(icons), Object.keys(icons)[2]);
+	const icon = select('icon', iconList, iconList[0]);
+	const iconRight = select('icon-right', iconList, iconList[1]);
+	const iconSelected = select('icon-selected', iconList, iconList[2]);
 	const title = text('title', 'Title sample text');
 	const subtitle = text('subtitle', 'Subtitle sample text');
 
@@ -125,8 +125,8 @@ WithoutIcons.story = {
 };
 
 export const Menu = () => {
-	const icon = select('icon', [undefined, ...Object.keys(icons)], Object.keys(icons)[5]);
-	const iconRight = select('icon-right', Object.keys(icons), Object.keys(icons)[1]);
+	const icon = select('icon', [undefined, ...iconList], iconList[5]);
+	const iconRight = select('icon-right', iconList, iconList[1]);
 	const title = text('title', 'Title sample text');
 	const subtitle = text('subtitle', 'Subtitle sample text');
 
