@@ -37,6 +37,7 @@
 | title | data-title | String | '' | Modal header text |
 | visible | data-visible | Boolean | false | Show/hide the modal |
 | noCloseOnEscKey | no-close-on-esc-key | Boolean | false | Disable the functionality to close the modal on press of escape key |
+| noCloseOnCoverClick | no-close-on-cover-click | Boolean | false | Disable the functionality to close the modal by clicking the cover (background) |
 | hideHeader | hide-header | Boolean | false | Show/hide the title of the modal |
 | noPadding | no-padding | Boolean | false | Add/remove standard paddings to the main content |
 

@@ -6,7 +6,7 @@ import '@tradeshift/elements.modal';
 import '@tradeshift/elements.typography';
 
 import css from './dialog.css';
-import { translations, dialogTypes, dialogTypeIcon, dialogTypeIconTypes, dialogTypeButtonType } from './utils';
+import { translations, dialogTypes, dialogTypeIcon, dialogTypeIconTypes, dialogTypeButtonType, timeout } from './utils';
 
 export class TSDialog extends TSElement {
 	constructor() {
@@ -14,6 +14,8 @@ export class TSDialog extends TSElement {
 		this.type = dialogTypes.CONFIRM;
 		this.focused = 'cancel';
 		this._translations = Object.assign({}, translations);
+		this.notification = false;
+		this.nonDismissable = false;
 	}
 
 	static get styles() {
@@ -22,13 +24,13 @@ export class TSDialog extends TSElement {
 
 	static get properties() {
 		return {
-			/** Dialog can be toggled by add/removing this attribute */
+			/** Dialog can be toggled by adding/removing this attribute */
 			visible: { type: Boolean, attribute: 'data-visible', reflect: true },
 			/** Text content of the modal */
 			text: { type: String, reflect: true },
-			/** If you need a different icon that default ones, you can use one of Elements icon names */
+			/** If you need a different icon that default ones, you can use one of Elements icon names. Notifications will ignore this */
 			icon: { type: String, reflect: true },
-			/** `confirm`, `warning`, `danger` */
+			/** `success`, `info`, `confirm`, `warning`, `danger`, `error` */
 			type: { type: String, reflect: true },
 			/** can be used for customizing the buttons text and translations */
 			translations: { type: Object, reflect: true },
@@ -36,6 +38,10 @@ export class TSDialog extends TSElement {
 			focused: { type: String, reflect: true },
 			/** either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary */
 			primary: { type: String, reflect: true },
+			/** If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable` */
+			notification: { type: Boolean, reflect: true },
+			/** Cannot be dismissed except by clicking available buttons in the dialog/notification */
+			nonDismissable: { type: Boolean, reflect: true, attribute: 'non-dismissable' },
 			/** INTERNAL */
 			renderButtons: { type: Boolean, attribute: false }
 		};
@@ -52,7 +58,7 @@ export class TSDialog extends TSElement {
 	}
 
 	get getIcon() {
-		return this.icon ? this.icon : dialogTypeIcon[this.type];
+		return this.icon && !this.notification ? this.icon : dialogTypeIcon[this.type];
 	}
 
 	get getIconType() {
@@ -69,12 +75,24 @@ export class TSDialog extends TSElement {
 
 	attributeChangedCallback(name, oldVal, newVal) {
 		super.attributeChangedCallback(name, oldVal, newVal);
-		if (name === 'data-visible' && newVal) {
+		if (name === 'data-visible' && typeof newVal === 'string') {
 			// FIXME: this.updateComplete didn't work for this case
 			// Needed to render buttons a bit later to be able to set focus on them
 			window.setTimeout(() => {
 				this.renderButtons = true;
 			}, 200);
+		}
+	}
+
+	updated(changedProps) {
+		super.updated(changedProps);
+		if (this.visible === true) {
+			/** close dismissable success notifications after a timeout */
+			if (this.notification === true && this.type === dialogTypes.SUCCESS && !this.nonDismissable) {
+				return window.setTimeout(() => {
+					this.dismissModal();
+				}, timeout);
+			}
 		}
 	}
 
@@ -87,11 +105,13 @@ export class TSDialog extends TSElement {
 	}
 
 	onCancel() {
-		/**
-		 * Emitted when the user choose the cancel option
-		 */
-		this.dispatchCustomEvent('cancel');
-		this.dismissModal();
+		if (!this.nonDismissable) {
+			/**
+			 * Emitted when the user choose the cancel option
+			 */
+			this.dispatchCustomEvent('cancel');
+			this.dismissModal();
+		}
 	}
 
 	dismissModal() {
@@ -105,12 +125,31 @@ export class TSDialog extends TSElement {
 	}
 
 	isFocused(buttonType) {
+		if (this.nonDismissable) {
+			return false;
+		}
+		if (this.notification) {
+			if (buttonType === 'accept') {
+				return true;
+			}
+			return false;
+		}
 		return this.renderButtons && this.focused === buttonType;
+	}
+
+	get _hideAllButtons() {
+		return !this.nonDismissable && this.notification && this.type === dialogTypes.SUCCESS;
 	}
 
 	render() {
 		return html`
-			<ts-modal ?data-visible=${this.visible} data-size="small" hide-header>
+			<ts-modal
+				?data-visible=${this.visible}
+				data-size="small"
+				hide-header
+				?no-close-on-esc-key=${this.nonDismissable}
+				?no-close-on-cover-click=${this.nonDismissable}
+			>
 				<div class="content" slot="main">
 					<ts-icon icon="${this.getIcon}" type="${this.getIconType}" size="extra-large"></ts-icon>
 					<!-- If in rare cases you need to have more complex content than text property, you can override the text by using this slot	-->
@@ -118,7 +157,7 @@ export class TSDialog extends TSElement {
 						<ts-typography>${this.text}</ts-typography>
 					</slot>
 				</div>
-				<div class="footer" slot="footer">
+				<div class="footer${this._hideAllButtons ? ' visuallyhidden' : ''}" slot="footer">
 					<ts-button-group>
 						<ts-button
 							?focused="${this.isFocused('accept')}"
@@ -127,12 +166,16 @@ export class TSDialog extends TSElement {
 						>
 							${this.translations.accept_button}
 						</ts-button>
-						<!-- To add more options to the dialog, between accept and cancel buttons  	-->
-						<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
+						<div class="${this.notification ? 'visuallyhidden' : ''}">
+							<!-- To add more options to the dialog (notifications will ignore extra buttons), between accept and cancel buttons -->
+							<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
+						</div>
 						<ts-button
 							?focused="${this.isFocused('cancel')}"
 							@click="${this.onCancel}"
 							type="${this.getCancelButtonType}"
+							class="${this.notification || this.nonDismissable ? 'visuallyhidden' : ''}"
+							?disabled="${this.nonDismissable}"
 						>
 							${this.translations.cancel_button}
 						</ts-button>

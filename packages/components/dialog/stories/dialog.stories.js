@@ -14,7 +14,9 @@ function getKnobs() {
 		focused: select('focused', { accept: 'accept', cancel: 'cancel', null: null }, 'cancel'),
 		primary: select('primary', { accept: 'accept', cancel: 'cancel', null: null }, null),
 		type: select('type', dialogTypes, dialogTypes.CONFIRM),
-		icon: select('icon', Object.keys(icons), Object.keys(icons)[0])
+		icon: select('icon', Object.keys(icons), Object.keys(icons)[0]),
+		notification: boolean('notification', false),
+		nonDismissable: boolean('non-dismissable', false)
 	};
 }
 
@@ -33,6 +35,8 @@ export const Default = () => {
 			focused="${knobs.focused}"
 			type="${knobs.type}"
 			primary="${knobs.primary}"
+			?notification="${knobs.notification}"
+			?non-dismissable="${knobs.nonDismissable}"
 		>
 		</ts-dialog>
 	`;
@@ -54,6 +58,8 @@ export const CustomIcon = () => {
 			icon="${knobs.icon}"
 			type="${knobs.type}"
 			primary="${knobs.primary}"
+			?notification="${knobs.notification}"
+			?non-dismissable="${knobs.nonDismissable}"
 		>
 		</ts-dialog>
 	`;
@@ -61,5 +67,32 @@ export const CustomIcon = () => {
 
 CustomIcon.story = {
 	name: 'custom icon',
+	parameters: { notes: readme }
+};
+
+export const ExtraButtons = () => {
+	const knobs = getKnobs();
+	return html`
+		<ts-dialog
+			?data-visible="${knobs.visible}"
+			translations="${JSON.stringify(knobs.translations)}"
+			text="${knobs.content}"
+			focused="${knobs.focused}"
+			icon="${knobs.icon}"
+			type="${knobs.type}"
+			primary="${knobs.primary}"
+			?notification="${knobs.notification}"
+			?non-dismissable="${knobs.nonDismissable}"
+		>
+			<ts-button-group slot="extra-buttons">
+				<ts-button type="danger">another action</ts-button>
+				<ts-button type="primary">primary action</ts-button>
+			</ts-button-group>
+		</ts-dialog>
+	`;
+};
+
+ExtraButtons.story = {
+	name: 'extra buttons',
 	parameters: { notes: readme }
 };
