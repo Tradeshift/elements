@@ -183,9 +183,11 @@
 
 :host([type='text'][icon]) {
 	& > button {
-		padding: var(--ts-unit-half);
+		padding-inline-start: var(--ts-unit-half);
+
 		& span {
 			color: var(--ts-color-blue-darkest);
+			padding: var(--ts-unit-half);
 		}
 	}
 }
@@ -240,6 +242,23 @@
 :host([grouped]) {
 	margin-bottom: var(--ts-unit-half);
 }
+
+:host([inline]) {
+	display: inline-block;
+
+	& > button {
+		width: auto;
+		display: inline;
+	}
+}
+
+:host([grouped][type='text']) {
+	& > button {
+		display: flex;
+		justify-content: center;
+	}
+}
+
 /* Button with an icon ............................................*/
 
 :host(:not([type='text'])[icon]) {
@@ -256,7 +275,7 @@
 	}
 
 	& span {
-		display: none;
+		visibility: hidden;
 	}
 }
 

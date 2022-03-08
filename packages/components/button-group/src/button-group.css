@@ -4,3 +4,11 @@
 	display: block;
 	width: 100%;
 }
+
+:host([inline]) {
+	font-size: 0;
+}
+
+:host([inline]) ::slotted(ts-button) {
+	margin-inline-end: var(--ts-unit-half);
+}

@@ -28,14 +28,16 @@ export class TSButton extends TSElement {
 			icon: { type: String, reflect: true },
 			/** Determine if the button is disabled. `button-click` event won't be dispatched */
 			disabled: { type: Boolean, reflect: true },
-			/** For internal use in `ts-button-group` component */
-			grouped: { type: Boolean, reflect: true },
 			/** Make the button focused */
 			focused: { type: Boolean, reflect: true },
 			/** Direction of the component 'rtl' or 'ltr' */
 			dir: { type: String, reflect: true },
 			/** Make the button take the full width of the container */
-			fullWidth: { type: Boolean, reflect: true, attribute: 'full-width' }
+			fullWidth: { type: Boolean, reflect: true, attribute: 'full-width' },
+			/** INTERNAL For internal use in `ts-button-group` component */
+			grouped: { type: Boolean, reflect: true },
+			/** INTERNAL For internal use in `ts-button-group` component */
+			inline: { type: Boolean, reflect: true }
 		};
 	}
 
