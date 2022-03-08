@@ -33,3 +33,5 @@ export const dialogTypeButtonType = {
 	[dialogTypes.WARNING]: 'warning',
 	[dialogTypes.DANGER]: 'danger'
 };
+
+export const timeout = 1500;

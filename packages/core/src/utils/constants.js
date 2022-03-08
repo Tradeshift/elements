@@ -33,8 +33,7 @@ export const colors = {
 export const delay = {
 	NOW: 100,
 	FAST: 200,
-	SLOW: 600,
-	CLOSE: 1500
+	SLOW: 600
 };
 
 export const keyboardEventKeys = {

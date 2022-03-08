@@ -1,11 +1,4 @@
-import {
-	TSElement,
-	unsafeCSS,
-	html,
-	customElementDefineHelper,
-	validateSlottedNodes,
-	constants
-} from '@tradeshift/elements';
+import { TSElement, unsafeCSS, html, customElementDefineHelper, validateSlottedNodes } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
@@ -13,7 +6,7 @@ import '@tradeshift/elements.modal';
 import '@tradeshift/elements.typography';
 
 import css from './dialog.css';
-import { translations, dialogTypes, dialogTypeIcon, dialogTypeIconTypes, dialogTypeButtonType } from './utils';
+import { translations, dialogTypes, dialogTypeIcon, dialogTypeIconTypes, dialogTypeButtonType, timeout } from './utils';
 
 export class TSDialog extends TSElement {
 	constructor() {
@@ -98,7 +91,7 @@ export class TSDialog extends TSElement {
 			if (this.notification === true && this.type === dialogTypes.SUCCESS && !this.nonDismissable) {
 				return window.setTimeout(() => {
 					this.dismissModal();
-				}, constants.delay.CLOSE);
+				}, timeout);
 			}
 		}
 	}
