@@ -85,15 +85,12 @@
 					<button onclick="toggleDialog('danger')">danger</button>
 					<button onclick="toggleDialog('error')">error</button>
 					<button onclick="toggleDialog('extrabuttons')">with extra buttons</button>
-					<button onclick="toggleDialog('extrabuttonssuccess')">
-						with extra buttons, but success no-buttons (works as notification)
-					</button>
+					<button onclick="toggleDialog('extrabuttonssuccess')">success with extra buttons</button>
 				</div>
 				<div>
 					<h3>Non-dismissable</h3>
 					<button onclick="toggleDialog('non-dismissable-success')">non-dismissable success</button>
 					<button onclick="toggleDialog('non-dismissable-info')">non-dismissable info</button>
-					<button onclick="toggleDialog('non-dismissable-no-buttons')">non-dismissable warning, no-buttons</button>
 				</div>
 				<ts-dialog
 					id="success"
@@ -110,19 +107,13 @@
 					<div slot="content">Render in "content" slot.</div>
 				</ts-dialog>
 				<ts-dialog id="error" text="error 💥" type="error" primary="accept"></ts-dialog>
-				<ts-dialog id="extrabuttons" text="has extra buttons" type="info" primary="accept" no-buttons>
+				<ts-dialog id="extrabuttons" text="has extra buttons" type="info" primary="accept">
 					<ts-button-group slot="extra-buttons">
 						<ts-button type="danger">another action</ts-button>
 						<ts-button type="primary">primary action</ts-button>
 					</ts-button-group>
 				</ts-dialog>
-				<ts-dialog
-					id="extrabuttonssuccess"
-					text="has extra buttons, but no-buttons"
-					type="success"
-					primary="accept"
-					no-buttons
-				>
+				<ts-dialog id="extrabuttonssuccess" text="has extra buttons" type="success" primary="accept">
 					<ts-button-group slot="extra-buttons">
 						<ts-button type="danger">another action</ts-button>
 						<ts-button type="primary">primary action</ts-button>
@@ -141,14 +132,6 @@
 					type="info"
 					primary="accept"
 					non-dismissable
-				></ts-dialog>
-				<ts-dialog
-					id="non-dismissable-no-buttons"
-					text="non-dismissable info"
-					type="info"
-					primary="accept"
-					non-dismissable
-					no-buttons
 				></ts-dialog>
 			</ts-board>
 		</article>

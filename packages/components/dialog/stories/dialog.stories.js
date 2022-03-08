@@ -16,8 +16,7 @@ function getKnobs() {
 		type: select('type', dialogTypes, dialogTypes.CONFIRM),
 		icon: select('icon', Object.keys(icons), Object.keys(icons)[0]),
 		notification: boolean('notification', false),
-		nonDismissable: boolean('non-dismissable', false),
-		noButtons: boolean('no-buttons (only success notifications)', false)
+		nonDismissable: boolean('non-dismissable', false)
 	};
 }
 
@@ -37,7 +36,6 @@ export const Default = () => {
 			type="${knobs.type}"
 			primary="${knobs.primary}"
 			?notification="${knobs.notification}"
-			?no-buttons="${knobs.noButtons}"
 			?non-dismissable="${knobs.nonDismissable}"
 		>
 		</ts-dialog>
@@ -61,7 +59,6 @@ export const CustomIcon = () => {
 			type="${knobs.type}"
 			primary="${knobs.primary}"
 			?notification="${knobs.notification}"
-			?no-buttons="${knobs.noButtons}"
 			?non-dismissable="${knobs.nonDismissable}"
 		>
 		</ts-dialog>
@@ -85,7 +82,6 @@ export const ExtraButtons = () => {
 			type="${knobs.type}"
 			primary="${knobs.primary}"
 			?notification="${knobs.notification}"
-			?no-buttons="${knobs.noButtons}"
 			?non-dismissable="${knobs.nonDismissable}"
 		>
 			<ts-button-group slot="extra-buttons">

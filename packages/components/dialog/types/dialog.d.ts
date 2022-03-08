@@ -23,9 +23,6 @@ export interface TSDialogHTMLAttributes {
 	/**  If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable`  */
 	notification?: boolean;
 
-	/**  Render no buttons. This only affects notifications of type 'success'  */
-	"no-buttons"?: boolean;
-
 	/**  Cannot be dismissed except by clicking available buttons in the dialog/notification  */
 	"non-dismissable"?: boolean;
 
@@ -55,9 +52,6 @@ export interface TSDialog {
 
 	/**  If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable`  */
 	notification?: boolean;
-
-	/**  Render no buttons. This only affects notifications of type 'success'  */
-	noButtons?: boolean;
 
 	/**  Cannot be dismissed except by clicking available buttons in the dialog/notification  */
 	nonDismissable?: boolean;

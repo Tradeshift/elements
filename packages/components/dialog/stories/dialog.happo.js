@@ -47,7 +47,6 @@ export const SuccessNotification = () => html`
 		focused="accept"
 		non-dismissable
 		notification
-		no-buttons
 	>
 		<ts-button-group slot="extra-buttons">
 			<ts-button type="danger">another action</ts-button>
@@ -57,7 +56,7 @@ export const SuccessNotification = () => html`
 `;
 
 SuccessNotification.story = {
-	name: 'non-dismissable no-buttons success notification'
+	name: 'non-dismissable success notification'
 };
 
 export const DefaultNotification = () => html`

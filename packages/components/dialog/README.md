@@ -40,7 +40,6 @@
 | focused | focused | String | 'cancel' | set the default focus on the button, either `accept` or `cancel` |
 | primary | primary | String |  | either `accept` or `cancel` can be used to change the button type, based on the dialog type, by default both are secondary |
 | notification | notification | Boolean | false | If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable` |
-| noButtons | no-buttons | Boolean | false | Render no buttons. This only affects notifications of type 'success' |
 | nonDismissable | non-dismissable | Boolean | false | Cannot be dismissed except by clicking available buttons in the dialog/notification |
 | renderButtons | renderButtons | Boolean | false | INTERNAL |
 
@@ -49,7 +48,7 @@
 | Name | Description |
 | --- | --- |
 | content | If in rare cases you need to have more complex content than text property, you can override the text by using this slot |
-| extra-buttons |  |
+| extra-buttons | To add more options to the dialog (notifications will ignore extra buttons), between accept and cancel buttons |
 
 ## ➤ Events
 

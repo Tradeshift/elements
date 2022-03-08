@@ -47,8 +47,6 @@ export class TSDialog extends TSElement {
 			primary: { type: String, reflect: true },
 			/** If it is a notification, no cancel button will be rendered. Notifications of type 'success' will auto-close on timeout, if they are not `non-dismissable` */
 			notification: { type: Boolean, reflect: true },
-			/** Render no buttons. This only affects notifications of type 'success' */
-			noButtons: { type: Boolean, reflect: true, attribute: 'no-buttons' },
 			/** Cannot be dismissed except by clicking available buttons in the dialog/notification */
 			nonDismissable: { type: Boolean, reflect: true, attribute: 'non-dismissable' },
 			/** INTERNAL */
@@ -95,7 +93,7 @@ export class TSDialog extends TSElement {
 
 	updated(changedProps) {
 		super.updated(changedProps);
-		if (changedProps.has('visible') && this.visible === true) {
+		if (this.visible === true) {
 			/** close dismissable success notifications after a timeout */
 			if (this.notification === true && this.type === dialogTypes.SUCCESS && !this.nonDismissable) {
 				return window.setTimeout(() => {
@@ -147,7 +145,7 @@ export class TSDialog extends TSElement {
 	}
 
 	get _hideAllButtons() {
-		return this.noButtons && this.notification && this.type === dialogTypes.SUCCESS;
+		return !this.nonDismissable && this.notification && this.type === dialogTypes.SUCCESS;
 	}
 
 	render() {
@@ -175,8 +173,8 @@ export class TSDialog extends TSElement {
 						>
 							${this.translations.accept_button}
 						</ts-button>
-						<!-- To add more options to the dialog (notifications will ignore extra buttons), between accept and cancel buttons  	-->
 						<div class="${this.notification ? 'visuallyhidden' : ''}">
+							<!-- To add more options to the dialog (notifications will ignore extra buttons), between accept and cancel buttons -->
 							<slot name="extra-buttons" @slotchange="${this.extraButtonsSlotChangeHandler}"></slot>
 						</div>
 						<ts-button
