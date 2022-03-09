@@ -1,11 +1,13 @@
 /* General........................................................ */
 
 :host {
+	--ts-box-shadow-color: transparent;
 	display: inline-block;
 	font-size: var(--ts-font-size-default);
 	line-height: var(--ts-unit);
 
 	& > button {
+		box-shadow: var(--ts-boxshadow-focus-border) var(--ts-box-shadow-color);
 		position: relative;
 		min-width: var(--ts-unit-double);
 		border: none;
@@ -19,7 +21,6 @@
 		padding: var(--ts-unit-half) var(--ts-unit);
 		font-weight: var(--ts-fontweight-semibold);
 		text-transform: uppercase;
-		letter-spacing: 0.02em;
 		line-height: var(--ts-unit);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -43,7 +44,7 @@
 		box-shadow: var(--ts-boxshadow-border-default);
 
 		&:focus {
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+			box-shadow: var(--ts-boxshadow-focus-border) var(--ts-color-blue);
 		}
 	}
 }
@@ -74,7 +75,7 @@
 		}
 
 		&:focus {
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue-darker);
+			--ts-box-shadow-color: var(--ts-color-blue-darker);
 		}
 	}
 }
@@ -95,7 +96,7 @@
 		}
 
 		&:focus {
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-green-darker);
+			--ts-box-shadow-color: var(--ts-color-green-darker);
 		}
 	}
 }
@@ -116,7 +117,7 @@
 		}
 
 		&:focus {
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-orange-darker);
+			--ts-box-shadow-color: var(--ts-color-orange-darker);
 		}
 	}
 }
@@ -137,7 +138,7 @@
 		}
 
 		&:focus {
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-red-darker);
+			--ts-box-shadow-color: var(--ts-color-red-darker);
 		}
 	}
 }
@@ -203,7 +204,7 @@
 
 		&:focus {
 			background: var(--ts-color-gray-lightest);
-			box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-gray);
+			--ts-box-shadow-color: var(--ts-color-gray);
 			& span {
 				color: var(--ts-color-blue-darkest);
 			}

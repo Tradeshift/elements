@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tradeshift Elements - button</title>
+
+		<!-- Don't shim CSS Custom Properties on IE11 -->
+		<script>
+			if (!window.Promise) {
+				window.ShadyCSS = { nativeCss: true };
+			}
+		</script>
+
+		<!-- Enable ES5 class-less Custom Elements -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+		<!-- Load appropriate polyfills and shims -->
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" defer></script>
+
+		<!-- Set :root CSS Custom Properties -->
+		<link rel="stylesheet" href="/packages/core/src/vars.css" />
+		<!-- Set @font-face for all needed fonts -->
+		<link rel="stylesheet" href="/packages/core/src/fonts.css" />
+		<!-- Set margin/padding to be 0 for <html> -->
+		<link rel="stylesheet" href="/packages/core/src/reset.css" />
+
+		<!-- Load user-styles -->
+		<link rel="stylesheet" href="/index.css" />
+
+		<script type="module" src="/packages/components/button/lib/button.esm.js"></script>
+		<script type="module" src="/packages/components/board/lib/board.esm.js"></script>
+	</head>
+
+	<body>
+		<article>
+			<ts-board data-title="ts-button">
+				<ts-button slot="header-actions">Default/macro size button</ts-button>
+				<ts-button type="secondary">secondary</ts-button>
+				<ts-button type="primary">primary</ts-button>
+				<ts-button type="accept">accept</ts-button>
+				<ts-button type="warning">warning</ts-button>
+				<ts-button type="danger">danger</ts-button>
+				<ts-button type="text">text</ts-button>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-button, micro">
+				<ts-button slot="header-actions" size="micro">Micro button</ts-button>
+				<ts-button size="micro" type="secondary">secondary</ts-button>
+				<ts-button size="micro" type="primary">primary</ts-button>
+				<ts-button size="micro" type="accept">accept</ts-button>
+				<ts-button size="micro" type="warning">warning</ts-button>
+				<ts-button size="micro" type="danger">danger</ts-button>
+				<ts-button size="micro" type="text">text</ts-button>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-button, icon">
+				<ts-button icon="info" type="secondary">secondary</ts-button>
+				<ts-button icon="info" type="primary">primary</ts-button>
+				<ts-button icon="info" type="accept">accept</ts-button>
+				<ts-button icon="info" type="warning">warning</ts-button>
+				<ts-button icon="info" type="danger">danger</ts-button>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-button, no-border">
+				<ts-button slot="header-actions" class="no-border" size="micro">no-border button</ts-button>
+				<ts-button icon="info" type="secondary" class="no-border">action</ts-button>
+			</ts-board>
+		</article>
+		<article>
+			<ts-board data-title="ts-button, action">
+				<ts-button icon="info" type="text">action</ts-button>
+			</ts-board>
+		</article>
+	</body>
+</html>

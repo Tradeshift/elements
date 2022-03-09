@@ -134,6 +134,7 @@
 	/* Borders........................................................ */
 
 	--ts-border-width: 1px;
+	--ts-focus-border-width: 2px;
 	--ts-border-type: solid;
 	--ts-border-color-default: var(--ts-color-gray-light);
 	--ts-border-color-error: var(--ts-color-red);
@@ -149,6 +150,7 @@
 	--ts-border-focus: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-focus);
 	--ts-border-disabled: var(--ts-border-width) var(--ts-border-type) var(--ts-border-color-disabled);
 	--ts-boxshadow-border-width: inset 0 0 0 var(--ts-border-width);
+	--ts-boxshadow-focus-border: inset 0 0 0 var(--ts-focus-border-width);
 	--ts-boxshadow-border-default: var(--ts-boxshadow-border-width) var(--ts-border-color-default);
 	--ts-boxshadow-border-error: var(--ts-boxshadow-border-width) var(--ts-border-color-error);
 	--ts-boxshadow-border-success: var(--ts-boxshadow-border-width) var(--ts-border-color-success);
