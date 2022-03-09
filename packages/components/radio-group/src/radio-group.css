@@ -20,12 +20,12 @@
 	}
 
 	& .frame:hover {
-		box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue-light);
+		box-shadow: var(--ts-boxshadow-border-width) var(--ts-color-blue-light);
 	}
 }
 
 :host([focused]) {
 	& .frame {
-		box-shadow: var(--ts-boxshadow-border-width-focused) var(--ts-color-blue);
+		box-shadow: var(--ts-boxshadow-border-width) var(--ts-color-blue);
 	}
 }
