@@ -2,12 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
-
-### Features
-
-- **button-group:** peaa-885 button-group support horizontal/inline mode ([f420075](https://github.com/Tradeshift/elements/commit/f420075efe4f710fdc2c9183b4f0a531c2e71810))
-
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Reverts
