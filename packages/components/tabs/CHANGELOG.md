@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
+
+### Reverts
+
+- Revert "chore(release): v0.36.0" ([c4da28a](https://github.com/Tradeshift/elements/commit/c4da28aaeda820de7f0754d6259953163514e110))
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Reverts
