@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
+
+### Bug Fixes
+
+- **button:** fixes missing/broken focus state styling ([fab2966](https://github.com/Tradeshift/elements/commit/fab29668549072dfd262dac651be557094c67bfe))
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Reverts
