@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
+
+### Features
+
+- **button-group:** peaa-885 button-group support horizontal/inline mode ([f420075](https://github.com/Tradeshift/elements/commit/f420075efe4f710fdc2c9183b4f0a531c2e71810))
+- **dialog:** adds notification options to dialog element ([da64864](https://github.com/Tradeshift/elements/commit/da64864a8703a1620f1273307bb7938eee9a60f6))
+- **dialog:** makes it possible to make dialogs non-dismissable ([cc89bf7](https://github.com/Tradeshift/elements/commit/cc89bf778d2384e334311fc225dfe6d0e651eab2))
+- **dialog:** removes noButtons prop and removes other unnecessary code ([aaf3582](https://github.com/Tradeshift/elements/commit/aaf358264c63132e0077dedccd595d9af8ea3459))
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Bug Fixes

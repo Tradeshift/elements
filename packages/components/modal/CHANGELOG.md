@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
+
+### Features
+
+- **dialog:** adds notification options to dialog element ([da64864](https://github.com/Tradeshift/elements/commit/da64864a8703a1620f1273307bb7938eee9a60f6))
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Reverts
