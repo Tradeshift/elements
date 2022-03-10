@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/Tradeshift/elements/compare/v0.35.0...v0.36.0) (2022-03-10)
+
+### Bug Fixes
+
+- **radio-group:** adds back missing/broken hover and active state styling ([b9bc7fd](https://github.com/Tradeshift/elements/commit/b9bc7fd5823c0ba1165cbaeac1682236f3c73886))
+
 # [0.35.0](https://github.com/Tradeshift/elements/compare/v0.34.0...v0.35.0) (2022-03-01)
 
 ### Reverts
