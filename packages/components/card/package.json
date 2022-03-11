@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.card",
-  "version": "0.36.0",
+  "version": "0.36.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.36.0"
+    "@tradeshift/elements": "^0.36.1"
   },
   "src": "src/card.js"
 }
