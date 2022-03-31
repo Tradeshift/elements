@@ -146,7 +146,7 @@ export class TSOverlay extends TSElement {
 	calculateVerticalPosition(anchorRect, contentHeight) {
 		const verticalPosition = { top: 'auto', bottom: 'auto' };
 		const { top, bottom, height } = anchorRect;
-		const { innerHeight } = window;
+		const { innerHeight, pageYOffset } = window;
 		let maxHeight = 0;
 		const paddingTop = top - HALF_UNIT;
 		const paddingBottom = innerHeight - bottom - HALF_UNIT;
@@ -157,9 +157,9 @@ export class TSOverlay extends TSElement {
 				// maxHeight will be set as a new height of a content container after position update
 				contentHeight = maxHeight;
 			}
-			verticalPosition.top = top - contentHeight - HALF_UNIT + 'px';
+			verticalPosition.top = pageYOffset + top - contentHeight - HALF_UNIT + 'px';
 		} else {
-			verticalPosition.top = top + height + HALF_UNIT + 'px';
+			verticalPosition.top = pageYOffset + top + height + HALF_UNIT + 'px';
 			maxHeight = paddingBottom > MAX_HEIGHT ? MAX_HEIGHT : paddingBottom;
 		}
 
