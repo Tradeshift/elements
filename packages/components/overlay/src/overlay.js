@@ -157,7 +157,7 @@ export class TSOverlay extends TSElement {
 				// maxHeight will be set as a new height of a content container after position update
 				contentHeight = maxHeight;
 			}
-			verticalPosition.top = pageYOffset + top - contentHeight - HALF_UNIT + 'px';
+			verticalPosition.bottom = window.innerHeight - top + HALF_UNIT - pageYOffset + 'px';
 		} else {
 			verticalPosition.top = pageYOffset + top + height + HALF_UNIT + 'px';
 			maxHeight = paddingBottom > MAX_HEIGHT ? MAX_HEIGHT : paddingBottom;
