@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.3](https://github.com/Tradeshift/elements/compare/v0.36.1...v0.36.3) (2022-04-06)
+
+### Bug Fixes
+
+- focus on button after template rendered ([cd09e1c](https://github.com/Tradeshift/elements/commit/cd09e1cc86e2e0daf144f04361532c78c0501a44))
+
 ## [0.36.2](https://github.com/Tradeshift/elements/compare/v0.36.1...v0.36.2) (2022-04-06)
 
 ### Bug Fixes
