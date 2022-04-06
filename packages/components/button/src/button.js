@@ -53,12 +53,14 @@ export class TSButton extends TSElement {
 		return colorBackgroundTypes.indexOf(this.type) > -1 ? 'inverted' : 'default';
 	}
 
-	attributeChangedCallback(name, oldVal, newVal) {
-		super.attributeChangedCallback(name, oldVal, newVal);
-		if (name === 'focused' && this.focused) {
-			// set focus only when component is defined.
-			window.customElements.whenDefined('ts-button').then(() => this.shadowRoot.getElementById('button').focus());
-		}
+	updated(changedProperties) {
+		changedProperties.forEach((oldValue, propName) => {
+			if (propName === 'focused') {
+				if (!oldValue) {
+					window.customElements.whenDefined('ts-button').then(() => this.shadowRoot.getElementById('button').focus());
+				}
+			}
+		});
 	}
 
 	clickHandler(event) {
