@@ -38,7 +38,7 @@ export const Board2 = () => {
 			<div slot="header-actions" style="display: flex; align-items:center;">
 				<ts-button size="macro">Some button </ts-button>
 				<ts-button size="micro" type="danger">click</ts-button>
-				<ts-action-select items="${items}"></ts-action-select>
+				<ts-action-select .items="${items}"></ts-action-select>
 			</div>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum hic iusto minus nostrum, similique
