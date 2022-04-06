@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.2](https://github.com/Tradeshift/elements/compare/v0.36.1...v0.36.2) (2022-04-06)
+
+### Bug Fixes
+
+- fix happo stories ([c4479ed](https://github.com/Tradeshift/elements/commit/c4479ed2678960e5249db5e4fa90ca5a32db8a49))
+- focus on button after template rendered ([cd09e1c](https://github.com/Tradeshift/elements/commit/cd09e1cc86e2e0daf144f04361532c78c0501a44))
+- **overlay:** considers scroll position when calculating vertical position ([986ea92](https://github.com/Tradeshift/elements/commit/986ea92bfec0d014c4fe7dcd93488760944578af))
+- **select:** positions select overlay from bottom up if it opens upwards ([4ae5492](https://github.com/Tradeshift/elements/commit/4ae5492bbe81511b28760b47887d7ee8d29e30cd))
+
 ## [0.36.1](https://github.com/Tradeshift/elements/compare/v0.36.0...v0.36.1) (2022-03-11)
 
 **Note:** Version bump only for package tradeshift-elements
