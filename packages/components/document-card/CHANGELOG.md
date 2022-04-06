@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.2](https://github.com/Tradeshift/elements/compare/v0.36.1...v0.36.2) (2022-04-06)
+
+**Note:** Version bump only for package @tradeshift/elements.document-card
+
 ## [0.36.1](https://github.com/Tradeshift/elements/compare/v0.36.0...v0.36.1) (2022-03-11)
 
 **Note:** Version bump only for package @tradeshift/elements.document-card

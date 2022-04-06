@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.2](https://github.com/Tradeshift/elements/compare/v0.36.1...v0.36.2) (2022-04-06)
+
+### Bug Fixes
+
+- **overlay:** considers scroll position when calculating vertical position ([986ea92](https://github.com/Tradeshift/elements/commit/986ea92bfec0d014c4fe7dcd93488760944578af))
+- **select:** positions select overlay from bottom up if it opens upwards ([4ae5492](https://github.com/Tradeshift/elements/commit/4ae5492bbe81511b28760b47887d7ee8d29e30cd))
+
 ## [0.36.1](https://github.com/Tradeshift/elements/compare/v0.36.0...v0.36.1) (2022-03-11)
 
 **Note:** Version bump only for package @tradeshift/elements.overlay
