@@ -3,7 +3,7 @@ import '@tradeshift/elements';
 import '@tradeshift/elements.radio-group';
 
 export default {
-	title: 'ts-radio-group'
+	title: 'ts-radio-in-radio-group'
 };
 
 export const Test = () => {

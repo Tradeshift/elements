@@ -1,8 +1,12 @@
+import { html } from 'lit-html';
 import '@tradeshift/elements';
+// eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.icon';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { types, sizes } from '../src/utils';
+// eslint-disable-next-line import/no-duplicates
+import { icons } from '@tradeshift/elements.icon';
 
 export default {
 	title: 'ts-icon'
@@ -34,4 +38,25 @@ export const Test = () => {
 	};
 
 	return createHappoStories('icon', properties, '', options);
+};
+
+export const TestAllIcons = () => {
+	return html`
+		<style>
+			.render-block {
+				flex: 0 0 var(--ts-unit-triple);
+			}
+		</style>
+		<div style="display: flex; flex-flow: row wrap; gap: 1rem;">
+			${Object.keys(icons).map(
+				icon =>
+					html`<ts-icon
+						class="render-block"
+						type="${types.PRIMARY}"
+						icon="${icon}"
+						size="${sizes.EXTRA_LARGE}"
+					></ts-icon>`
+			)}
+		</div>
+	`;
 };
