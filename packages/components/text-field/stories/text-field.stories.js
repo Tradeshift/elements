@@ -2,7 +2,7 @@ import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs'
 
 import '@tradeshift/elements.text-field';
 import readme from '../README.md';
-import icons from '../../icon/src/assets/icons';
+import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 
 export default {
 	title: 'ts-text-field',
@@ -31,8 +31,8 @@ export const Default = () => {
 			'Something is wrong with the value you put in the field',
 			'Maybe you need couple of more characters in there?'
 		]),
-		iconStart: select('icon-start', ['', ...Object.keys(icons)], ''),
-		iconEnd: select('icon-end', ['', ...Object.keys(icons)], '')
+		iconStart: select('icon-start', ['', ...iconList], ''),
+		iconEnd: select('icon-end', ['', ...iconList], '')
 	};
 
 	return Object.assign(document.createElement('ts-text-field'), attributes);
