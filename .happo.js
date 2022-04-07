@@ -17,10 +17,6 @@ module.exports = {
 		edge: new RemoteBrowserTarget('edge', {
 			viewport: '1200x1200',
 			maxHeight: 10000
-		}),
-		'internet explorer': new RemoteBrowserTarget('internet explorer', {
-			viewport: '1200x1200',
-			maxHeight: 10000
 		})
 
 		// happo.io is running Safari v10.0, which doesn't support CSS Grid,

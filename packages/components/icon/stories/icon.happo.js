@@ -1,12 +1,10 @@
 import { html } from 'lit-html';
 import '@tradeshift/elements';
-// eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.icon';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { types, sizes } from '../src/utils';
-// eslint-disable-next-line import/no-duplicates
-import { icons } from '@tradeshift/elements.icon';
+import { iconList } from '../lib/assets/icons';
 
 export default {
 	title: 'ts-icon'
@@ -48,7 +46,7 @@ export const TestAllIcons = () => {
 			}
 		</style>
 		<div style="display: flex; flex-flow: row wrap; gap: 1rem;">
-			${Object.keys(icons).map(
+			${iconList.map(
 				icon =>
 					html`<ts-icon
 						class="render-block"
