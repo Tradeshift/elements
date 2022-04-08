@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.checkbox",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.37.0"
+    "@tradeshift/elements": "^0.38.0"
   },
   "src": "src/checkbox.js"
 }

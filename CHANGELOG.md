@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/Tradeshift/elements/compare/v0.36.3...v0.38.0) (2022-04-08)
+
+### Bug Fixes
+
+- fix package-lock ([6ef2d8a](https://github.com/Tradeshift/elements/commit/6ef2d8a8630f5abf4d203fceb3b404d4b9ad1aa6))
+- optimized with svgo ([6635a16](https://github.com/Tradeshift/elements/commit/6635a16dddc2ca1040b4f591945fe5181f710c69))
+
+### Features
+
+- added icons ([df43065](https://github.com/Tradeshift/elements/commit/df430659a0037cffe1fb4f87e9ccec1cc020df7d))
+- **icon:** dynamically import svg icons ([08672cc](https://github.com/Tradeshift/elements/commit/08672cc8afa9fcfaf1d7663b37d3991495578d4d))
+
 # [0.37.0](https://github.com/Tradeshift/elements/compare/v0.36.3...v0.37.0) (2022-04-08)
 
 ### Bug Fixes
