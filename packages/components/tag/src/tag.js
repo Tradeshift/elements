@@ -75,7 +75,7 @@ export class TSTag extends TSElement {
 		if (this.deletable) {
 			return html`
 				<span class="icon action" @click=${this.handleDeleteEvent}>
-					<ts-icon icon="close" size="large"></ts-icon>
+					<ts-icon icon="close-clear" size="large"></ts-icon>
 				</span>
 			`;
 		}

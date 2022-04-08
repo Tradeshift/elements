@@ -174,7 +174,13 @@ export class TSPopover extends TSElement {
 			<div id="container" class="popover-container" @click=${this.stopEventBubbling}>
 				<div class="popover-header">
 					<span class="popover-title">${this.header || ''}</span>
-					<ts-icon icon="close" size="medium" type="inverted" class="popover-close" @click=${this.onClose}></ts-icon>
+					<ts-icon
+						icon="close-clear"
+						size="medium"
+						type="inverted"
+						class="popover-close"
+						@click=${this.onClose}
+					></ts-icon>
 				</div>
 				<!-- Content in the main section of the popover	-->
 				<slot name="content"></slot>

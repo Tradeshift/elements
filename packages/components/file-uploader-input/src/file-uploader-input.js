@@ -72,7 +72,7 @@ export class TSFileUploaderInput extends TSElement {
 			<div class="${classNames.DRAGGABLE_INFO} ${classNames.DROP_BOX}">
 				<div class="icon-wrapper">
 					<div class="icon">
-						<ts-icon icon="arrow-up" size="medium" status="active"></ts-icon>
+						<ts-icon icon="upload" size="medium" status="active"></ts-icon>
 					</div>
 				</div>
 				${messages.DROP_FILE}
