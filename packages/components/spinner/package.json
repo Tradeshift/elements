@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.spinner",
-  "version": "0.36.3",
+  "version": "0.37.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,7 +15,7 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.36.3"
+    "@tradeshift/elements": "^0.37.0"
   },
   "src": "src/spinner.js"
 }
