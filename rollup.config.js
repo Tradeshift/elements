@@ -80,8 +80,7 @@ const babelPlugin = babel({
 				runtimePattern: null,
 				useRuntimeModule: false
 			}
-		],
-		PROD && 'minify-dead-code-elimination'
+		]
 	].filter(Boolean)
 });
 
