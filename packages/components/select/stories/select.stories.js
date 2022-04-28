@@ -30,6 +30,7 @@ function getKnobs() {
 		caseSensitive: boolean('case-sensitive', false),
 		dir: select('dir', { ltr: 'ltr', rtl: 'rtl' }, 'ltr'),
 		loading: boolean('loading', false),
+		label: text('label', null),
 		translations: object('translations', {
 			select: 'Select',
 			selected: 'Selected',
@@ -43,6 +44,7 @@ function getKnobs() {
 
 export const Default = () => {
 	const multiselect = boolean('multiselect', false);
+	const id = text('id', null);
 	const noApplyButton = boolean('no-apply-button', false);
 	let selected = array('selected', [3]);
 	const withIcons = boolean('with icons', false);
@@ -59,6 +61,8 @@ export const Default = () => {
 	return html`
 		<div style="max-width: 500px;">
 			<ts-select
+				.id="${id}"
+				.label="${knobs.label}"
 				.dir="${knobs.dir}"
 				?disabled="${knobs.disabled}"
 				?opened="${knobs.opened}"
@@ -99,6 +103,7 @@ export const CustomFiltering = () => {
 			<div style="max-width: 500px;">
 				<ts-select
 					id="tsSelect"
+					.label="${knobs.label}"
 					?disabled="${knobs.disabled}"
 					?opened="${knobs.opened}"
 					?multiselect="${multiselect}"
