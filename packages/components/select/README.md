@@ -44,15 +44,25 @@
 | translations | translations | Object |  | Translated messages for the user locale |
 | loading | loading | Boolean | false | Show the loading spinner in select dropdown |
 | caseSensitive | case-sensitive | Boolean | false | Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event |
+| label | label | String | '' | The label of the select input field |
+| required | required | Boolean | false | To show the asterisk in the label, not doing validation yet |
+| id | id | String | 'select-input-id' | Id of the select component |
 | inputValue | inputValue | String | '' | INTERNAL Current value in input. |
 | filterValue | filterValue | String | '' | INTERNAL Latest input value that was used to filter. |
+| hasSlottedLabel | hasSlottedLabel | Boolean | false | INTERNAL |
+
+## ➤ Slots
+
+| Name  | Description                                                     |
+| ----- | --------------------------------------------------------------- |
+| label | If you want to have custom html in label, you can use this slot |
 
 ## ➤ Events
 
 | Name | Description | Payload |
 | --- | --- | --- |
-| filter-value-change | Emitted when filter value of the select changes. You can listen to this for doing custom filtering and providing filteredItems to override the default component filtering. |  |
-| select-changed | Emitted when user applies the selected changes |  |
+| filter-value-change | Emitted when filter value of the select changes. You can listen to this for doing custom filtering and providing filteredItems to override the default component filtering. | { filterValue, id } |
+| select-changed | Emitted when user applies the selected changes | { selected, id } |
 
 ## ➤ How to use it
 

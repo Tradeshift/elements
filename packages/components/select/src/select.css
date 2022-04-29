@@ -45,6 +45,21 @@
 	box-shadow: var(--ts-boxshadow-border-focus);
 }
 
+/* Label ........................................................ */
+
+label {
+	display: block;
+	color: var(--ts-color-black);
+	font-size: var(--ts-fontsize-mini);
+	font-weight: var(--ts-fontweight-semibold);
+	padding: var(--ts-unit-quarter) 0;
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+}
+
 /* RTL............................................................ */
 :host([dir='rtl']) {
 	& .show-selection ts-icon {
@@ -56,6 +71,12 @@
 /* Disable........................................................ */
 :host([disabled]) #selectInput {
 	color: var(--ts-disabled-color);
+}
+
+:host([disabled]) {
+	& label {
+		color: var(--ts-disabled-color);
+	}
 }
 
 /* IE10+ CSS styles go here */

@@ -17,15 +17,19 @@ export class TSSelect extends TSElement {
 		this.selected = [];
 		this.inputValue = '';
 		this.filterValue = '';
+		this.label = '';
+		this.id = 'select-input-id';
 		this._translations = Object.assign({}, translations);
 		this.handleInputDebounced = helpers.debounceEvent(() => {
 			this.filterValue = this.inputValue;
 			/**
 			 * Emitted when filter value of the select changes. You can listen to this for doing custom filtering and
 			 * providing filteredItems to override the default component filtering.
+			 * @payload { filterValue, id }
 			 */
 			this.dispatchCustomEvent('filter-value-change', {
-				filterValue: this.caseSensitive ? this.filterValue : this.filterValue.toLowerCase()
+				filterValue: this.caseSensitive ? this.filterValue : this.filterValue.toLowerCase(),
+				id: this.id
 			});
 		}, 300);
 	}
@@ -61,10 +65,18 @@ export class TSSelect extends TSElement {
 			loading: { type: Boolean, reflect: true },
 			/** Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event */
 			caseSensitive: { type: Boolean, reflect: true, attribute: 'case-sensitive' },
+			/** The label of the select input field */
+			label: { type: String, reflect: true },
+			/** To show the asterisk in the label, not doing validation yet */
+			required: { type: Boolean, reflect: true },
+			/** Id of the select component  */
+			id: { type: String, reflect: true },
 			/** INTERNAL Current value in input. */
 			inputValue: { type: String, attribute: false },
 			/** INTERNAL Latest input value that was used to filter. */
-			filterValue: { type: String, attribute: false }
+			filterValue: { type: String, attribute: false },
+			/** INTERNAL */
+			hasSlottedLabel: { type: Boolean }
 		};
 	}
 
@@ -148,8 +160,12 @@ export class TSSelect extends TSElement {
 		this.selected = [...selected];
 		/**
 		 * Emitted when user applies the selected changes
+		 * @payload { selected, id }
 		 */
-		this.dispatchCustomEvent('select-changed', { selected: this.selected });
+		this.dispatchCustomEvent('select-changed', {
+			selected: this.selected,
+			id: this.id
+		});
 		if (!this.noApplyButton) {
 			this.opened = false;
 		}
@@ -226,11 +242,32 @@ export class TSSelect extends TSElement {
 		return `${this.translations.selected} ${this.selected.length}`;
 	}
 
+	onLableSlotChange(e) {
+		const slot = e.currentTarget;
+		const assignedNodes = slot.assignedNodes();
+		this.hasSlottedLabel = assignedNodes && assignedNodes.length;
+	}
+
+	get labelHtml() {
+		if (!this.label && !this.hasSlottedLabel) {
+			return null;
+		}
+		return html`
+			<label for=${this.id}>
+				<!-- If you want to have custom html in label, you can use this slot  -->
+				<slot name="label" @slotchange="${this.onLableSlotChange}"><span>${this.label}</span></slot>
+				${this.required ? html`<span title="Required" class="required-asterisk">*</span>` : ''}
+			</label>
+		`;
+	}
+
 	render() {
 		return html`
 			<div id="container">
+				${this.labelHtml}
 				<div id="selectInput" @click="${this.open}">
 					<input
+						id="${this.id}"
 						class="filter-input"
 						placeholder="${this.getPlaceholder()}"
 						.value="${this.inputValue}"

@@ -30,47 +30,47 @@ export const TestSingleSelect = () => {
 		<div style="display: flex; flex-flow: row wrap; justify-content: space-between;">
 			<div class="render-block">
 				<p>Simple select</p>
-				Closed:
-				<ts-select placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select placeholder="Placeholder" .items="${items}">
+					<label slot="label">Closed:</label>
+				</ts-select>
 				<br />
-				Opened:
-				<ts-select opened placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select opened placeholder="Placeholder" .items="${items}">
+					<label slot="label">Opened:</label>
+				</ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Simple select with selected value</p>
-				Closed:
-				<ts-select placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
+				<ts-select label="Closed:" placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
 				<br />
-				Opened:
-				<ts-select opened placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
+				<ts-select label="Opened:" opened placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Disabled select</p>
-				Closed:
-				<ts-select disabled placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select label="Closed:" disabled placeholder="Placeholder" .items="${items}"></ts-select>
 				<br />
-				Opened:
-				<ts-select disabled opened placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select label="Opened:" disabled opened placeholder="Placeholder" .items="${items}"></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Simple select with icons</p>
-				Closed:
-				<ts-select placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
+				<ts-select label="Closed:" placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
 				<br />
-				Opened:
-				<ts-select opened placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
+				<ts-select label="Opened:" opened placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Simple select with icons and selected value</p>
-				Closed:
-				<ts-select placeholder="Placeholder" .items="${itemsWithIcons}" .selected="${[1]}"></ts-select>
+				<ts-select label="Closed:" placeholder="Placeholder" .items="${itemsWithIcons}" .selected="${[1]}"></ts-select>
 				<br />
-				Opened:
-				<ts-select opened placeholder="Placeholder" .items="${itemsWithIcons}" .selected="${[1]}"></ts-select>
+				<ts-select
+					label="Opened:"
+					opened
+					placeholder="Placeholder"
+					.items="${itemsWithIcons}"
+					.selected="${[1]}"
+				></ts-select>
 			</div>
 			<div class="render-block">
 				<p>Simple select in loading state</p>
@@ -91,29 +91,49 @@ export const TestMultipleSelect = () => {
 		<div style="display: flex; flex-flow: row wrap; justify-content: space-between;">
 			<div class="render-block">
 				<p>Multiselect</p>
-				Closed:
-				<ts-select multiselect placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select label="Closed:" multiselect placeholder="Placeholder" .items="${items}"></ts-select>
 				<br />
-				Opened:
-				<ts-select multiselect opened placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select label="Opened:" multiselect opened placeholder="Placeholder" .items="${items}"></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Multiselect with selected item</p>
-				Closed:
-				<ts-select multiselect placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
+				<ts-select
+					label="Closed:"
+					multiselect
+					placeholder="Placeholder"
+					.items="${items}"
+					.selected="${[1]}"
+				></ts-select>
 				<br />
-				Opened:
-				<ts-select multiselect opened placeholder="Placeholder" .items="${items}" .selected="${[1]}"></ts-select>
+				<ts-select
+					label="Opened:"
+					multiselect
+					opened
+					placeholder="Placeholder"
+					.items="${items}"
+					.selected="${[1]}"
+				></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Multiselect with selected items</p>
-				Closed:
-				<ts-select multiselect placeholder="Placeholder" .items="${items}" .selected="${[1, 2]}"></ts-select>
+				<ts-select
+					label="Closed:"
+					multiselect
+					placeholder="Placeholder"
+					.items="${items}"
+					.selected="${[1, 2]}"
+				></ts-select>
 				<br />
-				Opened:
-				<ts-select multiselect opened placeholder="Placeholder" .items="${items}" .selected="${[1, 2]}"></ts-select>
+				<ts-select
+					label="Opened:"
+					multiselect
+					opened
+					placeholder="Placeholder"
+					.items="${items}"
+					.selected="${[1, 2]}"
+				></ts-select>
 			</div>
 
 			<div class="render-block">

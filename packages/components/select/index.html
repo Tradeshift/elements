@@ -81,8 +81,8 @@
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
 						<div style="margin: 10px 20px 0">
-							<ts-select id="tsSelectLoading" placeholder="loading" loading></ts-select>
-							<ts-select id="tsSelect" placeholder="placeholder"></ts-select>
+							<ts-select label="loading" id="tsSelectLoading" placeholder="loading" loading></ts-select>
+							<ts-select label="basic" id="tsSelect" placeholder="placeholder"></ts-select>
 							<script>
 								initializeSelect('tsSelectLoading');
 								const tsSelect = initializeSelect('tsSelect');
@@ -103,8 +103,13 @@
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
 						<div style="margin: 10px 20px 0">
-							Normal multi select
-							<ts-select id="tsSelectMulti" placeholder="multiple" multiselect></ts-select>
+							<ts-select
+								label="Normal multi select"
+								disabled
+								id="tsSelectMulti"
+								placeholder="multiple"
+								multiselect
+							></ts-select>
 							<script>
 								const tsSelectMulti = initializeSelect('tsSelectMulti');
 								tsSelectMulti.addEventListener('select-changed', e => {
@@ -143,7 +148,9 @@
 				<div slot="header-actions" style="display: flex; align-items: center; justify-content: space-between">
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
 						<div style="margin: 10px 20px 0">
-							<ts-select id="tsSelectMultiNoApply" placeholder="multiple" multiselect no-apply-button></ts-select>
+							<ts-select id="tsSelectMultiNoApply" placeholder="multiple" multiselect no-apply-button>
+								<label slot="label">test the label slot</label>
+							</ts-select>
 							<script>
 								const tsSelectMultiNoApply = initializeSelect('tsSelectMultiNoApply');
 								tsSelectMultiNoApply.addEventListener('select-changed', e => {
