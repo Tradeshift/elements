@@ -30,7 +30,12 @@ export const TestSingleSelect = () => {
 		<div style="display: flex; flex-flow: row wrap; justify-content: space-between;">
 			<div class="render-block">
 				<p>Simple select</p>
-				<ts-select placeholder="Placeholder" .items="${items}">
+				<ts-select
+					placeholder="Placeholder"
+					.items="${items}"
+					help-text-title="Lorem ipsum dolor sit amet"
+					help-text-messages='["consectetur adipisicing elit","Asperiores commodi debitis dolor, dolorem et inventore iste minima modi perspiciatis quas quibusdam quisquam quo reiciendis sapiente, sed?"]'
+				>
 					<label slot="label">Closed:</label>
 				</ts-select>
 				<br />
@@ -48,14 +53,28 @@ export const TestSingleSelect = () => {
 
 			<div class="render-block">
 				<p>Disabled select</p>
-				<ts-select label="Closed:" disabled placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select
+					label="Closed:"
+					disabled
+					placeholder="Placeholder"
+					.items="${items}"
+					help-text-title="Lorem ipsum dolor sit amet"
+					help-text-messages='["consectetur adipisicing elit","Asperiores commodi debitis dolor, dolorem et inventore iste minima modi perspiciatis quas quibusdam quisquam quo reiciendis sapiente, sed?"]'
+				></ts-select>
 				<br />
 				<ts-select label="Opened:" disabled opened placeholder="Placeholder" .items="${items}"></ts-select>
 			</div>
 
 			<div class="render-block">
 				<p>Simple select with icons</p>
-				<ts-select label="Closed:" placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
+				<ts-select
+					label="Closed:"
+					placeholder="Placeholder"
+					.items="${itemsWithIcons}"
+					has-error
+					error-title="Lorem ipsum dolor sit amet"
+					error-messages='["consectetur adipisicing elit","Asperiores commodi debitis dolor, dolorem et inventore iste minima modi perspiciatis quas quibusdam quisquam quo reiciendis sapiente, sed?"]'
+				></ts-select>
 				<br />
 				<ts-select label="Opened:" opened placeholder="Placeholder" .items="${itemsWithIcons}"></ts-select>
 			</div>
@@ -91,7 +110,14 @@ export const TestMultipleSelect = () => {
 		<div style="display: flex; flex-flow: row wrap; justify-content: space-between;">
 			<div class="render-block">
 				<p>Multiselect</p>
-				<ts-select label="Closed:" multiselect placeholder="Placeholder" .items="${items}"></ts-select>
+				<ts-select
+					label="Closed:"
+					multiselect
+					placeholder="Placeholder"
+					.items="${items}"
+					error-title="Lorem ipsum dolor sit amet"
+					error-messages='["consectetur adipisicing elit","Asperiores commodi debitis dolor, dolorem et inventore iste minima modi perspiciatis quas quibusdam quisquam quo reiciendis sapiente, sed?"]'
+				></ts-select>
 				<br />
 				<ts-select label="Opened:" multiselect opened placeholder="Placeholder" .items="${items}"></ts-select>
 			</div>

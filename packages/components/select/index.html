@@ -82,7 +82,23 @@
 					<div style="align-items: center; display: flex; margin: 10px 0 10px 10px">
 						<div style="margin: 10px 20px 0">
 							<ts-select label="loading" id="tsSelectLoading" placeholder="loading" loading></ts-select>
-							<ts-select label="basic" id="tsSelect" placeholder="placeholder"></ts-select>
+							<ts-select
+								label="basic"
+								id="tsSelect"
+								placeholder="placeholder"
+								help-text-title="Title of help text"
+								help-text-messages='["Something is wrong with the value you put in the field","Maybe you need couple of more characters in there?","test"]'
+							></ts-select>
+							<ts-select
+								label="error"
+								id="tsSelect2"
+								has-error
+								placeholder="placeholder"
+								error-title="Error Title"
+								help-text-title="Title of help text"
+								error-messages='["Was it an error?","another thing went wrong?"]'
+								help-text-messages='["Something is wrong with the value you put in the field","Maybe you need couple of more characters in there?","test"]'
+							></ts-select>
 							<script>
 								initializeSelect('tsSelectLoading');
 								const tsSelect = initializeSelect('tsSelect');
