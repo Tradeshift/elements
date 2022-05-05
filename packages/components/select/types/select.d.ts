@@ -35,6 +35,15 @@ export interface TSSelectHTMLAttributes {
 	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
 	"case-sensitive"?: boolean;
 
+	/**  The label of the select input field  */
+	label?: string;
+
+	/**  To show the asterisk in the label, not doing validation yet  */
+	required?: boolean;
+
+	/**  Id of the select component   */
+	id?: string;
+
 }
 
 export interface TSSelect {
@@ -73,5 +82,14 @@ export interface TSSelect {
 
 	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
 	caseSensitive?: boolean;
+
+	/**  The label of the select input field  */
+	label?: string;
+
+	/**  To show the asterisk in the label, not doing validation yet  */
+	required?: boolean;
+
+	/**  Id of the select component   */
+	id?: string;
 
 }
