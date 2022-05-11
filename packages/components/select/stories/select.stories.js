@@ -31,6 +31,17 @@ function getKnobs() {
 		dir: select('dir', { ltr: 'ltr', rtl: 'rtl' }, 'ltr'),
 		loading: boolean('loading', false),
 		label: text('label', null),
+		helpTextTitle: text('help-text-title', 'Sample help text title which shows only when there are multiple messages'),
+		errorTitle: text('error-title', 'Something is wrong with this field value:'),
+		helpTextMessages: array('help-text-messages', [
+			'Some information to help the user know what is this field about',
+			'Some extra information about validation of this field'
+		]),
+		hasError: boolean('has-error', false),
+		errorMessages: array('error-messages', [
+			'Something is wrong with the value you put in the field',
+			'Maybe you need couple of more characters in there?'
+		]),
 		translations: object('translations', {
 			select: 'Select',
 			selected: 'Selected',
@@ -76,6 +87,11 @@ export const Default = () => {
 				.translations="${knobs.translations}"
 				@filter-value-change="${action('"filter-value-change" event being called!')}"
 				@select-changed="${action('"select-changed" event being called!')}"
+				.helpTextTitle="${knobs.helpTextTitle}"
+				.errorTitle="${knobs.errorTitle}"
+				.helpTextMessages="${knobs.helpTextMessages}"
+				.hasError="${knobs.hasError}"
+				.errorMessages="${knobs.errorMessages}"
 			></ts-select>
 		</div>
 	`;

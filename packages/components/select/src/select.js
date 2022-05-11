@@ -5,6 +5,7 @@ import '@tradeshift/elements.overlay';
 // eslint-disable-next-line import/no-duplicates
 import { TSOverlay } from '@tradeshift/elements.overlay';
 import '@tradeshift/elements.select-menu';
+import '@tradeshift/elements.help-text';
 import translations from './utils/translations';
 import css from './select.css';
 
@@ -71,6 +72,18 @@ export class TSSelect extends TSElement {
 			required: { type: Boolean, reflect: true },
 			/** Id of the select component  */
 			id: { type: String, reflect: true },
+			/** Array of messages to pass to help-text component. See help-text component for more info  */
+			helpTextMessages: { type: Array, reflect: true, attribute: 'help-text-messages' },
+			/** If you have more than one help text message , you should pass a title to it. See help-text component for more info  */
+			helpTextTitle: { type: String, reflect: true, attribute: 'help-text-title' },
+			/** To change the help text icon and style if needed. See help-text component for more info  */
+			helpTextType: { type: String, reflect: true, attribute: 'help-text-type' },
+			/** Error messages to show underneath of the input when it has error */
+			errorMessages: { type: Array, reflect: true, attribute: 'error-messages' },
+			/** Error title, if there are more than one error message */
+			errorTitle: { type: String, reflect: true, attribute: 'error-title' },
+			/** If the text field has an error, to show error messages and change the style of the input */
+			hasError: { type: Boolean, reflect: true, attribute: 'has-error' },
 			/** INTERNAL Current value in input. */
 			inputValue: { type: String, attribute: false },
 			/** INTERNAL Latest input value that was used to filter. */
@@ -261,6 +274,34 @@ export class TSSelect extends TSElement {
 		`;
 	}
 
+	get helpText() {
+		if (!this.helpTextMessages && (!this.errorMessages || !this.hasError)) {
+			return;
+		}
+
+		const messages = this.hasError ? this.errorMessages : this.helpTextMessages;
+		const type = this.hasError ? 'error' : undefined;
+		if (messages.length > 1) {
+			const title = this.hasError ? this.errorTitle : this.helpTextTitle;
+			return html`
+				<ts-help-text
+					type=${type}
+					title=${title}
+					.messages=${messages}
+					?rtl=${this.direction === 'rtl'}
+					?disabled=${this.disabled}
+				></ts-help-text>
+			`;
+		}
+
+		return html`<ts-help-text
+			type=${type}
+			.messages=${messages}
+			?rtl=${this.direction === 'rtl'}
+			?disabled=${this.disabled}
+		></ts-help-text>`;
+	}
+
 	render() {
 		return html`
 			<div id="container">
@@ -282,6 +323,7 @@ export class TSSelect extends TSElement {
 						@click="${this.arrowClick}"
 					></ts-icon>
 				</div>
+				${this.helpText}
 				${this.opened
 					? html`<ts-overlay id="overlay" @overlay-close=${this.onOverlayCloseListener}>
 							<ts-select-menu

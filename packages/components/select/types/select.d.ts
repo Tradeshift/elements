@@ -44,6 +44,24 @@ export interface TSSelectHTMLAttributes {
 	/**  Id of the select component   */
 	id?: string;
 
+	/**  Array of messages to pass to help-text component. See help-text component for more info   */
+	"help-text-messages"?: any[];
+
+	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info   */
+	"help-text-title"?: string;
+
+	/**  To change the help text icon and style if needed. See help-text component for more info   */
+	"help-text-type"?: string;
+
+	/**  Error messages to show underneath of the input when it has error  */
+	"error-messages"?: any[];
+
+	/**  Error title, if there are more than one error message  */
+	"error-title"?: string;
+
+	/**  If the text field has an error, to show error messages and change the style of the input  */
+	"has-error"?: boolean;
+
 }
 
 export interface TSSelect {
@@ -91,5 +109,23 @@ export interface TSSelect {
 
 	/**  Id of the select component   */
 	id?: string;
+
+	/**  Array of messages to pass to help-text component. See help-text component for more info   */
+	helpTextMessages?: any[];
+
+	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info   */
+	helpTextTitle?: string;
+
+	/**  To change the help text icon and style if needed. See help-text component for more info   */
+	helpTextType?: string;
+
+	/**  Error messages to show underneath of the input when it has error  */
+	errorMessages?: any[];
+
+	/**  Error title, if there are more than one error message  */
+	errorTitle?: string;
+
+	/**  If the text field has an error, to show error messages and change the style of the input  */
+	hasError?: boolean;
 
 }
