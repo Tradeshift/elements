@@ -41,6 +41,7 @@ export class TSHelpText extends TSElement {
 		}
 		const icons = {
 			default: 'info',
+			error: 'alert',
 			warning: 'alert'
 		};
 		const icon = icons[this.type] ? icons[this.type] : icons.default;
