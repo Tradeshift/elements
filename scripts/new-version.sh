@@ -14,8 +14,8 @@ else
 	git checkout -b $branch
 
 	# run install scripts to avoid unexpected changes in package-lock.json
-	npm ci
-	npm run lerna:bootstrap:ci
+	# npm ci
+	# npm run lerna:bootstrap:ci
 
 	# commit a changelog and a new version
 	git add .
