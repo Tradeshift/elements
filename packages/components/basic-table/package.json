@@ -15,7 +15,9 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.38.0"
+    "@tradeshift/elements": "^0.38.0",
+    "@tradeshift/elements.document-card": "^0.38.0",
+    "@tradeshift/elements.status": "^0.38.0"
   },
   "src": "src/basic-table.js"
 }

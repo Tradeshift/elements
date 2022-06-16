@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.radio';
+import '../lib/radio.esm';
 import readme from '../README.md';
 
 export default {

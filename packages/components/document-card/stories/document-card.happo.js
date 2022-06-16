@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.document-card';
+import '../lib/document-card.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 

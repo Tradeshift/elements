@@ -1,5 +1,5 @@
 import { withKnobs, select, radios, array, boolean } from '@storybook/addon-knobs';
-import '@tradeshift/elements.tag';
+import '../lib/tag.esm';
 import { types } from './constants';
 import readme from '../README.md';
 

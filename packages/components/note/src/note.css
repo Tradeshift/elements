@@ -12,7 +12,7 @@
 	border-radius: var(--ts-radius) var(--ts-radius) 0 0;
 	color: var(--ts-color-black);
 	justify-content: space-between;
-	align-items: start;
+	align-items: flex-start;
 	display: flex;
 }
 

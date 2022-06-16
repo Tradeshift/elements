@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.file-size';
+import '../lib/file-size.esm';
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 
 export default {

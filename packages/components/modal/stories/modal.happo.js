@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.modal';
+import '../lib/modal.esm';
 import '@tradeshift/elements.note';
 
 export default {
@@ -9,6 +8,7 @@ export default {
 
 export const Medium = () => {
 	return html`
+		<div style="width: 100%; height: 1200px;"></div>
 		<ts-modal data-title="title" data-size="medium" data-visible no-padding>
 			<ts-note slot="note" style="border: 1px solid black;"> Note content </ts-note>
 			<div slot="main" style="border: 1px solid black;">Main content</div>
@@ -23,6 +23,7 @@ Medium.story = {
 
 export const LargeAndRtl = () => {
 	return html`
+		<div style="width: 100%; height: 1200px;"></div>
 		<ts-modal data-dir="rtl" data-title="title" data-size="large" data-visible>
 			<ts-note dir="rtl" slot="note" style="border: 1px solid black;"> Note content </ts-note>
 			<div slot="main" style="border: 1px solid black;">Main content</div>

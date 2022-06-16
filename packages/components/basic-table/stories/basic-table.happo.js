@@ -1,7 +1,6 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.basic-table';
 import '@tradeshift/elements.document-card';
 import '@tradeshift/elements.status';
+import '../lib/basic-table.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 

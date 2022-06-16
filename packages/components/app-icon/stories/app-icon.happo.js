@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.app-icon';
+import '../lib/app-icon.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { sizes } from '../src/utils';

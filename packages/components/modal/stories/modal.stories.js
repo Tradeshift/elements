@@ -1,11 +1,11 @@
 import { html } from 'lit-html';
 import { boolean, radios, select, text, withKnobs } from '@storybook/addon-knobs';
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.modal';
-import '@tradeshift/elements.card';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
+import '@tradeshift/elements.card';
 import '@tradeshift/elements.note';
+import '../lib/modal.esm';
 
 import { sizes } from '../src/utils';
 import readme from '../README.md';

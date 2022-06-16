@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import '@tradeshift/elements.action-select';
+import '../lib/action-select.esm.js';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
 import { ada, allDocuments } from '@tradeshift/elements.icon/lib/assets/icons';

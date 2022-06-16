@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.tag';
+import '../lib/tag.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { types, labels, values } from './constants';

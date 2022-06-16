@@ -2,10 +2,7 @@ import { html } from 'lit-html';
 import { withKnobs, text, boolean, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import '@tradeshift/elements.modal';
-import '@tradeshift/elements.button';
-import '@tradeshift/elements.text-field';
-import '@tradeshift/elements.confirmation-prompt';
+import '../lib/confirmation-prompt.esm';
 import readme from '../README.md';
 
 export default {

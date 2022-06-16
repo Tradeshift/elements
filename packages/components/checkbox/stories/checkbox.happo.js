@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.checkbox';
+import '../lib/checkbox.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 

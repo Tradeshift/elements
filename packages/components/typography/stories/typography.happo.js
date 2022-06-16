@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.typography';
+import '../lib/typography.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { variants, colorTypes } from '../src/utils';

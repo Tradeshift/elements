@@ -17,9 +17,12 @@
   "dependencies": {
     "@tradeshift/elements": "^0.38.0",
     "@tradeshift/elements.button": "^0.38.0",
+    "@tradeshift/elements.button-group": "^0.38.0",
+    "@tradeshift/elements.card": "^0.38.0",
     "@tradeshift/elements.cover": "^0.38.0",
     "@tradeshift/elements.header": "^0.38.0",
-    "@tradeshift/elements.icon": "^0.38.0"
+    "@tradeshift/elements.icon": "^0.38.0",
+    "@tradeshift/elements.note": "^0.38.0"
   },
   "src": "src/modal.js"
 }

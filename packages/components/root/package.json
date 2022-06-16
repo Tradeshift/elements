@@ -15,7 +15,8 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.38.0"
+    "@tradeshift/elements": "^0.38.0",
+    "@tradeshift/elements.header": "^0.38.0"
   },
   "src": "src/root.js"
 }

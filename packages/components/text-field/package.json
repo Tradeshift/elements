@@ -17,6 +17,7 @@
   "dependencies": {
     "@tradeshift/elements": "^0.38.0",
     "@tradeshift/elements.help-text": "^0.38.0",
+    "@tradeshift/elements.icon": "^0.38.0",
     "@tradeshift/elements.input": "^0.38.0"
   },
   "src": "src/text-field.js"

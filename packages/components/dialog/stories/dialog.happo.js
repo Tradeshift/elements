@@ -1,13 +1,13 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.dialog';
 import '@tradeshift/elements.button-group';
+import '../lib/dialog.esm';
 
 export default {
 	title: 'ts-dialog'
 };
 
 export const DefaultDialog = () => html`
+	<div style="width: 100%; height: 1200px;"></div>
 	<ts-dialog text="Are you sure you want to delete the document?" data-visible type="warning"></ts-dialog>
 `;
 
@@ -18,6 +18,7 @@ DefaultDialog.story = {
 export const ExtraButtonsDialogCustomizedButtons = () => {
 	const translations = { accept_button: 'custom accept', cancel_button: 'custom cancel' };
 	return html`
+		<div style="width: 100%; height: 1200px;"></div>
 		<ts-dialog
 			text="Warning dialog with extra buttons and customized button wording"
 			data-visible
@@ -39,6 +40,7 @@ ExtraButtonsDialogCustomizedButtons.story = {
 };
 
 export const SuccessNotification = () => html`
+	<div style="width: 100%; height: 1200px;"></div>
 	<ts-dialog
 		text="Non-dismissable success notification with no buttons (even though it has buttons in the extra-buttons slot)"
 		data-visible
@@ -60,6 +62,7 @@ SuccessNotification.story = {
 };
 
 export const DefaultNotification = () => html`
+	<div style="width: 100%; height: 1200px;"></div>
 	<ts-dialog text="info notification" data-visible type="info" notification></ts-dialog>
 `;
 

@@ -1,8 +1,7 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.board';
-import '@tradeshift/elements.button';
 import '@tradeshift/elements.action-select';
+import '@tradeshift/elements.button';
+import '../lib/board.esm';
 
 export default {
 	title: 'ts-board'

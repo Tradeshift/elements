@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
-import { Placement } from '@tradeshift/elements.popover';
+import { Placement } from '../lib/popover.esm';
 import { helpers } from '@tradeshift/elements';
 import readme from '../README.md';
 

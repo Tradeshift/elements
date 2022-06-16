@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.typography';
+import '../lib/typography.esm';
 
 import { colorTypes, variants } from '../src/utils';
 import readme from '../README.md';

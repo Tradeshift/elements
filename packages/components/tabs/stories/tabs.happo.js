@@ -1,7 +1,6 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.tabs';
 import '@tradeshift/elements.tab';
+import '../lib/tabs.esm';
 
 export default {
 	title: 'ts-tabs'

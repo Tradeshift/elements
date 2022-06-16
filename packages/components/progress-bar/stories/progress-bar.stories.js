@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.progress-bar';
+import '../lib/progress-bar.esm';
 import readme from '../README.md';
 
 export default {

@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { text, select, boolean, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.document-card';
+import '../lib/document-card.esm';
 import { IconsEnum } from '../src/utils';
 import { helpers } from '@tradeshift/elements';
 import readme from '../README.md';

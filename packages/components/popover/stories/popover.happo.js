@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.popover';
+import '../lib/popover.esm';
 
 export default {
 	title: 'ts-popover'

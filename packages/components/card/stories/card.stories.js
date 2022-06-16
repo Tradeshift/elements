@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.card';
+import '../lib/card.esm';
 
 import { orientations, sizes, types } from '../src/utils';
 import readme from '../README.md';

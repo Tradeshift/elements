@@ -1,7 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.date-picker';
-import '@tradeshift/elements/src/vars.css';
+import '../lib/date-picker.esm';
 
 export default {
 	title: 'ts-date-picker'
