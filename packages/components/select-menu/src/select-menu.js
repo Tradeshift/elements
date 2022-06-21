@@ -2,6 +2,7 @@ import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshi
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
+import { checkbox as checkboxIcon, checkboxOn } from '@tradeshift/elements.icon/lib/assets/icons';
 import '@tradeshift/elements.list-item';
 import '@tradeshift/elements.spinner';
 import css from './select-menu.css';
@@ -121,7 +122,7 @@ export class TSSelectMenu extends TSElement {
 			class="show-selection ${this.isVisibleShowSelectedButton ? 'show' : 'hide'}"
 			@click="${this.showSelectedClick}"
 		>
-			<ts-icon icon="${this.showSelectedOnly ? 'checkbox' : 'checkbox-on'}" size="large" type="disabled-checked">
+			<ts-icon icon="${this.showSelectedOnly ? checkboxIcon : checkboxOn}" size="large" type="disabled-checked">
 			</ts-icon>
 			${this.showSelectedOnly
 				? this.translations.show_all
@@ -204,8 +205,8 @@ export class TSSelectMenu extends TSElement {
 										dir="${this.dir}"
 										title="${item.title}"
 										icon="${item.icon || ''}"
-										icon-right="${this.multiselect ? 'checkbox' : ''}"
-										icon-selected="checkbox-on"
+										icon-right="${this.multiselect ? checkboxIcon : ''}"
+										icon-selected="${checkboxOn}"
 										@click="${this.handleSelection}"
 									></ts-list-item>`
 							  )

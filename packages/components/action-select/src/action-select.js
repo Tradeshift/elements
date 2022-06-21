@@ -1,5 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
+import { more } from '@tradeshift/elements.icon/lib/assets/icons';
 // eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.overlay';
 // eslint-disable-next-line import/no-duplicates
@@ -139,7 +140,7 @@ export class TSActionSelect extends TSElement {
 					<!-- Element in this slot becomes the anchor for the action menu. When empty, it will render a menu icon -->
 					<slot>
 						<ts-icon
-							icon="more"
+							icon="${more}"
 							size="large"
 							type="${this.disabled ? 'disabled' : 'gray-darker'}"
 							?disabled="${this.disabled}"

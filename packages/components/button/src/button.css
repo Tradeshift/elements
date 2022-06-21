@@ -182,7 +182,8 @@
 
 /* Text + icon type (action).....................................................*/
 
-:host([type='text'][icon]) {
+:host([type='text'][icon]),
+:host([type='text'][icon-src]) {
 	& > button {
 		padding-inline-start: var(--ts-unit-half);
 
@@ -193,7 +194,8 @@
 	}
 }
 
-:host(:not([busy])[type='text'][icon]) {
+:host(:not([busy])[type='text'][icon]),
+:host(:not([busy])[type='text'][icon-src]) {
 	& > button {
 		&:hover {
 			background: var(--ts-color-gray-lightest);
@@ -262,7 +264,8 @@
 
 /* Button with an icon ............................................*/
 
-:host(:not([type='text'])[icon]) {
+:host(:not([type='text'])[icon]),
+:host(:not([type='text'])[icon-src]) {
 	& > button {
 		width: var(--ts-unit-double);
 		height: var(--ts-unit-double);

@@ -26,6 +26,8 @@ export class TSButton extends TSElement {
 			busy: { type: Boolean, reflect: true },
 			/** Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text */
 			icon: { type: String, reflect: true },
+			/** Icon source path. Also note that it will hide the slot content unless the type is text */
+			iconSrc: { type: String, reflect: true, attribute: 'icon-src' },
 			/** Determine if the button is disabled. `button-click` event won't be dispatched */
 			disabled: { type: Boolean, reflect: true },
 			/** Make the button focused */
@@ -46,7 +48,7 @@ export class TSButton extends TSElement {
 	}
 
 	get iconType() {
-		if (this.icon && this.type === types.TEXT) {
+		if ((this.icon || this.iconSrc) && this.type === types.TEXT) {
 			return 'action';
 		}
 		const colorBackgroundTypes = [types.DANGER, types.WARNING, types.ACCEPT, types.PRIMARY];
@@ -69,10 +71,16 @@ export class TSButton extends TSElement {
 		}
 	}
 
+	getIcon() {
+		return this.icon || this.iconSrc
+			? html`<ts-icon .icon="${this.icon}" .src="${this.iconSrc}" size="large" type="${this.iconType}"></ts-icon>`
+			: '';
+	}
+
 	render() {
 		return html`
 			<button id="button" ?disabled="${this.disabled}" dir="${this.direction}" @click="${this.clickHandler}">
-				${this.icon ? html` <ts-icon icon="${this.icon}" size="large" type="${this.iconType}"></ts-icon> ` : ''}
+				${this.getIcon()}
 				<span>
 					<!-- Text of the button should be wrapped around \`ts-button\` element -->
 					<slot></slot>

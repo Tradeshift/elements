@@ -2,6 +2,7 @@ import { CloseOnEscBehavior, customElementDefineHelper, html, TSElement, unsafeC
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
 import '@tradeshift/elements.header';
+import { closeClear } from '@tradeshift/elements.icon/lib/assets/icons';
 // eslint-disable-next-line no-unused-vars
 import { customEventNames, sizes } from './utils';
 import css from './modal.css';
@@ -59,7 +60,7 @@ export class TSModal extends TSElement {
 		}
 		return html`
 			<ts-header .title="${this.title}" dir="${this.direction}">
-				<ts-button class="no-border" icon="close-clear" size="large" @click="${this.close}"></ts-button>
+				<ts-button class="no-border" icon="${closeClear}" size="large" @click="${this.close}"></ts-button>
 			</ts-header>
 		`;
 	}

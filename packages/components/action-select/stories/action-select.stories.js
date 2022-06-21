@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import '@tradeshift/elements.action-select';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
+import { ada, allDocuments } from '@tradeshift/elements.icon/lib/assets/icons';
 import readme from '../README.md';
 
 export default {
@@ -173,7 +174,7 @@ export const Triggers = () => {
 				.items="${actionItems}"
 				@action-select-click="${action('Action item selected')}"
 			>
-			<ts-button icon="ada"></ts-button>
+			<ts-button icon-src="${ada}"></ts-button>
 		</ts-action-select>
 		<br />
 			<ts-action-select
@@ -182,7 +183,7 @@ export const Triggers = () => {
 				.items="${actionItems}"
 				@action-select-click="${action('Action item selected')}"
 			>
-			<ts-icon icon="all-documents" size="large" type="gray-darker" style="cursor:pointer;"></ts-icon>
+			<ts-icon src="${allDocuments}" size="large" type="gray-darker" style="cursor:pointer;"></ts-icon>
 		</ts-action-select>
 		</div>
 	`;

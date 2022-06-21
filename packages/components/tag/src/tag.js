@@ -1,5 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
+import { closeClear, lock } from '@tradeshift/elements.icon/lib/assets/icons';
 import css from './tag.css';
 
 export class TSTag extends TSElement {
@@ -67,7 +68,7 @@ export class TSTag extends TSElement {
 		if (this.locked) {
 			return html`
 				<span class="icon">
-					<ts-icon icon="lock" size="large"></ts-icon>
+					<ts-icon icon="${lock}" size="large"></ts-icon>
 				</span>
 			`;
 		}
@@ -75,7 +76,7 @@ export class TSTag extends TSElement {
 		if (this.deletable) {
 			return html`
 				<span class="icon action" @click=${this.handleDeleteEvent}>
-					<ts-icon icon="close-clear" size="large"></ts-icon>
+					<ts-icon icon="${closeClear}" size="large"></ts-icon>
 				</span>
 			`;
 		}

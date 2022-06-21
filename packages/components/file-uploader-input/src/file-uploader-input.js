@@ -4,6 +4,7 @@ import { messages, selectors, classNames, sizes } from './utils';
 
 import '@tradeshift/elements.help-text';
 import '@tradeshift/elements.icon';
+import { upload } from '@tradeshift/elements.icon/lib/assets/icons';
 
 export class TSFileUploaderInput extends TSElement {
 	static get styles() {
@@ -72,7 +73,7 @@ export class TSFileUploaderInput extends TSElement {
 			<div class="${classNames.DRAGGABLE_INFO} ${classNames.DROP_BOX}">
 				<div class="icon-wrapper">
 					<div class="icon">
-						<ts-icon icon="upload" size="medium" status="active"></ts-icon>
+						<ts-icon icon="${upload}" size="medium" status="active"></ts-icon>
 					</div>
 				</div>
 				${messages.DROP_FILE}

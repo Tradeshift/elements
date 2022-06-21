@@ -11,6 +11,9 @@ export interface TSButtonHTMLAttributes {
 	/**  Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text  */
 	icon?: string;
 
+	/**  Icon source path. Also note that it will hide the slot content unless the type is text  */
+	"icon-src"?: string;
+
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;
 
@@ -37,6 +40,9 @@ export interface TSButton {
 
 	/**  Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text  */
 	icon?: string;
+
+	/**  Icon source path. Also note that it will hide the slot content unless the type is text  */
+	iconSrc?: string;
 
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;

@@ -17,6 +17,7 @@
   "dependencies": {
     "@tradeshift/elements": "^0.38.0",
     "@tradeshift/elements.date-picker-overlay": "^0.38.0",
+    "@tradeshift/elements.icon": "^0.38.0",
     "@tradeshift/elements.overlay": "^0.38.0",
     "@tradeshift/elements.text-field": "^0.38.0"
   },

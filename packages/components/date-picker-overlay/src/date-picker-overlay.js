@@ -1,6 +1,7 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
+import { arrowDownShort } from '@tradeshift/elements.icon/lib/assets/icons';
 import css from './date-picker-overlay.css';
 
 export class TSDatePickerOverlay extends TSElement {
@@ -45,7 +46,7 @@ export class TSDatePickerOverlay extends TSElement {
 			<ts-icon
 				@click="${onClick}"
 				class="control-button"
-				icon="arrow-down-short"
+				icon="${arrowDownShort}"
 				rotate="${rotation}"
 				size="large"
 				type="gray-darker"

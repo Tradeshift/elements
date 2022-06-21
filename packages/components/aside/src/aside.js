@@ -2,6 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper, CloseOnEscBehavi
 import css from './aside.css';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.cover';
+import { closeClear } from '@tradeshift/elements.icon/lib/assets/icons';
 import '@tradeshift/elements.spinner';
 
 export class TSAside extends TSElement {
@@ -80,7 +81,7 @@ export class TSAside extends TSElement {
 				<header>
 					<div class="aside-title">${this.title}</div>
 					<div class="aside-close">
-						<ts-button class="no-border" icon="close-clear" @click="${this.close}"></ts-button>
+						<ts-button class="no-border" icon="${closeClear}" @click="${this.close}"></ts-button>
 					</div>
 				</header>
 				<div class="aside-note">
