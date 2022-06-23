@@ -24,9 +24,9 @@ export class TSButton extends TSElement {
 			size: { type: String, reflect: true },
 			/** Show busy/loading animation */
 			busy: { type: Boolean, reflect: true },
-			/** Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text */
+			/** Icon name from the list of available icons in ts-icon component or the inline svg string. Also note that it will hide the slot content unless the type is text */
 			icon: { type: String, reflect: true },
-			/** Icon source path. Also note that it will hide the slot content unless the type is text */
+			/** Url to svg asset for an icon. Also note that it will hide the slot content unless the type is text */
 			iconSrc: { type: String, reflect: true, attribute: 'icon-src' },
 			/** Determine if the button is disabled. `button-click` event won't be dispatched */
 			disabled: { type: Boolean, reflect: true },
