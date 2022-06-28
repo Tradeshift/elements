@@ -7,7 +7,8 @@ const { camelize } = require('../../../../scripts/helpers');
  *  Read all svg files in an assets/icons directory and generate index.js file with ES module exports
  */
 (async function () {
-	const componentDir = path.join(process.cwd(), '/lib/assets/icons');
+	const componentDir = path.join(process.cwd(), '/src/assets/icons');
+
 	const files = await fs.readdir(componentDir);
 	let moduleFileContent = '';
 	let kebabCaseExport = 'export const iconList = [' + EOL;
@@ -25,5 +26,7 @@ const { camelize } = require('../../../../scripts/helpers');
 
 	moduleFileContent += kebabCaseExport;
 
-	await fs.writeFile(`${componentDir}/index.js`, moduleFileContent);
+	const resultDir = path.join(process.cwd(), '/lib/assets/icons');
+	await fs.mkdir(resultDir, { recursive: true });
+	await fs.writeFile(`${resultDir}/index.js`, moduleFileContent);
 })();

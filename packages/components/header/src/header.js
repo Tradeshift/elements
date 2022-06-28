@@ -1,6 +1,7 @@
 import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.app-icon';
 import '@tradeshift/elements.icon';
+import { menuSwitch } from '@tradeshift/elements.icon/lib/assets/icons';
 import css from './header.css';
 
 export class TSHeader extends TSElement {
@@ -32,7 +33,7 @@ export class TSHeader extends TSElement {
 			<ts-icon
 				@click="${this.openChromeMenu}"
 				class="menu-switch"
-				icon="menu-switch"
+				icon="${menuSwitch}"
 				size="large"
 				tabindex="0"
 			></ts-icon>

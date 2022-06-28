@@ -8,8 +8,11 @@ export interface TSButtonHTMLAttributes {
 	/**  Show busy/loading animation  */
 	busy?: boolean;
 
-	/**  Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text  */
+	/**  Icon name from the list of available icons in ts-icon component or the inline svg string. Also note that it will hide the slot content unless the type is text  */
 	icon?: string;
+
+	/**  Url to svg asset for an icon. Also note that it will hide the slot content unless the type is text  */
+	"icon-src"?: string;
 
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;
@@ -35,8 +38,11 @@ export interface TSButton {
 	/**  Show busy/loading animation  */
 	busy?: boolean;
 
-	/**  Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text  */
+	/**  Icon name from the list of available icons in ts-icon component or the inline svg string. Also note that it will hide the slot content unless the type is text  */
 	icon?: string;
+
+	/**  Url to svg asset for an icon. Also note that it will hide the slot content unless the type is text  */
+	iconSrc?: string;
 
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
 	disabled?: boolean;

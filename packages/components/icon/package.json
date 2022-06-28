@@ -16,7 +16,7 @@
     "types/*"
   ],
   "scripts": {
-    "post-build": "node ./scripts/export-svg.js"
+    "pre-build": "node ./scripts/export-svg.js"
   },
   "dependencies": {
     "@tradeshift/elements": "^0.38.0"

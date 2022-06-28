@@ -1,6 +1,7 @@
 import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshift/elements';
 import '@tradeshift/elements.date-picker-overlay';
 import '@tradeshift/elements.text-field';
+import { calendar } from '@tradeshift/elements.icon/lib/assets/icons';
 // eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.overlay';
 // eslint-disable-next-line import/no-duplicates
@@ -267,7 +268,7 @@ export class TSDatePicker extends TSElement {
 						?disabled="${this.disabled}"
 						?readonly="${this.readonly}"
 						.hasError="${this.hasError}"
-						icon-end="calendar"
+						icon-end="${calendar}"
 					>
 						<input
 							id="dateInput"

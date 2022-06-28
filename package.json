@@ -30,7 +30,7 @@
     "Kirill Kolombet <kirill.kolombet@tradeshift.com> (https://github.com/kirill-kolombet)"
   ],
   "scripts": {
-    "build": "cross-env-shell lerna exec -- rollup -c=`pwd`/rollup.config.js && lerna run post-build",
+    "build": "cross-env-shell lerna run pre-build && lerna exec -- rollup -c=`pwd`/rollup.config.js",
     "build-storybook": "build-storybook -s ./static -o .out",
     "build:prod": "cross-env PRODUCTION=true npm run build",
     "check-credentials": "npm whoami && npm whoami --registry=https://npm.pkg.github.com/ && npm whoami --registry=https://registry.npmjs.org/",

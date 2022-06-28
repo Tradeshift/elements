@@ -1,5 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper, helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
+import { arrowDownShort } from '@tradeshift/elements.icon/lib/assets/icons';
 // eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.overlay';
 // eslint-disable-next-line import/no-duplicates
@@ -316,7 +317,7 @@ export class TSSelect extends TSElement {
 					/>
 					<ts-icon
 						class="icon-end"
-						icon="arrow-down-short"
+						icon="${arrowDownShort}"
 						size="large"
 						type="gray-darker"
 						rotate="${this.opened ? '180' : '0'}"

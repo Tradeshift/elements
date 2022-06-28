@@ -2,6 +2,7 @@ import { TSElement, unsafeCSS, html, customElementDefineHelper, helpers } from '
 import css from './search.css';
 
 import '@tradeshift/elements.icon';
+import { closeClear, search } from '@tradeshift/elements.icon/lib/assets/icons';
 import '@tradeshift/elements.select-menu';
 // eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.overlay';
@@ -77,7 +78,7 @@ export class TSSearch extends TSElement {
 
 	get cancelIcon() {
 		return html`
-			<ts-icon class="close-icon" icon="close-clear" size="medium" circular @click="${this.handleClear}"></ts-icon>
+			<ts-icon class="close-icon" icon="${closeClear}" size="medium" circular @click="${this.handleClear}"></ts-icon>
 		`;
 	}
 
@@ -231,7 +232,7 @@ export class TSSearch extends TSElement {
 					@click="${this.stopEventBubbling}"
 				>
 					<div class="icon-container">
-						<ts-icon icon="search" size="large"></ts-icon>
+						<ts-icon icon="${search}" size="large"></ts-icon>
 					</div>
 					<input
 						id="input"

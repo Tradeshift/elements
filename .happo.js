@@ -34,7 +34,6 @@ module.exports = {
 	plugins: [
 		happoPluginStorybook({
 			configDir: './.storybook-happo',
-			staticDir: './static',
 			outputDir: './.happo'
 		})
 	]

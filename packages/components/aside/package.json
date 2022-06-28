@@ -18,6 +18,7 @@
     "@tradeshift/elements": "^0.38.0",
     "@tradeshift/elements.button": "^0.38.0",
     "@tradeshift/elements.cover": "^0.38.0",
+    "@tradeshift/elements.icon": "^0.38.0",
     "@tradeshift/elements.spinner": "^0.38.0"
   },
   "src": "src/aside.js"

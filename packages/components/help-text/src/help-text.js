@@ -1,6 +1,7 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './help-text.css';
 import '@tradeshift/elements.icon';
+import { alert, info } from '@tradeshift/elements.icon/lib/assets/icons';
 
 import { sizes } from './utils';
 
@@ -40,9 +41,9 @@ export class TSHelpText extends TSElement {
 			iconType = 'disabled';
 		}
 		const icons = {
-			default: 'info',
-			error: 'alert',
-			warning: 'alert'
+			default: info,
+			error: alert,
+			warning: alert
 		};
 		const icon = icons[this.type] ? icons[this.type] : icons.default;
 		return html`<ts-icon class="info-icon" icon="${icon}" size="medium" type="${iconType}"></ts-icon>`;

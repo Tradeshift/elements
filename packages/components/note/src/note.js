@@ -1,6 +1,7 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.icon';
+import { closeClear } from '@tradeshift/elements.icon/lib/assets/icons';
 
 import { classNames, types } from './utils';
 import css from './note.css';
@@ -71,7 +72,7 @@ export class TSNote extends TSElement {
 				<ts-icon
 					class="no-border ${classNames.CLOSE_BUTTON}"
 					@click="${this.closeHandler}"
-					icon="close-clear"
+					icon="${closeClear}"
 				></ts-icon>
 			`;
 		}

@@ -4,6 +4,7 @@ import '@tradeshift/elements.card';
 import '@tradeshift/elements.progress-bar';
 import '@tradeshift/elements.file-size';
 import '@tradeshift/elements.icon';
+import { download, remove } from '@tradeshift/elements.icon/lib/assets/icons';
 
 import css from './file-card.css';
 import fileIcon from './assets/file.svg';
@@ -76,10 +77,10 @@ export class TSFileCard extends TSElement {
 		return html`
 			<div>
 				<span class="${classNames.REMOVE_ACTION} ${classNames.ACTION_ICON_WRAPPER}">
-					<ts-icon class="${classNames.ACTION_ICON}" icon="remove"></ts-icon>
+					<ts-icon class="${classNames.ACTION_ICON}" icon="${remove}"></ts-icon>
 				</span>
 				<span class="${classNames.DOWNLOAD_ACTION} ${classNames.ACTION_ICON_WRAPPER}">
-					<ts-icon class="${classNames.ACTION_ICON}" icon="download"></ts-icon>
+					<ts-icon class="${classNames.ACTION_ICON}" icon="${download}"></ts-icon>
 				</span>
 			</div>
 		`;

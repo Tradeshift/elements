@@ -28,7 +28,7 @@ export class TSIcon extends TSElement {
 
 	static get properties() {
 		return {
-			/** Icon name, ex: 'arrow-up' */
+			/** Icon name, ex: 'arrow-up' or inline svg string */
 			icon: { type: String, reflect: true },
 			/** Url to svg for icon. It will override the icon property */
 			src: { type: String, reflect: true },
@@ -51,14 +51,14 @@ export class TSIcon extends TSElement {
 		super.attributeChangedCallback(name, oldVal, newVal);
 		switch (name) {
 			case 'icon':
-				if (!this.src && newVal !== null) {
+				if (!this.src && newVal) {
 					window.customElements.whenDefined('ts-icon').then(() => {
 						this.getIcon();
 					});
 				}
 				break;
 			case 'src':
-				if (newVal !== null) {
+				if (newVal) {
 					window.customElements.whenDefined('ts-icon').then(() => {
 						this.getSrc();
 					});
@@ -69,6 +69,10 @@ export class TSIcon extends TSElement {
 	}
 
 	async getIcon() {
+		if (this.icon.indexOf('<svg') > -1 && this.icon.indexOf('</svg>') > -1) {
+			this.svgContent = this.parseSvg(this.icon);
+			return;
+		}
 		if (!this.iconCache.has(this.icon)) {
 			try {
 				const { default: svgUrl } = await import(`@tradeshift/elements.icon/lib/assets/icons/${this.icon}.svg`);
@@ -109,11 +113,15 @@ export class TSIcon extends TSElement {
 		this.svgContent = this.iconCache.get(this.src);
 	}
 
-	async extractSvgContent(response) {
-		const svgString = await response.text();
+	parseSvg(svgString) {
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(svgString, 'image/svg+xml');
 		return doc.firstChild;
+	}
+
+	async extractSvgContent(response) {
+		const svgString = await response.text();
+		return this.parseSvg(svgString);
 	}
 
 	render() {

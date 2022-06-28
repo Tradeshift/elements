@@ -4,6 +4,8 @@ import { perPageSelectValues } from './utils';
 import translations from './utils/translations';
 
 import '@tradeshift/elements.icon';
+import { arrowDownShort, arrowLeftSkip } from '@tradeshift/elements.icon/lib/assets/icons';
+
 import '@tradeshift/elements.tooltip';
 
 export class TSPager extends TSElement {
@@ -45,7 +47,7 @@ export class TSPager extends TSElement {
 			className: 'first-page',
 			disabled: this.activePage === 1,
 			tooltip: this.translations.first_page_tooltip,
-			icon: html` <ts-icon icon="arrow-left-skip" size="large"></ts-icon> `,
+			icon: html`<ts-icon icon="${arrowLeftSkip}" size="large"></ts-icon>`,
 			callback: () => (this.activePage = 1)
 		});
 	}
@@ -54,7 +56,7 @@ export class TSPager extends TSElement {
 		return this.navigationButton({
 			className: 'last-page',
 			tooltip: this.translations.last_page_tooltip,
-			icon: html` <ts-icon icon="arrow-left-skip" size="large" flip="h"></ts-icon> `,
+			icon: html`<ts-icon icon="${arrowLeftSkip}" size="large" flip="h"></ts-icon>`,
 			disabled: this.activePage === this.totalPages,
 			callback: () => (this.activePage = this.totalPages)
 		});
@@ -65,7 +67,7 @@ export class TSPager extends TSElement {
 			className: 'prev-page',
 			disabled: this.activePage === 1,
 			tooltip: this.translations.first_page_tooltip,
-			icon: html` <ts-icon icon="arrow-down-short" size="large" rotate="90"></ts-icon> `,
+			icon: html`<ts-icon icon="${arrowDownShort}" size="large" rotate="90"></ts-icon>`,
 			callback: () => (this.activePage -= 1)
 		});
 	}
@@ -75,7 +77,7 @@ export class TSPager extends TSElement {
 			className: 'prev-page',
 			disabled: this.activePage === this.totalPages,
 			tooltip: this.translations.last_page_tooltip,
-			icon: html` <ts-icon icon="arrow-down-short" size="large" rotate="270"></ts-icon> `,
+			icon: html`<ts-icon icon="${arrowDownShort}" size="large" rotate="270"></ts-icon>`,
 			callback: () => (this.activePage += 1)
 		});
 	}

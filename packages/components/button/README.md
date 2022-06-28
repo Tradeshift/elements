@@ -35,7 +35,8 @@
 | type | type | String |  | Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger` |
 | size | size | String |  | Size of the button, `macro`, `micro` |
 | busy | busy | Boolean | false | Show busy/loading animation |
-| icon | icon | String |  | Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text |
+| icon | icon | String |  | Icon name from the list of available icons in ts-icon component or the inline svg string. Also note that it will hide the slot content unless the type is text |
+| iconSrc | icon-src | String |  | Url to svg asset for an icon. Also note that it will hide the slot content unless the type is text |
 | disabled | disabled | Boolean | false | Determine if the button is disabled. `button-click` event won't be dispatched |
 | focused | focused | Boolean | false | Make the button focused |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |

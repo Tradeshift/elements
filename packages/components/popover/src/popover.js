@@ -1,5 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
+import { closeClear } from '@tradeshift/elements.icon/lib/assets/icons';
 import css from './popover.css';
 
 /**
@@ -175,7 +176,7 @@ export class TSPopover extends TSElement {
 				<div class="popover-header">
 					<span class="popover-title">${this.header || ''}</span>
 					<ts-icon
-						icon="close-clear"
+						icon="${closeClear}"
 						size="medium"
 						type="inverted"
 						class="popover-close"
