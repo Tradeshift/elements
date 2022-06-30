@@ -135,7 +135,9 @@
     "access": "public"
   },
   "overrides": {
-    "highlight.js": ">=10.4.1",
+    "@storybook/addon-notes@5.3.21": {
+      "react-syntax-highlighter": ">=15.5.0"
+    },
     "glob-parent": ">=5.1.2",
     "nth-check": ">=2.0.1",
     "prismjs": ">=1.25.0",
