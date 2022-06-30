@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.basic-table",
-  "version": "0.38.0",
+  "version": "0.39.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,9 +15,9 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.38.0",
-    "@tradeshift/elements.document-card": "^0.38.0",
-    "@tradeshift/elements.status": "^0.38.0"
+    "@tradeshift/elements": "^0.39.0",
+    "@tradeshift/elements.document-card": "^0.39.0",
+    "@tradeshift/elements.status": "^0.39.0"
   },
   "src": "src/basic-table.js"
 }

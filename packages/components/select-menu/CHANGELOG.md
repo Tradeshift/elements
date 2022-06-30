@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/Tradeshift/elements/compare/v0.38.0...v0.39.0) (2022-06-30)
+
+### Features
+
+- add support of inline svg in icon component and use inline svg in other componets ([0510e43](https://github.com/Tradeshift/elements/commit/0510e438294a2b375c9c46c043bd84eb5f5bf8d1))
+
 # [0.38.0](https://github.com/Tradeshift/elements/compare/v0.36.3...v0.38.0) (2022-04-08)
 
 **Note:** Version bump only for package @tradeshift/elements.select-menu
