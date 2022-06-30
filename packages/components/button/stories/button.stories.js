@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.button';
+import '../lib/button.esm';
 
 import { sizes, types } from '../src/utils';
 import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
@@ -36,8 +36,8 @@ export const Default = () => {
 	const disabled = boolean('Disabled', false);
 
 	return type
-		? html` <ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}"> ${label} </ts-button> `
-		: html` <ts-button ?disabled="${disabled}" ?busy="${busy}" size="${size}"> ${label} </ts-button> `;
+		? html`<ts-button ?disabled="${disabled}" ?busy="${busy}" type="${type}" size="${size}">${label}</ts-button>`
+		: html`<ts-button ?disabled="${disabled}" ?busy="${busy}" size="${size}">${label}</ts-button>`;
 };
 
 Default.story = {
@@ -68,7 +68,7 @@ export const Icon = () => {
 	const icon = select('Icon', iconList, iconList[0]);
 
 	return html`
-		<ts-button ?disabled="${disabled}" ?busy="${busy}" icon="${icon}" type="${type}" size="${size}"> </ts-button>
+		<ts-button ?disabled="${disabled}" ?busy="${busy}" icon="${icon}" type="${type}" size="${size}"></ts-button>
 	`;
 };
 
@@ -82,7 +82,7 @@ export const Action = () => {
 	const icon = select('Icon', iconList, 'download');
 	const direction = boolean('RTL', false) ? 'rtl' : 'ltr';
 
-	return html` <ts-button type="text" icon="${icon}" dir="${direction}"> ${label} </ts-button> `;
+	return html`<ts-button type="text" icon="${icon}" dir="${direction}">${label}</ts-button>`;
 };
 
 Action.story = {

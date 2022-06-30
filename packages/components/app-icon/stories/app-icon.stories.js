@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { select, withKnobs } from '@storybook/addon-knobs';
 
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.app-icon';
+import '../lib/app-icon.esm';
 
 import icon from '../../../../static/icon.svg';
 import { sizes } from '../src/utils';

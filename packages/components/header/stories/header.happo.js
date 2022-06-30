@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.header';
+import '../lib/header.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 

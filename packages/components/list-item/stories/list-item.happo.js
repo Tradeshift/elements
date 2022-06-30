@@ -1,6 +1,5 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.list-item';
 import '@tradeshift/elements.app-icon';
+import '../lib/list-item.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import icon from '../../../../static/icon.svg';

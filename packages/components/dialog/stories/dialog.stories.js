@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { withKnobs, text, boolean, object, select } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.dialog';
+import '../lib/dialog.esm';
 import { dialogTypes } from '../src/utils';
 import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import readme from '../README.md';

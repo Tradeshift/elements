@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.icon';
+import '../lib/icon.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { types, sizes } from '../src/utils';

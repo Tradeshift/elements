@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.status';
+import '../lib/status.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { STATUS_TYPE } from '../src/utils/constants';

@@ -1,7 +1,6 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
 import '@tradeshift/elements.button';
-import '@tradeshift/elements.button-group';
+import '../lib/button-group.esm';
 import '@tradeshift/elements/src/vars.css';
 
 export default {

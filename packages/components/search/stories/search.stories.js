@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { boolean, number, radios, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import '@tradeshift/elements.search';
+import '../lib/search.esm';
 import readme from '../README.md';
 
 export default {

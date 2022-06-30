@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import '@tradeshift/elements';
-import '@tradeshift/elements.aside';
+import '../lib/aside.esm';
 
 import readme from '../README.md';
 

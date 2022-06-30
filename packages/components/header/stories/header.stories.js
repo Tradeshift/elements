@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.header';
 import '@tradeshift/elements.button';
+import '../lib/header.esm';
 
 import icon from '../../../../static/icon.svg';
 import readme from '../README.md';

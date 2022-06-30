@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { boolean, radios, text, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.checkbox';
+import '../lib/checkbox.esm';
 import readme from '../README.md';
 
 export default {

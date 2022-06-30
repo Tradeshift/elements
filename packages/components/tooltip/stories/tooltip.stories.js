@@ -1,7 +1,6 @@
 import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
-import '@tradeshift/elements';
-import '@tradeshift/elements.tooltip';
+import '../lib/tooltip.esm';
 import readme from '../README.md';
 
 export default {

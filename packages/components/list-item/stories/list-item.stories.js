@@ -1,8 +1,8 @@
 import { html } from 'lit-html';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.list-item';
 import '@tradeshift/elements.app-icon';
+import '../lib/list-item.esm';
 
 import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 import appIcon from '../../../../static/icon.svg';

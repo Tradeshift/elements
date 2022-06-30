@@ -1,6 +1,6 @@
 import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
 
-import '@tradeshift/elements.text-field';
+import '../lib/text-field.esm';
 import readme from '../README.md';
 import { iconList } from '@tradeshift/elements.icon/lib/assets/icons';
 

@@ -1,9 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.modal';
-import '@tradeshift/elements.button';
-import '@tradeshift/elements.text-field';
-import '@tradeshift/elements.confirmation-prompt';
+import '../lib/confirmation-prompt.esm';
 
 export default {
 	title: 'ts-confirmation-prompt'

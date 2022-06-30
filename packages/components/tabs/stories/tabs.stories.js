@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { object, radios, withKnobs } from '@storybook/addon-knobs';
 import { ifDefined } from 'lit-html/directives/if-defined';
 
-import '@tradeshift/elements.tabs';
+import '../lib/tabs.esm';
 import '@tradeshift/elements.tab';
 import readme from '../README.md';
 

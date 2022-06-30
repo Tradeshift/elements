@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.button';
+import '../lib/button.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 import { sizes, types } from '../src/utils';

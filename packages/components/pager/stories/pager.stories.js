@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { number, select, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import '@tradeshift/elements.pager';
+import '../lib/pager.esm';
 import readme from '../README.md';
 
 export default {

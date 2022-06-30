@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.action-select';
+import '../lib/action-select.esm';
 
 export default {
 	title: 'ts-action-select'

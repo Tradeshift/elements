@@ -1,7 +1,6 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.root';
 import '@tradeshift/elements.header';
+import '../lib/root.esm';
 
 const slots = {
 	header: { slot: 'header', height: '60px', background: '#00AEFF' },

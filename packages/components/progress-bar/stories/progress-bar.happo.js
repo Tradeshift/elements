@@ -1,5 +1,4 @@
-import '@tradeshift/elements';
-import '@tradeshift/elements.progress-bar';
+import '../lib/progress-bar.esm';
 
 import { createHappoStories } from '../../../../.storybook-happo/utils';
 

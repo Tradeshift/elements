@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 import { helpers } from '@tradeshift/elements';
-import '@tradeshift/elements.icon';
+import '../lib/icon.esm';
 
 import { sizes, types } from '../src/utils';
 import { iconList } from '../lib/assets/icons';

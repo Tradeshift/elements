@@ -1,7 +1,5 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.select';
-import '@tradeshift/elements/src/vars.css';
+import '../lib/select.esm';
 
 export default {
 	title: 'ts-select'

@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
-import '@tradeshift/elements';
-import '@tradeshift/elements.radio-group';
+import '@tradeshift/elements.radio';
+import '../lib/radio-group.esm';
 
 export default {
 	title: 'ts-radio-group'

@@ -1,5 +1,7 @@
 import { object, select, text, withKnobs } from '@storybook/addon-knobs';
-import '@tradeshift/elements.basic-table';
+import '@tradeshift/elements.document-card';
+import '@tradeshift/elements.status';
+import '../lib/basic-table.esm';
 import readme from '../README.md';
 
 export default {
