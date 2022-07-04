@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.icon",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -19,7 +19,7 @@
     "pre-build": "node ./scripts/export-svg.js"
   },
   "dependencies": {
-    "@tradeshift/elements": "^0.39.0"
+    "@tradeshift/elements": "^0.40.0"
   },
   "src": "src/icon.js"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.button",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,8 +15,8 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.39.0",
-    "@tradeshift/elements.icon": "^0.39.0"
+    "@tradeshift/elements": "^0.40.0",
+    "@tradeshift/elements.icon": "^0.40.0"
   },
   "src": "src/button.js"
 }
