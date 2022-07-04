@@ -69,48 +69,63 @@ export class TSIcon extends TSElement {
 	}
 
 	async getIcon() {
-		if (this.icon.indexOf('<svg') > -1 && this.icon.indexOf('</svg>') > -1) {
+		if (this.validateSvg(this.icon)) {
 			this.svgContent = this.parseSvg(this.icon);
 			return;
 		}
-		if (!this.iconCache.has(this.icon)) {
-			try {
-				const { default: svgUrl } = await import(`@tradeshift/elements.icon/lib/assets/icons/${this.icon}.svg`);
-				const res = await fetch(svgUrl);
+		if (this.iconCache.has(this.icon)) {
+			this.svgContent = this.iconCache.get(this.icon);
+			return;
+		}
+
+		try {
+			const { default: svgImport } = await import(`@tradeshift/elements.icon/lib/assets/icons/${this.icon}.svg`);
+			let svgContent = '';
+			// in some configurations webpack will inline svg content to a module
+			// so we need to check is resolved to svg string or url
+			if (this.validateSvg(svgImport)) {
+				svgContent = this.parseSvg(svgImport);
+			} else {
+				const res = await fetch(svgImport);
 				if (!res.ok) {
 					// cannot fetch the icon svg, set the content to empty string
 					this.svgContent = '';
 					return;
 				}
-				const content = await this.extractSvgContent(res);
-				this.iconCache.set(this.icon, content);
-			} catch (e) {
-				console.error(e);
-				this.svgContent = '';
-				return;
+				svgContent = await this.extractSvgContent(res);
 			}
+			this.iconCache.set(this.icon, svgContent);
+			this.svgContent = svgContent;
+		} catch (e) {
+			console.error(e);
+			this.svgContent = '';
 		}
-		this.svgContent = this.iconCache.get(this.icon);
 	}
 
 	async getSrc() {
-		if (!this.iconCache.has(this.src)) {
-			try {
-				const res = await fetch(this.src);
-				if (!res.ok) {
-					// cannot fetch the icon svg, set the content to empty string
-					this.svgContent = '';
-					return;
-				}
-				const content = await this.extractSvgContent(res);
-				this.iconCache.set(this.src, content);
-			} catch (e) {
-				console.error(e);
+		if (this.iconCache.has(this.src)) {
+			this.svgContent = this.iconCache.get(this.src);
+			return;
+		}
+
+		try {
+			const res = await fetch(this.src);
+			if (!res.ok) {
+				// cannot fetch the icon svg, set the content to empty string
 				this.svgContent = '';
 				return;
 			}
+			const content = await this.extractSvgContent(res);
+			this.iconCache.set(this.src, content);
+			this.svgContent = content;
+		} catch (e) {
+			console.error(e);
+			this.svgContent = '';
 		}
-		this.svgContent = this.iconCache.get(this.src);
+	}
+
+	validateSvg(svgString) {
+		return svgString.indexOf('<svg') > -1 && svgString.indexOf('</svg>') > -1;
 	}
 
 	parseSvg(svgString) {
