@@ -138,6 +138,9 @@
     "@storybook/addon-notes@5.3.21": {
       "react-syntax-highlighter": ">=15.5.0"
     },
+    "@storybook/storybook-deployer": {
+      "parse-url": "6.0.1"
+    },
     "trim-newlines": "^3.0.1",
     "glob-parent": ">=5.1.2",
     "nth-check": ">=2.0.1",
