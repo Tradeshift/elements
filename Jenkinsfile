@@ -17,6 +17,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
+                echo 'this is a test'
                 checkout scm
             }
         }
