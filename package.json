@@ -126,7 +126,7 @@
     "reload": "^3.1.1",
     "rollup": "^2.71.1",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-svgo": "^1.1.0",
+    "rollup-plugin-svgo": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "tablemark": "^2.0.0",
     "xa": "^2.4.0"
@@ -143,7 +143,6 @@
     },
     "trim-newlines": "^3.0.1",
     "glob-parent": ">=5.1.2",
-    "nth-check": ">=2.0.1",
     "trim": ">=0.0.3"
   },
   "storybook-deployer": {
