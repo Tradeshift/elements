@@ -1,4 +1,6 @@
 export interface TSFileUploaderInputHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	rtl?: boolean;
 
 	/**  Disable the input  */
@@ -11,14 +13,14 @@ export interface TSFileUploaderInputHTMLAttributes {
 	size?: string;
 
 	/**  List of accepted file extensions  */
-	"accepted-file-extensions"?: any[];
+	"accepted-file-extensions"?: string;
 
 	/**  Disable drag and drop functionality  */
 	"disable-drag-and-drop"?: boolean;
 
 	"help-text-title"?: string;
 
-	"help-text-messages"?: any[];
+	"help-text-messages"?: string;
 
 	/**  Hide the help text about allowed file types.  */
 	"hide-file-type-help-text"?: boolean;
@@ -27,7 +29,7 @@ export interface TSFileUploaderInputHTMLAttributes {
 	"hide-max-file-number-help-text"?: boolean;
 
 	/**  Maximum limit for number of files to be shown as helper message  */
-	"max-file-number"?: number;
+	"max-file-number"?: string;
 
 }
 

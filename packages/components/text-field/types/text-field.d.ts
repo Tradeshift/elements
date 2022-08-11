@@ -1,4 +1,6 @@
 export interface TSTextFieldHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Label of the text field. If you need something more than simple string, use the label slot.  */
 	label?: string;
 
@@ -15,7 +17,7 @@ export interface TSTextFieldHTMLAttributes {
 	placeholder?: string;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info   */
-	"help-text-messages"?: any[];
+	"help-text-messages"?: string;
 
 	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info   */
 	"help-text-title"?: string;
@@ -24,7 +26,7 @@ export interface TSTextFieldHTMLAttributes {
 	"help-text-type"?: string;
 
 	/**  Error messages to show underneath of the input when it has error  */
-	"error-messages"?: any[];
+	"error-messages"?: string;
 
 	/**  Error title, if there are more than one error message  */
 	"error-title"?: string;

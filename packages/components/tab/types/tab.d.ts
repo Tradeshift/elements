@@ -1,4 +1,6 @@
 export interface TSTabHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  The label text for the header  */
 	label?: string;
 
@@ -9,7 +11,7 @@ export interface TSTabHTMLAttributes {
 	icon?: string;
 
 	/**  Number for counter badge next to the label  */
-	counter?: number;
+	counter?: string;
 
 	/**  Id of the tab which will be added to the tab button in the header of tabs. It can also be used for identifying the tab on tab-click event   */
 	id?: string;

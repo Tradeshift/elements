@@ -1,4 +1,6 @@
 export interface TSTagHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Text direction: 'rtl' or 'ltr'  */
 	dir?: string;
 
@@ -15,10 +17,10 @@ export interface TSTagHTMLAttributes {
 	locked?: boolean;
 
 	/**  Array of labels or 'keys'  */
-	labels?: any[];
+	labels?: string;
 
 	/**  Array of values  */
-	values?: any[];
+	values?: string;
 
 	/**  Show busy/loading animation  */
 	busy?: boolean;

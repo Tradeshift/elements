@@ -1,4 +1,6 @@
 export interface TSIconHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Icon name, ex: 'arrow-up' or inline svg string  */
 	icon?: string;
 
@@ -15,7 +17,7 @@ export interface TSIconHTMLAttributes {
 	circular?: boolean;
 
 	/**  90, 180, 270  */
-	rotate?: number;
+	rotate?: string;
 
 	/**  'h', 'horizontal', 'v', 'vertical'  */
 	flip?: string;

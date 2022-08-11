@@ -1,4 +1,6 @@
 export interface TSInputHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Show error style  */
 	hasError?: boolean;
 

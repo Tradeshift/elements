@@ -1,4 +1,6 @@
 export interface TSSearchHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Shoud the search be auto focused once page loaded  */
 	autofocus?: boolean;
 
@@ -9,7 +11,7 @@ export interface TSSearchHTMLAttributes {
 	focused?: boolean;
 
 	/**  timeout in ms for the 'idle' event  */
-	"idle-time"?: number;
+	"idle-time"?: string;
 
 	/**  Message when an input is empty  */
 	placeholder?: string;
@@ -18,7 +20,7 @@ export interface TSSearchHTMLAttributes {
 	value?: string;
 
 	/**  Translated messages for the user locale. <br> @type {{ loading: string, no_items: string }}  */
-	translations?: object;
+	translations?: string;
 
 	/**  Should dropdown items be rendered or not  */
 	"has-dropdown"?: boolean;
@@ -27,7 +29,7 @@ export interface TSSearchHTMLAttributes {
 	loading?: boolean;
 
 	/**  Dropdown items to show when user clicks on search component  */
-	"dropdown-items"?: any[];
+	"dropdown-items"?: string;
 
 }
 

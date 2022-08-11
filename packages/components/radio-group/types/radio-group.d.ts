@@ -1,4 +1,6 @@
 export interface TSRadioGroupHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Value of currently chosen ts-radio node  */
 	value?: string;
 
@@ -6,7 +8,7 @@ export interface TSRadioGroupHTMLAttributes {
 	title?: string;
 
 	/**  Index of checked ts-radio node  */
-	index?: number;
+	index?: string;
 
 	/**  Is group currently focused for keyboard input  */
 	focused?: boolean;

@@ -1,4 +1,6 @@
 export interface TSPopoverHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Is the popover visible or not  */
 	opened?: boolean;
 

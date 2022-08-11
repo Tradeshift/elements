@@ -1,6 +1,8 @@
 export interface TSHelpTextHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  List of message(s)  */
-	messages?: any[];
+	messages?: string;
 
 	/**  If there are multiple messages, there should be a title for the help text  */
 	title?: string;

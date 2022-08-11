@@ -1,4 +1,6 @@
 export interface TSConfirmationPromptHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Dialog can be toggled by add/removing this attribute  */
 	"data-visible"?: boolean;
 
@@ -18,13 +20,13 @@ export interface TSConfirmationPromptHTMLAttributes {
 	"text-field-placeholder"?: string;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info   */
-	"help-text-messages"?: any[];
+	"help-text-messages"?: string;
 
 	/**  If you have more than one help text message, you should pass a title to it. See help-text component for more info   */
 	"help-text-title"?: string;
 
 	/**  Can be used for customizing the buttons text and providing translations for them  */
-	translations?: object;
+	translations?: string;
 
 	/**  Text that the user need to type for confirmation   */
 	"text-to-match"?: string;

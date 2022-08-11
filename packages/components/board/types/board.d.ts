@@ -1,4 +1,6 @@
 export interface TSBoardHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction of the component 'rtl' or 'ltr'  */
 	dir?: string;
 

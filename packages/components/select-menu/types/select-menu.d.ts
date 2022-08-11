@@ -1,4 +1,6 @@
 export interface TSSelectMenuHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
 
@@ -6,10 +8,10 @@ export interface TSSelectMenuHTMLAttributes {
 	disabled?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: any[];
+	items?: string;
 
 	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.  */
-	"filtered-items"?: any[];
+	"filtered-items"?: string;
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -18,10 +20,10 @@ export interface TSSelectMenuHTMLAttributes {
 	"no-apply-button"?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: any[];
+	selected?: string;
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: string;
 
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;

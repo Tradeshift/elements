@@ -1,4 +1,6 @@
 export interface TSButtonHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger`  */
 	type?: string;
 

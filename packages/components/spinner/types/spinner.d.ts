@@ -1,4 +1,6 @@
 export interface TSSpinnerHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Spinner color, `blue`, `mono`, `white`  */
 	"data-color"?: string;
 

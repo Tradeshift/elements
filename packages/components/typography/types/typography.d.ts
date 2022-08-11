@@ -1,4 +1,6 @@
 export interface TSTypographyHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	text?: string;
 
 	tooltip?: string;
