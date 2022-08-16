@@ -1,4 +1,6 @@
 export interface TSRadioHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Value of the radio  */
 	value?: string;
 

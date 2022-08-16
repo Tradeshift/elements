@@ -1,4 +1,6 @@
 export interface TSModalHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction 'rtl' or 'ltr'  */
 	"data-dir"?: string;
 

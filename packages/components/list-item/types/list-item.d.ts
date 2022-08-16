@@ -1,4 +1,6 @@
 export interface TSListItemHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	title?: string;
 
 	subtitle?: string;

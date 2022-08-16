@@ -1,4 +1,6 @@
 export interface TSCheckboxHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Name of checkbox  */
 	name?: string;
 

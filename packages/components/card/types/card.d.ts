@@ -1,4 +1,6 @@
 export interface TSCardHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	type?: string;
 
 	orientation?: string;

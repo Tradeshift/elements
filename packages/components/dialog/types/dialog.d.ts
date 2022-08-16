@@ -1,4 +1,6 @@
 export interface TSDialogHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Dialog can be toggled by adding/removing this attribute  */
 	"data-visible"?: boolean;
 
@@ -12,7 +14,7 @@ export interface TSDialogHTMLAttributes {
 	type?: string;
 
 	/**  can be used for customizing the buttons text and translations  */
-	translations?: object;
+	translations?: string;
 
 	/**  set the default focus on the button, either `accept` or `cancel`  */
 	focused?: string;

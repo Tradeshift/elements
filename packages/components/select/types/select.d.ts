@@ -1,4 +1,6 @@
 export interface TSSelectHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
 
@@ -9,10 +11,10 @@ export interface TSSelectHTMLAttributes {
 	opened?: boolean;
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: any[];
+	items?: string;
 
 	/**  List of filtered options based on the select filter input value. `items` should be updated to always include all filtered items.    */
-	"filtered-items"?: any[];
+	"filtered-items"?: string;
 
 	/**  Allow users to select several options or not.  */
 	multiselect?: boolean;
@@ -21,13 +23,13 @@ export interface TSSelectHTMLAttributes {
 	"no-apply-button"?: boolean;
 
 	/**  List of selected items' ids  */
-	selected?: any[];
+	selected?: string;
 
 	/**  Default placeholder when there is no selection.  */
 	placeholder?: string;
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: string;
 
 	/**  Show the loading spinner in select dropdown  */
 	loading?: boolean;
@@ -45,7 +47,7 @@ export interface TSSelectHTMLAttributes {
 	id?: string;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info   */
-	"help-text-messages"?: any[];
+	"help-text-messages"?: string;
 
 	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info   */
 	"help-text-title"?: string;
@@ -54,7 +56,7 @@ export interface TSSelectHTMLAttributes {
 	"help-text-type"?: string;
 
 	/**  Error messages to show underneath of the input when it has error  */
-	"error-messages"?: any[];
+	"error-messages"?: string;
 
 	/**  Error title, if there are more than one error message  */
 	"error-title"?: string;

@@ -1,4 +1,6 @@
 export interface TSAppIconHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Size of the app icon, available variants: ''(default), 'large'  */
 	size?: string;
 

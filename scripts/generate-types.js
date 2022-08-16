@@ -36,8 +36,14 @@ const getExposedProperties = srcProps =>
 
 const getHtmlAttributeInterfaces = (typesFileContent, className, properties) => {
 	typesFileContent += `export interface TS${className}HTMLAttributes {${EOL}`;
+
+	// in React world for Web Components we should use "class" instead of "className"
+	typesFileContent += `\t/** css class name. Use it instead of "className" */${EOL}`;
+	typesFileContent += `\tclass?: string;${EOL}`;
 	properties.forEach(property => {
-		typesFileContent += generatePropertyLine(property.Attribute, property.Type, property.Description);
+		// HTML attributes can be one of two types: boolean or string
+		const htmlType = property.Type.toLowerCase() === 'boolean' ? property.Type : 'string';
+		typesFileContent += generatePropertyLine(property.Attribute, htmlType, property.Description);
 	});
 	typesFileContent += `}${EOL}${EOL}`;
 	return typesFileContent;

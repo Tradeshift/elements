@@ -1,9 +1,11 @@
 export interface TSFileSizeHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Size of the file  */
-	size?: number;
+	size?: string;
 
 	/**  How many decimal points should be shown  */
-	"decimal-point"?: number;
+	"decimal-point"?: string;
 
 	/**  Typography variant  */
 	variant?: string;

@@ -1,9 +1,11 @@
 export interface TSFileCardHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  type/state of the file card: 'download', 'failed', 'uploading'  */
 	state?: string;
 
 	/**  File data object, {name, size, ...}  */
-	"file-object"?: object;
+	"file-object"?: string;
 
 	rtl?: boolean;
 

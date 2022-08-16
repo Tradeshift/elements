@@ -1,9 +1,11 @@
 export interface TSDatePickerOverlayHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	dir?: string;
 
-	translations?: object;
+	translations?: string;
 
-	firstDay?: number;
+	firstDay?: string;
 
 	pageDate?: string;
 
@@ -11,7 +13,7 @@ export interface TSDatePickerOverlayHTMLAttributes {
 
 	required?: boolean;
 
-	disabledDateCheck?: function;
+	disabledDateCheck?: string;
 
 }
 

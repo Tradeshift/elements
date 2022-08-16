@@ -1,4 +1,6 @@
 export interface TSNoteHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	icon?: string;
 
 	type?: string;
@@ -9,7 +11,7 @@ export interface TSNoteHTMLAttributes {
 
 	hidden?: boolean;
 
-	buttons?: any[];
+	buttons?: string;
 
 }
 

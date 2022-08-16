@@ -1,4 +1,6 @@
 export interface TSHeaderHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction of the button `rtl`, `ltr`  */
 	dir?: string;
 

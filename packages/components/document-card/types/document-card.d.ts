@@ -1,4 +1,6 @@
 export interface TSDocumentCardHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	dir?: string;
 
 	name?: string;

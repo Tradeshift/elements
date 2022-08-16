@@ -1,6 +1,8 @@
 export interface TSDatePickerHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Can be used for customizing placeholder, days abbreviations, months abbreviations and providing translations for them <br> see the structure in its storybook knobs section. <br>  */
-	translations?: object;
+	translations?: string;
 
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
@@ -21,7 +23,7 @@ export interface TSDatePickerHTMLAttributes {
 	readonly?: boolean;
 
 	/**  You can pass a function to this prop, which will get js Date object of the days in the calendar view as input, <br>  and expect a boolean to make the day disabled or not.  */
-	isDisabledDate?: function;
+	isDisabledDate?: string;
 
 	/**  Minimum date which can be selected by the user. Dates before this will be shown as disabled. Supports ISO 8601 format  */
 	min?: string;
@@ -36,10 +38,10 @@ export interface TSDatePickerHTMLAttributes {
 	"not-typeable"?: boolean;
 
 	/**  Which day should be shown as the first day of the week. A number between 0-6 (0 = Sunday, 6 = Saturday)  */
-	"first-day"?: number;
+	"first-day"?: string;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info  */
-	"help-text-messages"?: any[];
+	"help-text-messages"?: string;
 
 	/**  If you have more than one help text message , you should pass a title to it. See help-text component for more info  */
 	"help-text-title"?: string;
@@ -48,7 +50,7 @@ export interface TSDatePickerHTMLAttributes {
 	"help-text-type"?: string;
 
 	/**  Error messages to show underneath of the input when it has error  */
-	"error-messages"?: any[];
+	"error-messages"?: string;
 
 	/**  Error title, if there are more than one error message  */
 	"error-title"?: string;

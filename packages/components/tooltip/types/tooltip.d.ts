@@ -1,4 +1,6 @@
 export interface TSTooltipHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Text that should be shown in the tooltip popover  */
 	tooltip?: string;
 

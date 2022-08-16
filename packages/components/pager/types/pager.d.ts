@@ -1,15 +1,17 @@
 export interface TSPagerHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Total number of pages  */
-	"total-pages"?: number;
+	"total-pages"?: string;
 
 	/**  Currently active page  */
-	"active-page"?: number;
+	"active-page"?: string;
 
 	/**  Determining maximum number of items in the page, should be either of 10,20,30,40,50  */
-	"per-page"?: number;
+	"per-page"?: string;
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: string;
 
 }
 

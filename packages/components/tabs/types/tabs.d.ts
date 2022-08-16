@@ -1,4 +1,6 @@
 export interface TSTabsHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction (rtl/ltr)  */
 	dir?: string;
 

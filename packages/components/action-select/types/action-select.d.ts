@@ -1,4 +1,6 @@
 export interface TSActionSelectHTMLAttributes {
+	/** css class name. Use it instead of "className" */
+	class?: string;
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
 
@@ -9,7 +11,7 @@ export interface TSActionSelectHTMLAttributes {
 	opened?: boolean;
 
 	/**  Array of action items. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
-	items?: any[];
+	items?: string;
 
 }
 
