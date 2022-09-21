@@ -1,0 +1,108 @@
+/* Fonts ......................................................... */
+
+/* Open Sans 300 .................................................... */
+
+/* woff2 - latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.light.latin-ext.woff2) format('woff2');
+}
+/* woff2 - latin */
+/* woff - latin + latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.light.latin.woff2) format('woff2'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.light.latin.latin-ext.woff) format('woff');
+}
+
+/* Open Sans 400 .................................................... */
+
+/* woff2 - latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.regular.latin-ext.woff2) format('woff2');
+}
+/* woff2 - latin */
+/* woff - latin + latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.regular.latin.woff2) format('woff2'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.regular.latin.latin-ext.woff) format('woff');
+}
+
+/* Open Sans 400 italic ............................................. */
+
+/* woff2 - latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Open Sans Italic'), local('OpenSans-Italic'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.italic.latin-ext.woff2) format('woff2');
+}
+/* woff2 - latin */
+/* woff - latin + latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Open Sans Italic'), local('OpenSans-Italic'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.italic.latin.woff2) format('woff2'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.italic.latin.latin-ext.woff) format('woff');
+}
+
+/* Open Sans 600 .................................................... */
+
+/* woff2 - latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.semibold.latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-024f, U+0259, U+1-1eff, U+2020, U+20a0-20ab, U+20ad-20cf, U+2113, U+2c60-2c7f, U+A720-A7FF;
+}
+/* woff2 - latin */
+/* woff - latin + latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.semibold.latin.woff2) format('woff2'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.semibold.latin.latin-ext.woff) format('woff');
+}
+
+/* Open Sans 700 .................................................... */
+
+/* woff2 - latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.bold.latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-024f, U+0259, U+1-1eff, U+2020, U+20a0-20ab, U+20ad-20cf, U+2113, U+2c60-2c7f, U+A720-A7FF;
+}
+/* woff2 - latin */
+/* woff - latin + latin-ext */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.bold.latin.woff2) format('woff2'),
+		url(//d5wfroyti11sa.cloudfront.net/prod/fonts/opensans/201902081238.bold.latin.latin-ext.woff) format('woff');
+}

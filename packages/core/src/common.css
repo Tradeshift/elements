@@ -1,0 +1,16 @@
+/* Shared Styles ................................................. */
+
+:focus {
+	outline: none;
+}
+
+:host {
+	margin: 0;
+	padding: 0;
+	font-size: var(--ts-font-size-default);
+	&,
+	& * {
+		box-sizing: border-box;
+		font-family: var(--ts-font-family);
+	}
+}
