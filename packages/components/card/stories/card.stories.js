@@ -52,8 +52,11 @@ export const Default = () => {
 	const content = text('content', defaultContent);
 	const rtl = boolean('rtl', false);
 
+	const contentDiv = document.createElement('div');
+	contentDiv.innerHTML = content;
+
 	return html`
-		<ts-card ?rtl="${rtl}" type="${type}" size="${size}" orientation="${orientation}"> ${html([content])} </ts-card>
+		<ts-card ?rtl="${rtl}" type="${type}" size="${size}" orientation="${orientation}">${contentDiv}</ts-card>
 	`;
 };
 
