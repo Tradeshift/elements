@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.1](https://github.com/Tradeshift/elements/compare/v0.40.0...v0.40.1) (2022-10-20)
+
+### Bug Fixes
+
+- make html attrs to be string or boolean. Support "class" attr instead of "className" ([08c894e](https://github.com/Tradeshift/elements/commit/08c894e282a031e7d20ad6fcb2496dbbf3ff7056))
+- render custom html properly in ts-card story ([0b44fb5](https://github.com/Tradeshift/elements/commit/0b44fb50e4ee36083f5928a4b6c85f0e23039d63))
+
 # [0.40.0](https://github.com/Tradeshift/elements/compare/v0.38.0...v0.40.0) (2022-07-04)
 
 ### Bug Fixes

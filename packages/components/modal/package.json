@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.modal",
-  "version": "0.40.0",
+  "version": "0.40.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,14 +15,14 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.40.0",
-    "@tradeshift/elements.button": "^0.40.0",
-    "@tradeshift/elements.button-group": "^0.40.0",
-    "@tradeshift/elements.card": "^0.40.0",
-    "@tradeshift/elements.cover": "^0.40.0",
-    "@tradeshift/elements.header": "^0.40.0",
-    "@tradeshift/elements.icon": "^0.40.0",
-    "@tradeshift/elements.note": "^0.40.0"
+    "@tradeshift/elements": "^0.40.1",
+    "@tradeshift/elements.button": "^0.40.1",
+    "@tradeshift/elements.button-group": "^0.40.1",
+    "@tradeshift/elements.card": "^0.40.1",
+    "@tradeshift/elements.cover": "^0.40.1",
+    "@tradeshift/elements.header": "^0.40.1",
+    "@tradeshift/elements.icon": "^0.40.1",
+    "@tradeshift/elements.note": "^0.40.1"
   },
   "src": "src/modal.js"
 }
