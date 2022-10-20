@@ -8,7 +8,7 @@ export interface TSOverlayHTMLAttributes {
 	anchor?: string;
 
 	/**  Should the width be based on content (true) or inherited from the anchor (false).  */
-	autoWidth?: boolean;
+	autoWidth?: boolean | 'true' | 'false';
 
 }
 
@@ -17,7 +17,7 @@ export interface TSOverlay {
 	dir?: string;
 
 	/**  The element where the container will be rendered.  */
-	anchor?: object;
+	anchor?: Record<string, unknown>;
 
 	/**  Should the width be based on content (true) or inherited from the anchor (false).  */
 	autoWidth?: boolean;

@@ -11,7 +11,7 @@ export interface TSSpinnerHTMLAttributes {
 	"data-size"?: string;
 
 	/**  Show/hide the spinner  */
-	"data-visible"?: boolean;
+	"data-visible"?: boolean | 'true' | 'false';
 
 }
 

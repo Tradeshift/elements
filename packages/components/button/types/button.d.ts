@@ -8,7 +8,7 @@ export interface TSButtonHTMLAttributes {
 	size?: string;
 
 	/**  Show busy/loading animation  */
-	busy?: boolean;
+	busy?: boolean | 'true' | 'false';
 
 	/**  Icon name from the list of available icons in ts-icon component or the inline svg string. Also note that it will hide the slot content unless the type is text  */
 	icon?: string;
@@ -17,16 +17,16 @@ export interface TSButtonHTMLAttributes {
 	"icon-src"?: string;
 
 	/**  Determine if the button is disabled. `button-click` event won't be dispatched  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Make the button focused  */
-	focused?: boolean;
+	focused?: boolean | 'true' | 'false';
 
 	/**  Direction of the component 'rtl' or 'ltr'  */
 	dir?: string;
 
 	/**  Make the button take the full width of the container  */
-	"full-width"?: boolean;
+	"full-width"?: boolean | 'true' | 'false';
 
 }
 

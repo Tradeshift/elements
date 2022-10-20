@@ -5,7 +5,7 @@ export interface TSSelectMenuHTMLAttributes {
 	dir?: string;
 
 	/**  Is component disabled or not.  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: string;
@@ -14,10 +14,10 @@ export interface TSSelectMenuHTMLAttributes {
 	"filtered-items"?: string;
 
 	/**  Allow users to select several options or not.  */
-	multiselect?: boolean;
+	multiselect?: boolean | 'true' | 'false';
 
 	/**  Do not show the apply button and directly emit select-menu-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
-	"no-apply-button"?: boolean;
+	"no-apply-button"?: boolean | 'true' | 'false';
 
 	/**  List of selected items' ids  */
 	selected?: string;
@@ -26,10 +26,10 @@ export interface TSSelectMenuHTMLAttributes {
 	translations?: string;
 
 	/**  Set component in loading state and render a spinner instead of list of items  */
-	loading?: boolean;
+	loading?: boolean | 'true' | 'false';
 
 	/**  Make client side filtering case sensitive which by default is case-insensitive  */
-	"case-sensitive"?: boolean;
+	"case-sensitive"?: boolean | 'true' | 'false';
 
 }
 
@@ -56,7 +56,7 @@ export interface TSSelectMenu {
 	selected?: any[];
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	/**  Set component in loading state and render a spinner instead of list of items  */
 	loading?: boolean;

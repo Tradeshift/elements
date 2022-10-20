@@ -2,7 +2,7 @@ export interface TSConfirmationPromptHTMLAttributes {
 	/** css class name. Use it instead of "className" */
 	class?: string;
 	/**  Dialog can be toggled by add/removing this attribute  */
-	"data-visible"?: boolean;
+	"data-visible"?: boolean | 'true' | 'false';
 
 	/**  Header of the modal  */
 	"data-header"?: string;
@@ -59,7 +59,7 @@ export interface TSConfirmationPrompt {
 	helpTextTitle?: string;
 
 	/**  Can be used for customizing the buttons text and providing translations for them  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	/**  Text that the user need to type for confirmation   */
 	textToMatch?: string;

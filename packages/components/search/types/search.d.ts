@@ -2,13 +2,13 @@ export interface TSSearchHTMLAttributes {
 	/** css class name. Use it instead of "className" */
 	class?: string;
 	/**  Shoud the search be auto focused once page loaded  */
-	autofocus?: boolean;
+	autofocus?: boolean | 'true' | 'false';
 
 	/**  Direction 'rtl' or 'ltr'  */
 	dir?: string;
 
 	/**  Set the focus on element  */
-	focused?: boolean;
+	focused?: boolean | 'true' | 'false';
 
 	/**  timeout in ms for the 'idle' event  */
 	"idle-time"?: string;
@@ -23,10 +23,10 @@ export interface TSSearchHTMLAttributes {
 	translations?: string;
 
 	/**  Should dropdown items be rendered or not  */
-	"has-dropdown"?: boolean;
+	"has-dropdown"?: boolean | 'true' | 'false';
 
 	/**  Show loading spinner when waiting for drodwon items  */
-	loading?: boolean;
+	loading?: boolean | 'true' | 'false';
 
 	/**  Dropdown items to show when user clicks on search component  */
 	"dropdown-items"?: string;
@@ -53,7 +53,7 @@ export interface TSSearch {
 	value?: string;
 
 	/**  Translated messages for the user locale. <br> @type {{ loading: string, no_items: string }}  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	/**  Should dropdown items be rendered or not  */
 	hasDropdown?: boolean;

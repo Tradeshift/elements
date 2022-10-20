@@ -26,6 +26,6 @@ export interface TSPager {
 	perPage?: number;
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 }

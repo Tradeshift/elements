@@ -9,11 +9,11 @@ export interface TSTypographyHTMLAttributes {
 
 	type?: string;
 
-	inline?: boolean;
+	inline?: boolean | 'true' | 'false';
 
-	"no-wrap"?: boolean;
+	"no-wrap"?: boolean | 'true' | 'false';
 
-	"no-tooltip"?: boolean;
+	"no-tooltip"?: boolean | 'true' | 'false';
 
 }
 

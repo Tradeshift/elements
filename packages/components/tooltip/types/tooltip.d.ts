@@ -11,7 +11,7 @@ export interface TSTooltipHTMLAttributes {
 	width?: string;
 
 	/**  Disable the tooltip and hide it  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 }
 

@@ -5,7 +5,7 @@ export interface TSButtonGroupHTMLAttributes {
 	dir?: string;
 
 	/**  Make the buttons inline instead of stacking which is the default behaviour  */
-	inline?: boolean;
+	inline?: boolean | 'true' | 'false';
 
 }
 

@@ -5,7 +5,7 @@ export interface TSTabHTMLAttributes {
 	label?: string;
 
 	/**  Make the tab selected  */
-	selected?: boolean;
+	selected?: boolean | 'true' | 'false';
 
 	/**  Icon name from the available icons in the ts-icon component  */
 	icon?: string;

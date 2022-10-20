@@ -5,7 +5,7 @@ export interface TSProgressBarHTMLAttributes {
 
 	done?: string;
 
-	indeterminate?: boolean;
+	indeterminate?: boolean | 'true' | 'false';
 
 }
 

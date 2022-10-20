@@ -5,15 +5,15 @@ export interface TSCardHTMLAttributes {
 
 	orientation?: string;
 
-	rtl?: boolean;
+	rtl?: boolean | 'true' | 'false';
 
 	size?: string;
 
-	"no-padding"?: boolean;
+	"no-padding"?: boolean | 'true' | 'false';
 
-	"no-horizontal-padding"?: boolean;
+	"no-horizontal-padding"?: boolean | 'true' | 'false';
 
-	"no-vertical-padding"?: boolean;
+	"no-vertical-padding"?: boolean | 'true' | 'false';
 
 }
 

@@ -7,10 +7,10 @@ export interface TSFileCardHTMLAttributes {
 	/**  File data object, {name, size, ...}  */
 	"file-object"?: string;
 
-	rtl?: boolean;
+	rtl?: boolean | 'true' | 'false';
 
 	/**  Show a remove button on the card, which emit an event when it's been clicked  */
-	removable?: boolean;
+	removable?: boolean | 'true' | 'false';
 
 	/**  Size of the file card: 'full','medium','small'  */
 	size?: string;
@@ -25,7 +25,7 @@ export interface TSFileCard {
 	state?: string;
 
 	/**  File data object, {name, size, ...}  */
-	fileObject?: object;
+	fileObject?: Record<string, unknown>;
 
 	rtl?: boolean;
 

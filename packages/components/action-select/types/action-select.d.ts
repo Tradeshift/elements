@@ -5,10 +5,10 @@ export interface TSActionSelectHTMLAttributes {
 	dir?: string;
 
 	/**  Is component disabled or not.  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Is the action select opened or not  */
-	opened?: boolean;
+	opened?: boolean | 'true' | 'false';
 
 	/**  Array of action items. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: string;
