@@ -32,19 +32,19 @@ export interface TSTextFieldHTMLAttributes {
 	"error-title"?: string;
 
 	/**  If the text field has an error, to show error messages and change the style of the input  */
-	"has-error"?: boolean;
+	"has-error"?: boolean | 'true' | 'false';
 
 	/**  To show the asterisk in the label, not doing validation yet  */
-	required?: boolean;
+	required?: boolean | 'true' | 'false';
 
 	/**  Is the text field disabled?  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Is the text field readonly?  */
-	readonly?: boolean;
+	readonly?: boolean | 'true' | 'false';
 
 	/**  Will show a textarea instead of an input  */
-	multiline?: boolean;
+	multiline?: boolean | 'true' | 'false';
 
 	/**  Direction 'rtl' or 'ltr'  */
 	dir?: string;

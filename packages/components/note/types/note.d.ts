@@ -7,9 +7,9 @@ export interface TSNoteHTMLAttributes {
 
 	dir?: string;
 
-	closeable?: boolean;
+	closeable?: boolean | 'true' | 'false';
 
-	hidden?: boolean;
+	hidden?: boolean | 'true' | 'false';
 
 	buttons?: string;
 

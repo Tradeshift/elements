@@ -11,19 +11,19 @@ export interface TSModalHTMLAttributes {
 	"data-title"?: string;
 
 	/**  Show/hide the modal  */
-	"data-visible"?: boolean;
+	"data-visible"?: boolean | 'true' | 'false';
 
 	/**  Disable the functionality to close the modal on press of escape key  */
-	"no-close-on-esc-key"?: boolean;
+	"no-close-on-esc-key"?: boolean | 'true' | 'false';
 
 	/**  Disable the functionality to close the modal by clicking the cover (background)  */
-	"no-close-on-cover-click"?: boolean;
+	"no-close-on-cover-click"?: boolean | 'true' | 'false';
 
 	/**  Show/hide the title of the modal  */
-	"hide-header"?: boolean;
+	"hide-header"?: boolean | 'true' | 'false';
 
 	/**  Add/remove standard paddings to the main content  */
-	"no-padding"?: boolean;
+	"no-padding"?: boolean | 'true' | 'false';
 
 }
 

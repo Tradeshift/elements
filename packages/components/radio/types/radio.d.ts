@@ -8,10 +8,10 @@ export interface TSRadioHTMLAttributes {
 	label?: string;
 
 	/**  Check status  */
-	checked?: boolean;
+	checked?: boolean | 'true' | 'false';
 
 	/**  Disabled status  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 }
 

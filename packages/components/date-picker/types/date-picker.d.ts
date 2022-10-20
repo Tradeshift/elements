@@ -17,10 +17,10 @@ export interface TSDatePickerHTMLAttributes {
 	label?: string;
 
 	/**  Is the date picker disabled?  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Is the date picker readonly?  */
-	readonly?: boolean;
+	readonly?: boolean | 'true' | 'false';
 
 	/**  You can pass a function to this prop, which will get js Date object of the days in the calendar view as input, <br>  and expect a boolean to make the day disabled or not.  */
 	isDisabledDate?: string;
@@ -32,10 +32,10 @@ export interface TSDatePickerHTMLAttributes {
 	max?: string;
 
 	/**  Is the dropdown part opened or not?  */
-	opened?: boolean;
+	opened?: boolean | 'true' | 'false';
 
 	/**  Disable the typing a new date  */
-	"not-typeable"?: boolean;
+	"not-typeable"?: boolean | 'true' | 'false';
 
 	/**  Which day should be shown as the first day of the week. A number between 0-6 (0 = Sunday, 6 = Saturday)  */
 	"first-day"?: string;
@@ -56,16 +56,16 @@ export interface TSDatePickerHTMLAttributes {
 	"error-title"?: string;
 
 	/**  If the text field has an error, to show error messages and change the style of the input  */
-	"has-error"?: boolean;
+	"has-error"?: boolean | 'true' | 'false';
 
 	/**  To remove the deselect button and show the asterisk in the label. Not doing the validation, you should set the has-error and error messages yourself  */
-	required?: boolean;
+	required?: boolean | 'true' | 'false';
 
 }
 
 export interface TSDatePicker {
 	/**  Can be used for customizing placeholder, days abbreviations, months abbreviations and providing translations for them <br> see the structure in its storybook knobs section. <br>  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	/**  Direction of the component 'rtl' or 'ltr'.  */
 	dir?: string;
@@ -86,7 +86,7 @@ export interface TSDatePicker {
 	readonly?: boolean;
 
 	/**  You can pass a function to this prop, which will get js Date object of the days in the calendar view as input, <br>  and expect a boolean to make the day disabled or not.  */
-	isDisabledDate?: function;
+	isDisabledDate?: Function;
 
 	/**  Minimum date which can be selected by the user. Dates before this will be shown as disabled. Supports ISO 8601 format  */
 	min?: string;

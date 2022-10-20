@@ -9,10 +9,10 @@ export interface TSHelpTextHTMLAttributes {
 
 	size?: string;
 
-	rtl?: boolean;
+	rtl?: boolean | 'true' | 'false';
 
 	/**  Apply disabled style for the message  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Type of the help text which changes the styling and icon: 'error', 'warning'  */
 	type?: string;

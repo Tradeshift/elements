@@ -5,10 +5,10 @@ export interface TSSelectHTMLAttributes {
 	dir?: string;
 
 	/**  Is component disabled or not.  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Is the dropdown part opened or not.  */
-	opened?: boolean;
+	opened?: boolean | 'true' | 'false';
 
 	/**  List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon  */
 	items?: string;
@@ -17,10 +17,10 @@ export interface TSSelectHTMLAttributes {
 	"filtered-items"?: string;
 
 	/**  Allow users to select several options or not.  */
-	multiselect?: boolean;
+	multiselect?: boolean | 'true' | 'false';
 
 	/**  Do not show the apply button and directly emit select-changed when the selection changes. <br> Only affects the behaviour when multiselect is enabled, for single selection this is the default behavior.  */
-	"no-apply-button"?: boolean;
+	"no-apply-button"?: boolean | 'true' | 'false';
 
 	/**  List of selected items' ids  */
 	selected?: string;
@@ -32,16 +32,16 @@ export interface TSSelectHTMLAttributes {
 	translations?: string;
 
 	/**  Show the loading spinner in select dropdown  */
-	loading?: boolean;
+	loading?: boolean | 'true' | 'false';
 
 	/**  Make client side filtering case sensitive. This also applies on the filterValue in 'filter-value-change' event  */
-	"case-sensitive"?: boolean;
+	"case-sensitive"?: boolean | 'true' | 'false';
 
 	/**  The label of the select input field  */
 	label?: string;
 
 	/**  To show the asterisk in the label, not doing validation yet  */
-	required?: boolean;
+	required?: boolean | 'true' | 'false';
 
 	/**  Id of the select component   */
 	id?: string;
@@ -62,7 +62,7 @@ export interface TSSelectHTMLAttributes {
 	"error-title"?: string;
 
 	/**  If the text field has an error, to show error messages and change the style of the input  */
-	"has-error"?: boolean;
+	"has-error"?: boolean | 'true' | 'false';
 
 }
 
@@ -95,7 +95,7 @@ export interface TSSelect {
 	placeholder?: string;
 
 	/**  Translated messages for the user locale  */
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	/**  Show the loading spinner in select dropdown  */
 	loading?: boolean;

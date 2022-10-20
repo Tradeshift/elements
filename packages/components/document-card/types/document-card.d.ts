@@ -7,7 +7,7 @@ export interface TSDocumentCardHTMLAttributes {
 
 	description?: string;
 
-	selected?: boolean;
+	selected?: boolean | 'true' | 'false';
 
 	"mobile-description"?: string;
 

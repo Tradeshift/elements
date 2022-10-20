@@ -5,11 +5,11 @@ export interface TSListItemHTMLAttributes {
 
 	subtitle?: string;
 
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
-	selectable?: boolean;
+	selectable?: boolean | 'true' | 'false';
 
-	selected?: boolean;
+	selected?: boolean | 'true' | 'false';
 
 	dir?: string;
 
@@ -21,7 +21,7 @@ export interface TSListItemHTMLAttributes {
 
 	"icon-selected"?: string;
 
-	"no-wrap"?: boolean;
+	"no-wrap"?: boolean | 'true' | 'false';
 
 }
 

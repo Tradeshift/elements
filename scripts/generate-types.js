@@ -10,6 +10,20 @@ const {
 	camelize
 } = require('./helpers');
 
+/**
+ * @typedef {Object} JsProperties
+ * @property {string} Property - Indicates whether the Courage component is present.
+ * @property {string} Type - Indicates whether the Power component is present.
+ * @property {string} [Description] - Indicates whether the Wisdom component is present.
+ */
+
+/**
+ *
+ * @param {string} name - name of property
+ * @param {string} type - type of property
+ * @param {string} [description] - description of property
+ * @returns
+ */
 const generatePropertyLine = (name, type, description) => {
 	let result = '';
 	if (description) {
@@ -19,12 +33,7 @@ const generatePropertyLine = (name, type, description) => {
 		// if name has dashes we put it in quotes
 		name = `"${name}"`;
 	}
-	// Replace 'Array' with '[]'.
-	// Better to use Array<T> but we don't have information about structure of array items now.
-	if (type.toLowerCase() === 'array') {
-		type = 'any[]';
-	}
-	result += `\t${name}?: ${type.toLowerCase()};${EOL}${EOL}`;
+	result += `\t${name}?: ${type};${EOL}${EOL}`;
 	return result;
 };
 
@@ -34,6 +43,13 @@ const getExposedProperties = srcProps =>
 		property => property.Property && !property.Description.includes('INTERNAL')
 	);
 
+/**
+ *
+ * @param {string} typesFileContent
+ * @param {string} className
+ * @param {JsProperties[]} properties
+ * @returns
+ */
 const getHtmlAttributeInterfaces = (typesFileContent, className, properties) => {
 	typesFileContent += `export interface TS${className}HTMLAttributes {${EOL}`;
 
@@ -42,24 +58,73 @@ const getHtmlAttributeInterfaces = (typesFileContent, className, properties) => 
 	typesFileContent += `\tclass?: string;${EOL}`;
 	properties.forEach(property => {
 		// HTML attributes can be one of two types: boolean or string
-		const htmlType = property.Type.toLowerCase() === 'boolean' ? property.Type : 'string';
+		const htmlType = htmlTypeToTypescriptType(property.Type);
 		typesFileContent += generatePropertyLine(property.Attribute, htmlType, property.Description);
 	});
 	typesFileContent += `}${EOL}${EOL}`;
 	return typesFileContent;
 };
 
+/**
+ *
+ * @param {string} htmlType
+ * @returns {'string'|'boolean'|'true'|'false'}
+ */
+function htmlTypeToTypescriptType(htmlType) {
+	switch (htmlType.toLowerCase()) {
+		case 'boolean':
+			return `boolean | 'true' | 'false'`;
+		default:
+			return 'string';
+	}
+}
+
+/**
+ * converts types to typescript happy types
+ * @param {string} type
+ * @returns {string}
+ */
+function jsTypeToTypescriptType(type) {
+	const lowered = type.toLowerCase();
+	switch (lowered) {
+		case 'object':
+			return 'Record<string, unknown>';
+		// Replace 'Array' with '[]'.
+		// Better to use Array<T> but we don't have information about structure of array items now.
+		case 'array':
+			return 'any[]';
+		case 'function':
+			return 'Function';
+		default:
+			return lowered;
+	}
+}
+
+/**
+ *
+ * @param {string} typesFileContent
+ * @param {string} className
+ * @param {JsProperties[]} properties
+ * @returns {string}
+ */
 const getJsPropertiesInterfaces = (typesFileContent, className, properties) => {
 	typesFileContent += `export interface TS${className} {${EOL}`;
 	properties.forEach(property => {
-		typesFileContent += generatePropertyLine(property.Property, property.Type, property.Description);
+		const tsType = jsTypeToTypescriptType(property.Type);
+		typesFileContent += generatePropertyLine(property.Property, tsType, property.Description);
 	});
 
 	typesFileContent += `}${EOL}`;
 	return typesFileContent;
 };
 
-const getReactTypesfileContent = (componentName, className) => {
+/**
+ *
+ * @param {string} componentName
+ * @param {string} className
+ * @returns {string}
+ */
+const getReactTypesFileContent = (componentName, className) => {
 	return `import React from "react";
 import { TS${className}HTMLAttributes } from "@tradeshift/elements.${componentName}";
 
@@ -76,7 +141,7 @@ declare global {
 /**
  *  Read description from src/properties.json and generate d.ts files
  */
-(async function () {
+(async () => {
 	// read the data from the src properties
 	// get the component names
 	const componentNames = getComponentNames();
@@ -91,16 +156,15 @@ declare global {
 		const reactTypesFilePath = `${componentDir}/types/react-types.d.ts`;
 		await fs.mkdir(`${componentDir}/types/`, { recursive: true });
 		const className = camelize(capitalizeFirstLetter(compName));
-		let typesFileContent = '';
 
 		// Generate interface for html attributes
-		typesFileContent = getHtmlAttributeInterfaces(typesFileContent, className, properties);
+		const typesFileContent = getHtmlAttributeInterfaces('', className, properties);
 		// Generate interface for js properties
-		typesFileContent = getJsPropertiesInterfaces(typesFileContent, className, properties);
+		const withJsInterfacesTypesFileContent = getJsPropertiesInterfaces(typesFileContent, className, properties);
 
-		const reactTypesContent = getReactTypesfileContent(compName, className);
+		const reactTypesContent = getReactTypesFileContent(compName, className);
 
-		await fs.writeFile(typesFilePath, typesFileContent);
+		await fs.writeFile(typesFilePath, withJsInterfacesTypesFileContent);
 		await fs.writeFile(reactTypesFilePath, reactTypesContent);
 		compStateLogger(compName, 'Added type definitions.');
 	}

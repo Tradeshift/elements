@@ -2,13 +2,13 @@ export interface TSInputHTMLAttributes {
 	/** css class name. Use it instead of "className" */
 	class?: string;
 	/**  Show error style  */
-	hasError?: boolean;
+	hasError?: boolean | 'true' | 'false';
 
 	/**  Disable state of the input  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  Readonly state of the input  */
-	readonly?: boolean;
+	readonly?: boolean | 'true' | 'false';
 
 	/**  Direction 'rtl' or 'ltr'  */
 	dir?: string;

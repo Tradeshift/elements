@@ -11,7 +11,7 @@ export interface TSRadioGroupHTMLAttributes {
 	index?: string;
 
 	/**  Is group currently focused for keyboard input  */
-	focused?: boolean;
+	focused?: boolean | 'true' | 'false';
 
 	/**  Direction 'rtl' or 'ltr'  */
 	dir?: string;

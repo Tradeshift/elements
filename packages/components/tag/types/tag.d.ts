@@ -8,13 +8,13 @@ export interface TSTagHTMLAttributes {
 	type?: string;
 
 	/**  Can the item be deleted? Displays a remove icon at the end of the tag  */
-	deletable?: boolean;
+	deletable?: boolean | 'true' | 'false';
 
 	/**  Should the tag look like clicking it triggers an action? Adds a pointer cursor and hover effect  */
-	clickable?: boolean;
+	clickable?: boolean | 'true' | 'false';
 
 	/**  Is the item locked? Displays a lock icon at the end of the tag  */
-	locked?: boolean;
+	locked?: boolean | 'true' | 'false';
 
 	/**  Array of labels or 'keys'  */
 	labels?: string;
@@ -23,7 +23,7 @@ export interface TSTagHTMLAttributes {
 	values?: string;
 
 	/**  Show busy/loading animation  */
-	busy?: boolean;
+	busy?: boolean | 'true' | 'false';
 
 }
 

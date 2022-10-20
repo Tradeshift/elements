@@ -14,13 +14,13 @@ export interface TSCheckboxHTMLAttributes {
 	"data-label"?: string;
 
 	/**  Status of checkbox  */
-	checked?: boolean;
+	checked?: boolean | 'true' | 'false';
 
 	/**  disabled  */
-	disabled?: boolean;
+	disabled?: boolean | 'true' | 'false';
 
 	/**  readonly, user can't change the value like disabled, but with different styling  */
-	readonly?: boolean;
+	readonly?: boolean | 'true' | 'false';
 
 }
 

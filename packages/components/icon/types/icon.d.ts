@@ -14,7 +14,7 @@ export interface TSIconHTMLAttributes {
 	type?: string;
 
 	/**  Add circular background for icon  */
-	circular?: boolean;
+	circular?: boolean | 'true' | 'false';
 
 	/**  90, 180, 270  */
 	rotate?: string;

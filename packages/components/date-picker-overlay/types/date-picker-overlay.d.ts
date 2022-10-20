@@ -11,7 +11,7 @@ export interface TSDatePickerOverlayHTMLAttributes {
 
 	selectedDate?: string;
 
-	required?: boolean;
+	required?: boolean | 'true' | 'false';
 
 	disabledDateCheck?: string;
 
@@ -20,7 +20,7 @@ export interface TSDatePickerOverlayHTMLAttributes {
 export interface TSDatePickerOverlay {
 	dir?: string;
 
-	translations?: object;
+	translations?: Record<string, unknown>;
 
 	firstDay?: number;
 
@@ -30,6 +30,6 @@ export interface TSDatePickerOverlay {
 
 	required?: boolean;
 
-	disabledDateCheck?: function;
+	disabledDateCheck?: Function;
 
 }
