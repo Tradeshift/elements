@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.1](https://github.com/Tradeshift/elements/compare/v0.40.0...v0.40.1) (2022-10-20)
+
+### Bug Fixes
+
+- [VULN-3898] - [elements] parse-url has vulnerabilities ([a9d01db](https://github.com/Tradeshift/elements/commit/a9d01db8538b8c41b090ab8964ab4bb622239db3))
+- make html attrs to be string or boolean. Support "class" attr instead of "className" ([08c894e](https://github.com/Tradeshift/elements/commit/08c894e282a031e7d20ad6fcb2496dbbf3ff7056))
+- render custom html properly in ts-card story ([0b44fb5](https://github.com/Tradeshift/elements/commit/0b44fb50e4ee36083f5928a4b6c85f0e23039d63))
+- update terser to fix vulnerabilities ([6021d10](https://github.com/Tradeshift/elements/commit/6021d10936d4de1d7f69ba73a4be85c74eed70c6))
+
 # [0.40.0](https://github.com/Tradeshift/elements/compare/v0.38.0...v0.40.0) (2022-07-04)
 
 ### Bug Fixes
