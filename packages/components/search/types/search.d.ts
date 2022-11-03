@@ -11,7 +11,7 @@ export interface TSSearchHTMLAttributes {
 	focused?: boolean | 'true' | 'false';
 
 	/**  timeout in ms for the 'idle' event  */
-	"idle-time"?: string;
+	"idle-time"?: number | string;
 
 	/**  Message when an input is empty  */
 	placeholder?: string;

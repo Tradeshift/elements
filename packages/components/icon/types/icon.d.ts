@@ -17,7 +17,7 @@ export interface TSIconHTMLAttributes {
 	circular?: boolean | 'true' | 'false';
 
 	/**  90, 180, 270  */
-	rotate?: string;
+	rotate?: number | string;
 
 	/**  'h', 'horizontal', 'v', 'vertical'  */
 	flip?: string;

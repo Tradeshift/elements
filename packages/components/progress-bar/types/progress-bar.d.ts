@@ -1,9 +1,9 @@
 export interface TSProgressBarHTMLAttributes {
 	/** css class name. Use it instead of "className" */
 	class?: string;
-	total?: string;
+	total?: number | string;
 
-	done?: string;
+	done?: number | string;
 
 	indeterminate?: boolean | 'true' | 'false';
 

@@ -5,7 +5,7 @@ export interface TSDatePickerOverlayHTMLAttributes {
 
 	translations?: string;
 
-	firstDay?: string;
+	firstDay?: number | string;
 
 	pageDate?: string;
 
