@@ -8,7 +8,7 @@ export interface TSRadioGroupHTMLAttributes {
 	title?: string;
 
 	/**  Index of checked ts-radio node  */
-	index?: string;
+	index?: number | string;
 
 	/**  Is group currently focused for keyboard input  */
 	focused?: boolean | 'true' | 'false';

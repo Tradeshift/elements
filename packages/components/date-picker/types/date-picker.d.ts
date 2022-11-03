@@ -38,7 +38,7 @@ export interface TSDatePickerHTMLAttributes {
 	"not-typeable"?: boolean | 'true' | 'false';
 
 	/**  Which day should be shown as the first day of the week. A number between 0-6 (0 = Sunday, 6 = Saturday)  */
-	"first-day"?: string;
+	"first-day"?: number | string;
 
 	/**  Array of messages to pass to help-text component. See help-text component for more info  */
 	"help-text-messages"?: string;

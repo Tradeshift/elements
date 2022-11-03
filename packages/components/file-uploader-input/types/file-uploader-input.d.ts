@@ -29,7 +29,7 @@ export interface TSFileUploaderInputHTMLAttributes {
 	"hide-max-file-number-help-text"?: boolean | 'true' | 'false';
 
 	/**  Maximum limit for number of files to be shown as helper message  */
-	"max-file-number"?: string;
+	"max-file-number"?: number | string;
 
 }
 

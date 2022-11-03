@@ -74,6 +74,9 @@ function htmlTypeToTypescriptType(htmlType) {
 	switch (htmlType.toLowerCase()) {
 		case 'boolean':
 			return `boolean | 'true' | 'false'`;
+		case 'number':
+			// since React v16 it will cast to string any value, and for numbers it should be safe
+			return 'number | string';
 		default:
 			return 'string';
 	}
