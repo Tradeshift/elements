@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.2](https://github.com/Tradeshift/elements/compare/v0.40.1...v0.40.2) (2022-11-03)
+
+### Bug Fixes
+
+- allow number type in html attributes ([79469ff](https://github.com/Tradeshift/elements/commit/79469ff72b2d83193cb7a019531ad1b9b3caaa59))
+
 ## [0.40.1](https://github.com/Tradeshift/elements/compare/v0.40.0...v0.40.1) (2022-10-20)
 
 ### Bug Fixes
