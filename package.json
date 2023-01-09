@@ -113,7 +113,7 @@
     "eslint-plugin-lit": "^1.6.1",
     "fast-async": "^7.0.6",
     "happo-plugin-storybook": "^2.10.3",
-    "happo.io": "^7.2.0",
+    "happo.io": "^8.3.1",
     "husky": "^7.0.4",
     "lerna": "^5.1.4",
     "lint-staged": "^12.4.1",
