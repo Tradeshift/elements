@@ -14,7 +14,5 @@
 	],
 	"enableIssues": true,
 	"enableWiki": true,
-	"extraChecks": [
-		"Travis CI - Pull Request"
-	]
+        "checks": ["validate"]
 }
