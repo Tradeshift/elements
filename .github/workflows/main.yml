@@ -32,8 +32,3 @@ jobs:
           npm run copy:static
           npm run build:prod
 
-      - name: 🔎 Run happo
-        run: npm run happo-ci-github-actions
-        env:
-          HAPPO_API_KEY: ${{ secrets.HAPPO_API_KEY }}
-          HAPPO_API_SECRET: ${{ secrets.HAPPO_API_SECRET }}
