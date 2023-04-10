@@ -7,18 +7,8 @@ on:
       - master
 
 jobs:
-  validate_first:
+  build:
     name: validate
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 100
-
-  validate:
-    name: Build and test
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
