@@ -22,7 +22,10 @@ jobs:
         with:
           node-version: 16
 
-      - name: 📥 Download
+      - name: 📥 Download dependencies
+        run: npm ci
+
+      - name: Bootstrap monorepo
         run: npm run lerna:bootstrap:ci
 
       - name: ▶️ Lint and build
