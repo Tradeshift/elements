@@ -107,7 +107,7 @@
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "core-js": "^3.22.4",
     "cross-env": "^7.0.3",
-    "depcheck": "^1.4.3",
+    "depcheck": "^1.4.7",
     "eslint": "^8.14.0",
     "eslint-config-tradeshift": "^8.0.7",
     "eslint-plugin-lit": "^1.6.1",
