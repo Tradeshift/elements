@@ -100,7 +100,7 @@
     "@storybook/addon-storysource": "^6.4.22",
     "@storybook/addon-viewport": "^6.4.22",
     "@storybook/addons": "^6.4.22",
-    "@storybook/storybook-deployer": "^2.8.11",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/web-components": "^6.4.22",
     "@web/dev-server": "^0.1.31",
     "@web/rollup-plugin-copy": "^0.3.0",
