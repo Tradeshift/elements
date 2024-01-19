@@ -92,7 +92,7 @@
     "@commitlint/config-conventional": "^18.4.4",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-knobs": "^6.4.0",
