@@ -109,7 +109,7 @@
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
     "eslint": "^8.56.0",
-    "eslint-config-tradeshift": "^8.0.7",
+    "eslint-config-tradeshift": "^9.0.0",
     "eslint-plugin-lit": "^1.11.0",
     "fast-async": "^7.0.6",
     "happo-plugin-storybook": "^2.11.2",
