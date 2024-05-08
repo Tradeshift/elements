@@ -110,7 +110,7 @@
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
     "eslint-config-tradeshift": "^9.0.1",
-    "eslint-plugin-lit": "^1.11.0",
+    "eslint-plugin-lit": "^1.12.0",
     "fast-async": "^7.0.6",
     "happo-plugin-storybook": "^4.2.2",
     "happo.io": "^9.1.4",
