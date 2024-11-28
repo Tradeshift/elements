@@ -108,7 +108,7 @@
     "core-js": "^3.38.0",
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-tradeshift": "^9.0.1",
     "eslint-plugin-lit": "^1.15.0",
     "fast-async": "^7.0.6",
