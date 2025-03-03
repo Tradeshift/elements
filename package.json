@@ -139,7 +139,7 @@
       "react-syntax-highlighter": ">=15.5.0"
     },
     "@storybook/storybook-deployer": {
-      "parse-url": "8.1.0"
+      "parse-url": "9.0.1"
     },
     "trim-newlines": "^5.0.0",
     "glob-parent": ">=6.0.2",
