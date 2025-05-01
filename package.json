@@ -121,7 +121,7 @@
     "npm-run-all": "^4.1.5",
     "plop": "^4.0.1",
     "postcss": "^8.5.3",
-    "postcss-preset-env": "^10.1.5",
+    "postcss-preset-env": "^10.1.6",
     "prettier": "^3.5.3",
     "reload": "^3.3.0",
     "rollup": "^2.79.1",
