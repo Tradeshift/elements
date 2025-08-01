@@ -123,7 +123,7 @@
     "postcss": "^8.5.6",
     "postcss-preset-env": "^10.2.4",
     "prettier": "^3.6.2",
-    "reload": "^3.3.0",
+    "reload": "^3.4.2",
     "rollup": "^2.79.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svgo": "^2.0.0",
