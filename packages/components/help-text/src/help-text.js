@@ -1,7 +1,8 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
 import css from './help-text.css';
 import '@tradeshift/elements.icon';
-import { alert, info } from '@tradeshift/elements.icon/lib/assets/icons';
+import alert from '@tradeshift/elements.icon/lib/assets/icons/alert.svg';
+import info from '@tradeshift/elements.icon/lib/assets/icons/info.svg';
 
 import { sizes } from './utils';
 
