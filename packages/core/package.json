@@ -14,7 +14,7 @@
     "src/*"
   ],
   "dependencies": {
-    "lit-element": "^4.2.1"
+    "lit-element": "^4.2.2"
   },
   "src": "src/core.js"
 }
