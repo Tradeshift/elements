@@ -2,7 +2,8 @@ import { customElementDefineHelper, html, TSElement, unsafeCSS } from '@tradeshi
 import '@tradeshift/elements.button';
 import '@tradeshift/elements.button-group';
 import '@tradeshift/elements.icon';
-import { checkbox as checkboxIcon, checkboxOn } from '@tradeshift/elements.icon/lib/assets/icons';
+import checkboxIcon from '@tradeshift/elements.icon/lib/assets/icons/checkbox.svg';
+import checkboxOn from '@tradeshift/elements.icon/lib/assets/icons/checkbox-on.svg';
 import '@tradeshift/elements.list-item';
 import '@tradeshift/elements.spinner';
 import css from './select-menu.css';
