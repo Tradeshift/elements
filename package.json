@@ -122,7 +122,7 @@
     "plop": "^4.0.4",
     "postcss": "^8.5.6",
     "postcss-preset-env": "^10.6.0",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "reload": "^3.4.2",
     "rollup": "^2.79.2",
     "rollup-plugin-postcss": "^4.0.2",
