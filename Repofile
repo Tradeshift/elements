@@ -12,6 +12,11 @@
 		"customelements",
 		"shadowdom"
 	],
+	"maintainers": [
+		"TradeshiftUI",
+		"partner-enablement-and-apps",
+		"legacy-commiters"
+	],
 	"enableIssues": true,
 	"enableWiki": true,
         "checks": ["validate"]
