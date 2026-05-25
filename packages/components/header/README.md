@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type   | Default | Description                          |
-| -------- | --------- | ------ | ------- | ------------------------------------ |
+| :------- | :-------- | :----- | :------ | :----------------------------------- |
 | dir      | dir       | String | ltr     | Direction of the button `rtl`, `ltr` |
 | icon     | icon      | String |         | Icon shows in the header             |
 | title    | title     | String |         | Title shows in the header            |
@@ -40,7 +40,7 @@
 ## ➤ Slots
 
 | Name    | Description                                                                  |
-| ------- | ---------------------------------------------------------------------------- |
+| :------ | :--------------------------------------------------------------------------- |
 | default | Extra items on the opposite side of the header goes here, like button group. |
 
 ## ➤ How to use it

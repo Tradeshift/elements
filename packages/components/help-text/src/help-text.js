@@ -63,7 +63,7 @@ export class TSHelpText extends TSElement {
 								<!-- You can use this slot to provide custom html as title -->
 								<slot name="title">${this.title}</slot>
 							</dt>
-					  `
+						`
 					: ''}
 				<!-- Customize message items -->
 				<slot name="messages">

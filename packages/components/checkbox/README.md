@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | name | name | String | '' | Name of checkbox |
 | value | value | String |  | Value of checkbox |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
@@ -43,7 +43,7 @@
 ## ➤ Slots
 
 | Name    | Description                                                                                    |
-| ------- | ---------------------------------------------------------------------------------------------- |
+| :------ | :--------------------------------------------------------------------------------------------- |
 | default | To customized checkbox label (links, ...). Remember you need to remove 'data-label' attribute. |
 
 ## ➤ How to use it

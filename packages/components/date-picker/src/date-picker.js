@@ -295,7 +295,7 @@ export class TSDatePicker extends TSElement {
 									@selected-date-change=${this.onSelectedDateChange}
 								></ts-date-picker-overlay>
 							</ts-overlay>
-					  `
+						`
 					: ''}
 			</div>
 		`;

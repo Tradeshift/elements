@@ -29,7 +29,7 @@ export interface TSPager {
 	perPage?: number;
 
 	/**  Custom list of per-page options, overrides the default [10,20,30,40,50]  */
-	perPageOptions?: number[];
+	perPageOptions?: any[];
 
 	/**  Translated messages for the user locale  */
 	translations?: Record<string, unknown>;

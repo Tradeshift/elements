@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | hasError | hasError | Boolean | false | Show error style |
 | disabled | disabled | Boolean | false | Disable state of the input |
 | readonly | readonly | Boolean | false | Readonly state of the input |
@@ -42,7 +42,7 @@
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | default | Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data |
 
 ## ➤ How to use it

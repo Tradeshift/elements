@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property          | Attribute          | Type    | Default | Description |
-| ----------------- | ------------------ | ------- | ------- | ----------- |
+| :---------------- | :----------------- | :------ | :------ | :---------- |
 | dir               | dir                | String  | ltr     |             |
 | name              | name               | String  | ''      |             |
 | description       | description        | String  | ''      |             |

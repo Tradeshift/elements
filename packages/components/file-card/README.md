@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | state | state | String | states.UPLOADING | type/state of the file card: 'download', 'failed', 'uploading' |
 | fileObject | file-object | Object |  | File data object, {name, size, ...} |
 | rtl | rtl | Boolean | false |  |
@@ -42,14 +42,14 @@
 ## ➤ Slots
 
 | Name                 | Description                              |
-| -------------------- | ---------------------------------------- |
+| :------------------- | :--------------------------------------- |
 | remove-action-text   | To customize the remove action message   |
 | download-action-text | To customize the download action message |
 
 ## ➤ Events
 
 | Name   | Description                                | Payload  |
-| ------ | ------------------------------------------ | -------- |
+| :----- | :----------------------------------------- | :------- |
 | remove | Emitted when user clicks the remove action | { file } |
 
 ## ➤ How to use it
