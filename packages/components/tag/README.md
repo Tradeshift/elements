@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Text direction: 'rtl' or 'ltr' |
 | type | type | String |  | Type: success, warning, warning-lite, danger, blue, blue-lite. Affects background and foreground colors |
 | deletable | deletable | Boolean | false | Can the item be deleted? Displays a remove icon at the end of the tag |
@@ -44,7 +44,7 @@
 ## ➤ Events
 
 | Name       | Description                                                     | Payload |
-| ---------- | --------------------------------------------------------------- | ------- |
+| :--------- | :-------------------------------------------------------------- | :------ |
 | delete-tag | Emitted when the delete icon is clicked, if the tag is not busy | event   |
 | click-tag  | Emitted when the tag is clicked                                 | event   |
 

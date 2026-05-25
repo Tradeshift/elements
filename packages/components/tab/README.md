@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | label | label | String |  | The label text for the header |
 | selected | selected | Boolean | false | Make the tab selected |
 | icon | icon | String |  | Icon name from the available icons in the ts-icon component |
@@ -41,13 +41,13 @@
 ## ➤ Slots
 
 | Name    | Description                                                |
-| ------- | ---------------------------------------------------------- |
+| :------ | :--------------------------------------------------------- |
 | default | Content of the tab should be wrapped in \`ts-tab\` element |
 
 ## ➤ Events
 
 | Name | Description | Payload |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | tab-prop-change | (Internal) Emitted when property of the tab is changed, it's used to let the ts-tabs know about the attribute changes. | {name} |
 
 ## ➤ How to use it

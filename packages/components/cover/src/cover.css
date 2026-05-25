@@ -16,13 +16,17 @@
 .ts-fadeIn {
 	visibility: visible;
 	opacity: 0.8;
-	transition: visibility var(--ts-transition-now) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
+	transition:
+		visibility var(--ts-transition-now) linear var(--ts-transition-now),
+		opacity var(--ts-transition-fast);
 }
 
 .ts-fadeOut {
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility var(--ts-transition-now) linear var(--ts-transition-fast), opacity var(--ts-transition-fast);
+	transition:
+		visibility var(--ts-transition-now) linear var(--ts-transition-fast),
+		opacity var(--ts-transition-fast);
 }
 
 :host(.ts-aside-cover) {
