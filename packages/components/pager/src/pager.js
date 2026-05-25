@@ -27,6 +27,8 @@ export class TSPager extends TSElement {
 			activePage: { type: Number, reflect: true, attribute: 'active-page' },
 			/** Determining maximum number of items in the page, should be either of 10,20,30,40,50 */
 			perPage: { type: Number, reflect: true, attribute: 'per-page' },
+			/** Custom list of per-page options, overrides the default [10,20,30,40,50] */
+			perPageOptions: { type: Array, attribute: 'per-page-options' },
 			/** Translated messages for the user locale */
 			translations: { type: Object, reflect: true }
 		};
@@ -107,10 +109,9 @@ export class TSPager extends TSElement {
 		if (!this.perPage) {
 			return;
 		}
-		if (perPageSelectValues.indexOf(this.perPage) === -1) {
-			const errorMessage = `Wrong items per page value: ${
-				this.perPage
-			}. per-page should be either of these ${perPageSelectValues.join()}`;
+		const options = this.perPageOptions && this.perPageOptions.length ? this.perPageOptions : perPageSelectValues;
+		if (options.indexOf(this.perPage) === -1) {
+			const errorMessage = `Wrong items per page value: ${this.perPage}. per-page should be either of these ${options.join()}`;
 			throw new Error(errorMessage);
 		}
 
@@ -118,7 +119,7 @@ export class TSPager extends TSElement {
 			<label class="item-per-page-container">
 				${this.translations.items_per_page}
 				<select id="itemsPerPage" @change="${this.handlePerPageChange}">
-					${perPageSelectValues.map(
+					${options.map(
 						value => html` <option value="${value}" ?selected="${value === this.perPage}">${value}</option> `
 					)}
 				</select>
@@ -192,7 +193,7 @@ export class TSPager extends TSElement {
 		return html`
 			<div class="container">
 				${this.itemsPerPageSelector}
-				<menu> ${this.toStart} ${this.prev} ${this.pageInput} ${this.next} ${this.toEnd} </menu>
+				<menu>${this.toStart} ${this.prev} ${this.pageInput} ${this.next} ${this.toEnd}</menu>
 			</div>
 		`;
 	}
