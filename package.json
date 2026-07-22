@@ -30,9 +30,10 @@
     "Kirill Kolombet <kirill.kolombet@tradeshift.com> (https://github.com/kirill-kolombet)"
   ],
   "scripts": {
+    "add-desc-to-src": "cross-env-shell node ./scripts/add-description-to-src.js",
     "build": "cross-env-shell lerna run pre-build && lerna exec -- rollup -c=`pwd`/rollup.config.js",
-    "build-storybook": "build-storybook -s ./static -o .out",
     "build:prod": "cross-env PRODUCTION=true npm run build",
+    "build-storybook": "build-storybook -s ./static -o .out",
     "check-credentials": "npm whoami && npm whoami --registry=https://npm.pkg.github.com/ && npm whoami --registry=https://registry.npmjs.org/",
     "check-deps": "lerna exec --stream --no-bail \"depcheck --ignores=\"lit-html,@storybook/*\" --ignore-patterns=lib,types\"",
     "clean": "cross-env-shell lerna exec -- rm -rf ./lib/*",
@@ -41,15 +42,17 @@
     "copy:static": "./tasks/copy-static.sh",
     "dev": "run-p watch server-reload",
     "format": "cross-env-shell prettier --config `pwd`/.prettierrc --write \"packages/**/README.md\" \"packages/**/*.{js,json,css}\" \"index.{css,html}\"",
+    "generate-types": "cross-env-shell node ./scripts/generate-types.js",
     "happo": "happo",
     "happo-ci-github-actions": "happo-ci-github-actions",
-    "lerna-clean": "cross-env-shell lerna clean",
     "lerna:bootstrap:ci": "lerna bootstrap --hoist --ci",
+    "lerna-clean": "cross-env-shell lerna clean",
+    "lerna-publish-beta": "lerna publish from-package --dist-tag beta --no-verify-access",
     "lerna-publish-ci": "lerna publish from-package --no-verify-access",
     "lerna-version": "lerna version --conventional-commits --yes --no-push",
     "lint": "cross-env-shell eslint --config `pwd`/.eslintrc --color \"packages/**/**/{src,stories}/**/*.js\"",
     "new-version": "sh ./scripts/new-version.sh",
-    "preversion": "run-s update-doc-src-from-readme update-readme generate-types format",
+    "prepare": "husky install",
     "server": "web-dev-server --node-resolve --open",
     "server-reload": "reload --browser --exts html,umd.js",
     "stage": "lint-staged",
@@ -63,10 +66,8 @@
     "test": "npm run happo",
     "update-doc-src-from-readme": "cross-env-shell node ./scripts/from-readme/index.js",
     "update-readme": "cross-env-shell node ./scripts/update-readme-files.js",
-    "add-desc-to-src": "cross-env-shell node ./scripts/add-description-to-src.js",
-    "generate-types": "cross-env-shell node ./scripts/generate-types.js",
-    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js",
-    "prepare": "husky install"
+    "preversion": "run-s update-doc-src-from-readme update-readme generate-types format",
+    "watch": "cross-env-shell lerna exec --parallel -- rollup -w -c=`pwd`/rollup.config.js"
   },
   "lint-staged": {
     "*.js": [
@@ -85,6 +86,17 @@
     "> 1%",
     "IE 11"
   ],
+  "overrides": {
+    "@storybook/addon-notes@5.3.21": {
+      "react-syntax-highlighter": ">=15.5.0"
+    },
+    "@storybook/storybook-deployer": {
+      "parse-url": "8.1.0"
+    },
+    "glob-parent": ">=6.0.2",
+    "trim": ">=1.0.1",
+    "trim-newlines": "^5.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
@@ -133,17 +145,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "overrides": {
-    "@storybook/addon-notes@5.3.21": {
-      "react-syntax-highlighter": ">=15.5.0"
-    },
-    "@storybook/storybook-deployer": {
-      "parse-url": "8.1.0"
-    },
-    "trim-newlines": "^5.0.0",
-    "glob-parent": ">=6.0.2",
-    "trim": ">=1.0.1"
   },
   "storybook-deployer": {
     "gitUsername": "Tradeshift Elements",

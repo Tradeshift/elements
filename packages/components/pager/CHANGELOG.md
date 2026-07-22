@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.41.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.0) (2026-07-22)
+
+### Bug Fixes
+
+- add perPageOptions property for customizable items per page ([f5a3e06](https://github.com/Tradeshift/elements/commit/f5a3e06d011043d99c34e0ef9ceaed6abe8dcc6d))
+
 ## [0.40.2](https://github.com/Tradeshift/elements/compare/v0.40.1...v0.40.2) (2022-11-03)
 
 ### Bug Fixes

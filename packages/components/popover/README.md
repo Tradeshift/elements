@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | opened | opened | Boolean | false | Is the popover visible or not |
 | placement | placement | String |  | Placement, relative to the anchor. Could be 'topLeft', 'topRight', 'bottomLeft', 'bottomRight' |
 | header | header | String |  | Text in the title |
@@ -42,14 +42,14 @@
 ## ➤ Slots
 
 | Name    | Description                                                                        |
-| ------- | ---------------------------------------------------------------------------------- |
+| :------ | :--------------------------------------------------------------------------------- |
 | content | Content in the main section of the popover                                         |
 | footer  | Content in the footer section of the popover, most of the time \`ts-button-group\` |
 
 ## ➤ Events
 
 | Name          | Description                                         | Payload |
-| ------------- | --------------------------------------------------- | ------- |
+| :------------ | :-------------------------------------------------- | :------ |
 | popover-close | Emitted when user press the close button in popover |         |
 
 ## ➤ How to use it

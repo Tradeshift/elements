@@ -154,11 +154,11 @@
 	--ts-boxshadow-border-default: var(--ts-boxshadow-border-width) var(--ts-border-color-default);
 	--ts-boxshadow-border-error: var(--ts-boxshadow-border-width) var(--ts-border-color-error);
 	--ts-boxshadow-border-success: var(--ts-boxshadow-border-width) var(--ts-border-color-success);
-	--ts-boxshadow-border-focus: var(--ts-boxshadow-border-width) var(--ts-border-color-focus),
-		0 0 0 1px var(--ts-border-color-focus);
+	--ts-boxshadow-border-focus:
+		var(--ts-boxshadow-border-width) var(--ts-border-color-focus), 0 0 0 1px var(--ts-border-color-focus);
 	--ts-boxshadow-border-primary: var(--ts-boxshadow-border-width) var(--ts-border-color-primary);
-	--ts-boxshadow-border-hover: var(--ts-boxshadow-border-width) var(--ts-border-color-hover-inner),
-		0 0 0 1px var(--ts-border-color-hover-outer);
+	--ts-boxshadow-border-hover:
+		var(--ts-boxshadow-border-width) var(--ts-border-color-hover-inner), 0 0 0 1px var(--ts-border-color-hover-outer);
 	--ts-progress-bar-height: 8px;
 	--ts-box-width-small: 280px;
 	--ts-box-width-medium: 360px;

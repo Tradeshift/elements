@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | label | label | String | '' | Label of the text field. If you need something more than simple string, use the label slot. |
 | id | id | String | 'input-id' | Id of the text field |
 | value | value | String | '' | Value of the text field |
@@ -54,14 +54,14 @@
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | label | If you want to have custom html in label, you can use this slot |
 | ts-input | If you want to have the input/textarea in the light DOM, for example, to be able to access it in the form data, you can pass the ts-input element with the input/textarea yourself. |
 
 ## ➤ Events
 
 | Name   | Description                              | Payload                      |
-| ------ | ---------------------------------------- | ---------------------------- |
+| :----- | :--------------------------------------- | :--------------------------- |
 | input  | Emitted onInput event of input/textarea  | { value, originalEvent }     |
 | change | Emitted onChange event of input/textarea | { value, id, originalEvent } |
 

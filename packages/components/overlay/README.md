@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | anchor | anchor | Object |  | The element where the container will be rendered. |
 | autoWidth | autoWidth | Boolean | false | Should the width be based on content (true) or inherited from the anchor (false). |
@@ -39,13 +39,13 @@
 ## ➤ Slots
 
 | Name    | Description                                            |
-| ------- | ------------------------------------------------------ |
+| :------ | :----------------------------------------------------- |
 | default | All content should be wrapped in one container element |
 
 ## ➤ Events
 
 | Name          | Description                                                          | Payload |
-| ------------- | -------------------------------------------------------------------- | ------- |
+| :------------ | :------------------------------------------------------------------- | :------ |
 | overlay-close | Emitted when user clicks outside of the overlay and anchor elements. |         |
 
 ## ➤ How to use it

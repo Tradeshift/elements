@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type    | Default       | Description                                      |
-| -------- | --------- | ------- | ------------- | ------------------------------------------------ |
+| :------- | :-------- | :------ | :------------ | :----------------------------------------------- |
 | tooltip  | tooltip   | String  | ''            | Text that should be shown in the tooltip popover |
 | position | position  | String  | 'right'       | 'top', 'bottom', 'right', 'left'                 |
 | width    | width     | String  | 'max-content' | Determining width of thee tooltip                |
@@ -40,7 +40,7 @@
 ## ➤ Slots
 
 | Name    | Description                                                  |
-| ------- | ------------------------------------------------------------ |
+| :------ | :----------------------------------------------------------- |
 | default | Elements that have tooltip should be wrapped with ts-tooltip |
 
 ## ➤ How to use it

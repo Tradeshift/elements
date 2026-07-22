@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | type | type | String |  | Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger` |
 | size | size | String |  | Size of the button, `macro`, `micro` |
 | busy | busy | Boolean | false | Show busy/loading animation |
@@ -47,13 +47,13 @@
 ## ➤ Slots
 
 | Name    | Description                                                       |
-| ------- | ----------------------------------------------------------------- |
+| :------ | :---------------------------------------------------------------- |
 | default | Text of the button should be wrapped around \`ts-button\` element |
 
 ## ➤ Events
 
 | Name         | Description |
-| ------------ | ----------- |
+| :----------- | :---------- |
 | button-click |             |
 
 ## ➤ How to use it

@@ -31,14 +31,14 @@
 ## ➤ Properties
 
 | Property | Attribute  | Type   | Default | Description                               |
-| -------- | ---------- | ------ | ------- | ----------------------------------------- |
+| :------- | :--------- | :----- | :------ | :---------------------------------------- |
 | dir      | dir        | String | ltr     | Direction of the component 'rtl' or 'ltr' |
 | title    | data-title | String |         | Board header title                        |
 
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | header-actions | To add action items like buttons and action-select to the header (opposite side of the title).For having header-actions, it is required for the board to have a title. |
 | default | Content of the board should be wrapped around \`ts-board\` element |
 
