@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type    | Default | Description                                   |
-| -------- | --------- | ------- | ------- | --------------------------------------------- |
+| :------- | :-------- | :------ | :------ | :-------------------------------------------- |
 | value    | value     | String  |         | Value of currently chosen ts-radio node       |
 | title    | title     | String  |         | Title of radio group                          |
 | index    | index     | Number  |         | Index of checked ts-radio node                |
@@ -41,13 +41,13 @@
 ## ➤ Slots
 
 | Name    | Description                                                                      |
-| ------- | -------------------------------------------------------------------------------- |
+| :------ | :------------------------------------------------------------------------------- |
 | default | All ts-radio elements should be wrapped by ts-radio-group to be grouped together |
 
 ## ➤ Events
 
 | Name           | Description                     | Payload                 |
-| -------------- | ------------------------------- | ----------------------- |
+| :------------- | :------------------------------ | :---------------------- |
 | radio-selected | Emitted on radio element select | { radio, index, value } |
 
 ## ➤ How to use it

@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property   | Attribute  | Type    | Default      | Description                                             |
-| ---------- | ---------- | ------- | ------------ | ------------------------------------------------------- |
+| :--------- | :--------- | :------ | :----------- | :------------------------------------------------------ |
 | icon       | icon       | String  |              | Icon name, ex: 'arrow-up' or inline svg string          |
 | src        | src        | String  |              | Url to svg for icon. It will override the icon property |
 | size       | size       | String  | sizes.MEDIUM | 'small' or 'medium' or 'large'                          |

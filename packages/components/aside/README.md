@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
 | title | data-title | String | '' | Aside header title |
 | visible | data-visible | Boolean | false | Show/hide aside |
@@ -43,7 +43,7 @@
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | note | Use this slot name on the \`ts-note\` in the aside |
 | platform-object | The section between aside header and content that platform object should be shown with different background color |
 | main | Main content of the aside that doesn't fit into any other available slots |
@@ -52,7 +52,7 @@
 ## ➤ Events
 
 | Name   | Description                                  | Payload |
-| ------ | -------------------------------------------- | ------- |
+| :----- | :------------------------------------------- | :------ |
 | open   | Emitted when the aside is about to be opened |         |
 | close  | Emitted when the aside is about to be closed |         |
 | opened | Emitted when the aside has been opened       |         |

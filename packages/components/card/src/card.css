@@ -12,7 +12,9 @@
 	overflow: hidden;
 	padding: var(--ts-unit-half);
 	background-color: var(--ts-color-white);
-	transition: box-shadow var(--ts-transition-now), border-color var(--ts-transition-now);
+	transition:
+		box-shadow var(--ts-transition-now),
+		border-color var(--ts-transition-now);
 
 	&:hover {
 		box-shadow: var(--ts-boxshadow-border-hover);
@@ -44,7 +46,9 @@
 	box-shadow: var(--ts-boxshadow-border-error);
 
 	&:hover {
-		box-shadow: var(--ts-boxshadow-border-error), 0 0 0 1px var(--ts-color-red-lighter);
+		box-shadow:
+			var(--ts-boxshadow-border-error),
+			0 0 0 1px var(--ts-color-red-lighter);
 	}
 }
 
@@ -52,7 +56,9 @@
 	box-shadow: var(--ts-boxshadow-border-success);
 
 	&:hover {
-		box-shadow: var(--ts-boxshadow-border-success), 0 0 0 1px var(--ts-color-green-lighter);
+		box-shadow:
+			var(--ts-boxshadow-border-success),
+			0 0 0 1px var(--ts-color-green-lighter);
 	}
 }
 

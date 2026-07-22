@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | translations | translations | Object |  | Can be used for customizing placeholder, days abbreviations, months abbreviations and providing translations for them <br> see the structure in its storybook knobs section. <br> |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | selectedDate | selected-date | String |  | For setting the date of the date picker you can use this prop/attribute. It will get update after the user changes the date. |
@@ -57,7 +57,7 @@
 ## ➤ Events
 
 | Name        | Description                         | Payload        |
-| ----------- | ----------------------------------- | -------------- |
+| :---------- | :---------------------------------- | :------------- |
 | date-select | Emitted when user select a new date | {selectedDate} |
 
 ## ➤ How to use it

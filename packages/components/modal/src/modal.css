@@ -67,13 +67,17 @@ footer {
 .fade-in {
 	opacity: 1;
 	visibility: visible;
-	transition: visibility var(--ts-transition-now) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
+	transition:
+		visibility var(--ts-transition-now) linear var(--ts-transition-now),
+		opacity var(--ts-transition-fast);
 }
 
 .fade-out {
 	opacity: 0;
 	visibility: hidden;
-	transition: visibility var(--ts-transition-fast) linear var(--ts-transition-now), opacity var(--ts-transition-fast);
+	transition:
+		visibility var(--ts-transition-fast) linear var(--ts-transition-now),
+		opacity var(--ts-transition-fast);
 }
 
 @media (max-width: env(--mobile-screen-breakpoint)) {

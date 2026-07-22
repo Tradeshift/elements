@@ -52,10 +52,11 @@ export const AllIcons = () => {
 		</style>
 		<div style="display: flex; flex-wrap: wrap; gap: var(--ts-unit-quarter);">
 			${iconList.map(
-				icon => html`<div class="block">
-					<ts-icon type="${type}" icon="${icon}" size="${size}"></ts-icon>
-					<span>${icon}</span>
-				</div>`
+				icon =>
+					html`<div class="block">
+						<ts-icon type="${type}" icon="${icon}" size="${size}"></ts-icon>
+						<span>${icon}</span>
+					</div>`
 			)}
 		</div>`;
 };

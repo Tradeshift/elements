@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | data-dir | String | ltr | Direction 'rtl' or 'ltr' |
 | size | data-size | String | sizes.LARGE | Size of the modal. Available variants: 'large', 'medium', 'small' |
 | title | data-title | String | '' | Modal header text |
@@ -44,7 +44,7 @@
 ## ➤ Slots
 
 | Name   | Description                                                                      |
-| ------ | -------------------------------------------------------------------------------- |
+| :----- | :------------------------------------------------------------------------------- |
 | note   | Use this slot name on the \`ts-note\` in the modal                               |
 | main   | Content in the main section of the modal                                         |
 | footer | Content in the footer section of the modal, most of the time \`ts-button-group\` |
@@ -52,7 +52,7 @@
 ## ➤ Events
 
 | Name   | Description                                       | Payload |
-| ------ | ------------------------------------------------- | ------- |
+| :----- | :------------------------------------------------ | :------ |
 | close  | Emitted on start of the modal closing             |         |
 | opened | Emitted when the animation of opening is finished |         |
 | closed | Emitted when the animation of closing is finished |         |

@@ -89,7 +89,7 @@ export class TSNote extends TSElement {
 								size="large"
 								type="${this.iconType}"
 							></ts-icon>
-					  `
+						`
 					: ''}
 				<p class="${classNames.CONTENT}">
 					<slot></slot>

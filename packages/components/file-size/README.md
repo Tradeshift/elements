@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property     | Attribute     | Type   | Default    | Description                             |
-| ------------ | ------------- | ------ | ---------- | --------------------------------------- |
+| :----------- | :------------ | :----- | :--------- | :-------------------------------------- |
 | size         | size          | Number | 0          | Size of the file                        |
 | decimalPoint | decimal-point | Number | 2          | How many decimal points should be shown |
 | variant      | variant       | String | 'subtitle' | Typography variant                      |

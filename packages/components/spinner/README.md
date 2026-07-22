@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute    | Type    | Default     | Description                                     |
-| -------- | ------------ | ------- | ----------- | ----------------------------------------------- |
+| :------- | :----------- | :------ | :---------- | :---------------------------------------------- |
 | color    | data-color   | String  | colors.BLUE | Spinner color, `blue`, `mono`, `white`          |
 | message  | data-message | String  |             | Text to show below the spinner                  |
 | size     | data-size    | String  | sizes.LARGE | Size of the spinner, `large`, `medium`, `small` |
