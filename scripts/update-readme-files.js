@@ -1,4 +1,5 @@
-const nodePlop = require('node-plop');
+const _nodePlopModule = require('node-plop');
+const nodePlop = _nodePlopModule.default || _nodePlopModule;
 const updateDocSource = require('./from-src');
 const { getComponentNames, compStateLogger } = require('./helpers');
 const xa = require('xa');
@@ -11,8 +12,8 @@ const xa = require('xa');
 	});
 })();
 
-function updateReadmeFiles(componentName) {
-	const plop = nodePlop(`./plopfile.js`);
+async function updateReadmeFiles(componentName) {
+	const plop = await nodePlop(`./plopfile.js`);
 	const updateReadme = plop.getGenerator('readme');
 	updateReadme.runActions({ name: componentName }).then(results => {
 		if (results.failures.length) {

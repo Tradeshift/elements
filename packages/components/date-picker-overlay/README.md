@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property          | Attribute         | Type     | Default | Description |
-| ----------------- | ----------------- | -------- | ------- | ----------- |
+| :---------------- | :---------------- | :------- | :------ | :---------- |
 | dir               | dir               | String   | ltr     |             |
 | translations      | translations      | Object   |         |             |
 | firstDay          | firstDay          | Number   |         |             |
@@ -43,7 +43,7 @@
 ## ➤ Events
 
 | Name                 | Description |
-| -------------------- | ----------- |
+| :------------------- | :---------- |
 | selected-date-change |             |
 
 ## ➤ How to use it

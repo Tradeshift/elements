@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | opened | opened | Boolean | false | Is the action select opened or not |
@@ -40,13 +40,13 @@
 ## ➤ Slots
 
 | Name    | Description                                                                                         |
-| ------- | --------------------------------------------------------------------------------------------------- |
+| :------ | :-------------------------------------------------------------------------------------------------- |
 | default | Element in this slot becomes the anchor for the action menu. When empty, it will render a menu icon |
 
 ## ➤ Events
 
 | Name                | Description                         | Payload      |
-| ------------------- | ----------------------------------- | ------------ |
+| :------------------ | :---------------------------------- | :----------- |
 | action-select-click | Emitted when user clicks on an item | { selected } |
 
 ## ➤ How to use it

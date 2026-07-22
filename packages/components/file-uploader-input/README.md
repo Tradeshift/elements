@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | rtl | rtl | Boolean | false |  |
 | disabled | disabled | Boolean | false | Disable the input |
 | multiple | multiple | Boolean | false | Allow multiple file select. |
@@ -48,14 +48,14 @@
 ## ➤ Slots
 
 | Name             | Description                    |
-| ---------------- | ------------------------------ |
+| :--------------- | :----------------------------- |
 | placeholder-text | Customize the placeholder text |
 | button-text      | Customize the button text      |
 
 ## ➤ Events
 
 | Name   | Description               | Payload                  |
-| ------ | ------------------------- | ------------------------ |
+| :----- | :------------------------ | :----------------------- |
 | change | Emitted on file(s) upload | { originalEvent, files } |
 
 ## ➤ How to use it

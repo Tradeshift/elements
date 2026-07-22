@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | items | items | Array |  | List of available options. Item must have 'id' and 'title', it can also have an 'icon' which is the name of the icon |
@@ -50,7 +50,7 @@
 ## ➤ Events
 
 | Name                | Description                                    | Payload |
-| ------------------- | ---------------------------------------------- | ------- |
+| :------------------ | :--------------------------------------------- | :------ |
 | select-menu-changed | Emitted when user applies the selected changes |         |
 
 ## ➤ How to use it
