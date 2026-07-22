@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property  | Attribute | Type    | Default | Description |
-| --------- | --------- | ------- | ------- | ----------- |
+| :-------- | :-------- | :------ | :------ | :---------- |
 | icon      | icon      | String  |         |             |
 | type      | type      | String  |         |             |
 | dir       | dir       | String  | ltr     |             |
@@ -42,13 +42,13 @@
 ## ➤ Slots
 
 | Name    | Description |
-| ------- | ----------- |
+| :------ | :---------- |
 | default |             |
 
 ## ➤ Events
 
 | Name         | Description |
-| ------------ | ----------- |
+| :----------- | :---------- |
 | close        |             |
 | button-click |             |
 

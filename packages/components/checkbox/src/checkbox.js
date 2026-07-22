@@ -57,7 +57,7 @@ export class TSCheckbox extends TSElement {
 					: html`
 							<!-- To customized checkbox label (links, ...). Remember you need to remove 'data-label' attribute. -->
 							<slot></slot>
-					  `}
+						`}
 			</div>
 		`;
 	}

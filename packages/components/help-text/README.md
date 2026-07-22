@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | messages | messages | Array |  | List of message(s) |
 | title | title | String |  | If there are multiple messages, there should be a title for the help text |
 | size | size | String | sizes.FULL |  |
@@ -42,7 +42,7 @@
 ## ➤ Slots
 
 | Name     | Description                                           |
-| -------- | ----------------------------------------------------- |
+| :------- | :---------------------------------------------------- |
 | title    | You can use this slot to provide custom html as title |
 | messages | Customize message items                               |
 

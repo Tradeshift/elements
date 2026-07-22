@@ -1,6 +1,6 @@
 {
   "name": "@tradeshift/elements.file-card",
-  "version": "0.40.2",
+  "version": "0.41.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Tradeshift/elements.git",
@@ -15,12 +15,12 @@
     "types/*"
   ],
   "dependencies": {
-    "@tradeshift/elements": "^0.40.2",
-    "@tradeshift/elements.card": "^0.40.2",
-    "@tradeshift/elements.file-size": "^0.40.2",
-    "@tradeshift/elements.icon": "^0.40.2",
-    "@tradeshift/elements.progress-bar": "^0.40.2",
-    "@tradeshift/elements.typography": "^0.40.2"
+    "@tradeshift/elements": "^0.41.0",
+    "@tradeshift/elements.card": "^0.41.0",
+    "@tradeshift/elements.file-size": "^0.41.0",
+    "@tradeshift/elements.icon": "^0.41.0",
+    "@tradeshift/elements.progress-bar": "^0.41.0",
+    "@tradeshift/elements.typography": "^0.41.0"
   },
   "src": "src/file-card.js"
 }

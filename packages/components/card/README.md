@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property            | Attribute             | Type    | Default               | Description |
-| ------------------- | --------------------- | ------- | --------------------- | ----------- |
+| :------------------ | :-------------------- | :------ | :-------------------- | :---------- |
 | type                | type                  | String  | ''                    |             |
 | orientation         | orientation           | String  | orientations.VERTICAL |             |
 | rtl                 | rtl                   | Boolean | false                 |             |
@@ -43,7 +43,7 @@
 ## ➤ Slots
 
 | Name    | Description |
-| ------- | ----------- |
+| :------ | :---------- |
 | default |             |
 
 ## ➤ How to use it

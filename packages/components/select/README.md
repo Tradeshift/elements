@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr'. |
 | disabled | disabled | Boolean | false | Is component disabled or not. |
 | opened | opened | Boolean | false | Is the dropdown part opened or not. |
@@ -60,13 +60,13 @@
 ## ➤ Slots
 
 | Name  | Description                                                     |
-| ----- | --------------------------------------------------------------- |
+| :---- | :-------------------------------------------------------------- |
 | label | If you want to have custom html in label, you can use this slot |
 
 ## ➤ Events
 
 | Name | Description | Payload |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | filter-value-change | Emitted when filter value of the select changes. You can listen to this for doing custom filtering and providing filteredItems to override the default component filtering. | { filterValue, id } |
 | select-changed | Emitted when user applies the selected changes | { selected, id } |
 

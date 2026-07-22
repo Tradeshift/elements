@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type   | Default | Description                                                    |
-| -------- | --------- | ------ | ------- | -------------------------------------------------------------- |
+| :------- | :-------- | :----- | :------ | :------------------------------------------------------------- |
 | size     | size      | String |         | Size of the app icon, available variants: ''(default), 'large' |
 | src      | src       | String |         | Specifies the URL of an image                                  |
 | alt      | alt       | String |         | Specifies an alternate text for an image                       |

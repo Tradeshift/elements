@@ -31,14 +31,14 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | dir | dir | String | ltr | Direction of the component 'rtl' or 'ltr' |
 | inline | inline | Boolean | false | Make the buttons inline instead of stacking which is the default behaviour |
 
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | default | All \`ts-button\` elements in the group should be wrapped with \`ts-button-group\` element to be grouped together |
 
 ## ➤ How to use it

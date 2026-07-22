@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | visible | data-visible | Boolean | false | Dialog can be toggled by add/removing this attribute |
 | header | data-header | String |  | Header of the modal |
 | title | data-title | String |  | Title on top of the text part |
@@ -47,14 +47,14 @@
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | title | If in rare cases you need to have more complex title than text property, you can override the title by using this slot |
 | content | If in rare cases you need to have more complex content than text property, you can override the text by using this slot |
 
 ## ➤ Events
 
 | Name | Description | Payload |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | accept | Emitted when the user choose the accept option |  |
 | cancel | Emitted when the user choose the cancel option |  |
 | close | Emitted when the user dismiss the modal, includes cancel button click, close button click, backdrop cover click |  |

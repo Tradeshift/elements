@@ -30,12 +30,12 @@ export class TSTypography extends TSElement {
 					<div class="text-wrapper">
 						<slot>${this.text}</slot>
 					</div>
-			  `
+				`
 			: html`
 					<div class="text-wrapper" title="${this.tooltip || this.text}">
 						<slot @slotchange="${this.textChangeHandler}">${this.text}</slot>
 					</div>
-			  `;
+				`;
 	}
 }
 

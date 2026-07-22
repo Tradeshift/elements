@@ -59,7 +59,7 @@ export class TSListItem extends TSElement {
 						<!--	In case you don't want to use "ts-icon"s as left icon, you can use this slot. Remember to remove icon attribute. -->
 						<slot name="icon-left" @slotchange="${this.slotChangeHandler}"></slot>
 					</span>
-			  `;
+				`;
 	}
 
 	get iconRightTemplate() {
@@ -88,7 +88,7 @@ export class TSListItem extends TSElement {
 								?no-wrap="${this.noWrap}"
 								no-tooltip
 							></ts-typography>
-					  `
+						`
 					: null}
 			</div>
 		`;
