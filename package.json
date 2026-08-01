@@ -103,7 +103,7 @@
     "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/web-components": "^6.5.16",
     "@web/dev-server": "^0.4.6",
-    "@web/rollup-plugin-copy": "^0.5.1",
+    "@web/rollup-plugin-copy": "^1.0.0",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "core-js": "^3.45.1",
     "cross-env": "^7.0.3",
