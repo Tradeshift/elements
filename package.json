@@ -136,7 +136,7 @@
   },
   "overrides": {
     "@storybook/addon-notes@5.3.21": {
-      "react-syntax-highlighter": ">=15.5.0"
+      "react-syntax-highlighter": ">=15.6.1"
     },
     "@storybook/storybook-deployer": {
       "parse-url": "8.1.0"
