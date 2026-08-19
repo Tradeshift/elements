@@ -5,6 +5,15 @@ on:
 
 jobs:
   npm-publish:
+    # Guard here (not just inside the reusable workflow) so the self-hosted
+    # runner job is never queued for unrelated PR comments (e.g. bot comments
+    # like the SonarQube quality gate report). Queuing it anyway trips the
+    # org's actions-autoscaler policy that blocks self-hosted runners on this
+    # public repo, showing a spurious "action_required" check.
+    if: >-
+      github.event.issue.pull_request &&
+      github.event.comment.body == 'npm publish' &&
+      contains(fromJSON('["OWNER", "MEMBER"]'), github.event.comment.author_association)
     uses: tradeshift/actions-workflow-npm/.github/workflows/comment-npm-publish.yml@v1
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
