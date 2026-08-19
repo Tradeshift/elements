@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | autofocus | autofocus | Boolean | false | Shoud the search be auto focused once page loaded |
 | dir | dir | String | ltr | Direction 'rtl' or 'ltr' |
 | focused | focused | Boolean | false | Set the focus on element |
@@ -47,7 +47,7 @@
 ## ➤ Events
 
 | Name | Description | Payload |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | idle | Emitted when the user not change input value for a provided timeout | search input value |
 | change | Emitted on every user's change in a search input or when user selects an item from the provided `dropdownItems` | search input value |
 | search | Emitted when the user press the 'Enter' key | search input value |

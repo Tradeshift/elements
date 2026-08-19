@@ -155,7 +155,7 @@ export class TSTextField extends TSElement {
 									>
 ${this.value}</textarea
 									>
-							  `
+								`
 							: html`
 									<input
 										id=${this.id}
@@ -167,7 +167,7 @@ ${this.value}</textarea
 										@input=${this.onInput}
 										@change=${this.onChange}
 									/>
-							  `}
+								`}
 					</ts-input>
 				</slot>
 				${this.helpText}

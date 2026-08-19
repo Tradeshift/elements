@@ -160,9 +160,7 @@ export class TSDatePickerOverlay extends TSElement {
 		for (let i = 0; i < this.firstDay; i++) {
 			weekDays.push(weekDays.shift());
 		}
-		return html`${weekDays.map(
-			day => html`<span class="day-name">${this.translations.daysAbbreviations[day]}</span>`
-		)}`;
+		return html`${weekDays.map(day => html`<span class="day-name">${this.translations.daysAbbreviations[day]}</span>`)}`;
 	}
 
 	render() {

@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property      | Attribute     | Type    | Default | Description |
-| ------------- | ------------- | ------- | ------- | ----------- |
+| :------------ | :------------ | :------ | :------ | :---------- |
 | total         | total         | Number  | 100     |             |
 | done          | done          | Number  | 0       |             |
 | indeterminate | indeterminate | Boolean | false   |             |

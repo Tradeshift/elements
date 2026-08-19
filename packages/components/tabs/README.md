@@ -31,19 +31,19 @@
 ## ➤ Properties
 
 | Property | Attribute | Type   | Default | Description         |
-| -------- | --------- | ------ | ------- | ------------------- |
+| :------- | :-------- | :----- | :------ | :------------------ |
 | dir      | dir       | String | ltr     | Direction (rtl/ltr) |
 
 ## ➤ Slots
 
 | Name    | Description                                                                               |
-| ------- | ----------------------------------------------------------------------------------------- |
+| :------ | :---------------------------------------------------------------------------------------- |
 | default | All \`ts-tab\` elements should be wrapped with \`ts-tabs\` element to be grouped together |
 
 ## ➤ Events
 
 | Name      | Description |
-| --------- | ----------- |
+| :-------- | :---------- |
 | tab-click |             |
 
 ## ➤ How to use it

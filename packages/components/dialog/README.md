@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | visible | data-visible | Boolean | false | Dialog can be toggled by adding/removing this attribute |
 | text | text | String |  | Text content of the modal |
 | icon | icon | String |  | If you need a different icon that default ones, you can use one of Elements icon names. Notifications will ignore this |
@@ -46,14 +46,14 @@
 ## ➤ Slots
 
 | Name | Description |
-| --- | --- |
+| :-- | :-- |
 | content | If in rare cases you need to have more complex content than text property, you can override the text by using this slot |
 | extra-buttons | To add more options to the dialog (notifications will ignore extra buttons), between accept and cancel buttons |
 
 ## ➤ Events
 
 | Name   | Description                                    | Payload |
-| ------ | ---------------------------------------------- | ------- |
+| :----- | :--------------------------------------------- | :------ |
 | accept | Emitted when the user choose the accept option |         |
 | cancel | Emitted when the user choose the cancel option |         |
 

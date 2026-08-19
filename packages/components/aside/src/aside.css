@@ -125,7 +125,9 @@
 .ts-slide-out-left {
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility 0s var(--ts-transition-fast), opacity var(--ts-transition-fast) linear;
+	transition:
+		visibility 0s var(--ts-transition-fast),
+		opacity var(--ts-transition-fast) linear;
 }
 
 .ts-slide-out-right {

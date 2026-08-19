@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute | Type    | Default | Description        |
-| -------- | --------- | ------- | ------- | ------------------ |
+| :------- | :-------- | :------ | :------ | :----------------- |
 | value    | value     | String  |         | Value of the radio |
 | label    | label     | String  |         | Label of the radio |
 | checked  | checked   | Boolean | false   | Check status       |
@@ -40,7 +40,7 @@
 ## ➤ Events
 
 | Name        | Description |
-| ----------- | ----------- |
+| :---------- | :---------- |
 | radio-click |             |
 | radio-focus |             |
 | radio-blur  |             |

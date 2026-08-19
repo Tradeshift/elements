@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.41.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.0) (2026-07-22)
+
+### Bug Fixes
+
+- **deps:** update dependency lit-element to ^2.5.1 ([#560](https://github.com/Tradeshift/elements/issues/560)) ([674959f](https://github.com/Tradeshift/elements/commit/674959fec02fe9d3e1de12574f6f23ed076e5ff6))
+- **deps:** update dependency lit-element to ^4.0.5 ([66fcf1b](https://github.com/Tradeshift/elements/commit/66fcf1bb7c64b15216d580fd47aad47701725c12))
+- **deps:** update dependency lit-element to ^4.0.6 ([927df09](https://github.com/Tradeshift/elements/commit/927df095c0d9629f16f674d356c0b8850635c916))
+- **deps:** update dependency lit-element to ^4.1.0 ([59c917c](https://github.com/Tradeshift/elements/commit/59c917ca46b24e98d38ceee21c3072f44b692dba))
+- **deps:** update dependency lit-element to ^4.2.0 ([62d3590](https://github.com/Tradeshift/elements/commit/62d359039980108dc82992edb4878c979f3c16b4))
+- **deps:** update dependency lit-element to ^4.2.1 ([f6aae99](https://github.com/Tradeshift/elements/commit/f6aae99671d3887abbba04d565b7e27e1fe97a8c))
+- **deps:** update dependency lit-element to ^4.2.2 ([34aca09](https://github.com/Tradeshift/elements/commit/34aca0942f4682f4da9724b46edade994783f184))
+- **deps:** update dependency lit-element to v4 ([#591](https://github.com/Tradeshift/elements/issues/591)) ([681aaad](https://github.com/Tradeshift/elements/commit/681aaad7692f6841d45f04582917491daf890612))
+
 ## [0.40.2](https://github.com/Tradeshift/elements/compare/v0.40.1...v0.40.2) (2022-11-03)
 
 **Note:** Version bump only for package @tradeshift/elements

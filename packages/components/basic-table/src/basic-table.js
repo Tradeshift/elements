@@ -106,12 +106,11 @@ export class TSBasicTable extends TSElement {
 
 	tableRow(row) {
 		return this.cols.map(
-			column =>
-				html`
-					<td class="${this.getVisibilityClass(column.visibility)}">
-						${this.renderTableCell(row[column.property], column, row)}
-					</td>
-				`
+			column => html`
+				<td class="${this.getVisibilityClass(column.visibility)}">
+					${this.renderTableCell(row[column.property], column, row)}
+				</td>
+			`
 		);
 	}
 

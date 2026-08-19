@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property  | Attribute  | Type    | Default | Description |
-| --------- | ---------- | ------- | ------- | ----------- |
+| :-------- | :--------- | :------ | :------ | :---------- |
 | text      | text       | String  |         |             |
 | tooltip   | tooltip    | String  |         |             |
 | variant   | variant    | String  |         |             |
@@ -43,7 +43,7 @@
 ## ➤ Slots
 
 | Name    | Description |
-| ------- | ----------- |
+| :------ | :---------- |
 | default |             |
 | default |             |
 

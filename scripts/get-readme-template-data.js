@@ -1,4 +1,5 @@
-const tablemark = require('tablemark');
+const _tablemark = require('tablemark');
+const tablemark = _tablemark.default || _tablemark;
 const { compStateLogger, readComponentFile } = require('./helpers');
 
 module.exports = function (componentName) {

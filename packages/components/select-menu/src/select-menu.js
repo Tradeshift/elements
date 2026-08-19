@@ -190,26 +190,27 @@ export class TSSelectMenu extends TSElement {
 			${this.loading
 				? html`<div class="loading-container">
 						<ts-spinner data-visible data-message="${this.translations.loading}" data-size="medium"></ts-spinner>
-				  </div>`
+					</div>`
 				: html`
 				<ul>
 					${
 						displayedItems.length > 0
 							? displayedItems.map(
-									item => html`<ts-list-item
-										class="items-list"
-										selectable
-										?disabled="${this.disabled}"
-										?selected="${this.currentSelection.indexOf(item.id) > -1}"
-										.item-id=${item.id}
-										dir="${this.dir}"
-										title="${item.title}"
-										icon="${item.icon || ''}"
-										icon-right="${this.multiselect ? checkboxIcon : ''}"
-										icon-selected="${checkboxOn}"
-										@click="${this.handleSelection}"
-									></ts-list-item>`
-							  )
+									item =>
+										html`<ts-list-item
+											class="items-list"
+											selectable
+											?disabled="${this.disabled}"
+											?selected="${this.currentSelection.indexOf(item.id) > -1}"
+											.item-id=${item.id}
+											dir="${this.dir}"
+											title="${item.title}"
+											icon="${item.icon || ''}"
+											icon-right="${this.multiselect ? checkboxIcon : ''}"
+											icon-selected="${checkboxOn}"
+											@click="${this.handleSelection}"
+										></ts-list-item>`
+								)
 							: html`<li class="no-items">${this.translations.no_items}</li>`
 					}
 				</ul>

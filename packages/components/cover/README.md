@@ -31,7 +31,7 @@
 ## ➤ Properties
 
 | Property | Attribute    | Type    | Default | Description |
-| -------- | ------------ | ------- | ------- | ----------- |
+| :------- | :----------- | :------ | :------ | :---------- |
 | visible  | data-visible | Boolean | false   |             |
 
 ## ➤ How to use it

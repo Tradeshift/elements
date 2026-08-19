@@ -341,7 +341,7 @@ export class TSSelect extends TSElement {
 								.caseSensitive="${this.caseSensitive}"
 								@select-menu-changed=${this.onChangeListener}
 							></ts-select-menu>
-					  </ts-overlay>`
+						</ts-overlay>`
 					: ''}
 			</div>
 		`;
