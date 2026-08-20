@@ -1,4 +1,5 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper } from '@tradeshift/elements';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import css from './app-icon.css';
 
 export class TSIcon extends TSElement {
@@ -18,9 +19,7 @@ export class TSIcon extends TSElement {
 	}
 
 	render() {
-		return html`
-			<img .src="${this.src}" .alt="${this.alt}"></img>
-		`;
+		return html` <img src="${ifDefined(this.src)}" alt="${ifDefined(this.alt)}" /> `;
 	}
 }
 customElementDefineHelper('ts-app-icon', TSIcon);
