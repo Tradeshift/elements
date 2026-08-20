@@ -65,7 +65,7 @@ jobs:
           # See README.md for what '<empty>' vs '<name>' publish.
           COMMENT='${{ github.event.comment.body }}'
           PKG_ARG=$(echo "$COMMENT" | sed -E 's/^npm publish[[:space:]]*//')
-          echo "version=0.0.0-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
+          echo "version=0.0.0-$(uuidgen)" >> "$GITHUB_OUTPUT"
           if [ -z "$PKG_ARG" ]; then
             echo "pkg_dir=" >> "$GITHUB_OUTPUT"
             echo "target=all packages" >> "$GITHUB_OUTPUT"
