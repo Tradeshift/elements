@@ -1,11 +1,155 @@
 name: npm publish
+
 on:
   issue_comment:
     types: [created]
 
 jobs:
   npm-publish:
-    uses: tradeshift/actions-workflow-npm/.github/workflows/comment-npm-publish.yml@v1
-    secrets:
-      github-token: ${{ secrets.GITHUB_TOKEN }}
-      npm-read-token: ${{ secrets.NPM_TOKEN }}
+    # Restricted to OWNER/MEMBER: without this guard, any GitHub user could
+    # trigger a publish using this workflow's token just by commenting on a
+    # fork PR. See README.md for usage.
+    name: Publish preview packages to GitHub Packages
+    if: >-
+      github.event.issue.pull_request
+      && startsWith(github.event.comment.body, 'npm publish')
+      && contains(fromJSON('["OWNER", "MEMBER"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📦 Update comment
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { repo: { owner, repo } } = context;
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: context.issue.number,
+              body: [
+                `> ${{ github.event.comment.body }}`,
+                ':package: Publishing preview package(s) to GitHub Packages...',
+                `[View job](https://github.com/${owner}/${repo}/actions/runs/${context.runId})`
+              ].join('\n\n')
+            });
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: ⬇️ Checkout PR head
+        run: |
+          git fetch origin pull/${{ github.event.issue.number }}/head:pr-preview
+          git checkout pr-preview
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@tradeshift'
+          cache: npm
+
+      - name: 📥 Download dependencies
+        run: npm ci
+
+      - name: Bootstrap monorepo
+        run: npm run lerna:bootstrap:ci
+
+      - name: 🔧 Build
+        run: npm run build:prod
+
+      - name: 🎯 Resolve publish target
+        id: scope
+        run: |
+          # See README.md for what '<empty>' vs '<name>' publish.
+          COMMENT='${{ github.event.comment.body }}'
+          PKG_ARG=$(echo "$COMMENT" | sed -E 's/^npm publish[[:space:]]*//')
+          echo "version=0.0.0-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
+          if [ -z "$PKG_ARG" ]; then
+            echo "pkg_dir=" >> "$GITHUB_OUTPUT"
+            echo "target=all packages" >> "$GITHUB_OUTPUT"
+          elif [ "$PKG_ARG" = "core" ] || [ "$PKG_ARG" = "elements" ]; then
+            echo "pkg_dir=packages/core" >> "$GITHUB_OUTPUT"
+            echo "target=@tradeshift/elements" >> "$GITHUB_OUTPUT"
+          elif [ -d "packages/components/$PKG_ARG" ]; then
+            echo "pkg_dir=packages/components/$PKG_ARG" >> "$GITHUB_OUTPUT"
+            echo "target=@tradeshift/elements.$PKG_ARG" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Unknown package '$PKG_ARG' — no packages/components/$PKG_ARG directory"
+            exit 1
+          fi
+
+      - name: 🚀 Publish preview — all packages
+        if: steps.scope.outputs.pkg_dir == ''
+        run: |
+          npx lerna version ${{ steps.scope.outputs.version }} --no-push --no-git-tag-version --yes
+          npx lerna publish from-package --dist-tag=pr-preview --no-verify-access --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Publish preview — single package
+        if: steps.scope.outputs.pkg_dir != ''
+        working-directory: ${{ steps.scope.outputs.pkg_dir }}
+        run: |
+          npm version --no-git-tag-version ${{ steps.scope.outputs.version }}
+          npm publish --tag=pr-preview
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Success message
+        if: success()
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { execSync } = require('child_process');
+            const { repo: { owner, repo } } = context;
+            const target = '${{ steps.scope.outputs.target }}';
+            const version = '${{ steps.scope.outputs.version }}';
+            let body;
+            if (target === 'all packages') {
+              const list = JSON.parse(execSync('npx lerna ls --json', { encoding: 'utf-8' }))
+                .map((p) => `- \`${p.name}@${p.version}\``)
+                .join('\n');
+              body = [
+                ':package: Preview published to GitHub Packages :rocket: (all packages)',
+                list,
+                '```',
+                `npm install @tradeshift/elements@${version} --registry=https://npm.pkg.github.com`,
+                '```',
+                'Swap in the specific `@tradeshift/elements.*` package you need from the list above — they all share the same version.',
+                `[View job](https://github.com/${owner}/${repo}/actions/runs/${context.runId})`
+              ].join('\n\n');
+            } else {
+              body = [
+                `:package: Preview published to GitHub Packages :rocket: (${target})`,
+                '```',
+                `npm install ${target}@${version} --registry=https://npm.pkg.github.com`,
+                '```',
+                `[View job](https://github.com/${owner}/${repo}/actions/runs/${context.runId})`
+              ].join('\n\n');
+            }
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      - name: 📦 Failure message
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { repo: { owner, repo } } = context;
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: context.issue.number,
+              body: [
+                ':package: Failed to publish preview package(s) :disappointed:',
+                `[View job](https://github.com/${owner}/${repo}/actions/runs/${context.runId})`
+              ].join('\n\n')
+            });

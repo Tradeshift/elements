@@ -237,6 +237,14 @@ We are using [lerna to publish](https://github.com/lerna/lerna/tree/main/command
 - Go to Github and create a PR from the branch created at previous step.
 - After merge a new version of elements will be built and published to NPM registry and Github Packages.
 
+## ➤ How to test a PR before it's merged
+
+Comment on the PR to publish a temporary preview version to GitHub Packages (restricted to Tradeshift org members / the repo owner):
+
+- `npm publish` — builds and publishes **every** package with the same `0.0.0-<run id>` version, under the `pr-preview` dist-tag. Package dependencies between them (e.g. `@tradeshift/elements.header`'s dependency on `@tradeshift/elements.app-icon`) are automatically rewritten to match.
+- `npm publish <name>` — publishes only that one package, e.g. `npm publish app-icon` (`npm publish core` or `npm publish elements` for `@tradeshift/elements` itself). Use this only when nothing that package depends on changed — it does not rewrite that package's own dependency ranges, so a change in a dependency won't be reflected unless that dependency is also published (with `npm publish` or its own `npm publish <name>`).
+- The bot replies with the exact `npm install ... --registry=https://npm.pkg.github.com` command(s) to try it out.
+
 ---
 
 ## ➤ [Polyfill Limitations](https://github.com/Tradeshift/elements/wiki/Polyfill-Limitations)
