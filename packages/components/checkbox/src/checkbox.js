@@ -5,6 +5,7 @@ export class TSCheckbox extends TSElement {
 	constructor() {
 		super();
 		this.name = '';
+		this.value = '';
 	}
 
 	static get styles() {
@@ -57,7 +58,7 @@ export class TSCheckbox extends TSElement {
 					: html`
 							<!-- To customized checkbox label (links, ...). Remember you need to remove 'data-label' attribute. -->
 							<slot></slot>
-						`}
+					  `}
 			</div>
 		`;
 	}
