@@ -131,7 +131,28 @@ export class TSIcon extends TSElement {
 	parseSvg(svgString) {
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(svgString, 'image/svg+xml');
+		this.sanitizeSvg(doc.firstChild);
 		return doc.firstChild;
+	}
+
+	// Strip script elements, event-handler attributes and javascript: URIs
+	// from untrusted SVG content before it is rendered into the DOM (CWE-79).
+	sanitizeSvg(node) {
+		if (!node || node.nodeType !== Node.ELEMENT_NODE) {
+			return;
+		}
+		if (node.tagName && node.tagName.toLowerCase() === 'script') {
+			node.remove();
+			return;
+		}
+		Array.from(node.attributes || []).forEach(attr => {
+			const name = attr.name.toLowerCase();
+			const value = (attr.value || '').trim().toLowerCase();
+			if (name.startsWith('on') || ((name === 'href' || name === 'xlink:href') && value.startsWith('javascript:'))) {
+				node.removeAttribute(attr.name);
+			}
+		});
+		Array.from(node.children).forEach(child => this.sanitizeSvg(child));
 	}
 
 	async extractSvgContent(response) {
