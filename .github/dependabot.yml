@@ -2,9 +2,290 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    rebase-strategy: "disabled"
+  - package-ecosystem: npm
+    directory: /
+    rebase-strategy: disabled
     schedule:
-      interval: "weekly"
+      interval: weekly
     open-pull-requests-limit: 0
+  - package-ecosystem: npm
+    directory: /packages/core
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/tab
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/tag
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/card
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/icon
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/note
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/root
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/tabs
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/aside
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/board
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/cover
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/input
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/label
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/modal
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/pager
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/radio
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/button
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/dialog
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/header
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/search
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/select
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/status
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/overlay
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/popover
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/spinner
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/tooltip
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/app-icon
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/checkbox
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/file-card
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/file-size
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/help-text
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/list-item
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/text-field
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/typography
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/basic-table
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/date-picker
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/radio-group
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/select-menu
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/button-group
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/progress-bar
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/action-select
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/document-card
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/confirmation-prompt
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/date-picker-overlay
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /packages/components/file-uploader-input
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+  - package-ecosystem: npm
+    directory: /plop-templates/components/{{kebabCase name}}
+    schedule:
+      interval: daily
+    registries:
+      - npm-tradeshift
+registries:
+  npm-tradeshift:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    token: ${{secrets.NPM_READ_TOKEN}}
