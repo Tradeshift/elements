@@ -33,33 +33,23 @@ export class TSInput extends TSElement {
 		return iconEnd ? html`<ts-icon class="icon-end" icon=${iconEnd} size="large" type="action"></ts-icon>` : '';
 	}
 
-	attributeChangedCallback(name, oldVal, newVal) {
-		const input = this.getSlotInput();
-		if (name === 'disabled' && input) {
-			input.disabled = newVal !== undefined && newVal !== null;
+	updated(changedProperties) {
+		if (changedProperties.has('disabled') || changedProperties.has('readonly')) {
+			this.syncSlotInput();
 		}
-		if (name === 'readonly' && input) {
-			input.readonly = newVal !== undefined && newVal !== null;
-		}
-		super.attributeChangedCallback(name, oldVal, newVal);
 	}
 
 	firstUpdated() {
 		const input = this.getSlotInput();
-		if (this.disabled !== undefined && this.disabled !== null && input) {
-			input.disabled = true;
-		}
-		if (this.readonly !== undefined && this.readonly !== null && input) {
-			input.readonly = true;
-		}
-		if (input.tagName === 'TEXTAREA') {
+		if (input && input.tagName === 'TEXTAREA') {
 			input.addEventListener('input', this.calcTextareaHeight);
 		}
 	}
 
 	disconnectedCallback() {
+		super.disconnectedCallback();
 		const input = this.getSlotInput();
-		if (input.tagName === 'TEXTAREA') {
+		if (input && input.tagName === 'TEXTAREA') {
 			input.removeEventListener('input', this.calcTextareaHeight);
 		}
 	}
@@ -70,14 +60,23 @@ export class TSInput extends TSElement {
 		el.style.cssText = `height: ${el.scrollHeight + 2}px`; // 2 is the border width
 	}
 
-	getSlotInput() {
-		const slot = this.shadowRoot.querySelector('slot');
-		if (!slot) {
-			return null;
+	// Only touches the states that were set on ts-input, so a slotted `<input disabled>` is left alone otherwise
+	syncSlotInput() {
+		const input = this.getSlotInput();
+		if (!input) {
+			return;
 		}
-		const elements = slot
-			.assignedNodes()
-			.filter(el => ['HTMLInputElement', 'HTMLTextAreaElement'].includes(el.constructor.name));
+		if (this.disabled !== undefined) {
+			input.disabled = !!this.disabled;
+		}
+		if (this.readonly !== undefined) {
+			input.readOnly = !!this.readonly;
+		}
+	}
+
+	// The input is a light DOM child, so it can be looked up before the shadow root exists
+	getSlotInput() {
+		const elements = Array.from(this.children).filter(el => ['INPUT', 'TEXTAREA'].includes(el.tagName));
 		if (elements.length < 1) {
 			console.warn('We need one input or textarea element in the slot');
 		}
@@ -90,10 +89,12 @@ export class TSInput extends TSElement {
 	render() {
 		return html`
 			<div dir=${this.direction}>
-				${this.iconStart &&
-				html`<ts-icon class="icon-start" icon=${this.iconStart} size="large" type="action"></ts-icon>`}
+				${
+					this.iconStart &&
+					html`<ts-icon class="icon-start" icon=${this.iconStart} size="large" type="action"></ts-icon>`
+				}
 				<!--	Put an input tag inside ts-input, so it's included in the light dom which let's the form to include its data in form data -->
-				<slot></slot>
+				<slot @slotchange=${this.syncSlotInput}></slot>
 				${this.iconEndHtml}
 			</div>
 		`;
