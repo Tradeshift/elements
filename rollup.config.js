@@ -65,7 +65,10 @@ const copyPlugin = copy({ patterns: '**/*.svg', rootDir: './src', flatten: false
 
 const babelPlugin = babel({
 	babelrc: false,
-	exclude: [/\/core-js\//],
+	// lit-html is only called (never extended), so it can stay as shipped. Transpiling its minified source
+	// breaks it: the `ChildPart` class has a method named like the class (`k`), and Babel emits an
+	// undeclared `_k` for the class reference inside that method (=> `_k is not defined` when rendering arrays).
+	exclude: [/\/core-js\//, /\/lit-html\//],
 	babelHelpers: 'bundled',
 	presets: [
 		[
