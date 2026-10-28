@@ -67,6 +67,9 @@ const babelPlugin = babel({
 		]
 	],
 	plugins: [
+		// `loose: true` compiles `[...iterator]` to `[].concat(iterator)`, which breaks
+		// lit-element 4's `observedAttributes` (`[...map.keys()]` => `[{}]`).
+		['@babel/plugin-transform-spread', { loose: false }],
 		[
 			'module:fast-async',
 			{
