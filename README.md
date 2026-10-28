@@ -228,14 +228,16 @@ $ npm run component-gen
 We are using [lerna to publish](https://github.com/lerna/lerna/tree/main/commands/version#readme) our elements
 
 - Checkout a master branch.
-- Run the `npm run new-version` command. It will invoke a shell script that:
-  - calculate a new version number
+- Run `npm run new-version` for a stable release, or `npm run new-version:beta` for a beta release. It will invoke a shell script that:
+  - calculate a new version number (`new-version:beta` creates or increments a `-beta.N` version, e.g. `0.41.1-beta.0`; `new-version` graduates a current beta to its stable version, e.g. `0.41.1-beta.1` to `0.41.1`)
   - create a new branch with new version number and a new git tag
   - generate CHANGELOG.md for all components
   - make a commit with a predefined commit message to created branch
-  - push this branch and git tag to origin
-- Go to Github and create a PR from the branch created at previous step.
-- After merge a new version of elements will be built and published to NPM registry and Github Packages.
+  - push this branch and git tag to origin (set `RELEASE_REMOTE=<remote>` if your `origin` is a fork)
+- Go to Github and create a PR from the branch created at previous step. Merge it with a merge commit (not squash), so the pushed tag stays on master.
+- After merge a new version of elements will be built and published: stable versions to NPM registry and Github Packages with the `latest` dist-tag; beta versions to Github Packages only, with the `beta` dist-tag (`npm install @tradeshift/elements@beta --registry=https://npm.pkg.github.com`).
+- If a beta needs fixes, merge them to master with normal PRs and release the next beta (`npm run new-version:beta`) or the stable version (`npm run new-version`).
+- Prerelease versions must start with a letter after the `-` (`-beta.0`, not `-0`): lerna treats a prerelease id of `0` as stable and would publish it as `latest`.
 
 ## ➤ How to test a PR before it's merged
 
