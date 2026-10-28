@@ -5,6 +5,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
+import postcssGlobalData from '@csstools/postcss-global-data';
 import svgo from 'rollup-plugin-svgo';
 import json from '@rollup/plugin-json';
 import { copy } from '@web/rollup-plugin-copy';
@@ -28,13 +29,27 @@ const outputConfig = {
 
 const nodeModules = [path.join(LERNA_ROOT_PATH, 'node_modules/**'), path.join(PACKAGE_ROOT_PATH, 'node_modules/**')];
 
+// postcss-preset-env dropped `importFrom`, so the global data it used to read is provided explicitly:
+// - `vars.css` lets postcss-custom-properties inline static fallbacks for `var(--ts-*)`
+// - `env-variables.json` is applied by the tiny plugin below (`env()` is invalid inside media queries)
+const envVariables = require(`${LERNA_ROOT_PATH}/packages/core/src/utils/env-variables.json`).environmentVariables;
+const envFunction = () => ({
+	postcssPlugin: 'ts-env-function',
+	Once(root) {
+		const replaceEnv = value => value.replace(/env\((--[\w-]+)\)/g, (match, name) => envVariables[name] || match);
+		root.walk(node => {
+			if (node.type === 'atrule') node.params = replaceEnv(node.params);
+			if (node.type === 'decl') node.value = replaceEnv(node.value);
+		});
+	}
+});
+envFunction.postcss = true;
+
 const postcssPlugin = postcss({
 	plugins: [
+		postcssGlobalData({ files: [`${LERNA_ROOT_PATH}/packages/core/src/vars.css`] }),
+		envFunction(),
 		postcssPresetEnv({
-			importFrom: [
-				`${LERNA_ROOT_PATH}/packages/core/src/utils/env-variables.json`,
-				`${LERNA_ROOT_PATH}/packages/core/src/vars.css`
-			],
 			preserve: true,
 			stage: 0
 		})
