@@ -83,7 +83,13 @@ jobs:
       - name: 🚀 Publish preview — all packages
         if: steps.scope.outputs.pkg_dir == ''
         run: |
-          npx lerna version ${{ steps.scope.outputs.version }} --no-push --no-git-tag-version --yes
+          # --ignore-scripts skips the root `preversion` script, which rewrites src/README files.
+          npx lerna version ${{ steps.scope.outputs.version }} --no-push --no-git-tag-version --ignore-scripts --yes
+          # `lerna publish from-package` refuses a dirty working tree (EUNCOMMIT), and the version bump
+          # above is left uncommitted. Commit it locally; this commit is never pushed. --no-verify skips
+          # the husky hooks, which only matter for real commits.
+          git -c user.name="github-actions[bot]" -c user.email="github-actions[bot]@users.noreply.github.com" \
+            commit -q -a --no-verify -m "chore: preview version ${{ steps.scope.outputs.version }}"
           npx lerna publish from-package --dist-tag=pr-preview --no-verify-access --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
