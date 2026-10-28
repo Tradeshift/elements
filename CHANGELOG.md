@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.41.1-beta.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.1-beta.0) (2026-10-28)
+
+### Bug Fixes
+
+- **build:** compile spread without loose mode ([809e486](https://github.com/Tradeshift/elements/commit/809e486eb3033a3d631b80ab419f625abf094d7e))
+- **build:** do not transpile lit-html ([fa54870](https://github.com/Tradeshift/elements/commit/fa54870117c92d0c61a157b21d2004254bbbc179))
+- **build:** restore env() and CSS variable fallbacks ([3871f62](https://github.com/Tradeshift/elements/commit/3871f62055f50b84bce1df9175923bd7fa5e4865))
+- **input:** sync disabled/readonly to the slotted input in updated() ([60d0ebd](https://github.com/Tradeshift/elements/commit/60d0ebd899c0b03470fa02b8288e73dae86752c4))
+- use a fresh UUID instead of run_id for preview publish versions ([8542f16](https://github.com/Tradeshift/elements/commit/8542f1602865c08f96473d6d4f2940e33140af86))
+
 ## [0.41.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.0) (2026-07-22)
 
 ### Bug Fixes
