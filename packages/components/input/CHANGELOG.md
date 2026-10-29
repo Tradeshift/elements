@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.41.1-beta.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.1-beta.0) (2026-10-28)
+
+### Bug Fixes
+
+- **input:** sync disabled/readonly to the slotted input in updated() ([60d0ebd](https://github.com/Tradeshift/elements/commit/60d0ebd899c0b03470fa02b8288e73dae86752c4))
+
 ## [0.41.0](https://github.com/Tradeshift/elements/compare/v0.40.2...v0.41.0) (2026-07-22)
 
 **Note:** Version bump only for package @tradeshift/elements.input
