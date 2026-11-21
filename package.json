@@ -118,7 +118,7 @@
     "@storybook/web-components": "^6.5.16",
     "@web/dev-server": "^1.0.1",
     "@web/rollup-plugin-copy": "^1.0.1",
-    "@webcomponents/webcomponentsjs": "^2.8.0",
+    "@webcomponents/webcomponentsjs": "^2.8.1",
     "core-js": "^3.45.1",
     "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
