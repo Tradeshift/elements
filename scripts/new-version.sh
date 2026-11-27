@@ -35,9 +35,11 @@ else
 	npm ci
 	npm run lerna:bootstrap:ci
 
-	# commit a changelog and a new version
+	# commit a changelog and a new version, and tag it. lerna-version runs with --no-git-tag-version:
+	# lerna 5 formats files with the workspace prettier before committing, which fails with prettier 3.
 	git add .
 	git commit -m "chore(release): $version"
+	git tag -a $version -m $version
 
 	# push the new branch
 	git push --set-upstream "$remote" $branch
