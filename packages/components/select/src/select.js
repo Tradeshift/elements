@@ -1,6 +1,6 @@
 import { TSElement, unsafeCSS, html, customElementDefineHelper, helpers } from '@tradeshift/elements';
 import '@tradeshift/elements.icon';
-import { arrowDownShort } from '@tradeshift/elements.icon/lib/assets/icons';
+import arrowDownShort from '@tradeshift/elements.icon/lib/assets/icons/arrow-down-short.svg';
 // eslint-disable-next-line import/no-duplicates
 import '@tradeshift/elements.overlay';
 // eslint-disable-next-line import/no-duplicates
